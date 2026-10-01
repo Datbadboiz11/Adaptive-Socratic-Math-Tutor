@@ -1,0 +1,209 @@
+{
+  "checks": [
+    {
+      "check": "Six topic cards are available",
+      "passed": true
+    },
+    {
+      "check": "Topic filter shows two function topics",
+      "passed": true
+    },
+    {
+      "check": "Vietnamese topic search works",
+      "passed": true
+    },
+    {
+      "check": "First wrong step creates exactly one observation",
+      "passed": true
+    },
+    {
+      "check": "Wrong step receives diagnostic support",
+      "passed": true
+    },
+    {
+      "check": "Support does not create an extra observation",
+      "passed": true
+    },
+    {
+      "check": "Correct after hint is marked assisted",
+      "passed": true
+    },
+    {
+      "check": "Correction does not inflate observation count",
+      "passed": true
+    },
+    {
+      "check": "New problem starts without direct assistance",
+      "passed": true
+    },
+    {
+      "check": "Independent new answer is counted separately",
+      "passed": true
+    },
+    {
+      "check": "Report splits assisted and independent outcomes",
+      "passed": true
+    },
+    {
+      "check": "Finished session appears in history",
+      "passed": true
+    },
+    {
+      "check": "Pause and reload preserve the draft",
+      "passed": true
+    },
+    {
+      "check": "Resume does not create an observation",
+      "passed": true
+    },
+    {
+      "check": "Retry counts one observation only",
+      "passed": true
+    },
+    {
+      "check": "Repeated wrong answer does not duplicate observation",
+      "passed": true
+    },
+    {
+      "check": "Unverified input is not scored as wrong",
+      "passed": true
+    },
+    {
+      "check": "Unverified state is visible",
+      "passed": true
+    },
+    {
+      "check": "Unclear input has no observation",
+      "passed": true
+    },
+    {
+      "check": "Four user-flow lanes are available",
+      "passed": true
+    },
+    {
+      "check": "Wireframe mode is available",
+      "passed": true
+    },
+    {
+      "check": "New learner has no fabricated history",
+      "passed": true
+    },
+    {
+      "check": "overview has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "topics has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "learn has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "report has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "progress has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "login has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "flow has no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "overview has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "topics has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "learn has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "report has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "progress has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "login has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "flow has no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "overview has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "topics has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "learn has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "report has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "progress has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "login has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "flow has no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "overview has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "topics has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "learn has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "report has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "progress has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "login has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "flow has no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "No uncaught browser runtime errors",
+      "passed": true
+    }
+  ],
+  "browser_errors": []
+}

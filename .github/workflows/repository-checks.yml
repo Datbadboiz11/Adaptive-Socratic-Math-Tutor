@@ -1,0 +1,31 @@
+name: Repository checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: repository-checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check JavaScript syntax
+        run: node --check design/app.js
+      - name: Check Python syntax
+        run: python3 -m py_compile design/audit_ui.py scripts/check_repository.py
+      - name: Check tracked files and documentation links
+        run: python3 scripts/check_repository.py
