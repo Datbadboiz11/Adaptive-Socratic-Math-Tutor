@@ -1,19 +1,22 @@
 # Phần 2 — Backend và lưu dữ liệu
 
-**Trạng thái:** Chưa thực hiện.  
+**Trạng thái:** Đã triển khai lớp lưu trữ và nối pipeline Phần 3 cho phiên mới. Xem [bàn giao Phần 2](../docs/phase2/README.md) và [cập nhật Phần 3](../docs/phase3/README.md).
+
 **Đầu vào:** Scope và contract phần 1.  
 **Mục tiêu:** Mỗi hành động học có dữ liệu lưu được, đọc lại được và không ghi trùng khi thử lại.
 
 ## 1. Công việc theo thứ tự
 
-- [ ] Dựng FastAPI, cấu hình môi trường, health check và kết nối PostgreSQL.
-- [ ] Tạo migration cho profile demo, problem registry, session, opportunity, submission/turn, observation, mastery history và decision log.
-- [ ] Tách đáp án/nội dung nội bộ khỏi schema trả cho frontend.
-- [ ] Viết seed có thể chạy lại mà không nhân đôi ID/bản ghi.
-- [ ] Tạo API dưới đây; đối chiếu tên cuối cùng với contract và OpenAPI.
-- [ ] Gắn pipeline ở phần 3 vào submit, rồi hoàn thiện report/resume.
+- [x] Dựng FastAPI, cấu hình môi trường, health check và kết nối PostgreSQL.
+- [x] Tạo migration cho profile demo, problem registry, session, opportunity, submission/turn, observation, mastery history và decision log.
+- [x] Tách đáp án/nội dung nội bộ khỏi schema trả cho frontend.
+- [x] Viết seed có thể chạy lại mà không nhân đôi ID/bản ghi.
+- [x] Tạo API dưới đây; đối chiếu tên cuối cùng với contract và OpenAPI.
+- [x] Gắn pipeline ở phần 3 vào submit, rồi hoàn thiện report/resume cho chế độ thử nội bộ.
 
 ## 2. API đề xuất
+
+API đã triển khai dùng prefix `/api/v1` (trừ health). Có thêm login/profile demo và lịch sử phiên. [`contracts/phase2/openapi.json`](../contracts/phase2/openapi.json) mô tả API thực tế. `/topics` hiện trả `tutoring_ready=false`, chỉ cho phép thử lưu nội bộ; submit chưa xác minh và không tạo observation. Quy định sư phạm của bảng dưới vẫn là đích sau Phần 3.
 
 | Endpoint | Trách nhiệm |
 |---|---|
@@ -47,11 +50,14 @@ Không lấy dữ liệu Minh Anh dựng sẵn trong `design/app.js` làm kết 
 
 ## 5. Điều kiện xong và cách kiểm tra
 
-- [ ] Tạo phiên, lấy bài và nộp bài được qua API.
-- [ ] Khởi động lại backend vẫn đọc lại được phiên đã lưu.
-- [ ] Gửi lại cùng request không tăng lượt/observation/mastery history.
-- [ ] Thử hai request đồng thời: không nhân đôi observation hoặc ghi đè state âm thầm.
-- [ ] Draft/resume và report khớp dữ liệu DB.
-- [ ] Lỗi đầu vào/model/DB có mã lỗi và thông điệp phù hợp; log có request/session/opportunity ID.
+- [x] Tạo phiên, lấy bài và nộp bài được qua API (lưu bài, chưa chấm).
+- [x] Khởi động lại backend vẫn đọc lại được phiên đã lưu (đã chạy restart container thực tế).
+- [x] Gửi lại cùng request không tăng lượt/observation/mastery history.
+- [x] Thử hai request đồng thời: không ghi đè state âm thầm; unique observation và rollback history được kiểm tra bằng fixture constraint riêng. BKT thực tế còn chờ Phần 3.
+- [x] Draft/resume và report khớp dữ liệu DB; đã thử trên web và sau reload.
+- [x] Lỗi đầu vào/DB có mã lỗi và thông điệp phù hợp; log turn có request/session/opportunity ID. Đã thử DB ngừng hoạt động và phục hồi.
+- [x] Đã nối model/checkpoint; có test lỗi model, phục hồi sau node model và lượt OpenAI thật ở Phần 3.
 
 **Bàn giao:** API chạy được, migration/seed, OpenAPI và kết quả kiểm tra cho phần 4.
+
+**Cập nhật Phần 3:** runtime đã ghi observation/mastery trong cùng transaction; có test rollback, checkpoint và BKT giữa hai phiên. Các mô tả API “chỉ lưu/chưa chấm” bên trên là mốc Phần 2; API hiện hành xem OpenAPI Phần 3. Sáu bài vẫn draft; chưa nghiệm thu sư phạm.

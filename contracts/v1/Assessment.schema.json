@@ -1,0 +1,127 @@
+{
+  "$defs": {
+    "AssessmentStatus": {
+      "enum": [
+        "verified_correct",
+        "verified_incorrect",
+        "unverified",
+        "needs_clarification"
+      ],
+      "title": "AssessmentStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assessment_id": {
+      "format": "uuid",
+      "title": "Assessment Id",
+      "type": "string"
+    },
+    "assessment_status": {
+      "$ref": "#/$defs/AssessmentStatus"
+    },
+    "first_error_step": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "First Error Step"
+    },
+    "primary_skill_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Primary Skill Id"
+    },
+    "error_family": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Family"
+    },
+    "misconception_candidate": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Misconception Candidate"
+    },
+    "diagnosis_status": {
+      "default": "unknown",
+      "enum": [
+        "suspected",
+        "supported",
+        "unknown"
+      ],
+      "title": "Diagnosis Status",
+      "type": "string"
+    },
+    "reason_code": {
+      "enum": [
+        "valid_solution",
+        "invalid_transformation",
+        "wrong_final_answer",
+        "valid_partial",
+        "ambiguous_input",
+        "unsupported_scope",
+        "cannot_verify"
+      ],
+      "title": "Reason Code",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "verification_method": {
+      "enum": [
+        "symbolic_and_rule",
+        "reference",
+        "none"
+      ],
+      "title": "Verification Method",
+      "type": "string"
+    },
+    "validator_version": {
+      "title": "Validator Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "assessment_id",
+    "assessment_status",
+    "reason_code",
+    "verification_method",
+    "validator_version"
+  ],
+  "title": "Assessment",
+  "type": "object"
+}

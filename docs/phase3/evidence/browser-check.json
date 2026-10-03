@@ -1,0 +1,2064 @@
+{
+  "checked_at": "2026-10-01T13:30:24.211498+00:00",
+  "checks": [
+    "draft, pause, reload and resume preserve state",
+    "commit response lost: same request replay, one correct turn",
+    "unclear input is not wrong; hint preserves draft; assisted correction adds no observation",
+    "distribution error at step 1; alternative correction accepted; no answer leaked",
+    "report counters match actual turns and observations after reload",
+    "desktop/tablet/mobile have no horizontal overflow"
+  ],
+  "browser_errors": [],
+  "turns": [
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 5,
+        "current_opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+        "problem": {
+          "problem_id": "LIN-001",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-AX-B-C",
+          "prompt": "Giải phương trình 3x + 5 = 20. Em có thể viết từng bước hoặc nêu nghiệm.",
+          "equation": "3x + 5 = 20",
+          "domain": "real_numbers",
+          "difficulty": "introductory"
+        },
+        "draft": "3x=15\nx=5",
+        "hint_level": 0,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [],
+        "relation": "repeat",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          }
+        ],
+        "eligible_observations": 0,
+        "available_next": 5
+      },
+      "assessment": {
+        "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+        "assessment_status": "verified_correct",
+        "first_error_step": null,
+        "primary_skill_id": "SK-LIN-SOLVE",
+        "error_family": null,
+        "misconception_candidate": null,
+        "diagnosis_status": "unknown",
+        "reason_code": "valid_solution",
+        "evidence": [
+          "task:verified_solution"
+        ],
+        "verification_method": "symbolic_and_rule",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": false,
+        "reason": "repeat"
+      },
+      "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+        "usage": {
+          "input_tokens": 363,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 21,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 384
+        },
+        "action": "confirm",
+        "hint_level": 0,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": null
+    },
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 7,
+        "current_opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "problem": {
+          "problem_id": "LIN-002",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-AX-B-C",
+          "prompt": "Giải phương trình -2x + 7 = 15. Hãy chú ý dấu khi biến đổi.",
+          "equation": "-2x + 7 = 15",
+          "domain": "real_numbers",
+          "difficulty": "introductory"
+        },
+        "draft": "x=",
+        "hint_level": 0,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [],
+        "relation": "initial",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          },
+          {
+            "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+            "action": "submit",
+            "steps": [
+              "x="
+            ],
+            "assessment": {
+              "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+              "assessment_status": "needs_clarification",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "ambiguous_input",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 552,
+                "total_tokens": 592,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "clarify",
+              "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:05.325089Z"
+          }
+        ],
+        "eligible_observations": 0,
+        "available_next": 4
+      },
+      "assessment": {
+        "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+        "assessment_status": "needs_clarification",
+        "first_error_step": null,
+        "primary_skill_id": null,
+        "error_family": null,
+        "misconception_candidate": null,
+        "diagnosis_status": "unknown",
+        "reason_code": "ambiguous_input",
+        "evidence": [],
+        "verification_method": "none",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": false,
+        "reason": "not_verified"
+      },
+      "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+        "usage": {
+          "input_tokens": 552,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 40,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 592
+        },
+        "action": "clarify",
+        "hint_level": 0,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": null
+    },
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 9,
+        "current_opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "problem": {
+          "problem_id": "LIN-002",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-AX-B-C",
+          "prompt": "Giải phương trình -2x + 7 = 15. Hãy chú ý dấu khi biến đổi.",
+          "equation": "-2x + 7 = 15",
+          "domain": "real_numbers",
+          "difficulty": "introductory"
+        },
+        "draft": "Nháp trước khi xin gợi ý",
+        "hint_level": 1,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [],
+        "relation": "initial",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          },
+          {
+            "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+            "action": "submit",
+            "steps": [
+              "x="
+            ],
+            "assessment": {
+              "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+              "assessment_status": "needs_clarification",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "ambiguous_input",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 552,
+                "total_tokens": 592,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "clarify",
+              "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:05.325089Z"
+          },
+          {
+            "turn_id": "769c5916-1b7e-4c2c-9505-3bf23073a591",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "baa4627a-f7be-452b-9b66-702e5bca2ee1",
+            "action": "request_hint",
+            "steps": [],
+            "assessment": {
+              "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+              "assessment_status": "unverified",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "cannot_verify",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 304,
+                "total_tokens": 321,
+                "output_tokens": 17,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:08.465464Z"
+          }
+        ],
+        "eligible_observations": 0,
+        "available_next": 4
+      },
+      "assessment": {
+        "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+        "assessment_status": "unverified",
+        "first_error_step": null,
+        "primary_skill_id": null,
+        "error_family": null,
+        "misconception_candidate": null,
+        "diagnosis_status": "unknown",
+        "reason_code": "cannot_verify",
+        "evidence": [],
+        "verification_method": "none",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": false,
+        "reason": "not_verified"
+      },
+      "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+        "usage": {
+          "input_tokens": 304,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 17,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 321
+        },
+        "action": "hint",
+        "hint_level": 1,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": null
+    },
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 10,
+        "current_opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "problem": {
+          "problem_id": "LIN-002",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-AX-B-C",
+          "prompt": "Giải phương trình -2x + 7 = 15. Hãy chú ý dấu khi biến đổi.",
+          "equation": "-2x + 7 = 15",
+          "domain": "real_numbers",
+          "difficulty": "introductory"
+        },
+        "draft": "x=-4",
+        "hint_level": 1,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [],
+        "relation": "initial",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          },
+          {
+            "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+            "action": "submit",
+            "steps": [
+              "x="
+            ],
+            "assessment": {
+              "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+              "assessment_status": "needs_clarification",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "ambiguous_input",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 552,
+                "total_tokens": 592,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "clarify",
+              "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:05.325089Z"
+          },
+          {
+            "turn_id": "769c5916-1b7e-4c2c-9505-3bf23073a591",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "baa4627a-f7be-452b-9b66-702e5bca2ee1",
+            "action": "request_hint",
+            "steps": [],
+            "assessment": {
+              "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+              "assessment_status": "unverified",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "cannot_verify",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 304,
+                "total_tokens": 321,
+                "output_tokens": 17,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:08.465464Z"
+          },
+          {
+            "turn_id": "f8d32b15-8a39-4942-bfe6-68bfe185121a",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "e0ce6177-2ceb-4057-aee6-2eb62d334706",
+            "action": "submit",
+            "steps": [
+              "x=-4"
+            ],
+            "assessment": {
+              "assessment_id": "3855117e-a231-4bb7-8daa-294d379e1bd4",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 357,
+                "total_tokens": 384,
+                "output_tokens": 27,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0d08d98c4547f657016abe6061c89487d0b989e39bda4133f3",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:11.782821Z"
+          }
+        ],
+        "eligible_observations": 0,
+        "available_next": 4
+      },
+      "assessment": {
+        "assessment_id": "3855117e-a231-4bb7-8daa-294d379e1bd4",
+        "assessment_status": "verified_correct",
+        "first_error_step": null,
+        "primary_skill_id": "SK-LIN-SOLVE",
+        "error_family": null,
+        "misconception_candidate": null,
+        "diagnosis_status": "unknown",
+        "reason_code": "valid_solution",
+        "evidence": [
+          "task:verified_solution"
+        ],
+        "verification_method": "symbolic_and_rule",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": false,
+        "reason": "assisted"
+      },
+      "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_0d08d98c4547f657016abe6061c89487d0b989e39bda4133f3",
+        "usage": {
+          "input_tokens": 357,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 27,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 384
+        },
+        "action": "confirm",
+        "hint_level": 1,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": null
+    },
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 12,
+        "current_opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+        "problem": {
+          "problem_id": "LIN-003",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-A-XB-C",
+          "prompt": "Giải phương trình 2(x - 3) = 10. Em có thể chọn cách biến đổi phù hợp.",
+          "equation": "2(x - 3) = 10",
+          "domain": "real_numbers",
+          "difficulty": "standard"
+        },
+        "draft": "2x-3=10\n2x=13\nx=6.5",
+        "hint_level": 1,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [
+          {
+            "skill_id": "SK-LIN-SOLVE",
+            "mastery": 0.1272727272727273,
+            "evidence_count": 1,
+            "parameter_version": "g2-bootstrap-1.0.0"
+          }
+        ],
+        "relation": "cross_family",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          },
+          {
+            "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+            "action": "submit",
+            "steps": [
+              "x="
+            ],
+            "assessment": {
+              "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+              "assessment_status": "needs_clarification",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "ambiguous_input",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 552,
+                "total_tokens": 592,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "clarify",
+              "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:05.325089Z"
+          },
+          {
+            "turn_id": "769c5916-1b7e-4c2c-9505-3bf23073a591",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "baa4627a-f7be-452b-9b66-702e5bca2ee1",
+            "action": "request_hint",
+            "steps": [],
+            "assessment": {
+              "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+              "assessment_status": "unverified",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "cannot_verify",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 304,
+                "total_tokens": 321,
+                "output_tokens": 17,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:08.465464Z"
+          },
+          {
+            "turn_id": "f8d32b15-8a39-4942-bfe6-68bfe185121a",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "e0ce6177-2ceb-4057-aee6-2eb62d334706",
+            "action": "submit",
+            "steps": [
+              "x=-4"
+            ],
+            "assessment": {
+              "assessment_id": "3855117e-a231-4bb7-8daa-294d379e1bd4",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 357,
+                "total_tokens": 384,
+                "output_tokens": 27,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0d08d98c4547f657016abe6061c89487d0b989e39bda4133f3",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:11.782821Z"
+          },
+          {
+            "turn_id": "6edfeb3c-3651-401f-b925-5b6fc8254fa2",
+            "opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+            "request_id": "33405ab5-21f7-406a-bb5a-bc42edb005f3",
+            "action": "submit",
+            "steps": [
+              "2x-3=10",
+              "2x=13",
+              "x=6.5"
+            ],
+            "assessment": {
+              "assessment_id": "354c48e7-ce59-41c5-9a31-5b47634dda62",
+              "assessment_status": "verified_incorrect",
+              "first_error_step": 1,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": "ERR-LIN-003",
+              "misconception_candidate": "Có thể chỉ phân phối hệ số cho số hạng đầu.",
+              "diagnosis_status": "suspected",
+              "reason_code": "invalid_transformation",
+              "evidence": [
+                "step:1:not_equivalent"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 362,
+                "total_tokens": 384,
+                "output_tokens": 22,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0986a06e87606526016abe606504b487d09cf0ad28d0db023c",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:18.181028Z"
+          }
+        ],
+        "eligible_observations": 1,
+        "available_next": 3
+      },
+      "assessment": {
+        "assessment_id": "354c48e7-ce59-41c5-9a31-5b47634dda62",
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "primary_skill_id": "SK-LIN-SOLVE",
+        "error_family": "ERR-LIN-003",
+        "misconception_candidate": "Có thể chỉ phân phối hệ số cho số hạng đầu.",
+        "diagnosis_status": "suspected",
+        "reason_code": "invalid_transformation",
+        "evidence": [
+          "step:1:not_equivalent"
+        ],
+        "verification_method": "symbolic_and_rule",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": true,
+        "reason": "first_independent_verified"
+      },
+      "message": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_0986a06e87606526016abe606504b487d09cf0ad28d0db023c",
+        "usage": {
+          "input_tokens": 362,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 22,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 384
+        },
+        "action": "hint",
+        "hint_level": 1,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": {
+        "observation_id": "4541bd6a-dde5-418f-b0c6-8e59af16b195",
+        "prediction_before": 0.3400000000000001,
+        "mastery_before": 0.2,
+        "mastery_after": 0.1272727272727273,
+        "evidence_count": 1,
+        "parameter_version": "g2-bootstrap-1.0.0"
+      }
+    },
+    {
+      "session": {
+        "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+        "student_id": "DEMO-STUDENT-02",
+        "status": "active",
+        "state_version": 13,
+        "current_opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+        "problem": {
+          "problem_id": "LIN-003",
+          "content_version": "0.1.0",
+          "concept_id": "CON-LINEAR-01",
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "family_id": "F-A-XB-C",
+          "prompt": "Giải phương trình 2(x - 3) = 10. Em có thể chọn cách biến đổi phù hợp.",
+          "equation": "2(x - 3) = 10",
+          "domain": "real_numbers",
+          "difficulty": "standard"
+        },
+        "draft": "x-3=5\nx=8",
+        "hint_level": 1,
+        "created_at": "2026-10-01T13:29:55.321592Z",
+        "mode": "internal_demo",
+        "review_status": "draft",
+        "tutoring_enabled": true,
+        "mastery": [
+          {
+            "skill_id": "SK-LIN-SOLVE",
+            "mastery": 0.1272727272727273,
+            "evidence_count": 1,
+            "parameter_version": "g2-bootstrap-1.0.0"
+          }
+        ],
+        "relation": "cross_family",
+        "turns": [
+          {
+            "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+            "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+            "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+            "action": "submit",
+            "steps": [
+              "3x=15",
+              "x=5"
+            ],
+            "assessment": {
+              "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 363,
+                "total_tokens": 384,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:02.895523Z"
+          },
+          {
+            "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+            "action": "submit",
+            "steps": [
+              "x="
+            ],
+            "assessment": {
+              "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+              "assessment_status": "needs_clarification",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "ambiguous_input",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 552,
+                "total_tokens": 592,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "clarify",
+              "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+              "hint_level": 0,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:05.325089Z"
+          },
+          {
+            "turn_id": "769c5916-1b7e-4c2c-9505-3bf23073a591",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "baa4627a-f7be-452b-9b66-702e5bca2ee1",
+            "action": "request_hint",
+            "steps": [],
+            "assessment": {
+              "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+              "assessment_status": "unverified",
+              "first_error_step": null,
+              "primary_skill_id": null,
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "cannot_verify",
+              "evidence": [],
+              "verification_method": "none",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 304,
+                "total_tokens": 321,
+                "output_tokens": 17,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:08.465464Z"
+          },
+          {
+            "turn_id": "f8d32b15-8a39-4942-bfe6-68bfe185121a",
+            "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+            "request_id": "e0ce6177-2ceb-4057-aee6-2eb62d334706",
+            "action": "submit",
+            "steps": [
+              "x=-4"
+            ],
+            "assessment": {
+              "assessment_id": "3855117e-a231-4bb7-8daa-294d379e1bd4",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 357,
+                "total_tokens": 384,
+                "output_tokens": 27,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0d08d98c4547f657016abe6061c89487d0b989e39bda4133f3",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:11.782821Z"
+          },
+          {
+            "turn_id": "6edfeb3c-3651-401f-b925-5b6fc8254fa2",
+            "opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+            "request_id": "33405ab5-21f7-406a-bb5a-bc42edb005f3",
+            "action": "submit",
+            "steps": [
+              "2x-3=10",
+              "2x=13",
+              "x=6.5"
+            ],
+            "assessment": {
+              "assessment_id": "354c48e7-ce59-41c5-9a31-5b47634dda62",
+              "assessment_status": "verified_incorrect",
+              "first_error_step": 1,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": "ERR-LIN-003",
+              "misconception_candidate": "Có thể chỉ phân phối hệ số cho số hạng đầu.",
+              "diagnosis_status": "suspected",
+              "reason_code": "invalid_transformation",
+              "evidence": [
+                "step:1:not_equivalent"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 362,
+                "total_tokens": 384,
+                "output_tokens": 22,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "hint",
+              "message": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_0986a06e87606526016abe606504b487d09cf0ad28d0db023c",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:18.181028Z"
+          },
+          {
+            "turn_id": "61215ae0-483c-4142-8df5-1ce01041f2df",
+            "opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+            "request_id": "b5e6d90b-c8e5-402d-906c-41dcf1ee034d",
+            "action": "submit",
+            "steps": [
+              "x-3=5",
+              "x=8"
+            ],
+            "assessment": {
+              "assessment_id": "977004f5-9698-4a83-b97d-af5e347f421e",
+              "assessment_status": "verified_correct",
+              "first_error_step": null,
+              "primary_skill_id": "SK-LIN-SOLVE",
+              "error_family": null,
+              "misconception_candidate": null,
+              "diagnosis_status": "unknown",
+              "reason_code": "valid_solution",
+              "evidence": [
+                "task:verified_solution"
+              ],
+              "verification_method": "symbolic_and_rule",
+              "validator_version": "linear-rational-1.0.0"
+            },
+            "response": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "usage": {
+                "input_tokens": 365,
+                "total_tokens": 386,
+                "output_tokens": 21,
+                "input_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                }
+              },
+              "action": "confirm",
+              "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+              "hint_level": 1,
+              "next_actions": [
+                "submit",
+                "request_hint",
+                "next_problem",
+                "pause",
+                "finish"
+              ],
+              "policy_version": "g2-policy-1.0.0",
+              "prompt_version": "bounded-wording-1.0.0",
+              "fallback_reason": null,
+              "response_source": "openai",
+              "model_response_id": "resp_018192252be02a3e016abe606cdd1087d1bca0b17845ad34a4",
+              "content_review_status": "draft"
+            },
+            "created_at": "2026-10-01T13:30:22.636065Z"
+          }
+        ],
+        "eligible_observations": 1,
+        "available_next": 3
+      },
+      "assessment": {
+        "assessment_id": "977004f5-9698-4a83-b97d-af5e347f421e",
+        "assessment_status": "verified_correct",
+        "first_error_step": null,
+        "primary_skill_id": "SK-LIN-SOLVE",
+        "error_family": null,
+        "misconception_candidate": null,
+        "diagnosis_status": "unknown",
+        "reason_code": "valid_solution",
+        "evidence": [
+          "task:verified_solution"
+        ],
+        "verification_method": "symbolic_and_rule",
+        "validator_version": "linear-rational-1.0.0"
+      },
+      "eligibility": {
+        "eligible": false,
+        "reason": "already_observed"
+      },
+      "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+      "response_source": "openai",
+      "tutor": {
+        "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+        "response_source": "openai",
+        "fallback_reason": null,
+        "model": "gpt-4o-mini-2024-07-18",
+        "model_response_id": "resp_018192252be02a3e016abe606cdd1087d1bca0b17845ad34a4",
+        "usage": {
+          "input_tokens": 365,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 21,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 386
+        },
+        "action": "confirm",
+        "hint_level": 1,
+        "policy_version": "g2-policy-1.0.0",
+        "prompt_version": "bounded-wording-1.0.0",
+        "content_review_status": "draft",
+        "next_actions": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ]
+      },
+      "observation": null
+    }
+  ],
+  "report": {
+    "tutoring_enabled": true,
+    "mastery": [
+      {
+        "skill_id": "SK-LIN-SOLVE",
+        "mastery": 0.1272727272727273,
+        "evidence_count": 1,
+        "parameter_version": "g2-bootstrap-1.0.0"
+      }
+    ],
+    "session_id": "76864236-7a1a-4c29-9982-c3667e054f89",
+    "status": "completed",
+    "independent_correct": 1,
+    "assisted_correct": 2,
+    "valid_observations": 1,
+    "unverified_submissions": 1,
+    "submitted_turns": 5,
+    "problems_viewed": 3,
+    "requested_hints": 1,
+    "completed_at": "2026-10-01T13:30:22.753625Z",
+    "timeline": [
+      {
+        "turn_id": "ec49b663-e108-45b9-834b-29f37e94d41a",
+        "opportunity_id": "36a70731-aca0-4bfb-85f3-6a66184427a7",
+        "request_id": "97fb740f-d130-4def-b568-a90136f50fab",
+        "action": "submit",
+        "steps": [
+          "3x=15",
+          "x=5"
+        ],
+        "assessment": {
+          "assessment_id": "fd4fda40-3ef3-4d74-92d8-96069ff0c4ba",
+          "assessment_status": "verified_correct",
+          "first_error_step": null,
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "valid_solution",
+          "evidence": [
+            "task:verified_solution"
+          ],
+          "verification_method": "symbolic_and_rule",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 363,
+            "total_tokens": 384,
+            "output_tokens": 21,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "confirm",
+          "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+          "hint_level": 0,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_046aa339a7a67c87016abe6058eb7087d08b8dec4dd6a34bd8",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:02.895523Z"
+      },
+      {
+        "turn_id": "7f4b5252-a823-4513-b700-81a18e4af944",
+        "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "request_id": "1a5d5ba8-9395-4d94-9f0b-6a2cddf88c45",
+        "action": "submit",
+        "steps": [
+          "x="
+        ],
+        "assessment": {
+          "assessment_id": "9f11e361-bfb2-4898-a3c0-bd70a3f268cf",
+          "assessment_status": "needs_clarification",
+          "first_error_step": null,
+          "primary_skill_id": null,
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "ambiguous_input",
+          "evidence": [],
+          "verification_method": "none",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 552,
+            "total_tokens": 592,
+            "output_tokens": 40,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "clarify",
+          "message": "Mình chưa thể xác minh phần này. Em hãy viết mỗi phương trình trên một dòng, dùng dấu chấm cho số thập phân và viết rõ phép nhân nhé.",
+          "hint_level": 0,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_0805a8c6db965bc7016abe605c6e1c87d080109c378c5d3a8b",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:05.325089Z"
+      },
+      {
+        "turn_id": "769c5916-1b7e-4c2c-9505-3bf23073a591",
+        "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "request_id": "baa4627a-f7be-452b-9b66-702e5bca2ee1",
+        "action": "request_hint",
+        "steps": [],
+        "assessment": {
+          "assessment_id": "5015757f-2483-4119-847f-b3996bc43379",
+          "assessment_status": "unverified",
+          "first_error_step": null,
+          "primary_skill_id": null,
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "cannot_verify",
+          "evidence": [],
+          "verification_method": "none",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 304,
+            "total_tokens": 321,
+            "output_tokens": 17,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "hint",
+          "message": "Em hãy kiểm tra dấu của hệ số đứng trước x.",
+          "hint_level": 1,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_011571462b4bab72016abe605e973487d186116aed6647820e",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:08.465464Z"
+      },
+      {
+        "turn_id": "f8d32b15-8a39-4942-bfe6-68bfe185121a",
+        "opportunity_id": "8f63d4a0-02e1-4f1e-9dbd-5ee7a202a444",
+        "request_id": "e0ce6177-2ceb-4057-aee6-2eb62d334706",
+        "action": "submit",
+        "steps": [
+          "x=-4"
+        ],
+        "assessment": {
+          "assessment_id": "3855117e-a231-4bb7-8daa-294d379e1bd4",
+          "assessment_status": "verified_correct",
+          "first_error_step": null,
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "valid_solution",
+          "evidence": [
+            "task:verified_solution"
+          ],
+          "verification_method": "symbolic_and_rule",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 357,
+            "total_tokens": 384,
+            "output_tokens": 27,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "confirm",
+          "message": "Cùng tiếp tục nhé. Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+          "hint_level": 1,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_0d08d98c4547f657016abe6061c89487d0b989e39bda4133f3",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:11.782821Z"
+      },
+      {
+        "turn_id": "6edfeb3c-3651-401f-b925-5b6fc8254fa2",
+        "opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+        "request_id": "33405ab5-21f7-406a-bb5a-bc42edb005f3",
+        "action": "submit",
+        "steps": [
+          "2x-3=10",
+          "2x=13",
+          "x=6.5"
+        ],
+        "assessment": {
+          "assessment_id": "354c48e7-ce59-41c5-9a31-5b47634dda62",
+          "assessment_status": "verified_incorrect",
+          "first_error_step": 1,
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "error_family": "ERR-LIN-003",
+          "misconception_candidate": "Có thể chỉ phân phối hệ số cho số hạng đầu.",
+          "diagnosis_status": "suspected",
+          "reason_code": "invalid_transformation",
+          "evidence": [
+            "step:1:not_equivalent"
+          ],
+          "verification_method": "symbolic_and_rule",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 362,
+            "total_tokens": 384,
+            "output_tokens": 22,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "hint",
+          "message": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+          "hint_level": 1,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_0986a06e87606526016abe606504b487d09cf0ad28d0db023c",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:18.181028Z"
+      },
+      {
+        "turn_id": "61215ae0-483c-4142-8df5-1ce01041f2df",
+        "opportunity_id": "bd1c0982-c68d-4a8a-8522-8b610435d469",
+        "request_id": "b5e6d90b-c8e5-402d-906c-41dcf1ee034d",
+        "action": "submit",
+        "steps": [
+          "x-3=5",
+          "x=8"
+        ],
+        "assessment": {
+          "assessment_id": "977004f5-9698-4a83-b97d-af5e347f421e",
+          "assessment_status": "verified_correct",
+          "first_error_step": null,
+          "primary_skill_id": "SK-LIN-SOLVE",
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "valid_solution",
+          "evidence": [
+            "task:verified_solution"
+          ],
+          "verification_method": "symbolic_and_rule",
+          "validator_version": "linear-rational-1.0.0"
+        },
+        "response": {
+          "model": "gpt-4o-mini-2024-07-18",
+          "usage": {
+            "input_tokens": 365,
+            "total_tokens": 386,
+            "output_tokens": 21,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "action": "confirm",
+          "message": "Em đã tìm được nghiệm đúng. Em có muốn thử bài tiếp theo không?",
+          "hint_level": 1,
+          "next_actions": [
+            "submit",
+            "request_hint",
+            "next_problem",
+            "pause",
+            "finish"
+          ],
+          "policy_version": "g2-policy-1.0.0",
+          "prompt_version": "bounded-wording-1.0.0",
+          "fallback_reason": null,
+          "response_source": "openai",
+          "model_response_id": "resp_018192252be02a3e016abe606cdd1087d1bca0b17845ad34a4",
+          "content_review_status": "draft"
+        },
+        "created_at": "2026-10-01T13:30:22.636065Z"
+      }
+    ],
+    "limitations": [
+      "Bản thử nội bộ; nội dung/gợi ý chưa được người có chuyên môn duyệt.",
+      "BKT là ước lượng với tham số khởi tạo, chưa fit dataset hay hiệu chỉnh cho người học Việt Nam.",
+      "Chỉ theo dõi kỹ năng giải phương trình trong phạm vi hỗ trợ; chưa đủ bằng chứng cho các kỹ năng con."
+    ]
+  }
+}

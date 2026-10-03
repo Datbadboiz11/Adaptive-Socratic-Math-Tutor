@@ -1,0 +1,96 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "enum": [
+        "ask",
+        "hint",
+        "different_example",
+        "confirm",
+        "clarify",
+        "offer_pause"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "message": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Message",
+      "type": "string"
+    },
+    "target_skill_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Target Skill Id"
+    },
+    "hint_level": {
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "evidence_ids": {
+      "items": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "content_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "title": "Content Ids",
+      "type": "array"
+    },
+    "next_actions": {
+      "items": {
+        "enum": [
+          "submit",
+          "request_hint",
+          "next_problem",
+          "pause",
+          "finish"
+        ],
+        "type": "string"
+      },
+      "title": "Next Actions",
+      "type": "array"
+    },
+    "response_source": {
+      "enum": [
+        "openai",
+        "reviewed_fallback"
+      ],
+      "title": "Response Source",
+      "type": "string"
+    },
+    "policy_version": {
+      "title": "Policy Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "message",
+    "target_skill_id",
+    "hint_level",
+    "evidence_ids",
+    "content_ids",
+    "next_actions",
+    "response_source",
+    "policy_version"
+  ],
+  "title": "TutorResponse",
+  "type": "object"
+}

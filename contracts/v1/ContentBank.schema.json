@@ -1,0 +1,326 @@
+{
+  "$defs": {
+    "CommonError": {
+      "additionalProperties": false,
+      "properties": {
+        "error_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Error Id",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Steps",
+          "type": "array"
+        },
+        "first_error_step": {
+          "minimum": 1,
+          "title": "First Error Step",
+          "type": "integer"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "hypothesis": {
+          "title": "Hypothesis",
+          "type": "string"
+        },
+        "diagnosis_status": {
+          "const": "suspected",
+          "default": "suspected",
+          "title": "Diagnosis Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "error_id",
+        "steps",
+        "first_error_step",
+        "explanation",
+        "hypothesis"
+      ],
+      "title": "CommonError",
+      "type": "object"
+    },
+    "ProblemPrivate": {
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "content_version": {
+          "title": "Content Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "primary_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Primary Skill Id",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "prompt": {
+          "title": "Prompt",
+          "type": "string"
+        },
+        "equation": {
+          "title": "Equation",
+          "type": "string"
+        },
+        "domain": {
+          "const": "real_numbers",
+          "default": "real_numbers",
+          "title": "Domain",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "source_group": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Group",
+          "type": "string"
+        },
+        "target_scope": {
+          "const": "task_solution",
+          "title": "Target Scope",
+          "type": "string"
+        },
+        "prerequisite_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Prerequisite Skill Ids",
+          "type": "array"
+        },
+        "reference_answer": {
+          "title": "Reference Answer",
+          "type": "string"
+        },
+        "reference_methods": {
+          "items": {
+            "$ref": "#/$defs/ReferenceMethod"
+          },
+          "minItems": 2,
+          "title": "Reference Methods",
+          "type": "array"
+        },
+        "common_errors": {
+          "items": {
+            "$ref": "#/$defs/CommonError"
+          },
+          "minItems": 1,
+          "title": "Common Errors",
+          "type": "array"
+        },
+        "hint_ladder": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Hint Ladder",
+          "type": "array"
+        },
+        "worked_example": {
+          "$ref": "#/$defs/WorkedExample"
+        },
+        "split": {
+          "const": "authoring_dev",
+          "title": "Split",
+          "type": "string"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "problem_id",
+        "content_version",
+        "concept_id",
+        "primary_skill_id",
+        "family_id",
+        "prompt",
+        "equation",
+        "difficulty",
+        "source_group",
+        "target_scope",
+        "prerequisite_skill_ids",
+        "reference_answer",
+        "reference_methods",
+        "common_errors",
+        "hint_ladder",
+        "worked_example",
+        "split",
+        "review"
+      ],
+      "title": "ProblemPrivate",
+      "type": "object"
+    },
+    "ReferenceMethod": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Steps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "steps"
+      ],
+      "title": "ReferenceMethod",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "WorkedExample": {
+      "additionalProperties": false,
+      "properties": {
+        "equation": {
+          "title": "Equation",
+          "type": "string"
+        },
+        "answer": {
+          "title": "Answer",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Steps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "equation",
+        "answer",
+        "steps"
+      ],
+      "title": "WorkedExample",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "topic_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Topic Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "problems": {
+      "items": {
+        "$ref": "#/$defs/ProblemPrivate"
+      },
+      "minItems": 6,
+      "title": "Problems",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "content_version",
+    "topic_id",
+    "title",
+    "problems"
+  ],
+  "title": "ContentBank",
+  "type": "object"
+}

@@ -1,14 +1,14 @@
 # Kế hoạch phần tiếp theo — từ prototype đến MVP G2
 
 **Ngày lập:** 01/10/2026.  
-**Trạng thái:** Chỉ lập kế hoạch; chưa triển khai các hạng mục bên dưới.  
+**Trạng thái:** Đã có nền tảng Phần 1–3 và frontend tích hợp Phần 4 (build đạt); xem [bàn giao Phần 4](../docs/phase4/README.md). Phần 5 có 7 ca API/DB đạt nhưng nghiệm thu browser thủ công còn mở; nội dung vẫn chờ duyệt chuyên môn, chưa hoàn thành toàn bộ MVP.
 **Hạn theo thông báo người dùng cung cấp:** 23:59 Chủ nhật, 04/10/2026. Lịch bên dưới dùng giờ Việt Nam; đối chiếu múi giờ của thông báo trước khi nộp.
 
 ## 1. Điểm xuất phát
 
 - Đã có [brief](../brief_de_tai_socratic_math_tutor.md), [PRD 0.2](../PRD_Adaptive_Socratic_Math_Tutor.md) và [kế hoạch đồ án](../plan_de_tai_socratic_math_tutor.md).
 - Đã có [prototype Mở](../design/README.md), UI flow và kiểm tra giao diện. Phản hồi, hồ sơ và tiến trình trong prototype đang là mô phỏng.
-- Chủ repo đã tạo [Adaptive-Socratic-Math-Tutor](https://github.com/Datbadboiz11/Adaptive-Socratic-Math-Tutor). Thư mục dự án đang được kết nối với repo này; xem [thiết lập repository](../docs/REPOSITORY_SETUP.md). Chưa có backend/frontend sản phẩm hoặc cấu hình chạy các dịch vụ MVP.
+- Repo [Adaptive-Socratic-Math-Tutor](https://github.com/Datbadboiz11/Adaptive-Socratic-Math-Tutor) đã được kết nối; nhánh làm việc `tiendatv1`. Đã có API phiên học, bộ chấm Toán, BKT, LangGraph/checkpoint và OpenAI. UI thử dùng dữ liệu PostgreSQL thật; các thay đổi triển khai còn ở local.
 - Có dữ liệu trong `data/`; việc có file không đồng nghĩa đã tiền xử lý, đánh giá hoặc fit BKT.
 
 ## 2. Đọc và thực hiện theo thứ tự
@@ -83,4 +83,4 @@ TV3 đang có tải tích hợp lớn: TV2 hỗ trợ chuyển UI, report và t�
 - [ ] Video khoảng 3 phút bám một luồng end-to-end.
 - [ ] Các link nộp truy cập được; đã lưu xác nhận gate.
 
-**Bước bắt đầu khi triển khai:** mở phần 1, chốt phạm vi, repository, người phụ trách và môi trường. Các checkbox hiện đều để trống vì đây mới là kế hoạch.
+**Bước tiếp theo:** duyệt nội dung/gợi ý, cấp quyền browser để nghiệm thu build Phần 4 và chạy ít nhất 5 ca manual Phần 5 có ảnh/actual; sau đó đóng gói Phần 6. Checklist tổng phía trên vẫn để trống vì chưa nghiệm thu MVP G2.

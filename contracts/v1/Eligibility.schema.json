@@ -1,0 +1,28 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "eligible": {
+      "title": "Eligible",
+      "type": "boolean"
+    },
+    "reason": {
+      "enum": [
+        "first_independent_verified",
+        "already_observed",
+        "assisted",
+        "not_verified",
+        "not_target_evidence",
+        "near_practice",
+        "repeat"
+      ],
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "eligible",
+    "reason"
+  ],
+  "title": "Eligibility",
+  "type": "object"
+}

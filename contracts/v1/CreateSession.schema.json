@@ -1,0 +1,27 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "format": "uuid",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "demo_profile_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Demo Profile Id",
+      "type": "string"
+    },
+    "topic_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Topic Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_id",
+    "demo_profile_id",
+    "topic_id"
+  ],
+  "title": "CreateSession",
+  "type": "object"
+}

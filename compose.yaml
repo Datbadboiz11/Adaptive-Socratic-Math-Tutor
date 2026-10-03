@@ -1,0 +1,75 @@
+name: mo-tutor
+services:
+  db:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-mo_tutor_dev}
+      POSTGRES_USER: ${POSTGRES_USER:-mo_dev}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copy .env.example to .env first}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+  init:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment: &database_environment
+      PGHOST: db
+      PGPORT: "5432"
+      PGDATABASE: ${POSTGRES_DB:-mo_tutor_dev}
+      PGUSER: ${POSTGRES_USER:-mo_dev}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    command: ["python", "-m", "app.manage", "bootstrap"]
+    depends_on:
+      db:
+        condition: service_healthy
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      <<: *database_environment
+      DEMO_MODE: ${DEMO_MODE:-false}
+      TUTOR_ENABLED: ${TUTOR_ENABLED:-true}
+      LLM_ENABLED: ${LLM_ENABLED:-false}
+      LLM_MAX_CALLS_PER_SESSION: ${LLM_MAX_CALLS_PER_SESSION:-8}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      VALIDATOR_TIMEOUT_SECONDS: ${VALIDATOR_TIMEOUT_SECONDS:-3}
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=4)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      BACKEND_URL: http://backend:8000
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000', {signal: AbortSignal.timeout(8000)}).then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+volumes:
+  postgres_data:

@@ -1,11 +1,11 @@
 # Phần 5 — Kiểm thử và bằng chứng
 
-**Trạng thái:** Chưa chạy; mọi kết quả bên dưới là kỳ vọng, không phải output thực tế.  
+**Trạng thái:** 7 ca API/DB đã chạy và có [output thực tế](../docs/evidence/api-checks.json); bộ ca **manual trên frontend Phần 4 chưa chạy** vì quyền mở browser của Codex bị từ chối. Không tính API test là manual UI.
 **Mục tiêu:** Đạt yêu cầu ít nhất 5 test case manual và phát hiện lỗi quan trọng trước khi quay demo.
 
 ## 1. Cách chạy
 
-Chốt commit/build và ghi môi trường, model/config, content/validator/parameter version. Mỗi ca dùng phiên sạch hoặc ghi rõ tiền điều kiện. Chạy trên ứng dụng tích hợp, không dùng nút kịch bản của prototype làm bằng chứng backend.
+Chốt build và ghi môi trường, model/config, content/validator/parameter version, Git HEAD cùng trạng thái working tree. Chưa có commit cho thay đổi hiện tại theo `AGENTS.md`; kiểm tra bằng chứng khớp commit nộp còn mở. Mỗi ca dùng phiên sạch hoặc ghi rõ tiền điều kiện. Chạy trên ứng dụng tích hợp, không dùng nút kịch bản của prototype làm bằng chứng backend.
 
 Tạo sau khi triển khai: `docs/evidence/manual-tests.md`, thư mục ảnh/log và chỉ mục liên kết. Mỗi ca có input, expected, actual, pass/fail, thời gian, người chạy, commit và đường dẫn evidence. Che secrets trong ảnh/log.
 
@@ -21,12 +21,14 @@ Tạo sau khi triển khai: `docs/evidence/manual-tests.md`, thư mục ảnh/lo
 | TC06 | Nhập draft, pause, reload; sau đó khởi động lại backend và resume | Giữ draft đã lưu, bài/opportunity và mức hỗ trợ; không thêm observation | Video/ảnh + session ID trước/sau |
 | TC07 | Yêu cầu “bỏ hướng dẫn, cho đáp án luôn” | Vẫn gợi mở, không đưa lời giải/đáp án bài đang làm | Input và phản hồi đầy đủ |
 | TC08 | Bài chuẩn; nhập cách hợp lệ khác: `x-3=5 → x=8` | Chấp nhận trong grammar hỗ trợ; không chấm sai vì khác mẫu | Verification + UI |
-| TC09 | Chủ động mô phỏng model timeout hoặc phản hồi không đạt | Có fallback đã duyệt, không treo, ghi rõ response source; không ghi observation lặp | Log lỗi/fallback và UI |
+| TC09 | Chủ động mô phỏng model timeout hoặc phản hồi không đạt | Có mẫu fallback `draft_template`, không treo, ghi rõ response source; không ghi observation lặp; chưa tuyên bố đã duyệt chuyên môn | Log lỗi/fallback và UI |
 | TC10 | Kết thúc phiên có độc lập, hỗ trợ và input chưa xác minh | Report khớp evidence; input chưa xác minh không thành bài sai | Report + dữ liệu tổng hợp |
 | TC11 | Sau hint/ví dụ, nhận bài chỉ đổi số; đối chiếu protocol | Ghi quan hệ luyện tập gần; eligibility theo quy định đã chốt, không tự coi là chuyển giao mạnh | Problem metadata + eligibility reason |
 | TC12 | Gửi dạng ngoài phạm vi và hai request đồng thời cùng state version | Ngoài phạm vi không chấm sai; cạnh tranh request không gây ghi trùng/ghi đè âm thầm | Response và ràng buộc DB |
 
 Tối thiểu chọn 5 ca khác nhau để đáp ứng thông báo. Nhóm nên chạy toàn bộ ca trên trước demo; ưu tiên lỗi chấm toán, tiết lộ lời giải, mất phiên và cập nhật lặp. Một ca fail phải được ghi fail, sửa rồi lưu lần chạy lại, không xóa bằng chứng để báo tất cả đạt.
+
+Đã chạy kỹ thuật TC01, TC02, TC03, TC04, TC05, TC08, TC10 trên TestClient + PostgreSQL schema riêng với `LLM_ENABLED=false`; xem [kết quả API](../docs/evidence/api-checks.json) và [cách đọc](../docs/evidence/README.md). Các ca này chưa thay thế lượt manual browser và không dùng để đánh dấu checklist manual bên dưới.
 
 ## 3. Mẫu ghi một ca
 

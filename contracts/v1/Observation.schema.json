@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "observation_id": {
+      "format": "uuid",
+      "title": "Observation Id",
+      "type": "string"
+    },
+    "opportunity_id": {
+      "format": "uuid",
+      "title": "Opportunity Id",
+      "type": "string"
+    },
+    "student_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Student Id",
+      "type": "string"
+    },
+    "skill_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Skill Id",
+      "type": "string"
+    },
+    "assessment_id": {
+      "format": "uuid",
+      "title": "Assessment Id",
+      "type": "string"
+    },
+    "correct": {
+      "title": "Correct",
+      "type": "boolean"
+    },
+    "prediction_before": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Prediction Before",
+      "type": "number"
+    },
+    "mastery_before": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Mastery Before",
+      "type": "number"
+    },
+    "mastery_after": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Mastery After",
+      "type": "number"
+    },
+    "parameter_version": {
+      "title": "Parameter Version",
+      "type": "string"
+    },
+    "eligibility_protocol_version": {
+      "const": "g2-v1",
+      "title": "Eligibility Protocol Version",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "observation_id",
+    "opportunity_id",
+    "student_id",
+    "skill_id",
+    "assessment_id",
+    "correct",
+    "prediction_before",
+    "mastery_before",
+    "mastery_after",
+    "parameter_version",
+    "eligibility_protocol_version",
+    "created_at"
+  ],
+  "title": "Observation",
+  "type": "object"
+}

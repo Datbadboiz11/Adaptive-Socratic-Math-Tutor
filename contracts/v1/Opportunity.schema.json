@@ -1,0 +1,92 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "opportunity_id": {
+      "format": "uuid",
+      "title": "Opportunity Id",
+      "type": "string"
+    },
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "student_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Student Id",
+      "type": "string"
+    },
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "target_skill_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Target Skill Id",
+      "type": "string"
+    },
+    "target_scope": {
+      "const": "task_solution",
+      "title": "Target Scope",
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "initial",
+        "near_practice",
+        "cross_family",
+        "repeat"
+      ],
+      "title": "Relation",
+      "type": "string"
+    },
+    "related_problem_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Related Problem Id"
+    },
+    "assistance_level": {
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Assistance Level",
+      "type": "integer"
+    },
+    "has_standard_observation": {
+      "default": false,
+      "title": "Has Standard Observation",
+      "type": "boolean"
+    },
+    "eligibility_protocol_version": {
+      "const": "g2-v1",
+      "title": "Eligibility Protocol Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "opportunity_id",
+    "session_id",
+    "student_id",
+    "problem_id",
+    "content_version",
+    "target_skill_id",
+    "target_scope",
+    "relation",
+    "assistance_level",
+    "eligibility_protocol_version"
+  ],
+  "title": "Opportunity",
+  "type": "object"
+}

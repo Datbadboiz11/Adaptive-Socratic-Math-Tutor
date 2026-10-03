@@ -1,6 +1,6 @@
 # Phần 4 — Frontend và tích hợp
 
-**Trạng thái:** Chưa thực hiện.  
+**Trạng thái:** Đã triển khai frontend tích hợp và build đạt; nghiệm thu browser trên bản frontend mới còn chờ quyền truy cập. Xem [bàn giao Phần 4](../docs/phase4/README.md).
 **Đầu vào:** Prototype `design/`, contract phần 1 và API phần 2–3.  
 **Mục tiêu:** Người dùng đi hết một phiên học bằng UI và backend thật.
 
@@ -8,10 +8,10 @@
 
 Giữ hướng xanh ngọc–kem, bố cục và nội dung phù hợp từ prototype. Chuyển thành component trong frontend sản phẩm theo stack PRD; giữ `design/` làm bản tham chiếu.
 
-- [ ] App shell, danh sách chủ đề thực sự hỗ trợ, bài làm, tutor panel và report.
-- [ ] Render công thức, trạng thái nút, bàn phím, focus và bố cục điện thoại.
-- [ ] Bỏ thanh Wireframe/Luồng/Kịch bản khỏi luồng sản phẩm; có thể giữ công cụ demo riêng và gắn nhãn rõ.
-- [ ] Thay `classify()`, phản hồi soạn sẵn và số liệu lịch sử bằng API. Không mang logic chấm mẫu ở `design/app.js` vào backend.
+- [x] App shell, danh sách chủ đề từ API, bài làm, tutor panel và report từ server.
+- [x] Hiển thị phương trình trong phạm vi hỗ trợ, trạng thái nút, Ctrl+Enter, focus phản hồi và bố cục điện thoại; còn cần nghiệm thu browser trên bản build mới.
+- [x] Luồng sản phẩm không có thanh Wireframe/Luồng/Kịch bản; prototype `design/` giữ riêng.
+- [x] Bài, phản hồi và số liệu lịch sử dùng API; không đưa `classify()` từ `design/app.js` vào sản phẩm.
 
 ## 2. Ưu tiên màn hình
 
@@ -46,10 +46,10 @@ Giữ hướng xanh ngọc–kem, bố cục và nội dung phù hợp từ prot
 
 ## 5. Điều kiện xong
 
-- [ ] Không có bước nào trong hành trình chính phải thao tác DB thủ công để tiếp tục.
-- [ ] Bài, phản hồi và report đều từ API; dữ liệu demo được gắn nhãn trung thực.
-- [ ] Draft, hỗ trợ và cơ hội học không bị mất/nhân đôi khi resume.
-- [ ] Màn hình sử dụng được ở điện thoại khoảng 390px và desktop khoảng 1440px.
-- [ ] UI không lộ đáp án từ payload bài, không chứa API key hoặc lỗi nội bộ thô.
+- [x] Không có bước nào trong hành trình chính phải thao tác DB thủ công để tiếp tục.
+- [x] Bài, phản hồi và report đều từ API; dữ liệu demo được gắn nhãn trung thực.
+- [ ] Chạy lại hành trình draft, retry, hỗ trợ và resume trên bản frontend Phần 4 sau build.
+- [ ] Chụp lại và kiểm tra bản frontend Phần 4 tại 390px và 1440px; ảnh Phần 3 là bản trước thay đổi.
+- [ ] Kiểm tra UI bản mới không lộ đáp án từ payload, API key hoặc lỗi nội bộ thô trong browser.
 
 **Bàn giao:** Bản chạy end-to-end cho [phần 5](phan5_kiem_thu_va_bang_chung.md).

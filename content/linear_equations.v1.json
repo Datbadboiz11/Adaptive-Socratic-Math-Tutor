@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "0.1.0",
+  "topic_id": "TOPIC-LINEAR-01",
+  "title": "Phương trình bậc nhất một ẩn",
+  "problems": [
+    {
+      "problem_id": "LIN-001", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-AX-B-C", "source_group": "G-LIN-ISOLATE",
+      "prompt": "Giải phương trình 3x + 5 = 20. Em có thể viết từng bước hoặc nêu nghiệm.",
+      "equation": "3x + 5 = 20", "domain": "real_numbers", "difficulty": "introductory",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-SIGNED-OPS"],
+      "reference_answer": "5",
+      "reference_methods": [
+        {"name": "Trừ rồi chia", "steps": ["3x = 15", "x = 5"]},
+        {"name": "Chia hai vế trước", "steps": ["x + 5/3 = 20/3", "x = 15/3", "x = 5"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-001", "steps": ["3x = 25", "x = 25/3"], "first_error_step": 1, "explanation": "Cộng 5 vào vế phải khi muốn loại +5 ở vế trái không giữ tương đương.", "hypothesis": "Có thể chưa hiểu phép toán ngược hoặc cách giữ cân bằng hai vế.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Em muốn giữ lại phần nào ở vế trái?", "Phép toán nào có thể loại +5? Nếu làm ở một vế thì vế kia cần làm gì?", "Sau khi loại hằng số, em sẽ dùng phép toán nào để tìm một phần x từ nhiều phần bằng nhau?"],
+      "worked_example": {"equation": "2x + 4 = 18", "answer": "7", "steps": ["2x = 14", "x = 7"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Bài tự biên soạn cho MVP; không trích dataset", "human_reviewer": null, "reviewed_at": null}
+    },
+    {
+      "problem_id": "LIN-002", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-AX-B-C", "source_group": "G-LIN-ISOLATE",
+      "prompt": "Giải phương trình -2x + 7 = 15. Hãy chú ý dấu khi biến đổi.",
+      "equation": "-2x + 7 = 15", "domain": "real_numbers", "difficulty": "introductory",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-SIGNED-OPS"],
+      "reference_answer": "-4",
+      "reference_methods": [
+        {"name": "Trừ rồi chia số âm", "steps": ["-2x = 8", "x = -4"]},
+        {"name": "Chuyển về hệ số dương", "steps": ["7 = 15 + 2x", "-8 = 2x", "x = -4"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-002", "steps": ["-2x = 8", "x = 4"], "first_error_step": 2, "explanation": "Bước đầu hợp lệ; chia 8 cho -2 ở bước 2 phải giữ dấu âm.", "hypothesis": "Có thể nhầm dấu khi chia số khác dấu.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Em hãy kiểm tra dấu của hệ số đứng trước x.", "Thương của hai số khác dấu có dấu gì?", "Em có thể thế giá trị mình tìm được vào phương trình ban đầu để so sánh hai vế không?"],
+      "worked_example": {"equation": "-3x + 2 = 20", "answer": "-6", "steps": ["-3x = 18", "x = -6"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Bài tự biên soạn cho MVP; không trích dataset", "human_reviewer": null, "reviewed_at": null}
+    },
+    {
+      "problem_id": "LIN-003", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-A-XB-C", "source_group": "G-LIN-DISTRIBUTE",
+      "prompt": "Giải phương trình 2(x - 3) = 10. Em có thể chọn cách biến đổi phù hợp.",
+      "equation": "2(x - 3) = 10", "domain": "real_numbers", "difficulty": "standard",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-DISTRIBUTE"],
+      "reference_answer": "8",
+      "reference_methods": [
+        {"name": "Khai triển trước", "steps": ["2x - 6 = 10", "2x = 16", "x = 8"]},
+        {"name": "Chia hai vế trước", "steps": ["x - 3 = 5", "x = 8"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-003", "steps": ["2x - 3 = 10", "2x = 13", "x = 6.5"], "first_error_step": 1, "explanation": "Bước 1 không nhân 2 với -3. Bước 2 và 3 hợp lệ theo phương trình sai đang có, không ghi thêm hai lỗi mới.", "hypothesis": "Có thể chỉ phân phối hệ số cho số hạng đầu.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.", "Nếu viết (x - 3) + (x - 3), phần -3 xuất hiện bao nhiêu lần?", "Một số nhân với một tổng hoặc hiệu tác động lên những số hạng nào? Em thử kiểm tra lại từng số hạng nhé."],
+      "worked_example": {"equation": "3(x - 2) = 9", "answer": "5", "steps": ["3x - 6 = 9", "3x = 15", "x = 5"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Ví dụ tự biên soạn theo brief VIN-02", "human_reviewer": null, "reviewed_at": null}
+    },
+    {
+      "problem_id": "LIN-004", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-A-XB-C", "source_group": "G-LIN-DISTRIBUTE",
+      "prompt": "Giải phương trình -3(x + 2) = 12. Em hãy trình bày cách làm của mình.",
+      "equation": "-3(x + 2) = 12", "domain": "real_numbers", "difficulty": "standard",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-DISTRIBUTE", "SK-SIGNED-OPS"],
+      "reference_answer": "-6",
+      "reference_methods": [
+        {"name": "Khai triển hệ số âm", "steps": ["-3x - 6 = 12", "-3x = 18", "x = -6"]},
+        {"name": "Chia trước", "steps": ["x + 2 = -4", "x = -6"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-004", "steps": ["-3x + 6 = 12", "-3x = 6", "x = -2"], "first_error_step": 1, "explanation": "Tích của -3 với +2 bị ghi sai dấu ở bước khai triển.", "hypothesis": "Có thể nhầm dấu của tích khi phân phối hệ số âm.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Em kiểm tra dấu của từng tích khi bỏ ngoặc nhé.", "Hệ số ngoài ngoặc có dấu gì? Từng số hạng trong ngoặc có dấu gì?", "Hãy tính riêng tích với số hạng không chứa x, rồi ghép lại biểu thức. Hai vế còn tương đương không?"],
+      "worked_example": {"equation": "-2(x + 1) = 4", "answer": "-3", "steps": ["-2x - 2 = 4", "-2x = 6", "x = -3"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Bài tự biên soạn cho MVP; không trích dataset", "human_reviewer": null, "reviewed_at": null}
+    },
+    {
+      "problem_id": "LIN-005", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-AXB-CXD", "source_group": "G-LIN-BOTH-SIDES",
+      "prompt": "Giải phương trình 5x - 4 = 2x + 11. Em muốn gom các số hạng chứa x về vế nào?",
+      "equation": "5x - 4 = 2x + 11", "domain": "real_numbers", "difficulty": "standard",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-COMBINE-TERMS"],
+      "reference_answer": "5",
+      "reference_methods": [
+        {"name": "Gom x sang trái", "steps": ["3x - 4 = 11", "3x = 15", "x = 5"]},
+        {"name": "Gom x sang phải", "steps": ["-4 = -3x + 11", "-15 = -3x", "x = 5"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-005", "steps": ["7x - 4 = 11", "7x = 15", "x = 15/7"], "first_error_step": 1, "explanation": "Muốn loại 2x ở vế phải phải trừ 2x ở cả hai vế, không cộng vào hệ số trái.", "hypothesis": "Có thể dùng quy tắc chuyển vế mà chưa giữ phép toán cân bằng.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Em muốn loại số hạng chứa x ở vế nào trước?", "Nếu trừ cùng một số hạng ở hai vế, mỗi vế còn lại những gì?", "Em hãy viết rõ phép toán trên cả hai vế trước khi thu gọn, thay vì chuyển vế trong đầu."],
+      "worked_example": {"equation": "4x + 1 = x + 10", "answer": "3", "steps": ["3x + 1 = 10", "3x = 9", "x = 3"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Bài tự biên soạn cho MVP; không trích dataset", "human_reviewer": null, "reviewed_at": null}
+    },
+    {
+      "problem_id": "LIN-006", "content_version": "0.1.0",
+      "concept_id": "CON-LINEAR-01", "primary_skill_id": "SK-LIN-SOLVE",
+      "family_id": "F-AXB-CXD", "source_group": "G-LIN-BOTH-SIDES",
+      "prompt": "Giải phương trình 2x + 3 = 4x - 8. Nghiệm có thể viết dưới dạng phân số.",
+      "equation": "2x + 3 = 4x - 8", "domain": "real_numbers", "difficulty": "standard",
+      "target_scope": "task_solution", "prerequisite_skill_ids": ["SK-EQUALITY", "SK-COMBINE-TERMS", "SK-FRACTIONS"],
+      "reference_answer": "11/2",
+      "reference_methods": [
+        {"name": "Gom x sang phải", "steps": ["3 = 2x - 8", "11 = 2x", "x = 11/2"]},
+        {"name": "Gom x sang trái", "steps": ["-2x + 3 = -8", "-2x = -11", "x = 5.5"]}
+      ],
+      "common_errors": [{"error_id": "ERR-LIN-006", "steps": ["3 = 2x - 8", "-5 = 2x", "x = -2.5"], "first_error_step": 2, "explanation": "Bước 1 đúng. Muốn loại -8 ở phải cần cộng 8 vào cả hai vế; bước 2 đã trừ 8 ở trái.", "hypothesis": "Có thể nhầm phép toán ngược với hằng số âm.", "diagnosis_status": "suspected"}],
+      "hint_ladder": ["Dòng đầu đã gom được các số hạng chứa x. Em kiểm tra bước xử lý hằng số tiếp theo nhé.", "Để loại một số hạng âm, em sẽ cộng hay trừ giá trị nào ở cả hai vế?", "Sau khi tìm được nghiệm, em thử tính riêng hai vế của đề để kiểm tra."],
+      "worked_example": {"equation": "3x + 1 = 5x - 6", "answer": "7/2", "steps": ["1 = 2x - 6", "7 = 2x", "x = 7/2"]},
+      "split": "authoring_dev",
+      "review": {"status": "draft", "author": "AI-assisted project authoring", "source": "Bài tự biên soạn cho MVP; không trích dataset", "human_reviewer": null, "reviewed_at": null}
+    }
+  ]
+}

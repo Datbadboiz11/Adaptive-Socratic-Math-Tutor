@@ -2,11 +2,15 @@
 from pathlib import Path
 import re
 import subprocess
+import sys
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
+git_arguments = ["git", "ls-files", "--cached"]
+if "--include-untracked" in sys.argv:
+    git_arguments.extend(["--others", "--exclude-standard"])
 tracked = subprocess.check_output(
-    ["git", "ls-files", "-z"], cwd=ROOT
+    [*git_arguments, "-z"], cwd=ROOT
 ).decode("utf-8").split("\0")
 errors = []
 for name in filter(None, tracked):
