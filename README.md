@@ -2,11 +2,13 @@
 
 Trợ lý học Toán bằng câu hỏi gợi mở, thuộc đề tài **VIN-02: Nghiên cứu và xây dựng trợ lý AI dạy học Toán theo phương pháp Socratic thích ứng sử dụng AI Agent**.
 
+Xem [cấu trúc thư mục](docs/development/project-structure.md) và [mục lục tài liệu](docs/README.md). PRD nằm tại `docs/product/prd.md`; kế hoạch tổng nằm tại `docs/planning/project-plan.md`.
+
 ## Trạng thái hiện tại
 
 Repository đã có **nền tảng Phần 1–3 và frontend tích hợp Phần 4**: kiểm tra phương trình bằng SymPy, observation/BKT, LangGraph/checkpoint PostgreSQL, OpenAI và web dùng API thật. Phần 5 đã có 7 ca API/DB thực tế; nghiệm thu thủ công trên build frontend mới còn mở. Chỉ phục vụ thử nội bộ: nội dung/gợi ý chưa duyệt chuyên môn, BKT chưa fit dataset, chưa có đăng nhập sản phẩm. Các phản hồi trong `design/` vẫn là mô phỏng độc lập.
 
-Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt MVP G2 đề xuất tập trung vào một chủ đề chạy end-to-end; xem [kế hoạch MVP](plan/README.md).
+Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt MVP G2 đề xuất tập trung vào một chủ đề chạy end-to-end; xem [kế hoạch MVP](docs/planning/mvp/README.md).
 
 ## Xem prototype
 
@@ -31,7 +33,7 @@ Prototype lưu phiên trong localStorage của trình duyệt. Font web là tùy
 
 ## Chạy ứng dụng Phần 3
 
-Đọc [bộ bàn giao Phần 3](docs/phase3/README.md) để xem cách chạy, thứ tự đọc code và giới hạn. `.env` cần `DEMO_MODE=true`, `TUTOR_ENABLED=true`. `LLM_ENABLED=true` dùng key/model server để gọi OpenAI; khi tắt hoặc API lỗi, ứng dụng dùng mẫu gợi mở có nhãn thử nghiệm. Không tự coi mẫu này là nội dung đã được người duyệt.
+Đọc [bộ bàn giao Phần 3](docs/implementation/mvp/phase3/README.md) để xem cách chạy, thứ tự đọc code và giới hạn. `.env` cần `DEMO_MODE=true`, `TUTOR_ENABLED=true`. `LLM_ENABLED=true` dùng key/model server để gọi OpenAI; khi tắt hoặc API lỗi, ứng dụng dùng mẫu gợi mở có nhãn thử nghiệm. Không tự coi mẫu này là nội dung đã được người duyệt.
 
 Từ thư mục gốc repo, bật Docker Desktop rồi chạy:
 
@@ -40,7 +42,7 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 docker compose up --build -d --wait
 ```
 
-Mở <http://localhost:3000> → chọn hồ sơ → **Bắt đầu phiên thử**. Phiên mới dùng bộ chấm/gia sư; phiên Phần 2 vẫn giữ chế độ chỉ lưu trữ. Service `init` tự migration/seed. Nếu Docker báo lỗi BuildKit trên đường dẫn có dấu, xem [cách xử lý](docs/phase3/README.md). Dataset lớn trong `data/` chưa được xử lý và không chặn bản thử này.
+Mở <http://localhost:3000> → chọn hồ sơ → **Bắt đầu phiên thử**. Phiên mới dùng bộ chấm/gia sư; phiên Phần 2 vẫn giữ chế độ chỉ lưu trữ. Service `init` tự migration/seed. Nếu Docker báo lỗi BuildKit trên đường dẫn có dấu, xem [cách xử lý](docs/implementation/mvp/phase3/README.md). Dataset lớn trong `data/` chưa được xử lý và không chặn bản thử này.
 
 ## Thử luồng prototype riêng trong design/
 
@@ -56,23 +58,23 @@ Chọn **Kịch bản → Bắt đầu bài**, với đề `2(x - 3) = 10`:
 
 | Tài liệu | Nội dung |
 |---|---|
-| [Brief](brief_de_tai_socratic_math_tutor.md) | Bài toán, phạm vi và giá trị nghiên cứu |
-| [PRD](PRD_Adaptive_Socratic_Math_Tutor.md) | Yêu cầu chức năng, dữ liệu và nghiệm thu |
-| [Kế hoạch đồ án](plan_de_tai_socratic_math_tutor.md) | Lộ trình đầy đủ và thực nghiệm |
-| [Kế hoạch phần tiếp theo](plan/README.md) | 6 phần triển khai và bàn giao MVP G2 |
-| [Bàn giao Phần 1](docs/phase1/README.md) | Nội dung, hợp đồng dữ liệu, protocol và khung môi trường |
-| [Bàn giao Phần 2](docs/phase2/README.md) | API/DB, chạy web, thứ tự đọc code và giới hạn |
-| [Kiến trúc Phần 2](docs/phase2/ARCHITECTURE.md) | Sơ đồ thực tế, bảng DB, transaction và API |
-| [Kiểm tra Phần 2](docs/phase2/TESTING.md) | Test tích hợp, trình duyệt, restart/DB outage và evidence |
-| [Bàn giao Phần 3](docs/phase3/README.md) | Bộ chấm, BKT, LangGraph/OpenAI, cách thử và đọc code |
-| [Kiến trúc Phần 3](docs/phase3/ARCHITECTURE.md) | Grammar, transaction, checkpoint, tham số và giới hạn model |
-| [Kiểm tra Phần 3](docs/phase3/TESTING.md) | Hồi quy Toán/BKT, phục hồi và evidence OpenAI thật |
-| [Bàn giao Phần 4](docs/phase4/README.md) | Giao diện tích hợp, chủ đề, nháp, lỗi mạng và cách chạy build mới |
-| [Bằng chứng Phần 5](docs/evidence/README.md) | Kết quả API/DB và trạng thái nghiệm thu manual |
+| [Brief](docs/product/brief.md) | Bài toán, phạm vi và giá trị nghiên cứu |
+| [PRD](docs/product/prd.md) | Yêu cầu chức năng, dữ liệu và nghiệm thu |
+| [Kế hoạch đồ án](docs/planning/project-plan.md) | Lộ trình đầy đủ và thực nghiệm |
+| [Kế hoạch phần tiếp theo](docs/planning/mvp/README.md) | 6 phần triển khai và bàn giao MVP G2 |
+| [Bàn giao Phần 1](docs/implementation/mvp/phase1/README.md) | Nội dung, hợp đồng dữ liệu, protocol và khung môi trường |
+| [Bàn giao Phần 2](docs/implementation/mvp/phase2/README.md) | API/DB, chạy web, thứ tự đọc code và giới hạn |
+| [Kiến trúc Phần 2](docs/implementation/mvp/phase2/ARCHITECTURE.md) | Sơ đồ thực tế, bảng DB, transaction và API |
+| [Kiểm tra Phần 2](docs/implementation/mvp/phase2/TESTING.md) | Test tích hợp, trình duyệt, restart/DB outage và evidence |
+| [Bàn giao Phần 3](docs/implementation/mvp/phase3/README.md) | Bộ chấm, BKT, LangGraph/OpenAI, cách thử và đọc code |
+| [Kiến trúc Phần 3](docs/implementation/mvp/phase3/ARCHITECTURE.md) | Grammar, transaction, checkpoint, tham số và giới hạn model |
+| [Kiểm tra Phần 3](docs/implementation/mvp/phase3/TESTING.md) | Hồi quy Toán/BKT, phục hồi và evidence OpenAI thật |
+| [Bàn giao Phần 4](docs/implementation/mvp/phase4/README.md) | Giao diện tích hợp, chủ đề, nháp, lỗi mạng và cách chạy build mới |
+| [Bằng chứng Phần 5](docs/implementation/mvp/phase5/README.md) | Kết quả API/DB và trạng thái nghiệm thu manual |
 | [Đặc tả thiết kế](design/DESIGN_SPEC.md) | Màu sắc, bố cục, component và trạng thái |
 | [UI flow](design/USER_FLOWS.md) | Luồng sử dụng và ngoại lệ |
 | [Quy trình đóng góp](CONTRIBUTING.md) | Nhánh, PR và review |
-| [Thiết lập repository](docs/REPOSITORY_SETUP.md) | Cấu hình và những việc cần quản lý trên GitHub |
+| [Thiết lập repository](docs/development/repository-setup.md) | Cấu hình và những việc cần quản lý trên GitHub |
 
 ## Kiểm tra
 
@@ -81,10 +83,10 @@ Kiểm tra cơ bản dùng Node.js và Python 3, không cần thư viện ngoài
 ```powershell
 node --check design/app.js
 python -m py_compile design/audit_ui.py
-python scripts/check_repository.py
+python scripts/checks/check_repository.py
 ```
 
-GitHub Actions được cấu hình chạy kiểm tra tài liệu, content/contract, validator/BKT, API với PostgreSQL thật và build frontend. CI không gọi OpenAI trả phí. Xem [hướng dẫn kiểm tra Phần 3](docs/phase3/TESTING.md); tests kỹ thuật chưa chứng minh chất lượng dự đoán BKT hoặc hiệu quả học tập.
+GitHub Actions được cấu hình chạy kiểm tra tài liệu, content/contract, validator/BKT, API với PostgreSQL thật và build frontend. CI không gọi OpenAI trả phí. Xem [hướng dẫn kiểm tra Phần 3](docs/implementation/mvp/phase3/TESTING.md); tests kỹ thuật chưa chứng minh chất lượng dự đoán BKT hoặc hiệu quả học tập.
 
 Để chạy kiểm tra trình duyệt tùy chọn trong một môi trường Python riêng:
 
@@ -104,6 +106,8 @@ Runner ghi lại ảnh và kết quả trong `design/previews/`; xem diff trư�
 
 ## Dữ liệu và thông tin nhạy cảm
 
-`data/` không được đưa lên Git vì chứa dataset tải riêng. Các bộ dữ liệu bên ngoài cần tuân thủ điều kiện truy cập/sử dụng; README dữ liệu và pipeline tái lập sẽ được bổ sung khi triển khai phần nghiên cứu. API keys, `.env`, môi trường ảo và file DB cục bộ cũng được bỏ qua.
+`data/` không được đưa lên Git vì chứa dataset tải riêng. Các bộ dữ liệu bên ngoài cần tuân thủ điều kiện truy cập/sử dụng; pipeline tiền xử lý và thực nghiệm tái lập sẽ được bổ sung trong phần nghiên cứu. API keys, `.env`, môi trường ảo và file DB cục bộ cũng được bỏ qua.
+
+Đã có [báo cáo kiểm kê ASSISTments 2017](docs/research/data/README.md) và script đọc log theo dòng. Đây mới là audit schema/chất lượng; chưa tạo observation chuẩn hóa, fit BKT hoặc kiểm chứng ánh xạ skill sang chương trình Việt Nam.
 
 Chưa chọn giấy phép phân phối mã nguồn; không tự áp một giấy phép cho dataset bên ngoài. Nhóm sẽ quyết định giấy phép phù hợp sau.

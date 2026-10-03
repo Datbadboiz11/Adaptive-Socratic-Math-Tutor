@@ -1,0 +1,494 @@
+{
+  "dataset": "ASSISTments 2017 competition training set",
+  "source_directory": "ASSISTments Data Mining Competition Dataset-20260917T133524Z-1-001/ASSISTments Data Mining Competition Dataset/Competition Training Set/anonymized_dataset_for_ADM2017",
+  "sampled": false,
+  "max_rows_per_file": null,
+  "log_columns": [
+    "ITEST_id",
+    "SY ASSISTments Usage",
+    "AveKnow",
+    "AveCarelessness",
+    "AveCorrect",
+    "NumActions",
+    "AveResBored",
+    "AveResEngcon",
+    "AveResConf",
+    "AveResFrust",
+    "AveResOfftask",
+    "AveResGaming",
+    "actionId",
+    "skill",
+    "problemId",
+    "assignmentId",
+    "assistmentId",
+    "startTime",
+    "endTime",
+    "timeTaken",
+    "correct",
+    "original",
+    "hint",
+    "hintCount",
+    "hintTotal",
+    "scaffold",
+    "bottomHint",
+    "attemptCount",
+    "problemType",
+    "frIsHelpRequest",
+    "frPast5HelpRequest",
+    "frPast8HelpRequest",
+    "stlHintUsed",
+    "past8BottomOut",
+    "totalFrPercentPastWrong",
+    "totalFrPastWrongCount",
+    "frPast5WrongCount",
+    "frPast8WrongCount",
+    "totalFrTimeOnSkill",
+    "timeSinceSkill",
+    "frWorkingInSchool",
+    "totalFrAttempted",
+    "totalFrSkillOpportunities",
+    "responseIsFillIn",
+    "responseIsChosen",
+    "endsWithScaffolding",
+    "endsWithAutoScaffolding",
+    "frTimeTakenOnScaffolding",
+    "frTotalSkillOpportunitiesScaffolding",
+    "totalFrSkillOpportunitiesByScaffolding",
+    "frIsHelpRequestScaffolding",
+    "timeGreater5Secprev2wrong",
+    "sumRight",
+    "helpAccessUnder2Sec",
+    "timeGreater10SecAndNextActionRight",
+    "consecutiveErrorsInRow",
+    "sumTime3SDWhen3RowRight",
+    "sumTimePerSkill",
+    "totalTimeByPercentCorrectForskill",
+    "prev5count",
+    "timeOver80",
+    "manywrong",
+    "confidence(BORED)",
+    "confidence(CONCENTRATING)",
+    "confidence(CONFUSED)",
+    "confidence(FRUSTRATED)",
+    "confidence(OFF TASK)",
+    "confidence(GAMING)",
+    "RES_BORED",
+    "RES_CONCENTRATING",
+    "RES_CONFUSED",
+    "RES_FRUSTRATED",
+    "RES_OFFTASK",
+    "RES_GAMING",
+    "Ln-1",
+    "Ln"
+  ],
+  "case_only_schema_variants": {
+    "student_log_3.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_4.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_5.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_6.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_7.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_8.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_9.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ],
+    "student_log_10.csv": [
+      {
+        "reference": "prev5count",
+        "actual": "Prev5count"
+      }
+    ]
+  },
+  "log_files": [
+    {
+      "file": "student_log_1.csv",
+      "size_bytes": 108111584,
+      "counts": {
+        "rows": 231403
+      },
+      "field_values": {
+        "correct": {
+          "0": 149909,
+          "1": 81494
+        },
+        "original": {
+          "0": 172543,
+          "1": 58860
+        },
+        "hint": {
+          "0": 147598,
+          "1": 83805
+        },
+        "scaffold": {
+          "0": 149116,
+          "1": 82287
+        },
+        "attemptCount": {
+          "1": 98522,
+          "2": 43369,
+          "3": 31116,
+          "4+": 58396
+        }
+      }
+    },
+    {
+      "file": "student_log_2.csv",
+      "size_bytes": 172618892,
+      "counts": {
+        "rows": 365839,
+        "time_regressions_in_file_order": 2554
+      },
+      "field_values": {
+        "correct": {
+          "0": 235877,
+          "1": 129962
+        },
+        "original": {
+          "0": 266867,
+          "1": 98972
+        },
+        "hint": {
+          "0": 234029,
+          "1": 131810
+        },
+        "scaffold": {
+          "0": 242888,
+          "1": 122951
+        },
+        "attemptCount": {
+          "1": 155819,
+          "2": 69276,
+          "3": 48894,
+          "4+": 91850
+        }
+      }
+    },
+    {
+      "file": "student_log_3.csv",
+      "size_bytes": 16931917,
+      "counts": {
+        "rows": 37160
+      },
+      "field_values": {
+        "correct": {
+          "0": 21657,
+          "1": 15503
+        },
+        "original": {
+          "0": 26596,
+          "1": 10564
+        },
+        "hint": {
+          "0": 27036,
+          "1": 10124
+        },
+        "scaffold": {
+          "0": 20656,
+          "1": 16504
+        },
+        "attemptCount": {
+          "1": 19137,
+          "2": 6591,
+          "3": 4401,
+          "4+": 7031
+        }
+      }
+    },
+    {
+      "file": "student_log_4.csv",
+      "size_bytes": 13996104,
+      "counts": {
+        "rows": 30659
+      },
+      "field_values": {
+        "correct": {
+          "0": 19223,
+          "1": 11436
+        },
+        "original": {
+          "0": 23480,
+          "1": 7179
+        },
+        "hint": {
+          "0": 20608,
+          "1": 10051
+        },
+        "scaffold": {
+          "0": 17000,
+          "1": 13659
+        },
+        "attemptCount": {
+          "1": 14518,
+          "2": 5723,
+          "3": 4141,
+          "4+": 6277
+        }
+      }
+    },
+    {
+      "file": "student_log_5.csv",
+      "size_bytes": 30448365,
+      "counts": {
+        "rows": 66726
+      },
+      "field_values": {
+        "correct": {
+          "0": 38319,
+          "1": 28407
+        },
+        "original": {
+          "0": 47710,
+          "1": 19016
+        },
+        "hint": {
+          "0": 49656,
+          "1": 17070
+        },
+        "scaffold": {
+          "0": 36051,
+          "1": 30675
+        },
+        "attemptCount": {
+          "1": 35008,
+          "2": 11712,
+          "3": 7854,
+          "4+": 12152
+        }
+      }
+    },
+    {
+      "file": "student_log_6.csv",
+      "size_bytes": 28974044,
+      "counts": {
+        "rows": 63553
+      },
+      "field_values": {
+        "correct": {
+          "0": 38820,
+          "1": 24733
+        },
+        "original": {
+          "0": 47915,
+          "1": 15638
+        },
+        "hint": {
+          "0": 45691,
+          "1": 17862
+        },
+        "scaffold": {
+          "0": 33601,
+          "1": 29952
+        },
+        "attemptCount": {
+          "1": 31082,
+          "2": 11418,
+          "3": 7886,
+          "4+": 13167
+        }
+      }
+    },
+    {
+      "file": "student_log_7.csv",
+      "size_bytes": 26492241,
+      "counts": {
+        "rows": 58002
+      },
+      "field_values": {
+        "correct": {
+          "0": 34736,
+          "1": 23266
+        },
+        "original": {
+          "0": 42595,
+          "1": 15407
+        },
+        "hint": {
+          "0": 41290,
+          "1": 16712
+        },
+        "scaffold": {
+          "0": 31733,
+          "1": 26269
+        },
+        "attemptCount": {
+          "1": 28987,
+          "2": 10332,
+          "3": 7211,
+          "4+": 11472
+        }
+      }
+    },
+    {
+      "file": "student_log_8.csv",
+      "size_bytes": 4804737,
+      "counts": {
+        "rows": 10542
+      },
+      "field_values": {
+        "correct": {
+          "0": 6402,
+          "1": 4140
+        },
+        "original": {
+          "0": 7877,
+          "1": 2665
+        },
+        "hint": {
+          "0": 7500,
+          "1": 3042
+        },
+        "scaffold": {
+          "0": 5704,
+          "1": 4838
+        },
+        "attemptCount": {
+          "1": 5190,
+          "2": 1905,
+          "3": 1335,
+          "4+": 2112
+        }
+      }
+    },
+    {
+      "file": "student_log_9.csv",
+      "size_bytes": 26644094,
+      "counts": {
+        "rows": 58294
+      },
+      "field_values": {
+        "correct": {
+          "0": 34470,
+          "1": 23824
+        },
+        "original": {
+          "0": 42936,
+          "1": 15358
+        },
+        "hint": {
+          "0": 42188,
+          "1": 16106
+        },
+        "scaffold": {
+          "0": 31462,
+          "1": 26832
+        },
+        "attemptCount": {
+          "1": 29505,
+          "2": 10560,
+          "3": 7198,
+          "4+": 11031
+        }
+      }
+    },
+    {
+      "file": "student_log_10.csv",
+      "size_bytes": 9430088,
+      "counts": {
+        "rows": 20638
+      },
+      "field_values": {
+        "correct": {
+          "0": 12033,
+          "1": 8605
+        },
+        "original": {
+          "0": 15192,
+          "1": 5446
+        },
+        "hint": {
+          "0": 15124,
+          "1": 5514
+        },
+        "scaffold": {
+          "0": 10931,
+          "1": 9707
+        },
+        "attemptCount": {
+          "1": 10727,
+          "2": 3565,
+          "3": 2465,
+          "4+": 3881
+        }
+      }
+    }
+  ],
+  "totals": {
+    "rows": 942816,
+    "time_regressions_in_file_order": 2554
+  },
+  "unique_students": 1709,
+  "unique_raw_skills": 102,
+  "unique_problems": 4117,
+  "label_files": {
+    "training_label.csv": {
+      "file": "training_label.csv",
+      "rows": 514,
+      "columns": [
+        "ITEST_id",
+        "SchoolId",
+        "AveCorrect",
+        "MCAS",
+        "isSTEM"
+      ],
+      "unique_students": 467,
+      "missing_student_ids": 0,
+      "duplicate_student_ids": 47,
+      "students_in_logs": 467
+    },
+    "validation_test_label.csv": {
+      "file": "validation_test_label.csv",
+      "rows": 172,
+      "columns": [
+        "ITEST_id",
+        "SchoolId",
+        "AveCorrect",
+        "MCAS"
+      ],
+      "unique_students": 172,
+      "missing_student_ids": 0,
+      "duplicate_student_ids": 0,
+      "students_in_logs": 172
+    }
+  },
+  "students_in_both_label_files": 48,
+  "excluded_alternative_release": "anonymized_full_release_competition_dataset.csv",
+  "interpretation_limits": [
+    "The competition target is later STEM participation; training_label.csv is not event correctness for BKT.",
+    "original identifies a non-scaffolding problem; hint identifies a hint response; attemptCount counts tutor problems attempted, not attempts on this problem.",
+    "No BKT observations or train/test split are inferred from this audit.",
+    "Raw skill names are not mapped to the project's Vietnamese concept/skill registry.",
+    "No student IDs or row-level records are written to this report."
+  ]
+}

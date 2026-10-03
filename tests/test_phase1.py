@@ -11,7 +11,7 @@ from pydantic import ValidationError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "scripts" / "checks"))
 from app.contracts import Assessment, Eligibility, ProblemPublic, Review, TurnRequest
 from app.main import app
 from app import contracts
