@@ -1,0 +1,118 @@
+{
+  "protocol_version": "assistments2017-first-original-v1",
+  "config_sha256": "c0da69669796e8a84d8c3eb10b975ec2e80e5164b5b5e6637d621c5a1113286f",
+  "source_files": [
+    {
+      "file": "student_log_1.csv",
+      "rows": 231403,
+      "bytes": 108111584,
+      "sha256": "e78077e959032d3df4e7b625e68031c5a61472fa82d182c45bb167aa13c949ef"
+    },
+    {
+      "file": "student_log_2.csv",
+      "rows": 365839,
+      "bytes": 172618892,
+      "sha256": "18ec4373aa8d47f8aaa512fd7b9517da6fe0411960010b935729374e39af7560"
+    },
+    {
+      "file": "student_log_3.csv",
+      "rows": 37160,
+      "bytes": 16931917,
+      "sha256": "fb89ea9f2ffe57a9e47b5140273acc8aab7d53ffd5c98a7eead1fe75eaab4b85"
+    },
+    {
+      "file": "student_log_4.csv",
+      "rows": 30659,
+      "bytes": 13996104,
+      "sha256": "aa556e4a3f260e23d0c32852c1ab4ce340cf3d83cd15bafd1e0af97287e980df"
+    },
+    {
+      "file": "student_log_5.csv",
+      "rows": 66726,
+      "bytes": 30448365,
+      "sha256": "8b5130ea9bfb0dce2dc7f8cfb0738085a1b7e533da8ba4d77e9dd3f7a5ac798c"
+    },
+    {
+      "file": "student_log_6.csv",
+      "rows": 63553,
+      "bytes": 28974044,
+      "sha256": "a1d64303859dde374e3bd6b58b306c9edd1cd6fcfa6fc5e6a3d84a5ce1b2f0d4"
+    },
+    {
+      "file": "student_log_7.csv",
+      "rows": 58002,
+      "bytes": 26492241,
+      "sha256": "b203f56ddd3e6e963a3a97e8337474212b7c3dd4a9b7e36ad2570631ebbe0363"
+    },
+    {
+      "file": "student_log_8.csv",
+      "rows": 10542,
+      "bytes": 4804737,
+      "sha256": "e0755642552c1cccffa0a838ca0adc97529b90288c1fec3622dc80cfd6a5ad10"
+    },
+    {
+      "file": "student_log_9.csv",
+      "rows": 58294,
+      "bytes": 26644094,
+      "sha256": "fc39ca3b2e7d32b50b6f005e1e162bcf5bb7baa71ccd67fd6038874099599154"
+    },
+    {
+      "file": "student_log_10.csv",
+      "rows": 20638,
+      "bytes": 9430088,
+      "sha256": "4166e0d7d07c7b02404eb8666e1391973abac4f5d1f24ba8242f219f898fb3bd"
+    }
+  ],
+  "input_actions": 942816,
+  "decision_counts": {
+    "hint_or_assisted": 20978,
+    "missing_or_ambiguous_skill": 78103,
+    "non_original_or_scaffold": 211096,
+    "prior_parent_support_or_unknown": 63,
+    "repeated_problem_exposure": 510618,
+    "retained_first_original_no_recorded_help": 121958
+  },
+  "split": {
+    "seed": 20261003,
+    "train": 0.7,
+    "dev": 0.15,
+    "test": 0.15
+  },
+  "split_counts": {
+    "train": {
+      "observations": 85011,
+      "correct": 43315,
+      "students": 1195,
+      "skills": 85
+    },
+    "dev": {
+      "observations": 18465,
+      "correct": 9787,
+      "students": 256,
+      "skills": 84
+    },
+    "test": {
+      "observations": 18482,
+      "correct": 9828,
+      "students": 257,
+      "skills": 84
+    }
+  },
+  "artifact_sha256": {
+    "train.csv": "95b4dd1d395cb433342e9283b0438c3eecfe1d802766d10834b626d1b158d9c5",
+    "dev.csv": "b7774797352ebd4e26f579d4b35ab5463a9689470a6b8ddf13140ce352c9baa3",
+    "test.csv": "4ba0d028e5c90adb9fb3fef1b073e974334160c8b335264cc19cf511d118b85c",
+    "split_manifest.json": "fd64a5670d0fa5e41f59918df8865bbbd67f8fa3cfd8bd520660fd8f09bc9bcf",
+    "protocol.json": "f4791cd40e4a1eeb74f69f07fa75d73e8d024db5860601b19b06c0a811f129cb"
+  },
+  "test_evaluated": false,
+  "raw_to_vietnamese_mapping": "not performed",
+  "limitations": [
+    "First recorded exposure may not be first lifetime exposure; unrecorded help is unknown.",
+    "One observation per student/problem: repeated assignments intentionally excluded.",
+    "No misconception labels, latent mastery ground truth, or Vietnamese calibration.",
+    "Source skill tags are retained independently, including geometry for this public-data benchmark.",
+    "Student split does not hold out problem families; family grouping requires content metadata.",
+    "Pseudonyms are linkable hashes, not anonymization. Row-level artifacts remain local."
+  ]
+}

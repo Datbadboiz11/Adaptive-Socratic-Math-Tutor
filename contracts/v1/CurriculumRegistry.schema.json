@@ -1,0 +1,434 @@
+{
+  "$defs": {
+    "Alignment": {
+      "additionalProperties": false,
+      "properties": {
+        "grade_levels": {
+          "items": {
+            "maximum": 12,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "source_checked_draft",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        }
+      },
+      "required": [
+        "grade_levels",
+        "status",
+        "source_id",
+        "locator"
+      ],
+      "title": "Alignment",
+      "type": "object"
+    },
+    "Concept": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "strand": {
+          "enum": [
+            "numbers",
+            "algebra",
+            "equations",
+            "functions"
+          ],
+          "title": "Strand",
+          "type": "string"
+        },
+        "objective": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Objective",
+          "type": "string"
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/$defs/Skill"
+          },
+          "minItems": 1,
+          "title": "Skills",
+          "type": "array"
+        },
+        "supported_forms": {
+          "items": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Supported Forms",
+          "type": "array"
+        },
+        "excluded_forms": {
+          "items": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Excluded Forms",
+          "type": "array"
+        },
+        "authoring_task_kinds": {
+          "items": {
+            "enum": [
+              "numeric",
+              "evaluate",
+              "polynomial",
+              "linear_equation",
+              "quadratic_vertex"
+            ],
+            "type": "string"
+          },
+          "title": "Authoring Task Kinds",
+          "type": "array"
+        },
+        "alignment": {
+          "$ref": "#/$defs/Alignment"
+        },
+        "pilot": {
+          "title": "Pilot",
+          "type": "boolean"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "concept_id",
+        "title",
+        "strand",
+        "objective",
+        "skills",
+        "supported_forms",
+        "excluded_forms",
+        "alignment",
+        "pilot",
+        "review"
+      ],
+      "title": "Concept",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "edge_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Edge Id",
+          "type": "string"
+        },
+        "source_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Concept Id",
+          "type": "string"
+        },
+        "target_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Concept Id",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "PREREQUISITE_OF",
+            "RELATED_TO",
+            "PART_OF"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "edge_id",
+        "source_concept_id",
+        "target_concept_id",
+        "relation",
+        "rationale",
+        "source_id",
+        "review"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "LegacyMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "legacy_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Legacy Concept Id",
+          "type": "string"
+        },
+        "legacy_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Legacy Skill Id",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "status": {
+          "const": "proposed",
+          "title": "Status",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "legacy_concept_id",
+        "legacy_skill_id",
+        "concept_id",
+        "skill_id",
+        "status",
+        "note"
+      ],
+      "title": "LegacyMapping",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "Skill": {
+      "additionalProperties": false,
+      "properties": {
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "observable_behavior": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Observable Behavior",
+          "type": "string"
+        }
+      },
+      "required": [
+        "skill_id",
+        "observable_behavior"
+      ],
+      "title": "Skill",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "publisher": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Publisher",
+          "type": "string"
+        },
+        "accessed_on": {
+          "title": "Accessed On",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "title",
+        "url",
+        "publisher",
+        "accessed_on",
+        "note"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "concepts": {
+      "items": {
+        "$ref": "#/$defs/Concept"
+      },
+      "maxItems": 50,
+      "minItems": 30,
+      "title": "Concepts",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/Edge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "legacy_mappings": {
+      "items": {
+        "$ref": "#/$defs/LegacyMapping"
+      },
+      "title": "Legacy Mappings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "content_version",
+    "sources",
+    "concepts",
+    "edges",
+    "legacy_mappings"
+  ],
+  "title": "CurriculumRegistry",
+  "type": "object"
+}

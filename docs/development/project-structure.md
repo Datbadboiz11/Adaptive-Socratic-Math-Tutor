@@ -10,9 +10,12 @@ Adaptive-Socratic-Math-Tutor/
 ├── frontend/                 # Next.js: giao diện sản phẩm và API proxy
 │   └── app/
 ├── content/                  # Bài, hint và tham số BKT có version
+│   └── curriculum/           # Registry 40 concept và pilot authoring tiếng Việt
 ├── contracts/                # JSON Schema, OpenAPI và fixtures hợp đồng
 ├── research/                 # Code tiền xử lý/benchmark/nghiên cứu
-│   └── data/                 # Công cụ kiểm kê ASSISTments hiện tại
+│   ├── config/               # Protocol/split/fit có version
+│   ├── data/                 # Audit và tiền xử lý ASSISTments
+│   └── bkt/                  # Model, benchmark, metrics và pyBKT parity
 ├── scripts/                  # Công cụ vận hành repo
 │   ├── checks/               # Kiểm tra nội dung, API, DB, browser và smoke
 │   ├── exports/              # Xuất/check JSON Schema và OpenAPI
@@ -25,7 +28,7 @@ Adaptive-Socratic-Math-Tutor/
 │   ├── design/               # Mục lục thiết kế
 │   ├── development/          # Cấu trúc repo, thiết lập GitHub
 │   ├── implementation/mvp/   # Bàn giao phase1–phase5 và evidence tương ứng
-│   └── research/data/        # Tài liệu audit và báo cáo tổng hợp
+│   └── research/data/        # Audit, protocol, runbook và kết quả dev tổng hợp
 ├── data/                     # Dataset local, được Git ignore
 ├── .github/                  # CI, mẫu issue và PR
 ├── compose.yaml              # Chạy các dịch vụ
@@ -44,6 +47,7 @@ Adaptive-Socratic-Math-Tutor/
 - [Kế hoạch tổng](../planning/project-plan.md): module, dữ liệu, thực nghiệm và mốc 12 tuần.
 - [Bàn giao MVP](../implementation/mvp/README.md): code đã có, contract và giới hạn theo từng giai đoạn.
 - [Dữ liệu nghiên cứu](../research/data/README.md): kết quả audit và việc cần làm trước tiền xử lý/BKT baseline.
+- [Nội dung tiếng Việt](../../content/curriculum/README.md): registry, pilot, mẫu biên soạn và checklist review.
 
 ## Các vị trí cũ đã chuyển
 

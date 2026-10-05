@@ -6,6 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 from app import contracts  # noqa: E402
+from app.curriculum import CurriculumRegistry, PilotBank  # noqa: E402
 
 MODELS = [
     contracts.ProblemPublic, contracts.ContentBank, contracts.CreateSession,
@@ -13,6 +14,7 @@ MODELS = [
     contracts.Assessment, contracts.Opportunity, contracts.Eligibility,
     contracts.Observation, contracts.TutorResponse, contracts.SessionReport,
     contracts.ErrorResponse,
+    CurriculumRegistry, PilotBank,
 ]
 
 for model in MODELS:

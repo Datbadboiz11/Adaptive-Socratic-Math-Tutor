@@ -1,0 +1,419 @@
+{
+  "$defs": {
+    "AuthoredProblem": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "task": {
+          "$ref": "#/$defs/MathTask"
+        },
+        "reference_answer": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Reference Answer",
+          "type": "string"
+        },
+        "reference_steps": {
+          "items": {
+            "maxLength": 160,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Reference Steps",
+          "type": "array"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "primary_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Primary Skill Id",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "source_group": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Group",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "split": {
+          "const": "authoring_dev",
+          "title": "Split",
+          "type": "string"
+        },
+        "origin": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Origin",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "task",
+        "reference_answer",
+        "reference_steps",
+        "concept_id",
+        "primary_skill_id",
+        "family_id",
+        "source_group",
+        "difficulty",
+        "prompt",
+        "split",
+        "origin"
+      ],
+      "title": "AuthoredProblem",
+      "type": "object"
+    },
+    "ConceptPack": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "content_version": {
+          "title": "Content Version",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "problems": {
+          "items": {
+            "$ref": "#/$defs/AuthoredProblem"
+          },
+          "minItems": 6,
+          "title": "Problems",
+          "type": "array"
+        },
+        "examples": {
+          "items": {
+            "$ref": "#/$defs/MathCase"
+          },
+          "minItems": 3,
+          "title": "Examples",
+          "type": "array"
+        },
+        "errors": {
+          "items": {
+            "$ref": "#/$defs/ErrorFixture"
+          },
+          "minItems": 1,
+          "title": "Errors",
+          "type": "array"
+        },
+        "hints": {
+          "items": {
+            "$ref": "#/$defs/Hint"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Hints",
+          "type": "array"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "concept_id",
+        "content_version",
+        "explanation",
+        "problems",
+        "examples",
+        "errors",
+        "hints",
+        "review"
+      ],
+      "title": "ConceptPack",
+      "type": "object"
+    },
+    "ErrorFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "error_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Error Id",
+          "type": "string"
+        },
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "response_steps": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Response Steps",
+          "type": "array"
+        },
+        "first_error_step": {
+          "minimum": 1,
+          "title": "First Error Step",
+          "type": "integer"
+        },
+        "family": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "hypothesis": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Hypothesis",
+          "type": "string"
+        },
+        "diagnostic_question": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Diagnostic Question",
+          "type": "string"
+        },
+        "diagnosis_status": {
+          "const": "suspected",
+          "title": "Diagnosis Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "error_id",
+        "problem_id",
+        "response_steps",
+        "first_error_step",
+        "family",
+        "hypothesis",
+        "diagnostic_question",
+        "diagnosis_status"
+      ],
+      "title": "ErrorFixture",
+      "type": "object"
+    },
+    "Hint": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "disclosure": {
+          "enum": [
+            "conceptual",
+            "strategy",
+            "scaffold"
+          ],
+          "title": "Disclosure",
+          "type": "string"
+        }
+      },
+      "required": [
+        "level",
+        "text",
+        "disclosure"
+      ],
+      "title": "Hint",
+      "type": "object"
+    },
+    "MathCase": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "task": {
+          "$ref": "#/$defs/MathTask"
+        },
+        "reference_answer": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Reference Answer",
+          "type": "string"
+        },
+        "reference_steps": {
+          "items": {
+            "maxLength": 160,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Reference Steps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "case_id",
+        "task",
+        "reference_answer",
+        "reference_steps"
+      ],
+      "title": "MathCase",
+      "type": "object"
+    },
+    "MathTask": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "MathTask",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "packs": {
+      "items": {
+        "$ref": "#/$defs/ConceptPack"
+      },
+      "minItems": 1,
+      "title": "Packs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "content_version",
+    "packs"
+  ],
+  "title": "PilotBank",
+  "type": "object"
+}

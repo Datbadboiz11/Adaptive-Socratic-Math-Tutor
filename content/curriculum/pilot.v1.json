@@ -1,0 +1,2267 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "0.1.0",
+  "packs": [
+    {
+      "concept_id": "A01",
+      "content_version": "0.1.0",
+      "explanation": "Thay giá trị của biến vào tất cả vị trí của biến. Dùng ngoặc cho số âm hoặc phân số, rồi thực hiện đúng thứ tự phép tính. Giá trị biến cho sẵn không có nghĩa là nghiệm của một phương trình.",
+      "problems": [
+        {
+          "case_id": "P-A01-01",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-linear",
+          "source_group": "GROUP-A01-linear",
+          "difficulty": "introductory",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 2*x+3. Giá trị x = -2.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "2*x+3",
+            "variable_value": "-2"
+          },
+          "reference_answer": "-1",
+          "reference_steps": [
+            "2*(-2)+3",
+            "-4+3",
+            "-1"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A01-02",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-linear",
+          "source_group": "GROUP-A01-linear",
+          "difficulty": "introductory",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: -3*x+5. Giá trị x = 2.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "-3*x+5",
+            "variable_value": "2"
+          },
+          "reference_answer": "-1",
+          "reference_steps": [
+            "-3*2+5",
+            "-6+5",
+            "-1"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A01-03",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-quadratic",
+          "source_group": "GROUP-A01-quadratic",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: x*x-2*x. Giá trị x = 3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "x*x-2*x",
+            "variable_value": "3"
+          },
+          "reference_answer": "3",
+          "reference_steps": [
+            "3*3-2*3",
+            "9-6",
+            "3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A01-04",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-quadratic",
+          "source_group": "GROUP-A01-quadratic",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: (x-2)*(x+2). Giá trị x = -3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "(x-2)*(x+2)",
+            "variable_value": "-3"
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "(-3-2)*(-3+2)",
+            "(-5)*(-1)",
+            "5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A01-05",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-rational_input",
+          "source_group": "GROUP-A01-rational_input",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: (x+1)/2. Giá trị x = 1/3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "(x+1)/2",
+            "variable_value": "1/3"
+          },
+          "reference_answer": "2/3",
+          "reference_steps": [
+            "(1/3+1)/2",
+            "(4/3)/2",
+            "2/3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A01-06",
+          "concept_id": "A01",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "family_id": "FAM-A01-rational_input",
+          "source_group": "GROUP-A01-rational_input",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: (3*x-1)/4. Giá trị x = -1/3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "(3*x-1)/4",
+            "variable_value": "-1/3"
+          },
+          "reference_answer": "-1/2",
+          "reference_steps": [
+            "(3*(-1/3)-1)/4",
+            "-2/4",
+            "-1/2"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-A01-01",
+          "task": {
+            "kind": "evaluate",
+            "expression": "4*x-1",
+            "variable_value": "2"
+          },
+          "reference_answer": "7",
+          "reference_steps": [
+            "4*2-1",
+            "8-1",
+            "7"
+          ]
+        },
+        {
+          "case_id": "EX-A01-02",
+          "task": {
+            "kind": "evaluate",
+            "expression": "x*x+3",
+            "variable_value": "-2"
+          },
+          "reference_answer": "7",
+          "reference_steps": [
+            "(-2)*(-2)+3",
+            "4+3",
+            "7"
+          ]
+        },
+        {
+          "case_id": "EX-A01-03",
+          "task": {
+            "kind": "evaluate",
+            "expression": "(x-2)/3",
+            "variable_value": "1/2"
+          },
+          "reference_answer": "-1/2",
+          "reference_steps": [
+            "(1/2-2)/3",
+            "(-3/2)/3",
+            "-1/2"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-A01-01",
+          "problem_id": "P-A01-01",
+          "response_steps": [
+            "2*2+3",
+            "7"
+          ],
+          "first_error_step": 1,
+          "family": "substitution_sign",
+          "hypothesis": "Có thể bỏ dấu của giá trị âm.",
+          "diagnostic_question": "Giá trị biến âm đã được đặt trong ngoặc chưa?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-A01-02",
+          "problem_id": "P-A01-03",
+          "response_steps": [
+            "3-2*3",
+            "-3"
+          ],
+          "first_error_step": 1,
+          "family": "power_as_identity",
+          "hypothesis": "Có thể thay tích của biến với chính nó bằng biến.",
+          "diagnostic_question": "Hạng tử bậc hai chứa mấy lần giá trị biến?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Giá trị biến cần được thay vào những vị trí nào?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Dùng ngoặc cho giá trị âm hoặc phân số trước khi thực hiện phép tính.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Viết biểu thức sau phép thay nhưng chưa tính; kiểm tra từng chỗ của biến.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "A02",
+      "content_version": "0.1.0",
+      "explanation": "Một thừa số bên ngoài ngoặc tác động lên từng hạng tử bên trong. Viết các phép nhân tách biệt trước khi thu gọn để kiểm tra dấu. Có thể sử dụng ngược tính phân phối để đặt nhân tử chung.",
+      "problems": [
+        {
+          "case_id": "P-A02-01",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-positive",
+          "source_group": "GROUP-A02-positive",
+          "difficulty": "introductory",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 3*(x+2).",
+          "task": {
+            "kind": "polynomial",
+            "expression": "3*(x+2)",
+            "variable_value": null
+          },
+          "reference_answer": "3*x+6",
+          "reference_steps": [
+            "3*x+3*2",
+            "3*x+6"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A02-02",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-positive",
+          "source_group": "GROUP-A02-positive",
+          "difficulty": "introductory",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 4*(x-3).",
+          "task": {
+            "kind": "polynomial",
+            "expression": "4*(x-3)",
+            "variable_value": null
+          },
+          "reference_answer": "4*x-12",
+          "reference_steps": [
+            "4*x-4*3",
+            "4*x-12"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A02-03",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-negative",
+          "source_group": "GROUP-A02-negative",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: -2*(x+5).",
+          "task": {
+            "kind": "polynomial",
+            "expression": "-2*(x+5)",
+            "variable_value": null
+          },
+          "reference_answer": "-2*x-10",
+          "reference_steps": [
+            "-2*x+(-2)*5",
+            "-2*x-10"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A02-04",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-negative",
+          "source_group": "GROUP-A02-negative",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: -3*(2*x-1).",
+          "task": {
+            "kind": "polynomial",
+            "expression": "-3*(2*x-1)",
+            "variable_value": null
+          },
+          "reference_answer": "-6*x+3",
+          "reference_steps": [
+            "-3*2*x+(-3)*(-1)",
+            "-6*x+3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A02-05",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-reverse",
+          "source_group": "GROUP-A02-reverse",
+          "difficulty": "standard",
+          "prompt": "Đặt nhân tử chung để viết 5*x+15 thành tích; trình bày các bước.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "5*x+15",
+            "variable_value": null
+          },
+          "reference_answer": "5*(x+3)",
+          "reference_steps": [
+            "5*x+5*3",
+            "5*(x+3)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A02-06",
+          "concept_id": "A02",
+          "primary_skill_id": "SK-A02-DISTRIBUTE",
+          "family_id": "FAM-A02-reverse",
+          "source_group": "GROUP-A02-reverse",
+          "difficulty": "standard",
+          "prompt": "Đặt nhân tử chung để viết -4*x+8 thành tích; trình bày các bước.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "-4*x+8",
+            "variable_value": null
+          },
+          "reference_answer": "-4*(x-2)",
+          "reference_steps": [
+            "-4*x+(-4)*(-2)",
+            "-4*(x-2)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-A02-01",
+          "task": {
+            "kind": "polynomial",
+            "expression": "2*(x+7)",
+            "variable_value": null
+          },
+          "reference_answer": "2*x+14",
+          "reference_steps": [
+            "2*x+2*7",
+            "2*x+14"
+          ]
+        },
+        {
+          "case_id": "EX-A02-02",
+          "task": {
+            "kind": "polynomial",
+            "expression": "-5*(x-2)",
+            "variable_value": null
+          },
+          "reference_answer": "-5*x+10",
+          "reference_steps": [
+            "-5*x+(-5)*(-2)",
+            "-5*x+10"
+          ]
+        },
+        {
+          "case_id": "EX-A02-03",
+          "task": {
+            "kind": "polynomial",
+            "expression": "6*x-18",
+            "variable_value": null
+          },
+          "reference_answer": "6*(x-3)",
+          "reference_steps": [
+            "6*x-6*3",
+            "6*(x-3)"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-A02-01",
+          "problem_id": "P-A02-01",
+          "response_steps": [
+            "3*x+2"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_missing_term",
+          "hypothesis": "Có thể chỉ nhân hạng tử đầu trong ngoặc.",
+          "diagnostic_question": "Hằng số ngoài ngoặc tác động đến mấy hạng tử?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-A02-02",
+          "problem_id": "P-A02-03",
+          "response_steps": [
+            "-2*x+10"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_sign",
+          "hypothesis": "Có thể sai dấu tích của hệ số âm với hằng số.",
+          "diagnostic_question": "Tích của hệ số ngoài ngoặc và hằng số bên trong có dấu gì?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Có bao nhiêu hạng tử trong ngoặc cần được nhân?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Viết một phép nhân cho từng hạng tử và kiểm tra dấu riêng.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Tạm giữ nguyên các phép nhân chưa tính, rồi nối chúng bằng phép cộng phù hợp.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "A03",
+      "content_version": "0.1.0",
+      "explanation": "Hạng tử đồng dạng có cùng phần biến và cùng số mũ; chỉ cộng trừ hệ số. Hạng tử bậc nhất, bậc hai và hằng số thuộc các nhóm khác nhau. Khi bỏ ngoặc có dấu trừ, đổi dấu tất cả hạng tử trong ngoặc.",
+      "problems": [
+        {
+          "case_id": "P-A03-01",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-same_degree",
+          "source_group": "GROUP-A03-same_degree",
+          "difficulty": "introductory",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 3*x+2*x.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "3*x+2*x",
+            "variable_value": null
+          },
+          "reference_answer": "5*x",
+          "reference_steps": [
+            "(3+2)*x",
+            "5*x"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A03-02",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-same_degree",
+          "source_group": "GROUP-A03-same_degree",
+          "difficulty": "introductory",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: -4*x+x.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "-4*x+x",
+            "variable_value": null
+          },
+          "reference_answer": "-3*x",
+          "reference_steps": [
+            "(-4+1)*x",
+            "-3*x"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A03-03",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-mixed",
+          "source_group": "GROUP-A03-mixed",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 2*x+3+4*x-1.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "2*x+3+4*x-1",
+            "variable_value": null
+          },
+          "reference_answer": "6*x+2",
+          "reference_steps": [
+            "(2+4)*x+(3-1)",
+            "6*x+2"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A03-04",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-mixed",
+          "source_group": "GROUP-A03-mixed",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 5*x-2-(x+3).",
+          "task": {
+            "kind": "polynomial",
+            "expression": "5*x-2-(x+3)",
+            "variable_value": null
+          },
+          "reference_answer": "4*x-5",
+          "reference_steps": [
+            "5*x-2-x-3",
+            "4*x-5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A03-05",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-quadratic",
+          "source_group": "GROUP-A03-quadratic",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: x*x+2*x*x-3*x.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "x*x+2*x*x-3*x",
+            "variable_value": null
+          },
+          "reference_answer": "3*x*x-3*x",
+          "reference_steps": [
+            "(1+2)*x*x-3*x",
+            "3*x*x-3*x"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-A03-06",
+          "concept_id": "A03",
+          "primary_skill_id": "SK-A03-COLLECT",
+          "family_id": "FAM-A03-quadratic",
+          "source_group": "GROUP-A03-quadratic",
+          "difficulty": "standard",
+          "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 4*x*x-x*x+2.",
+          "task": {
+            "kind": "polynomial",
+            "expression": "4*x*x-x*x+2",
+            "variable_value": null
+          },
+          "reference_answer": "3*x*x+2",
+          "reference_steps": [
+            "(4-1)*x*x+2",
+            "3*x*x+2"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-A03-01",
+          "task": {
+            "kind": "polynomial",
+            "expression": "7*x-2*x",
+            "variable_value": null
+          },
+          "reference_answer": "5*x",
+          "reference_steps": [
+            "(7-2)*x",
+            "5*x"
+          ]
+        },
+        {
+          "case_id": "EX-A03-02",
+          "task": {
+            "kind": "polynomial",
+            "expression": "x+4+3*x-2",
+            "variable_value": null
+          },
+          "reference_answer": "4*x+2",
+          "reference_steps": [
+            "(1+3)*x+(4-2)",
+            "4*x+2"
+          ]
+        },
+        {
+          "case_id": "EX-A03-03",
+          "task": {
+            "kind": "polynomial",
+            "expression": "2*x*x+3*x*x-x",
+            "variable_value": null
+          },
+          "reference_answer": "5*x*x-x",
+          "reference_steps": [
+            "(2+3)*x*x-x",
+            "5*x*x-x"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-A03-01",
+          "problem_id": "P-A03-01",
+          "response_steps": [
+            "5*x*x"
+          ],
+          "first_error_step": 1,
+          "family": "combine_as_multiply",
+          "hypothesis": "Có thể nhân phần biến khi cộng hạng tử.",
+          "diagnostic_question": "Em đang cộng hệ số hay nhân hai hạng tử?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-A03-02",
+          "problem_id": "P-A03-03",
+          "response_steps": [
+            "6*x+4"
+          ],
+          "first_error_step": 1,
+          "family": "constant_group",
+          "hypothesis": "Có thể cộng độ lớn của hằng số trái dấu.",
+          "diagnostic_question": "Nhóm hằng số có những dấu nào?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Những hạng tử nào có cùng phần biến và cùng số mũ?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Chia thành nhóm hằng số, bậc nhất và bậc hai rồi xử lý hệ số.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Viết tổng các hệ số trong ngoặc trước phần biến của mỗi nhóm.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "E01",
+      "content_version": "0.1.0",
+      "explanation": "Một phép biến đổi tương đương giữ nguyên tập nghiệm. Cộng trừ cùng một biểu thức ở hai vế và nhân chia cùng số khác không là các phép cần kiểm tra rõ. Bộ pilot giới hạn phương trình bậc nhất có nghiệm duy nhất, không chấp nhận chia cho biểu thức chứa biến.",
+      "problems": [
+        {
+          "case_id": "P-E01-01",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-add_subtract",
+          "source_group": "GROUP-E01-add_subtract",
+          "difficulty": "introductory",
+          "prompt": "Với phương trình 2*x+3=11, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "2*x+3=11",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "2*x=8",
+            "x=4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-E01-02",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-add_subtract",
+          "source_group": "GROUP-E01-add_subtract",
+          "difficulty": "introductory",
+          "prompt": "Với phương trình 3*x-6=9, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "3*x-6=9",
+            "variable_value": null
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "3*x=15",
+            "x=5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-E01-03",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-multiply_divide",
+          "source_group": "GROUP-E01-multiply_divide",
+          "difficulty": "standard",
+          "prompt": "Với phương trình -2*x=8, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "-2*x=8",
+            "variable_value": null
+          },
+          "reference_answer": "-4",
+          "reference_steps": [
+            "x=-4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-E01-04",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-multiply_divide",
+          "source_group": "GROUP-E01-multiply_divide",
+          "difficulty": "standard",
+          "prompt": "Với phương trình x/3+2=5, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "x/3+2=5",
+            "variable_value": null
+          },
+          "reference_answer": "9",
+          "reference_steps": [
+            "x/3=3",
+            "x=9"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-E01-05",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-simplify",
+          "source_group": "GROUP-E01-simplify",
+          "difficulty": "standard",
+          "prompt": "Với phương trình 2*(x-3)=10, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "2*(x-3)=10",
+            "variable_value": null
+          },
+          "reference_answer": "8",
+          "reference_steps": [
+            "2*x-6=10",
+            "2*x=16",
+            "x=8"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-E01-06",
+          "concept_id": "E01",
+          "primary_skill_id": "SK-E01-EQUIVALENCE",
+          "family_id": "FAM-E01-simplify",
+          "source_group": "GROUP-E01-simplify",
+          "difficulty": "standard",
+          "prompt": "Với phương trình 4*x+1=2*x+9, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "4*x+1=2*x+9",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "2*x+1=9",
+            "2*x=8",
+            "x=4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-E01-01",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "5*x+2=17",
+            "variable_value": null
+          },
+          "reference_answer": "3",
+          "reference_steps": [
+            "5*x=15",
+            "x=3"
+          ]
+        },
+        {
+          "case_id": "EX-E01-02",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "-3*x=12",
+            "variable_value": null
+          },
+          "reference_answer": "-4",
+          "reference_steps": [
+            "x=-4"
+          ]
+        },
+        {
+          "case_id": "EX-E01-03",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "3*(x+1)=15",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "3*x+3=15",
+            "3*x=12",
+            "x=4"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-E01-01",
+          "problem_id": "P-E01-01",
+          "response_steps": [
+            "2*x=14",
+            "x=7"
+          ],
+          "first_error_step": 1,
+          "family": "one_sided_inverse",
+          "hypothesis": "Có thể đổi vế không đúng phép toán ngược.",
+          "diagnostic_question": "Muốn loại hằng số này, em áp dụng phép toán gì ở cả hai vế?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-E01-02",
+          "problem_id": "P-E01-03",
+          "response_steps": [
+            "x=4"
+          ],
+          "first_error_step": 1,
+          "family": "division_sign",
+          "hypothesis": "Có thể làm mất dấu khi chia hai vế.",
+          "diagnostic_question": "Hệ số của ẩn đang dương hay âm?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Phép biến đổi vừa làm có giữ nguyên tập nghiệm không?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Viết rõ phép toán được áp dụng ở cả hai vế; số chia cần khác không.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Đối chiếu hai vế trước và sau khi khai triển hoặc thu gọn, chưa cần tìm nghiệm.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "E02",
+      "content_version": "0.1.0",
+      "explanation": "Giải phương trình bằng các phép biến đổi giữ tập nghiệm: khai triển, thu gọn, đưa các hạng tử về hai vế và chia cho hệ số khác không. Đối chiếu nghiệm với phương trình ban đầu. Luồng MVP hiện có dùng ID và tham số riêng, không tự đổi lịch sử sang registry mới.",
+      "problems": [
+        {
+          "case_id": "P-E02-01",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-AX-B-C",
+          "source_group": "GROUP-E02-F-AX-B-C",
+          "difficulty": "introductory",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: 3*x + 5 = 20.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "3*x + 5 = 20",
+            "variable_value": null
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "3*x = 15",
+            "x = 5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-001 từ content/linear_equations.v1.json; bản gốc không đổi."
+        },
+        {
+          "case_id": "P-E02-02",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-AX-B-C",
+          "source_group": "GROUP-E02-F-AX-B-C",
+          "difficulty": "introductory",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: -2*x + 7 = 15.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "-2*x + 7 = 15",
+            "variable_value": null
+          },
+          "reference_answer": "-4",
+          "reference_steps": [
+            "-2*x = 8",
+            "x = -4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-002 từ content/linear_equations.v1.json; bản gốc không đổi."
+        },
+        {
+          "case_id": "P-E02-03",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-A-XB-C",
+          "source_group": "GROUP-E02-F-A-XB-C",
+          "difficulty": "standard",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: 2*(x - 3) = 10.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "2*(x - 3) = 10",
+            "variable_value": null
+          },
+          "reference_answer": "8",
+          "reference_steps": [
+            "2*x - 6 = 10",
+            "2*x = 16",
+            "x = 8"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-003 từ content/linear_equations.v1.json; bản gốc không đổi."
+        },
+        {
+          "case_id": "P-E02-04",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-A-XB-C",
+          "source_group": "GROUP-E02-F-A-XB-C",
+          "difficulty": "standard",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: -3*(x + 2) = 12.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "-3*(x + 2) = 12",
+            "variable_value": null
+          },
+          "reference_answer": "-6",
+          "reference_steps": [
+            "-3*x - 6 = 12",
+            "-3*x = 18",
+            "x = -6"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-004 từ content/linear_equations.v1.json; bản gốc không đổi."
+        },
+        {
+          "case_id": "P-E02-05",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-AXB-CXD",
+          "source_group": "GROUP-E02-F-AXB-CXD",
+          "difficulty": "standard",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: 5*x - 4 = 2*x + 11.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "5*x - 4 = 2*x + 11",
+            "variable_value": null
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "3*x - 4 = 11",
+            "3*x = 15",
+            "x = 5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-005 từ content/linear_equations.v1.json; bản gốc không đổi."
+        },
+        {
+          "case_id": "P-E02-06",
+          "concept_id": "E02",
+          "primary_skill_id": "SK-E02-SOLVE",
+          "family_id": "FAM-E02-F-AXB-CXD",
+          "source_group": "GROUP-E02-F-AXB-CXD",
+          "difficulty": "standard",
+          "prompt": "Giải phương trình bằng biến đổi tương đương. Biểu thức/công thức: 2*x + 3 = 4*x - 8.",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "2*x + 3 = 4*x - 8",
+            "variable_value": null
+          },
+          "reference_answer": "11/2",
+          "reference_steps": [
+            "3 = 2*x - 8",
+            "11 = 2*x",
+            "x = 11/2"
+          ],
+          "split": "authoring_dev",
+          "origin": "Tái sử dụng bài LIN-006 từ content/linear_equations.v1.json; bản gốc không đổi."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-E02-01",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "4*x+3=19",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "4*x=16",
+            "x=4"
+          ]
+        },
+        {
+          "case_id": "EX-E02-02",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "-2*(x-1)=8",
+            "variable_value": null
+          },
+          "reference_answer": "-3",
+          "reference_steps": [
+            "-2*x+2=8",
+            "-2*x=6",
+            "x=-3"
+          ]
+        },
+        {
+          "case_id": "EX-E02-03",
+          "task": {
+            "kind": "linear_equation",
+            "expression": "6*x-5=2*x+7",
+            "variable_value": null
+          },
+          "reference_answer": "3",
+          "reference_steps": [
+            "4*x-5=7",
+            "4*x=12",
+            "x=3"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-E02-01",
+          "problem_id": "P-E02-01",
+          "response_steps": [
+            "3*x=25",
+            "x=25/3"
+          ],
+          "first_error_step": 1,
+          "family": "inverse_operation",
+          "hypothesis": "Có thể dùng sai phép toán ngược khi loại hằng số.",
+          "diagnostic_question": "Phép toán nào giữ cân bằng khi loại hằng số ở vế trái?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-E02-02",
+          "problem_id": "P-E02-03",
+          "response_steps": [
+            "2*x-3=10",
+            "2*x=13",
+            "x=13/2"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_missing_term",
+          "hypothesis": "Có thể chỉ phân phối cho hạng tử đầu.",
+          "diagnostic_question": "Hệ số bên ngoài ngoặc cần nhân với những hạng tử nào?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Em muốn tách phần chứa ẩn hay hằng số trước?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Chọn phép toán loại hạng tử ở một vế và làm cùng phép toán ở vế kia.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Sau khi thu gọn, xác định hệ số của ẩn và phép toán ngược phù hợp.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "F01",
+      "content_version": "0.1.0",
+      "explanation": "Công thức hàm số mô tả giá trị đầu ra tương ứng với mỗi đầu vào trong tập xác định. Để tính giá trị hàm, thay giá trị đầu vào vào công thức và tính. Không nhầm giá trị biến với giá trị hàm tại biến đó.",
+      "problems": [
+        {
+          "case_id": "P-F01-01",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-constant",
+          "source_group": "GROUP-F01-constant",
+          "difficulty": "introductory",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 7. Giá trị x = -3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "7",
+            "variable_value": "-3"
+          },
+          "reference_answer": "7",
+          "reference_steps": [
+            "7"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F01-02",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-constant",
+          "source_group": "GROUP-F01-constant",
+          "difficulty": "introductory",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: -4. Giá trị x = 2.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "-4",
+            "variable_value": "2"
+          },
+          "reference_answer": "-4",
+          "reference_steps": [
+            "-4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F01-03",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-linear",
+          "source_group": "GROUP-F01-linear",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 2*x-1. Giá trị x = 3.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "2*x-1",
+            "variable_value": "3"
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "2*3-1",
+            "6-1",
+            "5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F01-04",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-linear",
+          "source_group": "GROUP-F01-linear",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: -3*x+2. Giá trị x = -2.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "-3*x+2",
+            "variable_value": "-2"
+          },
+          "reference_answer": "8",
+          "reference_steps": [
+            "-3*(-2)+2",
+            "6+2",
+            "8"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F01-05",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-quadratic",
+          "source_group": "GROUP-F01-quadratic",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: x*x+1. Giá trị x = -2.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "x*x+1",
+            "variable_value": "-2"
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "(-2)*(-2)+1",
+            "4+1",
+            "5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F01-06",
+          "concept_id": "F01",
+          "primary_skill_id": "SK-F01-VALUE",
+          "family_id": "FAM-F01-quadratic",
+          "source_group": "GROUP-F01-quadratic",
+          "difficulty": "standard",
+          "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 2*x*x-x. Giá trị x = -1.",
+          "task": {
+            "kind": "evaluate",
+            "expression": "2*x*x-x",
+            "variable_value": "-1"
+          },
+          "reference_answer": "3",
+          "reference_steps": [
+            "2*(-1)*(-1)-(-1)",
+            "2+1",
+            "3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-F01-01",
+          "task": {
+            "kind": "evaluate",
+            "expression": "6",
+            "variable_value": "1"
+          },
+          "reference_answer": "6",
+          "reference_steps": [
+            "6"
+          ]
+        },
+        {
+          "case_id": "EX-F01-02",
+          "task": {
+            "kind": "evaluate",
+            "expression": "4*x+1",
+            "variable_value": "-1"
+          },
+          "reference_answer": "-3",
+          "reference_steps": [
+            "4*(-1)+1",
+            "-4+1",
+            "-3"
+          ]
+        },
+        {
+          "case_id": "EX-F01-03",
+          "task": {
+            "kind": "evaluate",
+            "expression": "x*x-3",
+            "variable_value": "3"
+          },
+          "reference_answer": "6",
+          "reference_steps": [
+            "3*3-3",
+            "9-3",
+            "6"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-F01-01",
+          "problem_id": "P-F01-01",
+          "response_steps": [
+            "-3"
+          ],
+          "first_error_step": 1,
+          "family": "input_as_output",
+          "hypothesis": "Có thể trả đầu vào thay giá trị hàm hằng.",
+          "diagnostic_question": "Công thức hàm hằng có phụ thuộc đầu vào không?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-F01-02",
+          "problem_id": "P-F01-03",
+          "response_steps": [
+            "3"
+          ],
+          "first_error_step": 1,
+          "family": "input_as_output",
+          "hypothesis": "Có thể chép đầu vào hoặc kết quả từ bài khác.",
+          "diagnostic_question": "Em đã thay đầu vào vào đúng công thức của bài này chưa?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Đề đang cho đầu vào hay yêu cầu giá trị đầu ra của hàm?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Thay cùng giá trị đầu vào ở mọi vị trí của biến trong công thức.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Giữ ngoặc ở số âm, tính từng phép toán theo thứ tự rồi kiểm tra đầu ra.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "F05",
+      "content_version": "0.1.0",
+      "explanation": "Với đa thức bậc hai có hệ số bậc hai khác không, xác định hoành độ đỉnh bằng hệ số, sau đó thay vào công thức để tìm tung độ. Trục đối xứng đi qua hoành độ đỉnh. Dạng hoàn thành bình phương giúp kiểm tra dấu và tọa độ.",
+      "problems": [
+        {
+          "case_id": "P-F05-01",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-general",
+          "source_group": "GROUP-F05-general",
+          "difficulty": "introductory",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: x*x-4*x+1.",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "x*x-4*x+1",
+            "variable_value": null
+          },
+          "reference_answer": "(2,-3)",
+          "reference_steps": [
+            "(4/2,4-8+1)",
+            "(2,-3)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F05-02",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-general",
+          "source_group": "GROUP-F05-general",
+          "difficulty": "introductory",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: 2*x*x+4*x-1.",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "2*x*x+4*x-1",
+            "variable_value": null
+          },
+          "reference_answer": "(-1,-3)",
+          "reference_steps": [
+            "(-4/4,2-4-1)",
+            "(-1,-3)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F05-03",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-completed_square",
+          "source_group": "GROUP-F05-completed_square",
+          "difficulty": "standard",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: (x-2)*(x-2)+3.",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "(x-2)*(x-2)+3",
+            "variable_value": null
+          },
+          "reference_answer": "(2,3)",
+          "reference_steps": [
+            "(2,3)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F05-04",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-completed_square",
+          "source_group": "GROUP-F05-completed_square",
+          "difficulty": "standard",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: -2*(x+1)*(x+1)+4.",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "-2*(x+1)*(x+1)+4",
+            "variable_value": null
+          },
+          "reference_answer": "(-1,4)",
+          "reference_steps": [
+            "(-1,4)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F05-05",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-factored",
+          "source_group": "GROUP-F05-factored",
+          "difficulty": "standard",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: (x-2)*(x+4).",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "(x-2)*(x+4)",
+            "variable_value": null
+          },
+          "reference_answer": "(-1,-9)",
+          "reference_steps": [
+            "(-1,(-1-2)*(-1+4))",
+            "(-1,-9)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-F05-06",
+          "concept_id": "F05",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "family_id": "FAM-F05-factored",
+          "source_group": "GROUP-F05-factored",
+          "difficulty": "standard",
+          "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: -(x+1)*(x-3).",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "-(x+1)*(x-3)",
+            "variable_value": null
+          },
+          "reference_answer": "(1,4)",
+          "reference_steps": [
+            "(1,-(1+1)*(1-3))",
+            "(1,4)"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-F05-01",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "x*x-2*x+2",
+            "variable_value": null
+          },
+          "reference_answer": "(1,1)",
+          "reference_steps": [
+            "(2/2,1-2+2)",
+            "(1,1)"
+          ]
+        },
+        {
+          "case_id": "EX-F05-02",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "2*(x-3)*(x-3)-2",
+            "variable_value": null
+          },
+          "reference_answer": "(3,-2)",
+          "reference_steps": [
+            "(3,-2)"
+          ]
+        },
+        {
+          "case_id": "EX-F05-03",
+          "task": {
+            "kind": "quadratic_vertex",
+            "expression": "(x+2)*(x+2)+5",
+            "variable_value": null
+          },
+          "reference_answer": "(-2,5)",
+          "reference_steps": [
+            "(-2,5)"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-F05-01",
+          "problem_id": "P-F05-01",
+          "response_steps": [
+            "(-2,-3)"
+          ],
+          "first_error_step": 1,
+          "family": "vertex_sign",
+          "hypothesis": "Có thể thiếu dấu đối trong công thức hoành độ.",
+          "diagnostic_question": "Hệ số bậc nhất và dấu đứng trước nó trong công thức là gì?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-F05-02",
+          "problem_id": "P-F05-03",
+          "response_steps": [
+            "(-2,3)"
+          ],
+          "first_error_step": 1,
+          "family": "square_sign",
+          "hypothesis": "Có thể đọc dấu trong bình phương thành tọa độ trực tiếp.",
+          "diagnostic_question": "Giá trị nào làm phần bên trong bình phương bằng không?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Đề cho dạng khai triển hay dạng hoàn thành bình phương?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Nếu dùng hệ số, tìm hoành độ trước; tung độ cần được tính bằng cách thay vào hàm.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Kiểm tra dấu trong phần bình phương và thứ tự hoành độ, tung độ khi viết tọa độ.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "N01",
+      "content_version": "0.1.0",
+      "explanation": "Phân biệt dấu của số với dấu phép toán. Khi cộng hai số trái dấu, so sánh độ lớn rồi xác định dấu; khi trừ một số, có thể chuyển thành cộng số đối của số đó. Dùng trục số để giải thích, không chỉ nhớ quy tắc.",
+      "problems": [
+        {
+          "case_id": "P-N01-01",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-opposite",
+          "source_group": "GROUP-N01-opposite",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -7+4.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-7+4",
+            "variable_value": null
+          },
+          "reference_answer": "-3",
+          "reference_steps": [
+            "-(7-4)",
+            "-3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N01-02",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-opposite",
+          "source_group": "GROUP-N01-opposite",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -12+5.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-12+5",
+            "variable_value": null
+          },
+          "reference_answer": "-7",
+          "reference_steps": [
+            "-(12-5)",
+            "-7"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N01-03",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-subtract_positive",
+          "source_group": "GROUP-N01-subtract_positive",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -8-3.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-8-3",
+            "variable_value": null
+          },
+          "reference_answer": "-11",
+          "reference_steps": [
+            "-(8+3)",
+            "-11"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N01-04",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-subtract_positive",
+          "source_group": "GROUP-N01-subtract_positive",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: 4-9.",
+          "task": {
+            "kind": "numeric",
+            "expression": "4-9",
+            "variable_value": null
+          },
+          "reference_answer": "-5",
+          "reference_steps": [
+            "-(9-4)",
+            "-5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N01-05",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-subtract_negative",
+          "source_group": "GROUP-N01-subtract_negative",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: 6-(-2).",
+          "task": {
+            "kind": "numeric",
+            "expression": "6-(-2)",
+            "variable_value": null
+          },
+          "reference_answer": "8",
+          "reference_steps": [
+            "6+2",
+            "8"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N01-06",
+          "concept_id": "N01",
+          "primary_skill_id": "SK-N01-SIGNED-ADD",
+          "family_id": "FAM-N01-subtract_negative",
+          "source_group": "GROUP-N01-subtract_negative",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -5-(-9).",
+          "task": {
+            "kind": "numeric",
+            "expression": "-5-(-9)",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "-5+9",
+            "4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-N01-01",
+          "task": {
+            "kind": "numeric",
+            "expression": "-9+2",
+            "variable_value": null
+          },
+          "reference_answer": "-7",
+          "reference_steps": [
+            "-(9-2)",
+            "-7"
+          ]
+        },
+        {
+          "case_id": "EX-N01-02",
+          "task": {
+            "kind": "numeric",
+            "expression": "5-11",
+            "variable_value": null
+          },
+          "reference_answer": "-6",
+          "reference_steps": [
+            "-(11-5)",
+            "-6"
+          ]
+        },
+        {
+          "case_id": "EX-N01-03",
+          "task": {
+            "kind": "numeric",
+            "expression": "-3-(-8)",
+            "variable_value": null
+          },
+          "reference_answer": "5",
+          "reference_steps": [
+            "-3+8",
+            "5"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-N01-01",
+          "problem_id": "P-N01-01",
+          "response_steps": [
+            "11"
+          ],
+          "first_error_step": 1,
+          "family": "signed_add",
+          "hypothesis": "Có thể cộng độ lớn và bỏ qua dấu.",
+          "diagnostic_question": "Nếu đi từ số âm về phía dương thì độ lớn thay đổi ra sao?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-N01-02",
+          "problem_id": "P-N01-03",
+          "response_steps": [
+            "-5"
+          ],
+          "first_error_step": 1,
+          "family": "signed_sub",
+          "hypothesis": "Có thể trừ độ lớn mà không xét chiều trên trục số.",
+          "diagnostic_question": "Trừ số dương có làm vị trí dịch sang trái không?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dấu trừ ở đây là phép trừ hay là dấu của số?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Em thử viết phép trừ thành cộng số đối rồi xét dấu.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "So sánh độ lớn của hai số; trên trục số, em đang di chuyển theo hướng nào?",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "N02",
+      "content_version": "0.1.0",
+      "explanation": "Tách việc xác định dấu và tính độ lớn. Hai thừa số cùng dấu cho tích dương, trái dấu cho tích âm. Phép chia chỉ thực hiện khi số chia khác không; với tích nhiều thừa số, xét số lượng thừa số âm.",
+      "problems": [
+        {
+          "case_id": "P-N02-01",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-product",
+          "source_group": "GROUP-N02-product",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -6*4.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-6*4",
+            "variable_value": null
+          },
+          "reference_answer": "-24",
+          "reference_steps": [
+            "-(6*4)",
+            "-24"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N02-02",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-product",
+          "source_group": "GROUP-N02-product",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -3*7.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-3*7",
+            "variable_value": null
+          },
+          "reference_answer": "-21",
+          "reference_steps": [
+            "-(3*7)",
+            "-21"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N02-03",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-division",
+          "source_group": "GROUP-N02-division",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: (-24)/(-6).",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-24)/(-6)",
+            "variable_value": null
+          },
+          "reference_answer": "4",
+          "reference_steps": [
+            "24/6",
+            "4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N02-04",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-division",
+          "source_group": "GROUP-N02-division",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: (-35)/7.",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-35)/7",
+            "variable_value": null
+          },
+          "reference_answer": "-5",
+          "reference_steps": [
+            "-(35/7)",
+            "-5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N02-05",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-chain",
+          "source_group": "GROUP-N02-chain",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: (-2)*(-3)*4.",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-2)*(-3)*4",
+            "variable_value": null
+          },
+          "reference_answer": "24",
+          "reference_steps": [
+            "6*4",
+            "24"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N02-06",
+          "concept_id": "N02",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "family_id": "FAM-N02-chain",
+          "source_group": "GROUP-N02-chain",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: 3*(-2)*(-5).",
+          "task": {
+            "kind": "numeric",
+            "expression": "3*(-2)*(-5)",
+            "variable_value": null
+          },
+          "reference_answer": "30",
+          "reference_steps": [
+            "3*10",
+            "30"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-N02-01",
+          "task": {
+            "kind": "numeric",
+            "expression": "-8*3",
+            "variable_value": null
+          },
+          "reference_answer": "-24",
+          "reference_steps": [
+            "-(8*3)",
+            "-24"
+          ]
+        },
+        {
+          "case_id": "EX-N02-02",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-42)/(-7)",
+            "variable_value": null
+          },
+          "reference_answer": "6",
+          "reference_steps": [
+            "42/7",
+            "6"
+          ]
+        },
+        {
+          "case_id": "EX-N02-03",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-4)*(-2)*(-3)",
+            "variable_value": null
+          },
+          "reference_answer": "-24",
+          "reference_steps": [
+            "8*(-3)",
+            "-24"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-N02-01",
+          "problem_id": "P-N02-01",
+          "response_steps": [
+            "24"
+          ],
+          "first_error_step": 1,
+          "family": "sign_product",
+          "hypothesis": "Có thể bỏ dấu âm của tích trái dấu.",
+          "diagnostic_question": "Hai thừa số đang cùng dấu hay trái dấu?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-N02-02",
+          "problem_id": "P-N02-03",
+          "response_steps": [
+            "-4"
+          ],
+          "first_error_step": 1,
+          "family": "sign_division",
+          "hypothesis": "Có thể giữ dấu âm khi chia hai số âm.",
+          "diagnostic_question": "Thương cần dấu nào để nhân ngược lại ra số bị chia?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Em có thể xác định dấu trước khi tính độ lớn không?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Đếm số thừa số âm hoặc so sánh dấu của số bị chia và số chia.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Tính phần độ lớn riêng rồi gắn dấu đã kiểm tra; số chia có khác không không?",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "concept_id": "N04",
+      "content_version": "0.1.0",
+      "explanation": "Nhân hoặc chia cả tử và mẫu cho cùng một số khác không giữ giá trị phân số. Khi rút gọn, tìm ước chung và giữ dấu. Phân số tối giản có tử và mẫu nguyên không còn ước chung lớn hơn một; quy ước mẫu dương.",
+      "problems": [
+        {
+          "case_id": "P-N04-01",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-positive",
+          "source_group": "GROUP-N04-positive",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: 6/8.",
+          "task": {
+            "kind": "numeric",
+            "expression": "6/8",
+            "variable_value": null
+          },
+          "reference_answer": "3/4",
+          "reference_steps": [
+            "(6/2)/(8/2)",
+            "3/4"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N04-02",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-positive",
+          "source_group": "GROUP-N04-positive",
+          "difficulty": "introductory",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: 12/18.",
+          "task": {
+            "kind": "numeric",
+            "expression": "12/18",
+            "variable_value": null
+          },
+          "reference_answer": "2/3",
+          "reference_steps": [
+            "(12/6)/(18/6)",
+            "2/3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N04-03",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-negative",
+          "source_group": "GROUP-N04-negative",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -10/15.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-10/15",
+            "variable_value": null
+          },
+          "reference_answer": "-2/3",
+          "reference_steps": [
+            "-(10/5)/(15/5)",
+            "-2/3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N04-04",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-negative",
+          "source_group": "GROUP-N04-negative",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -14/21.",
+          "task": {
+            "kind": "numeric",
+            "expression": "-14/21",
+            "variable_value": null
+          },
+          "reference_answer": "-2/3",
+          "reference_steps": [
+            "-(14/7)/(21/7)",
+            "-2/3"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N04-05",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-common_factor",
+          "source_group": "GROUP-N04-common_factor",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: (2*3)/(5*3).",
+          "task": {
+            "kind": "numeric",
+            "expression": "(2*3)/(5*3)",
+            "variable_value": null
+          },
+          "reference_answer": "2/5",
+          "reference_steps": [
+            "6/15",
+            "2/5"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        },
+        {
+          "case_id": "P-N04-06",
+          "concept_id": "N04",
+          "primary_skill_id": "SK-N04-FRACTION-VALUE",
+          "family_id": "FAM-N04-common_factor",
+          "source_group": "GROUP-N04-common_factor",
+          "difficulty": "standard",
+          "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: (-3*4)/(7*4).",
+          "task": {
+            "kind": "numeric",
+            "expression": "(-3*4)/(7*4)",
+            "variable_value": null
+          },
+          "reference_answer": "-3/7",
+          "reference_steps": [
+            "-12/28",
+            "-3/7"
+          ],
+          "split": "authoring_dev",
+          "origin": "Bài tự biên soạn cho pilot, không lấy từ log ASSISTments."
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "EX-N04-01",
+          "task": {
+            "kind": "numeric",
+            "expression": "15/25",
+            "variable_value": null
+          },
+          "reference_answer": "3/5",
+          "reference_steps": [
+            "(15/5)/(25/5)",
+            "3/5"
+          ]
+        },
+        {
+          "case_id": "EX-N04-02",
+          "task": {
+            "kind": "numeric",
+            "expression": "-18/24",
+            "variable_value": null
+          },
+          "reference_answer": "-3/4",
+          "reference_steps": [
+            "-(18/6)/(24/6)",
+            "-3/4"
+          ]
+        },
+        {
+          "case_id": "EX-N04-03",
+          "task": {
+            "kind": "numeric",
+            "expression": "(4*5)/(9*5)",
+            "variable_value": null
+          },
+          "reference_answer": "4/9",
+          "reference_steps": [
+            "20/45",
+            "4/9"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "error_id": "ERR-N04-01",
+          "problem_id": "P-N04-01",
+          "response_steps": [
+            "3/8"
+          ],
+          "first_error_step": 1,
+          "family": "fraction_scale",
+          "hypothesis": "Có thể chia tử nhưng giữ nguyên mẫu.",
+          "diagnostic_question": "Em đã làm cùng phép toán ở tử và mẫu chưa?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "error_id": "ERR-N04-02",
+          "problem_id": "P-N04-03",
+          "response_steps": [
+            "2/3"
+          ],
+          "first_error_step": 1,
+          "family": "fraction_sign",
+          "hypothesis": "Có thể làm mất dấu âm khi rút gọn.",
+          "diagnostic_question": "Phân số ban đầu có dấu gì?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Phép biến đổi nào giữ nguyên giá trị phân số?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Tìm một ước chung khác không của cả tử và mẫu.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Viết hai phép chia riêng cho tử và mẫu, rồi kiểm tra còn ước chung nào không.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    }
+  ]
+}

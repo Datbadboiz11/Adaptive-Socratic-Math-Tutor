@@ -6,7 +6,7 @@ Xem [cấu trúc thư mục](docs/development/project-structure.md) và [mục l
 
 ## Trạng thái hiện tại
 
-Repository đã có **nền tảng Phần 1–3 và frontend tích hợp Phần 4**: kiểm tra phương trình bằng SymPy, observation/BKT, LangGraph/checkpoint PostgreSQL, OpenAI và web dùng API thật. Phần 5 đã có 7 ca API/DB thực tế; nghiệm thu thủ công trên build frontend mới còn mở. Chỉ phục vụ thử nội bộ: nội dung/gợi ý chưa duyệt chuyên môn, BKT chưa fit dataset, chưa có đăng nhập sản phẩm. Các phản hồi trong `design/` vẫn là mô phỏng độc lập.
+Repository đã có **nền tảng Phần 1–3 và frontend tích hợp Phần 4**: kiểm tra phương trình bằng SymPy, observation/BKT, LangGraph/checkpoint PostgreSQL, OpenAI và web dùng API thật. Phần 5 đã có 7 ca API/DB thực tế; nghiệm thu thủ công trên build frontend mới còn mở. Nhánh nghiên cứu đã preprocess ASSISTments 2017 và fit BKT baseline train/dev. Chỉ phục vụ thử nội bộ: nội dung/gợi ý chưa duyệt chuyên môn, BKT trong sản phẩm vẫn dùng bootstrap chưa hiệu chỉnh cho người học Việt Nam, chưa có đăng nhập sản phẩm. Các phản hồi trong `design/` vẫn là mô phỏng độc lập.
 
 Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt MVP G2 đề xuất tập trung vào một chủ đề chạy end-to-end; xem [kế hoạch MVP](docs/planning/mvp/README.md).
 
@@ -42,7 +42,7 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 docker compose up --build -d --wait
 ```
 
-Mở <http://localhost:3000> → chọn hồ sơ → **Bắt đầu phiên thử**. Phiên mới dùng bộ chấm/gia sư; phiên Phần 2 vẫn giữ chế độ chỉ lưu trữ. Service `init` tự migration/seed. Nếu Docker báo lỗi BuildKit trên đường dẫn có dấu, xem [cách xử lý](docs/implementation/mvp/phase3/README.md). Dataset lớn trong `data/` chưa được xử lý và không chặn bản thử này.
+Mở <http://localhost:3000> → chọn hồ sơ → **Bắt đầu phiên thử**. Phiên mới dùng bộ chấm/gia sư; phiên Phần 2 vẫn giữ chế độ chỉ lưu trữ. Service `init` tự migration/seed. Nếu Docker báo lỗi BuildKit trên đường dẫn có dấu, xem [cách xử lý](docs/implementation/mvp/phase3/README.md). Pipeline dữ liệu nghiên cứu chạy riêng, không chặn bản thử này.
 
 ## Thử luồng prototype riêng trong design/
 
@@ -106,8 +106,10 @@ Runner ghi lại ảnh và kết quả trong `design/previews/`; xem diff trư�
 
 ## Dữ liệu và thông tin nhạy cảm
 
-`data/` không được đưa lên Git vì chứa dataset tải riêng. Các bộ dữ liệu bên ngoài cần tuân thủ điều kiện truy cập/sử dụng; pipeline tiền xử lý và thực nghiệm tái lập sẽ được bổ sung trong phần nghiên cứu. API keys, `.env`, môi trường ảo và file DB cục bộ cũng được bỏ qua.
+`data/` không được đưa lên Git vì chứa dataset tải riêng và bản ghi đã xử lý. Các bộ dữ liệu bên ngoài cần tuân thủ điều kiện truy cập/sử dụng. API keys, `.env`, môi trường ảo và file DB cục bộ cũng được bỏ qua.
 
-Đã có [báo cáo kiểm kê ASSISTments 2017](docs/research/data/README.md) và script đọc log theo dòng. Đây mới là audit schema/chất lượng; chưa tạo observation chuẩn hóa, fit BKT hoặc kiểm chứng ánh xạ skill sang chương trình Việt Nam.
+Đã có [audit và pipeline ASSISTments 2017](docs/research/data/README.md), [protocol observation](docs/research/data/observation-protocol.md) và [BKT baseline dev](docs/research/data/bkt-dev-v1.md). Cách chạy tái lập ở [runbook](docs/research/data/RUNBOOK.md). Test chưa đánh giá; chưa kiểm chứng ánh xạ skill sang chương trình Việt Nam hoặc đưa tham số nghiên cứu vào ứng dụng.
+
+Bước tiếp theo của dự án đã có [registry và pilot nội dung tiếng Việt](content/curriculum/README.md): 40 concept đề xuất, 10 pack nháp với 60 bài, 30 ví dụ, 20 mẫu lỗi và checker toán/graph. Chưa duyệt chuyên môn, chưa seed các pack vào web; bộ chấm online và các ID MVP giữ nguyên. Xem hướng dẫn để biên soạn, review và tiếp tục tích hợp KG/RAG.
 
 Chưa chọn giấy phép phân phối mã nguồn; không tự áp một giấy phép cho dataset bên ngoài. Nhóm sẽ quyết định giấy phép phù hợp sau.

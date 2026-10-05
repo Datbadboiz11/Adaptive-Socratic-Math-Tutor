@@ -1,6 +1,8 @@
-# Dữ liệu nghiên cứu — bước kiểm kê đầu tiên
+# Dữ liệu nghiên cứu — ASSISTments 2017
 
-Đây là nhánh công việc theo [kế hoạch đồ án 12 tuần](../../planning/project-plan.md) và [PRD](../../product/prd.md), **không phải pipeline BKT đã huấn luyện**. Dữ liệu thô nằm trong `data/` và được Git bỏ qua. Chỉ báo cáo tổng hợp không chứa ID học sinh ở [assistments_2017_audit.json](assistments_2017_audit.json).
+Đây là nhánh công việc theo [kế hoạch đồ án 12 tuần](../../planning/project-plan.md) và [PRD](../../product/prd.md). Đã có audit, pipeline action → observation và BKT baseline trên train/dev; chưa đánh giá test hoặc hiệu chỉnh cho học sinh Việt Nam. Dữ liệu thô và bản ghi đã xử lý nằm trong `data/`, được Git bỏ qua. Báo cáo tổng hợp không chứa ID học sinh được lưu trong docs.
+
+Đọc [protocol observation](observation-protocol.md), [cách chạy và vị trí đầu ra](RUNBOOK.md) và [kết quả dev v1](bkt-dev-v1.md). Báo cáo audit bên dưới mô tả bước kiểm kê trước khi preprocess, không phải toàn bộ trạng thái hiện tại.
 
 ## Nguồn và phạm vi lần kiểm kê
 
@@ -31,12 +33,12 @@ Có thể dùng `--data-root` nếu đặt dữ liệu ở nơi khác và `--max
 
 Theo [mô tả cuộc thi của ASSISTments](https://sites.google.com/view/assistmentsdatamining/data-mining-competition-2017), mục tiêu của `training_label.csv` là dự đoán kết quả dài hạn về tham gia STEM, **không phải nhãn đúng/sai cho từng bước học**. [Bảng giải thích cột của ASSISTments](https://docs.google.com/spreadsheets/d/1QVUStXiRerWbH1X0P11rJ5IsuU2Xutu60D1SjpmTMlk/edit) định nghĩa `original` là bài gốc thay vì bài scaffold; `hint` là hành động xin gợi ý; `attemptCount` là số bài đã làm trong tutor, không phải số lần thử trên bài hiện tại. Vì thế audit chỉ đếm giá trị trường, chưa suy ra “đúng độc lập” hoặc cập nhật BKT. `AveKnow`, `Ln`, `AveCorrect` và các thống kê tương lai/toàn lịch sử cũng không được dùng làm ground truth hay đặc trưng trước dự đoán khi chưa chứng minh không rò rỉ.
 
-## Bước kế tiếp trên đường găng
+## Lộ trình dữ liệu và trạng thái
 
-1. Chốt đơn vị opportunity/observation và chính sách loại hint/scaffold/lượt lặp từ **tài liệu cột và kiểm tra mẫu**, không suy ra từ tên cột. Giữ `unverified` khi thiếu thông tin.
-2. Thiết kế split **theo học sinh và họ bài**, khóa test trước khi fit/chọn ngưỡng. Ghi manifest và version, không dùng split `training_label`/`validation_test_label` của mục tiêu STEM làm split KT.
-3. Xây pipeline streaming chuẩn hóa action → observation ở `data/processed/`, lưu lý do giữ/loại và kiểm tra không trùng opportunity. Không xuất ID/bản ghi thô vào Git.
-4. Chạy BKT baseline với đánh giá dự đoán lượt tiếp theo (log loss, AUC, Brier/calibration) và đối chiếu online BKT hiện có. Báo riêng kết quả trên dữ liệu này; không coi tham số là đã hiệu chuẩn cho học sinh Việt Nam.
-5. Song song, rà taxonomy 40 concept, quan hệ prerequisite và nội dung tiếng Việt theo quy trình duyệt; chỉ map raw skill khi có căn cứ. Junyi là benchmark bổ sung và FoundationalASSIST không chặn pipeline chính.
+1. **Đã làm:** protocol v1 dựa trên ý nghĩa cột; loại hint/scaffold/repeat, không suy lần thử từ `attemptCount`.
+2. **Đã làm:** student split 70/15/15, seed và manifest; test chưa đánh giá. Họ bài là split riêng của bộ tiếng Việt, chưa suy họ mẫu của ASSISTments khi thiếu metadata.
+3. **Đã làm:** pipeline streaming/disk-backed, 121.958 observations, lý do giữ/loại và hash nguồn. Bản ghi local không xuất vào Git.
+4. **Đã làm:** MLE BKT, hai baseline, metric dev, đối chiếu backend/phép tính độc lập. **Còn:** pyBKT parity, phân tích skill chạm biên, sensitivity và test/uncertainty cuối.
+5. **Chưa hoàn thành:** taxonomy 40 concept, nội dung tiếng Việt được duyệt và mapping có căn cứ; sau đó tích hợp KG/RAG. Junyi là benchmark bổ sung, FoundationalASSIST chưa được cấp không chặn pipeline chính.
 
 Audit đọc ID học sinh ẩn danh trong bộ dữ liệu cục bộ nhưng không ghi các ID đó ra báo cáo. Nó không xác nhận quyền phát hành lại bộ dữ liệu và không chứng minh chất lượng sư phạm. Khi chia sẻ repo, giữ dữ liệu gốc và file biến đổi trong `data/`.

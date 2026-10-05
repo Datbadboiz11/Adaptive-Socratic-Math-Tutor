@@ -1,0 +1,340 @@
+{
+  "protocol_version": "assistments2017-first-original-v1",
+  "evaluation_split": "dev",
+  "test_evaluated": false,
+  "selection_data": "train only; no dev model selection in v1",
+  "fit_engine": "scipy-constrained-mle",
+  "preprocessing_report_sha256": "3238d98db9702c01fbce428e6168eb70a7caa968a51acfa1424d14a94895d6ef",
+  "parameter_sha256": "a7cd53a6f6edb07f8cf5c73e1ffa6f55f8df951a6e555d4b779e0230bdf812b4",
+  "code_sha256": {
+    "benchmark.py": "1c6ccda869c9ca6406553fef771ee6f7c8b619385b4907606dbc7d24a26af67c",
+    "model.py": "1e18ce34e01fe11be8620d37b1bed4f221f2a42c00a7bf828a406f0681816b6c",
+    "metrics.py": "0c839bfb3df1883dd2526768b3e4135346cd97f43f92b8e579eea93545c0bf1d"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.14.1"
+  },
+  "train_observations": 85011,
+  "dev_observations": 18465,
+  "train_students": 1195,
+  "dev_students": 256,
+  "model_sources": {
+    "skill_train_mle": 75,
+    "pooled_insufficient_support": 10
+  },
+  "dev_parameter_sources": {
+    "skill_train_mle": 18378,
+    "pooled_insufficient_support": 87
+  },
+  "boundary_skill_fits": 35,
+  "pooled_diagnostics": {
+    "train_log_loss": 0.6738316540758307,
+    "starts": [
+      {
+        "converged": true,
+        "iterations": 13,
+        "train_log_loss": 0.6738316540770738
+      },
+      {
+        "converged": true,
+        "iterations": 12,
+        "train_log_loss": 0.6738316540794096
+      },
+      {
+        "converged": true,
+        "iterations": 13,
+        "train_log_loss": 0.6738316540758307
+      }
+    ],
+    "boundary_parameters": [],
+    "source": "pooled_train"
+  },
+  "pybkt_parity": "NOT RUN: optional dependency unavailable",
+  "limitations": [
+    "First recorded exposure may not be first lifetime exposure; unrecorded help is unknown.",
+    "One observation per student/problem: repeated assignments intentionally excluded.",
+    "No misconception labels, latent mastery ground truth, or Vietnamese calibration.",
+    "Source skill tags are retained independently, including geometry for this public-data benchmark.",
+    "Student split does not hold out problem families; family grouping requires content metadata.",
+    "Pseudonyms are linkable hashes, not anonymization. Row-level artifacts remain local.",
+    "Development results only; no held-out test claims or confidence intervals yet.",
+    "Bounds and support thresholds are predeclared engineering choices, not universal BKT standards.",
+    "Learning during excluded help/scaffold is not modeled; later observations may follow instruction.",
+    "MLE may reach a local optimum; no claim that latent mastery is identifiable or calibrated.",
+    "Research parameters are NOT installed into the product or mapped to Vietnamese skills."
+  ],
+  "results": {
+    "bkt": {
+      "micro": {
+        "observations": 18465,
+        "positive": 9787,
+        "log_loss": 0.6497224549673986,
+        "brier": 0.2289874210387235,
+        "auc": 0.6648436542795751,
+        "ece_10_equal_width": 0.019659018212054395,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "mean_prediction": null,
+            "observed_rate": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 47,
+            "mean_prediction": 0.18552036149543386,
+            "observed_rate": 0.2765957446808511
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 1642,
+            "mean_prediction": 0.27237633068908884,
+            "observed_rate": 0.2984165651644336
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 2481,
+            "mean_prediction": 0.36273846279147076,
+            "observed_rate": 0.36960902861749295
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 5736,
+            "mean_prediction": 0.453122150774633,
+            "observed_rate": 0.47995118549511856
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 3549,
+            "mean_prediction": 0.5448871829294152,
+            "observed_rate": 0.5703014933784164
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 2498,
+            "mean_prediction": 0.651188829190481,
+            "observed_rate": 0.6637309847878302
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 2194,
+            "mean_prediction": 0.7496732323784255,
+            "observed_rate": 0.7575205104831358
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 307,
+            "mean_prediction": 0.847543548385599,
+            "observed_rate": 0.8566775244299675
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 11,
+            "mean_prediction": 0.9528359112044189,
+            "observed_rate": 0.6363636363636364
+          }
+        ]
+      },
+      "macro": {
+        "log_loss": 0.6584532202901341,
+        "log_loss_skills": 84,
+        "brier": 0.23234869045911882,
+        "brier_skills": 84,
+        "auc": 0.5605106876096894,
+        "auc_skills": 79
+      }
+    },
+    "skill_rate": {
+      "micro": {
+        "observations": 18465,
+        "positive": 9787,
+        "log_loss": 0.6673054962702154,
+        "brier": 0.23744720204066883,
+        "auc": 0.623688158843519,
+        "ece_10_equal_width": 0.02429597363700789,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "mean_prediction": null,
+            "observed_rate": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 47,
+            "mean_prediction": 0.1883408071748879,
+            "observed_rate": 0.2765957446808511
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 800,
+            "mean_prediction": 0.28194546173665885,
+            "observed_rate": 0.2925
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 2653,
+            "mean_prediction": 0.35485010526876865,
+            "observed_rate": 0.3927629099133057
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 7309,
+            "mean_prediction": 0.47517103320580156,
+            "observed_rate": 0.5006156792994938
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 4269,
+            "mean_prediction": 0.543323292921778,
+            "observed_rate": 0.571562426797845
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 1544,
+            "mean_prediction": 0.6432801423120617,
+            "observed_rate": 0.6573834196891192
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 1779,
+            "mean_prediction": 0.7448910122370772,
+            "observed_rate": 0.7481731309724564
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 64,
+            "mean_prediction": 0.807675945378152,
+            "observed_rate": 0.828125
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 0,
+            "mean_prediction": null,
+            "observed_rate": null
+          }
+        ]
+      },
+      "macro": {
+        "log_loss": 0.6582936309761704,
+        "log_loss_skills": 84,
+        "brier": 0.23311046868382293,
+        "brier_skills": 84,
+        "auc": 0.5,
+        "auc_skills": 79
+      }
+    },
+    "history_rate": {
+      "micro": {
+        "observations": 18465,
+        "positive": 9787,
+        "log_loss": 0.6674215327272374,
+        "brier": 0.2363273298657541,
+        "auc": 0.644734463100689,
+        "ece_10_equal_width": 0.038962437201613166,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 7,
+            "mean_prediction": 0.0918490984028215,
+            "observed_rate": 0.2857142857142857
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 517,
+            "mean_prediction": 0.17771169167758327,
+            "observed_rate": 0.32108317214700194
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 1566,
+            "mean_prediction": 0.25975530760017795,
+            "observed_rate": 0.36973180076628354
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 3147,
+            "mean_prediction": 0.35024852293562414,
+            "observed_rate": 0.4026056561804894
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 3911,
+            "mean_prediction": 0.46680168701007724,
+            "observed_rate": 0.4722577345947328
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 3396,
+            "mean_prediction": 0.5468297229266671,
+            "observed_rate": 0.5497644287396938
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 2624,
+            "mean_prediction": 0.6541669621925499,
+            "observed_rate": 0.6272865853658537
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 1953,
+            "mean_prediction": 0.74775827837369,
+            "observed_rate": 0.6984126984126984
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 1053,
+            "mean_prediction": 0.8433277890809023,
+            "observed_rate": 0.7730294396961064
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 291,
+            "mean_prediction": 0.9269249250526495,
+            "observed_rate": 0.8075601374570447
+          }
+        ]
+      },
+      "macro": {
+        "log_loss": 0.6580364535999325,
+        "log_loss_skills": 84,
+        "brier": 0.23252040657919512,
+        "brier_skills": 84,
+        "auc": 0.5474898452958327,
+        "auc_skills": 79
+      }
+    }
+  }
+}

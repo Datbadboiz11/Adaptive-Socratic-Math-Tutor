@@ -1,0 +1,28 @@
+{
+  "protocol_version": "assistments2017-first-original-v1",
+  "source": "competition-training-logs-only",
+  "expected_log_files": 10,
+  "opportunity": "First recorded exposure for each student/problem across all ten logs; repeated assignments do not create new observations.",
+  "target": "Correctness of the first recorded original response with no recorded help; not latent mastery or misconception.",
+  "split": {"seed": 20261003, "train": 0.70, "dev": 0.15, "test": 0.15},
+  "unknown_skills": ["", "noskill", "none", "null", "nan", "unknown", "-1"],
+  "fit": {
+    "engine": "scipy-constrained-mle",
+    "starts": [[0.2, 0.1, 0.2, 0.1], [0.6, 0.05, 0.15, 0.15], [0.1, 0.02, 0.35, 0.25]],
+    "bounds": [[0.001, 0.999], [0.0, 0.5], [0.001, 0.49], [0.001, 0.49]],
+    "parameter_order": ["prior", "learn", "guess", "slip"],
+    "forget": 0.0,
+    "min_observations": 100,
+    "min_sequences": 20,
+    "min_each_class": 10,
+    "max_iterations": 150,
+    "fallback": "pooled fit using training student-skill sequences only",
+    "selection": "Lowest training negative log likelihood among converged starts; dev is evaluation only in this version."
+  },
+  "test_policy": "sealed: benchmark command reads train and dev only",
+  "sources": [
+    "https://sites.google.com/view/assistmentsdatamining/data-mining-competition-2017",
+    "https://docs.google.com/spreadsheets/d/1QVUStXiRerWbH1X0P11rJ5IsuU2Xutu60D1SjpmTMlk/edit",
+    "https://github.com/CAHLR/pyBKT"
+  ]
+}
