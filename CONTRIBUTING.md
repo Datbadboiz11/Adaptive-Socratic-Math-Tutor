@@ -28,7 +28,7 @@ Tên nhánh gợi ý: `feat/…`, `fix/…`, `docs/…`, `test/…`, `chore/…`
 
 ## Theo dõi gate MVP
 
-Gate yêu cầu ≥10 PR đã merge. Commit khởi tạo không tự trở thành PR. Dùng [bảng công việc dự kiến](plan/README.md) để chia thay đổi có ý nghĩa và ghi các link PR thực tế khi hoàn thành. Không tạo PR rỗng hoặc chia nhỏ vô nghĩa để tăng số lượng.
+Gate yêu cầu ≥10 PR đã merge. Commit khởi tạo không tự trở thành PR. Dùng [bảng công việc dự kiến](docs/planning/mvp/README.md) để chia thay đổi có ý nghĩa và ghi các link PR thực tế khi hoàn thành. Không tạo PR rỗng hoặc chia nhỏ vô nghĩa để tăng số lượng.
 
 ## Thiết lập máy thành viên
 

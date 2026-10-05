@@ -1,0 +1,165 @@
+{
+  "checked_on": "2026-10-04",
+  "scope": "Registry and draft authoring pilot; not learner publication or completed KG/RAG integration",
+  "authoring": {
+    "content_version": "0.1.0",
+    "registry_concepts": 40,
+    "pilot_concepts": 10,
+    "edges": 68,
+    "concept_review_counts": {
+      "draft": 40
+    },
+    "coverage": [
+      {
+        "concept_id": "A01",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "A02",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "A03",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "E01",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "E02",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "F01",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "F05",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "N01",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "N02",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      },
+      {
+        "concept_id": "N04",
+        "problems": 6,
+        "families": 3,
+        "examples": 3,
+        "error_fixtures": 2,
+        "math_audit": "pass",
+        "human_review": "draft",
+        "public_chunks": 0
+      }
+    ],
+    "note": "Authoring checks only. Drafts are not seeded into the MVP or published to learners."
+  },
+  "verification": {
+    "new_tests": 33,
+    "focused_rerun_including_legacy_timeout_test": {
+      "passed": 34
+    },
+    "regression": {
+      "tests": 120,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 23,
+      "seconds": 10.564,
+      "passed": 97,
+      "xml_local": "data/test-runs/curriculum-verified-db76efd5-e25a-4b91-b545-fc651029e579.xml"
+    },
+    "first_regression": {
+      "tests": 120,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 23,
+      "seconds": 50.406,
+      "xml_local": "data/test-runs/curriculum-30832659-96b5-4b6c-956c-f8824de5717e.xml",
+      "failure": "Existing test_exact_rational_unicode_and_limits hit the 3-second worker deadline; focused and final reruns passed without changing the legacy validator."
+    },
+    "db_tests": "23 skipped: PostgreSQL unavailable in this session; CI retains RUN_DB_TESTS=1",
+    "schemas": "15 exported schemas match implementation",
+    "openapi": "Phase 3 unchanged; matches implementation",
+    "links_and_tracked_file_policy": "PASS",
+    "baseline_bkt_source_and_parameter_hashes_unchanged": true
+  },
+  "environment": {
+    "python": "3.12.4",
+    "pydantic": "2.13.5"
+  },
+  "sha256": {
+    "content/curriculum/registry.v1.json": "73e3fce72c569cb794a4a37b2afacc8b24c5c2e8a15083eb8175624204149980",
+    "content/curriculum/pilot.v1.json": "11d17e38740a3e2bd03f58617fc5edbae79ca78ac4809dd2011df1c058c06168",
+    "backend/app/curriculum.py": "dfeddb165e16a0ddf5c9432bb6667dcd0314e7e6d57a0a6e653eb76d79cde5df",
+    "backend/app/authoring_math.py": "c12e3f6f10b6262f6d2e6532b3f411d5aa0313776734317d7ffb8e07176495b8",
+    "scripts/checks/check_curriculum.py": "a5f8bffbd932fc7ca7a1618a0c9d21238f8e425f3180078a03d3b16e984bc573",
+    "tests/test_curriculum.py": "15c46f5289844ce4b30f16efc08f9769ba78cb7b534b5b90170790587112cdc0",
+    "contracts/v1/CurriculumRegistry.schema.json": "9942dfda1390861cfcec8e1e12d8e6733c7ee7090ca494e7729c32cc80b650fa",
+    "contracts/v1/PilotBank.schema.json": "44ffae3d4ba929c8cb6517071657d85e92b1f371861b7ce853f37d95a6729d6e"
+  },
+  "remaining": [
+    "Human curriculum/content/edge review",
+    "Learner validators for the new task types",
+    "Semantic RAG and Agent integration with backtrack/return",
+    "Expansion and independently labelled evaluation data"
+  ]
+}

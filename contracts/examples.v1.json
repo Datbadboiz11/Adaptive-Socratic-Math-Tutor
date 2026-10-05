@@ -1,0 +1,32 @@
+[
+  {
+    "schema": "CreateSession",
+    "note": "Payload mẫu, chưa phải kết quả gọi API đã triển khai.",
+    "payload": {"request_id": "10000000-0000-4000-8000-000000000001", "demo_profile_id": "DEMO-STUDENT-01", "topic_id": "TOPIC-LINEAR-01"}
+  },
+  {
+    "schema": "TurnRequest",
+    "note": "Gửi chuỗi bước sai; session_id nằm trên URL.",
+    "payload": {"request_id": "10000000-0000-4000-8000-000000000002", "opportunity_id": "20000000-0000-4000-8000-000000000001", "expected_state_version": 1, "action": "submit", "steps": ["2x - 3 = 10", "2x = 13", "x = 6.5"]}
+  },
+  {
+    "schema": "Assessment",
+    "note": "Kết quả kỳ vọng cho validator sắp triển khai; không phải output runtime.",
+    "payload": {"assessment_id": "30000000-0000-4000-8000-000000000001", "assessment_status": "verified_incorrect", "first_error_step": 1, "primary_skill_id": "SK-LIN-SOLVE", "error_family": "distribution_error", "misconception_candidate": "M_DIST_01", "diagnosis_status": "suspected", "reason_code": "invalid_transformation", "evidence": ["2(x - 3) = 10 -> 2x - 3 = 10"], "verification_method": "symbolic_and_rule", "validator_version": "planned-v1"}
+  },
+  {
+    "schema": "Eligibility",
+    "note": "Lượt sửa sau khi có hint: không thêm observation chuẩn.",
+    "payload": {"eligible": false, "reason": "assisted"}
+  },
+  {
+    "schema": "TutorResponse",
+    "note": "Mẫu hợp đồng; nguồn reviewed_fallback chỉ được dùng runtime sau review thật.",
+    "payload": {"action": "ask", "message": "Nếu viết (x - 3) + (x - 3), phần -3 xuất hiện bao nhiêu lần?", "target_skill_id": "SK-LIN-SOLVE", "hint_level": 1, "evidence_ids": ["30000000-0000-4000-8000-000000000001"], "content_ids": ["LIN-003"], "next_actions": ["submit", "request_hint", "pause", "finish"], "response_source": "reviewed_fallback", "policy_version": "planned-g2-v1"}
+  },
+  {
+    "schema": "ErrorResponse",
+    "note": "Không tự ghi đè state nếu có request cạnh tranh.",
+    "payload": {"code": "state_conflict", "message": "Phiên đã có thay đổi. Hãy tải trạng thái mới trước khi gửi lại.", "request_id": "10000000-0000-4000-8000-000000000002", "retryable": false}
+  }
+]

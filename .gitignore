@@ -6,10 +6,23 @@
 .env.*
 !.env.example
 !.env.*.example
+.envrc
+.envrc.*
+.direnv/
+/.secrets/
+/secrets/
+/.docker/
+credentials.json
+token.json
+client_secret*.json
+*service-account*.json
 *.pem
 *.key
+*.p8
 *.p12
 *.pfx
+*.jks
+*.keystore
 .aws/
 .agents/
 .codex/
@@ -18,11 +31,19 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-research/
 venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.ipynb_checkpoints/
+*.egg-info/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
 
 # JavaScript / frontend
@@ -33,6 +54,10 @@ dist/
 build/
 coverage/
 *.tsbuildinfo
+next-env.d.ts
+.turbo/
+.npm/
+.nyc_output/
 
 # Local databases, logs and editor files
 *.db
@@ -40,6 +65,10 @@ coverage/
 *.db-wal
 *.sqlite
 *.sqlite3
+*.sqlite-journal
+*.dump
+*.backup
+*.bak
 *.log
 .vscode/
 .idea/
@@ -50,3 +79,21 @@ Desktop.ini
 # Browser test output; curated design/previews stays versioned
 playwright-report/
 test-results/
+
+# Local research outputs. Keep reviewed, redacted evidence in docs/ tracked.
+/artifacts/
+/outputs/
+/runs/
+/checkpoints/
+/postgres_data/
+/pgdata/
+*.parquet
+*.feather
+*.arrow
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.h5

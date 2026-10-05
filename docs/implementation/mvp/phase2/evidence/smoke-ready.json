@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-01T10:21:07.711035+00:00",
+  "mode": "ready",
+  "checks": [
+    {
+      "check": "liveness",
+      "http_status": 200,
+      "response": {
+        "status": "ok",
+        "phase": "session_storage",
+        "tutoring_enabled": false
+      }
+    },
+    {
+      "check": "database_readiness",
+      "http_status": 200,
+      "response": {
+        "status": "ready",
+        "database": "connected",
+        "tutoring_enabled": false
+      }
+    },
+    {
+      "check": "frontend_displays_live_readiness",
+      "http_status": 200,
+      "expected_text_found": true
+    },
+    {
+      "check": "health_and_session_endpoints_exposed",
+      "paths": [
+        "/api/v1/demo/login",
+        "/api/v1/demo/profiles",
+        "/api/v1/me",
+        "/api/v1/sessions",
+        "/api/v1/sessions/{session_id}",
+        "/api/v1/sessions/{session_id}/draft",
+        "/api/v1/sessions/{session_id}/finish",
+        "/api/v1/sessions/{session_id}/next",
+        "/api/v1/sessions/{session_id}/pause",
+        "/api/v1/sessions/{session_id}/report",
+        "/api/v1/sessions/{session_id}/resume",
+        "/api/v1/sessions/{session_id}/turns",
+        "/api/v1/topics",
+        "/health",
+        "/health/live",
+        "/health/ready"
+      ]
+    }
+  ],
+  "scope": "Foundation connectivity only; no tutoring, BKT or OpenAI request."
+}

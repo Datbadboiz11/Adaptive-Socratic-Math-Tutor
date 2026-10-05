@@ -1,0 +1,46 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "format": "uuid",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "opportunity_id": {
+      "format": "uuid",
+      "title": "Opportunity Id",
+      "type": "string"
+    },
+    "expected_state_version": {
+      "minimum": 1,
+      "title": "Expected State Version",
+      "type": "integer"
+    },
+    "action": {
+      "enum": [
+        "submit",
+        "request_hint"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "maxLength": 160,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request_id",
+    "opportunity_id",
+    "expected_state_version",
+    "action"
+  ],
+  "title": "TurnRequest",
+  "type": "object"
+}

@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-01T10:21:39.876041+00:00",
+  "checks": [
+    "unsaved draft saved before pause; reload/resume preserves whitespace",
+    "response lost after commit: UI retries identical payload, one turn",
+    "version conflict: refresh retains local draft and permits explicit save",
+    "desktop/tablet/mobile: no horizontal overflow",
+    "next/finish/report/reload use persisted data; no invented correct result",
+    "HttpOnly demo cookie and cross-origin mutation rejection"
+  ],
+  "browser_errors": [],
+  "session_id": "decff983-3cbf-48c9-9134-53c707f8f2a1",
+  "report_counts": {
+    "submitted_turns": 1,
+    "problems_viewed": 2,
+    "valid_observations": 0
+  }
+}

@@ -1,0 +1,2596 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "SRC-PROJECT-PLAN",
+      "title": "Danh mục mục tiêu 40 concept của dự án",
+      "url": "docs/planning/project-plan.md#5-phạm-vi-đề-tài",
+      "publisher": "Nhóm đồ án",
+      "accessed_on": "2026-10-04",
+      "note": "Nguồn danh mục và phạm vi; không phải bằng chứng chuyên môn cho từng cạnh."
+    },
+    {
+      "source_id": "SRC-MATH-2018",
+      "title": "Chương trình GDPT môn Toán, kèm TT 32/2018/TT-BGDĐT",
+      "url": "https://filethcs.hcm.shieldix.app/data/hcmedu/thcstruongcongdinh/2019_10/3_cttoan_610201915.pdf",
+      "publisher": "Bộ GDĐT; bản được Trường THCS Trương Công Định đăng lại",
+      "accessed_on": "2026-10-04",
+      "note": "Đã đọc phần lớp 6–10. Grade/objective là đề xuất đối chiếu, chưa có người duyệt. Không sao chép bài SGK; cần rà phiên bản chương trình khi nghiệm thu."
+    },
+    {
+      "source_id": "SRC-AMEND-2025",
+      "title": "Thông tư 17/2025/TT-BGDĐT",
+      "url": "https://vanban.chinhphu.vn/?docid=215347&orggroupid=4&pageid=27160",
+      "publisher": "Cổng văn bản Chính phủ",
+      "accessed_on": "2026-10-04",
+      "note": "Đã rà Điều 1: sửa các chương trình Lịch sử/Địa lí/GDCD; không dùng văn bản này để gán lớp môn Toán."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "N01",
+      "title": "Cộng trừ số có dấu",
+      "strand": "numbers",
+      "objective": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả.",
+      "skills": [
+        {
+          "skill_id": "SK-N01-SIGNED-ADD",
+          "observable_behavior": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả."
+        }
+      ],
+      "supported_forms": [
+        "Cộng hai số nguyên",
+        "Trừ hai số nguyên",
+        "Trừ số âm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ]
+    },
+    {
+      "concept_id": "N02",
+      "title": "Nhân chia số có dấu",
+      "strand": "numbers",
+      "objective": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu.",
+      "skills": [
+        {
+          "skill_id": "SK-N02-SIGNED-MUL",
+          "observable_behavior": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu."
+        }
+      ],
+      "supported_forms": [
+        "Tích hai số nguyên",
+        "Thương nguyên khác không",
+        "Tích với nhiều dấu"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ]
+    },
+    {
+      "concept_id": "N03",
+      "title": "Thứ tự phép tính",
+      "strand": "numbers",
+      "objective": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán.",
+      "skills": [
+        {
+          "skill_id": "SK-N03-PRIMARY",
+          "observable_behavior": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán."
+        }
+      ],
+      "supported_forms": [
+        "Biểu thức số có ngoặc",
+        "Phép nhân trước cộng trừ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N04",
+      "title": "Phân số tương đương và rút gọn",
+      "strand": "numbers",
+      "objective": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị.",
+      "skills": [
+        {
+          "skill_id": "SK-N04-FRACTION-VALUE",
+          "observable_behavior": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị."
+        }
+      ],
+      "supported_forms": [
+        "Rút gọn phân số",
+        "Phân số âm",
+        "Kiểm tra giá trị phân số"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ]
+    },
+    {
+      "concept_id": "N05",
+      "title": "Quy đồng và so sánh phân số",
+      "strand": "numbers",
+      "objective": "Quy đồng hai phân số rồi so sánh giá trị.",
+      "skills": [
+        {
+          "skill_id": "SK-N05-PRIMARY",
+          "observable_behavior": "Quy đồng hai phân số rồi so sánh giá trị."
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số mẫu khác nhau"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N06",
+      "title": "Cộng trừ phân số",
+      "strand": "numbers",
+      "objective": "Tính tổng hoặc hiệu các phân số với mẫu khác không.",
+      "skills": [
+        {
+          "skill_id": "SK-N06-PRIMARY",
+          "observable_behavior": "Tính tổng hoặc hiệu các phân số với mẫu khác không."
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số",
+        "Biểu thức phân số đơn giản"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N07",
+      "title": "Nhân chia phân số",
+      "strand": "numbers",
+      "objective": "Tính tích hoặc thương phân số và kiểm tra số chia khác không.",
+      "skills": [
+        {
+          "skill_id": "SK-N07-PRIMARY",
+          "observable_behavior": "Tính tích hoặc thương phân số và kiểm tra số chia khác không."
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số",
+        "Chia phân số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N08",
+      "title": "Chuyển đổi phân số–thập phân–phần trăm",
+      "strand": "numbers",
+      "objective": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn.",
+      "skills": [
+        {
+          "skill_id": "SK-N08-PRIMARY",
+          "observable_behavior": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn."
+        }
+      ],
+      "supported_forms": [
+        "Phân số có thập phân hữu hạn",
+        "Phần trăm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N09",
+      "title": "Lũy thừa với số mũ nguyên",
+      "strand": "numbers",
+      "objective": "Tính lũy thừa và áp dụng quy tắc trong miền xác định.",
+      "skills": [
+        {
+          "skill_id": "SK-N09-PRIMARY",
+          "observable_behavior": "Tính lũy thừa và áp dụng quy tắc trong miền xác định."
+        }
+      ],
+      "supported_forms": [
+        "Lũy thừa số",
+        "Số mũ nguyên âm với cơ số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "N10",
+      "title": "Căn bậc hai số học",
+      "strand": "numbers",
+      "objective": "Tính căn bậc hai số học và nêu điều kiện không âm.",
+      "skills": [
+        {
+          "skill_id": "SK-N10-PRIMARY",
+          "observable_behavior": "Tính căn bậc hai số học và nêu điều kiện không âm."
+        }
+      ],
+      "supported_forms": [
+        "Căn của số chính phương",
+        "Điều kiện căn số học"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A01",
+      "title": "Thay giá trị vào biểu thức",
+      "strand": "algebra",
+      "objective": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác.",
+      "skills": [
+        {
+          "skill_id": "SK-A01-EVALUATE",
+          "observable_behavior": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác."
+        }
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Giá trị hữu tỉ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "evaluate"
+      ]
+    },
+    {
+      "concept_id": "A02",
+      "title": "Tính phân phối",
+      "strand": "algebra",
+      "objective": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến.",
+      "skills": [
+        {
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "observable_behavior": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến."
+        }
+      ],
+      "supported_forms": [
+        "Hằng số nhân nhị thức",
+        "Hệ số âm",
+        "Đặt nhân tử chung tuyến tính"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "polynomial"
+      ]
+    },
+    {
+      "concept_id": "A03",
+      "title": "Thu gọn hạng tử đồng dạng",
+      "strand": "algebra",
+      "objective": "Gom các hạng tử có cùng phần biến và tính hệ số mới.",
+      "skills": [
+        {
+          "skill_id": "SK-A03-COLLECT",
+          "observable_behavior": "Gom các hạng tử có cùng phần biến và tính hệ số mới."
+        }
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Dấu ngoặc có dấu âm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "polynomial"
+      ]
+    },
+    {
+      "concept_id": "A04",
+      "title": "Nhân đơn thức và đa thức",
+      "strand": "algebra",
+      "objective": "Nhân các đa thức trong các dạng đã mô tả.",
+      "skills": [
+        {
+          "skill_id": "SK-A04-PRIMARY",
+          "observable_behavior": "Nhân các đa thức trong các dạng đã mô tả."
+        }
+      ],
+      "supported_forms": [
+        "Đơn thức nhân đa thức",
+        "Tích hai nhị thức"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A05",
+      "title": "Bình phương một tổng/hiệu",
+      "strand": "algebra",
+      "objective": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu.",
+      "skills": [
+        {
+          "skill_id": "SK-A05-PRIMARY",
+          "observable_behavior": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu."
+        }
+      ],
+      "supported_forms": [
+        "Nhị thức một biến"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A06",
+      "title": "Hiệu hai bình phương",
+      "strand": "algebra",
+      "objective": "Khai triển hoặc phân tích hiệu hai bình phương.",
+      "skills": [
+        {
+          "skill_id": "SK-A06-PRIMARY",
+          "observable_behavior": "Khai triển hoặc phân tích hiệu hai bình phương."
+        }
+      ],
+      "supported_forms": [
+        "Hai bình phương của biểu thức đơn giản"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A07",
+      "title": "Phân tích nhân tử bằng đặt nhân tử chung",
+      "strand": "algebra",
+      "objective": "Tìm nhân tử chung và viết đa thức thành tích.",
+      "skills": [
+        {
+          "skill_id": "SK-A07-PRIMARY",
+          "observable_behavior": "Tìm nhân tử chung và viết đa thức thành tích."
+        }
+      ],
+      "supported_forms": [
+        "Đa thức có nhân tử chung"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A08",
+      "title": "Phân tích nhân tử bằng hằng đẳng thức/nhóm",
+      "strand": "algebra",
+      "objective": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích.",
+      "skills": [
+        {
+          "skill_id": "SK-A08-PRIMARY",
+          "observable_behavior": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích."
+        }
+      ],
+      "supported_forms": [
+        "Dạng hằng đẳng thức",
+        "Nhóm bốn hạng tử"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A09",
+      "title": "Rút gọn phân thức và điều kiện xác định",
+      "strand": "algebra",
+      "objective": "Giữ điều kiện ban đầu khi rút gọn phân thức.",
+      "skills": [
+        {
+          "skill_id": "SK-A09-PRIMARY",
+          "observable_behavior": "Giữ điều kiện ban đầu khi rút gọn phân thức."
+        }
+      ],
+      "supported_forms": [
+        "Phân thức một biến có nhân tử chung"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "A10",
+      "title": "Cộng trừ nhân chia phân thức",
+      "strand": "algebra",
+      "objective": "Thực hiện phép toán phân thức kèm điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-A10-PRIMARY",
+          "observable_behavior": "Thực hiện phép toán phân thức kèm điều kiện."
+        }
+      ],
+      "supported_forms": [
+        "Phân thức một biến"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E01",
+      "title": "Phép biến đổi tương đương và điều kiện",
+      "strand": "equations",
+      "objective": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất.",
+      "skills": [
+        {
+          "skill_id": "SK-E01-EQUIVALENCE",
+          "observable_behavior": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất."
+        }
+      ],
+      "supported_forms": [
+        "Cộng trừ cùng hằng số ở hai vế",
+        "Nhân chia cùng số khác không",
+        "Khai triển hai vế"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "linear_equation"
+      ]
+    },
+    {
+      "concept_id": "E02",
+      "title": "Phương trình bậc nhất một ẩn",
+      "strand": "equations",
+      "objective": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ.",
+      "skills": [
+        {
+          "skill_id": "SK-E02-SOLVE",
+          "observable_behavior": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ."
+        }
+      ],
+      "supported_forms": [
+        "ax+b=c",
+        "a(x+b)=c",
+        "ax+b=cx+d"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "linear_equation"
+      ]
+    },
+    {
+      "concept_id": "E03",
+      "title": "Lập phương trình từ bài toán bằng lời",
+      "strand": "equations",
+      "objective": "Chọn ẩn và lập phương trình có đơn vị và điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-E03-PRIMARY",
+          "observable_behavior": "Chọn ẩn và lập phương trình có đơn vị và điều kiện."
+        }
+      ],
+      "supported_forms": [
+        "Bài toán một đại lượng chưa biết"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E04",
+      "title": "Phương trình tích",
+      "strand": "equations",
+      "objective": "Giải phương trình tích bằng tính chất tích bằng không.",
+      "skills": [
+        {
+          "skill_id": "SK-E04-PRIMARY",
+          "observable_behavior": "Giải phương trình tích bằng tính chất tích bằng không."
+        }
+      ],
+      "supported_forms": [
+        "Tích hai nhân tử bậc nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E05",
+      "title": "Phương trình chứa ẩn ở mẫu",
+      "strand": "equations",
+      "objective": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi.",
+      "skills": [
+        {
+          "skill_id": "SK-E05-PRIMARY",
+          "observable_behavior": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi."
+        }
+      ],
+      "supported_forms": [
+        "Phương trình quy về bậc nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E06",
+      "title": "Phương trình bậc hai và biệt thức",
+      "strand": "equations",
+      "objective": "Phân loại số nghiệm và giải phương trình bậc hai.",
+      "skills": [
+        {
+          "skill_id": "SK-E06-PRIMARY",
+          "observable_behavior": "Phân loại số nghiệm và giải phương trình bậc hai."
+        }
+      ],
+      "supported_forms": [
+        "Phương trình bậc hai hệ số hữu tỉ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E07",
+      "title": "Hệ thức Viète cơ bản",
+      "strand": "equations",
+      "objective": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm.",
+      "skills": [
+        {
+          "skill_id": "SK-E07-PRIMARY",
+          "observable_behavior": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm."
+        }
+      ],
+      "supported_forms": [
+        "Tổng tích hai nghiệm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E08",
+      "title": "Giải hệ bậc nhất bằng thế",
+      "strand": "equations",
+      "objective": "Thế một biểu thức để giải hệ hai phương trình.",
+      "skills": [
+        {
+          "skill_id": "SK-E08-PRIMARY",
+          "observable_behavior": "Thế một biểu thức để giải hệ hai phương trình."
+        }
+      ],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E09",
+      "title": "Giải hệ bậc nhất bằng cộng đại số",
+      "strand": "equations",
+      "objective": "Khử một ẩn bằng phép cộng hai phương trình tương đương.",
+      "skills": [
+        {
+          "skill_id": "SK-E09-PRIMARY",
+          "observable_behavior": "Khử một ẩn bằng phép cộng hai phương trình tương đương."
+        }
+      ],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "E10",
+      "title": "Bất phương trình bậc nhất và quy tắc đổi chiều",
+      "strand": "equations",
+      "objective": "Giải bất phương trình, đổi chiều khi nhân chia số âm.",
+      "skills": [
+        {
+          "skill_id": "SK-E10-PRIMARY",
+          "observable_behavior": "Giải bất phương trình, đổi chiều khi nhân chia số âm."
+        }
+      ],
+      "supported_forms": [
+        "Bất phương trình một ẩn"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F01",
+      "title": "Khái niệm hàm số và giá trị hàm",
+      "strand": "functions",
+      "objective": "Tính giá trị hàm từ công thức một biến ở điểm đã cho.",
+      "skills": [
+        {
+          "skill_id": "SK-F01-VALUE",
+          "observable_behavior": "Tính giá trị hàm từ công thức một biến ở điểm đã cho."
+        }
+      ],
+      "supported_forms": [
+        "Hàm đa thức bậc không quá hai",
+        "Bảng giá trị từ công thức"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8,
+          10
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "evaluate"
+      ]
+    },
+    {
+      "concept_id": "F02",
+      "title": "Tập xác định",
+      "strand": "functions",
+      "objective": "Xác định các điều kiện của biểu thức hàm.",
+      "skills": [
+        {
+          "skill_id": "SK-F02-PRIMARY",
+          "observable_behavior": "Xác định các điều kiện của biểu thức hàm."
+        }
+      ],
+      "supported_forms": [
+        "Hàm chứa mẫu",
+        "Hàm căn bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F03",
+      "title": "Hệ số góc và giá trị ban đầu của hàm bậc nhất",
+      "strand": "functions",
+      "objective": "Xác định và diễn giải các hệ số của hàm bậc nhất.",
+      "skills": [
+        {
+          "skill_id": "SK-F03-PRIMARY",
+          "observable_behavior": "Xác định và diễn giải các hệ số của hàm bậc nhất."
+        }
+      ],
+      "supported_forms": [
+        "Hàm y=ax+b"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F04",
+      "title": "Nghiệm và dấu hàm bậc nhất",
+      "strand": "functions",
+      "objective": "Tìm giao điểm trục hoành và xét dấu trên các khoảng.",
+      "skills": [
+        {
+          "skill_id": "SK-F04-PRIMARY",
+          "observable_behavior": "Tìm giao điểm trục hoành và xét dấu trên các khoảng."
+        }
+      ],
+      "supported_forms": [
+        "Hàm bậc nhất có hệ số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F05",
+      "title": "Đỉnh và trục đối xứng của hàm bậc hai",
+      "strand": "functions",
+      "objective": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng.",
+      "skills": [
+        {
+          "skill_id": "SK-F05-VERTEX",
+          "observable_behavior": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng."
+        }
+      ],
+      "supported_forms": [
+        "ax*x+b*x+c với a khác không",
+        "Dạng hoàn thành bình phương"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": true,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": [
+        "quadratic_vertex"
+      ]
+    },
+    {
+      "concept_id": "F06",
+      "title": "Khoảng đồng biến/nghịch biến của hàm bậc hai",
+      "strand": "functions",
+      "objective": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên.",
+      "skills": [
+        {
+          "skill_id": "SK-F06-PRIMARY",
+          "observable_behavior": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên."
+        }
+      ],
+      "supported_forms": [
+        "Hàm bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F07",
+      "title": "Dấu tam thức bậc hai và bất phương trình bậc hai",
+      "strand": "functions",
+      "objective": "Xét dấu theo nghiệm và dấu hệ số bậc hai.",
+      "skills": [
+        {
+          "skill_id": "SK-F07-PRIMARY",
+          "observable_behavior": "Xét dấu theo nghiệm và dấu hệ số bậc hai."
+        }
+      ],
+      "supported_forms": [
+        "Tam thức và bất phương trình bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F08",
+      "title": "Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng",
+      "strand": "functions",
+      "objective": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định.",
+      "skills": [
+        {
+          "skill_id": "SK-F08-PRIMARY",
+          "observable_behavior": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định."
+        }
+      ],
+      "supported_forms": [
+        "Hàm mũ cơ số dương khác một"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F09",
+      "title": "Logarit và quy tắc logarit",
+      "strand": "functions",
+      "objective": "Dùng định nghĩa và quy tắc logarit kèm điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-F09-PRIMARY",
+          "observable_behavior": "Dùng định nghĩa và quy tắc logarit kèm điều kiện."
+        }
+      ],
+      "supported_forms": [
+        "Logarit cơ số dương khác một"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    },
+    {
+      "concept_id": "F10",
+      "title": "Phương trình mũ/logarit cơ bản",
+      "strand": "functions",
+      "objective": "Giải phương trình cơ bản và đối chiếu điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-F10-PRIMARY",
+          "observable_behavior": "Giải phương trình cơ bản và đối chiếu điều kiện."
+        }
+      ],
+      "supported_forms": [
+        "Dạng cùng cơ số",
+        "Dạng dùng định nghĩa logarit"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "pilot": false,
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "authoring_task_kinds": []
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "PRE-N01-N02",
+      "source_concept_id": "N01",
+      "target_concept_id": "N02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở N02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N01-N03",
+      "source_concept_id": "N01",
+      "target_concept_id": "N03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở N03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-N03",
+      "source_concept_id": "N02",
+      "target_concept_id": "N03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở N03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N04-N05",
+      "source_concept_id": "N04",
+      "target_concept_id": "N05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N04 trước các dạng bài đã giới hạn ở N05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N05-N06",
+      "source_concept_id": "N05",
+      "target_concept_id": "N06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N05 trước các dạng bài đã giới hạn ở N06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N04-N07",
+      "source_concept_id": "N04",
+      "target_concept_id": "N07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N04 trước các dạng bài đã giới hạn ở N07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-N07",
+      "source_concept_id": "N02",
+      "target_concept_id": "N07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở N07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N04-N08",
+      "source_concept_id": "N04",
+      "target_concept_id": "N08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N04 trước các dạng bài đã giới hạn ở N08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-N09",
+      "source_concept_id": "N02",
+      "target_concept_id": "N09",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở N09; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N09-N10",
+      "source_concept_id": "N09",
+      "target_concept_id": "N10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N09 trước các dạng bài đã giới hạn ở N10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N03-A01",
+      "source_concept_id": "N03",
+      "target_concept_id": "A01",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N03 trước các dạng bài đã giới hạn ở A01; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N01-A02",
+      "source_concept_id": "N01",
+      "target_concept_id": "A02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở A02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-A02",
+      "source_concept_id": "N02",
+      "target_concept_id": "A02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở A02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N01-A03",
+      "source_concept_id": "N01",
+      "target_concept_id": "A03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở A03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A01-A03",
+      "source_concept_id": "A01",
+      "target_concept_id": "A03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A01 trước các dạng bài đã giới hạn ở A03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A02-A04",
+      "source_concept_id": "A02",
+      "target_concept_id": "A04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A02 trước các dạng bài đã giới hạn ở A04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A03-A04",
+      "source_concept_id": "A03",
+      "target_concept_id": "A04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A03 trước các dạng bài đã giới hạn ở A04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A04-A05",
+      "source_concept_id": "A04",
+      "target_concept_id": "A05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A04 trước các dạng bài đã giới hạn ở A05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A04-A06",
+      "source_concept_id": "A04",
+      "target_concept_id": "A06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A04 trước các dạng bài đã giới hạn ở A06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A02-A07",
+      "source_concept_id": "A02",
+      "target_concept_id": "A07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A02 trước các dạng bài đã giới hạn ở A07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A03-A07",
+      "source_concept_id": "A03",
+      "target_concept_id": "A07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A03 trước các dạng bài đã giới hạn ở A07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A05-A08",
+      "source_concept_id": "A05",
+      "target_concept_id": "A08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A05 trước các dạng bài đã giới hạn ở A08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A06-A08",
+      "source_concept_id": "A06",
+      "target_concept_id": "A08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A06 trước các dạng bài đã giới hạn ở A08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A07-A08",
+      "source_concept_id": "A07",
+      "target_concept_id": "A08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A07 trước các dạng bài đã giới hạn ở A08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A08-A09",
+      "source_concept_id": "A08",
+      "target_concept_id": "A09",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A08 trước các dạng bài đã giới hạn ở A09; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A09-A10",
+      "source_concept_id": "A09",
+      "target_concept_id": "A10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A09 trước các dạng bài đã giới hạn ở A10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N06-A10",
+      "source_concept_id": "N06",
+      "target_concept_id": "A10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N06 trước các dạng bài đã giới hạn ở A10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N07-A10",
+      "source_concept_id": "N07",
+      "target_concept_id": "A10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N07 trước các dạng bài đã giới hạn ở A10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N01-E01",
+      "source_concept_id": "N01",
+      "target_concept_id": "E01",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở E01; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-E01",
+      "source_concept_id": "N02",
+      "target_concept_id": "E01",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở E01; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E01-E02",
+      "source_concept_id": "E01",
+      "target_concept_id": "E02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E01 trước các dạng bài đã giới hạn ở E02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A02-E02",
+      "source_concept_id": "A02",
+      "target_concept_id": "E02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A02 trước các dạng bài đã giới hạn ở E02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A03-E02",
+      "source_concept_id": "A03",
+      "target_concept_id": "E02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A03 trước các dạng bài đã giới hạn ở E02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-E03",
+      "source_concept_id": "E02",
+      "target_concept_id": "E03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở E03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A01-E03",
+      "source_concept_id": "A01",
+      "target_concept_id": "E03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A01 trước các dạng bài đã giới hạn ở E03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A08-E04",
+      "source_concept_id": "A08",
+      "target_concept_id": "E04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A08 trước các dạng bài đã giới hạn ở E04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-E04",
+      "source_concept_id": "E02",
+      "target_concept_id": "E04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở E04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A09-E05",
+      "source_concept_id": "A09",
+      "target_concept_id": "E05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A09 trước các dạng bài đã giới hạn ở E05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-E05",
+      "source_concept_id": "E02",
+      "target_concept_id": "E05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở E05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N10-E06",
+      "source_concept_id": "N10",
+      "target_concept_id": "E06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N10 trước các dạng bài đã giới hạn ở E06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A05-E06",
+      "source_concept_id": "A05",
+      "target_concept_id": "E06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A05 trước các dạng bài đã giới hạn ở E06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E01-E06",
+      "source_concept_id": "E01",
+      "target_concept_id": "E06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E01 trước các dạng bài đã giới hạn ở E06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E06-E07",
+      "source_concept_id": "E06",
+      "target_concept_id": "E07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E06 trước các dạng bài đã giới hạn ở E07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-E08",
+      "source_concept_id": "E02",
+      "target_concept_id": "E08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở E08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A01-E08",
+      "source_concept_id": "A01",
+      "target_concept_id": "E08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A01 trước các dạng bài đã giới hạn ở E08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-E09",
+      "source_concept_id": "E02",
+      "target_concept_id": "E09",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở E09; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A03-E09",
+      "source_concept_id": "A03",
+      "target_concept_id": "E09",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A03 trước các dạng bài đã giới hạn ở E09; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N01-E10",
+      "source_concept_id": "N01",
+      "target_concept_id": "E10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N01 trước các dạng bài đã giới hạn ở E10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N02-E10",
+      "source_concept_id": "N02",
+      "target_concept_id": "E10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N02 trước các dạng bài đã giới hạn ở E10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E01-E10",
+      "source_concept_id": "E01",
+      "target_concept_id": "E10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E01 trước các dạng bài đã giới hạn ở E10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A01-F01",
+      "source_concept_id": "A01",
+      "target_concept_id": "F01",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A01 trước các dạng bài đã giới hạn ở F01; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F01-F02",
+      "source_concept_id": "F01",
+      "target_concept_id": "F02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F01 trước các dạng bài đã giới hạn ở F02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A09-F02",
+      "source_concept_id": "A09",
+      "target_concept_id": "F02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A09 trước các dạng bài đã giới hạn ở F02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N10-F02",
+      "source_concept_id": "N10",
+      "target_concept_id": "F02",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N10 trước các dạng bài đã giới hạn ở F02; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F01-F03",
+      "source_concept_id": "F01",
+      "target_concept_id": "F03",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F01 trước các dạng bài đã giới hạn ở F03; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F03-F04",
+      "source_concept_id": "F03",
+      "target_concept_id": "F04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F03 trước các dạng bài đã giới hạn ở F04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E02-F04",
+      "source_concept_id": "E02",
+      "target_concept_id": "F04",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E02 trước các dạng bài đã giới hạn ở F04; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F01-F05",
+      "source_concept_id": "F01",
+      "target_concept_id": "F05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F01 trước các dạng bài đã giới hạn ở F05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-A05-F05",
+      "source_concept_id": "A05",
+      "target_concept_id": "F05",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của A05 trước các dạng bài đã giới hạn ở F05; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F05-F06",
+      "source_concept_id": "F05",
+      "target_concept_id": "F06",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F05 trước các dạng bài đã giới hạn ở F06; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F05-F07",
+      "source_concept_id": "F05",
+      "target_concept_id": "F07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F05 trước các dạng bài đã giới hạn ở F07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E06-F07",
+      "source_concept_id": "E06",
+      "target_concept_id": "F07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E06 trước các dạng bài đã giới hạn ở F07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E10-F07",
+      "source_concept_id": "E10",
+      "target_concept_id": "F07",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E10 trước các dạng bài đã giới hạn ở F07; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-N09-F08",
+      "source_concept_id": "N09",
+      "target_concept_id": "F08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của N09 trước các dạng bài đã giới hạn ở F08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F01-F08",
+      "source_concept_id": "F01",
+      "target_concept_id": "F08",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F01 trước các dạng bài đã giới hạn ở F08; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F08-F09",
+      "source_concept_id": "F08",
+      "target_concept_id": "F09",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F08 trước các dạng bài đã giới hạn ở F09; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-F09-F10",
+      "source_concept_id": "F09",
+      "target_concept_id": "F10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của F09 trước các dạng bài đã giới hạn ở F10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "edge_id": "PRE-E01-F10",
+      "source_concept_id": "E01",
+      "target_concept_id": "F10",
+      "relation": "PREREQUISITE_OF",
+      "rationale": "Đề xuất cần hành vi đo của E01 trước các dạng bài đã giới hạn ở F10; người duyệt cần xác nhận hoặc sửa.",
+      "source_id": "SRC-PROJECT-PLAN",
+      "review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      }
+    }
+  ],
+  "legacy_mappings": [
+    {
+      "legacy_concept_id": "CON-LINEAR-01",
+      "legacy_skill_id": "SK-LIN-SOLVE",
+      "concept_id": "E02",
+      "skill_id": "SK-E02-SOLVE",
+      "status": "proposed",
+      "note": "Đối chiếu phạm vi để chuyển phiên bản sau; chưa đổi ID, seed, lịch sử hoặc tham số BKT đang chạy."
+    }
+  ]
+}

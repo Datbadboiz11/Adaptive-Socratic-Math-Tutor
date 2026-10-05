@@ -1,0 +1,50 @@
+{
+  "assembled_at": "2026-10-01T06:52:28.619173+00:00",
+  "branch": "tiendatv1",
+  "tests": {
+    "tests": "20",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "timestamp": "2026-10-01T12:32:09.534188+07:00"
+  },
+  "content_passed": 6,
+  "schemas_checked": 13,
+  "frontend_typecheck": "passed during implementation",
+  "docker_production_build": "passed during implementation",
+  "browser_viewports": [
+    390,
+    768,
+    1440
+  ],
+  "services": [
+    {
+      "service": "backend",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "db",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "frontend",
+      "state": "running",
+      "health": "healthy"
+    }
+  ],
+  "evidence_files": [
+    "content-check.json",
+    "tests.xml",
+    "smoke-ready.json",
+    "smoke-db-down.json",
+    "browser-check.json"
+  ],
+  "limitations": [
+    "No paid OpenAI request; model/quota/budget not verified.",
+    "Human pedagogical review pending.",
+    "No learner session API, production validator, BKT or dataset preprocessing.",
+    "Phase 1 changes not committed or pushed; remote CI not claimed."
+  ]
+}

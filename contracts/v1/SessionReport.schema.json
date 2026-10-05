@@ -1,0 +1,53 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "independent_correct": {
+      "minimum": 0,
+      "title": "Independent Correct",
+      "type": "integer"
+    },
+    "assisted_correct": {
+      "minimum": 0,
+      "title": "Assisted Correct",
+      "type": "integer"
+    },
+    "valid_observations": {
+      "minimum": 0,
+      "title": "Valid Observations",
+      "type": "integer"
+    },
+    "unverified_submissions": {
+      "minimum": 0,
+      "title": "Unverified Submissions",
+      "type": "integer"
+    },
+    "completed_at": {
+      "format": "date-time",
+      "title": "Completed At",
+      "type": "string"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "session_id",
+    "independent_correct",
+    "assisted_correct",
+    "valid_observations",
+    "unverified_submissions",
+    "completed_at",
+    "limitations"
+  ],
+  "title": "SessionReport",
+  "type": "object"
+}

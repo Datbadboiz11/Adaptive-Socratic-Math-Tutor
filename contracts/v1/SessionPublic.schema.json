@@ -1,0 +1,131 @@
+{
+  "$defs": {
+    "ProblemPublic": {
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "content_version": {
+          "title": "Content Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "primary_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Primary Skill Id",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "prompt": {
+          "title": "Prompt",
+          "type": "string"
+        },
+        "equation": {
+          "title": "Equation",
+          "type": "string"
+        },
+        "domain": {
+          "const": "real_numbers",
+          "default": "real_numbers",
+          "title": "Domain",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        }
+      },
+      "required": [
+        "problem_id",
+        "content_version",
+        "concept_id",
+        "primary_skill_id",
+        "family_id",
+        "prompt",
+        "equation",
+        "difficulty"
+      ],
+      "title": "ProblemPublic",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "student_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Student Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "state_version": {
+      "minimum": 1,
+      "title": "State Version",
+      "type": "integer"
+    },
+    "current_opportunity_id": {
+      "format": "uuid",
+      "title": "Current Opportunity Id",
+      "type": "string"
+    },
+    "problem": {
+      "$ref": "#/$defs/ProblemPublic"
+    },
+    "draft": {
+      "default": "",
+      "maxLength": 2000,
+      "title": "Draft",
+      "type": "string"
+    },
+    "hint_level": {
+      "default": 0,
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "session_id",
+    "student_id",
+    "status",
+    "state_version",
+    "current_opportunity_id",
+    "problem",
+    "created_at"
+  ],
+  "title": "SessionPublic",
+  "type": "object"
+}

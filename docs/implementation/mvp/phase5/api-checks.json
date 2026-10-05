@@ -1,0 +1,121 @@
+{
+  "checked_at": "2026-10-01T18:37:43.216816+00:00",
+  "environment": "local FastAPI TestClient, PostgreSQL 17, isolated schema, LLM disabled",
+  "versions": {
+    "content": "0.1.0",
+    "validator": "linear-rational-1.0.0",
+    "bkt": "g2-bootstrap-1.0.0"
+  },
+  "source_sha256": {
+    "frontend/app/workspace.tsx": "debcee682c2390194170bd893e4ccde34c44039be2cdd406c8c685e64a2eea11",
+    "frontend/app/workspace.css": "4c5f041348a28f37945c9fbaa9383d0708a226badfed98f97bb654c2c8e01b1a",
+    "backend/app/tutor_service.py": "e1e4bacc6ca17f82d134bd19e68018576d889f985a2dd1dfcb2d6560032c568a",
+    "backend/app/math_validator.py": "71a05f8620a17667418cd899e71e296d38d1633993c7881cd2bcb792cc5d9a1c",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b"
+  },
+  "cases": [
+    {
+      "id": "TC01",
+      "result": "PASS",
+      "actual": {
+        "problem": "LIN-003",
+        "assessment": "verified_correct",
+        "eligibility": "first_independent_verified",
+        "db": {
+          "turns": 1,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    },
+    {
+      "id": "TC02",
+      "result": "PASS",
+      "actual": {
+        "assessment": "verified_incorrect",
+        "first_error_step": 1,
+        "diagnosis": "suspected",
+        "response": "Em hãy so sánh biểu thức trong ngoặc với dòng đầu tiên của mình.",
+        "db": {
+          "turns": 1,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    },
+    {
+      "id": "TC03",
+      "result": "PASS",
+      "actual": {
+        "hint_level": 2,
+        "correction": "verified_correct",
+        "eligibility": "already_observed",
+        "db": {
+          "turns": 3,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    },
+    {
+      "id": "TC04",
+      "result": "PASS",
+      "actual": {
+        "unclear": "needs_clarification",
+        "outside_scope": "unsupported_scope",
+        "db": {
+          "turns": 2,
+          "observations": 0,
+          "mastery_history": 0
+        }
+      }
+    },
+    {
+      "id": "TC05",
+      "result": "PASS",
+      "actual": {
+        "replay_identical": true,
+        "db": {
+          "turns": 1,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    },
+    {
+      "id": "TC08",
+      "result": "PASS",
+      "actual": {
+        "steps": [
+          "x-3=5",
+          "x=8"
+        ],
+        "assessment": "verified_correct",
+        "db": {
+          "turns": 1,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    },
+    {
+      "id": "TC10",
+      "result": "PASS",
+      "actual": {
+        "report": {
+          "independent_correct": 1,
+          "assisted_correct": 1,
+          "unverified_submissions": 1,
+          "valid_observations": 1,
+          "submitted_turns": 3
+        },
+        "db": {
+          "turns": 4,
+          "observations": 1,
+          "mastery_history": 1
+        }
+      }
+    }
+  ]
+}

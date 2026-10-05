@@ -1,0 +1,41 @@
+{
+  "content_version": "0.1.0",
+  "problems": [
+    {
+      "problem_id": "LIN-001",
+      "math_check": "pass",
+      "human_review": "draft"
+    },
+    {
+      "problem_id": "LIN-002",
+      "math_check": "pass",
+      "human_review": "draft"
+    },
+    {
+      "problem_id": "LIN-003",
+      "math_check": "pass",
+      "human_review": "draft"
+    },
+    {
+      "problem_id": "LIN-004",
+      "math_check": "pass",
+      "human_review": "draft"
+    },
+    {
+      "problem_id": "LIN-005",
+      "math_check": "pass",
+      "human_review": "draft"
+    },
+    {
+      "problem_id": "LIN-006",
+      "math_check": "pass",
+      "human_review": "draft"
+    }
+  ],
+  "family_counts": {
+    "F-AX-B-C": 2,
+    "F-A-XB-C": 2,
+    "F-AXB-CXD": 2
+  },
+  "note": "Authoring checks only; human pedagogical review and learner validator are pending."
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.704" timestamp="2026-10-04T16:18:57.009752+07:00" hostname="Datbadboiiz11"><testcase classname="" name="tests.test_phase1" time="0.000"><error message="collection failure">ImportError while importing test module 'D:\ĐỒ ÁN TỐT NGHIỆP\tests\test_phase1.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_phase1.py:7: in &lt;module&gt;
+    import psycopg
+E   ModuleNotFoundError: No module named 'psycopg'</error></testcase><testcase classname="" name="tests.test_phase2" time="0.000"><error message="collection failure">ImportError while importing test module 'D:\ĐỒ ÁN TỐT NGHIỆP\tests\test_phase2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_phase2.py:9: in &lt;module&gt;
+    import psycopg
+E   ModuleNotFoundError: No module named 'psycopg'</error></testcase></testsuite></testsuites>

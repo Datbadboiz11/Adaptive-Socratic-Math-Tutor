@@ -1,0 +1,13 @@
+{
+  "parameter_version": "g2-bootstrap-1.0.0",
+  "skill_id": "SK-LIN-SOLVE",
+  "prior": 0.2,
+  "learn": 0.1,
+  "guess": 0.2,
+  "slip": 0.1,
+  "forget": 0.0,
+  "source": "Project engineering assumptions for a reproducible demonstration; not fitted and not copied as empirical estimates from a dataset.",
+  "formula_reference": "https://github.com/CAHLR/pyBKT",
+  "rationale": "Use interior probabilities to demonstrate both correct/incorrect Bayesian updates; no forgetting in this short-session baseline.",
+  "limitations": "Not calibrated for Vietnamese learners or this content. Not a validated prediction of mastery or proof of learning."
+}

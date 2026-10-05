@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-10-01T10:20:48.852763+00:00",
+  "recovery_exercised": true,
+  "session_id": "95f041cc-a46b-4406-8422-3bd611357ba9",
+  "checks": [
+    "backend restart retains session, token and cached mutation response",
+    "DB outage returns 503; same request saves once after recovery",
+    "report reads the same committed turn without observations"
+  ],
+  "report": {
+    "session_id": "95f041cc-a46b-4406-8422-3bd611357ba9",
+    "status": "completed",
+    "independent_correct": 0,
+    "assisted_correct": 0,
+    "valid_observations": 0,
+    "unverified_submissions": 1,
+    "submitted_turns": 1,
+    "problems_viewed": 1,
+    "requested_hints": 0,
+    "completed_at": "2026-10-01T10:20:49.089939Z",
+    "timeline": [
+      {
+        "turn_id": "402af461-5011-4cca-ac80-ede94f3279ae",
+        "opportunity_id": "69bb7e4c-3e93-4e0c-8f44-9deac09297ec",
+        "request_id": "a1d587c3-0fb8-4155-9599-008533cf204f",
+        "action": "submit",
+        "steps": [
+          "3x=15",
+          "x=5"
+        ],
+        "assessment": {
+          "assessment_id": "5818ea4c-97a9-4143-a39f-f9f3a41a9a14",
+          "assessment_status": "unverified",
+          "first_error_step": null,
+          "primary_skill_id": null,
+          "error_family": null,
+          "misconception_candidate": null,
+          "diagnosis_status": "unknown",
+          "reason_code": "cannot_verify",
+          "evidence": [],
+          "verification_method": "none",
+          "validator_version": "not-integrated"
+        },
+        "response": {
+          "message": "Đã lưu bài làm. Chưa xác minh đúng/sai: bộ chấm Toán được triển khai ở Phần 3.",
+          "response_source": "system_unavailable"
+        },
+        "created_at": "2026-10-01T10:20:30.788565Z"
+      }
+    ],
+    "limitations": [
+      "Chế độ thử lưu trữ nội bộ; nội dung chưa được duyệt chuyên môn.",
+      "Chưa chấm Toán, chưa gọi AI, chưa cập nhật BKT. Số 0 không có nghĩa là học sinh làm sai.",
+      "Chưa đủ bằng chứng để đề xuất kỹ năng cần ôn."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-10-01T05:36:40.367452+00:00",
+  "mode": "database_down",
+  "checks": [
+    {
+      "check": "liveness",
+      "http_status": 200,
+      "response": {
+        "status": "ok",
+        "phase": "foundation",
+        "tutoring_enabled": false
+      }
+    },
+    {
+      "check": "database_readiness",
+      "http_status": 503,
+      "response": {
+        "status": "not_ready",
+        "database": "unavailable"
+      }
+    },
+    {
+      "check": "frontend_displays_live_readiness",
+      "http_status": 200,
+      "expected_text_found": true
+    },
+    {
+      "check": "only_implemented_health_endpoints_exposed",
+      "paths": [
+        "/health/live",
+        "/health/ready"
+      ]
+    }
+  ],
+  "scope": "Foundation connectivity only; no tutoring, BKT or OpenAI request."
+}
