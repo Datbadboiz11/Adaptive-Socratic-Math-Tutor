@@ -515,11 +515,11 @@ Liên hệ phản biện và tuyển pilot từ tuần 1. Mục tiêu 12–20 h�
 
 | Đầu mối | Chịu trách nhiệm chính | Phối hợp / review |
 |---|---|---|
-| Member 1 | Validator/analyzer, observation builder, preprocessing, BKT, benchmark KT và bộ bước giải | Member 3 hỗ trợ extraction/API; Member 2 hỗ trợ ca toán và review dữ liệu |
-| Member 2 | Registry/KB, graph, retrieval, đồng bộ, nội dung report và evaluation liên quan | Cả ba biên soạn/review nội dung; Member 1 rà mapping skill/observation |
-| Member 3 | Agent/policy/LangGraph, session/API/UI, checkpoint, triển khai và ablation | Member 1 review tính nhất quán state; Member 2 hỗ trợ report/nội dung |
+| Member 1 | Validator/analyzer (luật + SymPy), observation builder, preprocessing, BKT, benchmark KT và bộ bước giải; backend API/DB, triển khai và đóng gói demo | Member 3 cung cấp LLM extraction; Member 2 hỗ trợ ca toán và review dữ liệu |
+| Member 2 | Registry/KB, RAG/retrieval, đồng bộ registry → PostgreSQL/pgvector, pipeline LLM soạn nháp nội dung, Student UI, nội dung report và evaluation retrieval | Cả ba biên soạn/review nội dung; Member 1 rà mapping skill/observation; Member 3 thống nhất định dạng phản hồi để UI hiển thị |
+| Member 3 | Agent/policy/policy gate/LangGraph, sinh và kiểm tra phản hồi, LLM extraction, Knowledge Graph và backtrack; bộ tình huống, rubric và ablation | Member 1 review tính nhất quán state và hợp đồng extraction; Member 2 cung cấp API truy xuất cho Agent |
 
-Cả ba biên soạn khoảng 13–14 concept/người cho mục tiêu 40, review chéo và gán nhãn theo quy trình tách test khỏi tinh chỉnh. Không mặc định Member 2 tự làm toàn bộ KB hoặc Member 3 tự làm toàn bộ sản phẩm. Mỗi tuần tích hợp luồng thật, cập nhật ma trận độ phủ; viết báo cáo từ tuần 2 và dành 15–20% quỹ thời gian cho tích hợp/sửa lỗi.
+Cả ba biên soạn khoảng 13–14 concept/người cho mục tiêu 40, review chéo và gán nhãn theo quy trình tách test khỏi tinh chỉnh. Mỗi thành viên có ít nhất một thành phần AI (Member 1: BKT; Member 2: RAG và LLM soạn nội dung; Member 3: Agent/LLM). Không mặc định Member 2 tự làm toàn bộ KB hoặc một người tự làm toàn bộ sản phẩm. Phân công chia lại ngày 12/11/2026; chi tiết tại plan mục 23.1. Mỗi tuần tích hợp luồng thật, cập nhật ma trận độ phủ; viết báo cáo từ tuần 2 và dành 15–20% quỹ thời gian cho tích hợp/sửa lỗi.
 
 ### 10.2. Mốc chung
 
