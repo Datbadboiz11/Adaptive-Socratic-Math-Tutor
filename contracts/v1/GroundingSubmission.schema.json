@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "submission_kind": {
+      "enum": [
+        "final_answer",
+        "steps"
+      ],
+      "title": "Submission Kind",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "maxLength": 160,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "hint_level": {
+      "default": 1,
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "method": {
+      "default": "semantic",
+      "enum": [
+        "metadata",
+        "lexical",
+        "semantic"
+      ],
+      "title": "Method",
+      "type": "string"
+    }
+  },
+  "required": [
+    "submission_kind",
+    "steps"
+  ],
+  "title": "GroundingSubmission",
+  "type": "object"
+}

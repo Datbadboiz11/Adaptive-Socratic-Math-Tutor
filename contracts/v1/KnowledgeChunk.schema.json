@@ -1,0 +1,113 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "content_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Content Id",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "skill_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "title": "Skill Ids",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "text": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "explanation",
+        "hint"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "hint_level": {
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "disclosure": {
+      "enum": [
+        "conceptual",
+        "strategy",
+        "scaffold"
+      ],
+      "title": "Disclosure",
+      "type": "string"
+    },
+    "grade_levels": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Grade Levels",
+      "type": "array"
+    },
+    "difficulty": {
+      "const": "general",
+      "default": "general",
+      "title": "Difficulty",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "curriculum_source_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Curriculum Source Id",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "review_status": {
+      "title": "Review Status",
+      "type": "string"
+    },
+    "approved": {
+      "title": "Approved",
+      "type": "boolean"
+    },
+    "text_sha256": {
+      "title": "Text Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "content_id",
+    "concept_id",
+    "skill_ids",
+    "title",
+    "text",
+    "kind",
+    "hint_level",
+    "disclosure",
+    "grade_levels",
+    "source",
+    "curriculum_source_id",
+    "content_version",
+    "review_status",
+    "approved",
+    "text_sha256"
+  ],
+  "title": "KnowledgeChunk",
+  "type": "object"
+}

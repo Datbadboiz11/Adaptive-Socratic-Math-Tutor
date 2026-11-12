@@ -1,0 +1,207 @@
+{
+  "checked_on": "2026-10-06",
+  "scope": "Pilot learner checker and deterministic first-error Analyzer; internal authoring preview, no persistent session/KG/RAG/LLM integration",
+  "content_review": "draft",
+  "content_version": "0.1.0",
+  "concepts": 10,
+  "problems": 60,
+  "task_types": 5,
+  "development_regression": {
+    "scope": "Development regression, not independent evaluation",
+    "label_status": "draft_machine_audited",
+    "split": "authoring_dev",
+    "records": 180,
+    "exact_matches": 180,
+    "failures": [],
+    "by_concept_or_task": {
+      "A01": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "evaluate": {
+        "total": 36,
+        "exact_match": 36
+      },
+      "A02": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "polynomial": {
+        "total": 36,
+        "exact_match": 36
+      },
+      "A03": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "E01": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "linear_equation": {
+        "total": 36,
+        "exact_match": 36
+      },
+      "E02": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "F01": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "F05": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "quadratic_vertex": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "N01": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "numeric": {
+        "total": 54,
+        "exact_match": 54
+      },
+      "N02": {
+        "total": 18,
+        "exact_match": 18
+      },
+      "N04": {
+        "total": 18,
+        "exact_match": 18
+      }
+    },
+    "status_confusion": [
+      {
+        "expected": "needs_clarification",
+        "actual": "needs_clarification",
+        "count": 20
+      },
+      {
+        "expected": "unverified",
+        "actual": "unverified",
+        "count": 6
+      },
+      {
+        "expected": "verified_correct",
+        "actual": "verified_correct",
+        "count": 114
+      },
+      {
+        "expected": "verified_incorrect",
+        "actual": "verified_incorrect",
+        "count": 40
+      }
+    ],
+    "diagnosis_labels": {
+      "unknown": 160,
+      "substitution_sign": 1,
+      "power_as_identity": 1,
+      "distribution_missing_term": 2,
+      "distribution_sign": 1,
+      "combine_as_multiply": 1,
+      "constant_group": 1,
+      "one_sided_inverse": 1,
+      "division_sign": 1,
+      "inverse_operation": 1,
+      "input_as_output": 2,
+      "vertex_sign": 1,
+      "square_sign": 1,
+      "signed_add": 1,
+      "signed_sub": 1,
+      "sign_product": 1,
+      "sign_division": 1,
+      "fraction_scale": 1,
+      "fraction_sign": 1
+    },
+    "limitations": [
+      "Authored reference traces and error patterns overlap development knowledge.",
+      "No held-out accuracy/F1, real-learner efficacy or human review is claimed.",
+      "Sealed test must be authored/reviewed separately and grouped by source/family."
+    ],
+    "sha256": {
+      "content/curriculum/analyzer.dev.v1.json": "6fbae645654cc60878b0d6545da51e974bf270bc01043008e94c6126fc7182e6",
+      "content/curriculum/pilot.v1.json": "2eeccc0ed6cb030d58711d99a2c8499ee00316fb5e98b9f42987aa058e3dbb2b",
+      "backend/app/learner_math.py": "9146f74c8428ae893f27c10234a641cb9b8261704b008f8c04d264a86921bc8b",
+      "backend/app/pilot_analyzer.py": "ee9a4df6ef914b791ebae1d53a043099c6283c9558030f405068679d0590f085",
+      "research/analyzer/evaluate.py": "5abf7b931d8d3bb128e87d3fd631270fd0eb8dab0e6e42e05fc269524e4401a5"
+    }
+  },
+  "verification": {
+    "regression_final": {
+      "tests": 252,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 26,
+      "passed": 226,
+      "deselected": 2,
+      "seconds": 7.649,
+      "xml_local": "data/test-runs/analyzer-retry-20261006.xml"
+    },
+    "regression_initial": {
+      "tests": 252,
+      "failures": 9,
+      "errors": 0,
+      "skipped": 26,
+      "passed": 217,
+      "deselected": 2,
+      "seconds": 15.973,
+      "xml_local": "data/test-runs/analyzer-final-20261006.xml",
+      "failure_reason": "Existing research tests could not write inside sandbox default tempfile directories; rerun with tempfile.tempdir inside workspace, without modifying tests or research source."
+    },
+    "skips": {
+      "postgresql": 23,
+      "new_http": 3,
+      "legacy_http_deselected": 2
+    },
+    "new_tests": {
+      "passed": 131,
+      "skipped": 3
+    },
+    "schemas": "PASS: 18 contract schemas",
+    "legacy_openapi": "PASS: unchanged Phase 3 snapshot",
+    "pilot_openapi": "PASS: full additive API snapshot",
+    "authoring_checker": "PASS: 10 packs, all references/error fixtures",
+    "python_compile": "PASS",
+    "bkt_source_and_parameter_hashes_preserved": {
+      "benchmark.py": true,
+      "model.py": true,
+      "metrics.py": true,
+      "parameters.json": true
+    },
+    "legacy_mvp_content_and_validator": "Unmodified working tree",
+    "links_and_tracked_file_policy": "PASS including untracked working-tree files",
+    "git_diff_check": "PASS",
+    "documented_offline_examples": "PASS: correct, wrong trace, partial, wrong final without invented diagnosis"
+  },
+  "environment_limits": [
+    "Docker Desktop Linux Engine unavailable; PostgreSQL integration not run locally.",
+    "Windows asyncio initialization blocked at socketpair/accept; HTTP TestClient cases skipped/deselected locally, retained in CI.",
+    "CI configured for complete HTTP/PostgreSQL tests; remote CI not executed in this session."
+  ],
+  "sha256": {
+    "content/curriculum/registry.v1.json": "73e3fce72c569cb794a4a37b2afacc8b24c5c2e8a15083eb8175624204149980",
+    "content/curriculum/pilot.v1.json": "2eeccc0ed6cb030d58711d99a2c8499ee00316fb5e98b9f42987aa058e3dbb2b",
+    "content/curriculum/analyzer.dev.v1.json": "6fbae645654cc60878b0d6545da51e974bf270bc01043008e94c6126fc7182e6",
+    "backend/app/curriculum.py": "5ff85dc24a7e53c814b927678a1012474d48554ff4b687d72452bc57c7511443",
+    "backend/app/learner_math.py": "9146f74c8428ae893f27c10234a641cb9b8261704b008f8c04d264a86921bc8b",
+    "backend/app/pilot_analyzer.py": "ee9a4df6ef914b791ebae1d53a043099c6283c9558030f405068679d0590f085",
+    "backend/app/pilot_worker.py": "13db5f1f948dbff6ee0f9abd84c208ffdc50cc0dc02fde203bb72c00c2832ede",
+    "backend/app/pilot_contracts.py": "577a65ca5d6d1256bd85a6b512bcc44b9a140f83b8dbe9fec8a4ef41f5676d1a",
+    "backend/app/pilot_api.py": "5f4cc972d4112182de3bd4689007cbb18e31712f4cb314ad23ba3ab02a25b36c",
+    "research/analyzer/evaluate.py": "5abf7b931d8d3bb128e87d3fd631270fd0eb8dab0e6e42e05fc269524e4401a5",
+    "tests/test_pilot_analyzer.py": "4a0f977b82e07b6b1fef12015f37bc77664bc7c4f32a5bc922ad44f44b92ca76",
+    "contracts/pilot/openapi.json": "851ed3bbc6000c79f6677abf90c2535f7d0aac82df861303e6bda4db66e598a9"
+  },
+  "remaining": [
+    "Review curriculum/content/edges and independent evaluation labels",
+    "KG/RAG semantic retrieval with relevance evaluation and content safeguards",
+    "Agent action/tool selection and baseline/ablation",
+    "Persistent pilot sessions, eligibility/BKT, backtrack/return and frontend integration",
+    "Held-out evaluation; expand to the full approved concept scope"
+  ]
+}

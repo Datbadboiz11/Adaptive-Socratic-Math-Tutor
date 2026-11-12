@@ -141,6 +141,12 @@ Chat có vùng nhập bước giải, render công thức, bài hiện tại, m�
 
 Hiển thị mastery là **ước lượng**, kèm số quan sát độc lập và trạng thái “chưa đủ dữ liệu”. Không trình bày 82% như điểm thi hay xác suất chắc chắn học sinh hiểu 82% nội dung. Retry không sinh thêm observation.
 
+Tiến trình cơ bản phải cho biết concept đang học, kết quả tự làm và kết quả có hỗ trợ riêng, lỗi đã quan sát cùng trạng thái giả thuyết, và nội dung đề nghị ôn có căn cứ. Số bài và số observations là hai đại lượng riêng; mỗi số liệu có khoảng thời gian/phạm vi rõ và đối soát được với log đã lưu. Không tăng phần trăm theo số tin nhắn, lượt nhận hint hoặc thao tác bấm nút; không coi tăng mastery là bằng chứng trực tiếp về learning gain.
+
+Khi đổi cách hỗ trợ, chuyển sang kiểm tra/ôn prerequisite hoặc quay lại bài gốc, hiển thị lý do ngắn bằng tiếng Việt, lấy từ quyết định đã qua policy gate và bằng chứng được phép hiển thị. Ví dụ: “Ở bước vừa rồi, em mới nhân với số hạng đầu; mình kiểm tra cách phân phối bằng một câu ngắn nhé.” Nếu nguyên nhân chưa được xác nhận, dùng diễn đạt nghi ngờ và hỏi chẩn đoán; không nói chắc học sinh thiếu kiến thức. Lý do không tiết lộ bước giải/đáp án và không hiển thị chuỗi suy nghĩ nội bộ.
+
+Nên có các nút “Em chưa hiểu”, “Gợi ý nhẹ”, “Cho ví dụ khác”, “Ôn kiến thức nền”. Đây là yêu cầu hỗ trợ được chuyển vào state, không phải bộ action mới hay lệnh bỏ qua policy. Agent vẫn kiểm tra bằng chứng và chọn hành động hợp lệ; yêu cầu ôn chưa đủ căn cứ thì có thể hỏi chẩn đoán trước. Bấm nút không tạo observation đúng/sai; trợ giúp thực tế được ghi vào lịch sử để xác định điều kiện tự làm của câu trả lời tiếp theo. Ví dụ khác tuân chính sách tiết lộ; retry yêu cầu hỗ trợ không tạo thêm lượt hay tăng hint lần nữa.
+
 ### 8.2. Answer / Step Analyzer
 
 Kết hợp **rule-based checking + SymPy/kiểm tra toán có điều kiện + LLM structured extraction + misconception KB**.
@@ -235,6 +241,27 @@ Hành động: `clarify`, `diagnose`, `minimal_hint`, `conceptual_question`, `ba
 Output quyết định có action, skill mục tiêu, ID bằng chứng, mức hint và lý do ngắn có thể kiểm tra. Không yêu cầu lưu chuỗi suy nghĩ nội bộ. Policy gate kiểm tra action và mức hỗ trợ; validator kiểm tra phản hồi trước khi gửi.
 
 Giới hạn khởi đầu: tối đa 3 tool calls cho ra quyết định và 1 lần sinh lại phản hồi mỗi lượt; đo trên dev rồi chốt. Timeout hoặc lỗi schema chuyển sang policy luật và template, có log fallback. Mỗi lượt checkpoint rồi chờ input; cập nhật mastery là node xác định, không phải quyền tùy ý của Agent.
+
+### 8.7. Ưu tiên trải nghiệm và công cụ quan sát AI
+
+Các bổ sung dưới đây làm rõ trải nghiệm và bằng chứng của hệ thống đã đăng ký, không thêm module nghiên cứu, concept hoặc research question mới. Đồng bộ hành vi và tiêu chí kiểm tra với PRD.
+
+| Hạng mục | Phạm vi chọn lọc | Ưu tiên |
+|---|---|---|
+| Giải thích can thiệp | Lý do ngắn khi đổi hỗ trợ, ôn prerequisite hoặc quay lại bài gốc; khớp quyết định sau gate và bằng chứng | P0, bắt buộc |
+| Tiến trình/report có bằng chứng | Tách tự làm/có hỗ trợ, số bài/observations, lỗi quan sát/giả thuyết; nói rõ khi chưa đủ dữ liệu | P0 cơ bản, bắt buộc |
+| Nút yêu cầu hỗ trợ | Bốn yêu cầu ở mục 8.1, dùng action/policy hiện có; không tạo observation từ thao tác bấm | P1, nên có |
+| Màn hình kiểm tra lượt AI | Công cụ nội bộ đọc log theo session/turn, phục vụ phân tích lỗi và trình diễn | P1, nên có; log đầy đủ vẫn là P0 |
+| Bản đồ kiến thức cho học sinh | Concept hiện tại, prerequisite liên quan tối đa 2 tầng và đường quay lại bài gốc | P2, tùy chọn sau khi backtrack/return hoạt động |
+| Giao diện quản lý prompt | Xem phiên bản, thử trên dev, đổi phiên bản hoặc rollback có kiểm soát | P2, tùy chọn; lưu version/config và artifacts đánh giá vẫn là P0 |
+
+Màn hình kiểm tra AI, nếu triển khai, hiển thị bài làm/bước được phép xem, assessment và phương pháp xác minh, evidence IDs, trạng thái giả thuyết, observation eligibility và lý do, BKT trước/sau và parameter version, content/edge IDs thực tế, action đề xuất/quyết định sau gate, lý do ngắn, mức hint và fallback. Chỉ đọc dữ liệu đã lưu của hồ sơ được cấp quyền; thiếu log phải hiện “chưa ghi nhận”, không sinh thêm lời giải thích rồi trình bày như log gốc. Không cho sửa mastery từ màn hình này, không phơi bày API key, lời giải chuẩn bị hạn chế hoặc chuỗi suy nghĩ nội bộ. Đây không phải dashboard quản lý trường/lớp.
+
+Bản đồ học sinh, nếu có, dùng cạnh đã duyệt và phân biệt prerequisite ứng viên với kiến thức đã có bằng chứng cần ôn. Không tô toàn bộ prerequisite thành “yếu” từ một lỗi; đồ thị kiến thức trong phiên và curriculum prerequisite graph phải được ghi nhãn riêng nếu cùng hiển thị. Bản đồ là cách trình bày, không thay bằng chứng đánh giá KG hay cơ chế chọn can thiệp.
+
+Phiên bản prompt phải liên kết được với model/config và lượt xử lý. Giao diện quản trị tùy chọn không thay quy trình thử trên dev, khóa phiên bản trước test và ghi nhận thay đổi; không dùng kết quả test để chỉnh prompt. Tạm hoãn XP, huy hiệu, bảng xếp hạng, nhắc lịch và trang quản trị rộng để ưu tiên vòng học và đánh giá AI.
+
+Tham khảo trải nghiệm: [video demo SocriAI](https://www.youtube.com/watch?v=I9heFkM6hG0), bản video nhóm cung cấp. Chỉ tham khảo cách trình bày hội thoại, tiến trình, đồ thị và công cụ quản trị; màn hình demo không chứng minh thuật toán phía sau, độ hiệu chỉnh mastery hoặc hiệu quả học tập. Các bổ sung này là yêu cầu kế hoạch, không phải tính năng đã hoàn thành.
 
 ## 9. Pedagogical Policy
 
@@ -564,6 +591,7 @@ Nếu không tuyển được người học, vẫn thực hiện đầy đủ b
 - Analyzer chấp nhận cách giải hợp lệ khác, có nhánh chưa đủ bằng chứng và tránh phạt lỗi kéo theo.
 - Có Socratic multi-turn, mức hỗ trợ tăng dần, backtrack có quay lại, dừng và resume.
 - Có Student UI và learning report; dữ liệu lưu giữa các phiên.
+- Giải thích can thiệp hiển thị khớp quyết định đã lưu; tiến trình/report tách tự làm và có hỗ trợ, không tăng mastery từ chat hoặc nút hỗ trợ. Kiểm tra cả ca chưa đủ bằng chứng và resume.
 - Có bộ bước giải test, benchmark KT, chấm rubric và baseline/ablation có thể tái lập.
 - Công bố kết quả, độ bất định, lỗi còn tồn tại và giới hạn suy rộng.
 
@@ -641,8 +669,8 @@ Các cột thành viên là các luồng chạy song song. Mốc concept tính t
 | 1 | Audit schema KT, định nghĩa observation/validator | Chốt danh mục 40 và template nội dung | Skeleton API/UI/LangGraph, schema state | RQ, tiêu chí, phân công; liên hệ phản biện/pilot |
 | 2 | Preprocess dataset chính, BKT baseline; checker các dạng đầu | Graph/KB mẫu, relevance/annotation guideline | Policy luật đầu tiên; thử model, token và latency | Pilot dữ liệu/rubric; chốt split và model; đo năng suất biên soạn |
 | 3 | Online BKT, idempotency, analyzer v1 | RAG + KG nối API; review nội dung đợt 1 | Nối loop thật, session và UI nhập bước | Luồng chạy trên một số concept; fixtures và log liên thông |
-| 4 | Validator/analyzer cho 8–10 concept đại diện | 8–10 concept hoàn chỉnh thuộc ba mảng; truy xuất đã lọc | Agent chọn action/tool, checkpoint/resume và fallback | **End-to-end v1**: đủ module, đa lượt, lưu giữa phiên |
-| 5 | Mở rộng checker/detector, KT dev evaluation | Nội dung/graph/retrieval cho khoảng 20 concept | Backtrack/return, report cơ bản; cấu hình ablation | Khoảng 20 concept đạt checklist; review lỗi hệ thống |
+| 4 | Validator/analyzer cho 8–10 concept đại diện | 8–10 concept hoàn chỉnh thuộc ba mảng; truy xuất đã lọc | Agent chọn action/tool, checkpoint/resume, fallback và lý do can thiệp trên UI | **End-to-end v1**: đủ module, đa lượt, lưu giữa phiên |
+| 5 | Mở rộng checker/detector, KT dev evaluation | Nội dung/graph/retrieval cho khoảng 20 concept; dữ liệu report có bằng chứng | Backtrack/return, report cơ bản; cấu hình ablation; nút hỗ trợ và màn hình log nội bộ nếu đủ quỹ giờ | Khoảng 20 concept đạt checklist; report đối soát log; review lỗi hệ thống |
 | 6 | Độ phủ khoảng 30 concept; pooled params/sensitivity | Nội dung và test cho khoảng 30 concept | Kiểm thử tình huống, rubric dev, ổn định UI | Khoảng 30 concept, baseline/ablation chạy trên dev |
 | 7 | Hoàn tất analyzer/BKT cho danh mục đã chốt | Hoàn tất 40 concept và kiểm duyệt dữ liệu | Hoàn tất full system và toàn bộ cấu hình so sánh | **Đủ 40 concept; khóa test, model, prompt, KB và ngưỡng** |
 | 8 | Benchmark KT và detector chính thức | Retrieval/KG evaluation, chấm kết quả ẩn cấu hình | Full/ablation batch, log latency/cost | Kết quả sơ bộ và kiểm tra chất lượng phép đo |

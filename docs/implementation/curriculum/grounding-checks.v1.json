@@ -1,0 +1,241 @@
+{
+  "checked_on": "2026-10-06",
+  "scope": "Internal Analyzer -> prerequisite graph -> filtered retrieval; portable Colab index/evaluation, no production Agent/pgvector/session integration",
+  "content_review": "draft",
+  "concepts": 10,
+  "chunks": 40,
+  "queries": 90,
+  "positive_queries": 80,
+  "no_eligible_scope_queries": 10,
+  "baseline_evaluation": {
+    "split": "authoring_dev",
+    "label_status": "draft_ai_authored",
+    "queries": 90,
+    "corpus_chunks": 40,
+    "corpus_sha256": "7e68a3820c17cc2fe481f34ae521e040a2111b935ab4c6c8207d0af34290516b",
+    "k": 3,
+    "methods": {
+      "metadata": {
+        "recall_at_3": 0.60625,
+        "hit_at_3": 0.6125,
+        "ndcg_at_3": 0.4884589128684914,
+        "positive_queries": 80,
+        "no_eligible_content_cases": 10,
+        "empty_results_correct": 10,
+        "by_concept": {
+          "A01": {
+            "recall_at_3": 1.0,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.8352120615259685
+          },
+          "A02": {
+            "recall_at_3": 0.8125,
+            "hit_at_3": 0.875,
+            "ndcg_at_3": 0.5835288210550714
+          },
+          "A03": {
+            "recall_at_3": 0.75,
+            "hit_at_3": 0.75,
+            "ndcg_at_3": 0.5426060307629843
+          },
+          "E01": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "E02": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "F01": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "F05": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "N01": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "N02": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          },
+          "N04": {
+            "recall_at_3": 0.5,
+            "hit_at_3": 0.5,
+            "ndcg_at_3": 0.41760603076298425
+          }
+        }
+      },
+      "lexical": {
+        "recall_at_3": 0.8395833333333333,
+        "hit_at_3": 0.9625,
+        "ndcg_at_3": 0.8517161167175498,
+        "positive_queries": 80,
+        "no_eligible_content_cases": 10,
+        "empty_results_correct": 10,
+        "by_concept": {
+          "A01": {
+            "recall_at_3": 0.9375,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.9896649265891196
+          },
+          "A02": {
+            "recall_at_3": 0.75,
+            "hit_at_3": 0.875,
+            "ndcg_at_3": 0.7220024528899583
+          },
+          "A03": {
+            "recall_at_3": 0.8541666666666666,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.829095411537573
+          },
+          "E01": {
+            "recall_at_3": 0.9166666666666666,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.8554690479487983
+          },
+          "E02": {
+            "recall_at_3": 0.8958333333333334,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.9358444479669479
+          },
+          "F01": {
+            "recall_at_3": 0.8125,
+            "hit_at_3": 0.875,
+            "ndcg_at_3": 0.8223455138761625
+          },
+          "F05": {
+            "recall_at_3": 0.8541666666666666,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.9261449152460077
+          },
+          "N01": {
+            "recall_at_3": 0.8541666666666666,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.9149462327550156
+          },
+          "N02": {
+            "recall_at_3": 0.8541666666666666,
+            "hit_at_3": 1.0,
+            "ndcg_at_3": 0.7817540994356537
+          },
+          "N04": {
+            "recall_at_3": 0.6666666666666666,
+            "hit_at_3": 0.875,
+            "ndcg_at_3": 0.7398941189302605
+          }
+        }
+      }
+    },
+    "semantic_run": false,
+    "encoder": null,
+    "limitations": [
+      "Development queries and labels are AI-authored drafts, not independent reviewed test.",
+      "Small correlated query groups; no claim of statistical significance or learner benefit.",
+      "Ranking times exclude model loading and query encoding; benchmark them separately.",
+      "Cases without labels here only test empty metadata scope, not general out-of-domain abstention."
+    ],
+    "input_sha256": {
+      "corpus.json": "a4cb3c264a8fde2dbd067e10cc29b2cbd8ba6e959a865594697600555f87ca77",
+      "queries.json": "e0f81a7033472031917155d76c22828d49ec03e66a30dcc94e6f55ab7a181a57"
+    }
+  },
+  "semantic_evaluation": {
+    "status": "NOT_RUN",
+    "reason": "No local torch/sentence-transformers/GPU model; run delivered notebook on Colab T4"
+  },
+  "new_tests": {
+    "passed": 67,
+    "skipped": 3,
+    "skip_reasons": {
+      "http_testclient": 1,
+      "real_neo4j": 2
+    }
+  },
+  "regression": {
+    "tests": 322,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 29,
+    "passed": 293,
+    "deselected": 2,
+    "seconds": 57.996,
+    "xml_local": "data/test-runs/grounding-full-20261006d.xml"
+  },
+  "checks": {
+    "schemas": 23,
+    "legacy_openapi": "PASS unchanged",
+    "pilot_openapi": "PASS additive routes",
+    "compose_config": "PASS with knowledge profile",
+    "authoring_audit": "PASS 10 packs",
+    "analyzer_dev": "180/180 matches, draft correlated development records",
+    "notebook": "Code cells compile and mock structural pipeline exports/imports validated JSON. Synthetic vectors; no BGE-M3 quality result.",
+    "offline_grounding_examples": "PASS lexical + explicit Neo4j/semantic fallbacks",
+    "preserved_curriculum_and_analyzer": {
+      "content/curriculum/registry.v1.json": true,
+      "content/curriculum/pilot.v1.json": true,
+      "content/curriculum/analyzer.dev.v1.json": true,
+      "backend/app/learner_math.py": true,
+      "backend/app/pilot_analyzer.py": true,
+      "backend/app/pilot_worker.py": true,
+      "backend/app/pilot_contracts.py": true
+    },
+    "bkt_parameters_sha256": "a7cd53a6f6edb07f8cf5c73e1ffa6f55f8df951a6e555d4b779e0230bdf812b4",
+    "final_import_notebook_after_cross_platform_tolerance": {
+      "passed": 8,
+      "failures": 0,
+      "xml_local": "data/test-runs/grounding-import-20261006e.xml"
+    },
+    "packaged_evaluator_fresh_process": "PASS outside repo with two Python hash seeds",
+    "bkt_source_hashes_preserved": true,
+    "links_and_tracked_file_policy": "PASS including untracked working tree files",
+    "python_compile": "PASS backend, research, scripts, tests and notebook code cells"
+  },
+  "environment_limits": [
+    "Docker Desktop Linux Engine unavailable; PostgreSQL/Neo4j integration tests skipped locally.",
+    "Windows asyncio loopback TestClient unavailable; 4 new HTTP tests skipped across Analyzer+retrieval and 2 legacy health tests deselected.",
+    "CI configured with PostgreSQL and Neo4j services; no remote CI run/result in this session."
+  ],
+  "remaining": [
+    "Real Colab BGE-M3 encoding and semantic evaluation with failure analysis",
+    "Reviewed independent relevance set (plan 120-200 queries), dev selection of K and leakage evaluation",
+    "Versioned PostgreSQL/pgvector sync instead of portable JSON index",
+    "Agent decisions using Student Model and grounding; generation/disclosure validation",
+    "Persistent pilot sessions, decision logs, backtrack/return, web integration and ablations"
+  ],
+  "sha256": {
+    "backend/app/curriculum_graph.py": "4d51637017ae2b394e3dec4bf45b0bbaa89aed0cc26c2d0058170fd81d9832e7",
+    "backend/app/local_embedding.py": "bf2ac1e15198a09960283558ac7ec3d7756202808cd485ba55c912425d4fe1d3",
+    "backend/app/retrieval.py": "3bb7e845924af048a3bd3fb8dc49f0105272f0d9a97fdb74c238b3e045120f81",
+    "backend/app/retrieval_contracts.py": "55f29a6479cc4d5cc32b7f7d4ba523182e566551c50fedcf913116027300e3ca",
+    "backend/app/pilot_grounding.py": "36fd7f6c2a62915d5dd92017433ee6467c194ed360bae0ba77c7126db157d1f0",
+    "backend/app/pilot_api.py": "3c88f688cc0d566bc6aa52a8f0b52cbd587f3154bfe41a23558c837b0a55a2fb",
+    "content/curriculum/retrieval.dev.v1.json": "e0f81a7033472031917155d76c22828d49ec03e66a30dcc94e6f55ab7a181a57",
+    "research/retrieval/evaluate.py": "9ff8b28404a7ad23d4c72ed73a2165bff8b6279a450b86dd36deb7a88a267358",
+    "research/retrieval/bge_m3_colab.ipynb": "f83b38d98b9a28aa5ca72af6079dfb8039c8a5d0fa33ab68d21902b10e6cf340",
+    "scripts/exports/prepare_retrieval_colab.py": "043c9d465f1ef4d8a2d35d5d24291ec1c37f645adc89421e29bb133c05b19bfa",
+    "scripts/exports/import_retrieval_artifact.py": "acb36e6048a0eb8ee4b6a5e6e014f4c63d13b73c850e2d226a93cb8dab98ad0f",
+    "tests/test_retrieval.py": "22136eaa4afd3c33a21d7fcca6f0eda16a8bc4b788f28033bb5c0f5c6e432e3f",
+    "tests/test_curriculum_graph_db.py": "1b2fe3258d63d253936cc826f1513efa1b7a83b5ea901865d8fec54134fe62c2",
+    "contracts/pilot/openapi.json": "33952fb14fd55588fa0aacd3ec26d1df9dcf804fb459c8ecf8a01fdb1e5658bd",
+    "scripts/dev/cache_embedding_model.py": "a88bb2d77002371677dbc4813e938c2b573390a1935d6b48263c426a096795fd",
+    "research/retrieval/requirements.txt": "6bb231bff955613c3cda58500564d67c04e60790bda82bca94c99fcfeac20a9a",
+    "compose.yaml": "388f80c03f66e0e309573ae05b71d16e12eb5cd73c413b1d901a354cb7fb6ace",
+    ".github/workflows/repository-checks.yml": "43af24ba1c2803154a7d58b6f646f03a178c1c79ac8ea6c787246949203fa7c3"
+  },
+  "artifacts": {
+    "notebook": "research/retrieval/bge_m3_colab.ipynb",
+    "colab_input_zip": "data/exports/pilot-retrieval-input.zip",
+    "zip_bytes": 26314,
+    "zip_sha256": "bfaa2a0b61953290bad2db3b8f84c20a8c9d8f621d2c5fb7872570f905592d8f"
+  }
+}

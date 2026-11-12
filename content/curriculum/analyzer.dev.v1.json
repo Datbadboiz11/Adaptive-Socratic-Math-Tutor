@@ -1,0 +1,3686 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "0.1.0",
+  "split": "authoring_dev",
+  "label_status": "draft_machine_audited",
+  "purpose": "Development regression, not independent evaluation",
+  "records": [
+    {
+      "record_id": "P-A01-01-reference",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*(-2)+3",
+          "-4+3",
+          "-1"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-01-final",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-1"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-02-reference",
+      "problem_id": "P-A01-02",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-3*2+5",
+          "-6+5",
+          "-1"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-02-final",
+      "problem_id": "P-A01-02",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-1"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-03-reference",
+      "problem_id": "P-A01-03",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*3-2*3",
+          "9-6",
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-03-final",
+      "problem_id": "P-A01-03",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-04-reference",
+      "problem_id": "P-A01-04",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-3-2)*(-3+2)",
+          "(-5)*(-1)",
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-04-final",
+      "problem_id": "P-A01-04",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-05-reference",
+      "problem_id": "P-A01-05",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-rational_input",
+      "family_id": "FAM-A01-rational_input",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(1/3+1)/2",
+          "(4/3)/2",
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-05-final",
+      "problem_id": "P-A01-05",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-rational_input",
+      "family_id": "FAM-A01-rational_input",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-06-reference",
+      "problem_id": "P-A01-06",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-rational_input",
+      "family_id": "FAM-A01-rational_input",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(3*(-1/3)-1)/4",
+          "-2/4",
+          "-1/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-06-final",
+      "problem_id": "P-A01-06",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-rational_input",
+      "family_id": "FAM-A01-rational_input",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-1/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A01-01-ERR-A01-01",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*2+3",
+          "7"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "substitution_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A01-01-ERR-A01-01-final",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "7"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A01-03-ERR-A01-02",
+      "problem_id": "P-A01-03",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3-2*3",
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "power_as_identity",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A01-03-ERR-A01-02-final",
+      "problem_id": "P-A01-03",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-quadratic",
+      "family_id": "FAM-A01-quadratic",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A01-01-ambiguous",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A01-01-unsafe",
+      "problem_id": "P-A01-01",
+      "concept_id": "A01",
+      "source_group": "GROUP-A01-linear",
+      "family_id": "FAM-A01-linear",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-01-reference",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x+3*2",
+          "3*x+6"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-01-final",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3*x+6"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-02-reference",
+      "problem_id": "P-A02-02",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "4*x-4*3",
+          "4*x-12"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-02-final",
+      "problem_id": "P-A02-02",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4*x-12"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-03-reference",
+      "problem_id": "P-A02-03",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-2*x+(-2)*5",
+          "-2*x-10"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-03-final",
+      "problem_id": "P-A02-03",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-2*x-10"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-04-reference",
+      "problem_id": "P-A02-04",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-3*2*x+(-3)*(-1)",
+          "-6*x+3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-04-final",
+      "problem_id": "P-A02-04",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-6*x+3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-05-reference",
+      "problem_id": "P-A02-05",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-reverse",
+      "family_id": "FAM-A02-reverse",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "5*x+5*3",
+          "5*(x+3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-05-final",
+      "problem_id": "P-A02-05",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-reverse",
+      "family_id": "FAM-A02-reverse",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5*(x+3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-06-reference",
+      "problem_id": "P-A02-06",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-reverse",
+      "family_id": "FAM-A02-reverse",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-4*x+(-4)*(-2)",
+          "-4*(x-2)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-06-final",
+      "problem_id": "P-A02-06",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-reverse",
+      "family_id": "FAM-A02-reverse",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-4*(x-2)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A02-01-ERR-A02-01",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "distribution_missing_term",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-01-ERR-A02-01-final",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-03-ERR-A02-02",
+      "problem_id": "P-A02-03",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-2*x+10"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "distribution_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-03-ERR-A02-02-final",
+      "problem_id": "P-A02-03",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-negative",
+      "family_id": "FAM-A02-negative",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-2*x+10"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-01-ambiguous",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A02-01-unsafe",
+      "problem_id": "P-A02-01",
+      "concept_id": "A02",
+      "source_group": "GROUP-A02-positive",
+      "family_id": "FAM-A02-positive",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-01-reference",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(3+2)*x",
+          "5*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-01-final",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-02-reference",
+      "problem_id": "P-A03-02",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-4+1)*x",
+          "-3*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-02-final",
+      "problem_id": "P-A03-02",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-3*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-03-reference",
+      "problem_id": "P-A03-03",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(2+4)*x+(3-1)",
+          "6*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-03-final",
+      "problem_id": "P-A03-03",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "6*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-04-reference",
+      "problem_id": "P-A03-04",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "5*x-2-x-3",
+          "4*x-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-04-final",
+      "problem_id": "P-A03-04",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4*x-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-05-reference",
+      "problem_id": "P-A03-05",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-quadratic",
+      "family_id": "FAM-A03-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(1+2)*x*x-3*x",
+          "3*x*x-3*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-05-final",
+      "problem_id": "P-A03-05",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-quadratic",
+      "family_id": "FAM-A03-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3*x*x-3*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-06-reference",
+      "problem_id": "P-A03-06",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-quadratic",
+      "family_id": "FAM-A03-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(4-1)*x*x+2",
+          "3*x*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-06-final",
+      "problem_id": "P-A03-06",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-quadratic",
+      "family_id": "FAM-A03-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3*x*x+2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-A03-01-ERR-A03-01",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "5*x*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "combine_as_multiply",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-01-ERR-A03-01-final",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5*x*x"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-03-ERR-A03-02",
+      "problem_id": "P-A03-03",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "6*x+4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "constant_group",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-03-ERR-A03-02-final",
+      "problem_id": "P-A03-03",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-mixed",
+      "family_id": "FAM-A03-mixed",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "6*x+4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-01-ambiguous",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-A03-01-unsafe",
+      "problem_id": "P-A03-01",
+      "concept_id": "A03",
+      "source_group": "GROUP-A03-same_degree",
+      "family_id": "FAM-A03-same_degree",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-01-reference",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x=8",
+          "x=4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-01-final",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-02-reference",
+      "problem_id": "P-E01-02",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x=15",
+          "x=5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-02-final",
+      "problem_id": "P-E01-02",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-03-reference",
+      "problem_id": "P-E01-03",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "x=-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-03-final",
+      "problem_id": "P-E01-03",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-04-reference",
+      "problem_id": "P-E01-04",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "x/3=3",
+          "x=9"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-04-final",
+      "problem_id": "P-E01-04",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "9"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-05-reference",
+      "problem_id": "P-E01-05",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-simplify",
+      "family_id": "FAM-E01-simplify",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x-6=10",
+          "2*x=16",
+          "x=8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-05-final",
+      "problem_id": "P-E01-05",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-simplify",
+      "family_id": "FAM-E01-simplify",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-06-reference",
+      "problem_id": "P-E01-06",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-simplify",
+      "family_id": "FAM-E01-simplify",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x+1=9",
+          "2*x=8",
+          "x=4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E01-06-final",
+      "problem_id": "P-E01-06",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-simplify",
+      "family_id": "FAM-E01-simplify",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "unverified",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-01-ERR-E01-01",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x=14",
+          "x=7"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "one_sided_inverse",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-01-ERR-E01-01-final",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "x=7"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-03-ERR-E01-02",
+      "problem_id": "P-E01-03",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "x=4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "division_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-03-ERR-E01-02-final",
+      "problem_id": "P-E01-03",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-multiply_divide",
+      "family_id": "FAM-E01-multiply_divide",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "x=4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-01-ambiguous",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E01-01-unsafe",
+      "problem_id": "P-E01-01",
+      "concept_id": "E01",
+      "source_group": "GROUP-E01-add_subtract",
+      "family_id": "FAM-E01-add_subtract",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-01-reference",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x = 15",
+          "x = 5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-01-final",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-02-reference",
+      "problem_id": "P-E02-02",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-2*x = 8",
+          "x = -4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-02-final",
+      "problem_id": "P-E02-02",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-03-reference",
+      "problem_id": "P-E02-03",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x - 6 = 10",
+          "2*x = 16",
+          "x = 8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-03-final",
+      "problem_id": "P-E02-03",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-04-reference",
+      "problem_id": "P-E02-04",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-3*x - 6 = 12",
+          "-3*x = 18",
+          "x = -6"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-04-final",
+      "problem_id": "P-E02-04",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-6"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-05-reference",
+      "problem_id": "P-E02-05",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x - 4 = 11",
+          "3*x = 15",
+          "x = 5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-05-final",
+      "problem_id": "P-E02-05",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-06-reference",
+      "problem_id": "P-E02-06",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3 = 2*x - 8",
+          "11 = 2*x",
+          "x = 11/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-06-final",
+      "problem_id": "P-E02-06",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "11/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-E02-01-ERR-E02-01",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*x=25",
+          "x=25/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "inverse_operation",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-01-ERR-E02-01-final",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "x=25/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-03-ERR-E02-02",
+      "problem_id": "P-E02-03",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*x-3=10",
+          "2*x=13",
+          "x=13/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "distribution_missing_term",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-03-ERR-E02-02-final",
+      "problem_id": "P-E02-03",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "x=13/2"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-01-ambiguous",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-E02-01-unsafe",
+      "problem_id": "P-E02-01",
+      "concept_id": "E02",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-01-reference",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-01-final",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-02-reference",
+      "problem_id": "P-F01-02",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-02-final",
+      "problem_id": "P-F01-02",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-03-reference",
+      "problem_id": "P-F01-03",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*3-1",
+          "6-1",
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-03-final",
+      "problem_id": "P-F01-03",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-04-reference",
+      "problem_id": "P-F01-04",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-3*(-2)+2",
+          "6+2",
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-04-final",
+      "problem_id": "P-F01-04",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-05-reference",
+      "problem_id": "P-F01-05",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-quadratic",
+      "family_id": "FAM-F01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-2)*(-2)+1",
+          "4+1",
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-05-final",
+      "problem_id": "P-F01-05",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-quadratic",
+      "family_id": "FAM-F01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-06-reference",
+      "problem_id": "P-F01-06",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-quadratic",
+      "family_id": "FAM-F01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2*(-1)*(-1)-(-1)",
+          "2+1",
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-06-final",
+      "problem_id": "P-F01-06",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-quadratic",
+      "family_id": "FAM-F01-quadratic",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F01-01-ERR-F01-01",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "input_as_output",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-01-ERR-F01-01-final",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-03-ERR-F01-02",
+      "problem_id": "P-F01-03",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "input_as_output",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-03-ERR-F01-02-final",
+      "problem_id": "P-F01-03",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-linear",
+      "family_id": "FAM-F01-linear",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-01-ambiguous",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F01-01-unsafe",
+      "problem_id": "P-F01-01",
+      "concept_id": "F01",
+      "source_group": "GROUP-F01-constant",
+      "family_id": "FAM-F01-constant",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-01-reference",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(4/2,4-8+1)",
+          "(2,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-01-final",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(2,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-02-reference",
+      "problem_id": "P-F05-02",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-4/4,2-4-1)",
+          "(-1,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-02-final",
+      "problem_id": "P-F05-02",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(-1,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-03-reference",
+      "problem_id": "P-F05-03",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(2,3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-03-final",
+      "problem_id": "P-F05-03",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(2,3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-04-reference",
+      "problem_id": "P-F05-04",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-1,4)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-04-final",
+      "problem_id": "P-F05-04",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(-1,4)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-05-reference",
+      "problem_id": "P-F05-05",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-factored",
+      "family_id": "FAM-F05-factored",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-1,(-1-2)*(-1+4))",
+          "(-1,-9)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-05-final",
+      "problem_id": "P-F05-05",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-factored",
+      "family_id": "FAM-F05-factored",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(-1,-9)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-06-reference",
+      "problem_id": "P-F05-06",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-factored",
+      "family_id": "FAM-F05-factored",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(1,-(1+1)*(1-3))",
+          "(1,4)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-06-final",
+      "problem_id": "P-F05-06",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-factored",
+      "family_id": "FAM-F05-factored",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(1,4)"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-F05-01-ERR-F05-01",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-2,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "vertex_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-01-ERR-F05-01-final",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(-2,-3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-03-ERR-F05-02",
+      "problem_id": "P-F05-03",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(-2,3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "square_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-03-ERR-F05-02-final",
+      "problem_id": "P-F05-03",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-completed_square",
+      "family_id": "FAM-F05-completed_square",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "(-2,3)"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-01-ambiguous",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-F05-01-unsafe",
+      "problem_id": "P-F05-01",
+      "concept_id": "F05",
+      "source_group": "GROUP-F05-general",
+      "family_id": "FAM-F05-general",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-01-reference",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(7-4)",
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-01-final",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-02-reference",
+      "problem_id": "P-N01-02",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(12-5)",
+          "-7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-02-final",
+      "problem_id": "P-N01-02",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-03-reference",
+      "problem_id": "P-N01-03",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(8+3)",
+          "-11"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-03-final",
+      "problem_id": "P-N01-03",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-11"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-04-reference",
+      "problem_id": "P-N01-04",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(9-4)",
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-04-final",
+      "problem_id": "P-N01-04",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-05-reference",
+      "problem_id": "P-N01-05",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_negative",
+      "family_id": "FAM-N01-subtract_negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "6+2",
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-05-final",
+      "problem_id": "P-N01-05",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_negative",
+      "family_id": "FAM-N01-subtract_negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "8"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-06-reference",
+      "problem_id": "P-N01-06",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_negative",
+      "family_id": "FAM-N01-subtract_negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-5+9",
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-06-final",
+      "problem_id": "P-N01-06",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_negative",
+      "family_id": "FAM-N01-subtract_negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N01-01-ERR-N01-01",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "11"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "signed_add",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-01-ERR-N01-01-final",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "11"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-03-ERR-N01-02",
+      "problem_id": "P-N01-03",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "signed_sub",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-03-ERR-N01-02-final",
+      "problem_id": "P-N01-03",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-subtract_positive",
+      "family_id": "FAM-N01-subtract_positive",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-01-ambiguous",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N01-01-unsafe",
+      "problem_id": "P-N01-01",
+      "concept_id": "N01",
+      "source_group": "GROUP-N01-opposite",
+      "family_id": "FAM-N01-opposite",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-01-reference",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(6*4)",
+          "-24"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-01-final",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-24"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-02-reference",
+      "problem_id": "P-N02-02",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(3*7)",
+          "-21"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-02-final",
+      "problem_id": "P-N02-02",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-21"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-03-reference",
+      "problem_id": "P-N02-03",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "24/6",
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-03-final",
+      "problem_id": "P-N02-03",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-04-reference",
+      "problem_id": "P-N02-04",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(35/7)",
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-04-final",
+      "problem_id": "P-N02-04",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-05-reference",
+      "problem_id": "P-N02-05",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-chain",
+      "family_id": "FAM-N02-chain",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "6*4",
+          "24"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-05-final",
+      "problem_id": "P-N02-05",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-chain",
+      "family_id": "FAM-N02-chain",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "24"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-06-reference",
+      "problem_id": "P-N02-06",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-chain",
+      "family_id": "FAM-N02-chain",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3*10",
+          "30"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-06-final",
+      "problem_id": "P-N02-06",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-chain",
+      "family_id": "FAM-N02-chain",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "30"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N02-01-ERR-N02-01",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "24"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "sign_product",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-01-ERR-N02-01-final",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "24"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-03-ERR-N02-02",
+      "problem_id": "P-N02-03",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "sign_division",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-03-ERR-N02-02-final",
+      "problem_id": "P-N02-03",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-division",
+      "family_id": "FAM-N02-division",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-4"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-01-ambiguous",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N02-01-unsafe",
+      "problem_id": "P-N02-01",
+      "concept_id": "N02",
+      "source_group": "GROUP-N02-product",
+      "family_id": "FAM-N02-product",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-01-reference",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(6/2)/(8/2)",
+          "3/4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-01-final",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3/4"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-02-reference",
+      "problem_id": "P-N04-02",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "(12/6)/(18/6)",
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-02-final",
+      "problem_id": "P-N04-02",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-03-reference",
+      "problem_id": "P-N04-03",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(10/5)/(15/5)",
+          "-2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-03-final",
+      "problem_id": "P-N04-03",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-04-reference",
+      "problem_id": "P-N04-04",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-(14/7)/(21/7)",
+          "-2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-04-final",
+      "problem_id": "P-N04-04",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-05-reference",
+      "problem_id": "P-N04-05",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-common_factor",
+      "family_id": "FAM-N04-common_factor",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "6/15",
+          "2/5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-05-final",
+      "problem_id": "P-N04-05",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-common_factor",
+      "family_id": "FAM-N04-common_factor",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "2/5"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-06-reference",
+      "problem_id": "P-N04-06",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-common_factor",
+      "family_id": "FAM-N04-common_factor",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "-12/28",
+          "-3/7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-06-final",
+      "problem_id": "P-N04-06",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-common_factor",
+      "family_id": "FAM-N04-common_factor",
+      "origin": "authored_reference",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "-3/7"
+        ]
+      },
+      "expected": {
+        "status": "verified_correct",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": true
+      }
+    },
+    {
+      "record_id": "P-N04-01-ERR-N04-01",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "3/8"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "fraction_scale",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-01-ERR-N04-01-final",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "3/8"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-03-ERR-N04-02",
+      "problem_id": "P-N04-03",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "authored_error_fixture",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_family": "fraction_sign",
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-03-ERR-N04-02-final",
+      "problem_id": "P-N04-03",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-negative",
+      "family_id": "FAM-N04-negative",
+      "origin": "final_answer_diagnosis_boundary",
+      "submission": {
+        "submission_kind": "final_answer",
+        "steps": [
+          "2/3"
+        ]
+      },
+      "expected": {
+        "status": "verified_incorrect",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-01-ambiguous",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "Em chưa biết làm"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    },
+    {
+      "record_id": "P-N04-01-unsafe",
+      "problem_id": "P-N04-01",
+      "concept_id": "N04",
+      "source_group": "GROUP-N04-positive",
+      "family_id": "FAM-N04-positive",
+      "origin": "explicit_negative_case",
+      "submission": {
+        "submission_kind": "steps",
+        "steps": [
+          "__import__(\"os\")"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "first_error_step": null,
+        "error_family": null,
+        "completed": false
+      }
+    }
+  ]
+}

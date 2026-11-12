@@ -2,13 +2,14 @@
 
 **Dự án:** Adaptive Socratic Math Tutor  
 **Tên đề tài:** Nghiên cứu và xây dựng trợ lý AI dạy học Toán theo phương pháp Socratic thích ứng sử dụng AI Agent  
-**Phiên bản:** 0.2 — ngày 25/09/2026  
+**Phiên bản:** 0.3 — ngày 10/10/2026
+
 **Trạng thái:** Draft để triển khai và kiểm chứng bằng pilot; chưa phải kết quả thực nghiệm  
 **Nhóm / thời gian:** 3 thành viên / 12 tuần
 
 ## 1. Mục đích và quan hệ giữa tài liệu
 
-PRD quy định hành vi sản phẩm, phạm vi nghiệm thu và tiêu chí kiểm tra. [Brief](brief.md) tóm tắt mục tiêu và giá trị; [plan](../planning/project-plan.md) mô tả phương pháp, danh mục concept và kế hoạch thực nghiệm chi tiết. Bản 0.2 đồng bộ các quyết định từ plan, thay các mô tả cũ về cập nhật sau từng attempt, giải thích trực tiếp bài hiện tại, prototype tuần 8 và baseline cộng dồn.
+PRD quy định hành vi sản phẩm, phạm vi nghiệm thu và tiêu chí kiểm tra. [Brief](brief.md) tóm tắt mục tiêu và giá trị; [plan](../planning/project-plan.md) mô tả phương pháp, danh mục concept và kế hoạch thực nghiệm chi tiết. Bản 0.2 đồng bộ các quyết định từ plan, thay các mô tả cũ về cập nhật sau từng attempt, giải thích trực tiếp bài hiện tại, prototype tuần 8 và baseline cộng dồn. Bản 0.3 làm rõ trải nghiệm thích ứng, tiến trình có bằng chứng và công cụ quan sát AI; giữ nguyên phạm vi nghiên cứu, concept và thời gian.
 
 Khi thay phạm vi, observation, policy, dữ liệu hoặc tiêu chí đánh giá, ghi quyết định và cập nhật các tài liệu liên quan trong cùng lần thay đổi. Không dùng brief để suy ra ngoại lệ với PRD. Những ngưỡng ghi là ban đầu phải được thử trên dev rồi khóa trước test; không được hạ theo kết quả test để tuyên bố đạt.
 
@@ -215,6 +216,7 @@ Hành động chuẩn: `clarify`, `diagnose`, `minimal_hint`, `conceptual_questi
 - FR10-AC3: Trên các cặp tình huống mà lịch sử/bằng chứng tạo nhu cầu hỗ trợ khác nhau, hành động phải thuộc tập phù hợp được gán nhãn. Không yêu cầu mọi cặp khác mastery đều có action khác.
 - FR10-AC4: Action bị cấm hoặc thiếu bằng chứng phải bị gate từ chối và chuyển fallback hợp lệ; log giữ đề xuất và quyết định sau gate.
 - FR10-AC5: Agent không có quyền ghi mastery, sửa tham số BKT hoặc thay dữ liệu người học ngoài các thao tác được định nghĩa.
+- FR10-AC6: Khi đổi cách hỗ trợ, kiểm tra/ôn prerequisite hoặc quay lại bài gốc, UI hiển thị lý do ngắn bằng tiếng Việt khớp action sau gate và bằng chứng đã lưu. Nguyên nhân chưa xác nhận phải được diễn đạt như giả thuyết; thiếu bằng chứng không được bịa nguyên nhân. Kiểm tra cả ca sửa đề xuất sau gate, fallback và resume; lý do không tiết lộ đáp án hoặc chuỗi suy nghĩ nội bộ.
 
 ### FR-11 — LangGraph và tính nhất quán lượt xử lý · P0
 
@@ -257,6 +259,10 @@ Phản hồi bám bằng chứng, ngắn và ưu tiên một câu hỏi rõ ràn
 - FR13-AC3: Sau hỗ trợ, lưu kết quả có hỗ trợ và mức đã dùng; không coi là nhiều lần làm đúng độc lập.
 - FR13-AC4: `Explanation` luôn tuân FR-12; việc hết lượt không mở quyền tiết lộ bài hiện tại.
 
+**Nút hỗ trợ · P1:** Nên có “Em chưa hiểu”, “Gợi ý nhẹ”, “Cho ví dụ khác”, “Ôn kiến thức nền”. Chúng gửi yêu cầu cho Agent, dùng tập action ở FR-10 và không bỏ qua gate hoặc buộc backtrack khi chưa đủ bằng chứng.
+
+- FR13-AC5 (P1): Bấm nút không tạo observation đúng/sai; trợ giúp thực tế được lưu để xác định eligibility của câu trả lời tiếp theo. Ví dụ khác không giải hộ bài hiện tại. Retry cùng yêu cầu không tăng hint hay số lượt hỗ trợ lần nữa; kiểm tra cả yêu cầu không có nội dung phù hợp và nhánh chẩn đoán prerequisite.
+
 ### FR-14 — Dừng, chuyển bài và kết thúc phiên · P0
 
 Heuristic ban đầu để xem xét chuyển concept: P(L) ≥ 0.8; ít nhất 3 observations hợp lệ; 2 bài tự làm gần nhất đúng thuộc mẫu khác nhau; không còn giả thuyết lỗi quan trọng chưa kiểm tra và prerequisite phù hợp. Đây không phải ngưỡng thành thạo phổ quát.
@@ -288,6 +294,11 @@ Hiển thị skill đã luyện, mastery ước lượng, evidence count, nguồ
 - FR16-AC1: Người mới thấy “chưa đủ dữ liệu”; không chỉ hiện một phần trăm như điểm thi.
 - FR16-AC2: Giá trị hiển thị khớp state/version và số observations; kết quả sau hỗ trợ không cộng vào số lần tự làm.
 - FR16-AC3: Hypothesis được gắn suspected/supported/đã bác bỏ phù hợp; không biến mọi candidate thành danh sách điểm yếu đã xác nhận.
+- FR16-AC4: Hiển thị concept hiện tại, kết quả tự làm/có hỗ trợ riêng và số observations hợp lệ. Mỗi số liệu có phạm vi/thời gian rõ; số bài không được đồng nhất với số observations. Chat, nhận hint hoặc bấm nút không tự tạo mức tăng mastery; resume hiển thị đúng dữ liệu đã lưu.
+
+**Bản đồ kiến thức · P2:** Nếu triển khai sau khi backtrack/return hoạt động, chỉ cần concept hiện tại, prerequisite liên quan tối đa 2 tầng và đường quay lại bài gốc; không yêu cầu trình bày toàn bộ graph.
+
+- FR16-AC5 (P2): Cạnh hiển thị lấy từ graph đã duyệt; hướng A → B có chú giải A cần trước B. Phân biệt prerequisite ứng viên và phần đã có bằng chứng cần ôn, không tô toàn bộ prerequisite thành “yếu” từ một lỗi. Đồ thị kiến thức phiên học, nếu có, được ghi nhãn riêng với curriculum graph; hình vẽ không thay kết quả đánh giá KG.
 
 ### FR-17 — Dashboard giáo viên · P2
 
@@ -308,6 +319,28 @@ Report cuối phiên và khi quay lại gồm concept/skill đã luyện, kết 
 - FR18-AC2: Bài đúng sau hỗ trợ không được mô tả là đã tự làm đúng; không suy ra “đã thành thạo” chỉ từ kết thúc bài.
 - FR18-AC3: Recommendation có căn cứ, phân biệt prerequisite ứng viên với phần đã xác nhận cần ôn. Dữ liệu chưa đủ được nói rõ.
 - FR18-AC4: Nội dung report tôn trọng chính sách tiết lộ; không tự chèn lời giải hoàn chỉnh của bài học sinh chưa tự giải xong.
+- FR18-AC5: Report tóm tắt bằng ngôn ngữ dễ hiểu: đã tự làm gì, cần hỗ trợ ở đâu, lỗi quan sát được và nên luyện gì tiếp; mỗi nhận định truy được về evidence/decision. Không suy ra learning gain từ tăng mastery hoặc số lượt chat. Ca không có observation mới/thiếu dữ liệu phải nói rõ.
+
+### FR-19 — Màn hình kiểm tra lượt AI nội bộ · P1
+
+Công cụ đọc log theo session/turn phục vụ phân tích lỗi, review và trình diễn; không phải dashboard giáo viên P2 hay hệ quản lý lớp. NFR-04 về log đầy đủ vẫn là P0 dù chưa có màn hình này.
+
+**Nghiệm thu khi triển khai:**
+
+- FR19-AC1: Chỉ người được cấp quyền xem hồ sơ tương ứng; demo dùng hồ sơ tổng hợp. Màn hình không có thao tác sửa mastery hoặc tham số BKT.
+- FR19-AC2: Xem được assessment/phương pháp xác minh, evidence và hypothesis status, observation eligibility/lý do, BKT trước-sau/parameter version, content/edge IDs thực tế, action đề xuất/sau gate, lý do ngắn, hint và fallback cùng versions model/prompt/KB/config. Dữ liệu khớp log và state version; mục chưa ghi hiện “chưa ghi nhận”, không sinh dữ liệu thay thế.
+- FR19-AC3: Không hiển thị API key, chuỗi suy nghĩ nội bộ hoặc nội dung ngoài quyền xem. Reference solution phục vụ validator không tự xuất hiện trong màn hình học sinh hay public demo; report nội bộ tuân phạm vi sử dụng dữ liệu đã công bố.
+
+### FR-20 — Giao diện quản lý phiên bản prompt · P2
+
+Lưu và truy vết phiên bản vẫn là P0 theo NFR-04; file/script là phương án cơ sở. Chỉ bổ sung giao diện xem, thử trên dev, đổi phiên bản và rollback nếu còn quỹ giờ sau vòng học và evaluation.
+
+**Nghiệm thu khi triển khai:**
+
+- FR20-AC1: Đổi/rollback tạo dấu vết người thực hiện, thời điểm và phiên bản được chọn; không ghi đè lịch sử. Mỗi lượt lưu phiên bản thực tế đã dùng cùng model/config để đối soát, không gán lại phiên bản mới cho lượt cũ.
+- FR20-AC2: Phiên bản ứng viên được đánh giá trên dev với artifacts lưu riêng trước khi sử dụng; sau khóa test, thay đổi phải được ghi nhận theo protocol thực nghiệm. Không dùng nhãn/kết quả test để tinh chỉnh prompt hoặc tuyên bố phiên bản tốt hơn chỉ từ demo.
+
+Các mục bổ sung không mở rộng RQ hoặc phạm vi 30–50 concept. XP, huy hiệu, bảng xếp hạng, nhắc lịch và quản trị rộng chưa đưa vào yêu cầu triển khai; ưu tiên vòng học và kiểm chứng AI.
 
 ## 6. Dữ liệu và hợp đồng đầu ra
 
@@ -528,8 +561,8 @@ Cả ba biên soạn khoảng 13–14 concept/người cho mục tiêu 40, revie
 | 1 | Chốt RQ, danh mục đề xuất, schema/fixtures; skeleton API/UI/LangGraph; liên hệ người review/pilot |
 | 2 | Audit KT, checker/policy đầu tiên, KB mẫu; pilot annotation/rubric; chốt split, model, nguồn nội dung, ngân sách giờ/cost và điều kiện đo |
 | 3 | Online BKT và idempotency, KG/RAG nối API, luồng thật trên một số concept; log liên thông |
-| 4 | Prototype 8–10 concept thuộc ba mảng, đủ analyzer/BKT/KG/RAG/Agent, nhiều lượt, fallback và lưu/tiếp tục phiên |
-| 5 | Khoảng 20 concept hoàn chỉnh; backtrack/return; report cơ bản; baseline/ablation cấu hình được |
+| 4 | Prototype 8–10 concept thuộc ba mảng, đủ analyzer/BKT/KG/RAG/Agent, nhiều lượt, fallback, lưu/tiếp tục phiên và lý do can thiệp trên UI |
+| 5 | Khoảng 20 concept hoàn chỉnh; backtrack/return; report có bằng chứng đối soát log; baseline/ablation cấu hình được; nút hỗ trợ và màn hình log nội bộ nếu đủ quỹ giờ |
 | 6 | Khoảng 30 concept; kiểm tra trên dev, sensitivity tham số và rubric; ổn định UI |
 | 7 | Đủ 40 concept mục tiêu; hoàn tất mọi cấu hình; khóa test/model/prompt/KB/ngưỡng và script |
 | 8 | Chạy benchmark, bộ bước giải, retrieval/KG và Full/ablation; chấm ẩn cấu hình |
@@ -578,6 +611,7 @@ Các lựa chọn PostgreSQL + pgvector, Neo4j, API model, HTTP trước/SSE sau
 - Analyzer xử lý cách giải khác, lỗi kéo theo và chưa đủ bằng chứng; BKT đúng observation, version và không cập nhật lặp.
 - KG/RAG/Agent có log sử dụng trong quyết định/nội dung; có fallback và vòng học có giới hạn.
 - UI, lưu/tiếp tục phiên, tiến trình cơ bản và learning report hoạt động, dữ liệu người học tách biệt.
+- Lý do can thiệp khớp quyết định sau gate; tiến trình/report tách tự làm và có hỗ trợ, số bài và observations; thiếu dữ liệu không bị trình bày thành kết luận năng lực.
 - Có bộ dữ liệu đã duyệt, KT benchmark, bộ bước giải, rubric, baseline/ablation, raw outputs và script/config tái lập.
 - Công bố kết quả thực tế, chỉ số chưa đạt, khoảng bất định, lỗi còn tồn tại và giới hạn suy rộng; không yêu cầu giả định Full luôn vượt baseline.
 
@@ -605,3 +639,11 @@ Demo minh họa hành vi; kết luận nghiên cứu dựa trên toàn bộ eval
 - Thay yêu cầu khác mastery bắt buộc khác action bằng kiểm tra can thiệp phù hợp; đồng bộ ablation và nhãn chuẩn không lấy BKT làm đáp án.
 - Đưa memory/resume, tiến trình/report cơ bản vào P0; thêm tiêu chí kiểm tra cho từng FR và các nhánh lỗi.
 - Chốt stack cơ sở, metric có điều kiện đo, ngân sách giờ công và các quyết định thực sự còn mở.
+
+## 14. Tóm tắt thay đổi phiên bản 0.3 — 10/10/2026
+
+- Làm rõ P0: giải thích can thiệp cho học sinh và tiến trình/report có bằng chứng, nhất quán với log, eligibility và policy tiết lộ.
+- Bổ sung P1: nút yêu cầu hỗ trợ dùng action hiện có và màn hình đọc log AI nội bộ; không tạo observation từ thao tác giao diện.
+- Ghi P2 tùy chọn: bản đồ concept/prerequisite và giao diện quản lý prompt; lưu phiên bản/log vẫn là P0, dashboard giáo viên vẫn là P2.
+- Đồng bộ với plan mục 8.1, 8.7 và mốc tuần 4–5; đây là yêu cầu dự kiến, không phải tiến độ đã hoàn thành. Giữ nguyên RQ, danh mục concept và ba trục đánh giá.
+- Tham khảo cách trình bày từ [video demo SocriAI](https://www.youtube.com/watch?v=I9heFkM6hG0) do nhóm cung cấp; không dùng màn hình demo làm bằng chứng thuật toán, độ hiệu chỉnh mastery hoặc learning gain.

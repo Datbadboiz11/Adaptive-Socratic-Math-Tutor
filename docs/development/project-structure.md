@@ -6,7 +6,8 @@ Repo dùng cấu trúc monorepo: frontend, backend, nội dung học và nghiên
 Adaptive-Socratic-Math-Tutor/
 ├── backend/                  # FastAPI, tutoring engine, migrations, dependencies
 │   ├── app/
-│   └── migrations/
+│   ├── migrations/
+│   └── rag_migrations/       # Migration pgvector opt-in; tách khỏi schema MVP
 ├── frontend/                 # Next.js: giao diện sản phẩm và API proxy
 │   └── app/
 ├── content/                  # Bài, hint và tham số BKT có version
@@ -15,7 +16,9 @@ Adaptive-Socratic-Math-Tutor/
 ├── research/                 # Code tiền xử lý/benchmark/nghiên cứu
 │   ├── config/               # Protocol/split/fit có version
 │   ├── data/                 # Audit và tiền xử lý ASSISTments
-│   └── bkt/                  # Model, benchmark, metrics và pyBKT parity
+│   ├── bkt/                  # Model, benchmark, metrics và pyBKT parity
+│   ├── analyzer/             # Corpus authoring/dev và kiểm tra Analyzer pilot
+│   └── retrieval/            # BGE-M3 và qwen3_4b riêng, evaluation dùng chung
 ├── scripts/                  # Công cụ vận hành repo
 │   ├── checks/               # Kiểm tra nội dung, API, DB, browser và smoke
 │   ├── exports/              # Xuất/check JSON Schema và OpenAPI
@@ -28,10 +31,12 @@ Adaptive-Socratic-Math-Tutor/
 │   ├── design/               # Mục lục thiết kế
 │   ├── development/          # Cấu trúc repo, thiết lập GitHub
 │   ├── implementation/mvp/   # Bàn giao phase1–phase5 và evidence tương ứng
+│   ├── implementation/curriculum/ # Registry/pilot và Analyzer baseline
 │   └── research/data/        # Audit, protocol, runbook và kết quả dev tổng hợp
 ├── data/                     # Dataset local, được Git ignore
 ├── .github/                  # CI, mẫu issue và PR
 ├── compose.yaml              # Chạy các dịch vụ
+├── compose.rag.yaml          # Overlay Qwen/pgvector pilot và model service tùy chọn
 ├── .env.example              # Cấu hình mẫu, được đưa lên Git
 ├── .env                      # Cấu hình thật, được Git ignore
 ├── README.md
@@ -48,6 +53,8 @@ Adaptive-Socratic-Math-Tutor/
 - [Bàn giao MVP](../implementation/mvp/README.md): code đã có, contract và giới hạn theo từng giai đoạn.
 - [Dữ liệu nghiên cứu](../research/data/README.md): kết quả audit và việc cần làm trước tiền xử lý/BKT baseline.
 - [Nội dung tiếng Việt](../../content/curriculum/README.md): registry, pilot, mẫu biên soạn và checklist review.
+- [Analyzer pilot](../implementation/curriculum/analyzer.v1.md): bộ chấm người học, dữ liệu phát triển, API nội bộ và việc tích hợp tiếp.
+- [KG/RAG và Colab](../implementation/curriculum/grounding.v1.md): graph snapshot, kho truy xuất, notebook, import vector và giới hạn hiện tại.
 
 ## Các vị trí cũ đã chuyển
 

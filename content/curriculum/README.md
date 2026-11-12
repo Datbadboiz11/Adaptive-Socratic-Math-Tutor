@@ -120,7 +120,7 @@ F05 giới hạn bài đo ở tọa độ đỉnh. Trục đối xứng được
 
 `safe_chunks()` hiện là **tra cứu trực tiếp theo metadata**, chỉ trả giải thích/gợi ý của concept và pack đã duyệt, kèm content IDs, version, skill/lớp, nguồn và mức tiết lộ. Không trả các trường đáp án, lời giải chuẩn, examples hoặc errors. Cơ chế này chưa phải semantic RAG và chưa nối vào Agent. Các texts vẫn cần người duyệt kiểm tra tiết lộ; lọc schema không tự bảo đảm gợi ý đúng về sư phạm.
 
-Vì chưa có reviewer, hiện có 0 nội dung công bố qua hai hàm trên. Bank nháp không được seed vào PostgreSQL sản phẩm và không xuất thành topic mới trên web. Bộ chấm online cũ vẫn chỉ hỗ trợ phương trình bậc nhất; checker authoring mới không được mô tả là đã có 10 bộ chấm người học.
+Vì chưa có reviewer, hiện có 0 nội dung công bố qua hai hàm trên. Bank nháp không được seed vào PostgreSQL sản phẩm và không xuất thành topic mới trên web. Luồng phiên học MVP vẫn chỉ hỗ trợ phương trình bậc nhất. Đợt 06/10 đã bổ sung [Analyzer pilot](../../docs/implementation/curriculum/analyzer.v1.md) cho 5 loại nhiệm vụ trên 10 concept và [KG/RAG nội bộ](../../docs/implementation/curriculum/grounding.v1.md): graph snapshot/Neo4j, 40 teaching chunks, retrieval và notebook Colab. Chưa nối vào phiên học web hoặc Student Model; semantic thực tế cần chạy notebook để đo.
 
 ## Đối chiếu nguồn
 
@@ -144,4 +144,4 @@ Kiểm chứng ngày 04/10: **33 tests mới qua; hồi quy cuối 97 qua, 23 Po
 
 ## Bước tiếp theo
 
-Mốc này hoàn thành registry và pilot authoring có kiểm tra; chưa phải prototype đủ module. Tiếp theo mở rộng parser/validator người học theo từng dạng, có ca đầu vào mơ hồ và phương pháp giải khác; nối KG/RAG vào Agent với decision log, backtrack/return và kiểm soát nội dung. Khi duyệt được pilot và luồng học ổn mới mở rộng khoảng 20 → 30 → 40 concept. Không tự chốt benchmark test hoặc đưa tham số ASSISTments vào bộ tiếng Việt.
+Registry, pilot authoring, [Analyzer baseline](../../docs/implementation/curriculum/analyzer.v1.md) và [grounding nội bộ](../../docs/implementation/curriculum/grounding.v1.md) đã có kiểm tra; chưa phải prototype đủ module. Tiếp theo chạy/đánh giá embedding trên Colab, review nhãn/nội dung, đồng bộ pgvector rồi nối Agent với decision log, backtrack/return và phiên học nhiều lượt. Khi duyệt được pilot và luồng học ổn mới mở rộng khoảng 20 → 30 → 40 concept. Không tự chốt benchmark test hoặc đưa tham số ASSISTments vào bộ tiếng Việt.

@@ -20,8 +20,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     services:
+      neo4j:
+        image: neo4j:5.26-community
+        env:
+          NEO4J_AUTH: neo4j/ci-graph-only
+          NEO4J_server_memory_heap_initial__size: 256m
+          NEO4J_server_memory_heap_max__size: 512m
+          NEO4J_server_memory_pagecache_size: 256m
+        ports:
+          - 7474:7474
+        options: >-
+          --health-cmd "wget -q -O /dev/null http://localhost:7474 || exit 1"
+          --health-interval 10s --health-timeout 5s --health-retries 25
       postgres:
-        image: postgres:17-bookworm
+        image: pgvector/pgvector:0.8.7-pg17-bookworm
         env:
           POSTGRES_DB: mo_test
           POSTGRES_USER: mo_test
@@ -38,6 +50,10 @@ jobs:
       PGUSER: mo_test
       PGPASSWORD: ci-test-only
       RUN_DB_TESTS: '1'
+      RUN_GRAPH_TESTS: '1'
+      RUN_RAG_DB_TESTS: '1'
+      NEO4J_HTTP_URL: http://localhost:7474
+      NEO4J_PASSWORD: ci-graph-only
       DEMO_MODE: 'true'
     steps:
       - uses: actions/checkout@v4
@@ -67,8 +83,12 @@ jobs:
         run: |
           python3 scripts/checks/check_phase1.py
           python3 scripts/checks/check_curriculum.py
+          python3 research/analyzer/evaluate.py
+          python3 scripts/exports/prepare_retrieval_colab.py
+          python3 research/retrieval/evaluate.py
           python3 scripts/exports/export_contracts.py --check
           python3 scripts/exports/export_phase3_openapi.py --check
+          python3 scripts/exports/export_pilot_openapi.py --check
           python3 -m pytest tests -q
       - name: Install frontend dependencies
         working-directory: frontend

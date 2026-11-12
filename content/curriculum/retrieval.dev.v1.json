@@ -1,0 +1,2209 @@
+{
+  "schema_version": "1.0.0",
+  "split": "authoring_dev",
+  "label_status": "draft_ai_authored",
+  "purpose": "Pilot retrieval development, not independent evaluation",
+  "guideline": "Grade 3 = directly addresses requested teaching move; grade 1 = earlier permissible hint supporting the same concept. Unlisted = 0. Group paraphrases by concept/purpose before future split; no human approval.",
+  "queries": [
+    {
+      "query_id": "Q-A01-01",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích cách tính biểu thức khi biết giá trị biến.",
+        "concept_ids": [
+          "A01"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-02",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao cần ngoặc khi thế một giá trị âm vào công thức?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-03",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em phải thay biến ở những chỗ nào?",
+        "concept_ids": [
+          "A01"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-04",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Có được chỉ thế số vào một vị trí của ẩn không?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-05",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em nên viết số âm thế vào biểu thức ra sao?",
+        "concept_ids": [
+          "A01"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-2": 3,
+        "A01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-06",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Hãy gợi ý cách tránh sai dấu khi thay số vào công thức.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-2": 3,
+        "A01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-07",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn kiểm tra lại những vị trí đã thay giá trị.",
+        "concept_ids": [
+          "A01"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-3": 3,
+        "A01-hint-1": 1,
+        "A01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A01-08",
+      "concept_group": "A01",
+      "source_group": "QUERY-GROUP-A01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước hỗ trợ tiếp theo khi đã biết phải thế giá trị nhưng chưa viết được biểu thức.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A01-hint-3": 3,
+        "A01-hint-1": 1,
+        "A01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-01",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích quy tắc nhân một số với tổng trong ngoặc.",
+        "concept_ids": [
+          "A02"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-02",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao nhân tử đứng ngoài phải tác động tới toàn bộ tổng?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-03",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em phải nhân với bao nhiêu phần bên trong ngoặc?",
+        "concept_ids": [
+          "A02"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-04",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Em chỉ nhân phần đầu của tổng, cần tự hỏi điều gì?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-05",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý cách tách các tích và kiểm tra dấu khi khai triển.",
+        "concept_ids": [
+          "A02"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-2": 3,
+        "A02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-06",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Em chưa biết sắp xếp phép nhân cho mỗi số hạng trong ngoặc.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-2": 3,
+        "A02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-07",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn giữ các tích chưa tính để kiểm tra khai triển.",
+        "concept_ids": [
+          "A02"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-3": 3,
+        "A02-hint-1": 1,
+        "A02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A02-08",
+      "concept_group": "A02",
+      "source_group": "QUERY-GROUP-A02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước đệm viết khai triển thành các phép nhân trước khi cộng lại.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A02-hint-3": 3,
+        "A02-hint-1": 1,
+        "A02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-01",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích thế nào là các hạng tử đồng dạng.",
+        "concept_ids": [
+          "A03"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-02",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao không thể gộp số hạng bậc hai với bậc nhất?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-03",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em nhận ra các nhóm có cùng biến và số mũ thế nào?",
+        "concept_ids": [
+          "A03"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-04",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Nên hỏi gì trước khi cộng hệ số của các hạng tử?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-05",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý chia biểu thức thành nhóm theo bậc.",
+        "concept_ids": [
+          "A03"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-2": 3,
+        "A03-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-06",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Làm sao tách phần hằng số khỏi phần chứa biến để thu gọn?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-2": 3,
+        "A03-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-07",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần viết tổng hệ số trước phần biến của từng nhóm.",
+        "concept_ids": [
+          "A03"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-3": 3,
+        "A03-hint-1": 1,
+        "A03-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-A03-08",
+      "concept_group": "A03",
+      "source_group": "QUERY-GROUP-A03-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước hỗ trợ nhóm các hệ số rồi giữ nguyên phần biến.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "A03-hint-3": 3,
+        "A03-hint-1": 1,
+        "A03-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-01",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích phép biến đổi giữ nguyên tập nghiệm.",
+        "concept_ids": [
+          "E01"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-02",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao phải làm cùng một phép toán với cả hai vế?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-03",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần tự kiểm tra điều gì về tập nghiệm sau khi biến đổi?",
+        "concept_ids": [
+          "E01"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-04",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Nếu biến đổi chỉ một vế thì cần đặt câu hỏi nào?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-05",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý viết phép toán ở hai vế và kiểm tra số chia.",
+        "concept_ids": [
+          "E01"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-2": 3,
+        "E01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-06",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Khi chia hai vế, cần kiểm tra điều kiện gì?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-2": 3,
+        "E01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-07",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn đối chiếu hai vế trước và sau khai triển.",
+        "concept_ids": [
+          "E01"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-3": 3,
+        "E01-hint-1": 1,
+        "E01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E01-08",
+      "concept_group": "E01",
+      "source_group": "QUERY-GROUP-E01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước đệm kiểm tra tính tương đương mà chưa tìm nghiệm.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E01-hint-3": 3,
+        "E01-hint-1": 1,
+        "E01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-01",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích trình tự giải phương trình bậc nhất một ẩn.",
+        "concept_ids": [
+          "E02"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-02",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Sau khai triển và gom hạng tử thì làm gì để tìm nghiệm?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-03",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em nên tách phần chứa ẩn hay phần số trước?",
+        "concept_ids": [
+          "E02"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-04",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Câu hỏi đầu tiên để chọn cách cô lập ẩn là gì?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-05",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý phép toán loại một số hạng khỏi vế phương trình.",
+        "concept_ids": [
+          "E02"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-2": 3,
+        "E02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-06",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Làm sao chuyển số hạng mà vẫn thực hiện cùng phép toán hai vế?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-2": 3,
+        "E02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-07",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em đã thu gọn, cần xác định hệ số và phép toán ngược.",
+        "concept_ids": [
+          "E02"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-3": 3,
+        "E02-hint-1": 1,
+        "E02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-E02-08",
+      "concept_group": "E02",
+      "source_group": "QUERY-GROUP-E02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước đệm cuối sau khi gom các số hạng để cô lập ẩn.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "E02-hint-3": 3,
+        "E02-hint-1": 1,
+        "E02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-01",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích mối quan hệ đầu vào và đầu ra của hàm số.",
+        "concept_ids": [
+          "F01"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-02",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao giá trị biến khác với giá trị hàm tại biến đó?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-03",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần nhận biết đề cho đầu vào hay hỏi đầu ra.",
+        "concept_ids": [
+          "F01"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-04",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Câu hỏi nào giúp tránh nhầm x với kết quả của hàm?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-05",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý thay cùng một đầu vào ở mọi vị trí của biến.",
+        "concept_ids": [
+          "F01"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-2": 3,
+        "F01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-06",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Khi tính giá trị hàm thì cần thế số ở những vị trí nào?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-2": 3,
+        "F01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-07",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn kiểm tra ngoặc ở số âm và thứ tự tính đầu ra.",
+        "concept_ids": [
+          "F01"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-3": 3,
+        "F01-hint-1": 1,
+        "F01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F01-08",
+      "concept_group": "F01",
+      "source_group": "QUERY-GROUP-F01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước hỗ trợ tính từng phép toán sau khi thế đầu vào.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F01-hint-3": 3,
+        "F01-hint-1": 1,
+        "F01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-01",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích cách xác định tọa độ đỉnh của parabol.",
+        "concept_ids": [
+          "F05"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-02",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Trục đối xứng và hoành độ đỉnh liên quan thế nào?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-03",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần nhận biết dạng khai triển hay hoàn thành bình phương.",
+        "concept_ids": [
+          "F05"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-04",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Câu hỏi đầu tiên khi đề cho đa thức bậc hai là gì?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-05",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý tìm hoành độ rồi thay vào hàm để tính tung độ.",
+        "concept_ids": [
+          "F05"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-2": 3,
+        "F05-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-06",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Tính được tọa độ ngang thì làm sao tìm tọa độ dọc của đỉnh?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-2": 3,
+        "F05-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-07",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn kiểm tra dấu trong bình phương và thứ tự tọa độ.",
+        "concept_ids": [
+          "F05"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-3": 3,
+        "F05-hint-1": 1,
+        "F05-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-F05-08",
+      "concept_group": "F05",
+      "source_group": "QUERY-GROUP-F05-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước hỗ trợ rà dấu và vị trí hoành độ tung độ trong cặp số.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "F05-hint-3": 3,
+        "F05-hint-1": 1,
+        "F05-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-01",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích cộng trừ các số nguyên có dấu.",
+        "concept_ids": [
+          "N01"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-02",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao trừ một số âm có thể chuyển sang cộng số đối?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-03",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần phân biệt dấu số với dấu phép toán.",
+        "concept_ids": [
+          "N01"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-04",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Dấu trừ đang biểu thị thao tác hay thuộc về số?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-05",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý đổi phép trừ thành cộng số đối rồi xét dấu.",
+        "concept_ids": [
+          "N01"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-2": 3,
+        "N01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-06",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Em nên viết lại phép trừ số âm thế nào trước khi tính?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-2": 3,
+        "N01-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-07",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn so sánh độ lớn và dùng hướng trên trục số.",
+        "concept_ids": [
+          "N01"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-3": 3,
+        "N01-hint-1": 1,
+        "N01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N01-08",
+      "concept_group": "N01",
+      "source_group": "QUERY-GROUP-N01-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước đệm xác định hướng di chuyển và độ lớn khi cộng số trái dấu.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N01-hint-3": 3,
+        "N01-hint-1": 1,
+        "N01-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-01",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích dấu của tích và thương các số nguyên.",
+        "concept_ids": [
+          "N02"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-02",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao nên tính dấu riêng với độ lớn khi nhân số âm?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-03",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần tự hỏi gì về dấu trước khi tính độ lớn?",
+        "concept_ids": [
+          "N02"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-04",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Có thể quyết định tích âm hay dương trước khi tính số không?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-05",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý đếm thừa số âm hoặc so dấu số chia và bị chia.",
+        "concept_ids": [
+          "N02"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-2": 3,
+        "N02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-06",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Em nên xét những dấu nào trước khi làm phép chia?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-2": 3,
+        "N02-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-07",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn tính độ lớn riêng rồi gắn dấu và kiểm tra số chia.",
+        "concept_ids": [
+          "N02"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-3": 3,
+        "N02-hint-1": 1,
+        "N02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N02-08",
+      "concept_group": "N02",
+      "source_group": "QUERY-GROUP-N02-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước hỗ trợ hoàn tất tích sau khi đã xác định dấu.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N02-hint-3": 3,
+        "N02-hint-1": 1,
+        "N02-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-01",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-explanation",
+      "scope": "same_concept",
+      "request": {
+        "query": "Giải thích phân số tương đương và phân số tối giản.",
+        "concept_ids": [
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-02",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-explanation",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Vì sao phải chia cả tử lẫn mẫu cho cùng một số?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-explanation": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-03",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em cần hỏi phép biến đổi nào giữ giá trị phân số.",
+        "concept_ids": [
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-04",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Nếu chỉ chia tử số thì cần tự kiểm tra điều gì?",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-1": 3
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-05",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Gợi ý tìm một ước chung cho tử và mẫu.",
+        "concept_ids": [
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-2": 3,
+        "N04-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-06",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Em chưa biết chọn số nào để chia cả hai phần của phân số.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 2,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-2": 3,
+        "N04-hint-1": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-07",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "same_concept",
+      "request": {
+        "query": "Em muốn viết hai phép chia riêng và kiểm tra còn ước chung.",
+        "concept_ids": [
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-3": 3,
+        "N04-hint-1": 1,
+        "N04-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-N04-08",
+      "concept_group": "N04",
+      "source_group": "QUERY-GROUP-N04-hint",
+      "scope": "all_pilot",
+      "request": {
+        "query": "Cho bước đệm thực hiện rút gọn rồi kiểm tra đã tối giản chưa.",
+        "concept_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "E01",
+          "E02",
+          "F01",
+          "F05",
+          "N01",
+          "N02",
+          "N04"
+        ],
+        "purpose": "hint",
+        "hint_level": 3,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {
+        "N04-hint-3": 3,
+        "N04-hint-1": 1,
+        "N04-hint-2": 1
+      },
+      "label_note": "AI-authored relevance hypothesis; human review pending."
+    },
+    {
+      "query_id": "Q-EMPTY-01",
+      "concept_group": "N03",
+      "source_group": "QUERY-GROUP-N03-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N03"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-02",
+      "concept_group": "N05",
+      "source_group": "QUERY-GROUP-N05-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N05"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-03",
+      "concept_group": "N06",
+      "source_group": "QUERY-GROUP-N06-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N06"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-04",
+      "concept_group": "N07",
+      "source_group": "QUERY-GROUP-N07-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N07"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-05",
+      "concept_group": "N08",
+      "source_group": "QUERY-GROUP-N08-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N08"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-06",
+      "concept_group": "N09",
+      "source_group": "QUERY-GROUP-N09-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N09"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-07",
+      "concept_group": "N10",
+      "source_group": "QUERY-GROUP-N10-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "N10"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-08",
+      "concept_group": "A04",
+      "source_group": "QUERY-GROUP-A04-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "A04"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-09",
+      "concept_group": "A05",
+      "source_group": "QUERY-GROUP-A05-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "A05"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    },
+    {
+      "query_id": "Q-EMPTY-10",
+      "concept_group": "A06",
+      "source_group": "QUERY-GROUP-A06-empty",
+      "scope": "no_pack",
+      "request": {
+        "query": "Tìm giải thích cho concept chưa có nội dung pilot.",
+        "concept_ids": [
+          "A06"
+        ],
+        "purpose": "explanation",
+        "hint_level": 1,
+        "top_k": 3,
+        "method": "semantic"
+      },
+      "relevance": {},
+      "label_note": "No eligible pack; tests empty metadata scope, not semantic abstention."
+    }
+  ]
+}

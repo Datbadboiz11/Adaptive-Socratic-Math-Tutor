@@ -34,15 +34,30 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+      args:
+        INSTALL_LOCAL_EMBEDDING: ${INSTALL_LOCAL_EMBEDDING:-false}
     environment:
       <<: *database_environment
       DEMO_MODE: ${DEMO_MODE:-false}
       TUTOR_ENABLED: ${TUTOR_ENABLED:-true}
+      PILOT_ANALYZER_ENABLED: ${PILOT_ANALYZER_ENABLED:-false}
+      PILOT_GROUNDING_ENABLED: ${PILOT_GROUNDING_ENABLED:-false}
+      KG_PROVIDER: ${KG_PROVIDER:-neo4j}
+      NEO4J_HTTP_URL: http://neo4j:7474
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-mo_graph_dev_only}
+      LOCAL_EMBEDDING_ENABLED: ${LOCAL_EMBEDDING_ENABLED:-false}
+      EMBEDDING_DEVICE: cpu
+      EMBEDDING_MODEL_CACHE: /data/models
+      RETRIEVAL_INDEX_PATH: /data/retrieval/bge-m3-v1/index.json
       LLM_ENABLED: ${LLM_ENABLED:-false}
       LLM_MAX_CALLS_PER_SESSION: ${LLM_MAX_CALLS_PER_SESSION:-8}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
       VALIDATOR_TIMEOUT_SECONDS: ${VALIDATOR_TIMEOUT_SECONDS:-3}
+    volumes:
+      - ./data/retrieval:/data/retrieval:ro
+      - ./data/models:/data/models:ro
     ports:
       - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
     depends_on:
@@ -71,5 +86,37 @@ services:
       interval: 10s
       timeout: 10s
       retries: 10
+  neo4j:
+    profiles: [knowledge]
+    image: neo4j:5.26-community
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-mo_graph_dev_only}
+      NEO4J_server_memory_heap_initial__size: 256m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 256m
+    ports:
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 25
+  graph-init:
+    profiles: [knowledge]
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      NEO4J_HTTP_URL: http://neo4j:7474
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-mo_graph_dev_only}
+    command: ["python", "-m", "app.curriculum_graph", "--import-registry"]
+    depends_on:
+      neo4j:
+        condition: service_healthy
 volumes:
   postgres_data:
+  neo4j_data:

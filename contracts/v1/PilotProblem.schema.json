@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "MathTask": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        },
+        "answer_form": {
+          "anyOf": [
+            {
+              "const": "factored_polynomial",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Answer Form"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "MathTask",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "primary_skill_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Primary Skill Id",
+      "type": "string"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "type": "string"
+    },
+    "prompt": {
+      "title": "Prompt",
+      "type": "string"
+    },
+    "task": {
+      "$ref": "#/$defs/MathTask"
+    },
+    "mode": {
+      "const": "internal_authoring_preview",
+      "default": "internal_authoring_preview",
+      "title": "Mode",
+      "type": "string"
+    },
+    "review_status": {
+      "title": "Review Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "problem_id",
+    "concept_id",
+    "primary_skill_id",
+    "content_version",
+    "prompt",
+    "task",
+    "review_status"
+  ],
+  "title": "PilotProblem",
+  "type": "object"
+}

@@ -325,6 +325,19 @@
           ],
           "default": null,
           "title": "Variable Value"
+        },
+        "answer_form": {
+          "anyOf": [
+            {
+              "const": "factored_polynomial",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Answer Form"
         }
       },
       "required": [

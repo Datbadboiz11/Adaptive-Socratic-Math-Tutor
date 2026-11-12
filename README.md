@@ -10,6 +10,8 @@ Repository đã có **nền tảng Phần 1–3 và frontend tích hợp Phần 
 
 Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt MVP G2 đề xuất tập trung vào một chủ đề chạy end-to-end; xem [kế hoạch MVP](docs/planning/mvp/README.md).
 
+RAG pilot hiện có [lớp runtime Qwen + PostgreSQL/pgvector](docs/implementation/curriculum/rag-runtime.v1.md), tiếp nối [kết quả Qwen trên Kaggle](docs/research/retrieval/qwen3-4b-v1.md). Catalog 30 query vectors cho luồng pilot đã chạy Kaggle và nhập về backend; query ngoài danh mục có fallback rõ ràng. Dùng `compose.rag.yaml` để bật riêng. Collection DB/SQL ranking và luồng API/database vẫn cần kiểm tra thực tế; xem hướng dẫn và báo cáo trong tài liệu runtime.
+
 ## Xem prototype
 
 Clone repo:
@@ -110,6 +112,6 @@ Runner ghi lại ảnh và kết quả trong `design/previews/`; xem diff trư�
 
 Đã có [audit và pipeline ASSISTments 2017](docs/research/data/README.md), [protocol observation](docs/research/data/observation-protocol.md) và [BKT baseline dev](docs/research/data/bkt-dev-v1.md). Cách chạy tái lập ở [runbook](docs/research/data/RUNBOOK.md). Test chưa đánh giá; chưa kiểm chứng ánh xạ skill sang chương trình Việt Nam hoặc đưa tham số nghiên cứu vào ứng dụng.
 
-Bước tiếp theo của dự án đã có [registry và pilot nội dung tiếng Việt](content/curriculum/README.md): 40 concept đề xuất, 10 pack nháp với 60 bài, 30 ví dụ, 20 mẫu lỗi và checker toán/graph. Chưa duyệt chuyên môn, chưa seed các pack vào web; bộ chấm online và các ID MVP giữ nguyên. Xem hướng dẫn để biên soạn, review và tiếp tục tích hợp KG/RAG.
+Đã có [registry và pilot nội dung tiếng Việt](content/curriculum/README.md): 40 concept đề xuất, 10 pack nháp với 60 bài, 30 ví dụ, 20 mẫu lỗi và checker toán/graph. Đã bổ sung [Analyzer baseline](docs/implementation/curriculum/analyzer.v1.md), 180 ca phát triển và API thử nội bộ. [KG/RAG pilot](docs/implementation/curriculum/grounding.v1.md) nối Analyzer với prerequisite paths và kho 40 chunks, có Neo4j adapter, baseline metadata/BM25, notebook BGE-M3 trên Colab T4 và bộ 90 query nháp. Chưa đo semantic/GPU hoặc Neo4j thật tại máy; xem báo cáo kiểm chứng. Chưa duyệt chuyên môn, chưa nối các pack vào phiên học trên web; bước tiếp theo là đánh giá embedding, đồng bộ pgvector, Agent và tích hợp nhiều lượt. Dữ liệu/BKT v1 giữ nguyên.
 
 Chưa chọn giấy phép phân phối mã nguồn; không tự áp một giấy phép cho dataset bên ngoài. Nhóm sẽ quyết định giấy phép phù hợp sau.

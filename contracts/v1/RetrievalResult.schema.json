@@ -1,0 +1,309 @@
+{
+  "$defs": {
+    "KnowledgeChunk": {
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Skill Ids",
+          "type": "array"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "explanation",
+            "hint"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "hint_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        },
+        "disclosure": {
+          "enum": [
+            "conceptual",
+            "strategy",
+            "scaffold"
+          ],
+          "title": "Disclosure",
+          "type": "string"
+        },
+        "grade_levels": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "difficulty": {
+          "const": "general",
+          "default": "general",
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "curriculum_source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Curriculum Source Id",
+          "type": "string"
+        },
+        "content_version": {
+          "title": "Content Version",
+          "type": "string"
+        },
+        "review_status": {
+          "title": "Review Status",
+          "type": "string"
+        },
+        "approved": {
+          "title": "Approved",
+          "type": "boolean"
+        },
+        "text_sha256": {
+          "title": "Text Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "concept_id",
+        "skill_ids",
+        "title",
+        "text",
+        "kind",
+        "hint_level",
+        "disclosure",
+        "grade_levels",
+        "source",
+        "curriculum_source_id",
+        "content_version",
+        "review_status",
+        "approved",
+        "text_sha256"
+      ],
+      "title": "KnowledgeChunk",
+      "type": "object"
+    },
+    "RetrievedChunk": {
+      "additionalProperties": false,
+      "properties": {
+        "chunk": {
+          "$ref": "#/$defs/KnowledgeChunk"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        }
+      },
+      "required": [
+        "chunk"
+      ],
+      "title": "RetrievedChunk",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "requested_method": {
+      "enum": [
+        "metadata",
+        "lexical",
+        "semantic"
+      ],
+      "title": "Requested Method",
+      "type": "string"
+    },
+    "actual_method": {
+      "enum": [
+        "metadata",
+        "lexical",
+        "semantic",
+        "none"
+      ],
+      "title": "Actual Method",
+      "type": "string"
+    },
+    "query": {
+      "title": "Query",
+      "type": "string"
+    },
+    "corpus_sha256": {
+      "title": "Corpus Sha256",
+      "type": "string"
+    },
+    "candidate_count": {
+      "title": "Candidate Count",
+      "type": "integer"
+    },
+    "hits": {
+      "items": {
+        "$ref": "#/$defs/RetrievedChunk"
+      },
+      "title": "Hits",
+      "type": "array"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "fallback_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fallback Reason"
+    },
+    "embedding_model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Embedding Model"
+    },
+    "embedding_revision": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Embedding Revision"
+    },
+    "embedding_dimensions": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Embedding Dimensions"
+    },
+    "vector_store": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Vector Store"
+    },
+    "collection_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Collection Id"
+    },
+    "query_encoding_ms": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Query Encoding Ms"
+    },
+    "query_encoding_source": {
+      "anyOf": [
+        {
+          "enum": [
+            "kaggle_catalog",
+            "http_service",
+            "injected"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Query Encoding Source"
+    },
+    "mode": {
+      "enum": [
+        "internal_authoring_preview",
+        "approved_only"
+      ],
+      "title": "Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "requested_method",
+    "actual_method",
+    "query",
+    "corpus_sha256",
+    "candidate_count",
+    "hits",
+    "reason",
+    "mode"
+  ],
+  "title": "RetrievalResult",
+  "type": "object"
+}

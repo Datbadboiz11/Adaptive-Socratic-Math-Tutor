@@ -127,6 +127,7 @@ class MathTask(Contract):
     kind: TaskKind
     expression: Annotated[str, Field(min_length=1, max_length=160)]
     variable_value: str | None = None
+    answer_form: Literal['factored_polynomial'] | None = None
 
     @model_validator(mode='after')
     def substitution_matches_task_kind(self):
@@ -134,6 +135,8 @@ class MathTask(Contract):
             raise ValueError('Evaluation requires a value for x')
         if self.kind != 'evaluate' and self.variable_value is not None:
             raise ValueError('Only evaluation tasks accept a value for x')
+        if self.answer_form is not None and self.kind != 'polynomial':
+            raise ValueError('Factored answer form requires a polynomial task')
         return self
 
 

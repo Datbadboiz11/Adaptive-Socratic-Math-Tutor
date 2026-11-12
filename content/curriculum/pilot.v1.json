@@ -337,7 +337,8 @@
           "task": {
             "kind": "polynomial",
             "expression": "5*x+15",
-            "variable_value": null
+            "variable_value": null,
+            "answer_form": "factored_polynomial"
           },
           "reference_answer": "5*(x+3)",
           "reference_steps": [
@@ -358,7 +359,8 @@
           "task": {
             "kind": "polynomial",
             "expression": "-4*x+8",
-            "variable_value": null
+            "variable_value": null,
+            "answer_form": "factored_polynomial"
           },
           "reference_answer": "-4*(x-2)",
           "reference_steps": [

@@ -1,0 +1,6 @@
+# Separate process only. Install CPU or CUDA PyTorch explicitly for the host.
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic==2.13.5
+transformers==4.57.6
+accelerate>=1.6,<2

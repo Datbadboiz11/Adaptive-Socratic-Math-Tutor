@@ -8,9 +8,11 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from app.sessions import router, ApiError, tutor_enabled
+from app.pilot_api import router as pilot_router
 
 app = FastAPI(title="Mở — Socratic tutor API", version="0.3.0")
 app.include_router(router)
+app.include_router(pilot_router)
 logging.getLogger('mo.sessions').setLevel(logging.INFO)
 
 

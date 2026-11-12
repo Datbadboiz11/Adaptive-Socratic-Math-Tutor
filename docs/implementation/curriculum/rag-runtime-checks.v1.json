@@ -1,0 +1,138 @@
+{
+  "checked_on": "2026-10-19",
+  "scope": "FR-09 / project-plan 8.5: Kaggle trusted-query catalog + immutable pgvector pilot; optional HTTP service; not full Agent/web sessions",
+  "status": "kaggle_catalog_verified_pgvector_runtime_pending",
+  "regression": {
+    "passed": 378,
+    "skipped": 13,
+    "deselected": 2,
+    "seconds": 50.19,
+    "note": "RAG/catalog, retrieval, Qwen experiment, Analyzer, curriculum, math and Phase 1 contracts. DB and ASGI unavailable locally; two legacy ASGI health cases deselected."
+  },
+  "final_focused_tests": {
+    "passed": 74,
+    "skipped": 9,
+    "seconds": 1.87,
+    "db_skips": 7,
+    "asgi_skips": 2,
+    "note": "Includes final export-test isolation fix."
+  },
+  "earlier_attempt": {
+    "passed": 318,
+    "skipped": 13,
+    "failed": 1,
+    "reason": "Existing ASSISTments audit test hit Windows sandbox TemporaryDirectory ACL (WinError 5). Unrelated data pipeline was not modified; final scoped regression excludes that module."
+  },
+  "contract_schemas": 23,
+  "pilot_openapi": "passed",
+  "legacy_mvp_openapi": "unchanged_and_passed",
+  "compose_configuration": "passed; includes rag, qwen-cpu and qwen-tools profiles; no actual image build performed",
+  "artifact_check": {
+    "chunks": 40,
+    "dimensions": 2560,
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "collection_id": "8bc10b3de5c09233e593c53da9c2c460f9b4de7ae431c436dae7ccdda24fa286",
+    "passed": true
+  },
+  "offline_grounding": {
+    "problem_id": "P-A02-01",
+    "assessment": "verified_incorrect",
+    "first_error_step": 1,
+    "actual_method": "lexical",
+    "fallback_reason": "pgvector_unavailable",
+    "source_content_ids": [
+      "A02-hint-1",
+      "N02-hint-1",
+      "N01-hint-1"
+    ],
+    "updates_student_model": false,
+    "artifact": "data/retrieval/previews/qwen-runtime-20261019.json"
+  },
+  "protected_artifacts": {
+    "count": 25,
+    "unchanged_count": 24,
+    "changed": [
+      "data\\exports\\pilot-retrieval-input.zip"
+    ],
+    "note": "Existing legacy export test regenerated the BGE INPUT ZIP during an interrupted regression; this is a generated code/data upload bundle, not the BGE output/index/metrics. The test now exports only to pytest temporary directories. Original executed notebooks, BGE/Qwen output ZIPs, indexes, metrics, private .env and BKT parameters unchanged."
+  },
+  "not_run": [
+    "Real PostgreSQL/pgvector migration + 40-vector import + 90-query SQL replay: Docker Engine pipe permission denied; local TCP DB probe also failed",
+    "Fresh arbitrary-query inference through HTTP on actual model (optional provider, not the selected batch mode)",
+    "CPU Docker image/model load and latency benchmark",
+    "CI remote execution"
+  ],
+  "model_host": {
+    "local_gpu": "NVIDIA GeForce GTX 1650, 4096 MiB",
+    "policy": "No automatic 8 GB download, GPU rental, notebook tunnel or quantization; optional CPU profile and GPU service interface prepared",
+    "selected": "Kaggle T4 x2 offline batch; exact trusted runtime query catalog on local backend"
+  },
+  "limitations": [
+    "All pilot content remains draft/internal authenticated preview",
+    "No generator/Agent/BKT/session integration in this increment",
+    "No calibrated out-of-domain relevance threshold",
+    "Saved-vector replay is distinct from encoding a new query"
+  ],
+  "sha256": {
+    "backend/app/qwen_query.py": "40d23e929261170ccfea189c2028d83e2fec21d2c0656d6fa3a916684eaea988",
+    "backend/app/qwen_service.py": "5b29b8fb99f27b50b3503ab9d3804bc575b005a7709122acdc2e163cf750a94f",
+    "backend/app/qwen_cache.py": "a6cb1c66ed73153d7e6adc4fbd66c01ac11206b285c4af528ad5040e0c3a1032",
+    "backend/app/rag_store.py": "cf6341eeee59e4bba9ba1962e9e56ccea09b274414a89af88b31735af493a792",
+    "backend/app/pilot_retrieval.py": "260576ce67fe5b9eb277303451e46c832cf15f2b0f9545443e1ed8bf72bc1173",
+    "backend/app/pilot_api.py": "f821f8e72a5832966cd3ba07fc5f93d390bfddbf68e295e8dc687322b7e7eac6",
+    "backend/app/pilot_grounding.py": "d48f8183af11cf1d90a22ae2505c346639ba2e0e07837cd3be3c0aa007955761",
+    "backend/app/retrieval_contracts.py": "ed485146b2104e1de694ae0b11994dc8e8bf249bfd0c61d947ac134224c2be62",
+    "backend/rag_migrations/001_qwen_pgvector.sql": "31923fce93530d28171d64db185fea34ec0b759c04ae7c8ba6e9a47430e8f010",
+    "backend/requirements-qwen.txt": "bc5def3584e0d8f5096d434350c6b867379b75ef89026810d560e9cb2948da9c",
+    "backend/Qwen.Dockerfile": "c7d325819f4c8a354fa5da2594aae2830094a4404b09a937688fce57a845dfa6",
+    "compose.rag.yaml": "d1dbd3e0e15adce93dff78ed2879ab48f58e5cfe4ce364b93bcd9b77ce186111",
+    "scripts/checks/check_qwen_pgvector.py": "a8ede11dd7449b7764da6126fb4211f0a48bab2b91599c574dbd3831b71654d1",
+    "tests/test_qwen_rag.py": "ecade7e1cc6183236a3c5866a560382922af2e066b0a8a2519f13b30ee3eb5c3",
+    "tests/test_qwen_rag_db.py": "8c23c0ac76b04f270a3b373754679db8f7fea872654e6f8f0ec4096d748c3d2f",
+    "tests/test_qwen_rag_api.py": "0a4c5e97651a4d4fc023d130946d7f7920c4c0c35a90b8ae7800fb20b81a7699",
+    "backend/app/qwen_catalog.py": "acbc12f4348c09f1b53534da8236afb8809a0977d0724f65237bb71ee5a37fd4",
+    "backend/app/grounding_queries.py": "abe0043382b5a535c10a989dfc4bdf22d98b668764f3106abe51c2f81c7034cb",
+    "research/retrieval/qwen3_4b/runtime_catalog.py": "c8159eb1cf9706f61205348d66337553964687fcc85f4ae144affe1fc997fd86",
+    "research/retrieval/qwen3_4b/qwen3_runtime_queries_kaggle.ipynb": "fec4685265a73555905d3d3bc1437b663b353325e12af36765114b90ff87e29e",
+    "scripts/exports/prepare_qwen_runtime_kaggle.py": "38d00deb666bf722f2df64a50d23160abd368afbfcf5ed3a89f744fee3798df0",
+    "tests/test_qwen_catalog.py": "74dc238a2f34c58ff2a3d6d7ac40a7ea16aa6f01845615137f631374cb065913",
+    "tests/test_retrieval.py": "49ad4abf711e10a24281f922aad3b599900ece9acaf530a748e30bdc674fb12a"
+  },
+  "kaggle_query_catalog": {
+    "query_count": 30,
+    "specification_sha256": "3e149a5e5677455ca32264a7756c555ee7bd001cfe31268bd01454ce40527c4f",
+    "default_provider": "catalog",
+    "notebook": "research/retrieval/qwen3_4b/qwen3_runtime_queries_kaggle.ipynb",
+    "input": "data/exports/pilot-query-vectors-qwen3-4b-input.zip",
+    "input_bytes": 32616,
+    "input_sha256": "1cf0e7c885bc8d6136baa7cfcf9a33ca751d5d5e0dfead4ec8037cf2d7d7d937",
+    "gpu_execution": "completed_and_output_verified",
+    "production_catalog_exists": true,
+    "unseen_query_policy": "exact hash miss -> explicit BM25 fallback; never substitute another query vector",
+    "output_archive": "data/exports/pilot-query-vectors-qwen3-4b.zip",
+    "output_sha256": "7626259d9e72a66a5bad3cbf5c6ee551b428035d73b98587ead0459a167906e4",
+    "import_verified": true
+  },
+  "source_notes": [
+    "One regression attempt specified two nonexistent test paths and ran no tests; corrected.",
+    "One regression reached legacy ASGI health tests and was interrupted due the known sandbox loopback hang; final run deselects those two tests."
+  ],
+  "post_kaggle_import": {
+    "checked_on": "2026-10-19",
+    "passed": 73,
+    "skipped": 9,
+    "seconds": 2.43,
+    "catalog_queries": 30,
+    "dimensions": 2560,
+    "offline_filtered_ranking_cases": 90,
+    "verification": "data/retrieval/qwen3-4b-runtime/verification.json",
+    "note": "Uses actual downloaded vectors, not synthetic fixtures. Offline cosine/filter checks are not SQL integration or a relevance benchmark.",
+    "pgvector": {
+      "ready": false,
+      "reason": "pgvector_unavailable"
+    },
+    "protected_files_checked": 11,
+    "protected_files_changed": [],
+    "downloaded_notebook_outputs_preserved": true
+  }
+}

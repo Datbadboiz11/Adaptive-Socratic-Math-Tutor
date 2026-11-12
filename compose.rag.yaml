@@ -1,0 +1,55 @@
+# Opt-in pilot overlay: docker compose -f compose.yaml -f compose.rag.yaml ...
+# PG17 volume is preserved. No vector model is loaded by the tutor backend.
+services:
+  db:
+    image: pgvector/pgvector:0.8.7-pg17-bookworm
+  backend:
+    environment:
+      PILOT_ANALYZER_ENABLED: "true"
+      PILOT_GROUNDING_ENABLED: "true"
+      PILOT_RETRIEVAL_BACKEND: qwen_pgvector
+      QWEN_QUERY_PROVIDER: ${QWEN_QUERY_PROVIDER:-catalog}
+      QWEN_QUERY_CATALOG_PATH: /data/retrieval/qwen3-4b-runtime/catalog.json
+      QWEN_SERVICE_URL: ${QWEN_CONTAINER_SERVICE_URL:-http://qwen-embedding:8011}
+      QWEN_SERVICE_TOKEN: ${QWEN_SERVICE_TOKEN:-}
+      QWEN_SERVICE_TIMEOUT_SECONDS: ${QWEN_SERVICE_TIMEOUT_SECONDS:-120}
+  rag-init:
+    profiles: [rag]
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGDATABASE: ${POSTGRES_DB:-mo_tutor_dev}
+      PGUSER: ${POSTGRES_USER:-mo_dev}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      QWEN_ARTIFACT_PATH: /data/retrieval/qwen3-4b-v1
+    volumes:
+      - ./data/retrieval:/data/retrieval:ro
+    command: ["python", "-m", "app.rag_store", "sync"]
+    depends_on:
+      db:
+        condition: service_healthy
+  qwen-embedding:
+    profiles: [qwen-cpu]
+    build:
+      context: .
+      dockerfile: backend/Qwen.Dockerfile
+    environment:
+      QWEN_MODEL_ENABLED: "true"
+      QWEN_MODEL_CACHE: /data/models/qwen3-4b
+      QWEN_SERVICE_DEVICE: cpu
+      QWEN_SERVICE_TOKEN: ${QWEN_SERVICE_TOKEN:-}
+    volumes:
+      - ./data/models/qwen3-4b:/data/models/qwen3-4b:ro
+    ports:
+      - "127.0.0.1:8011:8011"
+  qwen-cache:
+    profiles: [qwen-tools]
+    build:
+      context: .
+      dockerfile: backend/Qwen.Dockerfile
+    volumes:
+      - ./data/models/qwen3-4b:/data/models/qwen3-4b
+    command: ["python", "-m", "app.qwen_cache", "--cache", "/data/models/qwen3-4b", "--download"]

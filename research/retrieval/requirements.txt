@@ -1,0 +1,3 @@
+# Optional local/Colab embedding environment. PyTorch comes from the runtime.
+sentence-transformers==5.1.2
+pydantic==2.13.5
