@@ -1,0 +1,51 @@
+{
+  "additionalProperties": false,
+  "description": "Một lượt từ UI. Khi nộp bài, bài làm là ``steps``; không có ``steps`` thì lấy từng dòng của\n``message``. ``message`` còn là lời nhắn tự do và được giữ riêng, kể cả khi có ``steps``.",
+  "properties": {
+    "request_id": {
+      "format": "uuid",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "trigger": {
+      "enum": [
+        "submit",
+        "request_hint",
+        "message",
+        "pause",
+        "resume"
+      ],
+      "title": "Trigger",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "maxLength": 160,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Steps",
+      "type": "array"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "maxLength": 2000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Message"
+    }
+  },
+  "required": [
+    "request_id",
+    "trigger"
+  ],
+  "title": "TurnInput",
+  "type": "object"
+}

@@ -71,5 +71,25 @@ services:
       interval: 10s
       timeout: 10s
       retries: 10
+  # Knowledge Graph (Member 3). Chỉ chạy khi gọi: docker compose --profile kg up -d neo4j
+  # Sau đó đồng bộ registry: python scripts/dev/sync_kg_neo4j.py
+  neo4j:
+    image: neo4j:5.26-community
+    profiles: ["kg"]
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-local-dev-only}
+      NEO4J_server_memory_heap_max__size: 512m
+    ports:
+      - "127.0.0.1:${NEO4J_HTTP_PORT:-7474}:7474"
+      - "127.0.0.1:${NEO4J_BOLT_PORT:-7687}:7687"
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
 volumes:
   postgres_data:
+  neo4j_data:

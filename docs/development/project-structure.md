@@ -6,16 +6,20 @@ Repo dùng cấu trúc monorepo: frontend, backend, nội dung học và nghiên
 Adaptive-Socratic-Math-Tutor/
 ├── backend/                  # FastAPI, tutoring engine, migrations, dependencies
 │   ├── app/
+│   │   ├── agent/            # Agent: hợp đồng quyết định, policy gate, Rule-policy, Agent LLM, LangGraph
+│   │   └── kg/               # Knowledge Graph: đọc/kiểm tra registry, truy vấn, đồng bộ Neo4j
 │   └── migrations/
 ├── frontend/                 # Next.js: giao diện sản phẩm và API proxy
 │   └── app/
 ├── content/                  # Bài, hint và tham số BKT có version
 │   └── curriculum/           # Registry 40 concept và pilot authoring tiếng Việt
 ├── contracts/                # JSON Schema, OpenAPI và fixtures hợp đồng
+│   └── agent/                # Schema Agent, fixtures và bộ tình huống dev
 ├── research/                 # Code tiền xử lý/benchmark/nghiên cứu
 │   ├── config/               # Protocol/split/fit có version
 │   ├── data/                 # Audit và tiền xử lý ASSISTments
-│   └── bkt/                  # Model, benchmark, metrics và pyBKT parity
+│   ├── bkt/                  # Model, benchmark, metrics và pyBKT parity
+│   └── agent/                # Thống kê nhãn chiến lược ngoài, so sánh Agent LLM với Rule-policy
 ├── scripts/                  # Công cụ vận hành repo
 │   ├── checks/               # Kiểm tra nội dung, API, DB, browser và smoke
 │   ├── exports/              # Xuất/check JSON Schema và OpenAPI
@@ -28,6 +32,7 @@ Adaptive-Socratic-Math-Tutor/
 │   ├── design/               # Mục lục thiết kế
 │   ├── development/          # Cấu trúc repo, thiết lập GitHub
 │   ├── implementation/mvp/   # Bàn giao phase1–phase5 và evidence tương ứng
+│   ├── implementation/agent/ # Agent, policy gate, LangGraph, KG, Agent LLM (thiết kế và giới hạn)
 │   └── research/data/        # Audit, protocol, runbook và kết quả dev tổng hợp
 ├── data/                     # Dataset local, được Git ignore
 ├── .github/                  # CI, mẫu issue và PR

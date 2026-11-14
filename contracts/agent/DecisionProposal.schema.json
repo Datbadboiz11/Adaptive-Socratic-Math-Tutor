@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "DecisionIntent": {
+      "description": "Mục đích cụ thể của action. Đây không phải bộ strategy thứ hai (PRD FR-10):\nmỗi intent chỉ thuộc đúng một action và cho generator biết cần viết loại câu nào.",
+      "enum": [
+        "resolve_input",
+        "restate_task",
+        "elicit_reasoning",
+        "distinguish_hypothesis",
+        "probe_prerequisite",
+        "prompt_self_check",
+        "locate_error",
+        "recall_rule",
+        "target_misconception",
+        "decompose_step",
+        "analogous_example",
+        "explain_concept",
+        "review_prerequisite",
+        "independent_check",
+        "continue_practice",
+        "advance_difficulty",
+        "advance_concept",
+        "return_to_parent",
+        "switch_problem",
+        "student_request",
+        "session_goal_met",
+        "budget_exhausted",
+        "stuck_limit",
+        "content_exhausted",
+        "system_fallback"
+      ],
+      "title": "DecisionIntent",
+      "type": "string"
+    },
+    "EvidenceKind": {
+      "enum": [
+        "assessment",
+        "observation",
+        "hypothesis",
+        "student_message",
+        "decision"
+      ],
+      "title": "EvidenceKind",
+      "type": "string"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/EvidenceKind"
+        },
+        "id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Đầu ra của Agent (hoặc Rule-policy) trước policy gate.\n\nKhông có trường nào ghi mastery hay tham số BKT (PRD FR10-AC5); ``extra=\"forbid\"`` chặn\nmọi trường lạ. ``reason`` là lý do ngắn kiểm tra được, không phải chuỗi suy nghĩ.",
+  "properties": {
+    "action": {
+      "$ref": "#/$defs/PedagogicalAction"
+    },
+    "intent": {
+      "$ref": "#/$defs/DecisionIntent"
+    },
+    "target_skill_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Target Skill Id"
+    },
+    "hint_level": {
+      "default": 0,
+      "maximum": 4,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "maxItems": 10,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "content_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Content Ids",
+      "type": "array"
+    },
+    "edge_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "maxItems": 4,
+      "title": "Edge Ids",
+      "type": "array"
+    },
+    "problem_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Problem Id"
+    },
+    "reason": {
+      "maxLength": 300,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "intent",
+    "reason"
+  ],
+  "title": "DecisionProposal",
+  "type": "object"
+}

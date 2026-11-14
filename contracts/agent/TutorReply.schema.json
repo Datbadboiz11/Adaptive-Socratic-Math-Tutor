@@ -1,0 +1,184 @@
+{
+  "$defs": {
+    "DecisionIntent": {
+      "description": "Mục đích cụ thể của action. Đây không phải bộ strategy thứ hai (PRD FR-10):\nmỗi intent chỉ thuộc đúng một action và cho generator biết cần viết loại câu nào.",
+      "enum": [
+        "resolve_input",
+        "restate_task",
+        "elicit_reasoning",
+        "distinguish_hypothesis",
+        "probe_prerequisite",
+        "prompt_self_check",
+        "locate_error",
+        "recall_rule",
+        "target_misconception",
+        "decompose_step",
+        "analogous_example",
+        "explain_concept",
+        "review_prerequisite",
+        "independent_check",
+        "continue_practice",
+        "advance_difficulty",
+        "advance_concept",
+        "return_to_parent",
+        "switch_problem",
+        "student_request",
+        "session_goal_met",
+        "budget_exhausted",
+        "stuck_limit",
+        "content_exhausted",
+        "system_fallback"
+      ],
+      "title": "DecisionIntent",
+      "type": "string"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Phản hồi gửi UI (bản nháp để chốt với Member 2).",
+  "properties": {
+    "contract_version": {
+      "const": "agent-contract-0.1.0",
+      "default": "agent-contract-0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "state_version": {
+      "minimum": 1,
+      "title": "State Version",
+      "type": "integer"
+    },
+    "decision_id": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Decision Id"
+    },
+    "action": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PedagogicalAction"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "intent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DecisionIntent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "hint_level": {
+      "default": 0,
+      "maximum": 4,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "message": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Message",
+      "type": "string"
+    },
+    "response_source": {
+      "enum": [
+        "template",
+        "template_fallback",
+        "llm",
+        "system"
+      ],
+      "title": "Response Source",
+      "type": "string"
+    },
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "problem_prompt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Problem Prompt"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "next_actions": {
+      "items": {
+        "enum": [
+          "submit",
+          "request_hint",
+          "pause",
+          "resume"
+        ],
+        "type": "string"
+      },
+      "title": "Next Actions",
+      "type": "array"
+    },
+    "duplicate": {
+      "default": false,
+      "title": "Duplicate",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "session_id",
+    "state_version",
+    "message",
+    "response_source",
+    "problem_id",
+    "status",
+    "next_actions"
+  ],
+  "title": "TutorReply",
+  "type": "object"
+}

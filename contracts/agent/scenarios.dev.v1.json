@@ -1,0 +1,205 @@
+{
+  "contract_version": "agent-contract-0.1.0",
+  "split": "dev",
+  "source": "synthetic_authoring",
+  "note": "Bộ tình huống nháp để phát triển gate/Rule-policy. Không dùng làm test chính thức (plan §11.5, §19.3). State mỗi tình huống = student_state trong fixtures.v1.json, ghép đè (deep merge, list thay nguyên) bằng state_patch. expected_rule_action là kết quả hồi quy của Rule-policy v1, không phải nhãn chuẩn duy nhất.",
+  "base_context": {
+    "current_problem_prompt": "Giải phương trình 2(x - 3) = 10.",
+    "retrieved": [
+      {"content_id": "KB-A02-QUESTION-01", "skill_id": "SK-A02-DISTRIBUTE", "content_type": "question", "disclosure_level": 0,
+       "text": "Nếu viết 2(x - 3) thành (x - 3) + (x - 3), em thấy số -3 xuất hiện mấy lần?"},
+      {"content_id": "KB-A02-HINT-01", "skill_id": "SK-A02-DISTRIBUTE", "content_type": "hint", "disclosure_level": 1,
+       "text": "Khi nhân một số với một tổng hoặc hiệu trong ngoặc, em cần nhân số đó với từng số hạng trong ngoặc."},
+      {"content_id": "KB-A02-EXAMPLE-01", "skill_id": "SK-A02-DISTRIBUTE", "content_type": "example", "disclosure_level": 3,
+       "text": "Ví dụ: 3(a + 2) = 3·a + 3·2 = 3a + 6. Số 3 được nhân với cả a và 2."},
+      {"content_id": "KB-A02-EXPLAIN-01", "skill_id": "SK-A02-DISTRIBUTE", "content_type": "explanation", "disclosure_level": 4,
+       "text": "Tính chất phân phối: k(a + b) = ka + kb và k(a - b) = ka - kb. Ví dụ 5(y - 1) = 5y - 5, cả hai số hạng trong ngoặc đều được nhân với 5."},
+      {"content_id": "KB-E02-HINT-01", "skill_id": "SK-E02-SOLVE", "content_type": "hint", "disclosure_level": 1,
+       "text": "Khi giải phương trình, em làm cùng một phép toán ở cả hai vế."}
+    ],
+    "edges": [
+      {"edge_id": "PRE-A02-E02", "source_concept_id": "A02", "target_concept_id": "E02", "source_skill_ids": ["SK-A02-DISTRIBUTE"], "relation": "PREREQUISITE_OF", "depth": 1, "review_status": "draft"},
+      {"edge_id": "PRE-A03-E02", "source_concept_id": "A03", "target_concept_id": "E02", "source_skill_ids": ["SK-A03-COLLECT"], "relation": "PREREQUISITE_OF", "depth": 1, "review_status": "draft"},
+      {"edge_id": "PRE-E01-E02", "source_concept_id": "E01", "target_concept_id": "E02", "source_skill_ids": ["SK-E01-EQUIVALENCE"], "relation": "PREREQUISITE_OF", "depth": 1, "review_status": "draft"},
+      {"edge_id": "PRE-A01-A03", "source_concept_id": "A01", "target_concept_id": "A03", "source_skill_ids": ["SK-A01-EVALUATE"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"},
+      {"edge_id": "PRE-N01-A02", "source_concept_id": "N01", "target_concept_id": "A02", "source_skill_ids": ["SK-N01-SIGNED-ADD"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"},
+      {"edge_id": "PRE-N01-A03", "source_concept_id": "N01", "target_concept_id": "A03", "source_skill_ids": ["SK-N01-SIGNED-ADD"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"},
+      {"edge_id": "PRE-N01-E01", "source_concept_id": "N01", "target_concept_id": "E01", "source_skill_ids": ["SK-N01-SIGNED-ADD"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"},
+      {"edge_id": "PRE-N02-A02", "source_concept_id": "N02", "target_concept_id": "A02", "source_skill_ids": ["SK-N02-SIGNED-MUL"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"},
+      {"edge_id": "PRE-N02-E01", "source_concept_id": "N02", "target_concept_id": "E01", "source_skill_ids": ["SK-N02-SIGNED-MUL"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"}
+    ],
+    "next_concepts": [
+      {"concept_id": "E03", "skill_ids": ["SK-E03-PRIMARY"], "edge_id": "PRE-E02-E03", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A01-EVALUATE"]},
+      {"concept_id": "E04", "skill_ids": ["SK-E04-PRIMARY"], "edge_id": "PRE-E02-E04", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A08-PRIMARY"]},
+      {"concept_id": "E05", "skill_ids": ["SK-E05-PRIMARY"], "edge_id": "PRE-E02-E05", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A09-PRIMARY"]},
+      {"concept_id": "E08", "skill_ids": ["SK-E08-PRIMARY"], "edge_id": "PRE-E02-E08", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A01-EVALUATE"]},
+      {"concept_id": "E09", "skill_ids": ["SK-E09-PRIMARY"], "edge_id": "PRE-E02-E09", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A03-COLLECT"]},
+      {"concept_id": "F04", "skill_ids": ["SK-F04-PRIMARY"], "edge_id": "PRE-E02-F04", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-F03-PRIMARY"]}
+    ],
+    "problems": [
+      {"problem_id": "E02-P001", "problem_version": "0.1.0", "concept_id": "E02", "target_skill_id": "SK-E02-SOLVE", "template_family_id": "linear_with_distribution", "difficulty": 1},
+      {"problem_id": "E02-P002", "problem_version": "0.1.0", "concept_id": "E02", "target_skill_id": "SK-E02-SOLVE", "template_family_id": "linear_with_distribution", "difficulty": 1},
+      {"problem_id": "E02-P003", "problem_version": "0.1.0", "concept_id": "E02", "target_skill_id": "SK-E02-SOLVE", "template_family_id": "linear_both_sides", "difficulty": 2},
+      {"problem_id": "A02-P001", "problem_version": "0.1.0", "concept_id": "A02", "target_skill_id": "SK-A02-DISTRIBUTE", "template_family_id": "distribute_negative", "difficulty": 1},
+      {"problem_id": "A02-P002", "problem_version": "0.1.0", "concept_id": "A02", "target_skill_id": "SK-A02-DISTRIBUTE", "template_family_id": "distribute_basic", "difficulty": 1},
+      {"problem_id": "E03-P001", "problem_version": "0.1.0", "concept_id": "E03", "target_skill_id": "SK-E03-PRIMARY", "template_family_id": "word_to_linear", "difficulty": 2}
+    ],
+    "tool_calls_used": 3
+  },
+  "scenarios": [
+    {
+      "id": "SC-01", "title": "Lỗi phân phối lần đầu, giả thuyết còn nghi ngờ",
+      "state_patch": {},
+      "expected_rule_action": "diagnose", "expected_rule_intent": "distinguish_hypothesis",
+      "acceptable_actions": ["diagnose", "conceptual_question"],
+      "forbidden_actions": ["next_problem", "check_transfer", "scaffold", "backtrack"]
+    },
+    {
+      "id": "SC-02", "title": "Giả thuyết M_DIST_01 đã có bằng chứng lặp lại",
+      "state_patch": {"hypotheses": [{"hypothesis_id": "HYP-001", "misconception_id": "M_DIST_01", "skill_id": "SK-A02-DISTRIBUTE", "status": "supported",
+                                      "evidence_ids": ["55555555-5555-4555-8555-555555555555", "previous-assessment"]}]},
+      "expected_rule_action": "conceptual_question", "expected_rule_intent": "target_misconception",
+      "acceptable_actions": ["conceptual_question", "minimal_hint"],
+      "forbidden_actions": ["next_problem", "check_transfer", "end_session"]
+    },
+    {
+      "id": "SC-03", "title": "Đã hỏi chẩn đoán ở lượt trước, vẫn sai cùng lỗi",
+      "state_patch": {"support": {"hint_level": 0, "support_turns_on_node": 1, "no_progress_turns": 1},
+                      "recent_turns": [{"turn_id": "aaaaaaaa-0000-4000-8000-000000000001", "actor": "tutor", "kind": "decision", "action": "diagnose", "hint_level": 0},
+                                       {"turn_id": "22222222-2222-4222-8222-222222222222", "actor": "student", "kind": "submit", "assessment_status": "verified_incorrect"}]},
+      "expected_rule_action": "conceptual_question", "expected_rule_intent": "target_misconception",
+      "acceptable_actions": ["conceptual_question", "minimal_hint"],
+      "forbidden_actions": ["next_problem", "check_transfer"]
+    },
+    {
+      "id": "SC-04", "title": "Lỗi tính toán đơn lẻ, lịch sử kỹ năng tốt",
+      "state_patch": {
+        "latest_assessment": {"first_error_step": 3, "primary_skill_id": "SK-E02-SOLVE", "error_family": "arithmetic_error",
+                              "misconception_candidate": null, "diagnosis_status": "unknown"},
+        "hypotheses": [],
+        "skills": [{"skill_id": "SK-E02-SOLVE", "p_mastery": 0.85, "independent_observations": 5, "recent_independent": [true, true, true, false, true], "assisted_correct": 0, "parameter_version": "bkt-default-0.1.0"}]
+      },
+      "expected_rule_action": "minimal_hint", "expected_rule_intent": "prompt_self_check",
+      "acceptable_actions": ["minimal_hint"],
+      "forbidden_actions": ["backtrack", "scaffold", "conceptual_question"]
+    },
+    {
+      "id": "SC-05", "title": "Bài làm không chấm được",
+      "state_patch": {"latest_assessment": {"assessment_status": "needs_clarification", "first_error_step": null, "primary_skill_id": null,
+                                            "error_family": null, "misconception_candidate": null, "diagnosis_status": "unknown"},
+                      "observation": null, "hypotheses": [], "latest_submission": ["2(x-3) ra 10 nên x bằng ... em chưa chắc"]},
+      "expected_rule_action": "clarify", "expected_rule_intent": "resolve_input",
+      "acceptable_actions": ["clarify"],
+      "forbidden_actions": ["minimal_hint", "conceptual_question", "diagnose", "next_problem"]
+    },
+    {
+      "id": "SC-06", "title": "Xin thêm gợi ý khi đang ở mức 1",
+      "state_patch": {"trigger": "request_hint", "support": {"hint_level": 1, "support_turns_on_node": 1, "no_progress_turns": 1}},
+      "expected_rule_action": "minimal_hint", "expected_rule_intent": "locate_error",
+      "acceptable_actions": ["minimal_hint", "conceptual_question"],
+      "forbidden_actions": ["next_problem", "end_session"]
+    },
+    {
+      "id": "SC-07", "title": "Xin thêm gợi ý khi đã ở mức 2",
+      "state_patch": {"trigger": "request_hint", "support": {"hint_level": 2, "support_turns_on_node": 2, "no_progress_turns": 2}},
+      "expected_rule_action": "scaffold", "expected_rule_intent": "decompose_step",
+      "acceptable_actions": ["scaffold"],
+      "forbidden_actions": ["next_problem", "check_transfer"]
+    },
+    {
+      "id": "SC-08", "title": "Đã ở mức 3 mà vẫn sai, prerequisite có trên KG",
+      "state_patch": {"support": {"hint_level": 3, "support_turns_on_node": 3, "no_progress_turns": 3},
+                      "hypotheses": [{"hypothesis_id": "HYP-001", "misconception_id": "M_DIST_01", "skill_id": "SK-A02-DISTRIBUTE", "status": "supported",
+                                      "evidence_ids": ["55555555-5555-4555-8555-555555555555", "previous-assessment"]}]},
+      "expected_rule_action": "backtrack", "expected_rule_intent": "review_prerequisite",
+      "acceptable_actions": ["backtrack", "scaffold"],
+      "forbidden_actions": ["minimal_hint", "conceptual_question", "next_problem"]
+    },
+    {
+      "id": "SC-09", "title": "No-KG: đã ở mức 3 mà vẫn sai, không có cạnh prerequisite",
+      "context_patch": {"edges": [], "next_concepts": [], "kg_enabled": false, "tool_calls_used": 2},
+      "state_patch": {"support": {"hint_level": 3, "support_turns_on_node": 3, "no_progress_turns": 3}},
+      "expected_rule_action": "scaffold", "expected_rule_intent": "explain_concept",
+      "acceptable_actions": ["scaffold"],
+      "forbidden_actions": ["backtrack", "minimal_hint", "conceptual_question"]
+    },
+    {
+      "id": "SC-10", "title": "Làm đúng sau hỗ trợ",
+      "state_patch": {"latest_assessment": {"assessment_status": "verified_correct", "first_error_step": null, "primary_skill_id": "SK-E02-SOLVE",
+                                            "error_family": null, "misconception_candidate": null, "diagnosis_status": "unknown"},
+                      "observation": {"eligible": false, "reason": "assisted_attempt", "observation_id": null},
+                      "support": {"hint_level": 2, "support_turns_on_node": 2, "no_progress_turns": 0},
+                      "latest_submission": ["2x - 6 = 10", "2x = 16", "x = 8"]},
+      "expected_rule_action": "check_transfer", "expected_rule_intent": "independent_check",
+      "acceptable_actions": ["check_transfer"],
+      "forbidden_actions": ["backtrack", "end_session", "minimal_hint"]
+    },
+    {
+      "id": "SC-11", "title": "Làm đúng bài prerequisite, có bài chờ quay lại",
+      "state_patch": {
+        "current": {"problem_id": "A02-P001", "concept_id": "A02", "target_skill_id": "SK-A02-DISTRIBUTE",
+                    "template_family_id": "distribute_negative", "relation": "prerequisite",
+                    "opportunity_id": "bbbbbbbb-0000-4000-8000-000000000001"},
+        "latest_assessment": {"assessment_status": "verified_correct", "first_error_step": null, "primary_skill_id": "SK-A02-DISTRIBUTE",
+                              "error_family": null, "misconception_candidate": null, "diagnosis_status": "unknown"},
+        "support": {"hint_level": 0, "support_turns_on_node": 0, "no_progress_turns": 0},
+        "return_stack": [{"problem_id": "E02-P001", "opportunity_id": "44444444-4444-4444-8444-444444444444", "concept_id": "E02",
+                          "skill_id": "SK-E02-SOLVE", "hint_level": 3}],
+        "latest_submission": ["-6y - 8"]
+      },
+      "context_patch": {"current_problem_prompt": "Khai triển -2(3y + 4).", "edges": [{"edge_id": "PRE-N01-A02", "source_concept_id": "N01", "target_concept_id": "A02", "source_skill_ids": ["SK-N01-SIGNED-ADD"], "relation": "PREREQUISITE_OF", "depth": 1, "review_status": "draft"}, {"edge_id": "PRE-N02-A02", "source_concept_id": "N02", "target_concept_id": "A02", "source_skill_ids": ["SK-N02-SIGNED-MUL"], "relation": "PREREQUISITE_OF", "depth": 1, "review_status": "draft"}, {"edge_id": "PRE-N01-N02", "source_concept_id": "N01", "target_concept_id": "N02", "source_skill_ids": ["SK-N01-SIGNED-ADD"], "relation": "PREREQUISITE_OF", "depth": 2, "review_status": "draft"}], "next_concepts": [{"concept_id": "A04", "skill_ids": ["SK-A04-PRIMARY"], "edge_id": "PRE-A02-A04", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A03-COLLECT"]}, {"concept_id": "A07", "skill_ids": ["SK-A07-PRIMARY"], "edge_id": "PRE-A02-A07", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A03-COLLECT"]}, {"concept_id": "E02", "skill_ids": ["SK-E02-SOLVE"], "edge_id": "PRE-A02-E02", "review_status": "draft", "other_prerequisite_skill_ids": ["SK-A03-COLLECT", "SK-E01-EQUIVALENCE"]}]},
+      "expected_rule_action": "next_problem", "expected_rule_intent": "return_to_parent",
+      "acceptable_actions": ["next_problem"],
+      "forbidden_actions": ["backtrack", "end_session"]
+    },
+    {
+      "id": "SC-12", "title": "Đủ điều kiện sẵn sàng chuyển concept",
+      "state_patch": {
+        "latest_assessment": {"assessment_status": "verified_correct", "first_error_step": null, "primary_skill_id": "SK-E02-SOLVE",
+                              "error_family": null, "misconception_candidate": null, "diagnosis_status": "unknown"},
+        "support": {"hint_level": 0, "support_turns_on_node": 0, "no_progress_turns": 0},
+        "hypotheses": [],
+        "readiness": {"ready_to_advance": true, "criteria_version": "stop-0.1.0", "unmet": []},
+        "latest_submission": ["2x - 6 = 10", "2x = 16", "x = 8"]
+      },
+      "expected_rule_action": "next_problem", "expected_rule_intent": "advance_concept",
+      "acceptable_actions": ["next_problem", "check_transfer"],
+      "forbidden_actions": ["backtrack", "minimal_hint", "scaffold"]
+    },
+    {
+      "id": "SC-13", "title": "Học sinh xin tạm dừng",
+      "state_patch": {"trigger": "pause", "latest_student_message": "Em xin nghỉ một lát."},
+      "expected_rule_action": "end_session", "expected_rule_intent": "student_request",
+      "acceptable_actions": ["end_session"],
+      "forbidden_actions": ["minimal_hint", "diagnose", "conceptual_question", "next_problem"]
+    },
+    {
+      "id": "SC-14", "title": "Đã hỗ trợ 6 lượt trên cùng bước",
+      "state_patch": {"support": {"hint_level": 2, "support_turns_on_node": 6, "no_progress_turns": 4}},
+      "expected_rule_action": "next_problem", "expected_rule_intent": "switch_problem",
+      "acceptable_actions": ["next_problem", "scaffold", "backtrack", "end_session"],
+      "forbidden_actions": ["minimal_hint", "conceptual_question", "diagnose"]
+    },
+    {
+      "id": "SC-15", "title": "Sai khi giải, skill nền tính phân phối có ước lượng thấp",
+      "state_patch": {
+        "latest_assessment": {"first_error_step": 2, "primary_skill_id": "SK-E02-SOLVE", "error_family": "transformation_error",
+                              "misconception_candidate": null, "diagnosis_status": "unknown"},
+        "hypotheses": [],
+        "skills": [{"skill_id": "SK-A02-DISTRIBUTE", "p_mastery": 0.3, "independent_observations": 3, "recent_independent": [false, true, false], "assisted_correct": 1, "parameter_version": "bkt-default-0.1.0"},
+                   {"skill_id": "SK-E02-SOLVE", "p_mastery": 0.55, "independent_observations": 3, "recent_independent": [true, false, true], "assisted_correct": 0, "parameter_version": "bkt-default-0.1.0"}]
+      },
+      "expected_rule_action": "diagnose", "expected_rule_intent": "probe_prerequisite",
+      "acceptable_actions": ["diagnose", "backtrack", "minimal_hint"],
+      "forbidden_actions": ["next_problem", "check_transfer"]
+    },
+    {
+      "id": "SC-16", "title": "Xin gợi ý trước khi nộp bài",
+      "state_patch": {"trigger": "request_hint", "latest_student_message": "Em không biết bắt đầu từ đâu.",
+                      "latest_assessment": null, "latest_submission": [], "observation": null, "hypotheses": [], "recent_turns": []},
+      "expected_rule_action": "minimal_hint", "expected_rule_intent": "recall_rule",
+      "acceptable_actions": ["minimal_hint", "clarify"],
+      "forbidden_actions": ["next_problem", "check_transfer", "end_session"]
+    }
+  ]
+}
