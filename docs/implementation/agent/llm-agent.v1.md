@@ -19,13 +19,16 @@ LLM không viết câu trả lời cho học sinh (đó là bước `generate`) 
 
 | File | Nội dung |
 |---|---|
-| `backend/app/agent/llm.py` | `LLMSettings` (đọc env), `OpenAIResponsesClient` (Responses API, structured output strict), bảng giá `PRICES` và `cost_usd` |
+| `backend/app/llm/client.py` | `LLMSettings` (đọc env), `OpenAIResponsesClient` (Responses API, structured output strict), bảng giá `PRICES` và `cost_usd` |
 | `backend/app/agent/llm_proposer.py` | Lời dặn `INSTRUCTIONS`, schema đầu ra `OUTPUT_SCHEMA`, `build_input`, `LLMProposer`, `build_proposer`, `decision_config` |
-| `backend/app/agent/decision.py` | `AgentUsage`, các trường `PedagogicalDecision.agent_usage` và `decision_latency_ms` |
+| `backend/app/llm/types.py` | `LLMUsage` dùng chung cho Agent và extraction |
+| `backend/app/agent/decision.py` | Các trường `PedagogicalDecision.agent_usage` và `decision_latency_ms` |
 | `backend/app/agent/decide.py` | `run_decision`: proposer → gate → fallback và đo thời gian cả chuỗi, dùng chung cho LangGraph và script; `RulePolicyProposer` |
-| `backend/app/agent/fakes.py` | `FakeLLMClient` (LLM giả) và `ScriptedProposer` (Agent giả) cho test và lần chạy thử |
+| `backend/app/llm/fakes.py` | `FakeLLMClient` cho test và lần chạy thử |
+| `backend/app/agent/fakes.py` | `ScriptedProposer` cho test Agent |
 | `research/agent/scenarios.py` | Đọc bộ tình huống dev (dùng chung cho test và script; không thuộc luồng dạy thật) |
 | `research/agent/compare_proposers.py` | So sánh Agent LLM với Rule-policy trên bộ tình huống dev |
+| `research/llm_support.py` | Đọc `.env`, xin xác nhận trước khi gọi API thật, thống kê token/latency/chi phí (dùng chung với LLM extraction) |
 | `tests/test_agent_llm.py` | 68 test, không gọi mạng |
 
 Phiên bản ghi vào decision log: `prompt_version = agent-prompt-0.4.0`, `policy_version = llm-agent-0.1.0`, `model_id` theo cấu hình. Sửa lời dặn, định dạng input hay schema đầu ra thì phải tăng `PROMPT_VERSION`.
@@ -75,7 +78,7 @@ Mỗi quyết định có `decision_latency_ms`: thời gian cả chuỗi propos
 | `model_id` | Tên model provider trả về, có ngày snapshot (ví dụ `gpt-4o-mini-2024-07-18`) |
 | `input_tokens`, `cached_input_tokens`, `output_tokens` | Theo `usage` của provider; **null** khi provider không trả `usage` |
 | `latency_ms` | Thời gian riêng lần gọi model, tính cả mạng |
-| `cost_usd`, `price_version` | Tính từ bảng giá trong `llm.py` |
+| `cost_usd`, `price_version` | Tính từ bảng giá trong `app/llm/client.py` |
 | `error` | Lý do lỗi, nếu có |
 
 Bảng giá `openai-list-2026-11-14` cho `gpt-4o-mini` (USD / 1M token): vào **0,15**, vào đã cache **0,075**, ra **0,60**. Đã đối chiếu với [trang giá chính thức của OpenAI](https://developers.openai.com/api/docs/pricing.md), mức Standard, ngày 14/11/2026. Đổi giá thì đổi cả `PRICE_VERSION`.

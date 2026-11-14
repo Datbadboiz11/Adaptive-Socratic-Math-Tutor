@@ -1,6 +1,6 @@
 """Khung LangGraph cho một lượt dạy (plan §7, §13; PRD FR-11).
 
-    load → analyze → observe → readiness → context → decide → generate → verify → commit
+    load → extract → analyze → observe → readiness → context → decide → generate → verify → commit
 
 Mỗi lần ``invoke`` xử lý đúng một lượt rồi dừng; state của phiên nằm trong checkpointer theo
 ``thread_id = session_id``, nên dừng/tiếp tục hay khởi động lại tiến trình đều đọc lại được.
@@ -25,10 +25,10 @@ from pydantic import Field, model_validator
 
 from app.agent.decide import ProposalOutcome, RulePolicyProposer, run_decision
 from app.agent.decision import (
-    ACTION_SPECS, CONTRACT_VERSION, MAX_PROBES, MAX_SUBMISSION_LINE_LENGTH, MAX_SUBMISSION_LINES, Contract,
-    CurrentTask, DecisionConfig, DecisionIntent, DecisionProposal, ExperimentConfiguration, HintLevel,
-    Hypothesis, Identifier, PedagogicalAction, PedagogicalDecision, PrerequisiteProbe, Readiness, ReturnFrame,
-    StudentState, SubmissionLine, SupportState, TurnSummary,
+    ACTION_SPECS, CONTRACT_VERSION, MAX_PROBES, MAX_SUBMISSION_LINE_LENGTH, MAX_SUBMISSION_LINES,
+    AssessmentView, Contract, CurrentTask, DecisionConfig, DecisionIntent, DecisionProposal,
+    ExperimentConfiguration, HintLevel, Hypothesis, Identifier, PedagogicalAction, PedagogicalDecision,
+    PrerequisiteProbe, Readiness, ReturnFrame, StudentState, SubmissionLine, SupportState, TurnSummary,
 )
 from app.agent.rule_policy import READINESS_VERSION, compute_readiness
 from app.agent.stubs import (
@@ -36,11 +36,13 @@ from app.agent.stubs import (
     problem_ref, stub_observe, unverified_probe,
 )
 from app.agent.tools import ProblemRef, TurnContext
+from app.extraction.contracts import ExtractionRecord
+from app.extraction.extractor import ExtractionOutcome, StepExtractor
 
 A, I = PedagogicalAction, DecisionIntent
 # Phiên bản workflow (thứ tự node và tác động của commit). Ghi vào từng PedagogicalDecision để truy
 # được bản ghi nào sinh ra từ workflow nào (NFR-04). Đổi luồng hoặc apply_decision thì tăng.
-WORKFLOW_VERSION = "tutor-graph-0.2.0"
+WORKFLOW_VERSION = "tutor-graph-0.4.0"
 MAX_RECENT_TURNS = 12
 PAUSING_INTENTS = frozenset({I.STUDENT_REQUEST, I.STUCK_LIMIT, I.SYSTEM_FALLBACK, I.BUDGET_EXHAUSTED,
                              I.CONTENT_EXHAUSTED})
@@ -114,6 +116,9 @@ class Services:
     analyzer: Callable[[StudentState, list[str]], object] = field(default_factory=StubAnalyzer)
     observer: Callable[[StudentState, object, frozenset[str]], ObservationResult] = stub_observe
     tools: Callable[[StudentState, DecisionConfig], TurnContext] = field(default_factory=StubTools)
+    # Tách bài làm tự do thành các bước trước khi chấm (LLM extraction). None: đưa thẳng bài làm cho
+    # analyzer. Chỉ áp cho concept mà extractor hỗ trợ (``applies_to``).
+    extractor: StepExtractor | None = None
     proposer: Callable[[StudentState, TurnContext], ProposalOutcome] = field(default_factory=RulePolicyProposer)
     generator: TemplateGenerator = field(default_factory=TemplateGenerator)
     verifier: Callable[[StudentState, DecisionProposal, str], list[str]] = field(default_factory=AnswerLeakVerifier)
@@ -139,6 +144,10 @@ class TutorGraphState(TypedDict, total=False):
     # khi đã có lượt khác xen giữa) nhận đúng phản hồi cũ thay vì bị xử lý lại.
     processed: dict[str, dict]
     decision_log: list[dict]
+    extraction_log: list[dict]
+    # Kết quả extraction của lượt đang xử lý (ExtractionRecord) hoặc None. Node extract lưu nó vào
+    # checkpoint trước khi analyzer chạy: analyzer lỗi rồi gửi lại thì dùng lại, không gọi LLM lần hai.
+    extraction: dict | None
     duplicate: bool
 
 
@@ -196,6 +205,14 @@ def _answer_probe(s: StudentState, turn: "TurnInput", services: "Services") -> l
                                       answer_turn_id=s.turn_id)
         out.append(probe)
     return out
+
+
+def _extract(s: StudentState, submission: list[str], services: "Services") -> ExtractionOutcome | None:
+    """Chạy extraction nếu được bật và concept đang học nằm trong phạm vi của nó."""
+    extractor = services.extractor
+    if extractor is None or not extractor.applies_to(s.current.concept_id):
+        return None
+    return extractor(services.problem_prompt(s.current.problem_id), submission)
 
 
 def _task(ref: ProblemRef, opportunity_id: UUID, relation: str, skill_id: str | None = None) -> CurrentTask:
@@ -270,7 +287,20 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
             "turn_id": services.new_id(), "request_id": turn.request_id, "trigger": turn.trigger,
             "latest_student_message": turn.message, "status": "active", "observation": None,
             "budget": type(s.budget)()})
-        return {"student": s.model_dump(mode="json"), "duplicate": False}
+        return {"student": s.model_dump(mode="json"), "duplicate": False, "extraction": None}
+
+    def extract(gs: TutorGraphState):
+        """Tách bài làm (nếu bật và concept trong phạm vi). Node riêng để kết quả và chi phí lần gọi
+        LLM được lưu vào checkpoint trước khi analyzer chạy."""
+        s = StudentState.model_validate(gs["student"])
+        turn = TurnInput.model_validate(gs["turn_input"])
+        if turn.trigger != "submit":
+            return {}
+        outcome = _extract(s, turn.submission, services)
+        if outcome is None:
+            return {}
+        record = outcome.record(s.turn_id).model_dump(mode="json")
+        return {"extraction": record, "extraction_log": gs.get("extraction_log", []) + [record]}
 
     def analyze(gs: TutorGraphState):
         s = StudentState.model_validate(gs["student"])
@@ -279,7 +309,14 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
         if turn.trigger == "submit":
             # Analyzer và Agent nhìn cùng một bài làm: đúng các dòng này được chấm và được lưu.
             submission = turn.submission
-            a = services.analyzer(s, submission)
+            extraction = ExtractionRecord.model_validate(gs["extraction"]) if gs.get("extraction") else None
+            if extraction is None:
+                a = services.analyzer(s, submission)
+            elif extraction.result.status == "extracted":
+                submission = extraction.result.graded_lines()
+                a = services.analyzer(s, submission)
+            else:  # chưa tách được: mời viết lại, không chấm và không ghi BKT (FR04-AC2)
+                a = AssessmentView(assessment_id=services.new_id(), assessment_status="needs_clarification")
             incorrect = a.assessment_status == "verified_incorrect"
             no_progress = s.support.no_progress_turns + 1 if incorrect else (
                 0 if a.assessment_status == "verified_correct" else s.support.no_progress_turns)
@@ -364,13 +401,13 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
                 "decision_log": gs.get("decision_log", []) + [gs["decision"]]}
 
     graph = StateGraph(TutorGraphState)
-    nodes = [("load", load), ("analyze", analyze), ("observe", observe), ("readiness", readiness),
-             ("context", context), ("decide", decide), ("generate", generate), ("verify", verify),
-             ("commit", commit)]
+    nodes = [("load", load), ("extract", extract), ("analyze", analyze), ("observe", observe),
+             ("readiness", readiness), ("context", context), ("decide", decide), ("generate", generate),
+             ("verify", verify), ("commit", commit)]
     for name, fn in nodes:
         graph.add_node(name, fn)
     graph.add_edge(START, "load")
-    graph.add_conditional_edges("load", lambda gs: END if gs.get("duplicate") else "analyze", ["analyze", END])
+    graph.add_conditional_edges("load", lambda gs: END if gs.get("duplicate") else "extract", ["extract", END])
     for (left, _), (right, _) in zip(nodes[1:], nodes[2:]):
         graph.add_edge(left, right)
     graph.add_edge("commit", END)
@@ -445,6 +482,7 @@ class TutorEngine:
                 raise ValueError(f"session {sid} already exists")
             self.graph.update_state(self._cfg(sid), {
                 "student": state.model_dump(mode="json"), "observed_opportunities": [], "decision_log": [],
+                "extraction_log": [],
                 "reply": reply.model_dump(mode="json"), "processed": {}, "duplicate": False}, as_node="commit")
         return reply
 
@@ -482,3 +520,6 @@ class TutorEngine:
 
     def decisions(self, session_id: UUID) -> list[PedagogicalDecision]:
         return [PedagogicalDecision.model_validate(d) for d in self._values(session_id).get("decision_log", [])]
+
+    def extractions(self, session_id: UUID) -> list[ExtractionRecord]:
+        return [ExtractionRecord.model_validate(r) for r in self._values(session_id).get("extraction_log", [])]

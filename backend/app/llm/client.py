@@ -1,12 +1,8 @@
-"""Lớp gọi LLM cho Agent: cấu hình, client OpenAI (Responses API, structured output) và giá.
+"""Shared LLM configuration, OpenAI client and usage accounting.
 
-Không có lệnh gọi mạng nào khi import module này. Client thật chỉ được tạo khi cấu hình bật
-rõ ràng (``LLM_ENABLED=true`` và có ``OPENAI_API_KEY``); test dùng client giả trong ``stubs.py``.
-
-Chính sách gọi (plan §13: lỗi thì fallback, không thử lại vô hạn):
-- ``max_retries=0`` và timeout cứng: lỗi hay chậm thì Agent rơi về Rule-policy ngay trong lượt.
-- ``store=False``: không lưu hội thoại phía provider.
-- Không gửi định danh học sinh; ``build_input`` chỉ gửi state đã chiếu theo cấu hình.
+Clients are constructed explicitly. Importing this module does not call the provider.
+Calls use structured output, store=False and zero automatic retries. Callers handle
+provider failures according to their workflow. Tests use app.llm.fakes.FakeLLMClient.
 """
 from __future__ import annotations
 
@@ -14,6 +10,8 @@ from dataclasses import dataclass, field
 import os
 import time
 from typing import Mapping, Protocol
+
+from app.llm.types import LLMUsage
 
 DEFAULT_MODEL = "gpt-4o-mini"
 DEFAULT_TIMEOUT_SECONDS = 8.0
@@ -171,3 +169,20 @@ class OpenAIResponsesClient:
 
 def _elapsed(started: float) -> float:
     return round((time.perf_counter() - started) * 1000, 1)
+
+
+# --------------------------------------------------------------------------- bản ghi usage
+
+def usage_from_call(call: LLMCall, prompt_version: str) -> LLMUsage:
+    """Bản ghi token/latency/chi phí của một lần gọi đã có phản hồi (kể cả từ chối, bị cắt)."""
+    tokens = (call.input_tokens, call.cached_input_tokens, call.output_tokens)
+    cost = None if None in tokens else cost_usd(call.model_id, *tokens)
+    return LLMUsage(model_id=call.model_id, prompt_version=prompt_version, input_tokens=call.input_tokens,
+                    cached_input_tokens=call.cached_input_tokens, output_tokens=call.output_tokens,
+                    latency_ms=call.latency_ms, cost_usd=cost,
+                    price_version=PRICE_VERSION if cost is not None else None)
+
+
+def usage_from_failure(model_id: str, prompt_version: str, latency_ms: float, error: str) -> LLMUsage:
+    """Lần gọi lỗi trước khi provider trả usage: số token để null (chưa biết), nên không có chi phí."""
+    return LLMUsage(model_id=model_id, prompt_version=prompt_version, latency_ms=latency_ms, error=error[:120])

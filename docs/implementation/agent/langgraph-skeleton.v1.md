@@ -9,13 +9,14 @@
 START → load ──(request trùng)──→ END
           │
           ▼
-       analyze → observe → readiness → context → decide → generate → verify → commit → END
+       extract → analyze → observe → readiness → context → decide → generate → verify → commit → END
 ```
 
 | Node | Việc | Ai làm thật | Hiện tại |
 |---|---|---|---|
 | `load` | Đọc state phiên từ checkpoint; request đã xử lý thì dừng ngay, không chấm lại | Member 3 | Thật |
-| `analyze` | Chấm bài (khi nộp bài); cập nhật số lượt không tiến triển và giả thuyết lỗi; gắn lượt này với câu hỏi kiểm tra prerequisite đang chờ và xác minh câu trả lời | Member 1 (chấm), Member 3 (giả thuyết, xác minh câu trả lời) | Chấm bằng stub so khớp chuỗi; xác minh câu trả lời là stub luôn trả `unverified` |
+| `extract` | Tách bài làm tự do thành các bước (LLM extraction, nếu bật và concept trong phạm vi). Node riêng để kết quả và chi phí được checkpoint trước khi chấm | Member 3 | Thật nhưng mặc định tắt ([llm-extraction.v1.md](../extraction/llm-extraction.v1.md)) |
+| `analyze` | Chấm bài (khi nộp bài; dùng các bước đã tách nếu có); cập nhật số lượt không tiến triển và giả thuyết lỗi; gắn lượt này với câu hỏi kiểm tra prerequisite đang chờ và xác minh câu trả lời | Member 1 (chấm), Member 3 (giả thuyết, xác minh câu trả lời) | Chấm bằng stub so khớp chuỗi; xác minh câu trả lời là stub luôn trả `unverified` |
 | `observe` | Xét observation hợp lệ, cập nhật BKT | Member 1 | Stub: BKT tham số mặc định |
 | `readiness` | Tính điều kiện sẵn sàng chuyển concept (plan §10) | Member 1 + Member 3 | Thật, ngưỡng khởi đầu |
 | `context` | Gọi tool: KG, RAG, problem bank (≤ 3 lần). Neo4j lỗi thì KG dùng bản đọc từ file; tool hỏng hẳn thì chạy tiếp không có tool. Cả hai đều ghi `tool_errors` vào decision log | Member 3 (KG), Member 2 (RAG) | KG thật (registry, kể cả cạnh nháp); RAG và problem bank là stub |
@@ -56,6 +57,7 @@ START → load ──(request trùng)──→ END
 | Mỗi luật gate có test vi phạm riêng | `tests/test_agent_policy.py` |
 | Hai request đồng thời (cùng hoặc khác `request_id`, cùng hoặc khác engine) được xử lý lần lượt, không trùng lượt | `test_concurrent_same_request_is_processed_once`, `test_two_engines_sharing_checkpointer_and_locks_process_once`, `test_concurrent_different_requests_run_one_after_another` |
 | Analyzer và Agent thấy cùng một bài làm; lời nhắn giữ riêng | `test_graded_work_and_message_reach_the_agent_separately`, `test_submission_comes_from_steps_or_message_lines` |
+| Bật extraction: chấm đúng các bước đã tách; chưa tách được thì hỏi lại, không chấm, không ghi BKT | `test_engine_grades_extracted_steps_and_logs_the_call`, `test_engine_asks_again_without_grading_when_extraction_is_unsure` (các test còn lại trong `tests/test_extraction.py`) |
 | Vừa làm đúng bài nền sau 6 lượt hỗ trợ thì quay lại bài gốc | `test_solved_after_support_limit_returns_to_parent` |
 | Agent LLM trong graph: mỗi lượt ghi `agent_usage`; LLM timeout thì fallback và vẫn ghi latency | `test_engine_with_llm_agent_logs_usage_per_turn` (các test còn lại của Agent LLM trong `tests/test_agent_llm.py`) |
 | Mọi cấu hình đều ghi thời gian proposer → gate → fallback (`decision_latency_ms`) | `test_engine_records_decision_latency_for_rule_policy`, `test_run_decision_times_the_whole_chain` |

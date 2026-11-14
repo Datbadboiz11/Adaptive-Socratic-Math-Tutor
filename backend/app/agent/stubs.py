@@ -8,8 +8,8 @@ KHÔNG phải triển khai thật:
 - TemplateGenerator/AnswerLeakVerifier là bản tối thiểu của bước sinh/kiểm tra phản hồi.
 - unverified_probe thay bước xác minh câu trả lời cho câu hỏi kiểm tra prerequisite (chờ LLM
   extraction): luôn trả "unverified", nên hiện chưa câu trả lời nào được tính là bằng chứng.
-Mọi stub có cùng chữ ký với bản thật dự kiến nên có thể thay từng phần. Đồ giả chỉ dùng cho
-test (Agent giả, LLM giả) nằm riêng ở ``fakes.py``.
+Mọi stub có cùng chữ ký với bản thật dự kiến nên có thể thay từng phần. Agent giả nằm ở
+``app.agent.fakes``; client LLM giả dùng chung nằm ở ``app.llm.fakes``.
 """
 from __future__ import annotations
 

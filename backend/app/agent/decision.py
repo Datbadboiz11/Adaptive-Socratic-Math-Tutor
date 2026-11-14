@@ -18,6 +18,8 @@ from uuid import UUID
 
 from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, model_validator
 
+from app.llm.types import LLMUsage
+
 ContractVersion = Literal["agent-contract-0.1.0"]
 CONTRACT_VERSION: str = get_args(ContractVersion)[0]
 
@@ -296,42 +298,6 @@ FallbackReason = Literal["gate_rejected", "agent_timeout", "agent_schema_error",
                          "budget_exhausted"]
 
 
-class AgentUsage(Contract):
-    """Chi phí một lần gọi LLM để Agent đề xuất (plan §18: latency/cost cho RQ5).
-
-    Ghi cả khi lần gọi lỗi (``error``): lượt đó vẫn tốn thời gian và có thể tốn token.
-    ``model_id`` là tên model provider trả về (thường kèm ngày snapshot), không phải tên cấu hình.
-    Số token để null khi provider không trả ``usage`` (timeout, lỗi mạng): không biết, khác với 0.
-    ``cost_usd`` để null khi chưa biết số token hoặc model không có trong bảng giá ``price_version``."""
-
-    model_id: Annotated[str, Field(min_length=1, max_length=80)]
-    prompt_version: Annotated[str, Field(min_length=1, max_length=40)]
-    input_tokens: int | None = Field(default=None, ge=0)
-    cached_input_tokens: int | None = Field(default=None, ge=0)
-    output_tokens: int | None = Field(default=None, ge=0)
-    latency_ms: float = Field(ge=0, allow_inf_nan=False)
-    cost_usd: float | None = Field(default=None, ge=0, allow_inf_nan=False)
-    price_version: str | None = None
-    error: Annotated[str, Field(max_length=120)] | None = None
-
-    @property
-    def tokens_known(self) -> bool:
-        return None not in (self.input_tokens, self.cached_input_tokens, self.output_tokens)
-
-    @model_validator(mode="after")
-    def _tokens(self):
-        known = [self.input_tokens, self.cached_input_tokens, self.output_tokens]
-        if any(v is None for v in known) and any(v is not None for v in known):
-            raise ValueError("token counts are either all known or all null")
-        if self.tokens_known and self.cached_input_tokens > self.input_tokens:
-            raise ValueError("cached_input_tokens cannot exceed input_tokens")
-        if (self.cost_usd is None) != (self.price_version is None):
-            raise ValueError("cost_usd and price_version go together")
-        if self.cost_usd is not None and not self.tokens_known:
-            raise ValueError("cost_usd needs known token counts")
-        return self
-
-
 class PedagogicalDecision(Contract):
     """Bản ghi một quyết định trong decision log: giữ cả đề xuất lẫn kết quả sau gate
     (PRD FR10-AC4, §6.4). Quyết định fallback cũng phải qua gate (``fallback_gate``)."""
@@ -358,7 +324,7 @@ class PedagogicalDecision(Contract):
     graph_version: str | None = None
     regenerations_used: int = Field(default=0, ge=0, le=MAX_REGENERATIONS)
     # Lần gọi LLM của Agent trong lượt; None khi đề xuất không đến từ LLM (Rule-policy, Agent giả).
-    agent_usage: AgentUsage | None = None
+    agent_usage: LLMUsage | None = None
     # Thời gian proposer → gate → fallback (gồm lần gọi LLM nếu có), đo cho mọi cấu hình để so sánh
     # với Rule-policy. None với bản ghi không tạo qua ``decide.run_decision``.
     decision_latency_ms: float | None = Field(default=None, ge=0, allow_inf_nan=False)

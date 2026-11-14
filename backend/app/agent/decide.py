@@ -17,9 +17,9 @@ from uuid import UUID
 from pydantic import ValidationError
 
 from app.agent.decision import (
-    AgentUsage, DecisionConfig, DecisionProposal, DecisionSource, ExperimentConfiguration,
-    PedagogicalDecision, StudentState,
+    DecisionConfig, DecisionProposal, DecisionSource, ExperimentConfiguration, PedagogicalDecision, StudentState,
 )
+from app.llm.types import LLMUsage
 from app.agent.gate import policy_gate
 from app.agent.rule_policy import last_resort, rule_policy
 from app.agent.tools import TurnContext
@@ -33,7 +33,7 @@ class ProposalOutcome:
     proposal: DecisionProposal | None
     proposed_by: DecisionSource
     error: str | None = None
-    usage: AgentUsage | None = None
+    usage: LLMUsage | None = None
 
 
 def resolve_decision(s: StudentState, ctx: TurnContext, outcome: ProposalOutcome, config: DecisionConfig,

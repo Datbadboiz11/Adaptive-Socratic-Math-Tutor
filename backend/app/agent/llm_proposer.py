@@ -20,12 +20,12 @@ from pydantic import ValidationError
 
 from app.agent.decide import ProposalOutcome, RulePolicyProposer
 from app.agent.decision import (
-    ACTION_SPECS, MAX_BACKTRACK_DEPTH, MAX_HINT_LEVEL, MAX_SUPPORT_TURNS_PER_NODE, AgentUsage,
-    DecisionConfig, DecisionIntent, DecisionProposal, DecisionSource, EvidenceKind,
-    ExperimentConfiguration, PedagogicalAction, StudentState,
+    ACTION_SPECS, MAX_BACKTRACK_DEPTH, MAX_HINT_LEVEL, MAX_SUPPORT_TURNS_PER_NODE, DecisionConfig,
+    DecisionIntent, DecisionProposal, DecisionSource, EvidenceKind, ExperimentConfiguration,
+    PedagogicalAction, StudentState,
 )
 from app.agent.gate import ACTIVE_HYPOTHESIS, evidence_index
-from app.agent.llm import PRICE_VERSION, LLMCallFailed, LLMClient, LLMTimeout, cost_usd
+from app.llm.client import LLMCallFailed, LLMClient, LLMTimeout, usage_from_call, usage_from_failure
 from app.agent.mastery import prerequisite_evidence, standing
 from app.agent.rule_policy import POLICY_VERSION as RULE_POLICY_VERSION
 from app.agent.tools import TurnContext
@@ -256,7 +256,7 @@ class LLMProposer:
         except LLMCallFailed as error:
             return self._failed("agent_error", error.kind, error.latency_ms)
 
-        usage = self._usage(call)
+        usage = usage_from_call(call, PROMPT_VERSION)
         if call.refusal is not None:
             return ProposalOutcome(None, DecisionSource.AGENT, "agent_error", usage.model_copy(
                 update={"error": "refusal"}))
@@ -270,18 +270,8 @@ class LLMProposer:
                 update={"error": "invalid_output"}))
         return ProposalOutcome(proposal, DecisionSource.AGENT, usage=usage)
 
-    def _usage(self, call) -> AgentUsage:
-        tokens = (call.input_tokens, call.cached_input_tokens, call.output_tokens)
-        cost = None if None in tokens else cost_usd(call.model_id, *tokens)
-        return AgentUsage(model_id=call.model_id, prompt_version=PROMPT_VERSION, input_tokens=call.input_tokens,
-                          cached_input_tokens=call.cached_input_tokens, output_tokens=call.output_tokens,
-                          latency_ms=call.latency_ms, cost_usd=cost,
-                          price_version=PRICE_VERSION if cost is not None else None)
-
     def _failed(self, reason: str, error: str, latency_ms: float) -> ProposalOutcome:
-        # Không có usage từ provider: số token để null (chưa biết), nên cũng không có chi phí.
-        usage = AgentUsage(model_id=self.model_id, prompt_version=PROMPT_VERSION, latency_ms=latency_ms,
-                           error=error[:120])
+        usage = usage_from_failure(self.model_id, PROMPT_VERSION, latency_ms, error)
         return ProposalOutcome(None, DecisionSource.AGENT, reason, usage)
 
 

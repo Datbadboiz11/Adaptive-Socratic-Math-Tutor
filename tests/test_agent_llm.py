@@ -14,11 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 from app.agent.decide import RulePolicyProposer, resolve_decision, run_decision  # noqa: E402
 from app.agent.decision import (  # noqa: E402
-    AgentUsage, DecisionIntent, DecisionProposal, DecisionSource, EvidenceKind, ExperimentConfiguration,
+    DecisionIntent, DecisionProposal, DecisionSource, EvidenceKind, ExperimentConfiguration,
     PedagogicalAction, PedagogicalDecision,
 )
+from app.llm.types import LLMUsage  # noqa: E402
 from app.agent.graph import Services, TurnInput, TutorEngine  # noqa: E402
-from app.agent.llm import (  # noqa: E402
+from app.llm.client import (  # noqa: E402
     PRICE_VERSION, LLMCall, LLMCallFailed, LLMDisabled, LLMSettings, LLMTimeout, OpenAIResponsesClient,
     cost_usd,
 )
@@ -27,7 +28,7 @@ from app.agent.llm_proposer import (  # noqa: E402
     build_proposer, decision_config, facts, field_rules, parse_output, proposal_to_output,
 )
 from app.agent.rule_policy import rule_policy  # noqa: E402
-from app.agent.fakes import FakeLLMClient  # noqa: E402
+from app.llm.fakes import FakeLLMClient  # noqa: E402
 from app.agent.stubs import DEMO_PROBLEMS, StubTools, normalize  # noqa: E402
 from research.agent.scenarios import load_scenarios  # noqa: E402
 from research.agent.compare_proposers import fake_agent, main, run_comparison, run_one, summarize  # noqa: E402
@@ -254,13 +255,13 @@ def test_cost_uses_snapshot_price_and_unknown_model_has_none():
 
 def test_agent_usage_contract():
     with pytest.raises(ValueError):
-        AgentUsage(model_id="m", prompt_version="p", input_tokens=1, cached_input_tokens=2, latency_ms=1)
+        LLMUsage(model_id="m", prompt_version="p", input_tokens=1, cached_input_tokens=2, latency_ms=1)
     with pytest.raises(ValueError):
-        AgentUsage(model_id="m", prompt_version="p", latency_ms=1, cost_usd=0.1)
+        LLMUsage(model_id="m", prompt_version="p", latency_ms=1, cost_usd=0.1)
     with pytest.raises(ValueError):  # không biết token thì không có chi phí
-        AgentUsage(model_id="m", prompt_version="p", latency_ms=1, cost_usd=0.1, price_version="v")
+        LLMUsage(model_id="m", prompt_version="p", latency_ms=1, cost_usd=0.1, price_version="v")
     with pytest.raises(ValueError):  # biết một phần số token là không hợp lệ
-        AgentUsage(model_id="m", prompt_version="p", latency_ms=1, input_tokens=10)
+        LLMUsage(model_id="m", prompt_version="p", latency_ms=1, input_tokens=10)
 
 
 def test_settings_need_explicit_enable_and_key():
@@ -366,7 +367,7 @@ def test_rule_policy_decision_cannot_carry_agent_usage():
     record = resolve_decision(sc.state, sc.context, proposer(sc.state, sc.context),
                               decision_config(ExperimentConfiguration.RULE_POLICY, proposer),
                               decision_id=uuid4(), created_at=NOW)
-    usage = AgentUsage(model_id="m", prompt_version="p", latency_ms=1)
+    usage = LLMUsage(model_id="m", prompt_version="p", latency_ms=1)
     with pytest.raises(ValueError):
         PedagogicalDecision.model_validate({**record.model_dump(), "agent_usage": usage.model_dump()})
 
@@ -420,14 +421,14 @@ def test_engine_records_decision_latency_for_rule_policy():
 
 
 def test_openai_mode_refuses_without_confirmation(monkeypatch, capsys):
-    monkeypatch.setattr("research.agent.compare_proposers.read_env",
+    monkeypatch.setattr("research.llm_support.read_env",
                         lambda: {"LLM_ENABLED": "true", "OPENAI_API_KEY": "sk-test"})
 
     def forbidden(*args, **kwargs):
         raise AssertionError("must not build a real client")
 
-    monkeypatch.setattr("research.agent.compare_proposers.OpenAIResponsesClient", forbidden)
+    monkeypatch.setattr("research.llm_support.OpenAIResponsesClient", forbidden)
     assert main(["--agent", "openai", "--scenarios", "SC-01"]) == 2
     assert main(["--agent", "openai", "--repeat", "4", "--max-calls", "10", "--yes"]) == 2
-    monkeypatch.setattr("research.agent.compare_proposers.read_env", lambda: {})
+    monkeypatch.setattr("research.llm_support.read_env", lambda: {})
     assert main(["--agent", "openai", "--yes"]) == 2

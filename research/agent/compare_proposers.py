@@ -17,9 +17,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
-import os
 from pathlib import Path
-import statistics
 import sys
 from typing import Callable
 from uuid import uuid4
@@ -29,14 +27,15 @@ sys.path.insert(0, str(ROOT / "backend"))
 sys.path.insert(0, str(ROOT))
 from app.agent.decide import RulePolicyProposer, run_decision  # noqa: E402
 from app.agent.decision import ExperimentConfiguration  # noqa: E402
-from app.agent.llm import LLMDisabled, LLMSettings, OpenAIResponsesClient  # noqa: E402
+from app.llm.fakes import FakeLLMClient  # noqa: E402
 from app.agent.llm_proposer import LLMProposer, decision_config, proposal_to_output  # noqa: E402
 from app.agent.rule_policy import rule_policy  # noqa: E402
-from app.agent.fakes import FakeLLMClient  # noqa: E402
 from research.agent.scenarios import Scenario, load_scenarios  # noqa: E402
+from research.llm_support import (  # noqa: E402
+    DEFAULT_MAX_CALLS, format_ms, format_usage, real_client, timing_stats, usage_summary,
+)
 
 FULL, RULE = ExperimentConfiguration.FULL, ExperimentConfiguration.RULE_POLICY
-DEFAULT_MAX_CALLS = 50
 
 
 # --------------------------------------------------------------------------- chạy
@@ -79,32 +78,14 @@ def run_comparison(scenarios: list[Scenario], agent: LLMProposer | None, repeat:
 
 # --------------------------------------------------------------------------- tổng hợp
 
-def _percentile(values: list[float], q: float) -> float | None:
-    if not values:
-        return None
-    ordered = sorted(values)
-    return ordered[min(len(ordered) - 1, round(q * (len(ordered) - 1)))]
-
-
-def _stats(values: list[float]) -> dict:
-    return {"median": statistics.median(values) if values else None, "p95": _percentile(values, 0.95)}
-
-
 def summarize(rows: list[dict]) -> dict[str, dict]:
     """Thống kê theo proposer.
 
-    - ``decision_ms``: cả chuỗi proposer → gate → fallback, có cho mọi proposer.
-    - ``api_ms``: riêng lần gọi model, chỉ tính trên các lần có gọi.
-    - Token chỉ tính trên các lần provider trả ``usage`` (``usage_known``); lần thiếu (timeout,
-      lỗi mạng) được đếm riêng ở ``usage_missing``, không tính thành 0.
-    - ``cost_usd_known`` là tổng của ``cost_known_calls`` / ``llm_calls`` lần gọi; khác nhau nghĩa
-      là chi phí thật có thể cao hơn."""
+    ``decision_ms`` là cả chuỗi proposer → gate → fallback, có cho mọi proposer. Các số về lần gọi
+    model (``api_ms``, token, chi phí) theo ``llm_support.usage_summary``."""
     out = {}
     for label in dict.fromkeys(r["proposer"] for r in rows):
         group = [r for r in rows if r["proposer"] == label]
-        calls = [r["usage"] for r in group if r["usage"]]
-        known = [u for u in calls if u["input_tokens"] is not None]
-        costs = [u["cost_usd"] for u in calls if u["cost_usd"] is not None]
         reasons = {}
         for r in group:
             if r["fallback_reason"]:
@@ -116,24 +97,10 @@ def summarize(rows: list[dict]) -> dict[str, dict]:
             "final_acceptable": sum(r["final_acceptable"] for r in group),
             "proposed_forbidden": sum(r["proposed_forbidden"] for r in group),
             "same_as_rule": sum(r["same_as_rule"] for r in group),
-            "decision_ms": _stats([r["decision_ms"] for r in group]),
-            "llm_calls": len(calls),
-            "api_ms": _stats([u["latency_ms"] for u in calls]),
-            "usage_known": len(known),
-            "usage_missing": len(calls) - len(known),
-            "input_tokens_mean": statistics.mean(u["input_tokens"] for u in known) if known else None,
-            "cached_input_tokens_total": sum(u["cached_input_tokens"] for u in known),
-            "output_tokens_mean": statistics.mean(u["output_tokens"] for u in known) if known else None,
-            "cost_known_calls": len(costs),
-            "cost_usd_known": round(sum(costs), 6) if costs else None,
+            "decision_ms": timing_stats([r["decision_ms"] for r in group]),
+            **usage_summary([r["usage"] for r in group if r["usage"]]),
         }
     return out
-
-
-def _ms(stats: dict) -> str:
-    if stats["median"] is None:
-        return "-"
-    return f"median={stats['median']:.1f} p95={stats['p95']:.1f}"
 
 
 def print_report(rows: list[dict], summary: dict[str, dict]) -> None:
@@ -149,27 +116,12 @@ def print_report(rows: list[dict], summary: dict[str, dict]) -> None:
         print(f"[{label}] runs={s['runs']} gate_accepted={s['gate_accepted']} fallbacks={s['fallbacks']} "
               f"final_acceptable={s['final_acceptable']} proposed_forbidden={s['proposed_forbidden']} "
               f"same_as_rule={s['same_as_rule']}")
-        print(f"    decision_ms {_ms(s['decision_ms'])}")
-        if s["llm_calls"]:
-            tokens = (f"input_tokens_mean={s['input_tokens_mean']:.0f} cached_total={s['cached_input_tokens_total']} "
-                      f"output_tokens_mean={s['output_tokens_mean']:.0f}") if s["usage_known"] else "tokens=-"
-            print(f"    llm_calls={s['llm_calls']} api_ms {_ms(s['api_ms'])} usage_known={s['usage_known']} "
-                  f"usage_missing={s['usage_missing']} {tokens}")
-            print(f"    cost_usd_known={s['cost_usd_known']} (from {s['cost_known_calls']}/{s['llm_calls']} calls)")
+        print(f"    decision_ms {format_ms(s['decision_ms'])}")
+        for line in format_usage(s):
+            print(line)
 
 
 # --------------------------------------------------------------------------- CLI
-
-def read_env(path: Path = ROOT / ".env") -> dict[str, str]:
-    """Biến trong ``.env`` (nếu có), bị biến môi trường ghi đè. Không in giá trị nào."""
-    values = {}
-    if path.exists():
-        for line in path.read_text(encoding="utf-8-sig").splitlines():
-            if "=" in line and not line.lstrip().startswith("#"):
-                key, value = line.split("=", 1)
-                values[key.strip()] = value.strip().strip('"').strip("'")
-    return {**values, **os.environ}
-
 
 def fake_agent() -> tuple[LLMProposer, Callable[[Scenario], None]]:
     """LLM giả trả đúng đề xuất của Rule-policy: kiểm tra đường Agent (prompt, schema, parse, gate,
@@ -198,22 +150,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.agent == "fake":
         agent, before = fake_agent()
     elif args.agent == "openai":
-        calls = len(scenarios) * args.repeat
-        try:
-            settings = LLMSettings.from_env(read_env())
-        except LLMDisabled as error:
-            print(f"Không gọi API: {error}. Điền OPENAI_API_KEY và đặt LLM_ENABLED=true trong .env.",
-                  file=sys.stderr)
+        client = real_client(len(scenarios) * args.repeat, f"{len(scenarios)} tình huống × {args.repeat}",
+                             max_calls=args.max_calls, confirmed=args.yes)
+        if client is None:
             return 2
-        print(f"Sẽ gọi {settings.model} {calls} lần ({len(scenarios)} tình huống × {args.repeat}), "
-              f"timeout {settings.timeout_seconds}s mỗi lần.")
-        if calls > args.max_calls:
-            print(f"Vượt --max-calls={args.max_calls}; dừng.", file=sys.stderr)
-            return 2
-        if not args.yes:
-            print("Thêm --yes để xác nhận gọi API thật.", file=sys.stderr)
-            return 2
-        agent = LLMProposer(OpenAIResponsesClient(settings))
+        agent = LLMProposer(client)
 
     rows = run_comparison(scenarios, agent, args.repeat, before)
     summary = summarize(rows)
