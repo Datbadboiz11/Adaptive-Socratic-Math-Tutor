@@ -615,11 +615,16 @@ Dùng ID giả danh, không yêu cầu tên thật, số điện thoại, địa
 
 | Thành viên | Module chịu trách nhiệm | Phần sản phẩm và evaluation đi kèm |
 |---|---|---|
-| Member 1 | Student Model, BKT, preprocessing, observation builder, mathematical validator/analyzer | API cập nhật state; benchmark KT; đánh giá bước sai/misconception; phối hợp Member 3 cho LLM extraction |
-| Member 2 | Taxonomy/KB registry, Knowledge Graph, RAG, đồng bộ dữ liệu | Pipeline biên soạn/kiểm duyệt; đánh giá retrieval/prerequisite; dữ liệu learning report |
-| Member 3 | AI Agent, pedagogical policy, LangGraph, session orchestration | Student UI, tích hợp API, checkpoint/resume, Docker; ablation policy và đo vận hành |
+| Member 1 | Student Model, BKT, preprocessing, observation builder, mathematical validator/analyzer (luật + SymPy); backend API/DB (session, transaction, idempotency, resume/retry), Docker và triển khai | Benchmark KT (RQ1a), ánh xạ/khởi tạo tham số BKT; đánh giá bước sai/misconception (RQ4); đóng gói demo và hướng dẫn chạy |
+| Member 2 | Taxonomy/KB registry, RAG (embedding, pgvector, truy xuất), đồng bộ registry → PostgreSQL/pgvector; pipeline LLM soạn nháp nội dung + kiểm duyệt; Student UI và learning report | Đánh giá retrieval (RQ3) và bộ truy vấn có nhãn liên quan; dữ liệu learning report |
+| Member 3 | AI Agent, pedagogical policy và policy gate, LangGraph (kể cả checkpoint của graph), sinh và kiểm tra phản hồi (chống lộ đáp án); LLM structured extraction cho Analyzer; Knowledge Graph (Neo4j, đồng bộ graph, backtrack/return) | Bộ tình huống thích ứng và rubric Socratic; ablation (RQ1b, RQ2, RQ5) và đo vận hành latency/cost |
 
-Đây là trách nhiệm đầu mối, không có nghĩa làm độc quyền. Member 2 điều phối nội dung nhưng **cả ba biên soạn khoảng 13–14 concept/người** và review chéo. Member 1 tập trung nền toán/BKT, Member 3 hỗ trợ extraction và giao diện nhập bước; Member 2 hỗ trợ report để tránh dồn toàn bộ sản phẩm cho Member 3.
+Đây là trách nhiệm đầu mối, không có nghĩa làm độc quyền. Member 2 điều phối nội dung nhưng **cả ba biên soạn khoảng 13–14 concept/người** và review chéo. Mỗi thành viên có ít nhất một thành phần AI: Member 1 phụ trách BKT (mô hình xác suất/ML), Member 2 phụ trách RAG và pipeline LLM soạn nội dung, Member 3 phụ trách Agent/LLM. Các điểm giao cần chốt hợp đồng trước khi làm song song:
+
+- Member 3 ↔ Member 1: JSON từ LLM extraction sang validator; đầu vào/đầu ra của Agent trong luồng nộp bài (state đọc vào, `PedagogicalDecision` trả ra).
+- Member 3 ↔ Member 2: định dạng phản hồi Agent (câu hỏi, mức gợi ý, "ví dụ khác") để UI hiển thị; API truy xuất RAG mà Agent gọi.
+
+Phân công này được chia lại ngày 12/11/2026 (chuyển UI sang Member 2; backend/triển khai sang Member 1; Knowledge Graph và LLM extraction sang Member 3). Xem lại sau 1–2 tuần theo giờ công thực tế như mục 23.2.
 
 Mỗi module có người review khác chủ sở hữu. Test đánh giá được phân công theo quy trình mục 12; người đã xem nhãn test không dùng thông tin đó tinh chỉnh thành phần đang được đánh giá.
 
@@ -638,18 +643,18 @@ Các cột thành viên là các luồng chạy song song. Mốc concept tính t
 
 | Tuần | Member 1 | Member 2 | Member 3 | Mốc chung |
 |---:|---|---|---|---|
-| 1 | Audit schema KT, định nghĩa observation/validator | Chốt danh mục 40 và template nội dung | Skeleton API/UI/LangGraph, schema state | RQ, tiêu chí, phân công; liên hệ phản biện/pilot |
-| 2 | Preprocess dataset chính, BKT baseline; checker các dạng đầu | Graph/KB mẫu, relevance/annotation guideline | Policy luật đầu tiên; thử model, token và latency | Pilot dữ liệu/rubric; chốt split và model; đo năng suất biên soạn |
-| 3 | Online BKT, idempotency, analyzer v1 | RAG + KG nối API; review nội dung đợt 1 | Nối loop thật, session và UI nhập bước | Luồng chạy trên một số concept; fixtures và log liên thông |
-| 4 | Validator/analyzer cho 8–10 concept đại diện | 8–10 concept hoàn chỉnh thuộc ba mảng; truy xuất đã lọc | Agent chọn action/tool, checkpoint/resume và fallback | **End-to-end v1**: đủ module, đa lượt, lưu giữa phiên |
-| 5 | Mở rộng checker/detector, KT dev evaluation | Nội dung/graph/retrieval cho khoảng 20 concept | Backtrack/return, report cơ bản; cấu hình ablation | Khoảng 20 concept đạt checklist; review lỗi hệ thống |
-| 6 | Độ phủ khoảng 30 concept; pooled params/sensitivity | Nội dung và test cho khoảng 30 concept | Kiểm thử tình huống, rubric dev, ổn định UI | Khoảng 30 concept, baseline/ablation chạy trên dev |
+| 1 | Audit schema KT, định nghĩa observation/validator; skeleton API/DB | Chốt danh mục 40 và template nội dung; skeleton UI | Skeleton LangGraph, schema state/decision | RQ, tiêu chí, phân công; liên hệ phản biện/pilot |
+| 2 | Preprocess dataset chính, BKT baseline; checker các dạng đầu | KB mẫu, relevance/annotation guideline; pipeline LLM soạn nháp | Policy luật đầu tiên; thử model, token và latency; graph mẫu | Pilot dữ liệu/rubric; chốt split và model; đo năng suất biên soạn |
+| 3 | Online BKT, idempotency, session API, analyzer v1 | RAG nối API; UI nhập bước; review nội dung đợt 1 | Nối loop thật; LLM extraction v1; KG nối Agent | Luồng chạy trên một số concept; fixtures và log liên thông |
+| 4 | Validator/analyzer cho 8–10 concept đại diện; resume/retry phía API | 8–10 concept hoàn chỉnh thuộc ba mảng; truy xuất đã lọc | Agent chọn action/tool, checkpoint LangGraph và fallback | **End-to-end v1**: đủ module, đa lượt, lưu giữa phiên |
+| 5 | Mở rộng checker/detector, KT dev evaluation | Nội dung/retrieval cho khoảng 20 concept; report cơ bản trên UI | Backtrack/return qua KG; graph khoảng 20 concept; cấu hình ablation | Khoảng 20 concept đạt checklist; review lỗi hệ thống |
+| 6 | Độ phủ khoảng 30 concept; pooled params/sensitivity | Nội dung và test cho khoảng 30 concept; ổn định UI | Kiểm thử tình huống, rubric dev | Khoảng 30 concept, baseline/ablation chạy trên dev |
 | 7 | Hoàn tất analyzer/BKT cho danh mục đã chốt | Hoàn tất 40 concept và kiểm duyệt dữ liệu | Hoàn tất full system và toàn bộ cấu hình so sánh | **Đủ 40 concept; khóa test, model, prompt, KB và ngưỡng** |
-| 8 | Benchmark KT và detector chính thức | Retrieval/KG evaluation, chấm kết quả ẩn cấu hình | Full/ablation batch, log latency/cost | Kết quả sơ bộ và kiểm tra chất lượng phép đo |
+| 8 | Benchmark KT và detector chính thức | Retrieval evaluation, chấm kết quả ẩn cấu hình | Full/ablation batch, log latency/cost; KG evaluation | Kết quả sơ bộ và kiểm tra chất lượng phép đo |
 | 9 | Phân tích lỗi theo skill/nhãn; kiểm tra leakage | Chấm rubric/hòa giải, báo cáo độ phủ | Chạy ổn định nhiều lần trên subset; hỗ trợ pilot | Hoàn tất thí nghiệm chính và pilot nếu tuyển được |
-| 10 | Tổng hợp thống kê và hạn chế tham số | Báo cáo dữ liệu/annotation/graph | Hoàn thiện phân tích ablation và vận hành | Kết quả cuối, khoảng tin cậy, bản thảo báo cáo đầy đủ |
-| 11 | Sửa lỗi cần thiết, regression checks | Rà nội dung và tài liệu bàn giao | Ổn định triển khai, diễn tập demo | Release candidate; thay đổi ảnh hưởng kết quả phải chạy lại phù hợp |
-| 12 | Hoàn thiện phần phương pháp/kết quả | Hoàn thiện dữ liệu/phụ lục/tài liệu | Đóng gói demo, cấu hình và hướng dẫn chạy | Báo cáo, slides, demo và artifacts tái lập |
+| 10 | Tổng hợp thống kê và hạn chế tham số | Báo cáo dữ liệu/annotation/retrieval | Hoàn thiện phân tích ablation, vận hành và graph | Kết quả cuối, khoảng tin cậy, bản thảo báo cáo đầy đủ |
+| 11 | Sửa lỗi cần thiết, regression checks; ổn định triển khai | Rà nội dung, UI và tài liệu bàn giao | Ổn định Agent/fallback, diễn tập demo | Release candidate; thay đổi ảnh hưởng kết quả phải chạy lại phù hợp |
+| 12 | Hoàn thiện phần phương pháp/kết quả; đóng gói demo, cấu hình và hướng dẫn chạy | Hoàn thiện dữ liệu/phụ lục/tài liệu | Hoàn thiện phần Agent/ablation; kịch bản demo Agent | Báo cáo, slides, demo và artifacts tái lập |
 
 Ba người cùng biên soạn, review và gán nhãn mỗi tuần 2–7 ngoài nhiệm vụ đầu mối. Không để phần annotation đợi tới tuần 8.
 

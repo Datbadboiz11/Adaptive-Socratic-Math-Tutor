@@ -94,9 +94,9 @@ Stack ban đầu: Next.js/React, FastAPI, Pydantic, LangGraph, SymPy + luật th
 
 | Đầu mối | Trách nhiệm |
 |---|---|
-| Member 1 | Validator/analyzer, observation builder, Student Model/BKT và đánh giá liên quan |
-| Member 2 | Taxonomy/KB, graph, retrieval, đồng bộ dữ liệu và kiểm duyệt nội dung |
-| Member 3 | Agent/policy/LangGraph, API/UI, phiên học, tích hợp và ablation |
+| Member 1 | Validator/analyzer, observation builder, Student Model/BKT và đánh giá liên quan; backend API/DB và triển khai |
+| Member 2 | Taxonomy/KB, RAG/retrieval, đồng bộ dữ liệu, LLM soạn nháp và kiểm duyệt nội dung; Student UI và report |
+| Member 3 | Agent/policy/LangGraph, LLM extraction, Knowledge Graph và backtrack; tình huống đánh giá, rubric và ablation |
 
 Cả ba cùng biên soạn khoảng 13–14 concept/người, review chéo và gán nhãn theo quy trình tách test khỏi tinh chỉnh. Đo giờ công từ pilot; dành 15–20% thời gian cho tích hợp/sửa lỗi và viết báo cáo từ tuần 2.
 
