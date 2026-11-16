@@ -5,7 +5,7 @@ KHÔNG phải triển khai thật:
 - stub_observe thay observation builder + BKT của Member 1 (tham số mặc định, không fit).
 - StubTools thay RAG (Member 2) và problem bank. KG là bản thật (``kg_tool.KGTool``): đọc registry,
   dùng cả cạnh nháp vì registry chưa có cạnh nào được duyệt.
-- TemplateGenerator/AnswerLeakVerifier là bản tối thiểu của bước sinh/kiểm tra phản hồi.
+- demo_answer_key thay phần đáp án của problem bank (Member 2): đáp án các bài mẫu, chỉ verifier đọc.
 - unverified_probe thay bước xác minh câu trả lời cho câu hỏi kiểm tra prerequisite (chờ LLM
   extraction): luôn trả "unverified", nên hiện chưa câu trả lời nào được tính là bằng chứng.
 Mọi stub có cùng chữ ký với bản thật dự kiến nên có thể thay từng phần. Agent giả nằm ở
@@ -18,13 +18,11 @@ import re
 from uuid import uuid4
 
 from app.agent.decision import (
-    AssessmentView, DecisionConfig, DecisionIntent, DecisionProposal, ExperimentConfiguration,
-    ObservationStatus, SkillState, StudentState,
+    AssessmentView, DecisionConfig, ExperimentConfiguration, ObservationStatus, SkillState, StudentState,
 )
 from app.agent.kg_tool import KGTool
-from app.agent.tools import ProblemRef, RetrievedContent, TurnContext
-
-I = DecisionIntent
+from app.agent.tools import GraphEdge, ProblemRef, RetrievedContent, TurnContext
+from app.generation.verifier import AnswerKey
 
 
 # --------------------------------------------------------------------------- ngân hàng bài mẫu
@@ -186,6 +184,16 @@ def unverified_probe(state: StudentState, probe, message: str) -> str:
 
 # --------------------------------------------------------------------------- tools: KG, RAG, problem bank
 
+def retrieval_skills(state: StudentState, edges: list[GraphEdge]) -> set[str]:
+    """Skill mà RAG lấy nội dung: skill đang học, skill của lỗi vừa chấm, và prerequisite trực tiếp do
+    KG trả về. Không có cạnh thì không có nhóm cuối: No-KG không giữ quan hệ prerequisite ở nơi khác
+    (plan §18.2)."""
+    skills = {state.current.target_skill_id}
+    if state.latest_assessment and state.latest_assessment.primary_skill_id:
+        skills.add(state.latest_assessment.primary_skill_id)
+    return skills | {sk for e in edges if e.depth == 1 for sk in e.source_skill_ids}
+
+
 @dataclass
 class StubTools:
     """KG thật + RAG và problem bank giả. ``kg`` mặc định đọc registry và dùng cả cạnh nháp
@@ -207,10 +215,7 @@ class StubTools:
         edges = found.edges if found else []
         if rag:
             calls += 1
-            skills = {state.current.target_skill_id}
-            if state.latest_assessment and state.latest_assessment.primary_skill_id:
-                skills.add(state.latest_assessment.primary_skill_id)
-            skills |= {sk for e in edges if e.depth == 1 for sk in e.source_skill_ids}
+            skills = retrieval_skills(state, edges)
             retrieved = [c for c in self.content if c.skill_id in skills][:10]
         calls += 1
         problems = [p.ref for p in self.problems.values()][:20]
@@ -223,73 +228,9 @@ class StubTools:
                            tool_errors=found.errors if found else [], kg_enabled=kg, rag_enabled=rag)
 
 
-# --------------------------------------------------------------------------- generator + verifier
+# --------------------------------------------------------------------------- đáp án cho verifier (problem bank)
 
-TEMPLATES = {
-    I.RESOLVE_INPUT: "Mình chưa đọc được bài làm này. Em viết mỗi bước trên một dòng, ví dụ: 2x + 1 = 7 nhé.",
-    I.RESTATE_TASK: "Mình cùng đọc lại đề nhé: {prompt} Đề bài đang yêu cầu em tìm gì?",
-    I.ELICIT_REASONING: "Em giải thích giúp mình vì sao em viết được bước{step} như vậy không?",
-    I.DISTINGUISH_HYPOTHESIS: "Ở bước{step}, em đã biến đổi phần nào của biểu thức? "
-                              "Em kiểm tra xem phép biến đổi đó đã áp dụng cho đủ các phần chưa nhé.",
-    I.PROBE_PREREQUISITE: "Trước khi làm tiếp, em thử trả lời câu này nhé: {content}",
-    I.PROMPT_SELF_CHECK: "Em thử thay kết quả vào đề bài để tự kiểm tra lại nhé.",
-    I.LOCATE_ERROR: "Bài làm có chỗ cần xem lại ở bước{step}. {content}",
-    I.RECALL_RULE: "{content}",
-    I.TARGET_MISCONCEPTION: "{content}",
-    I.DECOMPOSE_STEP: "Mình chia nhỏ bước này nhé. {content} Giờ em làm lại riêng bước{step} thôi.",
-    I.ANALOGOUS_EXAMPLE: "Mình xem một ví dụ khác trước nhé. {content} Giờ em thử áp dụng vào bài của mình.",
-    I.EXPLAIN_CONCEPT: "{content} Em thử làm lại bài của mình theo cách này nhé.",
-    I.REVIEW_PREREQUISITE: "Mình cùng ôn một kiến thức nền trước, xong sẽ quay lại bài cũ. Bài ôn: {new_prompt}",
-    I.INDEPENDENT_CHECK: "Em sửa được rồi! Giờ em tự làm bài mới này nhé, không có gợi ý: {new_prompt}",
-    I.CONTINUE_PRACTICE: "Đúng rồi! Em làm tiếp bài này nhé: {new_prompt}",
-    I.ADVANCE_DIFFICULTY: "Em làm tốt rồi. Mình thử một bài khó hơn nhé: {new_prompt}",
-    I.ADVANCE_CONCEPT: "Em đã sẵn sàng cho phần tiếp theo. Bài mới: {new_prompt}",
-    I.RETURN_TO_PARENT: "Tốt lắm! Giờ mình quay lại bài lúc nãy nhé: {new_prompt}",
-    I.SWITCH_PROBLEM: "Mình đổi sang một bài khác để thử cách tiếp cận mới nhé: {new_prompt}",
-    I.STUDENT_REQUEST: "Mình tạm dừng ở đây nhé. Lần sau em có thể tiếp tục từ bài đang làm.",
-    I.SESSION_GOAL_MET: "Em đã hoàn thành mục tiêu của buổi học hôm nay. Hẹn gặp lại!",
-    I.BUDGET_EXHAUSTED: "Buổi học hôm nay đến đây là hết thời lượng. Em có thể tiếp tục vào lần sau.",
-    I.STUCK_LIMIT: "Mình đã thử nhiều cách cho bước này rồi. Em nghỉ một chút rồi quay lại sau nhé.",
-    I.CONTENT_EXHAUSTED: "Em đã làm hết bài luyện của phần này trong buổi hôm nay. Mình tạm dừng, lần sau học tiếp nhé.",
-    I.SYSTEM_FALLBACK: "Hệ thống đang trục trặc nên mình tạm dừng lượt này. Bài làm của em đã được lưu.",
-}
-GENERIC_CONTENT = {
-    I.RECALL_RULE: "Em nhớ lại quy tắc của dạng bài này rồi áp dụng vào bước đang làm nhé.",
-    I.TARGET_MISCONCEPTION: "Em thử giải thích lại quy tắc em đã dùng ở bước này bằng lời của mình nhé.",
-    I.PROBE_PREREQUISITE: "em nhắc lại quy tắc nền của dạng bài này giúp mình nhé.",
-}
-
-
-@dataclass
-class TemplateGenerator:
-    """Sinh câu từ template + nội dung đã truy xuất. Không nhận đáp án/lời giải của bài."""
-
-    prompts: dict[str, str] = field(default_factory=lambda: {k: v.prompt for k, v in DEMO_PROBLEMS.items()})
-
-    def __call__(self, state: StudentState, p: DecisionProposal, ctx: TurnContext) -> tuple[str, str]:
-        content = " ".join(c.text for cid in p.content_ids if (c := ctx.content(cid)))
-        a = state.latest_assessment
-        values = {
-            "content": content or GENERIC_CONTENT.get(p.intent, ""),
-            "step": f" {a.first_error_step}" if a and a.first_error_step else " vừa rồi",
-            "prompt": self.prompts.get(state.current.problem_id, ""),
-            "new_prompt": self.prompts.get(p.problem_id or "", ""),
-        }
-        return " ".join(TEMPLATES[p.intent].format(**values).split()), "template"
-
-    def safe(self, p: DecisionProposal) -> str:
-        """Bản dự phòng không chèn nội dung truy xuất hay đề bài."""
-        return " ".join(TEMPLATES[p.intent].format(content=GENERIC_CONTENT.get(p.intent, ""), step=" vừa rồi",
-                                                   prompt="", new_prompt="").split())
-
-
-class AnswerLeakVerifier:
-    """Chặn phản hồi chứa đáp án cuối của bài đang làm hoặc bài vừa giao. Chỉ khớp chuỗi;
-    chưa kiểm tra tính đúng toán của câu chữ."""
-
-    def __call__(self, state: StudentState, p: DecisionProposal, message: str) -> list[str]:
-        text = normalize(message)
-        problems = {state.current.problem_id, p.problem_id} - {None}
-        leaks = [form for pid in problems if pid in DEMO_PROBLEMS for form in DEMO_PROBLEMS[pid].answer_forms
-                 if form in text]
-        return [f"answer_leak:{form}" for form in leaks]
+def demo_answer_key(problem_id: str) -> AnswerKey | None:
+    """Đáp án của bài mẫu, chỉ verifier được đọc (plan §18.2). Bản thật lấy từ problem bank (Member 2)."""
+    problem = DEMO_PROBLEMS.get(problem_id)
+    return AnswerKey(problem_id, problem.answer_forms) if problem else None

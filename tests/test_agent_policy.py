@@ -214,6 +214,21 @@ def test_g05_two_level_probe_needs_the_whole_chain():
     assert has(violations(state, ctx, edge_ids=["PRE-A02-E02", "PRE-N01-A02", "PRE-A01-A03"], **probe), "G05")
 
 
+def test_g21_no_prerequisite_probe_after_a_correct_answer():
+    # Lượt chạy thật trên dev: Agent hỏi kiểm tra prerequisite ngay sau khi học sinh làm đúng (SC-10).
+    probe = dict(action="diagnose", intent="probe_prerequisite", hint_level=0, edge_ids=["PRE-A02-E02"])
+    sc, state, ctx = scenario("SC-10")
+    assert state.latest_assessment.assessment_status == "verified_correct"
+    assert violations(state, ctx, **probe) == ["G21_no_probe_when_correct"]
+    record = resolve_decision(state, ctx, ProposalOutcome(proposal(**probe), DecisionSource.AGENT),
+                              CONFIG.model_copy(update={"configuration": "full"}),
+                              decision_id=uuid4(), created_at=NOW)
+    assert record.fallback_reason == "gate_rejected" and record.final.action in sc["acceptable_actions"]
+    # Bài làm sai thì vẫn được hỏi kiểm tra.
+    state, ctx = base()
+    assert not has(violations(state, ctx, **probe), "G21")
+
+
 def test_g08_backtrack_moves_one_level_per_step():
     state, ctx = base()
     codes = violations(state, ctx, action="backtrack", intent="review_prerequisite", hint_level=0,

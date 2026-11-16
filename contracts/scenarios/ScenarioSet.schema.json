@@ -1,0 +1,1398 @@
+{
+  "$defs": {
+    "AssessmentView": {
+      "additionalProperties": false,
+      "description": "Phần Agent cần từ Assessment của Member 1. Không chứa đáp án hay lời giải mẫu.",
+      "properties": {
+        "assessment_id": {
+          "format": "uuid",
+          "title": "Assessment Id",
+          "type": "string"
+        },
+        "assessment_status": {
+          "enum": [
+            "verified_correct",
+            "verified_incorrect",
+            "unverified",
+            "needs_clarification"
+          ],
+          "title": "Assessment Status",
+          "type": "string"
+        },
+        "first_error_step": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "First Error Step"
+        },
+        "primary_skill_id": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Skill Id"
+        },
+        "error_family": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Family"
+        },
+        "misconception_candidate": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Misconception Candidate"
+        },
+        "diagnosis_status": {
+          "default": "unknown",
+          "enum": [
+            "suspected",
+            "supported",
+            "unknown"
+          ],
+          "title": "Diagnosis Status",
+          "type": "string"
+        },
+        "final_answer_only": {
+          "default": false,
+          "title": "Final Answer Only",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "assessment_status"
+      ],
+      "title": "AssessmentView",
+      "type": "object"
+    },
+    "BKTParameters": {
+      "additionalProperties": false,
+      "properties": {
+        "parameter_version": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Parameter Version",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "prior": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Prior",
+          "type": "number"
+        },
+        "learn": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Learn",
+          "type": "number"
+        },
+        "guess": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Guess",
+          "type": "number"
+        },
+        "slip": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Slip",
+          "type": "number"
+        },
+        "forget": {
+          "const": 0,
+          "default": 0,
+          "title": "Forget",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "parameter_version",
+        "source",
+        "prior",
+        "learn",
+        "guess",
+        "slip"
+      ],
+      "title": "BKTParameters",
+      "type": "object"
+    },
+    "Budget": {
+      "additionalProperties": false,
+      "properties": {
+        "tool_calls_remaining": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Tool Calls Remaining",
+          "type": "integer"
+        },
+        "regenerations_remaining": {
+          "default": 1,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Regenerations Remaining",
+          "type": "integer"
+        }
+      },
+      "title": "Budget",
+      "type": "object"
+    },
+    "BuiltScenario": {
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "split_group_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Split Group Id",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "source_reference": {
+          "title": "Source Reference",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "labels": {
+          "$ref": "#/$defs/StrategyLabels"
+        },
+        "state": {
+          "$ref": "#/$defs/StudentState"
+        },
+        "context": {
+          "$ref": "#/$defs/TurnContext"
+        },
+        "replay": {
+          "items": {
+            "$ref": "#/$defs/ReplayRecord"
+          },
+          "title": "Replay",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "title",
+        "split_group_id",
+        "source",
+        "source_reference",
+        "tags",
+        "labels",
+        "state",
+        "context",
+        "replay"
+      ],
+      "title": "BuiltScenario",
+      "type": "object"
+    },
+    "CurrentTask": {
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "problem_version": {
+          "title": "Problem Version",
+          "type": "string"
+        },
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "template_family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Template Family Id",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "initial",
+            "near_practice",
+            "cross_family",
+            "repeat",
+            "prerequisite"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "difficulty": {
+          "anyOf": [
+            {
+              "maximum": 5,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Difficulty"
+        }
+      },
+      "required": [
+        "problem_id",
+        "problem_version",
+        "opportunity_id",
+        "concept_id",
+        "target_skill_id",
+        "template_family_id",
+        "relation"
+      ],
+      "title": "CurrentTask",
+      "type": "object"
+    },
+    "GraphEdge": {
+      "additionalProperties": false,
+      "description": "Cạnh PREREQUISITE_OF do KG trả về: concept nguồn cần học trước concept đích.\n\n``depth`` = 1 khi đích là concept đang học, = 2 khi đích là một prerequisite trực tiếp của\nnó (PRD FR08-AC2: tối đa 2 tầng). ``review_status`` cho biết cạnh đã được người duyệt chưa;\ncạnh nháp chỉ xuất hiện khi tool được bật chế độ dev một cách tường minh.",
+      "properties": {
+        "edge_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Edge Id",
+          "type": "string"
+        },
+        "source_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Concept Id",
+          "type": "string"
+        },
+        "target_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Concept Id",
+          "type": "string"
+        },
+        "source_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Skill Ids",
+          "type": "array"
+        },
+        "relation": {
+          "const": "PREREQUISITE_OF",
+          "default": "PREREQUISITE_OF",
+          "title": "Relation",
+          "type": "string"
+        },
+        "depth": {
+          "default": 1,
+          "enum": [
+            1,
+            2
+          ],
+          "title": "Depth",
+          "type": "integer"
+        },
+        "review_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "edge_id",
+        "source_concept_id",
+        "target_concept_id",
+        "source_skill_ids"
+      ],
+      "title": "GraphEdge",
+      "type": "object"
+    },
+    "Hypothesis": {
+      "additionalProperties": false,
+      "description": "Có ID riêng để ``EvidenceRef(kind=\"hypothesis\")`` trỏ đúng một giả thuyết, kể cả khi\ncùng misconception xuất hiện ở hai skill.",
+      "properties": {
+        "hypothesis_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Hypothesis Id",
+          "type": "string"
+        },
+        "misconception_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Misconception Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "suspected",
+            "supported",
+            "ruled_out"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "hypothesis_id",
+        "misconception_id",
+        "skill_id",
+        "status",
+        "evidence_ids"
+      ],
+      "title": "Hypothesis",
+      "type": "object"
+    },
+    "NextConcept": {
+      "additionalProperties": false,
+      "description": "Concept có thể học tiếp: nhận concept đang học làm prerequisite (cạnh ``edge_id``).\n\n``other_prerequisite_skill_ids`` là skill của các prerequisite trực tiếp khác của concept\nđó, để người chọn biết học sinh còn cần gì trước khi chuyển.",
+      "properties": {
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Skill Ids",
+          "type": "array"
+        },
+        "edge_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Edge Id",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "other_prerequisite_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Other Prerequisite Skill Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "concept_id",
+        "skill_ids",
+        "edge_id"
+      ],
+      "title": "NextConcept",
+      "type": "object"
+    },
+    "ObservationStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "reason": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Reason",
+          "type": "string"
+        },
+        "observation_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observation Id"
+        }
+      },
+      "required": [
+        "eligible",
+        "reason"
+      ],
+      "title": "ObservationStatus",
+      "type": "object"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    },
+    "PrerequisiteProbe": {
+      "additionalProperties": false,
+      "description": "Một câu hỏi kiểm tra prerequisite đã hỏi trên bài hiện tại, gắn với lượt trả lời và kết\nquả xác minh câu trả lời đó (PRD FR08-AC3).\n\n- ``pending``: chưa có lượt trả lời (xin gợi ý, tạm dừng không tính là trả lời).\n- ``unverified``: có lượt sau đó nhưng không xác minh được, hoặc học sinh nộp bài thay vì trả lời.\n- ``demonstrated`` / ``not_demonstrated``: câu trả lời đã được xác minh.\nChỉ ``not_demonstrated`` là bằng chứng học sinh thiếu skill nền; việc đã hỏi thì không.",
+      "properties": {
+        "decision_id": {
+          "format": "uuid",
+          "title": "Decision Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "unverified",
+            "demonstrated",
+            "not_demonstrated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "answer_turn_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Answer Turn Id"
+        }
+      },
+      "required": [
+        "decision_id",
+        "skill_id"
+      ],
+      "title": "PrerequisiteProbe",
+      "type": "object"
+    },
+    "ProblemRef": {
+      "additionalProperties": false,
+      "description": "Bài ứng viên lấy từ problem bank. Không có đáp án.",
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "problem_version": {
+          "title": "Problem Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "template_family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Template Family Id",
+          "type": "string"
+        },
+        "difficulty": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Difficulty",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "problem_id",
+        "problem_version",
+        "concept_id",
+        "target_skill_id",
+        "template_family_id",
+        "difficulty"
+      ],
+      "title": "ProblemRef",
+      "type": "object"
+    },
+    "ProblemSource": {
+      "additionalProperties": false,
+      "properties": {
+        "problem": {
+          "$ref": "#/$defs/ProblemRef"
+        },
+        "original_problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Original Problem Id",
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Prompt",
+          "type": "string"
+        }
+      },
+      "required": [
+        "problem",
+        "original_problem_id",
+        "prompt"
+      ],
+      "title": "ProblemSource",
+      "type": "object"
+    },
+    "Readiness": {
+      "additionalProperties": false,
+      "description": "Tính bằng node xác định (không phải Agent) theo điều kiện dừng plan §10.",
+      "properties": {
+        "ready_to_advance": {
+          "title": "Ready To Advance",
+          "type": "boolean"
+        },
+        "criteria_version": {
+          "title": "Criteria Version",
+          "type": "string"
+        },
+        "unmet": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Unmet",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ready_to_advance",
+        "criteria_version"
+      ],
+      "title": "Readiness",
+      "type": "object"
+    },
+    "ReplayRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "turn_id": {
+          "format": "uuid",
+          "title": "Turn Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "reason": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Reason",
+          "type": "string"
+        },
+        "prediction_before": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prediction Before"
+        },
+        "mastery_before": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Mastery Before",
+          "type": "number"
+        },
+        "mastery_after": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Mastery After",
+          "type": "number"
+        }
+      },
+      "required": [
+        "turn_id",
+        "skill_id",
+        "eligible",
+        "reason",
+        "mastery_before",
+        "mastery_after"
+      ],
+      "title": "ReplayRecord",
+      "type": "object"
+    },
+    "RetrievedContent": {
+      "additionalProperties": false,
+      "description": "Một mục nội dung đã duyệt được đưa vào context.\n\n``disclosure_level`` là mức hint thấp nhất được phép hiển thị nội dung này: nội dung có\nmức tiết lộ 4 chỉ dùng được trong phản hồi mức 4. Không bao giờ chứa lời giải bài đang làm.",
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "content_type": {
+          "enum": [
+            "question",
+            "hint",
+            "explanation",
+            "example",
+            "template"
+          ],
+          "title": "Content Type",
+          "type": "string"
+        },
+        "disclosure_level": {
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Disclosure Level",
+          "type": "integer"
+        },
+        "text": {
+          "maxLength": 1200,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "skill_id",
+        "content_type",
+        "disclosure_level",
+        "text"
+      ],
+      "title": "RetrievedContent",
+      "type": "object"
+    },
+    "ReturnFrame": {
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "hint_level": {
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "problem_id",
+        "opportunity_id",
+        "concept_id",
+        "skill_id",
+        "hint_level"
+      ],
+      "title": "ReturnFrame",
+      "type": "object"
+    },
+    "SkillState": {
+      "additionalProperties": false,
+      "description": "``p_mastery`` để trống trong cấu hình No-BKT/Heuristic hoặc khi chưa có tham số.\n``recent_independent`` là kết quả của tối đa 5 observation độc lập gần nhất, cũ trước mới sau\n(dùng cho cấu hình Heuristic, plan §18.1).",
+      "properties": {
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "p_mastery": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "P Mastery"
+        },
+        "independent_observations": {
+          "minimum": 0,
+          "title": "Independent Observations",
+          "type": "integer"
+        },
+        "recent_independent": {
+          "items": {
+            "type": "boolean"
+          },
+          "maxItems": 5,
+          "title": "Recent Independent",
+          "type": "array"
+        },
+        "assisted_correct": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Assisted Correct",
+          "type": "integer"
+        },
+        "parameter_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parameter Version"
+        }
+      },
+      "required": [
+        "skill_id",
+        "independent_observations"
+      ],
+      "title": "SkillState",
+      "type": "object"
+    },
+    "StrategyLabels": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptable_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "minItems": 1,
+          "title": "Acceptable Actions",
+          "type": "array"
+        },
+        "forbidden_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "title": "Forbidden Actions",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "human_approved"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "author": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Author",
+          "type": "string"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "acceptable_actions",
+        "author",
+        "rationale"
+      ],
+      "title": "StrategyLabels",
+      "type": "object"
+    },
+    "StudentState": {
+      "additionalProperties": false,
+      "description": "Ảnh chụp state mà node Agent được đọc trong một lượt (PRD FR11-AC1, §6.4).\n\n``latest_submission`` và ``latest_student_message`` là dữ liệu người dùng, không phải chỉ dẫn\ncho Agent. Hai trường tách riêng: bài làm là đúng các dòng analyzer đã chấm ra\n``latest_assessment``; lời nhắn là chữ tự do của lượt này, có thể nói khác bài làm.",
+      "properties": {
+        "contract_version": {
+          "const": "agent-contract-0.1.0",
+          "default": "agent-contract-0.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "student_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Student Id",
+          "type": "string"
+        },
+        "session_id": {
+          "format": "uuid",
+          "title": "Session Id",
+          "type": "string"
+        },
+        "state_version": {
+          "minimum": 1,
+          "title": "State Version",
+          "type": "integer"
+        },
+        "turn_id": {
+          "format": "uuid",
+          "title": "Turn Id",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "paused",
+            "completed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "trigger": {
+          "enum": [
+            "submit",
+            "request_hint",
+            "message",
+            "pause",
+            "resume"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        },
+        "latest_student_message": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latest Student Message"
+        },
+        "latest_submission": {
+          "items": {
+            "maxLength": 160,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Latest Submission",
+          "type": "array"
+        },
+        "mastery_view": {
+          "default": "bkt",
+          "enum": [
+            "bkt",
+            "recent_ratio",
+            "none"
+          ],
+          "title": "Mastery View",
+          "type": "string"
+        },
+        "current": {
+          "$ref": "#/$defs/CurrentTask"
+        },
+        "latest_assessment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssessmentView"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "observation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObservationStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/$defs/SkillState"
+          },
+          "title": "Skills",
+          "type": "array"
+        },
+        "hypotheses": {
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "support": {
+          "$ref": "#/$defs/SupportState"
+        },
+        "return_stack": {
+          "items": {
+            "$ref": "#/$defs/ReturnFrame"
+          },
+          "maxItems": 2,
+          "title": "Return Stack",
+          "type": "array"
+        },
+        "visited_concept_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Visited Concept Ids",
+          "type": "array"
+        },
+        "attempted_problem_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Attempted Problem Ids",
+          "type": "array"
+        },
+        "probes": {
+          "items": {
+            "$ref": "#/$defs/PrerequisiteProbe"
+          },
+          "maxItems": 6,
+          "title": "Probes",
+          "type": "array"
+        },
+        "recent_turns": {
+          "items": {
+            "$ref": "#/$defs/TurnSummary"
+          },
+          "maxItems": 12,
+          "title": "Recent Turns",
+          "type": "array"
+        },
+        "budget": {
+          "$ref": "#/$defs/Budget"
+        },
+        "readiness": {
+          "$ref": "#/$defs/Readiness"
+        }
+      },
+      "required": [
+        "student_id",
+        "session_id",
+        "state_version",
+        "turn_id",
+        "request_id",
+        "status",
+        "trigger",
+        "current",
+        "readiness"
+      ],
+      "title": "StudentState",
+      "type": "object"
+    },
+    "SupportState": {
+      "additionalProperties": false,
+      "properties": {
+        "hint_level": {
+          "default": 0,
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        },
+        "support_turns_on_node": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Support Turns On Node",
+          "type": "integer"
+        },
+        "no_progress_turns": {
+          "default": 0,
+          "minimum": 0,
+          "title": "No Progress Turns",
+          "type": "integer"
+        }
+      },
+      "title": "SupportState",
+      "type": "object"
+    },
+    "TurnContext": {
+      "additionalProperties": false,
+      "properties": {
+        "current_problem_prompt": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Current Problem Prompt"
+        },
+        "retrieved": {
+          "items": {
+            "$ref": "#/$defs/RetrievedContent"
+          },
+          "maxItems": 10,
+          "title": "Retrieved",
+          "type": "array"
+        },
+        "edges": {
+          "items": {
+            "$ref": "#/$defs/GraphEdge"
+          },
+          "maxItems": 24,
+          "title": "Edges",
+          "type": "array"
+        },
+        "next_concepts": {
+          "items": {
+            "$ref": "#/$defs/NextConcept"
+          },
+          "maxItems": 12,
+          "title": "Next Concepts",
+          "type": "array"
+        },
+        "problems": {
+          "items": {
+            "$ref": "#/$defs/ProblemRef"
+          },
+          "maxItems": 20,
+          "title": "Problems",
+          "type": "array"
+        },
+        "tool_calls_used": {
+          "default": 0,
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Tool Calls Used",
+          "type": "integer"
+        },
+        "kg_enabled": {
+          "default": true,
+          "title": "Kg Enabled",
+          "type": "boolean"
+        },
+        "rag_enabled": {
+          "default": true,
+          "title": "Rag Enabled",
+          "type": "boolean"
+        },
+        "kg_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "neo4j",
+                "registry_file"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kg Source"
+        },
+        "graph_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Graph Version"
+        },
+        "tool_errors": {
+          "items": {
+            "maxLength": 120,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "title": "Tool Errors",
+          "type": "array"
+        }
+      },
+      "title": "TurnContext",
+      "type": "object"
+    },
+    "TurnSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "turn_id": {
+          "format": "uuid",
+          "title": "Turn Id",
+          "type": "string"
+        },
+        "actor": {
+          "enum": [
+            "student",
+            "tutor"
+          ],
+          "title": "Actor",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "submit",
+            "request_hint",
+            "message",
+            "pause",
+            "resume",
+            "decision"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PedagogicalAction"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "assessment_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "verified_correct",
+                "verified_incorrect",
+                "unverified",
+                "needs_clarification"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessment Status"
+        },
+        "hint_level": {
+          "anyOf": [
+            {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hint Level"
+        }
+      },
+      "required": [
+        "turn_id",
+        "actor",
+        "kind"
+      ],
+      "title": "TurnSummary",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "adaptive-scenario-set-2.0.0",
+      "default": "adaptive-scenario-set-2.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "dataset_version": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Dataset Version",
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "authoring",
+        "dev",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "replay_version": {
+      "title": "Replay Version",
+      "type": "string"
+    },
+    "parameters": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$": {
+          "$ref": "#/$defs/BKTParameters"
+        }
+      },
+      "title": "Parameters",
+      "type": "object"
+    },
+    "problems": {
+      "items": {
+        "$ref": "#/$defs/ProblemSource"
+      },
+      "title": "Problems",
+      "type": "array"
+    },
+    "scenarios": {
+      "items": {
+        "$ref": "#/$defs/BuiltScenario"
+      },
+      "title": "Scenarios",
+      "type": "array"
+    }
+  },
+  "required": [
+    "dataset_version",
+    "split",
+    "replay_version",
+    "parameters",
+    "problems",
+    "scenarios"
+  ],
+  "title": "ScenarioSet",
+  "type": "object"
+}

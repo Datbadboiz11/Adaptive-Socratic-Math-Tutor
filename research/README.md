@@ -15,8 +15,27 @@ python -m research.bkt.benchmark
 ```powershell
 python research/agent/compare_proposers.py --agent fake        # Agent LLM so với Rule-policy
 python research/extraction/evaluate_extraction.py --llm fake   # LLM extraction
+python research/generation/evaluate_generation.py --llm fake   # verifier và LLM viết câu phản hồi
 ```
 
-Phần dùng chung của các script có gọi LLM (đọc `.env`, xác nhận trước khi gọi, thống kê token/chi phí) nằm ở `llm_support.py`. Client, kiểu usage và client giả dùng chung nằm ở `backend/app/llm/`. Thiết kế và giới hạn: [Agent LLM](../docs/implementation/agent/llm-agent.v1.md), [LLM extraction](../docs/implementation/extraction/llm-extraction.v1.md).
+Ablation và chấm rubric Socratic ẩn cấu hình:
+
+```powershell
+python research/evaluation/run_ablation.py --out data/ablation/dev-fake   # các cấu hình plan §18.1 qua LangGraph; mặc định LLM giả
+python research/evaluation/run_dev_repeat.py --out data/ablation/dev-repeat-fake   # hai lần lặp, chia phần và gộp có kiểm tra; mặc định LLM giả
+python research/evaluation/build_rating_packet.py --pilot --raters r1 r2 --out data/rating/pilot-01
+python research/evaluation/score_ratings.py --packet data/rating/pilot-01
+```
+
+`run_ablation.py` ghi câu của từng cấu hình (`outputs.jsonl`) cùng quyết định, latency và chi phí từng lượt; `--llm openai --yes` mới gọi model thật. `build_rating_packet.py` tạo bộ bài cho người chấm, `score_ratings.py` tính độ đồng thuận và tổng hợp điểm; hai script này không gọi API. Xem [script ablation](../docs/implementation/evaluation/ablation-runner.v1.md), [hướng dẫn chấm](../docs/implementation/evaluation/socratic-rubric.v1.md) và [quy trình chấm](../docs/implementation/evaluation/rating-workflow.v1.md).
+
+Công cụ dựng tình huống từ lịch sử, chia dev/test theo nhóm bài và xuất độ phủ nằm trong
+`scenarios/`. Đọc [hướng dẫn biên soạn](../docs/implementation/evaluation/adaptive-scenarios.v1.md).
+
+```powershell
+python -m research.scenarios.build --input contracts/scenarios/examples.dev.v1.json --out data/scenarios/examples-v3
+```
+
+Phần dùng chung của các script có gọi LLM (đọc `.env`, xác nhận trước khi gọi, thống kê token/chi phí) nằm ở `llm_support.py`. Client, kiểu usage và client giả dùng chung nằm ở `backend/app/llm/`. Thiết kế và giới hạn: [Agent LLM](../docs/implementation/agent/llm-agent.v1.md), [LLM extraction](../docs/implementation/extraction/llm-extraction.v1.md), [sinh phản hồi](../docs/implementation/generation/response-generation.v1.md).
 
 Audit và preprocess dùng thư viện chuẩn Python. Benchmark cần [requirements riêng](requirements.txt) gồm NumPy/SciPy; đọc [hướng dẫn chạy](../docs/research/data/RUNBOOK.md), [protocol](../docs/research/data/observation-protocol.md) và [kết quả dev v1](../docs/research/data/bkt-dev-v1.md). Test được giữ lại, không đọc trong lệnh benchmark. Không thay tham số bootstrap sản phẩm bằng kết quả trên dữ liệu công khai.

@@ -15,8 +15,9 @@ sys.path.insert(0, str(ROOT / "backend"))
 from app.agent.decide import RulePolicyProposer, resolve_decision, run_decision  # noqa: E402
 from app.agent.decision import (  # noqa: E402
     DecisionIntent, DecisionProposal, DecisionSource, EvidenceKind, ExperimentConfiguration,
-    PedagogicalAction, PedagogicalDecision,
+    PedagogicalAction, PedagogicalDecision, PrerequisiteProbe, SkillState,
 )
+from app.agent.gate import gate_violations  # noqa: E402
 from app.llm.types import LLMUsage  # noqa: E402
 from app.agent.graph import Services, TurnInput, TutorEngine  # noqa: E402
 from app.llm.client import (  # noqa: E402
@@ -183,6 +184,88 @@ def test_facts_match_gate_inputs():
     assert f["max_hint_level"] == min(4, sc.state.support.hint_level + 1)
     assert f["branch_concepts"][0] == sc.state.current.concept_id
     assert f["prerequisite_evidence"]["SK-A02-DISTRIBUTE"] == "error_attributed"
+
+
+def candidates(sid, skills=(), **support):
+    sc = SCENARIOS[sid]
+    state = sc.state.model_copy(update={"support": sc.state.support.model_copy(update=support),
+                                        "skills": [*sc.state.skills, *skills]})
+    return {c["skill_id"]: c["edge_ids"] for c in facts(state, sc.context)["probe_candidates"]}
+
+
+def skill(skill_id, p_mastery, recent):
+    return SkillState(skill_id=skill_id, p_mastery=p_mastery, independent_observations=len(recent),
+                      recent_independent=recent, assisted_correct=0, parameter_version="bkt-default-0.1.0")
+
+
+def test_probe_candidates_follow_the_evidence():
+    # Lượt chạy thật trên dev: Agent hỏi kiểm tra prerequisite ở 10/16 tình huống, kể cả khi lỗi đã
+    # được quy cho chính skill đó hoặc học sinh vừa làm đúng.
+    assert candidates("SC-15") == {"SK-A02-DISTRIBUTE": ["PRE-A02-E02"]}  # ước lượng thấp: kiểm tra trước khi backtrack
+    assert not candidates("SC-01") and not candidates("SC-04")  # mức hint thấp, chưa có dấu hiệu yếu
+    assert not candidates("SC-10")                              # vừa làm đúng
+    assert not candidates("SC-16")                              # chưa có bài làm nào được chấm
+    assert not candidates("SC-13", hint_level=3)                # xin tạm dừng: chỉ được end_session (G14)
+    # Mức hint 3 vẫn sai: skill nền chưa có bằng chứng thành ứng viên; skill đã bị quy lỗi thì không.
+    high = candidates("SC-01", hint_level=3)
+    assert high and "SK-A02-DISTRIBUTE" not in high
+    assert facts(SCENARIOS["SC-01"].state, SCENARIOS["SC-01"].context)["prerequisite_evidence"][
+        "SK-A02-DISTRIBUTE"] == "error_attributed"
+    assert not candidates("SC-01", hint_level=3, support_turns_on_node=6)  # đã chạm giới hạn hỗ trợ (G10)
+    assert "facts.probe_candidates" in INSTRUCTIONS
+
+
+def test_probe_candidates_skip_skills_with_good_evidence():
+    # Review: "không có bằng chứng yếu" không có nghĩa là chưa biết gì. Skill nền có bằng chứng tốt
+    # không cần hỏi kiểm tra; skill chưa có bằng chứng theo hướng nào thì vẫn là ứng viên.
+    assert "SK-A03-COLLECT" in candidates("SC-08")
+    strong = candidates("SC-08", skills=[skill("SK-A03-COLLECT", 0.95, [True] * 5)])
+    assert "SK-A03-COLLECT" not in strong and "SK-E01-EQUIVALENCE" in strong
+    f = facts(SCENARIOS["SC-08"].state.model_copy(update={"skills": [
+        *SCENARIOS["SC-08"].state.skills, skill("SK-A03-COLLECT", 0.95, [True] * 5)]}), SCENARIOS["SC-08"].context)
+    assert f["skill_standing"]["SK-A03-COLLECT"] == "good" and f["prerequisite_evidence"]["SK-A03-COLLECT"] is None
+
+
+def test_probe_candidates_reach_two_levels_with_the_edges_to_cite():
+    # Review: prompt cho hỏi kiểm tra tối đa hai tầng, nên prerequisite tầng 2 cũng phải là ứng viên,
+    # kèm đủ chuỗi cạnh mà G05 đòi (N01 → A02 → E02).
+    found = candidates("SC-08")
+    assert found["SK-N01-SIGNED-ADD"] == ["PRE-A02-E02", "PRE-N01-A02"]
+    assert found["SK-E01-EQUIVALENCE"] == ["PRE-E01-E02"]
+    f = facts(SCENARIOS["SC-08"].state, SCENARIOS["SC-08"].context)
+    assert f["skill_standing"]["SK-N01-SIGNED-ADD"] == "unknown"
+    # Bằng chứng để backtrack vẫn chỉ tính cho prerequisite trực tiếp: mỗi bước lùi một tầng (G08).
+    assert "SK-N01-SIGNED-ADD" not in f["prerequisite_evidence"]
+
+
+@pytest.mark.parametrize("sid", sorted(SCENARIOS))
+def test_every_probe_candidate_passes_the_gate(sid):
+    sc = SCENARIOS[sid]
+    for hint_level in (sc.state.support.hint_level, 3):
+        state = sc.state.model_copy(update={"support": sc.state.support.model_copy(update={"hint_level": hint_level})})
+        for candidate in facts(state, sc.context)["probe_candidates"]:
+            proposal = DecisionProposal(
+                action="diagnose", intent="probe_prerequisite", hint_level=0, target_skill_id=candidate["skill_id"],
+                edge_ids=candidate["edge_ids"], reason="Kiểm tra skill nền.",
+                evidence=[{"kind": "assessment", "id": str(state.latest_assessment.assessment_id)}])
+            assert gate_violations(state, proposal, sc.context) == [], candidate
+
+
+def test_probe_candidates_skip_skills_already_probed():
+    sc = SCENARIOS["SC-15"]
+    asked = sc.state.model_copy(update={"probes": [PrerequisiteProbe(
+        decision_id=uuid4(), skill_id="SK-A02-DISTRIBUTE", status="pending")]})
+    assert facts(asked, sc.context)["probe_candidates"] == []
+
+
+@pytest.mark.parametrize("sid", sorted(SCENARIOS))
+def test_rule_policy_probes_only_candidates(sid):
+    # Agent và Rule-policy dùng cùng thông tin (RQ5): skill mà luật hỏi kiểm tra phải là ứng viên,
+    # với đúng các cạnh luật trích.
+    sc = SCENARIOS[sid]
+    p = rule_policy(sc.state, sc.context)
+    if p.intent == DecisionIntent.PROBE_PREREQUISITE:
+        assert candidates(sid)[p.target_skill_id] == p.edge_ids
 
 
 # ---------------------------------------------------------------- proposer: kết quả và lỗi

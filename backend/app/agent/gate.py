@@ -12,7 +12,7 @@ from app.agent.decision import (
 from app.agent.mastery import prerequisite_evidence
 from app.agent.tools import ProblemRef, TurnContext
 
-GATE_VERSION = "gate-0.4.0"
+GATE_VERSION = "gate-0.5.0"
 
 A, I = PedagogicalAction, DecisionIntent
 ACTIVE_HYPOTHESIS = frozenset({"suspected", "supported"})
@@ -166,6 +166,10 @@ def gate_violations(s: StudentState, p: DecisionProposal, ctx: TurnContext) -> l
 
     if p.action == A.CHECK_TRANSFER and not correct:
         v.append("G16_transfer_requires_correct")
+    # Hỏi kiểm tra prerequisite là để tìm nguyên nhân khi học sinh làm sai hoặc đang kẹt. Vừa làm
+    # đúng thì đi tiếp (kiểm tra chuyển giao, chuyển bài), như backtrack ở G08.
+    if p.intent == I.PROBE_PREREQUISITE and correct:
+        v.append("G21_no_probe_when_correct")
     if p.action == A.CONCEPTUAL_QUESTION or p.intent == I.DISTINGUISH_HYPOTHESIS:
         active = {h.hypothesis_id for h in s.hypotheses
                   if h.status in ACTIVE_HYPOTHESIS and h.skill_id == p.target_skill_id}

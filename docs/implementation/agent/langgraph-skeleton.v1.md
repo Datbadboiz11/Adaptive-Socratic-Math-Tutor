@@ -1,6 +1,6 @@
 # Policy gate, Rule-policy và khung LangGraph, bản v1
 
-**Trạng thái:** khung chạy được từ đầu đến cuối với **stub** thay cho phần của Member 1 và Member 2. Knowledge Graph đã là bản thật ([knowledge-graph.v1.md](knowledge-graph.v1.md)). Agent LLM đã có ([llm-agent.v1.md](llm-agent.v1.md)) nhưng **chưa chạy với model thật**; proposer mặc định vẫn là Rule-policy để chạy không cần API.
+**Trạng thái:** khung chạy được từ đầu đến cuối với **stub** thay cho phần của Member 1 và Member 2. Knowledge Graph đã là bản thật ([knowledge-graph.v1.md](knowledge-graph.v1.md)). Agent LLM đã có ([llm-agent.v1.md](llm-agent.v1.md)) nhưng với model thật **mới chạy một lần trên bộ dev** ([ablation-runner §5.1](../evaluation/ablation-runner.v1.md)); proposer mặc định vẫn là Rule-policy để chạy không cần API. LLM viết câu phản hồi cũng đã có ([response-generation.v1.md](../generation/response-generation.v1.md)), mặc định tắt, cũng mới có lô chạy đó.
 **Hợp đồng dữ liệu:** [pedagogical-decision.v1.md](pedagogical-decision.v1.md).
 
 ## 1. Luồng một lượt
@@ -10,6 +10,8 @@ START → load ──(request trùng)──→ END
           │
           ▼
        extract → analyze → observe → readiness → context → decide → generate → verify → commit → END
+                                                                          ↑                    │
+                                                                          └─(sinh lại, ≤ 1 lần)┘
 ```
 
 | Node | Việc | Ai làm thật | Hiện tại |
@@ -21,11 +23,13 @@ START → load ──(request trùng)──→ END
 | `readiness` | Tính điều kiện sẵn sàng chuyển concept (plan §10) | Member 1 + Member 3 | Thật, ngưỡng khởi đầu |
 | `context` | Gọi tool: KG, RAG, problem bank (≤ 3 lần). Neo4j lỗi thì KG dùng bản đọc từ file; tool hỏng hẳn thì chạy tiếp không có tool. Cả hai đều ghi `tool_errors` vào decision log | Member 3 (KG), Member 2 (RAG) | KG thật (registry, kể cả cạnh nháp); RAG và problem bank là stub |
 | `decide` | Agent đề xuất → policy gate → fallback → `PedagogicalDecision`; ghi token/latency/chi phí của lần gọi LLM | Member 3 | Thật; Agent = Rule-policy hoặc Agent LLM (`LLMProposer`), chọn theo cấu hình |
-| `generate` | Viết câu trả lời từ quyết định và nội dung được phép | Member 3 | Template |
-| `verify` | Kiểm tra lộ đáp án; vi phạm thì thay bằng câu dự phòng (1 lần) | Member 3 | Chỉ so khớp đáp án cuối |
-| `commit` | Áp tác động của quyết định (mức hint, đổi bài, return stack, trạng thái phiên), tăng `state_version`, ghi decision log | Member 3 | Thật |
+| `generate` | Một lần sinh câu trả lời từ quyết định và nội dung được phép; generator không thấy đáp án. Lưu vào checkpoint trước khi kiểm tra | Member 3 | Template mặc định; LLM khi bật `response_generator` ([response-generation.v1.md](../generation/response-generation.v1.md)) |
+| `verify` | Kiểm tra câu vừa sinh (lộ đáp án; với câu của LLM thêm toán không có nguồn, khẳng định đúng khi chưa xác minh, mức hint, nội dung, độ dài, lặp). Câu LLM không đạt thì quay lại `generate` sinh lại một lần, rồi dùng template | Member 3 | Thật; so tương đương chỉ cho biểu thức bậc nhất |
+| `commit` | Áp tác động của quyết định (mức hint, đổi bài, return stack, trạng thái phiên), tăng `state_version`, ghi decision log và response log | Member 3 | Thật |
 
-`TutorEngine` (trong `backend/app/agent/graph.py`) là điểm vào cho API: `start()`, `turn()`, `state()`, `decisions()`. Mỗi phiên là một `thread_id` trong checkpointer. Mặc định dùng `InMemorySaver`; khi nối DB thì truyền checkpointer PostgreSQL vào.
+Phần ghi state của `load`, `analyze`, `observe` và `commit` nằm trong bốn hàm `start_turn`, `record_student_turn`, `record_observation`, `finish_turn`. Công cụ dựng state từ lịch sử ([`replay.py`](../../../research/scenarios/replay.py)) gọi chính các hàm đó, nên đổi cách ghi state ở một nơi thì bộ tình huống thích ứng đổi theo.
+
+`TutorEngine` (trong `backend/app/agent/graph.py`) là điểm vào cho API: `start()`, `turn()`, `state()`, `decisions()`, `extractions()`, `responses()`. Mỗi phiên là một `thread_id` trong checkpointer. Mặc định dùng `InMemorySaver`; khi nối DB thì truyền checkpointer PostgreSQL vào.
 
 **Mỗi `request_id` được xử lý đúng một lần, kể cả khi gửi đồng thời.** `turn()` đọc checkpoint, kiểm tra request và chạy graph trong cùng một khóa của phiên (`SessionLocks`). Mặc định mọi engine trong một tiến trình dùng chung `PROCESS_SESSION_LOCKS`; chạy nhiều tiến trình thì phải truyền bản khóa dùng chung giữa các tiến trình (ví dụ advisory lock PostgreSQL). Trong khóa, `turn()` xử lý theo ba trường hợp:
 
@@ -53,6 +57,7 @@ START → load ──(request trùng)──→ END
 | Tạm dừng không bị ghi thành câu trả lời sai; tiếp tục được | `test_pause_resume_and_completed_session` |
 | Agent lỗi (sai schema, timeout, exception) hoặc bị gate từ chối đều có fallback và được ghi log | `test_agent_failures_fall_back`, `test_agent_proposal_rejected_by_gate_is_logged` |
 | Phản hồi lộ đáp án bị thay | `test_answer_leak_is_replaced` |
+| Bật LLM viết câu: câu đạt thì gửi; không đạt thì sinh lại đúng một lần (ghi `regenerations_used`); verify lỗi rồi gửi lại không gọi LLM thêm | `test_graph_sends_the_llm_message_and_logs_it`, `test_graph_regenerates_once_and_records_it_in_the_decision`, `test_retry_after_verify_failure_does_not_call_the_llm_again` (các test còn lại trong `tests/test_generation.py`) |
 | No-KG không backtrack; No-BKT che mastery khỏi policy nhưng BKT vẫn chạy | `test_no_kg_cannot_backtrack`, `test_no_bkt_hides_mastery_from_policy_only` |
 | Mỗi luật gate có test vi phạm riêng | `tests/test_agent_policy.py` |
 | Hai request đồng thời (cùng hoặc khác `request_id`, cùng hoặc khác engine) được xử lý lần lượt, không trùng lượt | `test_concurrent_same_request_is_processed_once`, `test_two_engines_sharing_checkpointer_and_locks_process_once`, `test_concurrent_different_requests_run_one_after_another` |
@@ -111,20 +116,20 @@ Mỗi tình huống có `acceptable_actions` và `forbidden_actions` để dùng
 |---|---|---|
 | Analyzer, observation/BKT, RAG, problem bank đều là stub, chỉ có 7 bài mẫu | Chưa phản ánh chất lượng thật | Khi Member 1 và Member 2 có API |
 | Cả 68 cạnh KG còn nháp; khung đang bật `include_drafts` | Chưa dùng được cho học sinh thật | Sau khi rà soát cạnh ([knowledge-graph.v1.md](knowledge-graph.v1.md) §7) |
-| Agent LLM chưa chạy với model thật | Chưa có số liệu về chất lượng quyết định, latency và chi phí thật | Khi được phép dùng API ([llm-agent.v1.md](llm-agent.v1.md) §6) |
+| Agent LLM mới chạy một lần trên bộ dev với model thật | Chưa có số liệu về chất lượng quyết định, latency và chi phí thật | Khi được phép dùng API ([llm-agent.v1.md](llm-agent.v1.md) §6) |
 | Context gọi tool cố định, Agent chưa tự chọn tool | Chưa có quyết định "cần tra gì" | Sau khi có kết quả Agent LLM trên dev |
-| Verifier chỉ so khớp đáp án cuối, chưa kiểm tra đúng toán | Câu sai toán vẫn lọt | Cùng Member 1 (SymPy) |
-| Generator là template; dễ lặp câu khi cùng intent | Trải nghiệm kém | Bước sinh bằng LLM |
+| Verifier so đáp án theo giá trị chỉ cho biểu thức bậc nhất (ngoài phạm vi thì "chưa xác minh được", dùng template); luật lời văn chỉ bắt mẫu từ ngữ rõ ràng | Câu sai toán hoặc gợi ý quá mức diễn đạt khác đi vẫn có thể lọt | Cùng Member 1 (SymPy); giới hạn chi tiết ở [response-generation.v1.md](../generation/response-generation.v1.md) §9 |
+| LLM viết câu mặc định tắt, mới chạy một lô trên bộ dev với model thật; đường template dễ lặp câu khi cùng intent | Chưa có số liệu chất lượng câu của LLM | Khi được phép dùng API |
 | Giả thuyết lỗi bị coi là `ruled_out` sau một lần làm đúng độc lập | Có thể đóng giả thuyết quá sớm | Chờ Member 1 xác nhận quy tắc |
 | Readiness chưa kiểm tra "hai bài thuộc mẫu khác nhau" | Điều kiện §10 chưa đủ | Khi có lịch sử theo family |
 | Checkpointer mặc định ở bộ nhớ | Mất khi tắt tiến trình thật; chưa có test khởi động lại bằng hai tiến trình riêng | Nối PostgreSQL cùng Member 1, rồi viết test hai tiến trình |
 | Khóa phiên mặc định chỉ có tác dụng trong một tiến trình | Chạy nhiều worker API vẫn có thể xử lý trùng lượt | Cài `SessionLocks` bằng advisory lock PostgreSQL khi nối checkpointer DB (Member 1) |
-| Decision log và bảng `processed` (request → phản hồi) nằm trong state, không giới hạn độ dài | Phiên dài sẽ nặng | Chuyển sang bảng DB có khóa `request_id` |
+| Decision log, extraction log, response log và bảng `processed` (request → phản hồi) nằm trong state, không giới hạn độ dài | Phiên dài sẽ nặng | Chuyển sang bảng DB có khóa `request_id` |
 | Lượt lỗi giữa chừng mà gửi lại vẫn lỗi (ví dụ generator hỏng hẳn) thì phiên bị kẹt ở `TurnInProgress` | Học sinh không gửi được request mới | Thêm cơ chế hủy lượt dở dang có ghi log |
 
 ## 6. Lệnh
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest tests/test_agent_decision.py tests/test_agent_policy.py tests/test_agent_graph.py tests/test_agent_llm.py tests/test_kg.py -q
+.\.venv\Scripts\python.exe -m pytest tests/test_agent_decision.py tests/test_agent_policy.py tests/test_agent_graph.py tests/test_agent_llm.py tests/test_kg.py tests/test_generation.py -q
 .\.venv\Scripts\python.exe scripts/exports/export_agent_contracts.py --check
 ```

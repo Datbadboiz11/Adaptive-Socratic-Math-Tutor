@@ -22,6 +22,16 @@ def default_graph() -> KnowledgeGraph:
     return KnowledgeGraph.load()
 
 
+@lru_cache(maxsize=1)
+def _skill_titles() -> dict[str, str]:
+    return {skill_id: c.title for c in default_graph().concepts.values() for skill_id in c.skill_ids}
+
+
+def skill_title(skill_id: str) -> str | None:
+    """Tên concept của skill trong registry, ví dụ "Tính phân phối": tên chủ đề để nói với học sinh."""
+    return _skill_titles().get(skill_id)
+
+
 @dataclass(frozen=True)
 class KGLookup:
     edges: list[GraphEdge] = field(default_factory=list)

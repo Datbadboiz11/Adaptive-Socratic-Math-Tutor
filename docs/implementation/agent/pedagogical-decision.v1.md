@@ -168,6 +168,7 @@ Gate nhận `StudentState` (đã chiếu theo cấu hình ablation), đề xuấ
 | G18 | `backtrack` cần bằng chứng về đúng skill nền được chọn: lỗi vừa chấm quy cho skill đó, câu trả lời cho câu hỏi kiểm tra đã được xác minh là chưa đạt, giả thuyết lỗi đang mở, hoặc ước lượng thấp (≥ 2 observation). Graph chỉ đưa ứng viên; đã hỏi kiểm tra mà chưa có câu trả lời được xác minh thì chưa phải bằng chứng | FR08-AC3 |
 | G19 | `advance_concept` phải trích đúng một cạnh KG tới concept kế tiếp; không có KG (No-KG hoặc tool lỗi) thì không chuyển concept | plan §8.4, §18.1 |
 | G20 | `check_transfer`, `continue_practice`, `switch_problem`, `advance_difficulty` giữ nguyên skill và concept của bài đang làm; `advance_difficulty` phải sang bài khó hơn (không biết độ khó bài hiện tại thì từ chối). Chuyển concept chỉ qua `advance_concept`, ôn prerequisite chỉ qua `backtrack` | plan §6, §9, §10 |
+| G21 | Không hỏi kiểm tra prerequisite (`probe_prerequisite`) khi học sinh vừa làm đúng: hỏi kiểm tra là để tìm nguyên nhân của bài làm sai, còn làm đúng thì đi tiếp (kiểm tra chuyển giao, chuyển bài) | plan §9 (làm đúng sau hỗ trợ → bài kiểm tra độc lập; mastery thấp không buộc backtrack nếu đang làm đúng) |
 
 Không có G15: ngân sách tool (≤ 3 lần mỗi lượt) được chặn ngay trong contract `TurnContext`. Nơi gọi tool phải dừng khi hết ngân sách, nên gate không cần kiểm tra lại.
 
@@ -185,7 +186,7 @@ Không có G15: ngân sách tool (≤ 3 lần mỗi lượt) được chặn nga
 2. Phản hồi gửi UI gồm: message, action, intent, hint level, next actions. UI có cần hiển thị riêng nhãn "ví dụ khác" (`analogous_example`) và "bài kiểm tra mới" (`check_transfer`) không?
 3. API RAG có trả đúng các ID được đưa vào context, để log không ghi nguồn chưa dùng?
 
-**Thay đổi so với bản đầu (14/11/2026, khi nối KG thật và sau review):** thêm trường tùy chọn vào `TurnContext`, `GraphEdge`, `PedagogicalDecision` (kể cả `agent_usage` khi nối Agent LLM) và `StudentState.probes` (liệt kê ở §4, §5); thêm luật G18, G19 và siết G05, G08. Sau review trước commit: thêm G20, sửa G10 (vừa làm đúng thì không còn kẹt), thêm `StudentState.latest_submission`, `CurrentTask.difficulty`, `PedagogicalDecision.workflow_version`. `contract_version` giữ `agent-contract-0.1.0` vì hợp đồng chưa chốt với nhóm; `gate_version` lên `gate-0.4.0`, Rule-policy lên `rule-policy-0.4.0`.
+**Thay đổi so với bản đầu (14/11/2026, khi nối KG thật và sau review):** thêm trường tùy chọn vào `TurnContext`, `GraphEdge`, `PedagogicalDecision` (kể cả `agent_usage` khi nối Agent LLM) và `StudentState.probes` (liệt kê ở §4, §5); thêm luật G18, G19 và siết G05, G08. Sau review trước commit: thêm G20, sửa G10 (vừa làm đúng thì không còn kẹt), thêm `StudentState.latest_submission`, `CurrentTask.difficulty`, `PedagogicalDecision.workflow_version`. `contract_version` giữ `agent-contract-0.1.0` vì hợp đồng chưa chốt với nhóm; `gate_version` lên `gate-0.4.0`, Rule-policy lên `rule-policy-0.4.0`. Sau lượt chạy model thật trên bộ dev ([ablation-runner §5.1](../evaluation/ablation-runner.v1.md)): thêm G21, `gate_version` lên `gate-0.5.0`; Rule-policy không đổi vì nó chưa bao giờ hỏi kiểm tra sau một bài làm đúng.
 
 **Việc kỹ thuật còn lại (Member 3):**
 - Biến thể strict của `DecisionProposal` cho structured output (mọi trường bắt buộc, cho phép null) đã có: `OUTPUT_SCHEMA` trong `llm_proposer.py`.

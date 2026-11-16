@@ -4,19 +4,23 @@ State của mỗi tình huống = ``student_state`` trong ``fixtures.v1.json`` g
 ``state_patch``; context = ``base_context`` ghép đè bằng ``context_patch``. Ghép sâu với dict,
 list thì thay nguyên. Dùng chung cho test và script so sánh proposer.
 
+``load_scenarios(path=...)`` đọc một split đã replay của bộ tình huống thích ứng
+(``research/scenarios/build.py``): state ở đó dựng từ lịch sử, không ghép từ fixture.
+
 Dữ liệu dev, không thuộc luồng dạy thật. Cần ``backend/`` trong ``sys.path`` (để import
 ``app.agent``), như các test và ``compare_proposers.py`` đã làm.
 """
 from __future__ import annotations
 
 import copy
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import lru_cache
 import json
 from pathlib import Path
 
 from app.agent.decision import StudentState
-from app.agent.tools import TurnContext
+from app.agent.tools import ProblemRef, TurnContext
+from research.scenarios.contracts import ScenarioSet
 
 CONTRACTS = Path(__file__).resolve().parents[2] / "contracts" / "agent"
 
@@ -42,19 +46,25 @@ def _files() -> tuple[dict, dict]:
 class Scenario:
     id: str
     title: str
-    expected_rule_action: str
-    expected_rule_intent: str
+    expected_rule_action: str | None
+    expected_rule_intent: str | None
     acceptable_actions: tuple[str, ...]
     forbidden_actions: tuple[str, ...]
     state: StudentState
     context: TurnContext
+    split: str = "dev"
+    dataset_version: str | None = None
+    problem_refs: dict[str, ProblemRef] = field(default_factory=dict)
+    problem_prompts: dict[str, str] = field(default_factory=dict)
 
 
 def scenario_file() -> dict:
     return copy.deepcopy(_files()[1])
 
 
-def load_scenarios(ids: list[str] | None = None) -> list[Scenario]:
+def load_scenarios(ids: list[str] | None = None, *, path: Path | None = None) -> list[Scenario]:
+    if path is not None:
+        return _load_replayed(path, ids)
     fixtures, data = _files()
     wanted = set(ids) if ids else None
     out = []
@@ -71,3 +81,16 @@ def load_scenarios(ids: list[str] | None = None) -> list[Scenario]:
         missing = sorted(wanted - {s.id for s in out})
         raise KeyError(f"unknown scenario ids: {missing}")
     return out
+
+
+def _load_replayed(path: Path, ids: list[str] | None) -> list[Scenario]:
+    data = ScenarioSet.model_validate_json(path.read_text(encoding="utf-8-sig"))
+    wanted = set(ids) if ids else {s.scenario_id for s in data.scenarios}
+    if missing := wanted - {s.scenario_id for s in data.scenarios}:
+        raise KeyError(f"unknown scenario ids: {sorted(missing)}")
+    return [Scenario(id=s.scenario_id, title=s.title, expected_rule_action=None, expected_rule_intent=None,
+                     acceptable_actions=tuple(s.labels.acceptable_actions), forbidden_actions=tuple(s.labels.forbidden_actions),
+                     state=s.state, context=s.context, split=data.split, dataset_version=data.dataset_version,
+                     problem_refs={p.problem.problem_id: p.problem for p in data.problems},
+                     problem_prompts={p.problem.problem_id: p.prompt for p in data.problems})
+            for s in data.scenarios if s.scenario_id in wanted]

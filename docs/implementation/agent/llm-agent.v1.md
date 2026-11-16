@@ -1,6 +1,6 @@
 # Agent LLM, bản v1
 
-**Trạng thái:** code và test xong; mới gọi model thật **1 lần** để kiểm tra key (§6.1), chưa chạy đủ bộ tình huống. Model: `gpt-4o-mini` (OpenAI). Mọi test dùng LLM giả, không gọi mạng.
+**Trạng thái:** code và test xong; với model thật mới có 1 lần gọi kiểm tra key (§6.1) và một lần chạy đủ 16 tình huống dev × 6 cấu hình ([ablation-runner §5.1](../evaluation/ablation-runner.v1.md)), chưa lặp. Model: `gpt-4o-mini` (OpenAI). Mọi test dùng LLM giả, không gọi mạng.
 **Liên quan:** [pedagogical-decision.v1.md](pedagogical-decision.v1.md) (hợp đồng, luật gate), [langgraph-skeleton.v1.md](langgraph-skeleton.v1.md) (luồng một lượt), plan §13 (fallback), §18 (RQ5, latency/cost).
 
 ## 1. Vai trò
@@ -13,7 +13,7 @@ state + context ──→ LLMProposer ──→ policy gate ──(chấp nhận
                         └──(lỗi, timeout, sai schema)───→ Rule-policy (fallback)
 ```
 
-LLM không viết câu trả lời cho học sinh (đó là bước `generate`) và không ghi mastery. Đề xuất của LLM phải qua cùng policy gate với Rule-policy, nên một quyết định sai luật không bao giờ tới học sinh.
+LLM không viết câu trả lời cho học sinh (đó là bước `generate`, xem [response-generation.v1.md](../generation/response-generation.v1.md)) và không ghi mastery. Đề xuất của LLM phải qua cùng policy gate với Rule-policy, nên một quyết định sai luật không bao giờ tới học sinh.
 
 ## 2. Thành phần
 
@@ -29,18 +29,18 @@ LLM không viết câu trả lời cho học sinh (đó là bước `generate`) 
 | `research/agent/scenarios.py` | Đọc bộ tình huống dev (dùng chung cho test và script; không thuộc luồng dạy thật) |
 | `research/agent/compare_proposers.py` | So sánh Agent LLM với Rule-policy trên bộ tình huống dev |
 | `research/llm_support.py` | Đọc `.env`, xin xác nhận trước khi gọi API thật, thống kê token/latency/chi phí (dùng chung với LLM extraction) |
-| `tests/test_agent_llm.py` | 68 test, không gọi mạng |
+| `tests/test_agent_llm.py` | 104 test, không gọi mạng |
 
-Phiên bản ghi vào decision log: `prompt_version = agent-prompt-0.4.0`, `policy_version = llm-agent-0.1.0`, `model_id` theo cấu hình. Sửa lời dặn, định dạng input hay schema đầu ra thì phải tăng `PROMPT_VERSION`.
+Phiên bản ghi vào decision log: `prompt_version = agent-prompt-0.5.0`, `policy_version = llm-agent-0.1.0`, `model_id` theo cấu hình. Sửa lời dặn, định dạng input hay schema đầu ra thì phải tăng `PROMPT_VERSION`.
 
 ## 3. Dữ liệu gửi cho model
 
 Mỗi lượt gửi một lần, gồm hai phần:
 
-- **Lời dặn (cố định):** vai trò, bảng action sinh tự động từ `ACTION_SPECS` (kèm cách điền từng trường cho mỗi action, `field_rules`), 14 luật cứng tương ứng với luật gate, nguyên tắc sư phạm (ưu tiên hỗ trợ ít nhất, chẩn đoán trước khi gợi ý, tăng dần mức hỗ trợ). Lời dặn viết bằng tiếng Anh; `reason` yêu cầu viết bằng tiếng Việt. Vì phần này cố định và dài hơn 1.024 token, provider tự cache, nên các lượt sau tính giá token đã cache.
+- **Lời dặn (cố định):** vai trò, bảng action sinh tự động từ `ACTION_SPECS` (kèm cách điền từng trường cho mỗi action, `field_rules`), 14 luật cứng tương ứng với luật gate, và phần sư phạm ghi lại bảng policy của plan §9 theo từng loại bằng chứng (vừa làm đúng, xin gợi ý hoặc không tiến triển, lỗi thao tác với lịch sử tốt, có giả thuyết lỗi, chưa rõ nguyên nhân, khi nào hỏi kiểm tra prerequisite, kẹt ở mức hint cao). Lời dặn viết bằng tiếng Anh; `reason` yêu cầu viết bằng tiếng Việt. Vì phần này cố định và dài hơn 1.024 token, provider tự cache, nên các lượt sau tính giá token đã cache.
 - **Input (thay đổi theo lượt):** JSON gồm `state` (đã chiếu theo cấu hình ablation), `context` (đề bài đang làm, nội dung truy xuất, cạnh KG, concept kế tiếp, bài ứng viên) và `facts`.
 
-`facts` là giá trị hệ thống tính sẵn **từ chính state đó**: danh sách bằng chứng được phép trích, mức hint tối đa, cờ kẹt, các concept trong nhánh, giả thuyết lỗi đang mở, bằng chứng thiếu skill nền, xếp loại mastery. Agent và Rule-policy vì vậy dùng **cùng thông tin**, đúng điều kiện so sánh của RQ5. Model chỉ không phải tự tính lại các giá trị này.
+`facts` là giá trị hệ thống tính sẵn **từ chính state đó**: danh sách bằng chứng được phép trích, mức hint tối đa, cờ kẹt, các concept trong nhánh, giả thuyết lỗi đang mở, bằng chứng thiếu skill nền, các skill nền đáng hỏi kiểm tra ở lượt này (`probe_candidates`), xếp loại mastery. Agent và Rule-policy vì vậy dùng **cùng thông tin**, đúng điều kiện so sánh của RQ5. Model chỉ không phải tự tính lại các giá trị này.
 
 **Đề bài:** `context.current_problem_prompt` là đề bài công khai, đúng như học sinh thấy, do problem bank trả về. Không có đề bài thì model không hiểu được tin nhắn kiểu "em chưa hiểu" hay bài làm đang giải gì (bản đầu thiếu phần này, review 14/11 phát hiện).
 
@@ -143,13 +143,31 @@ Chưa chạy lại với model thật.
 
 Chưa chạy lại với model thật.
 
+### 6.4. Sửa sau lượt chạy model thật trên bộ dev, `agent-prompt-0.5.0`
+
+Lượt chạy 16 tình huống × 6 cấu hình ([ablation-runner §5.1](../evaluation/ablation-runner.v1.md)) cho thấy Agent đề xuất `diagnose` / `probe_prerequisite` ở 10/16 tình huống (tính gộp năm cấu hình có Agent), trong khi Rule-policy chỉ dùng nó ở 1. Agent hỏi kiểm tra cả khi lỗi vừa chấm đã được quy cho chính skill đó, khi học sinh xin gợi ý, khi lỗi chỉ là lỗi tính toán, và khi học sinh vừa làm đúng. Lời dặn cũ chỉ có bốn câu về sư phạm, trong đó có "chưa rõ nguyên nhân thì chẩn đoán trước khi gợi ý".
+
+- **Luật gate G21:** không `probe_prerequisite` khi học sinh vừa làm đúng. Luật 8 của lời dặn ghi điều này.
+- **`facts.probe_candidates`:** các skill nền đáng hỏi kiểm tra ở lượt này, tính từ cùng state, mỗi skill kèm chuỗi cạnh phải trích (`edge_ids`).
+  - Phạm vi: prerequisite trong hai tầng của concept đang học, đúng phạm vi G05 cho phép. `facts.prerequisite_evidence` vẫn chỉ tính cho prerequisite trực tiếp, vì backtrack mỗi bước lùi một tầng.
+  - Danh sách rỗng khi không có bài làm sai vừa chấm, khi học sinh xin tạm dừng, hoặc khi đã chạm giới hạn hỗ trợ.
+  - Skill có ước lượng thấp là ứng viên (plan §9: kiểm tra rồi mới backtrack).
+  - Skill chưa có bằng chứng theo hướng nào (không yếu, không tốt) chỉ là ứng viên khi đã lên mức hint 3 mà vẫn sai (plan §10), giống `_unchecked_prerequisite` của Rule-policy. Skill có bằng chứng tốt thì không.
+  - Skill đã bị quy lỗi, đã có giả thuyết đang mở hoặc đã hỏi trên bài này thì không.
+  - Test: mọi ứng viên, khi đề xuất với đúng `edge_ids` của nó, đều qua gate (`test_every_probe_candidate_passes_the_gate`); skill mà Rule-policy hỏi kiểm tra luôn nằm trong danh sách (`test_rule_policy_probes_only_candidates`).
+- **Phần sư phạm của lời dặn** ghi lại bảng policy của plan §9 theo từng loại bằng chứng, thay cho bốn câu chung. Ngưỡng "không tiến triển" và danh sách họ lỗi thao tác lấy từ cùng hằng số với Rule-policy.
+
+Việc ghi rõ bảng policy làm Agent và Rule-policy gần nhau hơn: RQ5 khi đó so "LLM áp dụng policy đã ghi" với "luật cài sẵn policy đó", không phải LLM tự nghĩ policy. Chỉ có thêm luật gate G21; `probe_candidates` và các dòng của phần sư phạm là hướng dẫn trong prompt, gate không ép Agent chọn trong danh sách đó. Có nên ép hay không thì quyết định sau khi chạy lại với model thật.
+
+Chưa chạy lại với model thật, nên chưa biết các sửa đổi này có giảm được số lần hỏi kiểm tra không.
+
 **Lưu ý:** bộ tình huống là dữ liệu dev tự soạn (plan §11.5, §19.3). Kết quả dùng để sửa prompt, **không dùng làm kết quả RQ5**. RQ5 chạy trên bộ test riêng đã khóa ở tuần 7.
 
 ## 7. Giới hạn
 
 | Giới hạn | Ảnh hưởng | Khi nào xử lý |
 |---|---|---|
-| Mới có 1 lần gọi thật | Chưa biết tỷ lệ qua gate, chất lượng quyết định, latency và chi phí thật | Chạy đủ 16 tình huống khi được phép dùng API |
+| Mới chạy model thật một lần trên bộ dev, với `agent-prompt-0.4.0` | Số liệu ở [ablation-runner §5.1](../evaluation/ablation-runner.v1.md) là của prompt cũ; chưa có số liệu cho `agent-prompt-0.5.0` | Chạy lại bộ dev có lặp khi được phép dùng API |
 | Latency lần đầu 6,9 giây | Lượt dạy chậm, dễ chạm timeout | Đo trên 16 tình huống rồi chọn: tăng timeout, rút gọn input hoặc đổi model |
 | Agent chưa tự chọn tool; context vẫn gọi KG/RAG/problem bank cố định | Chưa có quyết định "cần tra gì" | Sau khi có kết quả Agent trên dev |
 | Mỗi lượt một lần gọi, không sinh lại khi bị gate từ chối | Bị từ chối là dùng Rule-policy ngay | Cân nhắc sau khi đo tỷ lệ bị từ chối |

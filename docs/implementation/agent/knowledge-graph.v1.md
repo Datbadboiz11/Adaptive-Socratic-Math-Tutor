@@ -65,6 +65,7 @@ Không có cạnh `NEXT_CONCEPT`: concept kế tiếp được suy từ cạnh `
 |---|---|---|
 | Ôn prerequisite (`backtrack`) | Chỉ lùi **một tầng mỗi bước**, tới prerequisite trực tiếp của concept đang học. Lùi tiếp tầng nữa là một bước backtrack khác; return stack tối đa 2 | G05, G08 |
 | Không coi cả graph là điểm yếu (FR08-AC3) | `backtrack` chỉ hợp lệ khi có bằng chứng về **đúng skill nền đó**: lỗi vừa chấm được quy cho skill đó, câu trả lời cho câu hỏi kiểm tra skill đó đã được xác minh là chưa đạt, có giả thuyết lỗi đang mở trên skill đó, hoặc ước lượng thấp từ lịch sử (≥ 2 observation) | G18 |
+| Hỏi kiểm tra prerequisite chỉ khi có bài làm sai | `probe_prerequisite` bị từ chối khi học sinh vừa làm đúng | G21 |
 | Chưa có bằng chứng | Rule-policy hỏi kiểm tra trước (`diagnose` / `probe_prerequisite`), mỗi skill một lần trên một bài. **Đã hỏi chưa phải là bằng chứng**: xem bảng bên dưới. Prerequisite mà học sinh đã có ước lượng tốt thì bỏ qua | |
 | Hỏi kiểm tra skill ở tầng 2 | Được phép, nhưng `edge_ids` phải là cả đường đi từ concept đang học (2 cạnh nối nhau) | G05 |
 | Chuyển concept (`advance_concept`) | Là đi theo KG: phải trích đúng một cạnh trong `next_concepts` và bài được chọn phải thuộc concept đó; bỏ `edge_ids` hoặc không có KG thì bị từ chối. Rule-policy bỏ concept còn prerequisite khác đang yếu và ưu tiên concept mà các prerequisite khác đã có bằng chứng tốt | G05, G07, G19 |

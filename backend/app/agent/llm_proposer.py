@@ -3,7 +3,7 @@
 LLM chỉ đề xuất. Đề xuất vẫn qua policy gate như Rule-policy; lỗi gọi model, đầu ra sai schema
 hay bị gate từ chối đều rơi về Rule-policy ở ``decide.resolve_decision`` (plan §13, PRD FR-10).
 
-Thành phần có phiên bản để khóa khi chạy thí nghiệm (plan tuần 7):
+Thành phần có phiên bản để khóa khi chạy thí nghiệm:
 - ``PROMPT_VERSION``: lời dặn + định dạng input + schema đầu ra. Sửa bất kỳ phần nào thì tăng.
 - ``AGENT_POLICY_VERSION``: ghi vào ``DecisionConfig.policy_version`` của các cấu hình dùng Agent.
 
@@ -26,13 +26,16 @@ from app.agent.decision import (
 )
 from app.agent.gate import ACTIVE_HYPOTHESIS, evidence_index
 from app.llm.client import LLMCallFailed, LLMClient, LLMTimeout, usage_from_call, usage_from_failure
-from app.agent.mastery import prerequisite_evidence, standing
+from app.agent.mastery import prerequisite_evidence, probed, standing
+from app.agent.rule_policy import CARELESS_FAMILIES, ESCALATE_AFTER_NO_PROGRESS
 from app.agent.rule_policy import POLICY_VERSION as RULE_POLICY_VERSION
 from app.agent.tools import TurnContext
 
-PROMPT_VERSION = "agent-prompt-0.4.0"
+PROMPT_VERSION = "agent-prompt-0.5.0"
 AGENT_POLICY_VERSION = "llm-agent-0.1.0"
 SCHEMA_NAME = "pedagogical_decision"
+# Prerequisite chưa có bằng chứng gì chỉ được hỏi kiểm tra khi đã lên mức hint này mà vẫn sai (plan §10).
+PROBE_UNCHECKED_FROM_HINT_LEVEL = 3
 
 A, I = PedagogicalAction, DecisionIntent
 
@@ -122,6 +125,11 @@ def _assistance_actions() -> str:
     return ", ".join(a.value for a, spec in ACTION_SPECS.items() if spec.counts_as_assistance)
 
 
+def _careless_families() -> str:
+    *first, last = sorted(CARELESS_FAMILIES)
+    return f"{', '.join(first)} or {last}"
+
+
 INSTRUCTIONS = f"""You are the pedagogical decision module of a Socratic math tutor for Vietnamese \
 secondary-school students. Each turn you choose exactly ONE pedagogical action. You do not write the \
 message to the student; another component writes it from your decision.
@@ -169,7 +177,8 @@ target_skill_id equals your target_skill_id. The knowledge graph only suggests c
 backtrack without such evidence. To check an unproven prerequisite, use diagnose / \
 probe_prerequisite instead.
 8. diagnose / probe_prerequisite cites the edge(s) linking the current concept to target_skill_id \
-(at most 2 levels). Having asked a probe is not evidence of a gap.
+(at most 2 levels). Not allowed when the answer is verified_correct. Having asked a probe is not \
+evidence of a gap.
 9. return_to_parent: problem_id is the problem_id of the last frame of state.return_stack.
 10. When facts.stuck is true (support_turns_on_node >= {MAX_SUPPORT_TURNS_PER_NODE} and the latest answer \
 is not verified_correct), only scaffold, backtrack, end_session or next_problem / switch_problem are \
@@ -190,9 +199,31 @@ prerequisite only with backtrack (rule 7).
 facts.active_hypotheses (the assessment may be cited too). If there is none, choose another intent.
 14. end_session carries no target_skill_id, content_ids, edge_ids or problem_id.
 
-PEDAGOGY: Prefer the least support that can still work, and let the student do the thinking. When \
-the cause of an error is unclear, diagnose before hinting. Escalate (hint -> scaffold -> backtrack) \
-when the student makes no progress. Move on only after independent correct work.
+PEDAGOGY: Prefer the least support that can still work, and let the student do the thinking. Order \
+of priority: clarify -> diagnose -> support -> check transfer -> move on. Match the evidence:
+- Latest answer verified_correct: no diagnose and no hint. Inside a backtrack branch \
+(state.return_stack not empty): next_problem / return_to_parent. Correct after support on this problem \
+(state.support.hint_level > 0 or state.support.support_turns_on_node > 0): check_transfer. Otherwise \
+continue practice, or advance when state.readiness.ready_to_advance.
+- The student asks for help (state.trigger "request_hint") or is not progressing \
+(state.support.no_progress_turns >= {ESCALATE_AFTER_NO_PROGRESS}): raise support by one level \
+(minimal_hint or conceptual_question up to level 2, scaffold from level 3). Do not answer a request \
+for help with a diagnose question.
+- A slip (latest_assessment.error_family is {_careless_families()}) on a skill whose \
+facts.skill_standing is "good": minimal_hint / prompt_self_check.
+- The error is on a skill with an active hypothesis (facts.active_hypotheses): status "suspected" \
+(little evidence) -> diagnose / distinguish_hypothesis; status "supported" (repeated evidence) -> \
+conceptual_question / target_misconception.
+- An error with unknown cause and no active hypothesis: diagnose / elicit_reasoning once, then hint.
+- diagnose / probe_prerequisite checks a prerequisite whose weakness is NOT yet shown. Use it only for \
+an entry of facts.probe_candidates and cite that entry's edge_ids. The list holds prerequisites (up to \
+2 levels) with a low standing, plus those with no evidence either way once the student is still \
+incorrect at hint level {PROBE_UNCHECKED_FROM_HINT_LEVEL}. An empty list means: do not probe. A skill \
+with an active hypothesis, or to which the latest error is attributed, is never a candidate: its gap \
+is already shown, so address it directly with the rows above.
+- Still incorrect at state.support.hint_level >= {PROBE_UNCHECKED_FROM_HINT_LEVEL}: backtrack to a \
+prerequisite that has facts.prerequisite_evidence; else probe a candidate; else scaffold with another \
+example.
 
 OUTPUT: the JSON object of the schema. Unused fields: null or []. "reason": one short sentence in \
 Vietnamese naming the evidence behind the choice (no step-by-step reasoning, no answer to the \
@@ -206,21 +237,68 @@ _CONTEXT_FIELDS_SENT = {"current_problem_prompt", "retrieved", "edges", "next_co
                         "rag_enabled"}
 
 
+def prerequisite_chains(s: StudentState, ctx: TurnContext) -> dict[str, list[str]]:
+    """Skill nền trong phạm vi hai tầng của concept đang học, kèm các cạnh nối về concept đó (đúng
+    chuỗi mà G05 đòi một đề xuất phải trích). Bỏ concept đã ghé trong nhánh hiện tại, như Rule-policy.
+    Skill tới được bằng nhiều đường thì lấy đường ngắn nhất."""
+    branch = {s.current.concept_id} | {f.concept_id for f in s.return_stack}
+    edges = sorted((e for e in ctx.edges if e.source_concept_id not in branch), key=lambda e: e.edge_id)
+    direct = [e for e in edges if e.target_concept_id == s.current.concept_id]
+    paths = [[e] for e in direct] + [[first, second] for first in direct for second in edges
+                                     if second.target_concept_id == first.source_concept_id]
+    chains: dict[str, list[str]] = {}
+    for path in paths:  # đường một cạnh đứng trước nên được giữ
+        edge_ids = [e.edge_id for e in path]
+        reached = ctx.prerequisite_chain(edge_ids, s.current.concept_id) or {}
+        for skill_id in path[-1].source_skill_ids:
+            if reached.get(skill_id) == len(path):
+                chains.setdefault(skill_id, edge_ids)
+    return chains
+
+
+def probe_candidates(s: StudentState, chains: dict[str, list[str]], stuck: bool) -> list[dict]:
+    """Skill nền đáng hỏi kiểm tra ở lượt này, kèm các cạnh phải trích. Hỏi kiểm tra là để tìm
+    nguyên nhân của một bài làm sai khi chưa biết skill nền có yếu hay không, nên danh sách rỗng
+    khi không có lỗi vừa chấm, khi học sinh xin tạm dừng (G14), khi đã chạm giới hạn hỗ trợ (G10),
+    và bỏ skill đã hỏi trên bài này.
+
+    - Ước lượng thấp: kiểm tra rồi mới backtrack (plan §9).
+    - Chưa có bằng chứng theo hướng nào (không yếu, không tốt): chỉ hỏi khi đã lên mức hint cao mà
+      vẫn sai (plan §10). Skill có bằng chứng tốt thì không hỏi.
+    - Lỗi vừa chấm quy cho skill đó, câu trả lời kiểm tra chưa đạt, giả thuyết đang mở: điểm yếu đã
+      lộ, không hỏi lại."""
+    a = s.latest_assessment
+    if a is None or a.assessment_status != "verified_incorrect" or stuck or s.trigger == "pause":
+        return []
+    high =s.support.hint_level >= PROBE_UNCHECKED_FROM_HINT_LEVEL
+
+    def worth(skill_id: str) -> bool:
+        evidence = prerequisite_evidence(s, skill_id)
+        unchecked = evidence is None and standing(s, skill_id) == "unknown"
+        return not probed(s, skill_id) and (evidence == "low_estimate" or (high and unchecked))
+
+    return [{"skill_id": skill_id, "edge_ids": chains[skill_id]} for skill_id in sorted(chains) if worth(skill_id)]
+
+
 def facts(s: StudentState, ctx: TurnContext) -> dict:
     assistance_cap = min(MAX_HINT_LEVEL, s.support.hint_level + 1)
     solved = s.latest_assessment is not None and s.latest_assessment.assessment_status == "verified_correct"
     prerequisite_skills = sorted({sk for e in ctx.edges if e.depth == 1 for sk in e.source_skill_ids})
-    skills = sorted({k.skill_id for k in s.skills} | set(prerequisite_skills) | {s.current.target_skill_id})
+    chains = prerequisite_chains(s, ctx)
+    skills = sorted({k.skill_id for k in s.skills} | set(prerequisite_skills) | set(chains)
+                    | {s.current.target_skill_id})
+    stuck = s.support.support_turns_on_node >= MAX_SUPPORT_TURNS_PER_NODE and not solved
     return {
         "allowed_evidence": [{"kind": kind.value, "id": ref} for kind, ids in evidence_index(s).items()
                              for ref in sorted(ids)],
         "max_hint_level": assistance_cap,
-        "stuck": s.support.support_turns_on_node >= MAX_SUPPORT_TURNS_PER_NODE and not solved,
+        "stuck": stuck,
         "branch_concepts": [s.current.concept_id] + [f.concept_id for f in s.return_stack],
         "active_hypotheses": [{"hypothesis_id": h.hypothesis_id, "skill_id": h.skill_id,
                                "misconception_id": h.misconception_id, "status": h.status}
                               for h in s.hypotheses if h.status in ACTIVE_HYPOTHESIS],
         "prerequisite_evidence": {sk: prerequisite_evidence(s, sk) for sk in prerequisite_skills},
+        "probe_candidates": probe_candidates(s, chains, stuck),
         "skill_standing": {sk: standing(s, sk) for sk in skills},
     }
 

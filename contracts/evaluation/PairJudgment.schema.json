@@ -1,0 +1,53 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "pair_id": {
+      "pattern": "^P[0-9a-f]{8}$",
+      "title": "Pair Id",
+      "type": "string"
+    },
+    "rater_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,29}$",
+      "title": "Rater Id",
+      "type": "string"
+    },
+    "stage": {
+      "default": "independent",
+      "enum": [
+        "independent",
+        "reconciled"
+      ],
+      "title": "Stage",
+      "type": "string"
+    },
+    "choice": {
+      "enum": [
+        "A",
+        "B",
+        "tie"
+      ],
+      "title": "Choice",
+      "type": "string"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "maxLength": 500,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    }
+  },
+  "required": [
+    "pair_id",
+    "rater_id",
+    "choice"
+  ],
+  "title": "PairJudgment",
+  "type": "object"
+}

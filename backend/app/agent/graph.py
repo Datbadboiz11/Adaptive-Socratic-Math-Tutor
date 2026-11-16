@@ -1,6 +1,7 @@
 """Khung LangGraph cho một lượt dạy (plan §7, §13; PRD FR-11).
 
     load → extract → analyze → observe → readiness → context → decide → generate → verify → commit
+                                                                          ↑__(sinh lại 1 lần)__│
 
 Mỗi lần ``invoke`` xử lý đúng một lượt rồi dừng; state của phiên nằm trong checkpointer theo
 ``thread_id = session_id``, nên dừng/tiếp tục hay khởi động lại tiến trình đều đọc lại được.
@@ -8,7 +9,8 @@ Request trùng ``request_id`` dừng ngay ở ``load``, không chấm hay cập 
 
 Các phần của Member 1/2 được truyền vào qua ``Services``; hiện dùng stub trong ``stubs.py``.
 ``proposer`` mặc định là Rule-policy để chạy không cần API; Agent LLM là ``llm_proposer.LLMProposer``
-(chọn theo cấu hình bằng ``llm_proposer.build_proposer``).
+(chọn theo cấu hình bằng ``llm_proposer.build_proposer``). Phản hồi mặc định viết bằng template;
+``response_generator`` bật LLM viết câu (``app.generation``), cùng một generator cho mọi cấu hình.
 """
 from __future__ import annotations
 
@@ -30,19 +32,25 @@ from app.agent.decision import (
     ExperimentConfiguration, HintLevel, Hypothesis, Identifier, PedagogicalAction, PedagogicalDecision,
     PrerequisiteProbe, Readiness, ReturnFrame, StudentState, SubmissionLine, SupportState, TurnSummary,
 )
+from app.agent.kg_tool import skill_title
 from app.agent.rule_policy import READINESS_VERSION, compute_readiness
 from app.agent.stubs import (
-    AnswerLeakVerifier, ObservationResult, StubAnalyzer, StubTools, TemplateGenerator, problem_prompt,
-    problem_ref, stub_observe, unverified_probe,
+    ObservationResult, StubAnalyzer, StubTools, demo_answer_key, problem_prompt, problem_ref, stub_observe,
+    unverified_probe,
 )
 from app.agent.tools import ProblemRef, TurnContext
 from app.extraction.contracts import ExtractionRecord
 from app.extraction.extractor import ExtractionOutcome, StepExtractor
+from app.generation.contracts import ResponseAttempt, ResponseInput, ResponseRecord, ResponseSource, response_input
+from app.generation.llm_generator import LLMResponseGenerator
+from app.generation.responder import Responder
+from app.generation.templates import TemplateGenerator
+from app.generation.verifier import REPEAT_WINDOW, ResponseVerifier
 
 A, I = PedagogicalAction, DecisionIntent
 # Phiên bản workflow (thứ tự node và tác động của commit). Ghi vào từng PedagogicalDecision để truy
 # được bản ghi nào sinh ra từ workflow nào (NFR-04). Đổi luồng hoặc apply_decision thì tăng.
-WORKFLOW_VERSION = "tutor-graph-0.4.0"
+WORKFLOW_VERSION = "tutor-graph-0.5.0"
 MAX_RECENT_TURNS = 12
 PAUSING_INTENTS = frozenset({I.STUDENT_REQUEST, I.STUCK_LIMIT, I.SYSTEM_FALLBACK, I.BUDGET_EXHAUSTED,
                              I.CONTENT_EXHAUSTED})
@@ -90,7 +98,7 @@ class TutorReply(Contract):
     intent: DecisionIntent | None = None
     hint_level: HintLevel = 0
     message: str = Field(min_length=1, max_length=2000)
-    response_source: Literal["template", "template_fallback", "llm", "system"]
+    response_source: ResponseSource
     problem_id: Identifier
     problem_prompt: str | None = None
     status: Literal["active", "paused", "completed"]
@@ -120,13 +128,18 @@ class Services:
     # analyzer. Chỉ áp cho concept mà extractor hỗ trợ (``applies_to``).
     extractor: StepExtractor | None = None
     proposer: Callable[[StudentState, TurnContext], ProposalOutcome] = field(default_factory=RulePolicyProposer)
-    generator: TemplateGenerator = field(default_factory=TemplateGenerator)
-    verifier: Callable[[StudentState, DecisionProposal, str], list[str]] = field(default_factory=AnswerLeakVerifier)
+    # Viết câu gửi học sinh: template, hoặc LLM (khi có ``response_generator``) với template làm dự
+    # phòng. Verifier giữ đáp án riêng, generator không bao giờ thấy (plan §18.2).
+    templates: TemplateGenerator = field(default_factory=TemplateGenerator)
+    response_generator: LLMResponseGenerator | None = None
+    verifier: ResponseVerifier = field(default_factory=lambda: ResponseVerifier(demo_answer_key))
     # Xác minh câu trả lời cho câu hỏi kiểm tra prerequisite: trả "demonstrated", "not_demonstrated"
     # hoặc "unverified". Bản thật sẽ là LLM extraction; stub luôn trả "unverified".
     probe_checker: Callable[[StudentState, PrerequisiteProbe, str], str] = unverified_probe
     problem_ref: Callable[[str], ProblemRef] = problem_ref
     problem_prompt: Callable[[str], str | None] = problem_prompt
+    # Tên chủ đề của một skill để nói với học sinh; mặc định là tên concept trong registry.
+    skill_title: Callable[[str], str | None] = skill_title
     new_id: Callable[[], UUID] = uuid4
     clock: Callable[[], datetime] = lambda: datetime.now(timezone.utc)
 
@@ -137,8 +150,12 @@ class TutorGraphState(TypedDict, total=False):
     observed_opportunities: list[str]
     context: dict
     decision: dict
-    message: str
-    response_source: str
+    # Các lần sinh phản hồi của lượt đang xử lý (ResponseAttempt), lưu sau mỗi lần sinh: verify lỗi
+    # rồi gửi lại thì kiểm tra lại đúng câu đó, không gọi LLM thêm. ``response`` là ResponseRecord
+    # khi đã chốt câu gửi đi, None khi còn phải sinh lại.
+    response_attempts: list[dict]
+    response: dict | None
+    response_log: list[dict]
     reply: dict
     # request_id → phản hồi đã gửi. Giữ mọi request của phiên để request cũ gửi lại (kể cả sau
     # khi đã có lượt khác xen giữa) nhận đúng phản hồi cũ thay vì bị xử lý lại.
@@ -215,7 +232,7 @@ def _extract(s: StudentState, submission: list[str], services: "Services") -> Ex
     return extractor(services.problem_prompt(s.current.problem_id), submission)
 
 
-def _task(ref: ProblemRef, opportunity_id: UUID, relation: str, skill_id: str | None = None) -> CurrentTask:
+def task_for(ref: ProblemRef, opportunity_id: UUID, relation: str, skill_id: str | None = None) -> CurrentTask:
     return CurrentTask(problem_id=ref.problem_id, problem_version=ref.problem_version, opportunity_id=opportunity_id,
                        concept_id=ref.concept_id, target_skill_id=skill_id or ref.target_skill_id,
                        template_family_id=ref.template_family_id, relation=relation, difficulty=ref.difficulty)
@@ -246,11 +263,11 @@ def apply_decision(s: StudentState, p: DecisionProposal, services: Services, dec
                             concept_id=s.current.concept_id, skill_id=s.current.target_skill_id,
                             hint_level=s.support.hint_level)
         update["return_stack"] = s.return_stack + [frame]
-        update["current"] = _task(services.problem_ref(p.problem_id), services.new_id(), "prerequisite")
+        update["current"] = task_for(services.problem_ref(p.problem_id), services.new_id(), "prerequisite")
     elif p.intent == I.RETURN_TO_PARENT:
         frame = s.return_stack[-1]
         update["return_stack"] = s.return_stack[:-1]
-        update["current"] = _task(services.problem_ref(frame.problem_id), frame.opportunity_id, "repeat",
+        update["current"] = task_for(services.problem_ref(frame.problem_id), frame.opportunity_id, "repeat",
                                   frame.skill_id)
         support = SupportState(hint_level=frame.hint_level)
     elif new_problem:
@@ -261,13 +278,65 @@ def apply_decision(s: StudentState, p: DecisionProposal, services: Services, dec
             relation = "initial"
         else:
             relation = "near_practice" if ref.template_family_id == s.current.template_family_id else "cross_family"
-        update["current"] = _task(ref, services.new_id(), relation)
+        update["current"] = task_for(ref, services.new_id(), relation)
     if "current" in update and update["current"].concept_id not in s.visited_concept_ids:
         update["visited_concept_ids"] = s.visited_concept_ids + [update["current"].concept_id]
     if p.action == A.END_SESSION:
         update["status"] = "paused" if p.intent in PAUSING_INTENTS else "completed"
     update["support"] = support
     return s.model_copy(update=update)
+
+
+# Các bước ghi state của một lượt. Node của graph và công cụ dựng lại state từ lịch sử
+# (``research/scenarios/replay.py``) gọi chung các hàm này, để state dựng lại đúng là state mà
+# hệ thống tạo ra trên cùng lịch sử (plan §18.2).
+
+def start_turn(s: StudentState, turn: TurnInput, turn_id: UUID) -> StudentState:
+    """Mở một lượt của học sinh. Lời nhắn chỉ là message của lượt này; bài làm được ghi riêng,
+    cùng lúc chấm."""
+    return s.model_copy(update={
+        "turn_id": turn_id, "request_id": turn.request_id, "trigger": turn.trigger,
+        "latest_student_message": turn.message, "status": "active", "observation": None,
+        "budget": type(s.budget)()})
+
+
+def record_student_turn(s: StudentState, turn: TurnInput, services: Services,
+                        assessment: AssessmentView | None = None,
+                        submission: list[str] | None = None) -> StudentState:
+    """Ghi lượt của học sinh: câu trả lời cho câu hỏi prerequisite đang chờ; với lượt nộp bài thì
+    thêm bài làm đã chấm, số lượt chưa tiến bộ và giả thuyết lỗi."""
+    update: dict = {"probes": _answer_probe(s, turn, services)}
+    if assessment is not None:
+        status = assessment.assessment_status
+        no_progress = s.support.no_progress_turns + 1 if status == "verified_incorrect" else (
+            0 if status == "verified_correct" else s.support.no_progress_turns)
+        update.update(latest_assessment=assessment, latest_submission=submission or [],
+                      support=s.support.model_copy(update={"no_progress_turns": no_progress}))
+        s = s.model_copy(update=update)
+        update["hypotheses"] = _track_hypotheses(s)
+    update["recent_turns"] = _turns(s, TurnSummary(
+        turn_id=s.turn_id, actor="student", kind=turn.trigger,
+        assessment_status=assessment.assessment_status if assessment else None))
+    return s.model_copy(update=update)
+
+
+def record_observation(s: StudentState, result: ObservationResult) -> StudentState:
+    hypotheses = s.hypotheses
+    if result.status.eligible and s.latest_assessment.assessment_status == "verified_correct":
+        # Làm đúng độc lập: tạm coi giả thuyết lỗi của skill đó đã được kiểm tra (chờ Member 1 xác nhận).
+        hypotheses = [h.model_copy(update={"status": "ruled_out"})
+                      if h.skill_id == result.observed_skill_id and h.status != "ruled_out" else h
+                      for h in hypotheses]
+    return s.model_copy(update={"observation": result.status, "skills": result.skills, "hypotheses": hypotheses})
+
+
+def finish_turn(s: StudentState, final: DecisionProposal, services: Services, decision_id: UUID) -> StudentState:
+    """Áp quyết định cuối vào state và đóng lượt."""
+    s = apply_decision(s, final, services, decision_id)
+    return s.model_copy(update={
+        "state_version": s.state_version + 1,
+        "recent_turns": _turns(s, TurnSummary(turn_id=decision_id, actor="tutor", kind="decision",
+                                              action=final.action, hint_level=final.hint_level))})
 
 
 def _next_actions(status: str) -> list[str]:
@@ -281,13 +350,9 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
         turn = TurnInput.model_validate(gs["turn_input"])
         if str(turn.request_id) in gs.get("processed", {}):
             return {"duplicate": True}
-        s = StudentState.model_validate(gs["student"])
-        # Lời nhắn chỉ là message của lượt này; bài làm được ghi riêng ở analyze, cùng lúc chấm.
-        s = s.model_copy(update={
-            "turn_id": services.new_id(), "request_id": turn.request_id, "trigger": turn.trigger,
-            "latest_student_message": turn.message, "status": "active", "observation": None,
-            "budget": type(s.budget)()})
-        return {"student": s.model_dump(mode="json"), "duplicate": False, "extraction": None}
+        s = start_turn(StudentState.model_validate(gs["student"]), turn, services.new_id())
+        return {"student": s.model_dump(mode="json"), "duplicate": False, "extraction": None,
+                "response_attempts": [], "response": None}
 
     def extract(gs: TutorGraphState):
         """Tách bài làm (nếu bật và concept trong phạm vi). Node riêng để kết quả và chi phí lần gọi
@@ -305,7 +370,7 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
     def analyze(gs: TutorGraphState):
         s = StudentState.model_validate(gs["student"])
         turn = TurnInput.model_validate(gs["turn_input"])
-        update = {"probes": _answer_probe(s, turn, services)}
+        a, submission = None, None
         if turn.trigger == "submit":
             # Analyzer và Agent nhìn cùng một bài làm: đúng các dòng này được chấm và được lưu.
             submission = turn.submission
@@ -317,31 +382,14 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
                 a = services.analyzer(s, submission)
             else:  # chưa tách được: mời viết lại, không chấm và không ghi BKT (FR04-AC2)
                 a = AssessmentView(assessment_id=services.new_id(), assessment_status="needs_clarification")
-            incorrect = a.assessment_status == "verified_incorrect"
-            no_progress = s.support.no_progress_turns + 1 if incorrect else (
-                0 if a.assessment_status == "verified_correct" else s.support.no_progress_turns)
-            update.update(latest_assessment=a, latest_submission=submission,
-                          support=s.support.model_copy(update={"no_progress_turns": no_progress}))
-            s = s.model_copy(update=update)
-            update["hypotheses"] = _track_hypotheses(s)
-        status = s.latest_assessment.assessment_status if (turn.trigger == "submit" and s.latest_assessment) else None
-        update["recent_turns"] = _turns(s, TurnSummary(turn_id=s.turn_id, actor="student", kind=turn.trigger,
-                                                      assessment_status=status))
-        return {"student": s.model_copy(update=update).model_dump(mode="json")}
+        return {"student": record_student_turn(s, turn, services, a, submission).model_dump(mode="json")}
 
     def observe(gs: TutorGraphState):
         s = StudentState.model_validate(gs["student"])
         if s.trigger != "submit" or s.latest_assessment is None:
             return {}
         result = services.observer(s, s.latest_assessment, frozenset(gs.get("observed_opportunities", [])))
-        hypotheses = s.hypotheses
-        if result.status.eligible and s.latest_assessment.assessment_status == "verified_correct":
-            # Làm đúng độc lập: tạm coi giả thuyết lỗi của skill đó đã được kiểm tra (chờ Member 1 xác nhận).
-            hypotheses = [h.model_copy(update={"status": "ruled_out"})
-                          if h.skill_id == result.observed_skill_id and h.status != "ruled_out" else h
-                          for h in hypotheses]
-        s = s.model_copy(update={"observation": result.status, "skills": result.skills, "hypotheses": hypotheses})
-        return {"student": s.model_dump(mode="json"),
+        return {"student": record_observation(s, result).model_dump(mode="json"),
                 "observed_opportunities": sorted(result.observed_opportunities)}
 
     def readiness(gs: TutorGraphState):
@@ -364,42 +412,55 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
                               created_at=services.clock(), workflow_version=WORKFLOW_VERSION)
         return {"decision": record.model_dump(mode="json")}
 
+    def response_inp(gs: TutorGraphState) -> ResponseInput:
+        previous = tuple(r["message"] for r in gs.get("response_log", [])[-REPEAT_WINDOW:])
+        return response_input(StudentState.model_validate(gs["student"]),
+                              PedagogicalDecision.model_validate(gs["decision"]).final,
+                              TurnContext.model_validate(gs["context"]), services.problem_prompt, previous,
+                              skill_title=services.skill_title)
+
+    def attempts_of(gs: TutorGraphState) -> list[ResponseAttempt]:
+        return [ResponseAttempt.model_validate(a) for a in gs.get("response_attempts", [])]
+
     def generate(gs: TutorGraphState):
-        s = StudentState.model_validate(gs["student"])
-        final = PedagogicalDecision.model_validate(gs["decision"]).final
-        message, source = services.generator(s, final, TurnContext.model_validate(gs["context"]))
-        return {"message": message, "response_source": source}
+        """Một lần sinh (lần đầu hoặc sinh lại); lưu vào checkpoint trước khi kiểm tra."""
+        attempt = responder.draft(response_inp(gs), attempts_of(gs))
+        return {"response_attempts": gs.get("response_attempts", []) + [attempt.model_dump(mode="json")]}
 
     def verify(gs: TutorGraphState):
+        """Kiểm tra lần sinh cuối; không đạt thì sinh lại (nếu còn ngân sách) hoặc dùng template."""
         s = StudentState.model_validate(gs["student"])
-        record = PedagogicalDecision.model_validate(gs["decision"])
-        message, source = gs["message"], gs["response_source"]
-        if services.verifier(s, record.final, message):
-            message, source = services.generator.safe(record.final), "template_fallback"
-            record = record.model_copy(update={"regenerations_used": 1})
-            if services.verifier(s, record.final, message):
-                message, source = "Mình cần kiểm tra lại câu trả lời này. Em đợi một chút rồi gửi lại nhé.", "system"
-        return {"message": message, "response_source": source, "decision": record.model_dump(mode="json")}
+        attempts, outcome = responder.settle(response_inp(gs), attempts_of(gs),
+                                             may_regenerate=s.budget.regenerations_remaining > 0)
+        update = {"response_attempts": [a.model_dump(mode="json") for a in attempts]}
+        if outcome is None:
+            budget = s.budget.model_copy(update={"regenerations_remaining": s.budget.regenerations_remaining - 1})
+            update["student"] = s.model_copy(update={"budget": budget}).model_dump(mode="json")
+            return update
+        decision = PedagogicalDecision.model_validate(gs["decision"])
+        response = outcome.record(s.turn_id, decision.decision_id)
+        decision = decision.model_copy(update={"regenerations_used": response.regenerations_used})
+        update.update(response=response.model_dump(mode="json"), decision=decision.model_dump(mode="json"))
+        return update
 
     def commit(gs: TutorGraphState):
         s = StudentState.model_validate(gs["student"])
         record = PedagogicalDecision.model_validate(gs["decision"])
+        response = ResponseRecord.model_validate(gs["response"])
         final = record.final
-        s = apply_decision(s, final, services, record.decision_id)
-        s = s.model_copy(update={
-            "state_version": s.state_version + 1,
-            "recent_turns": _turns(s, TurnSummary(turn_id=record.decision_id, actor="tutor", kind="decision",
-                                                  action=final.action, hint_level=final.hint_level))})
+        s = finish_turn(s, final, services, record.decision_id)
         reply = TutorReply(session_id=s.session_id, state_version=s.state_version, decision_id=record.decision_id,
                            action=final.action, intent=final.intent, hint_level=final.hint_level,
-                           message=gs["message"], response_source=gs["response_source"],
+                           message=response.message, response_source=response.final_source,
                            problem_id=s.current.problem_id, problem_prompt=services.problem_prompt(s.current.problem_id),
                            status=s.status, next_actions=_next_actions(s.status))
         reply_json = reply.model_dump(mode="json")
         return {"student": s.model_dump(mode="json"), "reply": reply_json,
                 "processed": {**gs.get("processed", {}), gs["turn_input"]["request_id"]: reply_json},
-                "decision_log": gs.get("decision_log", []) + [gs["decision"]]}
+                "decision_log": gs.get("decision_log", []) + [gs["decision"]],
+                "response_log": gs.get("response_log", []) + [gs["response"]]}
 
+    responder = Responder(services.templates, services.verifier, services.response_generator)
     graph = StateGraph(TutorGraphState)
     nodes = [("load", load), ("extract", extract), ("analyze", analyze), ("observe", observe),
              ("readiness", readiness), ("context", context), ("decide", decide), ("generate", generate),
@@ -408,8 +469,10 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
         graph.add_node(name, fn)
     graph.add_edge(START, "load")
     graph.add_conditional_edges("load", lambda gs: END if gs.get("duplicate") else "extract", ["extract", END])
-    for (left, _), (right, _) in zip(nodes[1:], nodes[2:]):
+    for (left, _), (right, _) in zip(nodes[1:-2], nodes[2:-1]):
         graph.add_edge(left, right)
+    graph.add_conditional_edges("verify", lambda gs: "commit" if gs.get("response") else "generate",
+                                ["generate", "commit"])
     graph.add_edge("commit", END)
     return graph.compile(checkpointer=checkpointer)
 
@@ -470,7 +533,7 @@ class TutorEngine:
         sid = session_id or sv.new_id()
         state = StudentState(student_id=student_id, session_id=sid, state_version=1, turn_id=sv.new_id(),
                              request_id=sv.new_id(), status="active", trigger="resume",
-                             current=_task(ref, sv.new_id(), "initial"), visited_concept_ids=[ref.concept_id],
+                             current=task_for(ref, sv.new_id(), "initial"), visited_concept_ids=[ref.concept_id],
                              readiness=Readiness(ready_to_advance=False, criteria_version=READINESS_VERSION,
                                                  unmet=["too_few_observations"]))
         prompt = sv.problem_prompt(problem_id)
@@ -482,7 +545,7 @@ class TutorEngine:
                 raise ValueError(f"session {sid} already exists")
             self.graph.update_state(self._cfg(sid), {
                 "student": state.model_dump(mode="json"), "observed_opportunities": [], "decision_log": [],
-                "extraction_log": [],
+                "extraction_log": [], "response_log": [],
                 "reply": reply.model_dump(mode="json"), "processed": {}, "duplicate": False}, as_node="commit")
         return reply
 
@@ -523,3 +586,6 @@ class TutorEngine:
 
     def extractions(self, session_id: UUID) -> list[ExtractionRecord]:
         return [ExtractionRecord.model_validate(r) for r in self._values(session_id).get("extraction_log", [])]
+
+    def responses(self, session_id: UUID) -> list[ResponseRecord]:
+        return [ResponseRecord.model_validate(r) for r in self._values(session_id).get("response_log", [])]

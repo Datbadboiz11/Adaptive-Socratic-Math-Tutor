@@ -18,7 +18,8 @@ from app.agent.graph import (  # noqa: E402
 )
 from app.agent.kg_tool import KGTool  # noqa: E402
 from app.agent.fakes import ScriptedProposer  # noqa: E402
-from app.agent.stubs import StubTools, TemplateGenerator  # noqa: E402
+from app.agent.stubs import StubTools  # noqa: E402
+from app.generation.templates import TemplateGenerator  # noqa: E402
 
 WRONG = ["2x - 3 = 10", "2x = 13", "x = 6.5"]
 RIGHT = ["2x - 6 = 10", "2x = 16", "x = 8"]
@@ -116,16 +117,16 @@ class FailOnce:
 class FlakyGenerator(TemplateGenerator):
     failed = False
 
-    def __call__(self, state, p, ctx):
+    def __call__(self, inp):
         if not self.failed:
             self.failed = True
             raise RuntimeError("generator down")
-        return super().__call__(state, p, ctx)
+        return super().__call__(inp)
 
 
 def test_retry_after_mid_turn_failure_resumes_without_reanalysis():
     # Review P1: retry chạy lại analyze nên một bài nộp thành hai bằng chứng.
-    eng = TutorEngine(config(), Services(generator=FlakyGenerator()))
+    eng = TutorEngine(config(), Services(templates=FlakyGenerator()))
     sid = eng.start("demo-a", "E02-P001").session_id
     request = TurnInput(request_id=uuid4(), trigger="submit", steps=WRONG)
     with pytest.raises(RuntimeError, match="generator down"):
@@ -304,16 +305,20 @@ def test_agent_proposal_rejected_by_gate_is_logged():
 
 
 class LeakyGenerator(TemplateGenerator):
-    def __call__(self, state, p, ctx):
-        return "Đáp án là x = 8 nhé.", "llm"
+    def __call__(self, inp):
+        return "Đáp án là x = 8 nhé."
 
 
 def test_answer_leak_is_replaced():
-    eng = TutorEngine(config(), Services(generator=LeakyGenerator()))
+    eng = TutorEngine(config(), Services(templates=LeakyGenerator()))
     sid = eng.start("demo-a", "E02-P001").session_id
     reply = run(eng, sid, "submit", WRONG)
     assert "x = 8" not in reply.message and reply.response_source == "template_fallback"
-    assert eng.decisions(sid)[0].regenerations_used == 1
+    # Thay bằng template an toàn là fallback, không phải sinh lại (FR12-AC1).
+    assert eng.decisions(sid)[0].regenerations_used == 0
+    response = eng.responses(sid)[0]
+    assert [(a.source, a.violations) for a in response.attempts] == [("template", ["answer_leak"]),
+                                                                     ("template_safe", [])]
 
 
 def test_agent_cannot_advance_concept_without_kg_edge():

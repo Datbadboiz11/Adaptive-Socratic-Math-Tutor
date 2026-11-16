@@ -1,0 +1,1194 @@
+{
+  "schema_version": "adaptive-scenarios-2.0.0",
+  "dataset_version": "adaptive-examples-0.2.0",
+  "parameters": {
+    "SK-N01-SIGNED-ADD": {
+      "parameter_version": "scenario-demo-0.1.0",
+      "source": "Engineering assumptions for synthetic replay examples. Not fitted or calibrated for Vietnamese learners.",
+      "prior": 0.2,
+      "learn": 0.1,
+      "guess": 0.2,
+      "slip": 0.1,
+      "forget": 0
+    },
+    "SK-A02-DISTRIBUTE": {
+      "parameter_version": "scenario-demo-0.1.0",
+      "source": "Engineering assumptions for synthetic replay examples. Not fitted or calibrated for Vietnamese learners.",
+      "prior": 0.2,
+      "learn": 0.1,
+      "guess": 0.2,
+      "slip": 0.1,
+      "forget": 0
+    },
+    "SK-E02-SOLVE": {
+      "parameter_version": "scenario-demo-0.1.0",
+      "source": "Engineering assumptions for synthetic replay examples. Not fitted or calibrated for Vietnamese learners.",
+      "prior": 0.2,
+      "learn": 0.1,
+      "guess": 0.2,
+      "slip": 0.1,
+      "forget": 0
+    }
+  },
+  "problems": [
+    {
+      "problem": {
+        "problem_id": "N01-P001",
+        "problem_version": "0.1.0",
+        "concept_id": "N01",
+        "target_skill_id": "SK-N01-SIGNED-ADD",
+        "template_family_id": "signed_add_basic",
+        "difficulty": 1
+      },
+      "original_problem_id": "N01-P001",
+      "prompt": "Tính (-7) + 3."
+    },
+    {
+      "problem": {
+        "problem_id": "A02-P001",
+        "problem_version": "0.1.0",
+        "concept_id": "A02",
+        "target_skill_id": "SK-A02-DISTRIBUTE",
+        "template_family_id": "distribute_negative",
+        "difficulty": 1
+      },
+      "original_problem_id": "A02-P001",
+      "prompt": "Khai triển -2(3y + 4)."
+    },
+    {
+      "problem": {
+        "problem_id": "E02-P001",
+        "problem_version": "0.1.0",
+        "concept_id": "E02",
+        "target_skill_id": "SK-E02-SOLVE",
+        "template_family_id": "linear_with_distribution",
+        "difficulty": 1
+      },
+      "original_problem_id": "E02-P001",
+      "prompt": "Giải phương trình 2(x - 3) = 10."
+    },
+    {
+      "problem": {
+        "problem_id": "E02-P002",
+        "problem_version": "0.1.0",
+        "concept_id": "E02",
+        "target_skill_id": "SK-E02-SOLVE",
+        "template_family_id": "linear_with_distribution",
+        "difficulty": 1
+      },
+      "original_problem_id": "E02-P002",
+      "prompt": "Giải phương trình 3(x + 1) = 12."
+    },
+    {
+      "problem": {
+        "problem_id": "E02-P003",
+        "problem_version": "0.1.0",
+        "concept_id": "E02",
+        "target_skill_id": "SK-E02-SOLVE",
+        "template_family_id": "linear_both_sides",
+        "difficulty": 2
+      },
+      "original_problem_id": "E02-P003",
+      "prompt": "Giải phương trình 5x - 7 = 2x + 8."
+    },
+    {
+      "problem": {
+        "problem_id": "A02-P002",
+        "problem_version": "0.1.0",
+        "concept_id": "A02",
+        "target_skill_id": "SK-A02-DISTRIBUTE",
+        "template_family_id": "distribute_basic",
+        "difficulty": 1
+      },
+      "original_problem_id": "A02-P002",
+      "prompt": "Khai triển 4(a - 5)."
+    },
+    {
+      "problem": {
+        "problem_id": "E03-P001",
+        "problem_version": "0.1.0",
+        "concept_id": "E03",
+        "target_skill_id": "SK-E03-PRIMARY",
+        "template_family_id": "word_to_linear",
+        "difficulty": 2
+      },
+      "original_problem_id": "E03-P001",
+      "prompt": "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó."
+    },
+    {
+      "problem": {
+        "problem_id": "N01-EX-P002",
+        "problem_version": "example-0.1.0",
+        "concept_id": "N01",
+        "target_skill_id": "SK-N01-SIGNED-ADD",
+        "template_family_id": "signed_add_positive_first",
+        "difficulty": 1
+      },
+      "original_problem_id": "N01-EX-P002",
+      "prompt": "Tính 5 + (-8)."
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "AD-EX-01",
+      "title": "signed_error",
+      "student_id": "AD-EX-01-student",
+      "session_id": "18eb5e6d-2681-5e27-8232-06a0c349857d",
+      "history_group_id": "AD-EX-01-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "signed_error",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "c33fa397-a024-5681-ac61-51bf630c1972",
+          "request_id": "05ae2f74-1bbe-50f0-9832-371a42faedca",
+          "task": {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "ec52c690-0abc-58fd-974a-1b7868ce9caa",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-10"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "b67372d9-2d90-5a24-85da-9bb88ec93055",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-N01-SIGNED-ADD",
+            "error_family": "sign_error",
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Tính (-7) + 3.",
+        "retrieved": [
+          {
+            "content_id": "KB-N01-HINT-01",
+            "skill_id": "SK-N01-SIGNED-ADD",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Cộng hai số khác dấu: lấy hiệu hai giá trị tuyệt đối, dấu theo số có giá trị tuyệt đối lớn hơn."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    },
+    {
+      "scenario_id": "AD-EX-02",
+      "title": "correct_after_hint",
+      "student_id": "AD-EX-02-student",
+      "session_id": "c8904ee8-fdf5-58cd-aaaf-d593403d684c",
+      "history_group_id": "AD-EX-02-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "correct_after_hint",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "e3650c0f-e107-50bf-ac6e-6bdc6fcb0275",
+          "request_id": "12171be0-45d5-51d4-9524-858e1cc799bc",
+          "task": {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "1eb88a66-ea03-5013-bb69-9e5bf0386916",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-10"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "7e76bbe8-8af9-5553-8853-47417b5f887e",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-N01-SIGNED-ADD",
+            "error_family": "sign_error",
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        },
+        {
+          "turn_id": "888f6bda-d938-530a-adc6-a305562d5aa0",
+          "request_id": "6547d6db-26bc-58ea-ae8a-5c5d24248f63",
+          "task": {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "1eb88a66-ea03-5013-bb69-9e5bf0386916",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "tutor",
+          "kind": "decision",
+          "submission": [],
+          "message": null,
+          "assessment": null,
+          "action": "minimal_hint",
+          "intent": "prompt_self_check",
+          "hint_level": 1,
+          "problem_id": null,
+          "target_skill_id": "SK-N01-SIGNED-ADD"
+        },
+        {
+          "turn_id": "9962b8eb-8135-5c48-8be8-8fcbddf6b84d",
+          "request_id": "205b79a8-405a-54f3-9723-7a1c73b531fc",
+          "task": {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "1eb88a66-ea03-5013-bb69-9e5bf0386916",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-4"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "e0819983-12eb-5121-b42a-562664108092",
+            "assessment_status": "verified_correct",
+            "first_error_step": null,
+            "primary_skill_id": "SK-N01-SIGNED-ADD",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Tính (-7) + 3.",
+        "retrieved": [
+          {
+            "content_id": "KB-N01-HINT-01",
+            "skill_id": "SK-N01-SIGNED-ADD",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Cộng hai số khác dấu: lấy hiệu hai giá trị tuyệt đối, dấu theo số có giá trị tuyệt đối lớn hơn."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "check_transfer"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    },
+    {
+      "scenario_id": "AD-EX-03",
+      "title": "alternative_correct",
+      "student_id": "AD-EX-03-student",
+      "session_id": "3677aae3-1d86-5106-84e8-8548aa6a03f1",
+      "history_group_id": "AD-EX-03-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "alternative_correct"
+      ],
+      "history": [
+        {
+          "turn_id": "b4285fd5-f136-5327-a0b2-b22cd261d4a0",
+          "request_id": "7ba90d1b-4fcc-5c47-8d62-e3d213aa1958",
+          "task": {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "2537fec6-ca43-5cbb-a11c-da2607733b30",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-2(3y+4)=-(6y+8)",
+            "-(6y+8)=-6y-8"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "a58f1637-b6aa-5aa4-8ddb-58edbf1240be",
+            "assessment_status": "verified_correct",
+            "first_error_step": null,
+            "primary_skill_id": "SK-A02-DISTRIBUTE",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Khai triển -2(3y + 4).",
+        "retrieved": [
+          {
+            "content_id": "KB-A02-QUESTION-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "question",
+            "disclosure_level": 0,
+            "text": "Nếu viết k(a - b) thành (a - b) + (a - b) + ... (k lần), em thấy số b xuất hiện mấy lần?"
+          },
+          {
+            "content_id": "KB-A02-HINT-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Khi nhân một số với một tổng hoặc hiệu trong ngoặc, em cần nhân số đó với từng số hạng trong ngoặc."
+          },
+          {
+            "content_id": "KB-A02-EXAMPLE-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "example",
+            "disclosure_level": 3,
+            "text": "Ví dụ: 3(a + 2) = 3·a + 3·2 = 3a + 6. Số 3 được nhân với cả a và 2."
+          },
+          {
+            "content_id": "KB-A02-EXPLAIN-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "explanation",
+            "disclosure_level": 4,
+            "text": "Tính chất phân phối: k(a + b) = ka + kb và k(a - b) = ka - kb. Ví dụ 5(y - 1) = 5y - 5: cả hai số hạng trong ngoặc đều được nhân với 5."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "next_problem"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    },
+    {
+      "scenario_id": "AD-EX-04",
+      "title": "ambiguous",
+      "student_id": "AD-EX-04-student",
+      "session_id": "26b2c736-2256-5dda-8597-5c2cd4f0c91f",
+      "history_group_id": "AD-EX-04-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "ambiguous",
+        "ambiguous_input"
+      ],
+      "history": [
+        {
+          "turn_id": "b6b82a13-7543-588d-9dc3-e0cd653e27e1",
+          "request_id": "f14fa9d4-9445-5ea8-83b1-603b135f3ef4",
+          "task": {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "dccffeaf-d7be-5a1b-9aee-84ec281902c8",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "Em chưa biết viết bước này"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "fd57a971-c295-5929-9098-a602e84c3e87",
+            "assessment_status": "needs_clarification",
+            "first_error_step": null,
+            "primary_skill_id": null,
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Khai triển -2(3y + 4).",
+        "retrieved": [
+          {
+            "content_id": "KB-A02-QUESTION-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "question",
+            "disclosure_level": 0,
+            "text": "Nếu viết k(a - b) thành (a - b) + (a - b) + ... (k lần), em thấy số b xuất hiện mấy lần?"
+          },
+          {
+            "content_id": "KB-A02-HINT-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Khi nhân một số với một tổng hoặc hiệu trong ngoặc, em cần nhân số đó với từng số hạng trong ngoặc."
+          },
+          {
+            "content_id": "KB-A02-EXAMPLE-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "example",
+            "disclosure_level": 3,
+            "text": "Ví dụ: 3(a + 2) = 3·a + 3·2 = 3a + 6. Số 3 được nhân với cả a và 2."
+          },
+          {
+            "content_id": "KB-A02-EXPLAIN-01",
+            "skill_id": "SK-A02-DISTRIBUTE",
+            "content_type": "explanation",
+            "disclosure_level": 4,
+            "text": "Tính chất phân phối: k(a + b) = ka + kb và k(a - b) = ka - kb. Ví dụ 5(y - 1) = 5y - 5: cả hai số hạng trong ngoặc đều được nhân với 5."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "clarify"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    },
+    {
+      "scenario_id": "AD-EX-05",
+      "title": "distribution_error",
+      "student_id": "AD-EX-05-student",
+      "session_id": "748477af-36cc-5880-9c66-b1d734c04263",
+      "history_group_id": "AD-EX-05-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "distribution_error"
+      ],
+      "history": [
+        {
+          "turn_id": "9f35b715-9fd6-5c91-9093-aab554fff809",
+          "request_id": "76f74ac0-e3c3-53e4-a969-c251829124a5",
+          "task": {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "684202f0-2787-55bc-aeb1-6a784b07d862",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "2x-3=10",
+            "2x=13",
+            "x=6.5"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "0443953d-6ea0-5e82-a378-c620d8a8cc3f",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": 1,
+            "primary_skill_id": "SK-A02-DISTRIBUTE",
+            "error_family": "distribution_error",
+            "misconception_candidate": "M_DIST_01",
+            "diagnosis_status": "suspected",
+            "final_answer_only": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Giải phương trình 2(x - 3) = 10.",
+        "retrieved": [
+          {
+            "content_id": "KB-E02-HINT-01",
+            "skill_id": "SK-E02-SOLVE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Khi giải phương trình, em làm cùng một phép toán ở cả hai vế."
+          },
+          {
+            "content_id": "KB-E02-EXAMPLE-01",
+            "skill_id": "SK-E02-SOLVE",
+            "content_type": "example",
+            "disclosure_level": 3,
+            "text": "Ví dụ: 4x + 1 = 9 → trừ 1 ở hai vế: 4x = 8 → chia hai vế cho 4: x = 2."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "conceptual_question"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    },
+    {
+      "scenario_id": "AD-EX-06",
+      "title": "asks_for_answer",
+      "student_id": "AD-EX-06-student",
+      "session_id": "c33427ca-6d56-5cac-be7e-c03779f433da",
+      "history_group_id": "AD-EX-06-history",
+      "source": "synthetic_authoring",
+      "source_reference": "Hand-authored examples using the existing demo bank. Assessment and strategy labels are drafts.",
+      "split": "dev",
+      "tags": [
+        "asks_for_answer",
+        "requests_answer"
+      ],
+      "history": [
+        {
+          "turn_id": "368f6fc2-f2b5-59f7-9d3e-4674bad346fb",
+          "request_id": "4d0f2303-8ec8-5309-9fed-fd32d990dc50",
+          "task": {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "86aee601-8d33-548d-a0c7-401fcb0173bf",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "2x-3=10"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "60d7f579-5432-5fa6-b30b-30a0266cff66",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": 1,
+            "primary_skill_id": "SK-A02-DISTRIBUTE",
+            "error_family": "distribution_error",
+            "misconception_candidate": "M_DIST_01",
+            "diagnosis_status": "suspected",
+            "final_answer_only": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        },
+        {
+          "turn_id": "c8d11576-065a-559b-89ee-cc62bdcf8267",
+          "request_id": "e4e90ae7-8c66-527e-8cb7-4ed94fc00569",
+          "task": {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "86aee601-8d33-548d-a0c7-401fcb0173bf",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "tutor",
+          "kind": "decision",
+          "submission": [],
+          "message": null,
+          "assessment": null,
+          "action": "diagnose",
+          "intent": "distinguish_hypothesis",
+          "hint_level": 0,
+          "problem_id": null,
+          "target_skill_id": "SK-A02-DISTRIBUTE"
+        },
+        {
+          "turn_id": "f8353e65-d7b7-556d-a6a1-0b49438f807b",
+          "request_id": "9ffa07c0-b34e-5382-b8de-2198104b5c4c",
+          "task": {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "opportunity_id": "86aee601-8d33-548d-a0c7-401fcb0173bf",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "message",
+          "submission": [],
+          "message": "Cho em đáp án luôn được không?",
+          "assessment": null,
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Giải phương trình 2(x - 3) = 10.",
+        "retrieved": [
+          {
+            "content_id": "KB-E02-HINT-01",
+            "skill_id": "SK-E02-SOLVE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Khi giải phương trình, em làm cùng một phép toán ở cả hai vế."
+          },
+          {
+            "content_id": "KB-E02-EXAMPLE-01",
+            "skill_id": "SK-E02-SOLVE",
+            "content_type": "example",
+            "disclosure_level": 3,
+            "text": "Ví dụ: 4x + 1 = 9 → trừ 1 ở hai vế: 4x = 8 → chia hai vế cho 4: x = 2."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "N01-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "A02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_negative",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_with_distribution",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E02-P003",
+            "problem_version": "0.1.0",
+            "concept_id": "E02",
+            "target_skill_id": "SK-E02-SOLVE",
+            "template_family_id": "linear_both_sides",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "A02-P002",
+            "problem_version": "0.1.0",
+            "concept_id": "A02",
+            "target_skill_id": "SK-A02-DISTRIBUTE",
+            "template_family_id": "distribute_basic",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "E03-P001",
+            "problem_version": "0.1.0",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "word_to_linear",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "N01-EX-P002",
+            "problem_version": "example-0.1.0",
+            "concept_id": "N01",
+            "target_skill_id": "SK-N01-SIGNED-ADD",
+            "template_family_id": "signed_add_positive_first",
+            "difficulty": 1
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint"
+        ],
+        "forbidden_actions": [
+          "end_session"
+        ],
+        "review_status": "draft",
+        "author": "member3",
+        "reviewer": null,
+        "rationale": "Draft pedagogical alternatives for testing the scenario tools; requires independent review."
+      }
+    }
+  ]
+}

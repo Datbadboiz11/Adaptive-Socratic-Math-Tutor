@@ -1,0 +1,145 @@
+{
+  "$defs": {
+    "DecisionIntent": {
+      "description": "Mục đích cụ thể của action. Đây không phải bộ strategy thứ hai (PRD FR-10):\nmỗi intent chỉ thuộc đúng một action và cho generator biết cần viết loại câu nào.",
+      "enum": [
+        "resolve_input",
+        "restate_task",
+        "elicit_reasoning",
+        "distinguish_hypothesis",
+        "probe_prerequisite",
+        "prompt_self_check",
+        "locate_error",
+        "recall_rule",
+        "target_misconception",
+        "decompose_step",
+        "analogous_example",
+        "explain_concept",
+        "review_prerequisite",
+        "independent_check",
+        "continue_practice",
+        "advance_difficulty",
+        "advance_concept",
+        "return_to_parent",
+        "switch_problem",
+        "student_request",
+        "session_goal_met",
+        "budget_exhausted",
+        "stuck_limit",
+        "content_exhausted",
+        "system_fallback"
+      ],
+      "title": "DecisionIntent",
+      "type": "string"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Câu gia sư một hệ thống viết cho một tình huống. Script chạy ablation ghi ra dạng này (JSONL).",
+  "properties": {
+    "scenario_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "system": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{0,59}$",
+      "title": "System",
+      "type": "string"
+    },
+    "message": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Message",
+      "type": "string"
+    },
+    "action": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PedagogicalAction"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "intent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DecisionIntent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "hint_level": {
+      "anyOf": [
+        {
+          "maximum": 4,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Hint Level"
+    },
+    "problem_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Problem Id"
+    },
+    "response_source": {
+      "anyOf": [
+        {
+          "enum": [
+            "template",
+            "template_fallback",
+            "llm",
+            "system"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Response Source"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "system",
+    "message"
+  ],
+  "title": "SystemOutput",
+  "type": "object"
+}

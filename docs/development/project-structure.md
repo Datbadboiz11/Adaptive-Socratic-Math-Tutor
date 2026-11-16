@@ -9,7 +9,8 @@ Adaptive-Socratic-Math-Tutor/
 │   │   ├── agent/            # Agent: hợp đồng quyết định, policy gate, Rule-policy, Agent LLM, LangGraph
 │   │   ├── llm/              # Client LLM, hợp đồng usage và client giả dùng chung
 │   │   ├── kg/               # Knowledge Graph: đọc/kiểm tra registry, truy vấn, đồng bộ Neo4j
-│   │   └── extraction/       # LLM extraction: tách bài làm tự do thành các bước theo grammar
+│   │   ├── extraction/       # LLM extraction: tách bài làm tự do thành các bước theo grammar
+│   │   └── generation/       # Sinh và kiểm tra phản hồi: template, LLM viết câu, verifier giữ đáp án
 │   └── migrations/
 ├── frontend/                 # Next.js: giao diện sản phẩm và API proxy
 │   └── app/
@@ -17,13 +18,19 @@ Adaptive-Socratic-Math-Tutor/
 │   └── curriculum/           # Registry 40 concept và pilot authoring tiếng Việt
 ├── contracts/                # JSON Schema, OpenAPI và fixtures hợp đồng
 │   ├── agent/                # Schema Agent, fixtures và bộ tình huống dev
-│   └── extraction/           # Schema extraction và bộ ca nhập liệu dev
+│   ├── extraction/           # Schema extraction và bộ ca nhập liệu dev
+│   ├── generation/           # Schema response log và bộ ca sinh phản hồi dev
+│   ├── evaluation/           # Schema phiếu chấm rubric, bộ bài chấm và khóa ẩn cấu hình
+│   └── scenarios/            # Schema lịch sử/tình huống thích ứng và ví dụ dev
 ├── research/                 # Code tiền xử lý/benchmark/nghiên cứu
 │   ├── config/               # Protocol/split/fit có version
 │   ├── data/                 # Audit và tiền xử lý ASSISTments
 │   ├── bkt/                  # Model, benchmark, metrics và pyBKT parity
 │   ├── agent/                # Thống kê nhãn chiến lược ngoài, so sánh Agent LLM với Rule-policy
 │   ├── extraction/           # Đánh giá LLM extraction trên bộ ca dev
+│   ├── generation/           # Đánh giá verifier và LLM viết câu trên bộ ca dev
+│   ├── scenarios/            # Replay Student Model, chia nhóm bài và ma trận độ phủ
+│   ├── evaluation/           # Chạy ablation qua LangGraph; rubric Socratic: bộ bài chấm ẩn cấu hình, kappa, tổng hợp điểm
 │   └── llm_support.py        # Phần chung của script có gọi LLM: .env, xác nhận, chi phí
 ├── scripts/                  # Công cụ vận hành repo
 │   ├── checks/               # Kiểm tra nội dung, API, DB, browser và smoke
@@ -39,6 +46,8 @@ Adaptive-Socratic-Math-Tutor/
 │   ├── implementation/mvp/   # Bàn giao phase1–phase5 và evidence tương ứng
 │   ├── implementation/agent/ # Agent, policy gate, LangGraph, KG, Agent LLM (thiết kế và giới hạn)
 │   ├── implementation/extraction/ # LLM extraction: hợp đồng, chốt chặn, câu hỏi cần chốt
+│   ├── implementation/generation/ # Sinh và kiểm tra phản hồi: luồng, kiểm tra, giới hạn
+│   ├── implementation/evaluation/ # Script ablation, bộ tình huống thích ứng, hướng dẫn chấm rubric Socratic, quy trình chấm ẩn cấu hình
 │   └── research/data/        # Audit, protocol, runbook và kết quả dev tổng hợp
 ├── data/                     # Dataset local, được Git ignore
 ├── .github/                  # CI, mẫu issue và PR
