@@ -26,7 +26,7 @@ def test_all_authored_alternatives_and_errors(problem):
 @pytest.mark.parametrize('steps,status,reason,index',[
     (['x-3=5','x=8'],'verified_correct','valid_solution',None),
     (['2(x-3)=10','2x-3=10','2x=13','x=6.5'],'verified_incorrect','invalid_transformation',1),
-    (['x=6.5'],'verified_incorrect','wrong_final_answer',None),
+    (['x=6.5'],'verified_incorrect','wrong_final_answer',1),
     (['x-3=5'],'unverified','valid_partial',None),
     (['8=x'],'verified_correct','valid_solution',None),
     (['0=0'],'verified_incorrect','invalid_transformation',1),
