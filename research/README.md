@@ -21,10 +21,11 @@ python research/generation/evaluate_generation.py --llm fake   # verifier và LL
 Ablation và chấm rubric Socratic ẩn cấu hình:
 
 ```powershell
-python research/evaluation/run_ablation.py --out data/ablation/dev-fake   # các cấu hình plan §18.1 qua LangGraph; mặc định LLM giả
+python research/evaluation/run_ablation.py --out data/ablation/dev-fake   # 7 cấu hình plan §18.1 (6 qua LangGraph + Socratic LLM baseline); mặc định LLM giả
 python research/evaluation/run_dev_repeat.py --out data/ablation/dev-repeat-fake   # hai lần lặp, chia phần và gộp có kiểm tra; mặc định LLM giả
 python research/evaluation/build_rating_packet.py --pilot --raters r1 r2 --out data/rating/pilot-01
 python research/evaluation/score_ratings.py --packet data/rating/pilot-01
+python research/evaluation/select_thresholds.py --out data/thresholds/dev-01   # sàng lọc ngưỡng mastery BKT/Heuristic bằng Rule-policy; không gọi API
 ```
 
 `run_ablation.py` ghi câu của từng cấu hình (`outputs.jsonl`) cùng quyết định, latency và chi phí từng lượt; `--llm openai --yes` mới gọi model thật. `build_rating_packet.py` tạo bộ bài cho người chấm, `score_ratings.py` tính độ đồng thuận và tổng hợp điểm; hai script này không gọi API. Xem [script ablation](../docs/implementation/evaluation/ablation-runner.v1.md), [hướng dẫn chấm](../docs/implementation/evaluation/socratic-rubric.v1.md) và [quy trình chấm](../docs/implementation/evaluation/rating-workflow.v1.md).
@@ -34,7 +35,12 @@ Công cụ dựng tình huống từ lịch sử, chia dev/test theo nhóm bài 
 
 ```powershell
 python -m research.scenarios.build --input contracts/scenarios/examples.dev.v1.json --out data/scenarios/examples-v3
+python -m research.scenarios.pilot_dev --check                                        # bộ dev pilot 33 ca khớp nguồn
+python -m research.scenarios.pilot_dev --sheet data/scenarios/pilot-dev-review.md     # phiếu rà soát nhãn nháp; thêm --blind để gán nhãn độc lập
+python -m research.scenarios.build --input contracts/scenarios/pilot.dev.v1.json --out data/scenarios/pilot-v1
 ```
+
+Bộ dev pilot soạn bằng code ở `scenarios/pilot_dev.py` (dùng `scenarios/authoring.py`); nhãn là nháp, chưa duyệt.
 
 Phần dùng chung của các script có gọi LLM (đọc `.env`, xác nhận trước khi gọi, thống kê token/chi phí) nằm ở `llm_support.py`. Client, kiểu usage và client giả dùng chung nằm ở `backend/app/llm/`. Thiết kế và giới hạn: [Agent LLM](../docs/implementation/agent/llm-agent.v1.md), [LLM extraction](../docs/implementation/extraction/llm-extraction.v1.md), [sinh phản hồi](../docs/implementation/generation/response-generation.v1.md).
 

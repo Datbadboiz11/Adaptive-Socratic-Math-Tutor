@@ -29,8 +29,8 @@ Adaptive-Socratic-Math-Tutor/
 │   ├── agent/                # Thống kê nhãn chiến lược ngoài, so sánh Agent LLM với Rule-policy
 │   ├── extraction/           # Đánh giá LLM extraction trên bộ ca dev
 │   ├── generation/           # Đánh giá verifier và LLM viết câu trên bộ ca dev
-│   ├── scenarios/            # Replay Student Model, chia nhóm bài và ma trận độ phủ
-│   ├── evaluation/           # Chạy ablation qua LangGraph; rubric Socratic: bộ bài chấm ẩn cấu hình, kappa, tổng hợp điểm
+│   ├── scenarios/            # Replay Student Model, chia nhóm bài, ma trận độ phủ; soạn ca bằng code và bộ dev pilot
+│   ├── evaluation/           # Chạy ablation qua LangGraph, Socratic LLM baseline, sàng lọc ngưỡng mastery trên dev; rubric Socratic: bộ bài chấm ẩn cấu hình, kappa, tổng hợp điểm
 │   └── llm_support.py        # Phần chung của script có gọi LLM: .env, xác nhận, chi phí
 ├── scripts/                  # Công cụ vận hành repo
 │   ├── checks/               # Kiểm tra nội dung, API, DB, browser và smoke

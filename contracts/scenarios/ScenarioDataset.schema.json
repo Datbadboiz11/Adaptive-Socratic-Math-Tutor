@@ -595,6 +595,59 @@
       "title": "ProblemSource",
       "type": "object"
     },
+    "RaterLabel": {
+      "additionalProperties": false,
+      "description": "Nhãn một người gán độc lập, trước khi hòa giải (plan §12: lưu nhãn ban đầu).",
+      "properties": {
+        "rater": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Rater",
+          "type": "string"
+        },
+        "acceptable_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "minItems": 1,
+          "title": "Acceptable Actions",
+          "type": "array"
+        },
+        "forbidden_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "title": "Forbidden Actions",
+          "type": "array"
+        },
+        "acceptable_intents": {
+          "items": {
+            "$ref": "#/$defs/DecisionIntent"
+          },
+          "title": "Acceptable Intents",
+          "type": "array"
+        },
+        "acceptable_target_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Acceptable Target Skill Ids",
+          "type": "array"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rater",
+        "acceptable_actions",
+        "rationale"
+      ],
+      "title": "RaterLabel",
+      "type": "object"
+    },
     "RetrievedContent": {
       "additionalProperties": false,
       "description": "Một mục nội dung đã duyệt được đưa vào context.\n\n``disclosure_level`` là mức hint thấp nhất được phép hiển thị nội dung này: nội dung có\nmức tiết lộ 4 chỉ dùng được trong phản hồi mức 4. Không bao giờ chứa lời giải bài đang làm.",
@@ -745,6 +798,7 @@
     },
     "StrategyLabels": {
       "additionalProperties": false,
+      "description": "Nhãn chiến lược cuối của một tình huống.\n\n``acceptable_intents`` và ``acceptable_target_skill_ids`` dành cho ca mà action chưa đủ phân biệt\n(ví dụ ``next_problem`` vừa là luyện tiếp vừa là chuyển concept). Để trống là không ràng buộc.\nAction nào có ít nhất một intent được liệt kê thì chỉ các intent đó được chấp nhận; action không\ncó intent nào được liệt kê thì nhận mọi intent của nó.\n\n``independent_labels`` giữ nhãn ban đầu của từng người; các trường ở trên là nhãn cuối sau hòa\ngiải. ``adjudicated`` cần ít nhất hai người gán nhãn độc lập (plan §12, bắt buộc với test).",
       "properties": {
         "acceptable_actions": {
           "items": {
@@ -761,11 +815,27 @@
           "title": "Forbidden Actions",
           "type": "array"
         },
+        "acceptable_intents": {
+          "items": {
+            "$ref": "#/$defs/DecisionIntent"
+          },
+          "title": "Acceptable Intents",
+          "type": "array"
+        },
+        "acceptable_target_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Acceptable Target Skill Ids",
+          "type": "array"
+        },
         "review_status": {
           "default": "draft",
           "enum": [
             "draft",
-            "human_approved"
+            "human_approved",
+            "adjudicated"
           ],
           "title": "Review Status",
           "type": "string"
@@ -792,6 +862,25 @@
           "minLength": 1,
           "title": "Rationale",
           "type": "string"
+        },
+        "independent_labels": {
+          "items": {
+            "$ref": "#/$defs/RaterLabel"
+          },
+          "title": "Independent Labels",
+          "type": "array"
+        },
+        "adjudication_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Adjudication Note"
         }
       },
       "required": [
@@ -913,8 +1002,8 @@
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "adaptive-scenarios-2.0.0",
-      "default": "adaptive-scenarios-2.0.0",
+      "const": "adaptive-scenarios-2.1.0",
+      "default": "adaptive-scenarios-2.1.0",
       "title": "Schema Version",
       "type": "string"
     },

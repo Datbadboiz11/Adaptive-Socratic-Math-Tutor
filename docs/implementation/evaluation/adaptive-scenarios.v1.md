@@ -1,6 +1,6 @@
 # Bộ tình huống thích ứng từ lịch sử
 
-**Trạng thái:** bản nháp của Member 3, công cụ và test xong, không gọi API. Bộ ví dụ có sáu ca nháp trên N01, A02, E02; **bộ 160–200 ca của plan §12 chưa được biên soạn**, nhãn chưa có ai duyệt.
+**Trạng thái:** bản nháp của Member 3, công cụ và test xong, không gọi API. Có sáu ca ví dụ và **33 ca dev pilot** (N01, A02, A03, E02, E03, E05): nhãn do AI soạn, Member 3 đã duyệt; chưa có nhãn độc lập của người thứ hai. **Bộ 160–200 ca của plan §12 chưa đủ, và chưa có ca test nào.**
 **Căn cứ:** plan §8.3 (observation), §11.5, §12, §18.2. **Dùng ở:** [script ablation](ablation-runner.v1.md) qua `--scenario-set`.
 
 ## Các file
@@ -10,7 +10,10 @@
 | [`contracts.py`](../../../research/scenarios/contracts.py) | Hợp đồng lịch sử, nguồn bài, tham số, nhãn và dữ liệu đã dựng |
 | [`replay.py`](../../../research/scenarios/replay.py) | Dựng Student Model và dấu vết observation từ sự kiện, bằng các hàm ghi state của graph |
 | [`build.py`](../../../research/scenarios/build.py) | Kiểm tra registry, lấy context KG, gom nhóm, chia tập và xuất độ phủ |
+| [`authoring.py`](../../../research/scenarios/authoring.py) | Soạn lịch sử bằng code: mỗi sự kiện đi qua đúng các bước ghi state của replay |
+| [`pilot_dev.py`](../../../research/scenarios/pilot_dev.py) | Nguồn của bộ dev pilot; in state từng ca và xuất phiếu rà soát |
 | [`examples.dev.v1.json`](../../../contracts/scenarios/examples.dev.v1.json) | Sáu ví dụ có nguồn và nhãn nháp, cố định dev |
+| [`pilot.dev.v1.json`](../../../contracts/scenarios/pilot.dev.v1.json) | 33 ca dev pilot, sinh từ `pilot_dev.py` (không sửa tay) |
 | [`ScenarioDataset.schema.json`](../../../contracts/scenarios/ScenarioDataset.schema.json) | Schema đầu vào |
 | [`ScenarioSet.schema.json`](../../../contracts/scenarios/ScenarioSet.schema.json) | Schema một split đã replay |
 | [`test_scenarios.py`](../../../tests/test_scenarios.py) | Replay khớp graph, observation, chia nhóm và tích hợp CLI ablation |
@@ -63,6 +66,25 @@ Nhãn chiến lược có nhiều action được chấp nhận, action bị c�
 `human_approved` cần người duyệt khác tác giả. Nhãn được rà soát độc lập, không lấy Rule-policy
 làm đáp án chuẩn. Trường `expected_rule_action` cũ chỉ dành cho bộ hồi quy cũ.
 
+**Nhãn chi tiết cho ca mà action chưa đủ phân biệt.** `next_problem` vừa là luyện tiếp vừa là chuyển
+concept; `diagnose` vừa là hỏi cách làm vừa là kiểm tra kiến thức nền. Hai trường tùy chọn:
+
+- `acceptable_intents`: action nào có ít nhất một intent được liệt kê thì chỉ các intent đó được chấp
+  nhận; action không có intent nào được liệt kê thì nhận mọi intent của nó.
+- `acceptable_target_skill_ids`: skill mà quyết định cần hướng tới.
+
+Để trống là không ràng buộc. Script ablation và công cụ chọn ngưỡng báo riêng số quyết định khớp nhãn
+chi tiết (`final_detail_acceptable`), chỉ tính trên các ca có nhãn chi tiết. Chỉ số `final_acceptable`
+theo action giữ nguyên nghĩa cũ.
+
+**Nhãn độc lập của hai người (plan §12).** `independent_labels` giữ nhãn ban đầu của từng người
+(`rater`, action chấp nhận được, action bị cấm, intent, skill cần hướng tới, lý do). Các trường ở trên là nhãn cuối sau hòa
+giải, kèm `adjudication_note`. `review_status = adjudicated` cần ít nhất hai người gán khác nhau.
+`build` cảnh báo mọi ca test chưa `adjudicated`, và ghi độ đồng thuận ban đầu vào manifest
+(`label_agreement`): số ca có hai nhãn, tỷ lệ cặp trùng hoàn toàn tập action chấp nhận được, Jaccard
+trung bình, số cặp mà một người chấp nhận action người kia cấm, và số cặp khác nhau về intent hoặc về
+skill cần hướng tới.
+
 Tag tương ứng các trường hợp trong §11.5 gồm `alternative_correct`, `error_propagation`,
 `final_answer_only`, `condition_error`, `ambiguous_input`, `insufficient_evidence`,
 `requests_answer`. Có thể bổ sung tag về miền kiến thức và ngoại lệ, kèm review nội dung.
@@ -74,6 +96,61 @@ chúng từ registry bằng `KGTool` như hệ thống (dùng cả cạnh nháp 
 ghi `kg_include_drafts` trong manifest). Cạnh soạn tay bị từ chối, vì có thể lệch registry, và thiếu
 cạnh thì cấu hình Full không khác No-KG. Nội dung truy xuất (`retrieved`) vẫn soạn tay cho tới khi
 có RAG của Member 2.
+
+## Bộ dev pilot
+
+`pilot.dev.v1.json` có 33 ca tổng hợp, cố định dev, dùng cho hai việc: thử quy trình gán nhãn (bước 1
+của quy trình ở plan §12) và cho công cụ chọn ngưỡng có ca để phân biệt. Bộ này **không phải bộ test**
+và không thay cho 160–200 ca của plan.
+
+| Nhóm ca | Mã | Nội dung |
+|---|---|---|
+| Bài đúng | DP-01 – DP-03 | Đủ bước, cách giải khác, chỉ có đáp án cuối |
+| Sai lần đầu | DP-04 – DP-08 | Chỉ có đáp án sai, nghi hiểu sai, lặp hiểu sai, lỗi kéo theo, sai điều kiện |
+| Chưa chấm được | DP-09, DP-10 | Input mơ hồ, trả lời bằng lời không xác minh được |
+| Lời nhắn của học sinh | DP-11 – DP-15 | Xin đáp án, xin gợi ý khi chưa làm, không hiểu đề, xin tạm dừng, quay lại |
+| Sau khi đã hỗ trợ | DP-16, DP-17 | Sửa đúng nhờ gợi ý, kẹt sau hai mức gợi ý |
+| Lỗi thao tác theo lịch sử | DP-18 – DP-21 | Cùng một lỗi tính, lịch sử độc lập 4/4, 3/4, 2/4, 1/4 đúng |
+| Điều kiện chuyển tiếp | DP-22 – DP-25 | Vừa làm đúng, lịch sử 4/4, 3/4, 2/4 (hai kiểu) đúng |
+| Kiến thức nền | DP-26 – DP-28 | Sai tiếp trong nhánh ôn, làm đúng bài nền, kiến thức nền vừa được chứng minh |
+| Concept khác | DP-29, DP-30 | Cộng số có dấu, thu gọn hạng tử |
+| Về bài gốc sau nhánh ôn | DP-31 – DP-33 | Lặp lỗi phân phối khi bài nền 0/2 và 1/2 đúng độc lập; phân phối đúng nhưng tính sai khi ước lượng nền còn thấp |
+
+Cách soạn:
+
+- **Lịch sử soạn bằng code** (`authoring.Session`), không viết JSON tay. Mỗi lượt đi qua đúng các hàm
+  ghi state mà replay dùng, nên bài hiện tại luôn là bài hệ thống đang giữ và quyết định giao bài sai
+  luật gate bị từ chối ngay lúc soạn. Mastery, số observation và readiness đều do replay tính từ lịch
+  sử; không có giá trị nào soạn tay.
+- **Bài pilot** (`problem_version = pilot-0.1.0`) thêm họ mẫu mới cho E02, A02, A03, N01 và một bài
+  E05, để một skill có đủ bài khác họ cho các observation độc lập. Đề do AI soạn, cần review nội dung.
+  Verifier chưa có đáp án riêng của các bài này, nên generator sẽ dùng fallback khi sinh câu.
+- **Nhãn do AI soạn** (`author = ai_draft`) từ tình huống sư phạm, có lý do cho từng ca; **Member 3 đã
+  duyệt cả 33 nhãn** (`reviewer = member3`, `human_approved`, bộ `adaptive-pilot-dev-0.2.0`). 22 ca có
+  nhãn intent hoặc skill. Các ca "nằm giữa" (DP-19, DP-23, DP-32) cố ý không ràng buộc intent.
+
+Giới hạn cần biết khi đọc kết quả trên bộ này:
+
+- Người soạn nhãn (AI) cũng là công cụ đã viết Rule-policy, và người duyệt (Member 3) là người phát
+  triển policy. Rule-policy đạt 33/33 action chấp nhận được và 22/22 nhãn chi tiết; con số đó **không
+  phải bằng chứng policy đúng**. Pilot hai người của plan §12 vẫn cần một thành viên khác gán nhãn độc
+  lập bằng phiếu không có nhãn (`--sheet ... --blind`), rồi so với nhãn đã duyệt.
+- DP-33 từng là ca duy nhất Rule-policy không khớp: học sinh vừa phân phối đúng và chỉ tính sai, nhưng
+  policy vẫn hỏi kiểm tra tính phân phối vì ước lượng kiến thức nền còn thấp. Sau khi nhãn được duyệt,
+  Rule-policy được sửa (`rule-policy-0.5.0`, [threshold-selection §4.2](threshold-selection.v1.md)).
+- Các nhóm ca theo lịch sử (DP-18 – DP-28, DP-31 – DP-33) được thiết kế quanh ranh giới ngưỡng. Chúng thuộc dev;
+  bộ test không nên được thiết kế theo ngưỡng.
+- Mọi ca dùng chung bài và họ mẫu với nhau và với bộ ví dụ, nên tất cả thuộc một nhóm dev. Các bài
+  và họ mẫu này không được xuất hiện trong test.
+
+Xuất phiếu để rà soát hoặc gán nhãn độc lập (ghi vào `data/`, không vào Git):
+
+```powershell
+python -m research.scenarios.pilot_dev --sheet data/scenarios/pilot-dev-review.md
+python -m research.scenarios.pilot_dev --sheet data/scenarios/pilot-dev-blind.md --blind
+python -m research.scenarios.pilot_dev --describe   # state đã replay của từng ca
+python -m research.scenarios.pilot_dev              # sinh lại pilot.dev.v1.json sau khi sửa nguồn
+```
 
 ## Replay
 
@@ -162,9 +239,13 @@ fallback và ghi lý do theo thiết kế hiện có.
 
 ## Việc còn mở
 
-- Biên soạn đủ concept/họ mẫu và các loại tình huống còn thiếu trong manifest, review nhãn và tag.
+- **Bộ dev pilot:** nhãn đã được Member 3 duyệt. Còn cần một thành viên khác gán nhãn độc lập bằng
+  phiếu không có nhãn, viết guideline cho các ca bất đồng (plan §12, bước 1), và review nội dung đề
+  của các bài `pilot-0.1.0`.
+- **Mở rộng dev** tới khoảng một nửa của 160–200 ca, tối thiểu 2 ca/concept ở mỗi bên. Hiện mới có
+  6 trên 40 concept; concept nào chưa có đủ họ mẫu trong problem bank thì chưa soạn được.
+- **Bộ test (80–100 ca):** dùng bài gốc và họ mẫu không có trong dev. Nhãn do hai người gán độc lập
+  rồi hòa giải (`adjudicated`); hợp đồng đã có chỗ lưu. Người phát triển policy (Member 3 và công cụ
+  AI đã viết policy) không soạn nhãn test và không dùng test để chỉnh hệ thống (plan §12, bước 5).
 - Chốt quy tắc observation và bộ tham số BKT với Member 1 (bảng ở mục Replay).
-- Nhãn hiện có một tác giả và một người duyệt. Quy trình ở plan §12 yêu cầu ca test được hai người
-  gán nhãn độc lập, lưu nhãn ban đầu, độ đồng thuận và nhãn cuối; hợp đồng nhãn chưa có chỗ cho
-  các trường đó. Cần bổ sung trước khi khóa test.
 - Nối đáp án riêng và RAG thật của Member 1/2 cho ID bài mới.

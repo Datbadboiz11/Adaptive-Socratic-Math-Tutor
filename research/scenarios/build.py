@@ -174,6 +174,10 @@ def coverage_report(sets: dict[str, ScenarioSet], graph: KnowledgeGraph) -> tupl
         present = {tag for case in sets[split].scenarios for tag in case.tags}
         for tag in sorted(PLAN_CASE_TAGS - present):
             warnings.append(f"{split}: missing situation category {tag}")
+    # Plan §12: ca test phải có hai người gán nhãn độc lập trước hòa giải.
+    unadjudicated = sum(s.labels.review_status != "adjudicated" for s in sets["test"].scenarios)
+    if unadjudicated:
+        warnings.append(f"test: {unadjudicated} scenarios without two independent labels (adjudicated)")
     details = {}
     for split, data in sets.items():
         cases = data.scenarios
@@ -181,12 +185,38 @@ def coverage_report(sets: dict[str, ScenarioSet], graph: KnowledgeGraph) -> tupl
             "scenarios": len(cases), "groups": len({s.split_group_id for s in cases}),
             "sources": dict(Counter(s.source for s in cases)),
             "label_statuses": dict(Counter(s.labels.review_status for s in cases)),
+            "detail_labels": sum(s.labels.has_detail for s in cases),
+            "label_agreement": label_agreement(cases),
             "tags": dict(Counter(tag for s in cases for tag in set(s.tags))),
             "acceptable_actions": dict(Counter(a.value for s in cases for a in set(s.labels.acceptable_actions))),
             "assessment_statuses": dict(Counter(s.state.latest_assessment.assessment_status if s.state.latest_assessment
                                                  else "none" for s in cases)),
         }
     return {"splits": details, "coverage_warnings": warnings}, matrix
+
+
+def label_agreement(cases: list[BuiltScenario]) -> dict:
+    """Độ đồng thuận giữa các nhãn độc lập ban đầu (plan §12), tính trên tập action chấp nhận được của
+    từng cặp người gán: tỷ lệ cặp trùng hoàn toàn và Jaccard trung bình. Đây là thống kê mô tả; số ca
+    nhỏ thì không kết luận được gì."""
+    raters = [(a, b) for case in cases for i, a in enumerate(case.labels.independent_labels)
+              for b in case.labels.independent_labels[i + 1:]]
+    pairs = [(set(a.acceptable_actions), set(b.acceptable_actions), set(a.forbidden_actions), set(b.forbidden_actions))
+             for a, b in raters]
+    if not pairs:
+        return {"double_labeled": 0, "pairs": 0, "exact_acceptable": None, "mean_jaccard_acceptable": None,
+                "conflicts": None, "intent_disagreements": None, "skill_disagreements": None}
+    return {
+        # Hai người ghi intent hoặc skill cần hướng tới khác nhau (kể cả một người ghi, một người không).
+        "intent_disagreements": sum(set(a.acceptable_intents) != set(b.acceptable_intents) for a, b in raters),
+        "skill_disagreements": sum(set(a.acceptable_target_skill_ids) != set(b.acceptable_target_skill_ids)
+                                   for a, b in raters),
+        "double_labeled": sum(len(case.labels.independent_labels) >= 2 for case in cases), "pairs": len(pairs),
+        "exact_acceptable": round(sum(a == b for a, b, _, _ in pairs) / len(pairs), 4),
+        "mean_jaccard_acceptable": round(sum(len(a & b) / len(a | b) for a, b, _, _ in pairs) / len(pairs), 4),
+        # Một người chấp nhận action mà người kia cấm: bất đồng nặng nhất, cần hòa giải trước.
+        "conflicts": sum(bool(a & fb or b & fa) for a, b, fa, fb in pairs),
+    }
 
 
 def main(argv: list[str] | None = None) -> int:

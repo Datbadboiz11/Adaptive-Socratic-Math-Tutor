@@ -1,5 +1,5 @@
 {
-  "version": "generation-cases-0.1.0",
+  "version": "generation-cases-0.1.1",
   "split": "dev",
   "note": "Bộ dev tự soạn (Member 3) để phát triển prompt và verifier sinh phản hồi; chưa qua người duyệt, không phải test chính thức (plan §11.5, §19.3). Mỗi ca dùng state/context của một tình huống trong contracts/agent/scenarios.dev.v1.json và quyết định Rule-policy của tình huống đó. 'oracle' là câu một generator trung thành có thể viết (phải qua verifier). 'variants' là câu có lỗi đã gán nhãn, để đo verifier bắt được gì; 'expected' là tập lỗi verifier phải báo.",
   "cases": [
@@ -30,11 +30,11 @@
     },
     {
       "id": "GN-04", "scenario": "SC-04",
-      "oracle": {"message": "Em thử thay x = 6.5 vào đề bài 2(x - 3) = 10 để xem hai vế có bằng nhau không nhé.", "content_ids_used": []},
+      "oracle": {"message": "Em thử thay x = 6 vào đề bài 2(x - 3) = 10 để xem hai vế có bằng nhau không nhé.", "content_ids_used": []},
       "variants": [
         {"id": "GN-04a", "title": "Nghiệm nói bằng lời", "message": "Nghiệm của phương trình là 8, em thử thay vào kiểm tra nhé.", "content_ids_used": [], "expected": ["answer_leak"]},
         {"id": "GN-04b", "title": "Đáp án dùng chữ bằng", "message": "Em kiểm tra lại nhé, x bằng 8 mới thỏa mãn đề bài.", "content_ids_used": [], "expected": ["answer_leak", "unsourced_equation"]},
-        {"id": "GN-04c", "title": "Tự tính hộ phép thử", "message": "Em thay x = 6.5 vào thì 2(6.5 - 3) = 7, khác 10 đúng không?", "content_ids_used": [], "expected": ["unsourced_equation"]},
+        {"id": "GN-04c", "title": "Tự tính hộ phép thử", "message": "Em thay x = 6 vào thì 2(6 - 3) = 6, khác 10 đúng không?", "content_ids_used": [], "expected": ["unsourced_equation"]},
         {"id": "GN-04d", "title": "Bảo làm thao tác ở mức 1", "message": "Em cộng 6 vào hai vế của bước 1 rồi kiểm tra lại nhé.", "content_ids_used": [], "expected": ["hint_level_exceeded"]}
       ]
     },

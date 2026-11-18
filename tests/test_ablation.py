@@ -15,7 +15,7 @@ from research.agent.scenarios import load_scenarios  # noqa: E402
 from research.evaluation.build_rating_packet import main as build_main  # noqa: E402
 from research.evaluation.rubric import PacketKey, SystemOutput  # noqa: E402
 from research.evaluation.run_ablation import (  # noqa: E402
-    Models, main, max_calls, project_context, run_ablation, run_turn, summarize, system_outputs,
+    CONFIGURATIONS, Models, main, max_calls, project_context, run_ablation, run_turn, summarize, system_outputs,
 )
 
 SCENARIOS = {sc.id: sc for sc in load_scenarios()}
@@ -175,16 +175,18 @@ def test_outputs_feed_the_rating_packet(tmp_path, capsys):
     assert "khác Full về action: SC-08" in capsys.readouterr().out
     outputs = [SystemOutput.model_validate_json(line)
                for line in (out / "outputs.jsonl").read_text(encoding="utf-8").splitlines()]
-    assert len(outputs) == 12 and len((out / "runs.jsonl").read_text(encoding="utf-8").splitlines()) == 12
+    assert len(outputs) == 14 and len((out / "runs.jsonl").read_text(encoding="utf-8").splitlines()) == 14
     info = json.loads((out / "summary.json").read_text(encoding="utf-8"))["run"]
     assert info["llm"] == "fake" and info["versions"]["workflow"] == WORKFLOW_VERSION and info["scenario_split"] == "dev"
 
     packet = tmp_path / "packet"
     assert build_main(["--outputs", str(out / "outputs.jsonl"), "--raters", "r1", "r2",
-                       "--compare", "full:no_kg", "full:rule_policy", "--out", str(packet)]) == 0
+                       "--compare", "full:no_kg", "full:rule_policy", "full:socratic_llm", "--out", str(packet)]) == 0
     key = PacketKey.model_validate_json((packet / "key.json").read_text(encoding="utf-8"))
-    assert len(key.items) == 12 and len(key.pairs) == 4
-    assert {i.action for i in key.items if i.scenario_id == "SC-08"} == {"backtrack", "scaffold"}
+    assert len(key.items) == 14 and len(key.pairs) == 6
+    baseline = [i for i in key.items if i.system == "socratic_llm"]
+    assert len(baseline) == 2 and all(i.action is None and i.acceptable_actions for i in baseline)
+    assert {i.action for i in key.items if i.scenario_id == "SC-08"} == {"backtrack", "scaffold", None}
 
 
 def test_results_are_never_overwritten_and_failed_turns_do_not_lose_the_batch(tmp_path, monkeypatch, capsys):
@@ -206,9 +208,10 @@ def test_openai_mode_refuses_without_confirmation(monkeypatch, tmp_path):
     monkeypatch.setattr("research.llm_support.OpenAIResponsesClient", fail("must not create a real client"))
     out = tmp_path / "ablation"
     assert max_calls(16, list(E), 1) == 16 * (5 + 6 * 2)  # 5 cấu hình gọi Agent; mỗi câu tối đa 2 lần sinh
+    assert max_calls(16, list(CONFIGURATIONS), 2) == 608  # baseline: không gọi Agent, câu tối đa 2 lần sinh
     assert max_calls(2, [E.RULE_POLICY], 3) == 12
     assert main(["--llm", "openai", "--out", str(out)]) == 2
-    assert main(["--llm", "openai", "--yes", "--out", str(out)]) == 2  # 272 lần > trần mặc định
+    assert main(["--llm", "openai", "--yes", "--out", str(out)]) == 2  # 304 lần > trần mặc định
     monkeypatch.setattr("research.llm_support.read_env", lambda: {})
     assert main(["--llm", "openai", "--yes", "--max-calls", "500", "--out", str(out)]) == 2
     assert not out.exists()  # chưa được phép gọi thì chưa tạo gì

@@ -20,13 +20,16 @@ def small_run(tmp_path, monkeypatch):
 
 def test_partitioned_run_preserves_repeats_and_rating_outputs(small_run):
     rows = runner.read_rows(small_run / "runs.jsonl")
-    assert len(rows) == 24
-    assert len({(r["scenario"], r["configuration"], r["attempt"]) for r in rows}) == 24
+    assert len(rows) == 28  # 2 tình huống × 7 cấu hình × 2 lần
+    assert len({(r["scenario"], r["configuration"], r["attempt"]) for r in rows}) == 28
     assert {r["attempt"] for r in rows} == {1, 2}
-    assert len(runner.read_rows(small_run / "outputs.jsonl")) == 12
+    assert len(runner.read_rows(small_run / "outputs.jsonl")) == 14
     summary = json.loads((small_run / "summary.json").read_text(encoding="utf-8"))
     assert summary["run"]["repeat"] == 2 and summary["run"]["llm"] == "fake"
-    assert all(s["action"]["unstable"] == [] for s in summary["configurations"].values())
+    configurations = summary["configurations"]
+    assert list(configurations) == summary["run"]["configurations"] == list(runner.CONFIGURATIONS)
+    assert all(s["action"]["unstable"] == [] for name, s in configurations.items() if name != "socratic_llm")
+    assert configurations["socratic_llm"]["action"]["unstable"] is None  # không có quyết định để so
     with pytest.raises(SystemExit):
         runner.main(["--out", str(small_run)])
 
@@ -100,7 +103,7 @@ def test_interrupted_run_resumes_without_repeating_finished_parts(tmp_path, monk
     assert len(commands) == 3 and (out / "part-1" / "runs.jsonl").read_bytes() == first_part
     assert (out / "part-2" / "runs.jsonl").read_text(encoding="utf-8") == ""  # lần chạy dở được giữ lại
     rows = runner.read_rows(out / "runs.jsonl")
-    assert len({(r["scenario"], r["configuration"], r["attempt"]) for r in rows}) == len(rows) == 24
+    assert len({(r["scenario"], r["configuration"], r["attempt"]) for r in rows}) == len(rows) == 28
     assert {r["scenario"] for r in runner.read_rows(out / "part-2-retry1" / "runs.jsonl")} == {scenarios[1].id}
 
     # Mã nguồn đổi sau khi lô bắt đầu thì không chạy tiếp: hai nửa sẽ không so được với nhau.

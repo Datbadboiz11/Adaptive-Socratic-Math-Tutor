@@ -405,6 +405,9 @@ class ObservationStatus(Contract):
     observation_id: UUID | None = None
 
 
+RECENT_INDEPENDENT_WINDOW = 5  # plan §18.1: Heuristic dùng tối đa 5 observation độc lập gần nhất/skill
+
+
 class SkillState(Contract):
     """``p_mastery`` để trống trong cấu hình No-BKT/Heuristic hoặc khi chưa có tham số.
     ``recent_independent`` là kết quả của tối đa 5 observation độc lập gần nhất, cũ trước mới sau
@@ -413,7 +416,7 @@ class SkillState(Contract):
     skill_id: Identifier
     p_mastery: Probability | None = None
     independent_observations: int = Field(ge=0)
-    recent_independent: list[bool] = Field(default_factory=list, max_length=5)
+    recent_independent: list[bool] = Field(default_factory=list, max_length=RECENT_INDEPENDENT_WINDOW)
     assisted_correct: int = Field(default=0, ge=0)
     parameter_version: str | None = None
 

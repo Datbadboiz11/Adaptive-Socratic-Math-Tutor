@@ -4,17 +4,43 @@ Ngưỡng là giá trị khởi đầu để thử trên dev (plan §10), chưa 
 """
 from __future__ import annotations
 
+from collections.abc import Iterator, Mapping
+from contextlib import contextmanager
+from contextvars import ContextVar
 from typing import Literal
 
 from app.agent.decision import SkillState, StudentState
 
 # Ngưỡng theo loại ước lượng. Plan §18.2: ngưỡng của Heuristic phải chọn riêng trên dev, không
-# áp nguyên ngưỡng xác suất BKT. Hiện hai bộ có cùng giá trị khởi đầu, CHƯA tune.
+# áp nguyên ngưỡng xác suất BKT. Hai bộ vẫn là giá trị khởi đầu, CHƯA chốt: sàng lọc trên bộ dev pilot
+# (``research/evaluation/select_thresholds.py``) giữ nguyên chúng; good/ready mới có bằng chứng sàng
+# lọc ban đầu, low chưa được phân biệt. Xem docs/implementation/evaluation/threshold-selection.v1.md §4.2.
+# Cách so: thấp khi < low; tốt khi >= good; đủ để chuyển concept khi >= ready.
 THRESHOLDS = {
     "bkt": {"low": 0.4, "good": 0.6, "ready": 0.8},
     "recent_ratio": {"low": 0.4, "good": 0.6, "ready": 0.8},
 }
 MIN_OBSERVATIONS_FOR_ESTIMATE = 2
+
+# Ngưỡng đặt tạm cho một khối code (công cụ chọn ngưỡng trên dev); None là dùng THRESHOLDS.
+_OVERRIDES: ContextVar[Mapping[str, Mapping[str, float]] | None] = ContextVar("mastery_thresholds", default=None)
+
+
+@contextmanager
+def thresholds_override(view: str, values: Mapping[str, float]) -> Iterator[None]:
+    """Dùng ``values`` thay ``THRESHOLDS[view]`` trong khối ``with``. Không đổi ngưỡng của luồng dạy thật."""
+    if set(values) != set(THRESHOLDS[view]):
+        raise ValueError(f"thresholds for {view} need exactly {sorted(THRESHOLDS[view])}")
+    token = _OVERRIDES.set({**(_OVERRIDES.get() or {}), view: dict(values)})
+    try:
+        yield
+    finally:
+        _OVERRIDES.reset(token)
+
+
+def thresholds(view: str) -> Mapping[str, float]:
+    overrides = _OVERRIDES.get()
+    return overrides[view] if overrides and view in overrides else THRESHOLDS[view]
 
 PrerequisiteEvidence = Literal["error_attributed", "probe_failed", "hypothesis", "low_estimate"]
 
@@ -36,7 +62,7 @@ def estimate(skill: SkillState | None, view: str = "bkt") -> tuple[float | None,
 
 
 def threshold(s: StudentState, name: str) -> float:
-    return THRESHOLDS[s.mastery_view][name]
+    return thresholds(s.mastery_view)[name]
 
 
 def standing(s: StudentState, skill_id: str) -> Literal["low", "good", "unknown"]:

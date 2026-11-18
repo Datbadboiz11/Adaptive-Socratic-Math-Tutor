@@ -32,7 +32,7 @@ phải nhãn "đúng toán" hay "đúng mức hỗ trợ"; đầu ra đã hiển
 """
 from __future__ import annotations
 
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 import re
 
@@ -169,8 +169,11 @@ class ResponseVerifier:
     def answer_check(self, inp: ResponseInput, message: str) -> Check | None:
         """``answer_leak``, ``math_unverified`` hoặc None. Bài không có đáp án thì bỏ qua: gọi
         ``has_keys`` trước khi cho LLM viết."""
-        keys = [k for pid in self.problems_to_check(inp) if (k := self.answer_keys(pid)) is not None]
-        quoted = set().union(*(sides(s) for s in self.sources(inp)))
+        return self._answer_result(self.problems_to_check(inp), self.sources(inp), message)
+
+    def _answer_result(self, problem_ids: Sequence[str], sources: Sequence[str], message: str) -> Check | None:
+        keys = [k for pid in problem_ids if (k := self.answer_keys(pid)) is not None]
+        quoted = set().union(*(sides(s) for s in sources))
         results = [self._reveals(form, message, quoted) for key in keys for form in key.final_answers]
         if any(r is True for r in results):
             return Check.ANSWER_LEAK
@@ -178,22 +181,49 @@ class ResponseVerifier:
             return Check.MATH_UNVERIFIED
         return None
 
+    def solution_checks(self, problem_ids: Sequence[str], sources: Sequence[str], message: str, *,
+                        reviewed_sources: Sequence[str], topic: str | None = None) -> list[Check]:
+        """Các kiểm tra chống lộ đáp án và lời giải, không cần quyết định của policy: ``problem_ids`` là
+        bài có đáp án phải giữ, ``sources`` là mọi chữ người viết câu được đưa, ``reviewed_sources``
+        là phần đã duyệt hoặc công khai trong đó (đề, nội dung được trích), ``topic`` là tên chủ đề
+        được phép gọi. Câu của hệ thống (``check_generated``) và câu của Socratic LLM baseline dùng
+        chung phần này (plan §18.2: cùng policy về tiết lộ).
+
+        ``hint_level_exceeded`` ở đây là phần không phụ thuộc mức hint: kể ra quá một thao tác mới là
+        dàn bài lời giải ở mọi mức. Phần theo mức hint nằm ở ``check_generated``."""
+        source_sides = set().union(*(sides(s) for s in sources))
+        # Một phần của vế có trong nguồn ("x - 3" trong "2(x - 3)") cũng là có nguồn.
+        new_expression = any(has_variable(side) and not any(side in known for known in source_sides)
+                             for side in sides(message))
+        answer = self._answer_result(problem_ids, sources, message)
+        new_operations = {op for op, _ in self.new_operations(reviewed_sources, message, topic)}
+        found = {
+            Check.ANSWER_KEY_MISSING: any(self.answer_keys(pid) is None for pid in problem_ids),
+            Check.ANSWER_LEAK: answer == Check.ANSWER_LEAK,
+            Check.MATH_UNVERIFIED: answer == Check.MATH_UNVERIFIED,
+            Check.UNSOURCED_EQUATION: bool(equalities(message) - implied_equalities(sources)),
+            Check.UNSOURCED_EXPRESSION: new_expression,
+            Check.HINT_LEVEL_EXCEEDED: len(new_operations) > MAX_NEW_OPERATIONS,
+        }
+        return [check for check, hit in found.items() if hit]
+
     # ------------------------------------------------------------------ mức hỗ trợ
 
-    @classmethod
-    def _exceeds_hint_level(cls, inp: ResponseInput, message: str) -> bool:
-        """Thao tác "mới" là thao tác không có trong đề hay nội dung đã duyệt được trích.
+    @staticmethod
+    def new_operations(reviewed_sources: Sequence[str], message: str, topic: str | None) -> list[tuple[str, bool]]:
+        """Thao tác "mới" (kèm cờ "đang hỏi"): thao tác không có trong đề hay nội dung đã duyệt được trích.
 
         Tên chủ đề có thể chứa tên phép toán ("Nhân chia số có dấu"). Chỉ chỗ gọi tên chủ đề được
         bỏ qua; tên chủ đề không làm phép toán nào thành "đã cho", nên câu bảo học sinh làm chính
         phép toán đó vẫn bị tính."""
-        allowed = set().union(*(mentioned_operations(s) for s in cls.reviewed_sources(inp)))
-        spoken = without_named_topic(message, inp.target_skill_title)
-        new = [(op, asked) for op, asked in operations(spoken) if op not in allowed]
-        told = [op for op, asked in new if not asked]
-        if inp.decision.hint_level <= MAX_ASK_ONLY_HINT_LEVEL and told:
-            return True
-        return len({op for op, _ in new}) > MAX_NEW_OPERATIONS
+        allowed = set().union(*(mentioned_operations(s) for s in reviewed_sources))
+        return [(op, asked) for op, asked in operations(without_named_topic(message, topic)) if op not in allowed]
+
+    @classmethod
+    def _tells_below_hint_level(cls, inp: ResponseInput, message: str) -> bool:
+        """Ở mức 0–1 chỉ được hỏi hoặc nhắc nội dung đã duyệt: bảo học sinh làm thao tác mới là quá mức."""
+        new = cls.new_operations(cls.reviewed_sources(inp), message, inp.target_skill_title)
+        return inp.decision.hint_level <= MAX_ASK_ONLY_HINT_LEVEL and any(not asked for _, asked in new)
 
     # ------------------------------------------------------------------ kiểm tra
 
@@ -203,21 +233,14 @@ class ResponseVerifier:
 
     def check_generated(self, inp: ResponseInput, message: str, content_ids_used: list[str]) -> list[Check]:
         decision = inp.decision
-        sources = self.sources(inp)
-        # Một phần của vế có trong nguồn ("x - 3" trong "2(x - 3)") cũng là có nguồn.
-        source_sides = set().union(*(sides(s) for s in sources))
-        new_expression = any(has_variable(side) and not any(side in known for known in source_sides)
-                             for side in sides(message))
-        answer = self.answer_check(inp, message)
         asks = any(is_question(s) for s in sentences(message))
+        shared = self.solution_checks(self.problems_to_check(inp), self.sources(inp), message,
+                                      reviewed_sources=self.reviewed_sources(inp), topic=inp.target_skill_title)
         found = {
-            Check.ANSWER_KEY_MISSING: not self.has_keys(inp),
-            Check.ANSWER_LEAK: answer == Check.ANSWER_LEAK,
-            Check.MATH_UNVERIFIED: answer == Check.MATH_UNVERIFIED,
-            Check.UNSOURCED_EQUATION: bool(equalities(message) - implied_equalities(sources)),
-            Check.UNSOURCED_EXPRESSION: new_expression,
+            **{check: True for check in shared if check != Check.HINT_LEVEL_EXCEEDED},
             Check.UNVERIFIED_AFFIRMATION: not inp.solved_current and affirms_correctness(message),
-            Check.HINT_LEVEL_EXCEEDED: self._exceeds_hint_level(inp, message),
+            Check.HINT_LEVEL_EXCEEDED: (Check.HINT_LEVEL_EXCEEDED in shared
+                                        or self._tells_below_hint_level(inp, message)),
             Check.MISSING_QUESTION: decision.action in QUESTION_ACTIONS and not asks,
             Check.UNKNOWN_CONTENT: bool(set(content_ids_used) - set(decision.content_ids)),
             Check.MISSING_CONTENT: ACTION_SPECS[decision.action].requires_content and not content_ids_used,

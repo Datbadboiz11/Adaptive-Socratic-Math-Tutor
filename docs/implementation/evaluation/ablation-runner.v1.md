@@ -1,6 +1,6 @@
 # Script chạy ablation, bản v1
 
-**Trạng thái:** bản nháp của Member 3, code và test xong. Với model thật **đã chạy một lần đủ 16 tình huống dev × 6 cấu hình** (§5.1), chưa lặp và chưa có ai chấm câu. Số liệu của LLM giả không nói gì về chất lượng của model.
+**Trạng thái:** bản nháp của Member 3, code và test xong cho đủ 7 cấu hình của plan §18.1, gồm Socratic LLM baseline (§3.1). Với model thật **đã chạy một lần đủ 16 tình huống dev × 6 cấu hình** (§5.1), khi chưa có baseline; chưa lặp và chưa có ai chấm câu. Baseline chưa chạy với model thật. Số liệu của LLM giả không nói gì về chất lượng của model.
 **Căn cứ:** plan §17 (RQ1b, RQ2, RQ5), §18.1, §18.2, §19.1 (vận hành); PRD NFR-04. **Bước sau:** [quy trình chấm ẩn cấu hình](rating-workflow.v1.md).
 
 ## 1. Vai trò
@@ -26,6 +26,7 @@ readiness → context → decide → generate → verify → commit
 - State của tình huống là state sau khi bài làm đã được chấm, nên graph chạy tiếp từ sau node `observe`. Các node trước đó (extract, analyze, observe) không chạy: mọi cấu hình dùng cùng kết quả chấm (plan §18.2: giữ cùng analyzer).
 - Rule-policy cũng chạy trong graph này, như plan §18.1 yêu cầu.
 - Mọi cấu hình dùng cùng generator, verifier, policy gate, template dự phòng và cùng số lần sinh lại.
+- Socratic LLM baseline là ngoại lệ duy nhất: không có policy nên không đi qua graph (§3.1).
 - Các cấu hình chạy xen kẽ trong từng tình huống, để thay đổi của API theo thời gian không dồn vào một cấu hình.
 
 ## 3. Mỗi cấu hình khác Full ở đâu
@@ -39,7 +40,26 @@ readiness → context → decide → generate → verify → commit
 | `no_rag` | Context không có nội dung truy xuất, `rag_enabled = false` | `run_ablation.project_context` |
 | `rule_policy` | Luật thay Agent LLM; không gọi model để quyết định | `decide.RulePolicyProposer` |
 
-Socratic LLM baseline (plan §18.1) không có student model hay policy và không ghi `PedagogicalDecision`, nên chưa chạy ở đây.
+| `socratic_llm` | Không có analyzer, student model, KG, RAG, policy, gate hay problem bank: một LLM được prompt Socratic, chỉ nhận đề và cửa sổ hội thoại | [`socratic_baseline.py`](../../../research/evaluation/socratic_baseline.py), không qua graph |
+
+### 3.1. Socratic LLM baseline
+
+Plan §18.1: "LLM được prompt Socratic, nhận đề và cùng cửa sổ hội thoại; không có student model dài hạn/KG/RAG", và chỉ là tham chiếu cấp hệ thống, không dùng riêng để kết luận thành phần nào gây cải thiện.
+
+**Model nhận:** đề bài, việc học sinh làm ở lượt này (`submit`, `request_hint`, `message`, `pause`, `resume`), bài làm, lời nhắn và các câu gia sư vừa gửi (tối đa 3 câu, cùng cửa sổ với generator của hệ thống). Lô ablation chạy một lượt từ state của tình huống, nên không cấu hình nào có câu gia sư trước đó.
+
+**Model không nhận:** kết quả chấm bài, bước sai, họ lỗi, giả thuyết lỗi, mức gợi ý, mastery, lịch sử hỗ trợ, cạnh KG, nội dung truy xuất, mã bài hay đáp án. Baseline không giao bài mới. Test kiểm tra phần này trên chính chuỗi gửi cho model.
+
+**Giữ giống các cấu hình khác (plan §18.2):**
+
+- Cùng client: cùng model, temperature, giới hạn token đầu ra và timeout.
+- Cùng policy về tiết lộ. Câu phải qua các kiểm tra chống lộ đáp án và lời giải của verifier: `answer_leak`, `math_unverified`, `unsourced_equation`, `unsourced_expression`, và `hint_level_exceeded` khi câu kể ra quá một thao tác giải mới (chuỗi "nhân vào ngoặc, cộng hai vế rồi chia" là dàn bài lời giải ở mọi mức hint). Đây là `ResponseVerifier.solution_checks`, phần mà `check_generated` của hệ thống cũng gọi. Không đạt thì sinh lại một lần kèm lý do, với cùng lời nhắc như generator, trừ lời nhắc cho `hint_level_exceeded` được viết lại vì baseline không có mức hint. Vẫn không đạt thì gửi câu hệ thống cố định, vì baseline không có template theo intent. Không có đáp án để kiểm tra thì không gọi model.
+- Verifier đọc kết quả chấm chỉ để biết học sinh đã tự giải đúng chưa: xác nhận đáp án học sinh tự tìm ra không bị tính là tiết lộ. Kết quả chấm không được gửi cho model.
+- Verifier lỗi sau khi model đã trả lời thì dòng lỗi vẫn giữ câu model viết (chưa được chấp nhận) và usage của nó, như lượt lỗi qua graph.
+
+**Kiểm tra không áp dụng:** phần theo mức hint (ở mức 0–1 chỉ được hỏi, không bảo làm thao tác mới), action là câu hỏi và nội dung được trích, vì cả ba cần quyết định của policy. Bốn kiểm tra lời văn không cần quyết định (khẳng định bài đúng khi chưa xác minh, hỏi dồn, quá dài, lặp nguyên văn) không chặn câu của baseline, vì chúng thuộc cách hệ thống viết câu chứ không thuộc policy về tiết lộ. Chúng được đếm ở `unenforced_checks`, để thấy câu baseline đã gửi mắc những lỗi mà hệ thống chặn. Người chấm vẫn chấm mọi chiều của rubric, kể cả "Đúng toán" khi baseline khen một bài làm sai.
+
+Phiên bản prompt: `socratic-baseline-prompt-0.5.0`, ghi ở `summary.json` (`versions.socratic_baseline_prompt`).
 
 Test kiểm tra phần dữ liệu Agent thật sự nhận: ở No-KG không còn mã cạnh nào trong prompt; ở No-BKT và Heuristic mọi `p_mastery` là rỗng nhưng số observation vẫn còn.
 
@@ -62,6 +82,7 @@ Tổng hợp theo cấu hình:
   - `decision`: so thêm `target_skill_id`, `hint_level`, `problem_id`, `content_ids`, `edge_ids` (toàn bộ phần học sinh nhận được). Không so `reason` và `evidence`, vì đó là lời giải thích.
   - Mỗi mức có `differs_from_full` (các tình huống chọn khác Full ở lần chạy thứ nhất) và `unstable` (các tình huống mà những lần lặp `--repeat` không chọn giống nhau, plan §18.2). `differs_from_full` là kiểm tra đầu tiên cho rủi ro "có KG/RAG nhưng không ảnh hưởng quyết định" (plan §21).
 - Latency cả lượt và riêng bước quyết định (trung vị, p95); token và chi phí của Agent và của generator, tách riêng.
+- `socratic_llm` không có quyết định: các chỉ số về action, gate, fallback, `differs_from_full` và `unstable` để trống (`null`, bảng in `-`), không ghi 0. Các chỉ số về câu, latency, token và chi phí vẫn có; usage của baseline nằm ở phần `generation`.
 - `model_calls`: số lần gọi model đếm ngay tại client. `model_calls_without_usage`: số lần gọi không ghi được usage. `cost_usd_per_turn` để trống khi có lần gọi không biết giá hoặc không ghi được usage, để không báo số thấp hơn chi phí thật.
 
 ### 4.1. Lượt lỗi
@@ -74,10 +95,10 @@ Nếu chính node gọi model bị lỗi sau khi model đã trả lời, usage c
 
 | Chế độ | Agent | Generator | Dùng để |
 |---|---|---|---|
-| `--llm fake` (mặc định) | LLM giả trả đúng đề xuất của Rule-policy | LLM giả trả câu template | Kiểm tra đường chạy, định dạng file, cách chiếu cấu hình. Không gọi API |
+| `--llm fake` (mặc định) | LLM giả trả đúng đề xuất của Rule-policy | LLM giả trả câu template; baseline nhận một câu hỏi chung cố định | Kiểm tra đường chạy, định dạng file, cách chiếu cấu hình. Không gọi API |
 | `--llm openai --yes` | Model thật | Model thật | Lấy câu thật để chấm. **Tốn phí** |
 
-Số lần gọi model tối đa = số tình huống × số lần lặp × (số cấu hình có Agent + số cấu hình × 2). Với 16 tình huống, 6 cấu hình, một lần chạy: 16 × (5 + 6 × 2) = **272 lần**. Script in con số này và dừng nếu vượt `--max-calls` (mặc định 50) hoặc thiếu `--yes`.
+Số lần gọi model tối đa = số tình huống × số lần lặp × (số cấu hình có Agent + số cấu hình × 2). Rule-policy và baseline không gọi Agent. Với 16 tình huống, 7 cấu hình, một lần chạy: 16 × (5 + 7 × 2) = **304 lần**. Script in con số này và dừng nếu vượt `--max-calls` (mặc định 50) hoặc thiếu `--yes`.
 
 ### 5.1. Lượt chạy với model thật trên bộ dev
 
@@ -110,8 +131,8 @@ Quan sát:
 ### 5.2. Chạy lại bản đã sửa, lặp hai lần
 
 [`run_dev_repeat.py`](../../../research/evaluation/run_dev_repeat.py) điều phối cùng `run_ablation.py`
-trong các tiến trình riêng, mỗi phần bốn tình huống và hai lần lặp. Với bộ dev hiện tại,
-tổng cộng 192 lượt, tối đa 544 lần gọi. Script lưu dấu SHA-256 của mã nguồn và dữ liệu,
+trong các tiến trình riêng, mỗi phần bốn tình huống và hai lần lặp. Với bộ dev hiện tại và 7 cấu hình,
+tổng cộng 224 lượt, tối đa 608 lần gọi (trước khi có baseline: 192 lượt, 544 lần gọi). Script lưu dấu SHA-256 của mã nguồn và dữ liệu,
 cấu hình model cùng phiên bản các thành phần trong `manifest.json`. Cấu hình môi trường được
 giữ cố định cho các tiến trình con. Script kiểm tra DNS trước khi tạo lô gọi model thật.
 
@@ -139,9 +160,38 @@ Lô đã dừng, được đánh dấu không hợp lệ trong `data/ablation/de
 Không dùng lô này để đánh giá model hoặc tạo phiếu chấm. Chưa xác định được token/chi phí
 của các lần gọi lỗi. Lệnh điều phối mới đã kiểm tra lỗi DNS trước khi gọi model.
 
-Kiểm tra offline qua đủ 192 lượt đã chạy ở `data/ablation/dev-repeat-offline-check`.
-Số liệu từ client giả chỉ dùng kiểm tra điều phối, ghép dữ liệu và định dạng báo cáo.
-Ba câu hỏi về chất lượng Agent, generator và độ ổn định model thật vẫn chờ lô chạy có kết nối API.
+Kiểm tra offline qua đủ 192 lượt (6 cấu hình, trước khi có baseline) đã chạy ở `data/ablation/dev-repeat-offline-check`.
+Số liệu từ client giả chỉ dùng kiểm tra điều phối, ghép dữ liệu và định dạng báo cáo. Lô chạy thật của bản mới là `dev-04` (§5.3).
+
+### 5.3. Lô `dev-04`: bản đã sửa, 7 cấu hình, lặp hai lần
+
+16 tình huống dev × 7 cấu hình × 2 lần lặp = 224 lượt: `gpt-4o-mini`, `agent-prompt-0.5.0`, `gate-0.5.0`, `rule-policy-0.5.0`, `response-prompt-0.3.0`, `response-verifier-0.4.0`, `templates-0.2.0`, `socratic-baseline-prompt-0.5.0`. 423 lần gọi model trong bản gộp, không lượt nào lỗi, không lỗi API, mọi lần gọi đều ghi được usage. Chi phí từ usage của bản gộp **0,152 USD**. Tiến trình đầu bị dừng khi máy thiếu bộ nhớ giữa phần 3: 63 lần gọi của phần dở (0,021 USD) nằm ở `part-3/`, không vào bản gộp; phần 3 được chạy lại ở `part-3-retry1/` bằng `--resume`. File ở `data/ablation/dev-04` (không commit).
+
+**Vẫn là số của bộ dev, dùng để tìm lỗi; không phải kết quả RQ.** Tập action chấp nhận được của 16 tình huống được soạn cùng Rule-policy, nên 32/32 của Rule-policy không chứng minh luật tốt hơn Agent.
+
+| Cấu hình | Action cuối chấp nhận được | Trong đó do Agent tự đề xuất | Đề xuất bị gate từ chối | Agent lỗi/sai schema | Lượt gửi câu template | Latency cả lượt (trung vị; p95) | Chi phí mỗi lượt |
+|---|---:|---:|---:|---:|---:|---|---:|
+| `full` | 26/32 | 14 | 12 | 0 | 5 | 4,9 s; 10,6 s | 0,00096 USD |
+| `no_bkt` | 20/32 | 11 | 9 | 0 | 7 | 4,5 s; 6,8 s | 0,00090 USD |
+| `heuristic` | 20/32 | 11 | 9 | 0 | 6 | 4,3 s; 6,9 s | 0,00091 USD |
+| `no_kg` | 23/32 | 13 | 10 | 0 | 4 | 4,4 s; 6,5 s | 0,00076 USD |
+| `no_rag` | 22/32 | 12 | 12 | 0 | 2 | 3,9 s; 5,7 s | 0,00084 USD |
+| `rule_policy` | 32/32 | không gọi Agent | 0 | không gọi Agent | 1 | 1,8 s; 2,8 s | 0,00022 USD |
+| `socratic_llm` | không có quyết định | – | – | – | 0 | 1,6 s; 3,0 s | 0,00017 USD |
+
+Chỉ một lượt chọn action thuộc tập bị cấm (`no_kg`).
+
+Quan sát:
+
+1. **Đầu ra Agent không còn sai schema** (0/160 lần gọi, trước đó 9/80), và tỷ lệ action chấp nhận được do Agent tự đề xuất ở Full tăng từ 4/16 lên 14/32. Gate vẫn từ chối 9–12/32 đề xuất ở mỗi cấu hình có Agent, chủ yếu vì nội dung vượt mức hint (G04, 7–12 lần) và cạnh KG không nối tới skill đích hoặc không có trong context (G05).
+2. **Agent hỏi chẩn đoán lặp lại khi đã đủ bằng chứng.** Ở `SC-02` (giả thuyết lỗi đã được hỗ trợ), `SC-03` (vừa hỏi chẩn đoán, vẫn sai cùng lỗi) và `SC-07` (xin thêm gợi ý ở mức 2), Full chọn `diagnose` / `distinguish_hypothesis` ở cả hai lần lặp, và các cấu hình có Agent khác cũng vậy. Gate cho qua vì không có luật cấm hỏi chẩn đoán lặp lại. Đây là lỗi lớn nhất còn lại của Agent trên bộ này; bộ dev pilot có các ca cùng loại (DP-06, DP-17) với `diagnose` nằm trong tập bị cấm.
+3. **Probe prerequisite đã giảm:** Full đề xuất 2 lần trong 32 lượt (trước đó 5/16).
+4. **Generator vẫn hỏi hai câu ở lần sinh đầu** 2–7/32 lượt mỗi cấu hình; ở Full, sinh lại sửa được 3 lượt, 5 lượt phải gửi template.
+5. **Baseline Socratic LLM:** 32/32 câu do model viết được gửi, 2 lượt phải sinh lại vì vi phạm kiểm tra chống lộ lời giải, không lượt nào phải gửi câu hệ thống. Trong câu đã gửi, 6 lượt khen bài là đúng khi bài chưa được xác minh đúng và 1 lượt hỏi dồn (`unenforced_checks`). Baseline nhanh và rẻ nhất vì chỉ gọi model một lần mỗi lượt.
+6. **Độ ổn định giữa hai lần lặp:** Full khác nhau ở `SC-05`, `SC-06` về quyết định đầy đủ; No-BKT và No-KG không ổn định ở 4–5 tình huống. Hai lần lặp chưa đủ để tách ảnh hưởng của BKT/KG/RAG khỏi dao động của model.
+7. **Latency:** p95 của Full là 10,6 s, cao nhất trong các cấu hình; lần gọi Agent có p95 4,9 s với timeout 8 s.
+8. Lô này chạy trên 16 tình huống cũ, nên **chưa cho biết Agent xử lý ca kiểu DP-33 thế nào**; muốn biết phải chạy trên bộ dev pilot (`--scenario-set`).
+9. **Ngữ cảnh của `SC-04` và `SC-15` trong lô này bị mâu thuẫn.** Hai tình huống chỉ sửa kết quả chấm (lỗi tính ở bước 3; lỗi biến đổi ở bước 2) mà giữ bài làm mặc định của fixture (`2x - 3 = 10`, sai phân phối ở bước 1). Mọi cấu hình đều nhận cùng ngữ cảnh mâu thuẫn đó. Fixture đã được sửa sau lô này: `SC-04` thành `2x - 6 = 10 → 2x = 16 → x = 6` (chia sai ở bước 3); `SC-15` thành `x - 3 = 5 → x = 2` (chia hai vế cho 2 trước, sai ở bước 2), để học sinh chưa dùng tới tính phân phối và việc hỏi kiểm tra skill nền đó vẫn nhất quán với DP-33. Kết quả của hai tình huống này trong `dev-04` không so được với lần chạy sau và không đưa vào phiếu chấm.
 
 ## 6. Giới hạn
 
@@ -157,7 +207,9 @@ Ba câu hỏi về chất lượng Agent, generator và độ ổn định model
 | No-KG giữ nguyên state của tình huống | State có thể mang dấu vết của KG từ lượt trước (ví dụ `SC-11` đang ở bài ôn prerequisite) | Đúng với "cùng lịch sử trước lượt đánh giá" (plan §18.2); ghi rõ khi phân tích RQ2 |
 | KG, RAG, problem bank trong context là dữ liệu soạn sẵn của tình huống | Chưa đo retrieval thật | Nối tool thật khi Member 2 có RAG và problem bank |
 | Chỉ một lượt | Chưa có đánh giá nhiều lượt (plan §19.1) | Làm sau khi có quỹ đạo nhiều lượt |
-| Chưa có Socratic LLM baseline | Thiếu mốc tham chiếu cấp hệ thống | Cần prompt riêng và nhóm chốt ai làm |
+| Baseline chưa chạy với model thật | Chưa biết baseline lộ đáp án bao nhiêu lần trước verifier, chất lượng câu và chi phí | Chạy cùng lô lặp hai lần ở §5.2; cần người có key đồng ý |
+| Baseline chỉ thấy lượt hiện tại khi chạy một lượt | Ở tình huống đã có nhiều lượt hỗ trợ (`SC-07`, `SC-08`, `SC-14`), hệ thống biết qua state còn baseline thì không. Đúng định nghĩa "không có student model", nhưng bất lợi hơn một cuộc chat thật, nơi model đọc được câu mình đã viết | Đánh giá nhiều lượt (plan §19.1) cho baseline đọc đúng các câu nó đã gửi; ghi rõ khi phân tích |
+| Lời dặn của baseline do Member 3 soạn và tự rà (bản 0.3.0–0.5.0 thêm: chỉ xác nhận ngắn khi mọi bước và đáp án đều đúng, bước sai thì chỉ bước sai đầu tiên kể cả khi đáp án đúng, chỉ có đáp án đúng thì xác nhận kết quả nhưng không khẳng định cách giải, hỏi lại khi bài mơ hồ hay chỉ có đáp án, chỉ dựa vào ngữ cảnh được đưa, luôn tiếp tục bài hiện tại); chưa có người ngoài review | Baseline yếu do prompt kém sẽ làm hệ thống trông tốt hơn thật | Một thành viên khác trong nhóm review prompt trước khi khóa test; giữ cùng các luật tiết lộ với prompt của generator |
 
 ## 7. Lệnh
 
@@ -170,9 +222,9 @@ Ba câu hỏi về chất lượng Agent, generator và độ ổn định model
 
 # GỌI API THẬT cho lô mới (tốn phí): cần LLM_ENABLED=true và OPENAI_API_KEY trong .env
 # Dùng thư mục mới; nếu dev-03 đã có dữ liệu thì chọn tên khác.
-.\.venv\Scripts\python.exe research/evaluation/run_ablation.py --llm openai --yes --max-calls 272 --out data/ablation/dev-03
+.\.venv\Scripts\python.exe research/evaluation/run_ablation.py --llm openai --yes --max-calls 304 --out data/ablation/dev-03
 
-# Chạy lại hai lần, chia phần trong tiến trình riêng, tối đa 544 lần gọi.
+# Chạy lại hai lần, chia phần trong tiến trình riêng, tối đa 608 lần gọi.
 # Chạy từ terminal có kết nối API; thư mục dev-04 phải mới.
 .\.venv\Scripts\python.exe research/evaluation/run_dev_repeat.py --llm openai --yes --out data/ablation/dev-04
 # Lô bị ngắt: chạy tiếp, dùng lại các phần đã xong.
@@ -181,6 +233,7 @@ Ba câu hỏi về chất lượng Agent, generator và độ ổn định model
 # Tạo phiếu từ lô dev-02 đã hoàn tất; không gọi API, không cần chạy lô mới ở trên.
 .\.venv\Scripts\python.exe research/evaluation/build_rating_packet.py --outputs data/ablation/dev-02/outputs.jsonl --raters r1 r2 `
     --compare full:no_bkt full:heuristic full:no_kg full:no_rag full:rule_policy --out data/rating/dev-02
+# Lô có baseline: thêm cặp full:socratic_llm vào --compare.
 
-.\.venv\Scripts\python.exe -m pytest -q tests/test_ablation.py
+.\.venv\Scripts\python.exe -m pytest -q tests/test_ablation.py tests/test_socratic_baseline.py
 ```

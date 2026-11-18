@@ -7,7 +7,7 @@ from uuid import UUID
 from pydantic import Field, model_validator
 
 from app.agent.decision import (
-    ACTION_SPECS, AssessmentView, Contract, CurrentTask, DecisionIntent, HintLevel, Identifier,
+    ACTION_SPECS, INTENT_ACTION, AssessmentView, Contract, CurrentTask, DecisionIntent, HintLevel, Identifier,
     PedagogicalAction, Probability, StudentState, SubmissionLine,
 )
 from app.agent.tools import ProblemRef, TurnContext
@@ -98,21 +98,78 @@ class HistoryEvent(Contract):
         return self
 
 
-class StrategyLabels(Contract):
+def _check_label_shape(acceptable: list[PedagogicalAction], forbidden: list[PedagogicalAction],
+                       intents: list[DecisionIntent]) -> None:
+    if set(acceptable) & set(forbidden):
+        raise ValueError("Acceptable and forbidden actions overlap")
+    if len(intents) != len(set(intents)):
+        raise ValueError("Duplicate acceptable intents")
+    if stray := [i.value for i in intents if INTENT_ACTION[i] not in acceptable]:
+        raise ValueError(f"Acceptable intents belong to actions that are not acceptable: {stray}")
+
+
+class RaterLabel(Contract):
+    """Nhãn một người gán độc lập, trước khi hòa giải (plan §12: lưu nhãn ban đầu)."""
+
+    rater: Identifier
     acceptable_actions: list[PedagogicalAction] = Field(min_length=1)
     forbidden_actions: list[PedagogicalAction] = Field(default_factory=list)
-    review_status: Literal["draft", "human_approved"] = "draft"
-    author: Identifier
-    reviewer: Identifier | None = None
+    acceptable_intents: list[DecisionIntent] = Field(default_factory=list)
+    acceptable_target_skill_ids: list[Identifier] = Field(default_factory=list)
     rationale: str = Field(min_length=1)
 
     @model_validator(mode="after")
-    def independent_labels(self):
-        if set(self.acceptable_actions) & set(self.forbidden_actions):
-            raise ValueError("Acceptable and forbidden actions overlap")
+    def shape(self):
+        _check_label_shape(self.acceptable_actions, self.forbidden_actions, self.acceptable_intents)
+        return self
+
+
+class StrategyLabels(Contract):
+    """Nhãn chiến lược cuối của một tình huống.
+
+    ``acceptable_intents`` và ``acceptable_target_skill_ids`` dành cho ca mà action chưa đủ phân biệt
+    (ví dụ ``next_problem`` vừa là luyện tiếp vừa là chuyển concept). Để trống là không ràng buộc.
+    Action nào có ít nhất một intent được liệt kê thì chỉ các intent đó được chấp nhận; action không
+    có intent nào được liệt kê thì nhận mọi intent của nó.
+
+    ``independent_labels`` giữ nhãn ban đầu của từng người; các trường ở trên là nhãn cuối sau hòa
+    giải. ``adjudicated`` cần ít nhất hai người gán nhãn độc lập (plan §12, bắt buộc với test)."""
+
+    acceptable_actions: list[PedagogicalAction] = Field(min_length=1)
+    forbidden_actions: list[PedagogicalAction] = Field(default_factory=list)
+    acceptable_intents: list[DecisionIntent] = Field(default_factory=list)
+    acceptable_target_skill_ids: list[Identifier] = Field(default_factory=list)
+    review_status: Literal["draft", "human_approved", "adjudicated"] = "draft"
+    author: Identifier
+    reviewer: Identifier | None = None
+    rationale: str = Field(min_length=1)
+    independent_labels: list[RaterLabel] = Field(default_factory=list)
+    adjudication_note: str | None = None
+
+    @model_validator(mode="after")
+    def reviewed_independently(self):
+        _check_label_shape(self.acceptable_actions, self.forbidden_actions, self.acceptable_intents)
         if self.review_status == "human_approved" and (not self.reviewer or self.reviewer == self.author):
             raise ValueError("Approval needs a reviewer other than the label author")
+        raters = [label.rater for label in self.independent_labels]
+        if len(raters) != len(set(raters)):
+            raise ValueError("Each rater labels a scenario once")
+        if self.review_status == "adjudicated" and len(raters) < 2:
+            raise ValueError("Adjudicated labels need at least two independent raters")
         return self
+
+    def accepts(self, action: str, intent: str | None, target_skill_id: str | None) -> bool:
+        """Quyết định có khớp nhãn ở mức chi tiết không: action, rồi intent và skill nếu nhãn có ràng buộc."""
+        if action not in self.acceptable_actions:
+            return False
+        listed = [i for i in self.acceptable_intents if INTENT_ACTION[i] == action]
+        if listed and intent not in listed:
+            return False
+        return not self.acceptable_target_skill_ids or target_skill_id in self.acceptable_target_skill_ids
+
+    @property
+    def has_detail(self) -> bool:
+        return bool(self.acceptable_intents or self.acceptable_target_skill_ids)
 
 
 class ScenarioDraft(Contract):
@@ -140,7 +197,7 @@ class ScenarioDraft(Contract):
 
 
 class ScenarioDataset(Contract):
-    schema_version: Literal["adaptive-scenarios-2.0.0"] = "adaptive-scenarios-2.0.0"
+    schema_version: Literal["adaptive-scenarios-2.1.0"] = "adaptive-scenarios-2.1.0"
     dataset_version: Identifier
     parameters: dict[Identifier, BKTParameters]
     problems: list[ProblemSource] = Field(min_length=1)
@@ -178,7 +235,7 @@ class BuiltScenario(Contract):
 
 
 class ScenarioSet(Contract):
-    schema_version: Literal["adaptive-scenario-set-2.0.0"] = "adaptive-scenario-set-2.0.0"
+    schema_version: Literal["adaptive-scenario-set-2.1.0"] = "adaptive-scenario-set-2.1.0"
     dataset_version: Identifier
     split: Split
     replay_version: str

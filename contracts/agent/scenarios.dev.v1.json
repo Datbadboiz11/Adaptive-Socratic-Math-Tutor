@@ -74,6 +74,7 @@
     {
       "id": "SC-04", "title": "Lỗi tính toán đơn lẻ, lịch sử kỹ năng tốt",
       "state_patch": {
+        "latest_submission": ["2x - 6 = 10", "2x = 16", "x = 6"],
         "latest_assessment": {"first_error_step": 3, "primary_skill_id": "SK-E02-SOLVE", "error_family": "arithmetic_error",
                               "misconception_candidate": null, "diagnosis_status": "unknown"},
         "hypotheses": [],
@@ -183,6 +184,7 @@
     {
       "id": "SC-15", "title": "Sai khi giải, skill nền tính phân phối có ước lượng thấp",
       "state_patch": {
+        "latest_submission": ["x - 3 = 5", "x = 2"],
         "latest_assessment": {"first_error_step": 2, "primary_skill_id": "SK-E02-SOLVE", "error_family": "transformation_error",
                               "misconception_candidate": null, "diagnosis_status": "unknown"},
         "hypotheses": [],

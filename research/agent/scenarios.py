@@ -20,7 +20,7 @@ from pathlib import Path
 
 from app.agent.decision import StudentState
 from app.agent.tools import ProblemRef, TurnContext
-from research.scenarios.contracts import ScenarioSet
+from research.scenarios.contracts import ScenarioSet, StrategyLabels
 
 CONTRACTS = Path(__file__).resolve().parents[2] / "contracts" / "agent"
 
@@ -56,6 +56,14 @@ class Scenario:
     dataset_version: str | None = None
     problem_refs: dict[str, ProblemRef] = field(default_factory=dict)
     problem_prompts: dict[str, str] = field(default_factory=dict)
+    # Nhãn chi tiết của bộ đã replay (intent, skill cần hướng tới); None với bộ 16 tình huống cũ.
+    labels: StrategyLabels | None = None
+
+    def detail_acceptable(self, action: str, intent: str | None, target_skill_id: str | None) -> bool | None:
+        """Quyết định có khớp nhãn ở mức intent/skill không; None khi tình huống không có nhãn chi tiết."""
+        if self.labels is None or not self.labels.has_detail:
+            return None
+        return self.labels.accepts(action, intent, target_skill_id)
 
 
 def scenario_file() -> dict:
@@ -92,5 +100,5 @@ def _load_replayed(path: Path, ids: list[str] | None) -> list[Scenario]:
                      acceptable_actions=tuple(s.labels.acceptable_actions), forbidden_actions=tuple(s.labels.forbidden_actions),
                      state=s.state, context=s.context, split=data.split, dataset_version=data.dataset_version,
                      problem_refs={p.problem.problem_id: p.problem for p in data.problems},
-                     problem_prompts={p.problem.problem_id: p.prompt for p in data.problems})
+                     problem_prompts={p.problem.problem_id: p.prompt for p in data.problems}, labels=s.labels)
             for s in data.scenarios if s.scenario_id in wanted]

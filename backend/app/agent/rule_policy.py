@@ -10,10 +10,12 @@ from app.agent.decision import (
     MAX_BACKTRACK_DEPTH, MAX_SUPPORT_TURNS_PER_NODE, DecisionIntent, DecisionProposal,
     EvidenceKind, EvidenceRef, Hypothesis, PedagogicalAction, Readiness, StudentState,
 )
-from app.agent.mastery import estimate, prerequisite_evidence, probed, standing, threshold
+from app.agent.mastery import (
+    MIN_OBSERVATIONS_FOR_ESTIMATE, estimate, prerequisite_evidence, probed, standing, threshold,
+)
 from app.agent.tools import GraphEdge, NextConcept, ProblemRef, RetrievedContent, TurnContext
 
-POLICY_VERSION = "rule-policy-0.4.0"
+POLICY_VERSION = "rule-policy-0.5.0"
 READINESS_VERSION = "stop-0.1.0"
 
 A, I = PedagogicalAction, DecisionIntent
@@ -140,11 +142,31 @@ def _backtrack(s: StudentState, ctx: TurnContext, reason) -> DecisionProposal | 
     return None
 
 
-def _weak_prerequisite(s: StudentState, ctx: TurnContext) -> tuple[GraphEdge, str] | None:
+def _slip_on_target(s: StudentState) -> bool:
+    """Lỗi vừa chấm là lỗi thao tác (họ lỗi tính toán) quy cho chính skill đích của bài đang làm, không
+    quy cho skill khác. So với ``s.current.target_skill_id``, không với skill của lỗi."""
+    a = s.latest_assessment
+    return (a is not None and a.error_family in CARELESS_FAMILIES
+            and a.primary_skill_id in (None, s.current.target_skill_id))
+
+
+# Bằng chứng về skill nền được xác minh trực tiếp ở phiên này. Ước lượng thấp và giả thuyết lỗi còn mở
+# là bằng chứng suy từ các lần làm trước.
+DIRECT_PREREQUISITE_EVIDENCE = frozenset({"error_attributed", "probe_failed"})
+
+
+def _weak_prerequisite(s: StudentState, ctx: TurnContext, *, direct_evidence_only: bool = False
+                       ) -> tuple[GraphEdge, str] | None:
+    """Skill nền có ước lượng thấp. ``direct_evidence_only``: chỉ giữ skill nền có bằng chứng trực tiếp
+    (lỗi quy cho nó, câu kiểm tra đã xác minh là chưa đạt); bỏ skill mà bằng chứng chỉ là ước lượng thấp
+    hay giả thuyết lỗi từ các lần làm trước."""
     for edge in _prerequisite_edges(s, ctx):
         for skill_id in edge.source_skill_ids:
-            if standing(s, skill_id) == "low":
-                return edge, skill_id
+            if standing(s, skill_id) != "low":
+                continue
+            if direct_evidence_only and prerequisite_evidence(s, skill_id) not in DIRECT_PREREQUISITE_EVIDENCE:
+                continue
+            return edge, skill_id
     return None
 
 
@@ -295,13 +317,17 @@ def _after_incorrect(s: StudentState, ctx: TurnContext) -> DecisionProposal:
                          content=_pick_content(ctx, skill_id, {"hint"}, new_level))
 
     value, n = estimate(s.skill(skill_id), s.mastery_view)
-    if a.error_family in CARELESS_FAMILIES and value is not None and n >= 2 and value >= threshold(s, "good"):
+    if (a.error_family in CARELESS_FAMILIES and value is not None and n >= MIN_OBSERVATIONS_FOR_ESTIMATE
+            and value >= threshold(s, "good")):
         return _proposal(A.MINIMAL_HINT, I.PROMPT_SELF_CHECK, f"Lỗi thao tác{step}, lịch sử kỹ năng tốt.",
                          skill=skill_id, level=max(1, min(level + 1, 2)), evidence=evidence)
 
     last_action = _last_tutor_action(s)
     hypothesis = _active_hypothesis(s, skill_id)
-    weak = _weak_prerequisite(s, ctx) if ctx.kg_enabled else None
+    # Lỗi thao tác quy cho chính skill đích là bằng chứng mới nhất, và nó không nói gì về skill nền: bằng
+    # chứng suy từ các lần làm trước (ước lượng thấp, giả thuyết lỗi còn mở) không đủ để hỏi kiểm tra hay
+    # quay lại nền (tình huống DP-33). Bằng chứng trực tiếp (câu kiểm tra đã xác minh là chưa đạt) vẫn dùng.
+    weak = (_weak_prerequisite(s, ctx, direct_evidence_only=_slip_on_target(s)) if ctx.kg_enabled else None)
     if weak is not None and hypothesis is None:
         edge, prereq_skill = weak
         if last_action != A.DIAGNOSE and not probed(s, prereq_skill):

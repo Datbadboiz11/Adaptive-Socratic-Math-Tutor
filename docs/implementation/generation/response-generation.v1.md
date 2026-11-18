@@ -61,6 +61,8 @@ Câu của LLM phải qua **mọi** kiểm tra. Template chỉ cần **không l�
 | `repeated_message` | Trùng nguyên văn (bỏ qua hoa thường, khoảng trắng) một trong 3 câu vừa gửi | FR13-AC2 |
 | `answer_key_missing` | Không có đáp án để kiểm tra, nên không gọi LLM | §18.2 |
 
+Năm mã `answer_key_missing`, `answer_leak`, `math_unverified`, `unsourced_equation`, `unsourced_expression`, cùng phần không phụ thuộc mức hint của `hint_level_exceeded` (kể ra quá một thao tác mới), không cần quyết định của policy, nên nằm riêng ở `ResponseVerifier.solution_checks`. `check_generated` gọi hàm này rồi thêm phần theo mức hint (ở mức 0–1 bảo học sinh làm thao tác mới); kết quả kiểm tra của hệ thống không đổi. Socratic LLM baseline cũng dùng nó để có cùng policy về tiết lộ với hệ thống (plan §18.2; [ablation-runner §3.1](../evaluation/ablation-runner.v1.md)).
+
 **Cách so:** `math_text` tách câu thành các đoạn toán (số, biến một chữ cái, phép toán, ngoặc, "=" hoặc chữ "bằng" giữa hai biểu thức), rồi chuẩn hóa từng vế: chữ thường, bỏ khoảng trắng, dấu Unicode về ASCII, bỏ dấu nhân trước biến hoặc ngoặc. Luật về nguồn so chuỗi. Riêng đáp án thì so **giá trị** qua `Equivalence`: bản mặc định (`linear_equivalent`) đưa mỗi vế về dạng bậc nhất có hệ số hữu tỉ, không dùng `eval`; ngoài phạm vi thì trả `None` ("chưa xác minh được"), và verifier coi đó là `math_unverified`. Bộ so SymPy của Member 1 có thể thay qua `ResponseVerifier(answer_keys, equivalence=...)`.
 
 Hai luật về nguồn đi cùng nhau, nên LLM không thể đưa vào câu một bước toán mới có biến, dù đúng hay sai. Mọi phép toán có biến phải chép từ nội dung đã duyệt hoặc từ bài của học sinh. Luật lời văn (`wording`) chỉ đọc từ ngữ, và xét theo **mệnh đề**, không theo dấu "?" cuối câu:

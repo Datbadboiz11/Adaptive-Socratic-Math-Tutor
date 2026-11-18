@@ -1,6 +1,6 @@
 # Quy trình chấm ẩn cấu hình, bản v1
 
-**Trạng thái:** bản nháp của Member 3, code và test xong, **chưa có lượt chấm thật nào**. Mới tạo được bộ bài pilot từ câu template, câu oracle và câu lỗi đã soạn của bộ ca dev. [Script chạy ablation](ablation-runner.v1.md) đã chạy một lần với model thật trên bộ dev ([§5.1](ablation-runner.v1.md)); 96 câu của lô đó chưa được ai chấm.
+**Trạng thái:** bản nháp của Member 3, code và test xong, **chưa có lượt chấm thật nào**. Đã tạo bộ bài pilot từ câu model thật của lô `dev-04` (§6.1), chờ hai người chấm.
 **Căn cứ:** plan §18.2, §19.1–§19.3; PRD §9.2, §9.4. **Hướng dẫn cho người chấm:** [socratic-rubric.v1.md](socratic-rubric.v1.md).
 
 ## 1. Vai trò
@@ -116,6 +116,24 @@ Ghép cặp theo cùng quy tắc. Ở phiếu hòa giải ghép cặp, A/B theo 
 ## 6. Pilot hiện có
 
 `--pilot` tạo bộ bài từ 16 tình huống dev: câu template của Rule-policy, câu oracle và câu lỗi đã soạn của bộ ca sinh phản hồi (57 câu, bỏ các câu lỗi cần lịch sử tin nhắn mới chấm được). Bộ này để thử guideline và đo độ đồng thuận ban đầu, **không phải đánh giá hệ thống**: câu oracle và câu lỗi do chính người viết verifier soạn.
+
+### 6.1. Pilot trên câu model thật: `data/rating/dev-04-pilot-v2`
+
+Pilot rubric của plan §19.3 bước 1, dùng câu model thật của lô `dev-04` ([ablation-runner §5.3](ablation-runner.v1.md)), lần lặp thứ nhất:
+
+- **Phạm vi:** 14 tình huống × 3 hệ thống (Full, Rule-policy, Socratic LLM baseline) = 42 câu, và 28 cặp ghép (Full với Rule-policy, Full với baseline), cho hai người chấm `r1`, `r2`. Ba hệ thống này phủ RQ5 và mốc tham chiếu baseline; cả lô (7 hệ thống, 112 câu, 96 cặp mỗi người) quá nặng cho bước thử guideline.
+- **Bỏ `SC-04` và `SC-15`:** ngữ cảnh của hai tình huống này trong lô `dev-04` mâu thuẫn (bài làm không khớp kết quả chấm), và fixture đã được sửa sau lô đó. Phiếu dựng ngữ cảnh từ fixture hiện tại, nên giữ chúng thì người chấm thấy bài làm mới cạnh câu trả lời viết cho bài cũ.
+- **Đầu vào đã lọc** ở `data/rating/dev-04-pilot-v2-input.jsonl`; seed mặc định 0.
+- **Người chấm:** câu do model sinh, không do Member 3 soạn, nên Member 3 có thể là một trong hai người chấm pilot. Người thứ hai nên là Member 1 hoặc Member 2. Mỗi người chỉ nhận thư mục `raters/<mã>/` của mình, không nhận `key.json`, và chấm đủ cả bộ.
+- **Đây là chấm nội bộ.** Member 3 phát triển prompt và policy nên có thể nhận ra kiểu câu của từng hệ thống dù đã ẩn tên. Báo cáo điểm pilot phải ghi rõ điều này.
+- **Giữ điểm ban đầu:** phiếu của từng người giữ nguyên sau khi nộp; hòa giải ghi vào `reconciled/`, không sửa phiếu gốc. Độ đồng thuận tính trên điểm trước hòa giải (§4).
+- Điểm pilot dùng để sửa guideline và đo đồng thuận ban đầu, không dùng để so sánh cấu hình.
+- Bản phiếu đầu `data/rating/dev-04-pilot` (còn `SC-04`, `SC-15`) được thay bằng bản này và không dùng; nó chưa có điểm nào.
+
+```powershell
+# Sau khi hai người điền raters/r1/ratings.csv, pairs.csv và raters/r2/...
+.\.venv\Scripts\python.exe research/evaluation/score_ratings.py --packet data/rating/dev-04-pilot-v2
+```
 
 ## 7. Giới hạn và việc tiếp theo
 

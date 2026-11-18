@@ -1,5 +1,5 @@
 {
-  "schema_version": "adaptive-scenarios-2.0.0",
+  "schema_version": "adaptive-scenarios-2.1.0",
   "dataset_version": "adaptive-examples-0.2.0",
   "parameters": {
     "SK-N01-SIGNED-ADD": {

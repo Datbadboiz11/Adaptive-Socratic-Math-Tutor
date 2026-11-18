@@ -85,12 +85,12 @@ Thứ tự kiểm tra trong `rule_policy.py`, theo bảng plan §9:
    - Đã ở mức hint ≥ 3 → backtrack tới prerequisite trực tiếp **có bằng chứng học sinh đang thiếu**; chưa có bằng chứng thì hỏi kiểm tra prerequisite trước (mỗi skill một lần trên một bài; đã hỏi chưa phải là bằng chứng); không được thì dùng ví dụ khác mức 4; không có ví dụ thì hỏi lại cách nghĩ.
    - Xin gợi ý hoặc ≥ 2 lượt không tiến triển → tăng mức hint. Nếu misconception đã có bằng chứng lặp lại thì hỏi khái niệm.
    - Lỗi thao tác, lịch sử kỹ năng tốt → đề nghị tự kiểm tra.
-   - Skill nền có ước lượng thấp → hỏi kiểm tra prerequisite trước, sau đó mới backtrack.
+   - Skill nền có ước lượng thấp → hỏi kiểm tra prerequisite trước, sau đó mới backtrack. Khi lỗi vừa chấm là lỗi thao tác của chính skill đích, chỉ làm bước này nếu skill nền có bằng chứng trực tiếp (lỗi quy cho nó, câu kiểm tra đã xác minh là chưa đạt); ước lượng thấp hay giả thuyết lỗi từ các lần làm trước không đủ (`rule-policy-0.5.0`, tình huống DP-33).
    - Có giả thuyết lỗi: còn nghi ngờ thì hỏi chẩn đoán; đã có bằng chứng (hoặc vừa chẩn đoán xong) thì hỏi khái niệm.
    - Chưa rõ nguyên nhân → hỏi học sinh giải thích cách làm.
    - Còn lại → gợi ý nhẹ.
 
-Ngưỡng (0,4 / 0,6 / 0,8, ≥ 3 observation, 2 lượt không tiến triển) là **giá trị khởi đầu để thử trên dev**, chưa phải ngưỡng chốt (plan §10).
+Ngưỡng (0,4 / 0,6 / 0,8, ≥ 3 observation, 2 lượt không tiến triển) là **giá trị khởi đầu để thử trên dev**, chưa phải ngưỡng chốt (plan §10). Sàng lọc trên bộ dev pilot đã duyệt nhãn giữ nguyên các giá trị này. Cách chọn ngưỡng và kết quả: [threshold-selection.v1.md](../evaluation/threshold-selection.v1.md).
 
 **Ba cách nhìn mastery** (`StudentState.mastery_view`, đặt bởi `project_state` theo cấu hình):
 

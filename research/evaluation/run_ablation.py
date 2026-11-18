@@ -16,7 +16,11 @@ Mọi cấu hình bắt đầu từ cùng state (plan §18.2) và dùng cùng ge
 - No-KG: context không có cạnh prerequisite, concept kế tiếp, và nội dung chỉ lấy được nhờ các cạnh đó.
 - No-RAG: context không có nội dung truy xuất.
 - Rule-policy: luật thay Agent LLM; vẫn chạy trong LangGraph.
-Socratic LLM baseline (plan §18.1) không có student model hay policy nên không chạy ở đây.
+
+Socratic LLM baseline (``socratic_llm``, plan §18.1) không có student model hay policy nên không đi qua
+graph và không có ``PedagogicalDecision``: model nhận đề và cửa sổ hội thoại của cùng tình huống, dùng
+cùng client và cùng kiểm tra chống lộ lời giải của verifier (``socratic_baseline.py``). Các chỉ số về
+quyết định của nó để trống.
 
 Đầu ra trong ``--out`` (để trong ``data/``, đã ignore; không ghi đè thư mục đã có):
 
@@ -51,21 +55,31 @@ from app.agent.llm_proposer import (  # noqa: E402
     AGENT_POLICY_VERSION, PROMPT_VERSION as AGENT_PROMPT_VERSION, LLMProposer, decision_config, proposal_to_output,
 )
 from app.agent.rule_policy import POLICY_VERSION as RULE_POLICY_VERSION, READINESS_VERSION, rule_policy  # noqa: E402
-from app.agent.stubs import retrieval_skills  # noqa: E402
+from app.agent.stubs import demo_answer_key, problem_prompt, retrieval_skills  # noqa: E402
 from app.agent.tools import TurnContext  # noqa: E402
 from app.generation.llm_generator import PROMPT_VERSION as RESPONSE_PROMPT_VERSION, LLMResponseGenerator  # noqa: E402
 from app.generation.templates import TEMPLATE_VERSION, TemplateGenerator  # noqa: E402
-from app.generation.verifier import VERIFIER_VERSION  # noqa: E402
+from app.generation.verifier import VERIFIER_VERSION, ResponseVerifier  # noqa: E402
 from app.llm.fakes import FakeLLMClient  # noqa: E402
 from research.agent.scenarios import Scenario, load_scenarios, scenario_file  # noqa: E402
 from research.evaluation.rubric import SystemOutput  # noqa: E402
+from research.evaluation.socratic_baseline import (  # noqa: E402
+    NAME as SOCRATIC_LLM, PROMPT_VERSION as BASELINE_PROMPT_VERSION, BaselineFailed, BaselineTurn,
+    SocraticLLMBaseline, unenforced_checks,
+)
 from research.llm_support import (  # noqa: E402
     DEFAULT_MAX_CALLS, format_ms, format_usage, real_client, timing_stats, usage_summary,
 )
 
 E = ExperimentConfiguration
+# Mọi cấu hình của plan §18.1, theo thứ tự chạy trong từng tình huống. Phần tử là chuỗi: E là StrEnum.
+CONFIGURATIONS: tuple[str, ...] = (*(c.value for c in E), SOCRATIC_LLM)
 WITHOUT_BKT = frozenset({E.NO_BKT.value, E.HEURISTIC.value})
+WITHOUT_DECISION = frozenset({SOCRATIC_LLM})  # không có policy, nên không có PedagogicalDecision
+WITHOUT_AGENT = frozenset({E.RULE_POLICY.value, SOCRATIC_LLM})
 CALLS_PER_RESPONSE = 1 + MAX_REGENERATIONS
+# Một verifier cho mọi cấu hình, kể cả baseline: cùng đáp án, cùng kiểm tra (plan §18.2).
+VERIFIER = ResponseVerifier(demo_answer_key)
 # State của tình huống đã có kết quả chấm và observation: chạy tiếp từ sau node này.
 ENTRY_NODE = "observe"
 
@@ -88,9 +102,10 @@ def project_context(ctx: TurnContext, state: StudentState, configuration: E) -> 
         "tool_calls_used": kg + rag + 1})  # KG, RAG và problem bank
 
 
-def max_calls(scenarios: int, configurations: list[E], repeat: int) -> int:
-    """Trần số lần gọi model: một lần cho Agent (trừ Rule-policy), và mỗi câu tối đa một lần sinh lại."""
-    agents = sum(c != E.RULE_POLICY for c in configurations)
+def max_calls(scenarios: int, configurations: list[str], repeat: int) -> int:
+    """Trần số lần gọi model: một lần cho Agent (trừ Rule-policy và baseline), và mỗi câu tối đa một lần
+    sinh lại."""
+    agents = sum(c not in WITHOUT_AGENT for c in configurations)
     return scenarios * repeat * (agents + len(configurations) * CALLS_PER_RESPONSE)
 
 
@@ -134,36 +149,53 @@ class TemplateEchoGenerator(LLMResponseGenerator):
         return super().__call__(inp, feedback)
 
 
+class EchoBaseline(SocraticLLMBaseline):
+    """Baseline với LLM giả: model "trả" một câu hỏi chung cố định, rồi câu đó qua verifier như câu thật."""
+
+    MESSAGE = "Em giải thích giúp mình em đã làm bài này theo cách nào được không?"
+
+    def draft(self, turn, feedback):
+        self.client.inner.push({"message": self.MESSAGE})
+        return super().draft(turn, feedback)
+
+
 @dataclass(frozen=True)
 class Models:
-    """Agent và generator của một lô chạy, dùng chung một client: mọi cấu hình cùng model (plan §18.2)."""
+    """Agent, generator và baseline của một lô chạy, dùng chung một client: mọi cấu hình cùng model
+    (plan §18.2)."""
 
     client: CountingClient
     agent: LLMProposer
     generator: LLMResponseGenerator
+    baseline: SocraticLLMBaseline
 
     @classmethod
     def real(cls, client) -> "Models":
         counted = CountingClient(client)
-        return cls(counted, LLMProposer(counted), LLMResponseGenerator(counted))
+        return cls(counted, LLMProposer(counted), LLMResponseGenerator(counted), SocraticLLMBaseline(counted, VERIFIER))
 
     @classmethod
     def fake(cls) -> "Models":
         counted = CountingClient(FakeLLMClient())
-        return cls(counted, RuleEchoAgent(counted), TemplateEchoGenerator(counted))
+        return cls(counted, RuleEchoAgent(counted), TemplateEchoGenerator(counted), EchoBaseline(counted, VERIFIER))
 
 
 # --------------------------------------------------------------------------- chạy
 
-def seeded_graph(sc: Scenario, configuration: E, models: Models, attempt: int):
+def prompt_source(sc: Scenario):
+    """Đề bài theo mã bài: của bộ tình huống đã replay nếu có, không thì của problem bank mẫu."""
+    return sc.problem_prompts.get if sc.problem_refs else problem_prompt
+
+
+def seeded_graph(sc: Scenario, configuration: str, models: Models, attempt: int):
     """Graph của hệ thống cho một cấu hình, với state của tình huống đã nạp vào checkpoint."""
+    configuration = E(configuration)
     proposer = RulePolicyProposer() if configuration == E.RULE_POLICY else models.agent
     context = project_context(sc.context, sc.state, configuration)
     services = Services(tools=lambda state, config: context, proposer=proposer,
-                        response_generator=models.generator)
+                        response_generator=models.generator, verifier=VERIFIER, problem_prompt=prompt_source(sc))
     if sc.problem_refs:
         services.problem_ref = sc.problem_refs.__getitem__
-        services.problem_prompt = sc.problem_prompts.get
     graph = build_graph(services, decision_config(configuration, proposer, context.graph_version), InMemorySaver())
     thread = {"configurable": {"thread_id": f"{sc.id}:{configuration.value}:{attempt}"}, "recursion_limit": 25}
     # Như node load: mỗi lượt có ngân sách sinh lại mới.
@@ -175,11 +207,13 @@ def seeded_graph(sc: Scenario, configuration: E, models: Models, attempt: int):
     return graph, thread
 
 
-def run_turn(sc: Scenario, configuration: E, models: Models, attempt: int = 1) -> dict:
-    """Một lượt của một cấu hình trên một tình huống, qua graph của hệ thống.
+def run_turn(sc: Scenario, configuration: str, models: Models, attempt: int = 1) -> dict:
+    """Một lượt của một cấu hình trên một tình huống, qua graph của hệ thống (baseline: không qua graph).
 
     Node lỗi không dừng cả lô (lô chạy thật đã tốn phí). Lượt lỗi vẫn giữ những gì các node trước đó
     đã ghi vào checkpoint: quyết định, các lần sinh câu và usage của chúng."""
+    if configuration == SOCRATIC_LLM:
+        return run_baseline_turn(sc, models, attempt)
     graph, thread = seeded_graph(sc, configuration, models, attempt)
     calls, started, error = models.client.calls, time.perf_counter(), None
     try:
@@ -191,14 +225,38 @@ def run_turn(sc: Scenario, configuration: E, models: Models, attempt: int = 1) -
                     model_calls=models.client.calls - calls)
 
 
-def turn_row(sc: Scenario, configuration: E, attempt: int, values: dict, *, error: str | None, turn_ms: float,
+def run_baseline_turn(sc: Scenario, models: Models, attempt: int = 1) -> dict:
+    """Một lượt của Socratic LLM baseline trên cùng tình huống. Cửa sổ hội thoại giống lượt chạy qua graph:
+    state của tình huống không mang câu gia sư nào trước đó, nên ``previous_messages`` rỗng ở mọi cấu hình."""
+    turn = BaselineTurn.from_state(sc.state, prompt_source(sc))
+    calls, started, error, outcome, done = models.client.calls, time.perf_counter(), None, None, ()
+    try:
+        outcome = models.baseline.run(turn)
+        done = outcome.attempts
+    except Exception as failure:  # noqa: BLE001
+        # Như lượt lỗi qua graph: giữ các lần sinh đã có cùng usage của chúng.
+        if isinstance(failure, BaselineFailed):
+            done, failure = failure.attempts, failure.__cause__ or failure
+        error = f"{type(failure).__name__}: {failure}"[:300]
+    turn_ms = round((time.perf_counter() - started) * 1000, 3)
+    attempts = [a.model_dump(mode="json") for a in done]
+    row = turn_row(sc, SOCRATIC_LLM, attempt, {"response_attempts": attempts}, error=error, turn_ms=turn_ms,
+                   model_calls=models.client.calls - calls)
+    if outcome:
+        row |= {"message": outcome.message, "response_source": outcome.final_source,
+                "llm_skipped_reason": outcome.llm_skipped_reason,
+                "unenforced_checks": unenforced_checks(turn, outcome.message) if outcome.final_source == "llm" else []}
+    return row
+
+
+def turn_row(sc: Scenario, configuration: str, attempt: int, values: dict, *, error: str | None, turn_ms: float,
              model_calls: int) -> dict:
     """Dòng kết quả từ state của graph. Lượt lỗi chỉ có phần đã chạy tới."""
     decision, response = values.get("decision"), values.get("response")
     attempts = values.get("response_attempts", [])
     llm_attempts = [a for a in attempts if a["source"] == "llm"]
     row = {
-        "scenario": sc.id, "configuration": configuration.value, "attempt": attempt, "error": error,
+        "scenario": sc.id, "configuration": str(configuration), "attempt": attempt, "error": error,
         "turn_ms": turn_ms, "model_calls": model_calls,
         "agent_usage": decision["agent_usage"] if decision else None,
         "generation_usages": [a["usage"] for a in llm_attempts if a["usage"]],
@@ -213,6 +271,9 @@ def turn_row(sc: Scenario, configuration: E, attempt: int, values: dict, *, erro
             "problem_id": final["problem_id"],
             "final_acceptable": final["action"] in sc.acceptable_actions,
             "final_forbidden": final["action"] in sc.forbidden_actions,
+            # Khớp nhãn ở mức intent/skill; None khi tình huống không có nhãn chi tiết.
+            "final_detail_acceptable": sc.detail_acceptable(final["action"], final["intent"],
+                                                            final["target_skill_id"]),
             "proposed_action": proposed["action"] if proposed else None,
             "proposed_forbidden": bool(proposed) and proposed["action"] in sc.forbidden_actions,
             "gate": decision["gate"]["status"] if decision["gate"] else None,
@@ -227,7 +288,7 @@ def turn_row(sc: Scenario, configuration: E, attempt: int, values: dict, *, erro
     return row
 
 
-def run_ablation(scenarios: list[Scenario], configurations: list[E], models: Models, repeat: int = 1,
+def run_ablation(scenarios: list[Scenario], configurations: list[str], models: Models, repeat: int = 1,
                  on_row=None) -> list[dict]:
     """Các cấu hình chạy xen kẽ trong từng tình huống, để thay đổi của API theo thời gian không dồn vào
     một cấu hình."""
@@ -245,8 +306,8 @@ def system_outputs(rows: list[dict]) -> list[SystemOutput]:
     """Câu đưa vào bộ chấm: lần chạy thứ nhất của mỗi (tình huống, cấu hình), bỏ lượt lỗi. Các lần lặp
     chỉ để đo độ ổn định (plan §18.2)."""
     return [SystemOutput(scenario_id=r["scenario"], system=r["configuration"], message=r["message"],
-                         action=r["final_action"], intent=r["final_intent"], hint_level=r["hint_level"],
-                         problem_id=r["problem_id"], response_source=r["response_source"])
+                         action=r.get("final_action"), intent=r.get("final_intent"), hint_level=r.get("hint_level"),
+                         problem_id=r.get("problem_id"), response_source=r["response_source"])
             for r in rows if r["attempt"] == 1 and r["error"] is None]
 
 
@@ -290,6 +351,30 @@ def _cost_per_turn(usages: list[dict], turns: int, calls_without_usage: int) -> 
     return round(sum(costs) / turns, 6)
 
 
+def _decision_summary(ok: list[dict], full: list[dict] | None, repeated: bool) -> dict:
+    detailed = [r["final_detail_acceptable"] for r in ok if r["final_detail_acceptable"] is not None]
+    return {
+        "final_acceptable": sum(r["final_acceptable"] for r in ok),
+        # Chỉ tính trên các lượt mà tình huống có nhãn intent/skill; mẫu số ghi kèm.
+        "final_detail_acceptable": {"ok": sum(detailed), "of": len(detailed)},
+        "final_forbidden": sum(r["final_forbidden"] for r in ok),
+        "proposed_forbidden": sum(r["proposed_forbidden"] for r in ok),
+        "gate_rejected": sum(r["gate"] == "rejected" for r in ok),
+        "fallbacks": dict(Counter(r["fallback_reason"] for r in ok if r["fallback_reason"])),
+        **{label: _compare(ok, full, fields, repeated) for label, fields in COMPARISONS.items()},
+        "decision_ms": timing_stats([r["decision_ms"] for r in ok]),
+    }
+
+
+def _no_decision_summary() -> dict:
+    """Cấu hình không có policy: không có action để so với tập chấp nhận được, không có gate hay
+    fallback. Để trống, không ghi 0."""
+    return {"final_acceptable": None, "final_detail_acceptable": None, "final_forbidden": None,
+            "proposed_forbidden": None, "gate_rejected": None,
+            "fallbacks": {}, **{label: {"differs_from_full": None, "unstable": None} for label in COMPARISONS},
+            "decision_ms": timing_stats([])}
+
+
 def summarize(rows: list[dict]) -> dict:
     by_config: dict[str, list[dict]] = {}
     for r in rows:
@@ -307,53 +392,57 @@ def summarize(rows: list[dict]) -> dict:
         without_usage = model_calls - len(agent) - len(generation)
         configurations[name] = {
             "runs": len(group), "errors": len(group) - len(ok),
-            "final_acceptable": sum(r["final_acceptable"] for r in ok),
-            "final_forbidden": sum(r["final_forbidden"] for r in ok),
-            "proposed_forbidden": sum(r["proposed_forbidden"] for r in ok),
-            "gate_rejected": sum(r["gate"] == "rejected" for r in ok),
-            "fallbacks": dict(Counter(r["fallback_reason"] for r in ok if r["fallback_reason"])),
+            **(_decision_summary(ok, full, repeated) if name not in WITHOUT_DECISION else _no_decision_summary()),
             "response_sources": dict(Counter(r["response_source"] for r in ok)),
             "regenerated": sum(r["regenerations_used"] > 0 for r in ok),
             "llm_violations": dict(Counter(v for r in group for v in r["llm_violations"])),
-            **{label: _compare(ok, full, fields, repeated) for label, fields in COMPARISONS.items()},
             "turn_ms": timing_stats([r["turn_ms"] for r in ok]),
-            "decision_ms": timing_stats([r["decision_ms"] for r in ok]),
             "model_calls": model_calls, "model_calls_without_usage": without_usage,
             "agent": usage_summary(agent), "generation": usage_summary(generation),
             "cost_usd_per_turn": _cost_per_turn(agent + generation, len(group), without_usage),
         }
+        if name in WITHOUT_DECISION:  # baseline: lỗi lời văn mà hệ thống chặn còn baseline chỉ ghi lại
+            configurations[name]["unenforced_checks"] = dict(Counter(c for r in ok for c in r["unenforced_checks"]))
     # Chỉ so ở cấu hình còn dùng BKT: No-BKT và Heuristic tính readiness theo ước lượng khác là đúng thiết kế.
-    hand_set = sorted({r["scenario"] for name, ok in done.items() if name not in WITHOUT_BKT for r in ok
-                       if r["ready_to_advance"] != r["fixture_ready_to_advance"]})
+    hand_set = sorted({r["scenario"] for name, ok in done.items() if name not in WITHOUT_BKT | WITHOUT_DECISION
+                       for r in ok if r["ready_to_advance"] != r["fixture_ready_to_advance"]})
     return {"configurations": configurations, "readiness_differs_from_fixture": hand_set,
             "errors": [{k: r[k] for k in ("scenario", "configuration", "attempt", "error", "model_calls")}
                        for r in rows if r["error"] is not None]}
 
 
-def run_info(llm: str, model: str, scenarios: list[Scenario], configurations: list[E], repeat: int) -> dict:
+def run_info(llm: str, model: str, scenarios: list[Scenario], configurations: list[str], repeat: int) -> dict:
     """Phiên bản và cấu hình của lần chạy, để tái lập (NFR-04)."""
     return {"llm": llm, "model": model, "scenarios": [sc.id for sc in scenarios],
             "scenario_split": scenarios[0].split if scenarios else scenario_file()["split"],
             "dataset_version": scenarios[0].dataset_version if scenarios else None,
-            "configurations": [c.value for c in configurations],
+            "configurations": [str(c) for c in configurations],
             "repeat": repeat, "max_regenerations": MAX_REGENERATIONS,
             "versions": {"workflow": WORKFLOW_VERSION, "agent_policy": AGENT_POLICY_VERSION,
                          "agent_prompt": AGENT_PROMPT_VERSION, "rule_policy": RULE_POLICY_VERSION,
                          "readiness": READINESS_VERSION, "response_prompt": RESPONSE_PROMPT_VERSION,
-                         "verifier": VERIFIER_VERSION, "template": TEMPLATE_VERSION}}
+                         "verifier": VERIFIER_VERSION, "template": TEMPLATE_VERSION,
+                         "socratic_baseline_prompt": BASELINE_PROMPT_VERSION}}
 
 
 def _count(scenarios: list[str] | None) -> str:
     return "-" if scenarios is None else str(len(scenarios))
 
 
+def _number(value: int | None) -> str:
+    return "-" if value is None else str(value)
+
+
 def print_report(summary: dict) -> None:
-    print("≠act / ≠dec: số tình huống chọn khác Full về action+intent / về toàn bộ quyết định")
+    print("≠act / ≠dec: số tình huống chọn khác Full về action+intent / về toàn bộ quyết định; "
+          "'-': không áp dụng (socratic_llm không có quyết định)")
     print(f"{'configuration':13} {'runs':>4} {'err':>3} {'accept':>6} {'forbid':>6} {'reject':>6} {'fallbk':>6} "
           f"{'llm':>4} {'regen':>5} {'≠act':>4} {'≠dec':>4} {'calls':>5}  turn_ms")
     for name, s in summary["configurations"].items():
-        print(f"{name:13} {s['runs']:>4} {s['errors']:>3} {s['final_acceptable']:>6} {s['final_forbidden']:>6} "
-              f"{s['gate_rejected']:>6} {sum(s['fallbacks'].values()):>6} {s['response_sources'].get('llm', 0):>4} "
+        decided = name not in WITHOUT_DECISION
+        print(f"{name:13} {s['runs']:>4} {s['errors']:>3} {_number(s['final_acceptable']):>6} "
+              f"{_number(s['final_forbidden']):>6} {_number(s['gate_rejected']):>6} "
+              f"{sum(s['fallbacks'].values()) if decided else '-':>6} {s['response_sources'].get('llm', 0):>4} "
               f"{s['regenerated']:>5} {_count(s['action']['differs_from_full']):>4} "
               f"{_count(s['decision']['differs_from_full']):>4} {s['model_calls']:>5}  {format_ms(s['turn_ms'])}")
     for name, s in summary["configurations"].items():
@@ -362,6 +451,12 @@ def print_report(summary: dict) -> None:
             notes.insert(0, f"    cost_usd_per_turn={s['cost_usd_per_turn']}")
         if s["model_calls_without_usage"]:
             notes.append(f"    {s['model_calls_without_usage']} lần gọi model không ghi được usage (lượt lỗi giữa chừng)")
+        detail = s["final_detail_acceptable"]
+        if detail and detail["of"]:
+            notes.append(f"    khớp nhãn intent/skill: {detail['ok']}/{detail['of']} lượt có nhãn chi tiết")
+        if s.get("unenforced_checks"):
+            notes.append("    câu đã gửi có lỗi lời văn mà hệ thống chặn còn baseline không: "
+                         + ", ".join(f"{check}={n}" for check, n in s["unenforced_checks"].items()))
         for label, title in (("action", "action"), ("decision", "quyết định đầy đủ")):
             if s[label]["differs_from_full"]:
                 notes.append(f"    khác Full về {title}: {', '.join(s[label]['differs_from_full'])}")
@@ -383,7 +478,7 @@ def print_report(summary: dict) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--llm", choices=["fake", "openai"], default="fake")
-    parser.add_argument("--configs", nargs="*", choices=[c.value for c in E], help="mặc định chạy tất cả")
+    parser.add_argument("--configs", nargs="*", choices=CONFIGURATIONS, help="mặc định chạy tất cả")
     parser.add_argument("--scenarios", nargs="*", help="ID tình huống, mặc định chạy tất cả")
     parser.add_argument("--scenario-set", type=Path, help="dev.json hoặc test.json từ research.scenarios.build")
     parser.add_argument("--repeat", type=int, default=1, help="số lần chạy mỗi cặp, để đo độ ổn định")
@@ -409,7 +504,7 @@ def main(argv: list[str] | None = None) -> int:
         scenario_set_hash = None
     if not scenarios:
         parser.error("Scenario set is empty")
-    configurations = [E(c) for c in args.configs] if args.configs else list(E)
+    configurations = list(args.configs) if args.configs else list(CONFIGURATIONS)
     if args.llm == "openai":
         calls = max_calls(len(scenarios), configurations, args.repeat)
         client = real_client(calls, f"{len(scenarios)} tình huống × {len(configurations)} cấu hình × {args.repeat}",

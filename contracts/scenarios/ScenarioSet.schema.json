@@ -305,6 +305,38 @@
       "title": "CurrentTask",
       "type": "object"
     },
+    "DecisionIntent": {
+      "description": "Mục đích cụ thể của action. Đây không phải bộ strategy thứ hai (PRD FR-10):\nmỗi intent chỉ thuộc đúng một action và cho generator biết cần viết loại câu nào.",
+      "enum": [
+        "resolve_input",
+        "restate_task",
+        "elicit_reasoning",
+        "distinguish_hypothesis",
+        "probe_prerequisite",
+        "prompt_self_check",
+        "locate_error",
+        "recall_rule",
+        "target_misconception",
+        "decompose_step",
+        "analogous_example",
+        "explain_concept",
+        "review_prerequisite",
+        "independent_check",
+        "continue_practice",
+        "advance_difficulty",
+        "advance_concept",
+        "return_to_parent",
+        "switch_problem",
+        "student_request",
+        "session_goal_met",
+        "budget_exhausted",
+        "stuck_limit",
+        "content_exhausted",
+        "system_fallback"
+      ],
+      "title": "DecisionIntent",
+      "type": "string"
+    },
     "GraphEdge": {
       "additionalProperties": false,
       "description": "Cạnh PREREQUISITE_OF do KG trả về: concept nguồn cần học trước concept đích.\n\n``depth`` = 1 khi đích là concept đang học, = 2 khi đích là một prerequisite trực tiếp của\nnó (PRD FR08-AC2: tối đa 2 tầng). ``review_status`` cho biết cạnh đã được người duyệt chưa;\ncạnh nháp chỉ xuất hiện khi tool được bật chế độ dev một cách tường minh.",
@@ -633,6 +665,59 @@
       "title": "ProblemSource",
       "type": "object"
     },
+    "RaterLabel": {
+      "additionalProperties": false,
+      "description": "Nhãn một người gán độc lập, trước khi hòa giải (plan §12: lưu nhãn ban đầu).",
+      "properties": {
+        "rater": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Rater",
+          "type": "string"
+        },
+        "acceptable_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "minItems": 1,
+          "title": "Acceptable Actions",
+          "type": "array"
+        },
+        "forbidden_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "title": "Forbidden Actions",
+          "type": "array"
+        },
+        "acceptable_intents": {
+          "items": {
+            "$ref": "#/$defs/DecisionIntent"
+          },
+          "title": "Acceptable Intents",
+          "type": "array"
+        },
+        "acceptable_target_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Acceptable Target Skill Ids",
+          "type": "array"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rater",
+        "acceptable_actions",
+        "rationale"
+      ],
+      "title": "RaterLabel",
+      "type": "object"
+    },
     "Readiness": {
       "additionalProperties": false,
       "description": "Tính bằng node xác định (không phải Agent) theo điều kiện dừng plan §10.",
@@ -873,6 +958,7 @@
     },
     "StrategyLabels": {
       "additionalProperties": false,
+      "description": "Nhãn chiến lược cuối của một tình huống.\n\n``acceptable_intents`` và ``acceptable_target_skill_ids`` dành cho ca mà action chưa đủ phân biệt\n(ví dụ ``next_problem`` vừa là luyện tiếp vừa là chuyển concept). Để trống là không ràng buộc.\nAction nào có ít nhất một intent được liệt kê thì chỉ các intent đó được chấp nhận; action không\ncó intent nào được liệt kê thì nhận mọi intent của nó.\n\n``independent_labels`` giữ nhãn ban đầu của từng người; các trường ở trên là nhãn cuối sau hòa\ngiải. ``adjudicated`` cần ít nhất hai người gán nhãn độc lập (plan §12, bắt buộc với test).",
       "properties": {
         "acceptable_actions": {
           "items": {
@@ -889,11 +975,27 @@
           "title": "Forbidden Actions",
           "type": "array"
         },
+        "acceptable_intents": {
+          "items": {
+            "$ref": "#/$defs/DecisionIntent"
+          },
+          "title": "Acceptable Intents",
+          "type": "array"
+        },
+        "acceptable_target_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Acceptable Target Skill Ids",
+          "type": "array"
+        },
         "review_status": {
           "default": "draft",
           "enum": [
             "draft",
-            "human_approved"
+            "human_approved",
+            "adjudicated"
           ],
           "title": "Review Status",
           "type": "string"
@@ -920,6 +1022,25 @@
           "minLength": 1,
           "title": "Rationale",
           "type": "string"
+        },
+        "independent_labels": {
+          "items": {
+            "$ref": "#/$defs/RaterLabel"
+          },
+          "title": "Independent Labels",
+          "type": "array"
+        },
+        "adjudication_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Adjudication Note"
         }
       },
       "required": [
@@ -1338,8 +1459,8 @@
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "adaptive-scenario-set-2.0.0",
-      "default": "adaptive-scenario-set-2.0.0",
+      "const": "adaptive-scenario-set-2.1.0",
+      "default": "adaptive-scenario-set-2.1.0",
       "title": "Schema Version",
       "type": "string"
     },

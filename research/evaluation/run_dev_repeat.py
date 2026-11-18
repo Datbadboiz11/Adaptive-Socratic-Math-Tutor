@@ -29,12 +29,14 @@ sys.path.insert(0, str(ROOT))
 from app.llm.client import LLMDisabled, LLMSettings  # noqa: E402
 from research.agent.scenarios import load_scenarios  # noqa: E402
 from research.evaluation.run_ablation import (  # noqa: E402
-    E, max_calls, print_report, run_info, summarize, system_outputs,
+    CONFIGURATIONS, max_calls, print_report, run_info, summarize, system_outputs,
 )
 from research.llm_support import read_env  # noqa: E402
 
 REPEAT = 2
 PART_SIZE = 4
+# Trần của lô: 16 tình huống × 2 lần × (5 lượt gọi Agent + 7 cấu hình × 2 lần sinh câu).
+MAX_RUN_CALLS = 608
 FATAL_API_ERRORS = frozenset({"APIConnectionError", "AuthenticationError", "PermissionDeniedError"})
 # Phần nào cũng phải giống cả lô ở các trường này thì mới gộp được.
 SHARED_RUN_FIELDS = ("llm", "model", "versions", "repeat", "configurations", "max_regenerations", "scenario_split")
@@ -60,13 +62,13 @@ def read_rows(path: Path) -> list[dict]:
 def diagnostics(rows: list[dict]) -> dict:
     """Tách đề xuất của Agent khỏi quyết định cuối và đo lỗi ở từng lần sinh."""
     result = {}
-    for config in E:
-        group = [r for r in rows if r["configuration"] == config.value]
+    for config in CONFIGURATIONS:
+        group = [r for r in rows if r["configuration"] == config]
         proposals = [r["decision"]["proposed"] for r in group if r.get("decision") and r["decision"]["proposed"]]
         drafts = [[a for a in r["attempts"] if a["source"] == "llm"] for r in group]
         failed_first = [a for a in drafts if a and "too_many_questions" in a[0]["violations"]]
         usages = [u for r in group for u in [r["agent_usage"], *r["generation_usages"]] if u]
-        result[config.value] = {
+        result[config] = {
             "runs": len(group), "parsed_agent_proposals": len(proposals),
             "proposed_probe": sum(p["intent"] == "probe_prerequisite" for p in proposals),
             "rejected_probe": sum(bool(r.get("decision")) and bool(r["decision"]["proposed"])
@@ -134,7 +136,8 @@ def merge_parts(out: Path, manifest: dict, parts: list[Path]) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--llm", choices=("fake", "openai"), default="fake")
-    parser.add_argument("--yes", action="store_true", help="xác nhận toàn bộ lô tối đa 544 lần gọi với 16 tình huống")
+    parser.add_argument("--yes", action="store_true",
+                        help=f"xác nhận toàn bộ lô, tối đa {MAX_RUN_CALLS} lần gọi với 16 tình huống")
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--resume", action="store_true", help="chạy tiếp lô đã có trong --out, dùng lại phần đã xong")
     args = parser.parse_args(argv)
@@ -157,11 +160,11 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Preflight failed: {type(error).__name__}. Check LLM settings and DNS.", file=sys.stderr)
             return 2
     scenarios = load_scenarios()
-    calls = max_calls(len(scenarios), list(E), REPEAT)
-    if calls > 544:
-        parser.error(f"{calls} calls exceed this dev run's budget of 544")
+    calls = max_calls(len(scenarios), list(CONFIGURATIONS), REPEAT)
+    if calls > MAX_RUN_CALLS:
+        parser.error(f"{calls} calls exceed this dev run's budget of {MAX_RUN_CALLS}")
     model = settings.model if settings else "fake-llm"
-    manifest = {"run": run_info(args.llm, model, scenarios, list(E), REPEAT),
+    manifest = {"run": run_info(args.llm, model, scenarios, list(CONFIGURATIONS), REPEAT),
                 "max_calls": calls, "part_size": PART_SIZE,
                 "sha256": source_hashes()}
     if settings:
@@ -192,7 +195,8 @@ def main(argv: list[str] | None = None) -> int:
         part = new_part_folder(out, number)
         command = [sys.executable, "-X", "utf8", "-u", str(ROOT / "research/evaluation/run_ablation.py"),
                    "--llm", args.llm, "--repeat", str(REPEAT), "--max-calls",
-                   str(max_calls(len(subset), list(E), REPEAT)), "--out", str(part), "--scenarios", *subset]
+                   str(max_calls(len(subset), list(CONFIGURATIONS), REPEAT)), "--out", str(part),
+                   "--scenarios", *subset]
         if args.yes:
             command.append("--yes")
         print(f"Running {part.name}: {', '.join(subset)}", flush=True)
