@@ -1,0 +1,178 @@
+{
+  "snapshot_id": "DEV-A02-E02-M2-OAT02",
+  "usage": "authoring_dev_only_not_runtime",
+  "documents": [
+    {
+      "content_id": "DEV-A02-M2-OAT02-explanation",
+      "content_version": "0.1.0",
+      "concept_id": "A02",
+      "skill_ids": [
+        "SK-A02-DISTRIBUTE"
+      ],
+      "kind": "explanation",
+      "text": "Tính phân phối cho phép khai triển một thừa số nhân với tổng hoặc hiệu: thừa số ngoài ngoặc phải nhân với từng hạng tử trong ngoặc. Với phép trừ, giữ nguyên dấu của hạng tử bị trừ khi viết tích. Nếu thừa số ngoài ngoặc âm, kiểm tra quy tắc dấu ở từng phép nhân; âm nhân âm cho kết quả dương. Hãy viết riêng các tích rồi mới thu gọn để không bỏ sót hạng tử.",
+      "hint_level": 0,
+      "disclosure": "conceptual",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "279041e2c746a90bfc138026ba489612c434ed7d031ef117cda8933bbda4b167"
+    },
+    {
+      "content_id": "DEV-A02-M2-OAT02-hint-1",
+      "content_version": "0.1.0",
+      "concept_id": "A02",
+      "skill_ids": [
+        "SK-A02-DISTRIBUTE"
+      ],
+      "kind": "hint",
+      "text": "Trong ngoặc có những hạng tử nào? Thừa số ngoài ngoặc cần tác động đến từng hạng tử ra sao?",
+      "hint_level": 1,
+      "disclosure": "conceptual",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "b8732ec282ed19823ba25209bbecdd41949a50e11db1d6ee07aa24b3dd79c171"
+    },
+    {
+      "content_id": "DEV-A02-M2-OAT02-hint-2",
+      "content_version": "0.1.0",
+      "concept_id": "A02",
+      "skill_ids": [
+        "SK-A02-DISTRIBUTE"
+      ],
+      "kind": "hint",
+      "text": "Nhân thừa số ngoài ngoặc với từng hạng tử. Giữ dấu trừ như một phần của hạng tử và kiểm tra dấu khi có hệ số âm.",
+      "hint_level": 2,
+      "disclosure": "strategy",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "6ddb4875c01119f959f98fd5037ec1f6bbbf1dc7419dd528914160495e9a28e9"
+    },
+    {
+      "content_id": "DEV-A02-M2-OAT02-hint-3",
+      "content_version": "0.1.0",
+      "concept_id": "A02",
+      "skill_ids": [
+        "SK-A02-DISTRIBUTE"
+      ],
+      "kind": "hint",
+      "text": "Viết mỗi tích trên một phần riêng trước khi tính. Đánh dấu dấu của từng thừa số, tính dấu của tích rồi mới ghép các hạng tử và thu gọn.",
+      "hint_level": 3,
+      "disclosure": "scaffold",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "657429e08d9c8ff1a6e5320ee1cc546104b5f9190b76d2d0765223409732f201"
+    },
+    {
+      "content_id": "DEV-E02-M2-OAT02-explanation",
+      "content_version": "0.1.0",
+      "concept_id": "E02",
+      "skill_ids": [
+        "SK-E02-SOLVE"
+      ],
+      "kind": "explanation",
+      "text": "Biến đổi tương đương phải giữ nguyên tập nghiệm. Cộng hoặc trừ cùng một biểu thức ở cả hai vế giữ cân bằng; nhân hoặc chia cả hai vế cho cùng một số khác không cũng giữ tập nghiệm. Phép nhân với 0 không có phép toán nghịch đảo, nên phép chia cho 0 không xác định; nhân cả hai vế với 0 còn có thể làm mất điều kiện ban đầu. Nếu có ngoặc, có thể khai triển rồi thu gọn, hoặc chia trước cho hệ số khác không khi phù hợp. Gom các hạng tử chứa ẩn về một vế, hằng số về vế kia rồi tách ẩn. Thay kết quả vào phương trình ban đầu để kiểm tra.",
+      "hint_level": 0,
+      "disclosure": "conceptual",
+      "grade_levels": [
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "8fd67dcd6fa7fcf80702a227b357563e803b8c458b83cf2b1d30662bc360291e",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "0845cb5a9773448813136207305cdd396ecf79bd84b48e0c303f642a7e520096"
+    },
+    {
+      "content_id": "DEV-E02-M2-OAT02-hint-1",
+      "content_version": "0.1.0",
+      "concept_id": "E02",
+      "skill_ids": [
+        "SK-E02-SOLVE"
+      ],
+      "kind": "hint",
+      "text": "Hãy nhìn cấu trúc hai vế: có ngoặc không, và các hạng tử chứa ẩn đang ở vế nào? Mỗi phép biến đổi cần giữ cân bằng phương trình.",
+      "hint_level": 1,
+      "disclosure": "conceptual",
+      "grade_levels": [
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "8fd67dcd6fa7fcf80702a227b357563e803b8c458b83cf2b1d30662bc360291e",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "5a2824d9048adaff59115520e80af841fd62fb567d8d88d6c06b05d2a45873c9"
+    },
+    {
+      "content_id": "DEV-E02-M2-OAT02-hint-2",
+      "content_version": "0.1.0",
+      "concept_id": "E02",
+      "skill_ids": [
+        "SK-E02-SOLVE"
+      ],
+      "kind": "hint",
+      "text": "Nếu có ngoặc, xử lý ngoặc rồi thu gọn. Chọn phép cộng hoặc trừ cùng một biểu thức ở cả hai vế để gom hạng tử chứa ẩn và hằng số.",
+      "hint_level": 2,
+      "disclosure": "strategy",
+      "grade_levels": [
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "8fd67dcd6fa7fcf80702a227b357563e803b8c458b83cf2b1d30662bc360291e",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "b838398846fd0de45629923822239876463a6ed3acc7b647fbdb87064f027880"
+    },
+    {
+      "content_id": "DEV-E02-M2-OAT02-hint-3",
+      "content_version": "0.1.0",
+      "concept_id": "E02",
+      "skill_ids": [
+        "SK-E02-SOLVE"
+      ],
+      "kind": "hint",
+      "text": "Viết rõ phép toán giống nhau ở cả hai vế cho bước em đang làm. Khi còn hệ số nhân với ẩn, chia cả hai vế cho hệ số khác không; cuối cùng thay kết quả vào phương trình gốc để kiểm tra.",
+      "hint_level": 3,
+      "disclosure": "scaffold",
+      "grade_levels": [
+        8
+      ],
+      "source_group": null,
+      "problem_id": null,
+      "pack_sha256": "8fd67dcd6fa7fcf80702a227b357563e803b8c458b83cf2b1d30662bc360291e",
+      "review_status": "draft",
+      "runtime_eligible": false,
+      "content_sha256": "c0bca9eb5a0cbf921eefcf13e1f82af39d750b4fc2605143bbc507a191f92867"
+    }
+  ]
+}

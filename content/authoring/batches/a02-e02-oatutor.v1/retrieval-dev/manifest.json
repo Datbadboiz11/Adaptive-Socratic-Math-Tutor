@@ -1,0 +1,29 @@
+{
+  "snapshot_id": "DEV-A02-E02-M2-OAT01",
+  "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+  "queries_sha256": "0daa4e17f533c9d4980fc67ffb5de583406c1115d5c703ec017eff717484056e",
+  "qrels_sha256": "45bf362ffd7035b42c7a6ccd8d2e82a373958fca3001461a723bd79c129ea093",
+  "split": "dev",
+  "query_count": 24,
+  "candidate_count": 8,
+  "judgment_count": 192,
+  "fallback_count": 4,
+  "source_and_lineage_groups_reserved_for_dev": [
+    "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+    "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+    "PROJECT-A02-REVERSE-DEV",
+    "PROJECT-A02-SUPPORT-DEV",
+    "PROJECT-E02-BRACKETS-DEV",
+    "PROJECT-E02-SUPPORT-DEV"
+  ],
+  "test_reuse": "Do not move these problems, their lesson groups, variants or query paraphrases into final test",
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "evaluation_status": "not_run",
+  "metric_note": "Small draft corpus for plumbing and relevance review; no retrieval performance claim. Recall/Hit use relevance >= 2; graded nDCG gains 0,1,3. No-positive queries: N/A, evaluate fallback separately.",
+  "runtime_eligible_documents": 0,
+  "human_approved_labels": 0
+}

@@ -1,0 +1,10 @@
+{
+  "stage2_revision": 2,
+  "revision": "M2-OAT02",
+  "supersedes": "content/authoring/batches/a02-e02-oatutor.v1",
+  "snapshot_id": "DEV-A02-E02-M2-OAT02",
+  "scope": "A02 forward distribution only; A07 reverse-distribution records relocated, not counted as new",
+  "e02_change": "Explains why division by zero is undefined; DEV-E02-03 relabeled against this revision",
+  "human_review": "pending",
+  "runtime_publication": false
+}

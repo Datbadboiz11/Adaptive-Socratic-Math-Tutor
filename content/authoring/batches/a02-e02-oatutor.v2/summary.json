@@ -1,0 +1,22 @@
+{
+  "protocol_version": "oatutor-pilot-1.0.0",
+  "status": "ready_for_review_not_approved",
+  "problems": 12,
+  "oatutor_adapted_problems": 8,
+  "ai_supplement_problems": 4,
+  "examples": 6,
+  "error_fixtures": 6,
+  "hint_levels": 6,
+  "model_api_calls": 0,
+  "human_approved_packs": 0,
+  "query_count": 24,
+  "qrel_count": 192,
+  "source_items_with_blank_license_fields": 8,
+  "runtime_publication": false,
+  "canonical_registry_and_pilot_modified": false,
+  "target_240_progress": "Twelve current pilot problems cover two already-piloted concepts; canonical drafts and revisions require separate coverage/deduplication accounting.",
+  "new_tasks_relative_to_v1": 2,
+  "reused_tasks_relative_to_v1": 10,
+  "a07_relocated_problems": 2,
+  "a07_complete_pack": false
+}

@@ -53,7 +53,7 @@ class TurnResult(Contract):
     assessment: Assessment
     eligibility: Eligibility
     message: str
-    response_source: Literal['system_unavailable','openai','draft_template'] = 'system_unavailable'
+    response_source: Literal['system_unavailable','openai','gemini','draft_template'] = 'system_unavailable'
     tutor: dict | None = None
     observation: dict | None = None
 

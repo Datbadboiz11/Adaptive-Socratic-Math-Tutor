@@ -1,0 +1,111 @@
+{
+  "review_date": "2026-11-16",
+  "timezone": "Asia/Bangkok",
+  "stage": "member2-part1",
+  "status": "technical_artifacts_complete_pending_team_review",
+  "environment": {
+    "python": "3.11.6",
+    "pydantic": "2.13.0"
+  },
+  "unit_test_count": 24,
+  "checks": [
+    {
+      "key": "member2_unit",
+      "command": "python -m unittest discover -s tests -p test_member2_foundation.py -v",
+      "exit_code": 0,
+      "output": "test_current_problem_and_near_example_are_excluded (test_member2_foundation.Member2ContractTests.test_current_problem_and_near_example_are_excluded) ... ok\r\ntest_different_example_cannot_be_the_current_problem (test_member2_foundation.Member2ContractTests.test_different_example_cannot_be_the_current_problem) ... ok\r\ntest_different_example_requires_separate_public_task (test_member2_foundation.Member2ContractTests.test_different_example_requires_separate_public_task) ... ok\r\ntest_disclosure_ceiling_and_level_four_are_rejected (test_member2_foundation.Member2ContractTests.test_disclosure_ceiling_and_level_four_are_rejected) ... ok\r\ntest_draft_review_and_missing_provenance_cannot_be_retrieved (test_member2_foundation.Member2ContractTests.test_draft_review_and_missing_provenance_cannot_be_retrieved) ... ok\r\ntest_draft_template_cannot_be_labelled_reviewed_fallback (test_member2_foundation.Member2ContractTests.test_draft_template_cannot_be_labelled_reviewed_fallback) ... ok\r\ntest_empty_result_duplicate_and_semantic_version_rules (test_member2_foundation.Member2ContractTests.test_empty_result_duplicate_and_semantic_version_rules) ... ok\r\ntest_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot (test_member2_foundation.Member2ContractTests.test_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot) ... ok\r\ntest_examples_cover_all_five_supported_authoring_task_types (test_member2_foundation.Member2ContractTests.test_examples_cover_all_five_supported_authoring_task_types) ... ok\r\ntest_private_authoring_fields_are_not_projected_or_accepted (test_member2_foundation.Member2ContractTests.test_private_authoring_fields_are_not_projected_or_accepted) ... ok\r\ntest_public_task_requires_substitution_only_when_applicable (test_member2_foundation.Member2ContractTests.test_public_task_requires_substitution_only_when_applicable) ... ok\r\ntest_query_cannot_select_a_concept_or_skill_outside_server_permissions (test_member2_foundation.Member2ContractTests.test_query_cannot_select_a_concept_or_skill_outside_server_permissions) ... ok\r\ntest_report_assisted_outcome_does_not_inflate_observation_count (test_member2_foundation.Member2ContractTests.test_report_assisted_outcome_does_not_inflate_observation_count) ... ok\r\ntest_report_rejects_fabricated_delta_and_inconsistent_totals (test_member2_foundation.Member2ContractTests.test_report_rejects_fabricated_delta_and_inconsistent_totals) ... ok\r\ntest_retrieval_correlates_request_snapshot_and_limit (test_member2_foundation.Member2ContractTests.test_retrieval_correlates_request_snapshot_and_limit) ... ok\r\ntest_retrieval_enforces_identity_purpose_grade_and_difficulty (test_member2_foundation.Member2ContractTests.test_retrieval_enforces_identity_purpose_grade_and_difficulty) ... ok\r\ntest_retrieved_chunk_rejects_private_fields (test_member2_foundation.Member2ContractTests.test_retrieved_chunk_rejects_private_fields) ... ok\r\ntest_student_query_cannot_override_server_scope_or_request_private_content (test_member2_foundation.Member2ContractTests.test_student_query_cannot_override_server_scope_or_request_private_content) ... ok\r\ntest_approved_edge_to_draft_prerequisite_does_not_pass_readiness (test_member2_foundation.Member2CoverageTests.test_approved_edge_to_draft_prerequisite_does_not_pass_readiness) ... ok\r\ntest_coverage_keeps_registry_drafts_and_runtime_readiness_distinct (test_member2_foundation.Member2CoverageTests.test_coverage_keeps_registry_drafts_and_runtime_readiness_distinct) ... ok\r\ntest_draft_readiness_cannot_be_activated_with_client_ready_flag (test_member2_foundation.Member2CoverageTests.test_draft_readiness_cannot_be_activated_with_client_ready_flag) ... ok\r\ntest_generated_artifacts_match_current_sources_and_schema (test_member2_foundation.Member2CoverageTests.test_generated_artifacts_match_current_sources_and_schema) ... ok\r\ntest_human_content_review_alone_does_not_make_canonical_runtime_ready (test_member2_foundation.Member2CoverageTests.test_human_content_review_alone_does_not_make_canonical_runtime_ready) ... ok\r\ntest_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance (test_member2_foundation.Member2CoverageTests.test_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 24 tests in 0.101s\r\n\r\nOK\r\n",
+      "wall_time_seconds": 1.0227503,
+      "status": "PASS"
+    },
+    {
+      "key": "member2_artifacts",
+      "command": "python scripts/checks/check_member2_foundation.py",
+      "exit_code": 0,
+      "output": "PASS: Member 2 proposed schemas, synthetic fixtures and coverage are consistent\r\n{\"approved_packs\": 0, \"draft_packs\": 10, \"error_fixtures\": 20, \"examples\": 30, \"hints\": 30, \"packs_present\": 10, \"problems\": 60, \"proposed_owner_counts\": {\"Member 1\": 13, \"Member 2\": 13, \"Member 3\": 14}, \"public_chunks\": 0, \"ready_concepts\": 0, \"registry_concepts\": 40}\r\n",
+      "wall_time_seconds": 0.9911118,
+      "status": "PASS"
+    },
+    {
+      "key": "curriculum_audit",
+      "command": "python scripts/checks/check_curriculum.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"registry_concepts\": 40,\r\n  \"pilot_concepts\": 10,\r\n  \"edges\": 68,\r\n  \"concept_review_counts\": {\r\n    \"draft\": 40\r\n  },\r\n  \"coverage\": [\r\n    {\r\n      \"concept_id\": \"A01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A03\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F05\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N04\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    }\r\n  ],\r\n  \"note\": \"Authoring checks only. Drafts are not seeded into the MVP or published to learners.\"\r\n}\r\n",
+      "wall_time_seconds": 0.938972,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_content_audit",
+      "command": "python scripts/checks/check_phase1.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"problems\": [\r\n    {\r\n      \"problem_id\": \"LIN-001\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-002\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-003\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-004\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-005\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-006\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    }\r\n  ],\r\n  \"family_counts\": {\r\n    \"F-AX-B-C\": 2,\r\n    \"F-A-XB-C\": 2,\r\n    \"F-AXB-CXD\": 2\r\n  },\r\n  \"note\": \"Authoring checks only; human pedagogical review and learner validator are pending.\"\r\n}\r\n",
+      "wall_time_seconds": 0.8635033,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_schemas",
+      "command": "python scripts/exports/export_contracts.py --check",
+      "exit_code": 0,
+      "output": "PASS: 15 contract schemas\r\n",
+      "wall_time_seconds": 0.9411127,
+      "status": "PASS"
+    },
+    {
+      "key": "python_syntax",
+      "command": "python -c \"import ast; from pathlib import Path; paths=list(Path('.').rglob('*.py')); [ast.parse(p.read_text(encoding='utf-8-sig'), filename=str(p)) for p in paths]; print(f'PASS: {len(paths)} Python source files')\"",
+      "exit_code": 0,
+      "output": "PASS: 51 Python source files\r\n",
+      "wall_time_seconds": 0.5784101,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "contracts/member2/v0.1.0/examples.json": "fcc1f985cc18f34fa5b349ffee58bc113fe2e42c0420581733174a518a35f3bc",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "docs/implementation/member2/part1/coverage.md": "c7af6ab9e8c6851a739b9ef111f3f1c43f3bb053d0191be2ca5942942b4b5895",
+    ".github/workflows/repository-checks.yml": "bc54c5484605d654eb1e744c58eaba67e2c6f99e8b0fb18a1d728c6fa41976bb",
+    "tests/test_member2_foundation.py": "7f5fc1aa0dcbc38395f5b71d415b233d607ea64f688e93b2e4b5e733f572b297",
+    "docs/implementation/member2/part1/coverage.json": "d599fc69657137ad03e44376bcbfd14edb71642afbcf52fcda6aa6b77f31ec3a",
+    "docs/implementation/member2/part1/README.md": "b7004b23e72862d00ea87080d53f1ef74933ba2f67c804e47682908df6089844",
+    "scripts/checks/check_member2_foundation.py": "73ed1e13bdc3a0490502ca3729292ec1eb3de7e905874f5567361d1ab187b789",
+    "backend/app/member2_contracts.py": "c7b0889e48fbac57d91a6116089c09d4166e538b8ed1c38d9539fe253d90bc33",
+    "contracts/member2/v0.1.0/FoundationExamples.schema.json": "e4263f56aba4b2186ddded876a190367f7e39b40699fc5fbe33a3f887ddb4dc6",
+    "backend/app/member2_foundation.py": "cdda5bc83b499762be5d348b3f1b71deff0fab929640688b05579e973e69cdd5"
+  },
+  "curriculum_input_sha256": {
+    "content/curriculum/registry.v1.json": "7b05496609ebf89846de912508ae786119d33d16c59f15467ee513ba01ad76ea",
+    "content/curriculum/pilot.v1.json": "a95bbe718ebd1814390e5023ad84c888199131c4a57369c164f498ca6daddc89",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b"
+  },
+  "team_review": {
+    "status": "pending_review",
+    "accepted_gates": 0,
+    "total_gates": 5,
+    "assignments": "proposed_13_13_14"
+  },
+  "runtime_integration": "NOT_IMPLEMENTED_IN_PART1",
+  "not_run": [
+    {
+      "check": "full pytest suite / DB integration",
+      "reason": "Backend dependencies and database runtime are unavailable; the new 24 unittest tests run without them."
+    },
+    {
+      "check": "frontend build / browser",
+      "reason": "No frontend changes in this part; frontend dependencies and Docker CLI are unavailable."
+    },
+    {
+      "check": "remote CI",
+      "reason": "Workflow configuration updated locally; no remote run was triggered."
+    },
+    {
+      "check": "LLM / embeddings / vector retrieval",
+      "reason": "These belong to later stages; method/review values in examples are synthetic fixtures."
+    }
+  ],
+  "limitations": [
+    "Pydantic and JSON Schema checks do not verify mathematics or authenticate reviewer identity.",
+    "Group acceptance, canonical validator/UI integration, and real content approval remain pending.",
+    "Only the technical preparation package for Part 1 is complete; work stops for the requested review."
+  ]
+}

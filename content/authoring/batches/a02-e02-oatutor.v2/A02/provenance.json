@@ -1,0 +1,308 @@
+[
+  {
+    "record_id": "D-A02-M2-OAT02-P-01",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+    "human_review": "pending",
+    "upstream_problem_id": "a60909cdistprop2",
+    "upstream_step_ids": [
+      "a60909cdistprop2a"
+    ],
+    "raw_files": [
+      "content-pool/a60909cdistprop2/a60909cdistprop2.json",
+      "content-pool/a60909cdistprop2/steps/a60909cdistprop2a/a60909cdistprop2a.json",
+      "content-pool/a60909cdistprop2/steps/a60909cdistprop2a/tutoring/a60909cdistprop2aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+    "course": "SJSU 1018",
+    "lesson": "1018.3.3 - The Distributive Property",
+    "lesson_id": "54Fz6uFY-pF1B-O1xGivIehL",
+    "upstream_license_fields": [
+      {
+        "record_id": "a60909cdistprop2",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop2a",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop2a-h1",
+        "license": ""
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop2; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Đổi trắc nghiệm thành tự luận có bước giải",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-P-02",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+    "human_review": "pending",
+    "upstream_problem_id": "a60909cdistprop3",
+    "upstream_step_ids": [
+      "a60909cdistprop3a"
+    ],
+    "raw_files": [
+      "content-pool/a60909cdistprop3/a60909cdistprop3.json",
+      "content-pool/a60909cdistprop3/steps/a60909cdistprop3a/a60909cdistprop3a.json",
+      "content-pool/a60909cdistprop3/steps/a60909cdistprop3a/tutoring/a60909cdistprop3aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+    "course": "SJSU 1018",
+    "lesson": "1018.3.3 - The Distributive Property",
+    "lesson_id": "54Fz6uFY-pF1B-O1xGivIehL",
+    "upstream_license_fields": [
+      {
+        "record_id": "a60909cdistprop3",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop3a",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop3a-h1",
+        "license": ""
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop3; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Đổi trắc nghiệm thành tự luận có bước giải",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-P-03",
+    "record_type": "problem",
+    "origin_kind": "ai_generated_supplement",
+    "split_group": "PROJECT-A02-POSITIVE-DIFFERENCE-DEV",
+    "human_review": "pending",
+    "upstream_problem_id": null,
+    "raw_files": [],
+    "changes": [],
+    "generation_method": "Codex-assisted authoring in this session; no external API call",
+    "reason": "Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02.",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-P-04",
+    "record_type": "problem",
+    "origin_kind": "ai_generated_supplement",
+    "split_group": "PROJECT-A02-POSITIVE-DIFFERENCE-DEV",
+    "human_review": "pending",
+    "upstream_problem_id": null,
+    "raw_files": [],
+    "changes": [],
+    "generation_method": "Codex-assisted authoring in this session; no external API call",
+    "reason": "Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02.",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-P-05",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+    "human_review": "pending",
+    "upstream_problem_id": "a60909cdistprop12",
+    "upstream_step_ids": [
+      "a60909cdistprop12a",
+      "a60909cdistprop12b"
+    ],
+    "raw_files": [
+      "content-pool/a60909cdistprop12/a60909cdistprop12.json",
+      "content-pool/a60909cdistprop12/steps/a60909cdistprop12a/a60909cdistprop12a.json",
+      "content-pool/a60909cdistprop12/steps/a60909cdistprop12a/tutoring/a60909cdistprop12aDefaultPathway.json",
+      "content-pool/a60909cdistprop12/steps/a60909cdistprop12b/a60909cdistprop12b.json",
+      "content-pool/a60909cdistprop12/steps/a60909cdistprop12b/tutoring/a60909cdistprop12bDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+    "course": "SJSU 1018",
+    "lesson": "1018.3.3 - The Distributive Property",
+    "lesson_id": "54Fz6uFY-pF1B-O1xGivIehL",
+    "upstream_license_fields": [
+      {
+        "record_id": "a60909cdistprop12",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12a",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12b",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12a-h1",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12a-h2",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12b-h1",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop12b-h2",
+        "license": ""
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop12; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Đổi biến y thành x",
+      "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+      "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-P-06",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+    "human_review": "pending",
+    "upstream_problem_id": "a60909cdistprop13",
+    "upstream_step_ids": [
+      "a60909cdistprop13a",
+      "a60909cdistprop13b"
+    ],
+    "raw_files": [
+      "content-pool/a60909cdistprop13/a60909cdistprop13.json",
+      "content-pool/a60909cdistprop13/steps/a60909cdistprop13a/a60909cdistprop13a.json",
+      "content-pool/a60909cdistprop13/steps/a60909cdistprop13a/tutoring/a60909cdistprop13aDefaultPathway.json",
+      "content-pool/a60909cdistprop13/steps/a60909cdistprop13b/a60909cdistprop13b.json",
+      "content-pool/a60909cdistprop13/steps/a60909cdistprop13b/tutoring/a60909cdistprop13bDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+    "course": "SJSU 1018",
+    "lesson": "1018.3.3 - The Distributive Property",
+    "lesson_id": "54Fz6uFY-pF1B-O1xGivIehL",
+    "upstream_license_fields": [
+      {
+        "record_id": "a60909cdistprop13",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13a",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13b",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13a-h1",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13a-h2",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13b-h1",
+        "license": ""
+      },
+      {
+        "record_id": "a60909cdistprop13b-h2",
+        "license": ""
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop13; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Đổi biến m thành x",
+      "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+      "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-EX-01",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-EX-02",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-EX-03",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-ERR-01",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-ERR-02",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-A02-M2-OAT02-ERR-03",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "A02-teaching-text",
+    "record_type": "explanation_and_hints",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-A02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  }
+]

@@ -1,0 +1,245 @@
+{
+  "concept_id": "E02",
+  "content_version": "0.1.0",
+  "explanation": "Một phép biến đổi phương trình phải giữ nguyên tập nghiệm. Có thể cộng hoặc trừ cùng một biểu thức ở hai vế, nhân hoặc chia cả hai vế cho cùng một số khác không. Nếu có ngoặc, khai triển rồi thu gọn, hoặc chia trước khi phù hợp. Gom các hạng tử chứa ẩn về một vế, các hằng số về vế còn lại rồi tách ẩn. Thay nghiệm tìm được vào phương trình ban đầu để kiểm tra.",
+  "problems": [
+    {
+      "case_id": "D-E02-M2-OAT01-P-01",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "7*x+8=-13",
+        "variable_value": null
+      },
+      "reference_answer": "-3",
+      "reference_steps": [
+        "7*x=-21",
+        "x=-3"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "difficulty": "introductory",
+      "prompt": "Giải phương trình bằng các phép biến đổi giữ nguyên tập nghiệm 7*x+8=-13. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon1; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc; Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-P-02",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "3*x+4=-8",
+        "variable_value": null
+      },
+      "reference_answer": "-4",
+      "reference_steps": [
+        "3*x=-12",
+        "x=-4"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-AX-B-C",
+      "source_group": "GROUP-E02-F-AX-B-C",
+      "difficulty": "introductory",
+      "prompt": "Giải phương trình bằng các phép biến đổi giữ nguyên tập nghiệm 3*x+4=-8. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon2; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc; Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-P-03",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "4*(x-2)=20",
+        "variable_value": null
+      },
+      "reference_answer": "7",
+      "reference_steps": [
+        "4*x-8=20",
+        "4*x=28",
+        "x=7"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "difficulty": "standard",
+      "prompt": "Giải phương trình có ngoặc bằng biến đổi tương đương 4*(x-2)=20. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "AI-generated supplement; not an OATutor problem. Bổ sung dạng a(x+b)=c trong lô đã chọn; không khẳng định OATutor không có dạng này."
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-P-04",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "-5*(x+1)=15",
+        "variable_value": null
+      },
+      "reference_answer": "-4",
+      "reference_steps": [
+        "-5*x-5=15",
+        "-5*x=20",
+        "x=-4"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-A-XB-C",
+      "source_group": "GROUP-E02-F-A-XB-C",
+      "difficulty": "standard",
+      "prompt": "Giải phương trình có ngoặc và hệ số âm bằng biến đổi tương đương -5*(x+1)=15. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "AI-generated supplement; not an OATutor problem. Bổ sung dạng có ngoặc với hệ số âm trong lô đã chọn."
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-P-05",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "7*x+5=6*x+2",
+        "variable_value": null
+      },
+      "reference_answer": "-3",
+      "reference_steps": [
+        "x+5=2",
+        "x=-3"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "difficulty": "standard",
+      "prompt": "Giải phương trình có ẩn ở hai vế bằng biến đổi tương đương 7*x+5=6*x+2. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon18; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc; Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-P-06",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "12*x+8=6*x+2",
+        "variable_value": null
+      },
+      "reference_answer": "-1",
+      "reference_steps": [
+        "6*x+8=2",
+        "6*x=-6",
+        "x=-1"
+      ],
+      "concept_id": "E02",
+      "primary_skill_id": "SK-E02-SOLVE",
+      "family_id": "FAM-E02-F-AXB-CXD",
+      "source_group": "GROUP-E02-F-AXB-CXD",
+      "difficulty": "standard",
+      "prompt": "Giải phương trình có ẩn ở hai vế bằng biến đổi tương đương 12*x+8=6*x+2. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon19; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc; Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    }
+  ],
+  "examples": [
+    {
+      "case_id": "D-E02-M2-OAT01-EX-01",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "6*x-7=11",
+        "variable_value": null
+      },
+      "reference_answer": "3",
+      "reference_steps": [
+        "6*x=18",
+        "x=3"
+      ]
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-EX-02",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "3*(x+4)=21",
+        "variable_value": null
+      },
+      "reference_answer": "3",
+      "reference_steps": [
+        "3*x+12=21",
+        "3*x=9",
+        "x=3"
+      ]
+    },
+    {
+      "case_id": "D-E02-M2-OAT01-EX-03",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "8*x+1=3*x-14",
+        "variable_value": null
+      },
+      "reference_answer": "-3",
+      "reference_steps": [
+        "5*x+1=-14",
+        "5*x=-15",
+        "x=-3"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "error_id": "D-E02-M2-OAT01-ERR-01",
+      "problem_id": "D-E02-M2-OAT01-P-01",
+      "response_steps": [
+        "7*x=-5",
+        "x=-5/7"
+      ],
+      "first_error_step": 1,
+      "family": "inverse_operation",
+      "hypothesis": "Có thể cộng hằng số thay vì dùng phép toán ngược; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Muốn loại hằng số đang cộng vào vế chứa ẩn, em cần làm phép toán nào ở cả hai vế?",
+      "diagnosis_status": "suspected"
+    },
+    {
+      "error_id": "D-E02-M2-OAT01-ERR-02",
+      "problem_id": "D-E02-M2-OAT01-P-03",
+      "response_steps": [
+        "4*x-2=20",
+        "4*x=22",
+        "x=11/2"
+      ],
+      "first_error_step": 1,
+      "family": "distribution_missing_term",
+      "hypothesis": "Có thể chưa nhân hệ số ngoài ngoặc với hằng số bên trong; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Thừa số trước ngoặc có tác động đến hằng số trong ngoặc không?",
+      "diagnosis_status": "suspected"
+    },
+    {
+      "error_id": "D-E02-M2-OAT01-ERR-03",
+      "problem_id": "D-E02-M2-OAT01-P-05",
+      "response_steps": [
+        "x+5=2",
+        "x=7"
+      ],
+      "first_error_step": 2,
+      "family": "inverse_operation",
+      "hypothesis": "Có thể dùng sai phép toán ngược ở bước thứ hai; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Sau bước gom ẩn đúng, phép toán nào loại hằng số còn lại mà vẫn giữ cân bằng?",
+      "diagnosis_status": "suspected"
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Hãy nhìn cấu trúc hai vế: có ngoặc không, và các hạng tử chứa ẩn đang ở vế nào? Mỗi phép biến đổi cần giữ cân bằng phương trình.",
+      "disclosure": "conceptual"
+    },
+    {
+      "level": 2,
+      "text": "Nếu có ngoặc, xử lý ngoặc rồi thu gọn. Chọn phép cộng hoặc trừ cùng một biểu thức ở cả hai vế để gom hạng tử chứa ẩn và hằng số.",
+      "disclosure": "strategy"
+    },
+    {
+      "level": 3,
+      "text": "Viết rõ phép toán giống nhau ở cả hai vế cho bước em đang làm. Khi còn hệ số nhân với ẩn, chia cả hai vế cho hệ số khác không; cuối cùng thay kết quả vào phương trình gốc để kiểm tra.",
+      "disclosure": "scaffold"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "author": "Member 2",
+    "source": "Staged source pilot: https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3; per-record provenance.json distinguishes adaptations from AI supplements; human review pending.",
+    "human_reviewer": null,
+    "reviewed_at": null
+  }
+}

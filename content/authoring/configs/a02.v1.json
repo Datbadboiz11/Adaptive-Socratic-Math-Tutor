@@ -1,0 +1,16 @@
+{
+  "protocol_version": "authoring-1.0.0",
+  "concept_id": "A02",
+  "revision": "M2-R001",
+  "author": "Member 2",
+  "content_version": "0.1.0",
+  "source_ids": ["SRC-MATH-2018"],
+  "families": [
+    {"family_id": "FAM-A02-positive", "source_group": "GROUP-A02-positive", "description": "Hệ số dương nhân tổng hoặc hiệu; phân phối tới từng hạng tử."},
+    {"family_id": "FAM-A02-negative", "source_group": "GROUP-A02-negative", "description": "Hệ số âm ngoài ngoặc; kiểm tra dấu ở cả hai phép nhân."},
+    {"family_id": "FAM-A02-reverse", "source_group": "GROUP-A02-reverse", "description": "Dùng ngược tính phân phối để đặt nhân tử chung của biểu thức tuyến tính."}
+  ],
+  "model": "gpt-4o-mini",
+  "max_output_tokens": 8000,
+  "timeout_seconds": 45
+}

@@ -1,0 +1,35 @@
+{
+  "protocol_version": "curriculum-review-1.0.0",
+  "review_id": "FILL-UNIQUE-REVIEW-ID",
+  "reviewer": null,
+  "reviewed_at": null,
+  "human_attestation": false,
+  "decision": "changes_requested",
+  "comments": "Đối chiếu chương trình Việt Nam; ghi rõ mục/trang đã thực sự kiểm tra.",
+  "registry_sha256": "5ca71b698e4bcfea7c1b8ee10c8a6bbfa4fb1d5c2edc59cadd2654d956c86db3",
+  "concepts": [
+    {
+      "concept_id": "A02",
+      "scope": "not_checked",
+      "alignment": "not_checked",
+      "source_id": "SRC-MATH-2018",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "locator": "Phần lớp 7–8, PDF trang 55–70",
+      "comments": ""
+    },
+    {
+      "concept_id": "E02",
+      "scope": "not_checked",
+      "alignment": "not_checked",
+      "source_id": "SRC-MATH-2018",
+      "grade_levels": [
+        8
+      ],
+      "locator": "Phần lớp 8–9, PDF trang 63–78",
+      "comments": ""
+    }
+  ]
+}

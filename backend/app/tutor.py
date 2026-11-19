@@ -68,6 +68,14 @@ def model_wording(s):
     fallback={'message':s['policy']['message'],'response_source':'draft_template','fallback_reason':'llm_disabled'}
     if not s.get('llm_allowed',True): return {**fallback,'fallback_reason':'session_call_limit'}
     if os.getenv('LLM_ENABLED','false').lower()!='true': return fallback
+    provider=os.getenv('LLM_PROVIDER','openai').lower()
+    if provider=='gemini':
+        if not os.getenv('GEMINI_API_KEY') or not os.getenv('GEMINI_MODEL'):
+            return {**fallback,'fallback_reason':'llm_unconfigured'}
+        from app.gemini_wording import select_wording
+        return select_wording(s,os.environ['GEMINI_API_KEY'],os.environ['GEMINI_MODEL'])
+    if provider!='openai':
+        return {**fallback,'fallback_reason':'unsupported_llm_provider'}
     if not os.getenv('OPENAI_API_KEY') or not os.getenv('OPENAI_MODEL'):
         return {**fallback,'fallback_reason':'llm_unconfigured'}
     try:

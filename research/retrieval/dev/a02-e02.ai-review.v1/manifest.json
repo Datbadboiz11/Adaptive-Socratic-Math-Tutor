@@ -1,0 +1,74 @@
+{
+  "review_id": "AI-M1-M3-20261118-v1",
+  "review_kind": "ai_review_for_development",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "separate_independent_ai_agents": false,
+  "human_approved_labels": 0,
+  "snapshot_id": "DEV-A02-E02-M2-OAT02",
+  "corpus_path": "content/authoring/batches/a02-e02-oatutor.v2/retrieval-dev/corpus.json",
+  "corpus_sha256": "ade95a6be7ca6fbacc4c4b3bc107bd79a704c2b23d1c6094454bae6153701871",
+  "source_queries_sha256": "06890aeaf30951fb1b46c57bdf43b62f29aa3d25fc3fad6059f9aadd145f87be",
+  "source_qrels_sha256": "31c109e741a91f0fd105bdd2c52c480d1418b2cf013ee1e4e5f1be455d9cae94",
+  "queries_sha256": "62bd83a1e6df86fab8fb9bb344f3eb609fb59d0a518ea2edfcbff4a3eff9b335",
+  "qrels_sha256": "7daf693ab58b68411e685f4d7b1667c4eacd83e550d51d7ed7adafde21855444",
+  "query_count": 24,
+  "judgment_count": 192,
+  "grade_corrections": 2,
+  "metadata_fallback_queries": [
+    "DEV-A02-11",
+    "DEV-A02-12",
+    "DEV-E02-11",
+    "DEV-E02-12"
+  ],
+  "recall_hit_relevance_threshold": 2,
+  "recall_hit_no_positive_queries": [
+    "DEV-A02-01",
+    "DEV-A02-11",
+    "DEV-A02-12",
+    "DEV-E02-10",
+    "DEV-E02-11",
+    "DEV-E02-12"
+  ],
+  "ndcg_gain_by_grade": {
+    "0": 0,
+    "1": 1,
+    "2": 3
+  },
+  "ndcg_no_positive_gain_queries": [
+    "DEV-A02-11",
+    "DEV-A02-12",
+    "DEV-E02-11",
+    "DEV-E02-12"
+  ],
+  "evaluation_status": "not_run",
+  "runtime_publication": false,
+  "production_review_gate_changed": false,
+  "input_file_sha256": {
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "backend/app/member2_contracts.py": "54341a8872404781090fb1f58778dedcba5e394b1a5034600f09797505ecc47e",
+    "backend/app/member2_foundation.py": "cdda5bc83b499762be5d348b3f1b71deff0fab929640688b05579e973e69cdd5",
+    "backend/app/knowledge.py": "50c4388205a446c40d3820ac8830e6f71ce5208a8f5ac2826c6fddb10421fb17",
+    "content/authoring/batches/a02-e02-oatutor.v2/manifest.json": "3606671e2e81a8be2be3f9f4efb372eb311f85c08ee84ab1ba07432c968b945d",
+    "content/authoring/batches/a02-e02-oatutor.v2/registry-snapshot.json": "9561dcff26e70db3e59ef8893ba9639dc7c3f60d811e419852e5c7589720577d",
+    "content/authoring/batches/a02-e02-oatutor.v2/A02/draft.json": "c0ab1ae5627165f9bfbcb47c8c1bc746d5b774b3bd73c022211af20e5ecf0f1d",
+    "content/authoring/batches/a02-e02-oatutor.v2/E02/draft.json": "946b04c8548bdc505ce220e7f839615662c27cd4fbc838dc07ae24d227c58712",
+    "content/authoring/batches/a02-e02-oatutor.v2/retrieval-dev/corpus.json": "f36484ac523982ca110a5632f7cffab3308c681332fa6cb6003a07868f4e74de",
+    "content/authoring/batches/a02-e02-oatutor.v2/retrieval-dev/queries.json": "28a2c529ef89c9bd4ad0894b0560b3d5663a8f2b2a9909eb0d5415c7e08c84d1",
+    "content/authoring/batches/a02-e02-oatutor.v2/retrieval-dev/qrels.json": "44b0139e440ed53a37d091ee21c2a98024e118413f75ab673022379f4491aefc",
+    "docs/implementation/member2/ai-review-2026-11-18/review.json": "93b53e445b5d99a06ab0764a5fec879f69032d9430b8ea1be38a5344fff62822",
+    "docs/implementation/member2/ai-review-2026-11-18/query-review.json": "57f70b953e9d289ef6359a6d28584f585c0890b8a7e2a43d6881e901bc88a956"
+  },
+  "output_file_sha256": {
+    "research/retrieval/dev/a02-e02.ai-review.v1/queries.json": "032290d2e2cf2886bd626b3e1e892b987fa2d10727f2b33186b724a99e7612a8",
+    "research/retrieval/dev/a02-e02.ai-review.v1/qrels.json": "74239bac4b2ab842e59558016f5a1b8e05f92ca8359e94eb48a94a670711eec7"
+  },
+  "math_validation": {
+    "engine": "SymPy",
+    "version": "1.14.0",
+    "passed": true,
+    "cases": 21,
+    "reference_steps": 47,
+    "error_fixtures": 7
+  }
+}

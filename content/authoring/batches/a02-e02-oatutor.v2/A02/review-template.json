@@ -1,0 +1,16 @@
+{
+  "protocol_version": "authoring-1.0.0",
+  "review_id": "FILL-UNIQUE-REVIEW-ID",
+  "reviewer": null,
+  "reviewed_at": null,
+  "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+  "decision": "changes_requested",
+  "checklist": {
+    "mathematics": "not_checked",
+    "curriculum_scope": "not_checked",
+    "pedagogy_language": "not_checked",
+    "disclosure": "not_checked",
+    "source_rights": "not_checked"
+  },
+  "comments": "Điền người/thời điểm review thật, kết quả từng mục và nhận xét trước khi gửi."
+}

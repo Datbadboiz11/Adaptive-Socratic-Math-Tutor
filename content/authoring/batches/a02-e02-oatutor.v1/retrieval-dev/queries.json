@@ -1,0 +1,740 @@
+[
+  {
+    "query_id": "DEV-A02-01",
+    "query": "Vì sao số trước ngoặc phải nhân với cả hai hạng tử?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-01",
+    "excluded_source_groups": [
+      "GROUP-A02-positive"
+    ],
+    "intent_group": "A02-distribution-meaning",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Cần giải thích ý nghĩa tính phân phối, chưa yêu cầu thao tác giải.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-02",
+    "query": "Hệ số ngoài ngoặc âm thì quy tắc phân phối có đổi không?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-03",
+    "excluded_source_groups": [
+      "GROUP-A02-negative"
+    ],
+    "intent_group": "A02-negative-sign",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích áp dụng cùng quy tắc và giữ dấu từng tích.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-03",
+    "query": "Đặt nhân tử chung liên quan thế nào đến khai triển?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-05",
+    "excluded_source_groups": [
+      "GROUP-A02-reverse"
+    ],
+    "intent_group": "A02-reverse-meaning",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Nội dung giải thích có chiều ngược và chia từng hạng tử.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-04",
+    "query": "Làm sao tự kiểm tra biểu thức sau khi đưa nhân tử ra ngoài ngoặc?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-06",
+    "excluded_source_groups": [
+      "GROUP-A02-reverse"
+    ],
+    "intent_group": "A02-reverse-check",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích nêu kiểm tra bằng khai triển lại.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-05",
+    "query": "Vì sao nên viết riêng các phép nhân trước khi thu gọn?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-04",
+    "excluded_source_groups": [
+      "GROUP-A02-negative"
+    ],
+    "intent_group": "A02-sign-check",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích nêu giữ dấu và viết từng tích rồi mới thu gọn.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-06",
+    "query": "Em chưa biết nhìn vào đâu trước, chỉ gợi cho em một câu hỏi thôi.",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 1,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-01",
+    "excluded_source_groups": [
+      "GROUP-A02-positive"
+    ],
+    "intent_group": "A02-start-orientation",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 1 hướng học sinh nhận diện hạng tử và mục tiêu, không nêu kết quả.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-hint-1"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-hint-1"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-07",
+    "query": "Em hay quên nhân số trong ngoặc, nên sắp xếp bước làm thế nào?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 2,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-02",
+    "excluded_source_groups": [
+      "GROUP-A02-positive"
+    ],
+    "intent_group": "A02-distribution-strategy",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 2 chỉ rõ nhân từng hạng tử; hint 1 giúp nhận diện nhưng chưa đủ chiến lược.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-08",
+    "query": "Hãy chỉ cách ghi các tích riêng để em kiểm tra dấu, đừng tính hộ.",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-03",
+    "excluded_source_groups": [
+      "GROUP-A02-negative"
+    ],
+    "intent_group": "A02-negative-scaffold",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 3 yêu cầu viết từng phép tính và kiểm tra dấu, không cung cấp đáp án.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2",
+      "DEV-A02-M2-OAT01-hint-3"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2",
+      "DEV-A02-M2-OAT01-hint-3"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-09",
+    "query": "Em đã tìm được nhân tử chung rồi, phải xử lý các hạng tử còn lại ra sao?",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 2,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-05",
+    "excluded_source_groups": [
+      "GROUP-A02-reverse"
+    ],
+    "intent_group": "A02-reverse-strategy",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 2 nói chia từng hạng tử cho cùng nhân tử; hint 1 chỉ định hướng chung.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-10",
+    "query": "Em cần một khung bước để kiểm tra dấu sau khi đặt nhân tử chung âm.",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-06",
+    "excluded_source_groups": [
+      "GROUP-A02-reverse"
+    ],
+    "intent_group": "A02-reverse-scaffold",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 3 kết hợp viết phép chia riêng, kiểm tra dấu và khai triển lại.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2",
+      "DEV-A02-M2-OAT01-hint-3"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-A02-M2-OAT01-hint-1",
+      "DEV-A02-M2-OAT01-hint-2",
+      "DEV-A02-M2-OAT01-hint-3"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-A02-11",
+    "query": "Cho em một gợi ý làm bài này.",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-01",
+    "excluded_source_groups": [
+      "GROUP-A02-positive"
+    ],
+    "intent_group": "A02-hint-denied",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Ca kiểm tra policy: server chưa cho phép hint; phải trả rỗng dù có hint liên quan.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [],
+    "proposed_relevant_ids": [],
+    "expected_authoring_result": "no_eligible_content"
+  },
+  {
+    "query_id": "DEV-A02-12",
+    "query": "Cho em một ví dụ đã giải khác bài đang làm.",
+    "concept_id": "A02",
+    "target_skill_id": "SK-A02-DISTRIBUTE",
+    "purpose": "example",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      7,
+      8
+    ],
+    "active_problem_id": "D-A02-M2-OAT01-P-03",
+    "excluded_source_groups": [
+      "GROUP-A02-negative"
+    ],
+    "intent_group": "A02-example-not-projected",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Snapshot dev này chỉ chiếu explanation/hint; chưa có ví dụ được duyệt, không truy xuất reference_steps.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [],
+    "proposed_relevant_ids": [],
+    "expected_authoring_result": "no_eligible_content"
+  },
+  {
+    "query_id": "DEV-E02-01",
+    "query": "Thế nào là một phép biến đổi phương trình giữ nguyên tập nghiệm?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-01",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AX-B-C"
+    ],
+    "intent_group": "E02-equivalence-meaning",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích nêu các phép biến đổi đồng thời trên hai vế.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-02",
+    "query": "Tại sao trừ cùng một số ở hai vế vẫn được phương trình tương đương?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-02",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AX-B-C"
+    ],
+    "intent_group": "E02-balance-subtraction",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Nội dung giải thích trực tiếp quy tắc cộng/trừ cùng biểu thức ở hai vế.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-03",
+    "query": "Vì sao chỉ được chia hai vế cho số khác không?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-04",
+    "excluded_source_groups": [
+      "GROUP-E02-F-A-XB-C"
+    ],
+    "intent_group": "E02-nonzero-division",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích nêu điều kiện khác không nhưng chưa giải thích sâu vì sao chia cho không không xác định; nhãn 1 phản ánh thiếu hụt này.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-04",
+    "query": "Phương trình có ngoặc có thể chia trước khi khai triển không?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-03",
+    "excluded_source_groups": [
+      "GROUP-E02-F-A-XB-C"
+    ],
+    "intent_group": "E02-bracket-method",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích cho phép chia trước khi phù hợp và vẫn giữ tập nghiệm.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-05",
+    "query": "Tìm được nghiệm rồi thì kiểm tra lại bằng cách nào?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "explanation",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-05",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AXB-CXD"
+    ],
+    "intent_group": "E02-substitution-check",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Giải thích nêu thay nghiệm vào phương trình ban đầu.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-explanation"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-06",
+    "query": "Em thấy ẩn ở hai vế nên chưa biết bắt đầu, chỉ nhắc em nên quan sát gì.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 1,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-05",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AXB-CXD"
+    ],
+    "intent_group": "E02-start-both-sides",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 1 giúp quan sát cấu trúc hai vế, không đưa phép tính cụ thể.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-hint-1"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-hint-1"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-07",
+    "query": "Em muốn gom các hạng tử chứa ẩn, nên chọn kiểu phép biến đổi nào?",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 2,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-06",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AXB-CXD"
+    ],
+    "intent_group": "E02-collect-strategy",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 2 đề xuất cộng/trừ cùng biểu thức để gom ẩn, hint 1 chỉ định hướng.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-08",
+    "query": "Em cần cách ghi rõ phép toán ở hai vế rồi tách ẩn, đừng cho nghiệm.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-01",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AX-B-C"
+    ],
+    "intent_group": "E02-isolation-scaffold",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 3 cung cấp khung ghi phép toán và chia hệ số khác không.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2",
+      "DEV-E02-M2-OAT01-hint-3"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2",
+      "DEV-E02-M2-OAT01-hint-3"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-09",
+    "query": "Bài có ngoặc làm em rối, hãy gợi chiến lược trước khi gom ẩn.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 2,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-03",
+    "excluded_source_groups": [
+      "GROUP-E02-F-A-XB-C"
+    ],
+    "intent_group": "E02-bracket-strategy",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Hint 2 ưu tiên xử lý ngoặc, thu gọn rồi gom hạng tử.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-10",
+    "query": "Chỉ cho em các bước tự đối chiếu kết quả với phương trình gốc sau khi chia hệ số.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-04",
+    "excluded_source_groups": [
+      "GROUP-E02-F-A-XB-C"
+    ],
+    "intent_group": "E02-final-check-scaffold",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Chỉ hint 3 nhắc thay kết quả vào phương trình gốc; các hint đầu không đáp ứng bước kiểm tra này.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [
+      "DEV-E02-M2-OAT01-hint-1",
+      "DEV-E02-M2-OAT01-hint-2",
+      "DEV-E02-M2-OAT01-hint-3"
+    ],
+    "proposed_relevant_ids": [
+      "DEV-E02-M2-OAT01-hint-3"
+    ],
+    "expected_authoring_result": "candidates"
+  },
+  {
+    "query_id": "DEV-E02-11",
+    "query": "Em muốn xin hint cho phương trình đang làm.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "hint",
+    "top_k": 3,
+    "allowed_hint_level": 0,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-02",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AX-B-C"
+    ],
+    "intent_group": "E02-hint-denied",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Ca policy: mức trợ giúp được phép bằng 0 nên không có hint đủ điều kiện.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [],
+    "proposed_relevant_ids": [],
+    "expected_authoring_result": "no_eligible_content"
+  },
+  {
+    "query_id": "DEV-E02-12",
+    "query": "Cho em xem một bài mẫu khác có lời giải từng bước.",
+    "concept_id": "E02",
+    "target_skill_id": "SK-E02-SOLVE",
+    "purpose": "example",
+    "top_k": 3,
+    "allowed_hint_level": 3,
+    "grade_levels": [
+      8
+    ],
+    "active_problem_id": "D-E02-M2-OAT01-P-06",
+    "excluded_source_groups": [
+      "GROUP-E02-F-AXB-CXD"
+    ],
+    "intent_group": "E02-example-not-projected",
+    "split": "dev",
+    "snapshot_id": "DEV-A02-E02-M2-OAT01",
+    "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+    "label_status": "ai_proposed_pending_human_review",
+    "label_rationale": "Ví dụ trong pack vẫn là nội dung authoring chưa duyệt; không chiếu private reference vào corpus dev.",
+    "expected_runtime": "no_eligible_content_drafts_only",
+    "eligible_candidate_ids": [],
+    "proposed_relevant_ids": [],
+    "expected_authoring_result": "no_eligible_content"
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "concept_id": "A02",
+  "content_version": "0.1.0",
+  "explanation": "Tính phân phối cho phép khai triển một thừa số nhân với tổng hoặc hiệu: thừa số ngoài ngoặc phải nhân với từng hạng tử trong ngoặc. Với phép trừ, giữ nguyên dấu của hạng tử bị trừ khi viết tích. Nếu thừa số ngoài ngoặc âm, kiểm tra quy tắc dấu ở từng phép nhân; âm nhân âm cho kết quả dương. Hãy viết riêng các tích rồi mới thu gọn để không bỏ sót hạng tử.",
+  "problems": [
+    {
+      "case_id": "D-A02-M2-OAT02-P-01",
+      "task": {
+        "kind": "polynomial",
+        "expression": "3*(x+4)",
+        "variable_value": null
+      },
+      "reference_answer": "3*x+12",
+      "reference_steps": [
+        "3*x+3*4",
+        "3*x+12"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive-sum",
+      "source_group": "GROUP-A02-positive-sum",
+      "difficulty": "introductory",
+      "prompt": "Dùng tính phân phối để khai triển và thu gọn biểu thức 3*(x+4). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop2; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Đổi trắc nghiệm thành tự luận có bước giải; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-P-02",
+      "task": {
+        "kind": "polynomial",
+        "expression": "4*(x+2)",
+        "variable_value": null
+      },
+      "reference_answer": "4*x+8",
+      "reference_steps": [
+        "4*x+4*2",
+        "4*x+8"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive-sum",
+      "source_group": "GROUP-A02-positive-sum",
+      "difficulty": "introductory",
+      "prompt": "Dùng tính phân phối để khai triển và thu gọn biểu thức 4*(x+2). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop3; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Đổi trắc nghiệm thành tự luận có bước giải; Chuẩn hóa TeX sang phép nhân tường minh; Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-P-03",
+      "task": {
+        "kind": "polynomial",
+        "expression": "4*(x-5)",
+        "variable_value": null
+      },
+      "reference_answer": "4*x-20",
+      "reference_steps": [
+        "4*x-4*5",
+        "4*x-20"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive-difference",
+      "source_group": "GROUP-A02-positive-difference",
+      "difficulty": "standard",
+      "prompt": "Khai triển và thu gọn biểu thức sau, giữ đúng dấu của từng hạng tử 4*(x-5). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "AI-generated supplement; not an OATutor problem. Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02."
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-P-04",
+      "task": {
+        "kind": "polynomial",
+        "expression": "6*(2*x-3)",
+        "variable_value": null
+      },
+      "reference_answer": "12*x-18",
+      "reference_steps": [
+        "6*2*x-6*3",
+        "12*x-18"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive-difference",
+      "source_group": "GROUP-A02-positive-difference",
+      "difficulty": "standard",
+      "prompt": "Khai triển và thu gọn biểu thức sau, giữ đúng dấu của từng hạng tử 6*(2*x-3). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "AI-generated supplement; not an OATutor problem. Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02."
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-P-05",
+      "task": {
+        "kind": "polynomial",
+        "expression": "(-2)*(4*x+1)",
+        "variable_value": null
+      },
+      "reference_answer": "-8*x+(-2)",
+      "reference_steps": [
+        "(-2)*4*x+(-2)*1",
+        "-8*x-2"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-negative",
+      "source_group": "GROUP-A02-negative",
+      "difficulty": "standard",
+      "prompt": "Khai triển biểu thức, chú ý dấu của từng tích (-2)*(4*x+1). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop12; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Đổi biến y thành x; Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức; Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-P-06",
+      "task": {
+        "kind": "polynomial",
+        "expression": "(-3)*(6*x+5)",
+        "variable_value": null
+      },
+      "reference_answer": "-18*x+(-15)",
+      "reference_steps": [
+        "(-3)*6*x+(-3)*5",
+        "-18*x-15"
+      ],
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-negative",
+      "source_group": "GROUP-A02-negative",
+      "difficulty": "standard",
+      "prompt": "Khai triển biểu thức, chú ý dấu của từng tích (-3)*(6*x+5). Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop13; https://creativecommons.org/licenses/by/4.0/ Changes: Dịch yêu cầu sang tiếng Việt; Đổi biến m thành x; Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức; Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+    }
+  ],
+  "examples": [
+    {
+      "case_id": "D-A02-M2-OAT02-EX-01",
+      "task": {
+        "kind": "polynomial",
+        "expression": "5*(x+6)",
+        "variable_value": null
+      },
+      "reference_answer": "5*x+30",
+      "reference_steps": [
+        "5*x+5*6",
+        "5*x+30"
+      ]
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-EX-02",
+      "task": {
+        "kind": "polynomial",
+        "expression": "-4*(2*x+3)",
+        "variable_value": null
+      },
+      "reference_answer": "-8*x-12",
+      "reference_steps": [
+        "(-4)*2*x+(-4)*3",
+        "-8*x-12"
+      ]
+    },
+    {
+      "case_id": "D-A02-M2-OAT02-EX-03",
+      "task": {
+        "kind": "polynomial",
+        "expression": "9*(x-4)",
+        "variable_value": null
+      },
+      "reference_answer": "9*x-36",
+      "reference_steps": [
+        "9*x-9*4",
+        "9*x-36"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "error_id": "D-A02-M2-OAT02-ERR-01",
+      "problem_id": "D-A02-M2-OAT02-P-01",
+      "response_steps": [
+        "3*x+4"
+      ],
+      "first_error_step": 1,
+      "family": "distribution_missing_term",
+      "hypothesis": "Có thể chỉ nhân hạng tử chứa ẩn; lỗi mẫu tổng hợp, không phải bằng chứng từ học sinh thật.",
+      "diagnostic_question": "Thừa số ngoài ngoặc cần nhân với bao nhiêu hạng tử?",
+      "diagnosis_status": "suspected"
+    },
+    {
+      "error_id": "D-A02-M2-OAT02-ERR-02",
+      "problem_id": "D-A02-M2-OAT02-P-05",
+      "response_steps": [
+        "(-2)*4*x+(-2)*1",
+        "-8*x+2"
+      ],
+      "first_error_step": 2,
+      "family": "distribution_sign",
+      "hypothesis": "Có thể sai dấu khi tính tích âm với dương; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Tích của hệ số âm và hằng số dương có dấu gì?",
+      "diagnosis_status": "suspected"
+    },
+    {
+      "error_id": "D-A02-M2-OAT02-ERR-03",
+      "problem_id": "D-A02-M2-OAT02-P-03",
+      "response_steps": [
+        "4*x-5"
+      ],
+      "first_error_step": 1,
+      "family": "distribution_missing_constant",
+      "hypothesis": "Có thể giữ nguyên hằng số bị trừ thay vì nhân với thừa số ngoài ngoặc; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Hạng tử bị trừ trong ngoặc đã được nhân với thừa số ngoài ngoặc chưa?",
+      "diagnosis_status": "suspected"
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Trong ngoặc có những hạng tử nào? Thừa số ngoài ngoặc cần tác động đến từng hạng tử ra sao?",
+      "disclosure": "conceptual"
+    },
+    {
+      "level": 2,
+      "text": "Nhân thừa số ngoài ngoặc với từng hạng tử. Giữ dấu trừ như một phần của hạng tử và kiểm tra dấu khi có hệ số âm.",
+      "disclosure": "strategy"
+    },
+    {
+      "level": 3,
+      "text": "Viết mỗi tích trên một phần riêng trước khi tính. Đánh dấu dấu của từng thừa số, tính dấu của tích rồi mới ghép các hạng tử và thu gọn.",
+      "disclosure": "scaffold"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "author": "Member 2",
+    "source": "Staged source pilot: https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3; per-record provenance.json distinguishes adaptations from AI supplements; human review pending.",
+    "human_reviewer": null,
+    "reviewed_at": null
+  }
+}

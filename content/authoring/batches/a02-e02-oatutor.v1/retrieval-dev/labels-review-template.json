@@ -1,0 +1,180 @@
+{
+  "snapshot_id": "DEV-A02-E02-M2-OAT01",
+  "corpus_sha256": "e9e01785b58dcd6a8d2f7a27e2d8618cdf6a451fa0924f451b724df68aeafbb8",
+  "queries_sha256": "0daa4e17f533c9d4980fc67ffb5de583406c1115d5c703ec017eff717484056e",
+  "qrels_sha256": "45bf362ffd7035b42c7a6ccd8d2e82a373958fca3001461a723bd79c129ea093",
+  "reviewer": null,
+  "reviewed_at": null,
+  "decision": "pending",
+  "instructions": "Người thật đối chiếu từng query với toàn bộ ứng viên; ghi sửa nhãn nếu cần. Mẫu này không tự phê duyệt nhãn hoặc nội dung.",
+  "queries": [
+    {
+      "query_id": "DEV-A02-01",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-02",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-03",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-04",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-05",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-06",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-07",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-08",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-09",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-10",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-11",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-A02-12",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-01",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-02",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-03",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-04",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-05",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-06",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-07",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-08",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-09",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-10",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-11",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    },
+    {
+      "query_id": "DEV-E02-12",
+      "checked": false,
+      "proposed_labels_accepted": null,
+      "corrections": [],
+      "comments": ""
+    }
+  ]
+}

@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 15
     services:
       postgres:
-        image: postgres:17-bookworm
+        image: pgvector/pgvector:pg17
         env:
           POSTGRES_DB: mo_test
           POSTGRES_USER: mo_test
@@ -67,8 +67,16 @@ jobs:
         run: |
           python3 scripts/checks/check_phase1.py
           python3 scripts/checks/check_curriculum.py
+          python3 scripts/checks/check_member2_foundation.py
+          python3 scripts/checks/check_authoring.py
+          python3 scripts/checks/check_oatutor_pilot.py
+          python3 scripts/checks/check_stage2_completion.py
+          python3 scripts/checks/check_stage2_math.py
+          python3 scripts/checks/check_member2_ai_review.py
           python3 scripts/exports/export_contracts.py --check
           python3 scripts/exports/export_phase3_openapi.py --check
+          python3 scripts/exports/export_kb_contracts.py --check
+          python3 scripts/checks/check_stage3_kb.py
           python3 -m pytest tests -q
       - name: Install frontend dependencies
         working-directory: frontend

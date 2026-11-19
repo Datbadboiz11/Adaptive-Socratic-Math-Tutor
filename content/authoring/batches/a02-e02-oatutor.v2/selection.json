@@ -1,0 +1,449 @@
+{
+  "protocol_version": "oatutor-pilot-1.0.0",
+  "repository": "https://github.com/CAHLR/OATutor-Content",
+  "upstream_commit": "08ef4819889e70835e86926f84037e79141652f3",
+  "revision": "M2-OAT02",
+  "selection_status": "proposed_for_human_review",
+  "selection_note": "Revision hoàn thiện Chặng 2: A02 chỉ khai triển; hai bài đặt nhân tử chung chuyển sang fragment A07, chưa phải pack hoàn chỉnh. Không tính các revision là bài mới độc lập.",
+  "concepts": [
+    {
+      "concept_id": "A02",
+      "explanation": "Tính phân phối cho phép khai triển một thừa số nhân với tổng hoặc hiệu: thừa số ngoài ngoặc phải nhân với từng hạng tử trong ngoặc. Với phép trừ, giữ nguyên dấu của hạng tử bị trừ khi viết tích. Nếu thừa số ngoài ngoặc âm, kiểm tra quy tắc dấu ở từng phép nhân; âm nhân âm cho kết quả dương. Hãy viết riêng các tích rồi mới thu gọn để không bỏ sót hạng tử.",
+      "problems": [
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a60909cdistprop2",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 0,
+          "instruction_vi": "Dùng tính phân phối để khai triển và thu gọn biểu thức",
+          "steps": [
+            "3*x+3*4",
+            "3*x+12"
+          ],
+          "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Đổi trắc nghiệm thành tự luận có bước giải",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+          ]
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a60909cdistprop3",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 0,
+          "instruction_vi": "Dùng tính phân phối để khai triển và thu gọn biểu thức",
+          "steps": [
+            "4*x+4*2",
+            "4*x+8"
+          ],
+          "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Đổi trắc nghiệm thành tự luận có bước giải",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+          ]
+        },
+        {
+          "origin_kind": "ai_generated_supplement",
+          "family_index": 1,
+          "expression": "4*(x-5)",
+          "answer": "4*x-20",
+          "steps": [
+            "4*x-4*5",
+            "4*x-20"
+          ],
+          "instruction_vi": "Khai triển và thu gọn biểu thức sau, giữ đúng dấu của từng hạng tử",
+          "reason": "Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02.",
+          "split_group": "PROJECT-A02-POSITIVE-DIFFERENCE-DEV"
+        },
+        {
+          "origin_kind": "ai_generated_supplement",
+          "family_index": 1,
+          "expression": "6*(2*x-3)",
+          "answer": "12*x-18",
+          "steps": [
+            "6*2*x-6*3",
+            "12*x-18"
+          ],
+          "instruction_vi": "Khai triển và thu gọn biểu thức sau, giữ đúng dấu của từng hạng tử",
+          "reason": "Thay vị trí đặt nhân tử chung ở A02 bằng khai triển một hiệu; nội dung AI soạn trong revision M2-OAT02.",
+          "split_group": "PROJECT-A02-POSITIVE-DIFFERENCE-DEV"
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a60909cdistprop12",
+          "upstream_steps": [
+            "a",
+            "b"
+          ],
+          "expression_from": "parent_body",
+          "answer_from": "coefficient_and_constant",
+          "variable": "y",
+          "family_index": 2,
+          "instruction_vi": "Khai triển biểu thức, chú ý dấu của từng tích",
+          "steps": [
+            "(-2)*4*x+(-2)*1",
+            "-8*x-2"
+          ],
+          "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Đổi biến y thành x",
+            "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+            "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+          ]
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a60909cdistprop13",
+          "upstream_steps": [
+            "a",
+            "b"
+          ],
+          "expression_from": "parent_body",
+          "answer_from": "coefficient_and_constant",
+          "variable": "m",
+          "family_index": 2,
+          "instruction_vi": "Khai triển biểu thức, chú ý dấu của từng tích",
+          "steps": [
+            "(-3)*6*x+(-3)*5",
+            "-18*x-15"
+          ],
+          "split_group": "OATUTOR-LESSON-54Fz6uFY-pF1B-O1xGivIehL",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Đổi biến m thành x",
+            "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+            "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "expression": "5*(x+6)",
+          "answer": "5*x+30",
+          "steps": [
+            "5*x+5*6",
+            "5*x+30"
+          ]
+        },
+        {
+          "expression": "-4*(2*x+3)",
+          "answer": "-8*x-12",
+          "steps": [
+            "(-4)*2*x+(-4)*3",
+            "-8*x-12"
+          ]
+        },
+        {
+          "expression": "9*(x-4)",
+          "answer": "9*x-36",
+          "steps": [
+            "9*x-9*4",
+            "9*x-36"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "problem_index": 0,
+          "response_steps": [
+            "3*x+4"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_missing_term",
+          "hypothesis": "Có thể chỉ nhân hạng tử chứa ẩn; lỗi mẫu tổng hợp, không phải bằng chứng từ học sinh thật.",
+          "diagnostic_question": "Thừa số ngoài ngoặc cần nhân với bao nhiêu hạng tử?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "problem_index": 4,
+          "response_steps": [
+            "(-2)*4*x+(-2)*1",
+            "-8*x+2"
+          ],
+          "first_error_step": 2,
+          "family": "distribution_sign",
+          "hypothesis": "Có thể sai dấu khi tính tích âm với dương; lỗi mẫu tổng hợp.",
+          "diagnostic_question": "Tích của hệ số âm và hằng số dương có dấu gì?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "problem_index": 2,
+          "response_steps": [
+            "4*x-5"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_missing_constant",
+          "hypothesis": "Có thể giữ nguyên hằng số bị trừ thay vì nhân với thừa số ngoài ngoặc; lỗi mẫu tổng hợp.",
+          "diagnostic_question": "Hạng tử bị trừ trong ngoặc đã được nhân với thừa số ngoài ngoặc chưa?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Trong ngoặc có những hạng tử nào? Thừa số ngoài ngoặc cần tác động đến từng hạng tử ra sao?",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Nhân thừa số ngoài ngoặc với từng hạng tử. Giữ dấu trừ như một phần của hạng tử và kiểm tra dấu khi có hệ số âm.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Viết mỗi tích trên một phần riêng trước khi tính. Đánh dấu dấu của từng thừa số, tính dấu của tích rồi mới ghép các hạng tử và thu gọn.",
+          "disclosure": "scaffold"
+        }
+      ],
+      "families": [
+        {
+          "family_id": "FAM-A02-positive-sum",
+          "source_group": "GROUP-A02-positive-sum",
+          "description": "Hệ số dương nhân một tổng tuyến tính; phân phối tới mọi hạng tử."
+        },
+        {
+          "family_id": "FAM-A02-positive-difference",
+          "source_group": "GROUP-A02-positive-difference",
+          "description": "Hệ số dương nhân một hiệu tuyến tính; giữ dấu trừ của hạng tử."
+        },
+        {
+          "family_id": "FAM-A02-negative",
+          "source_group": "GROUP-A02-negative",
+          "description": "Hệ số âm ngoài ngoặc; xác định dấu từng tích trước khi thu gọn."
+        }
+      ]
+    },
+    {
+      "concept_id": "E02",
+      "explanation": "Biến đổi tương đương phải giữ nguyên tập nghiệm. Cộng hoặc trừ cùng một biểu thức ở cả hai vế giữ cân bằng; nhân hoặc chia cả hai vế cho cùng một số khác không cũng giữ tập nghiệm. Phép nhân với 0 không có phép toán nghịch đảo, nên phép chia cho 0 không xác định; nhân cả hai vế với 0 còn có thể làm mất điều kiện ban đầu. Nếu có ngoặc, có thể khai triển rồi thu gọn, hoặc chia trước cho hệ số khác không khi phù hợp. Gom các hạng tử chứa ẩn về một vế, hằng số về vế kia rồi tách ẩn. Thay kết quả vào phương trình ban đầu để kiểm tra.",
+      "problems": [
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a9c142dVarCon1",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 0,
+          "instruction_vi": "Giải phương trình bằng các phép biến đổi giữ nguyên tập nghiệm",
+          "steps": [
+            "7*x=-21",
+            "x=-3"
+          ],
+          "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+            "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+          ]
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a9c142dVarCon2",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 0,
+          "instruction_vi": "Giải phương trình bằng các phép biến đổi giữ nguyên tập nghiệm",
+          "steps": [
+            "3*x=-12",
+            "x=-4"
+          ],
+          "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+            "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+          ]
+        },
+        {
+          "origin_kind": "ai_generated_supplement",
+          "family_index": 1,
+          "expression": "4*(x-2)=20",
+          "answer": "7",
+          "steps": [
+            "4*x-8=20",
+            "4*x=28",
+            "x=7"
+          ],
+          "instruction_vi": "Giải phương trình có ngoặc bằng biến đổi tương đương",
+          "reason": "Bổ sung dạng a(x+b)=c trong lô đã chọn; không khẳng định OATutor không có dạng này.",
+          "split_group": "PROJECT-E02-BRACKETS-DEV"
+        },
+        {
+          "origin_kind": "ai_generated_supplement",
+          "family_index": 1,
+          "expression": "-5*(x+1)=15",
+          "answer": "-4",
+          "steps": [
+            "-5*x-5=15",
+            "-5*x=20",
+            "x=-4"
+          ],
+          "instruction_vi": "Giải phương trình có ngoặc và hệ số âm bằng biến đổi tương đương",
+          "reason": "Bổ sung dạng có ngoặc với hệ số âm trong lô đã chọn.",
+          "split_group": "PROJECT-E02-BRACKETS-DEV"
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a9c142dVarCon18",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 2,
+          "instruction_vi": "Giải phương trình có ẩn ở hai vế bằng biến đổi tương đương",
+          "steps": [
+            "x+5=2",
+            "x=-3"
+          ],
+          "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+            "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+          ]
+        },
+        {
+          "origin_kind": "oatutor_adapted",
+          "upstream_problem_id": "a9c142dVarCon19",
+          "upstream_steps": [
+            "a"
+          ],
+          "expression_from": "step_title",
+          "variable": "x",
+          "family_index": 2,
+          "instruction_vi": "Giải phương trình có ẩn ở hai vế bằng biến đổi tương đương",
+          "steps": [
+            "6*x+8=2",
+            "6*x=-6",
+            "x=-1"
+          ],
+          "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+          "changes": [
+            "Dịch yêu cầu sang tiếng Việt",
+            "Chuẩn hóa TeX sang phép nhân tường minh",
+            "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+            "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "expression": "6*x-7=11",
+          "answer": "3",
+          "steps": [
+            "6*x=18",
+            "x=3"
+          ]
+        },
+        {
+          "expression": "3*(x+4)=21",
+          "answer": "3",
+          "steps": [
+            "3*x+12=21",
+            "3*x=9",
+            "x=3"
+          ]
+        },
+        {
+          "expression": "8*x+1=3*x-14",
+          "answer": "-3",
+          "steps": [
+            "5*x+1=-14",
+            "5*x=-15",
+            "x=-3"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "problem_index": 0,
+          "response_steps": [
+            "7*x=-5",
+            "x=-5/7"
+          ],
+          "first_error_step": 1,
+          "family": "inverse_operation",
+          "hypothesis": "Có thể cộng hằng số thay vì dùng phép toán ngược; lỗi mẫu tổng hợp.",
+          "diagnostic_question": "Muốn loại hằng số đang cộng vào vế chứa ẩn, em cần làm phép toán nào ở cả hai vế?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "problem_index": 2,
+          "response_steps": [
+            "4*x-2=20",
+            "4*x=22",
+            "x=11/2"
+          ],
+          "first_error_step": 1,
+          "family": "distribution_missing_term",
+          "hypothesis": "Có thể chưa nhân hệ số ngoài ngoặc với hằng số bên trong; lỗi mẫu tổng hợp.",
+          "diagnostic_question": "Thừa số trước ngoặc có tác động đến hằng số trong ngoặc không?",
+          "diagnosis_status": "suspected"
+        },
+        {
+          "problem_index": 4,
+          "response_steps": [
+            "x+5=2",
+            "x=7"
+          ],
+          "first_error_step": 2,
+          "family": "inverse_operation",
+          "hypothesis": "Có thể dùng sai phép toán ngược ở bước thứ hai; lỗi mẫu tổng hợp.",
+          "diagnostic_question": "Sau bước gom ẩn đúng, phép toán nào loại hằng số còn lại mà vẫn giữ cân bằng?",
+          "diagnosis_status": "suspected"
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Hãy nhìn cấu trúc hai vế: có ngoặc không, và các hạng tử chứa ẩn đang ở vế nào? Mỗi phép biến đổi cần giữ cân bằng phương trình.",
+          "disclosure": "conceptual"
+        },
+        {
+          "level": 2,
+          "text": "Nếu có ngoặc, xử lý ngoặc rồi thu gọn. Chọn phép cộng hoặc trừ cùng một biểu thức ở cả hai vế để gom hạng tử chứa ẩn và hằng số.",
+          "disclosure": "strategy"
+        },
+        {
+          "level": 3,
+          "text": "Viết rõ phép toán giống nhau ở cả hai vế cho bước em đang làm. Khi còn hệ số nhân với ẩn, chia cả hai vế cho hệ số khác không; cuối cùng thay kết quả vào phương trình gốc để kiểm tra.",
+          "disclosure": "scaffold"
+        }
+      ]
+    }
+  ],
+  "stage2_revision": 2,
+  "snapshot_id": "DEV-A02-E02-M2-OAT02",
+  "previous_batch": "content/authoring/batches/a02-e02-oatutor.v1",
+  "previous_pack_sha256": "6b5724d5010b6269e855d5632d70cbe82bad54f69b33d4d33cc5f4755e5d68fd",
+  "scope_overrides": {
+    "A02": {
+      "supported_forms": [
+        "Hằng số nhân nhị thức",
+        "Hệ số âm"
+      ]
+    }
+  }
+}

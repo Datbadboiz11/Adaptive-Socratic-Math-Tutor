@@ -1,0 +1,358 @@
+[
+  {
+    "record_id": "D-E02-M2-OAT02-P-01",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+    "human_review": "pending",
+    "upstream_problem_id": "a9c142dVarCon1",
+    "upstream_step_ids": [
+      "a9c142dVarCon1a"
+    ],
+    "raw_files": [
+      "content-pool/a9c142dVarCon1/a9c142dVarCon1.json",
+      "content-pool/a9c142dVarCon1/steps/a9c142dVarCon1a/a9c142dVarCon1a.json",
+      "content-pool/a9c142dVarCon1/steps/a9c142dVarCon1a/tutoring/a9c142dVarCon1aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "course": "OpenStax: Elementary Algebra",
+    "lesson": "2.3 Solve Equations with Variables and Constants on Both Sides",
+    "lesson_id": "0roMaen1-dCkD-WT1x97oJZy",
+    "upstream_license_fields": [
+      {
+        "record_id": "a9c142dVarCon1",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a",
+        "license": ""
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h1",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h2",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h3",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h4",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h5",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon1a-h6",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon1; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+      "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-P-02",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+    "human_review": "pending",
+    "upstream_problem_id": "a9c142dVarCon2",
+    "upstream_step_ids": [
+      "a9c142dVarCon2a"
+    ],
+    "raw_files": [
+      "content-pool/a9c142dVarCon2/a9c142dVarCon2.json",
+      "content-pool/a9c142dVarCon2/steps/a9c142dVarCon2a/a9c142dVarCon2a.json",
+      "content-pool/a9c142dVarCon2/steps/a9c142dVarCon2a/tutoring/a9c142dVarCon2aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "course": "OpenStax: Elementary Algebra",
+    "lesson": "2.3 Solve Equations with Variables and Constants on Both Sides",
+    "lesson_id": "0roMaen1-dCkD-WT1x97oJZy",
+    "upstream_license_fields": [
+      {
+        "record_id": "a9c142dVarCon2",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a",
+        "license": ""
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h1",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h2",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h3",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h4",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h5",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon2a-h6",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon2; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+      "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-P-03",
+    "record_type": "problem",
+    "origin_kind": "ai_generated_supplement",
+    "split_group": "PROJECT-E02-BRACKETS-DEV",
+    "human_review": "pending",
+    "upstream_problem_id": null,
+    "raw_files": [],
+    "changes": [],
+    "generation_method": "Codex-assisted authoring in this session; no external API call",
+    "reason": "Bổ sung dạng a(x+b)=c trong lô đã chọn; không khẳng định OATutor không có dạng này.",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-P-04",
+    "record_type": "problem",
+    "origin_kind": "ai_generated_supplement",
+    "split_group": "PROJECT-E02-BRACKETS-DEV",
+    "human_review": "pending",
+    "upstream_problem_id": null,
+    "raw_files": [],
+    "changes": [],
+    "generation_method": "Codex-assisted authoring in this session; no external API call",
+    "reason": "Bổ sung dạng có ngoặc với hệ số âm trong lô đã chọn.",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-P-05",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+    "human_review": "pending",
+    "upstream_problem_id": "a9c142dVarCon18",
+    "upstream_step_ids": [
+      "a9c142dVarCon18a"
+    ],
+    "raw_files": [
+      "content-pool/a9c142dVarCon18/a9c142dVarCon18.json",
+      "content-pool/a9c142dVarCon18/steps/a9c142dVarCon18a/a9c142dVarCon18a.json",
+      "content-pool/a9c142dVarCon18/steps/a9c142dVarCon18a/tutoring/a9c142dVarCon18aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "course": "OpenStax: Elementary Algebra",
+    "lesson": "2.3 Solve Equations with Variables and Constants on Both Sides",
+    "lesson_id": "0roMaen1-dCkD-WT1x97oJZy",
+    "upstream_license_fields": [
+      {
+        "record_id": "a9c142dVarCon18",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a",
+        "license": ""
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h1",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h2",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h3",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h4",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h5",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon18a-h6",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon18; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+      "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-P-06",
+    "record_type": "problem",
+    "origin_kind": "oatutor_adapted",
+    "split_group": "OATUTOR-LESSON-0roMaen1-dCkD-WT1x97oJZy",
+    "human_review": "pending",
+    "upstream_problem_id": "a9c142dVarCon19",
+    "upstream_step_ids": [
+      "a9c142dVarCon19a"
+    ],
+    "raw_files": [
+      "content-pool/a9c142dVarCon19/a9c142dVarCon19.json",
+      "content-pool/a9c142dVarCon19/steps/a9c142dVarCon19a/a9c142dVarCon19a.json",
+      "content-pool/a9c142dVarCon19/steps/a9c142dVarCon19a/tutoring/a9c142dVarCon19aDefaultPathway.json"
+    ],
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "course": "OpenStax: Elementary Algebra",
+    "lesson": "2.3 Solve Equations with Variables and Constants on Both Sides",
+    "lesson_id": "0roMaen1-dCkD-WT1x97oJZy",
+    "upstream_license_fields": [
+      {
+        "record_id": "a9c142dVarCon19",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a",
+        "license": ""
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h1",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h2",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h3",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h4",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h5",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h6",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h7",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      },
+      {
+        "record_id": "a9c142dVarCon19a-h8",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+      }
+    ],
+    "license_basis": "repository_README_CC_BY_4.0; retain per-item fields, including blanks",
+    "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon19; https://creativecommons.org/licenses/by/4.0/",
+    "changes": [
+      "Dịch yêu cầu sang tiếng Việt",
+      "Chuẩn hóa TeX sang phép nhân tường minh",
+      "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+      "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+    ],
+    "upstream_tutoring_usage": "Archived for review only; raw hintAnswer and terminal hints are not teaching chunks"
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-EX-01",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-EX-02",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-EX-03",
+    "record_type": "example",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-ERR-01",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-ERR-02",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "D-E02-M2-OAT02-ERR-03",
+    "record_type": "error_fixture",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  },
+  {
+    "record_id": "E02-teaching-text",
+    "record_type": "explanation_and_hints",
+    "origin_kind": "ai_generated_supplement",
+    "upstream_problem_id": null,
+    "generation_method": "Codex-assisted authoring; no external API call",
+    "human_review": "pending",
+    "split_group": "PROJECT-E02-SUPPORT-DEV",
+    "not_observed_student_data": true
+  }
+]

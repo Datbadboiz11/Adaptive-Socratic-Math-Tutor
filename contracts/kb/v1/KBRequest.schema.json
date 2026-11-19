@@ -1,0 +1,240 @@
+{
+  "$defs": {
+    "ConceptSkillTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_id",
+        "skill_id"
+      ],
+      "title": "ConceptSkillTarget",
+      "type": "object"
+    },
+    "ContentRef": {
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "content_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Content Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "content_version"
+      ],
+      "title": "ContentRef",
+      "type": "object"
+    },
+    "KBScope": {
+      "additionalProperties": false,
+      "properties": {
+        "session_id": {
+          "format": "uuid",
+          "title": "Session Id",
+          "type": "string"
+        },
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "allowed_targets": {
+          "items": {
+            "$ref": "#/$defs/ConceptSkillTarget"
+          },
+          "minItems": 1,
+          "title": "Allowed Targets",
+          "type": "array"
+        },
+        "allowed_hint_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Allowed Hint Level",
+          "type": "integer"
+        },
+        "kb_snapshot_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Kb Snapshot Version",
+          "type": "string"
+        },
+        "active_problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Active Problem Id",
+          "type": "string"
+        },
+        "excluded_source_groups": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Excluded Source Groups",
+          "type": "array"
+        },
+        "grade_levels": {
+          "items": {
+            "maximum": 12,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "namespace": {
+          "default": "runtime",
+          "pattern": "^(runtime|fixture-[A-Za-z0-9-]{1,50})$",
+          "title": "Namespace",
+          "type": "string"
+        },
+        "excluded_family_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Excluded Family Ids",
+          "type": "array"
+        },
+        "excluded_lineage_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Excluded Lineage Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "session_id",
+        "opportunity_id",
+        "allowed_targets",
+        "allowed_hint_level",
+        "kb_snapshot_version",
+        "active_problem_id",
+        "excluded_source_groups",
+        "grade_levels",
+        "difficulty",
+        "excluded_family_ids",
+        "excluded_lineage_ids"
+      ],
+      "title": "KBScope",
+      "type": "object"
+    },
+    "RetrievalQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "query": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Query",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "explanation",
+            "hint",
+            "example"
+          ],
+          "title": "Purpose",
+          "type": "string"
+        },
+        "top_k": {
+          "default": 3,
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Top K",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "query",
+        "concept_id",
+        "target_skill_id",
+        "purpose"
+      ],
+      "title": "RetrievalQuery",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "format": "uuid",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "query": {
+      "$ref": "#/$defs/RetrievalQuery"
+    },
+    "scope": {
+      "$ref": "#/$defs/KBScope"
+    },
+    "method": {
+      "default": "semantic",
+      "enum": [
+        "direct",
+        "metadata",
+        "semantic"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "direct_ref": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ContentRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "request_id",
+    "query",
+    "scope"
+  ],
+  "title": "KBRequest",
+  "type": "object"
+}

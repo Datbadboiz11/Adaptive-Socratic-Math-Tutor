@@ -1,0 +1,3054 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "0.1.0",
+  "assignment_status": "proposed_pending_team_review",
+  "summary": {
+    "registry_concepts": 40,
+    "draft_packs": 10,
+    "packs_present": 10,
+    "approved_packs": 0,
+    "ready_concepts": 0,
+    "problems": 60,
+    "examples": 30,
+    "error_fixtures": 20,
+    "hints": 30,
+    "public_chunks": 0,
+    "proposed_owner_counts": {
+      "Member 1": 13,
+      "Member 2": 13,
+      "Member 3": 14
+    }
+  },
+  "runtime_evidence": {
+    "legacy_concept_id": "CON-LINEAR-01",
+    "legacy_skill_id": "SK-LIN-SOLVE",
+    "validator_version": "linear-rational-1.0.0",
+    "task_kinds": [
+      "linear_equation"
+    ],
+    "mode": "internal_demo",
+    "canonical_mapping_status": "proposed_not_active"
+  },
+  "integration_gates": [
+    {
+      "id": "M2-C01",
+      "topic": "legacy_identity",
+      "owner": "Member 1",
+      "reviewer": "Member 2",
+      "status": "pending_review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "M2-C02",
+      "topic": "public_task_and_readiness",
+      "owner": "Member 1",
+      "reviewer": "Member 2",
+      "status": "pending_review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "M2-C03",
+      "topic": "hint_levels",
+      "owner": "Member 3",
+      "reviewer": "Member 1",
+      "status": "pending_review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "M2-C04",
+      "topic": "retrieval_and_tutor_response",
+      "owner": "Member 2",
+      "reviewer": "Member 3",
+      "status": "pending_review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "M2-C05",
+      "topic": "learning_report_snapshot",
+      "owner": "Member 2",
+      "reviewer": "Member 1",
+      "status": "pending_review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  ],
+  "input_sha256": {
+    "content/curriculum/registry.v1.json": "7b05496609ebf89846de912508ae786119d33d16c59f15467ee513ba01ad76ea",
+    "content/curriculum/pilot.v1.json": "a95bbe718ebd1814390e5023ad84c888199131c4a57369c164f498ca6daddc89",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b"
+  },
+  "concepts": [
+    {
+      "concept_id": "A01",
+      "title": "Thay giá trị vào biểu thức",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác.",
+      "skills": [
+        {
+          "skill_id": "SK-A01-EVALUATE",
+          "observable_behavior": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác."
+        }
+      ],
+      "authoring_task_kinds": [
+        "evaluate"
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Giá trị hữu tỉ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-N03-A01"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A01",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A02",
+      "title": "Tính phân phối",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến.",
+      "skills": [
+        {
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "observable_behavior": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến."
+        }
+      ],
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "supported_forms": [
+        "Hằng số nhân nhị thức",
+        "Hệ số âm",
+        "Đặt nhân tử chung tuyến tính"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-N01-A02",
+        "PRE-N02-A02"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A02",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A03",
+      "title": "Thu gọn hạng tử đồng dạng",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Gom các hạng tử có cùng phần biến và tính hệ số mới.",
+      "skills": [
+        {
+          "skill_id": "SK-A03-COLLECT",
+          "observable_behavior": "Gom các hạng tử có cùng phần biến và tính hệ số mới."
+        }
+      ],
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Dấu ngoặc có dấu âm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-N01-A03",
+        "PRE-A01-A03"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A03",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A04",
+      "title": "Nhân đơn thức và đa thức",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Nhân các đa thức trong các dạng đã mô tả.",
+      "skills": [
+        {
+          "skill_id": "SK-A04-PRIMARY",
+          "observable_behavior": "Nhân các đa thức trong các dạng đã mô tả."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Đơn thức nhân đa thức",
+        "Tích hai nhị thức"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A02-A04",
+        "PRE-A03-A04"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A04",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A05",
+      "title": "Bình phương một tổng/hiệu",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu.",
+      "skills": [
+        {
+          "skill_id": "SK-A05-PRIMARY",
+          "observable_behavior": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Nhị thức một biến"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A04-A05"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A05",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A06",
+      "title": "Hiệu hai bình phương",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Khai triển hoặc phân tích hiệu hai bình phương.",
+      "skills": [
+        {
+          "skill_id": "SK-A06-PRIMARY",
+          "observable_behavior": "Khai triển hoặc phân tích hiệu hai bình phương."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hai bình phương của biểu thức đơn giản"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A04-A06"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A06",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A07",
+      "title": "Phân tích nhân tử bằng đặt nhân tử chung",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Tìm nhân tử chung và viết đa thức thành tích.",
+      "skills": [
+        {
+          "skill_id": "SK-A07-PRIMARY",
+          "observable_behavior": "Tìm nhân tử chung và viết đa thức thành tích."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Đa thức có nhân tử chung"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A02-A07",
+        "PRE-A03-A07"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A07",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A08",
+      "title": "Phân tích nhân tử bằng hằng đẳng thức/nhóm",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích.",
+      "skills": [
+        {
+          "skill_id": "SK-A08-PRIMARY",
+          "observable_behavior": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Dạng hằng đẳng thức",
+        "Nhóm bốn hạng tử"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A05-A08",
+        "PRE-A06-A08",
+        "PRE-A07-A08"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A08",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A09",
+      "title": "Rút gọn phân thức và điều kiện xác định",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Giữ điều kiện ban đầu khi rút gọn phân thức.",
+      "skills": [
+        {
+          "skill_id": "SK-A09-PRIMARY",
+          "observable_behavior": "Giữ điều kiện ban đầu khi rút gọn phân thức."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Phân thức một biến có nhân tử chung"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A08-A09"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A09",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "A10",
+      "title": "Cộng trừ nhân chia phân thức",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Thực hiện phép toán phân thức kèm điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-A10-PRIMARY",
+          "observable_behavior": "Thực hiện phép toán phân thức kèm điều kiện."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Phân thức một biến"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A09-A10",
+        "PRE-N06-A10",
+        "PRE-N07-A10"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "A10",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E01",
+      "title": "Phép biến đổi tương đương và điều kiện",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất.",
+      "skills": [
+        {
+          "skill_id": "SK-E01-EQUIVALENCE",
+          "observable_behavior": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất."
+        }
+      ],
+      "authoring_task_kinds": [
+        "linear_equation"
+      ],
+      "supported_forms": [
+        "Cộng trừ cùng hằng số ở hai vế",
+        "Nhân chia cùng số khác không",
+        "Khai triển hai vế"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-N01-E01",
+        "PRE-N02-E01"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E01",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E02",
+      "title": "Phương trình bậc nhất một ẩn",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ.",
+      "skills": [
+        {
+          "skill_id": "SK-E02-SOLVE",
+          "observable_behavior": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ."
+        }
+      ],
+      "authoring_task_kinds": [
+        "linear_equation"
+      ],
+      "supported_forms": [
+        "ax+b=c",
+        "a(x+b)=c",
+        "ax+b=cx+d"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-E01-E02",
+        "PRE-A02-E02",
+        "PRE-A03-E02"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E02",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E03",
+      "title": "Lập phương trình từ bài toán bằng lời",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Chọn ẩn và lập phương trình có đơn vị và điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-E03-PRIMARY",
+          "observable_behavior": "Chọn ẩn và lập phương trình có đơn vị và điều kiện."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Bài toán một đại lượng chưa biết"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-E02-E03",
+        "PRE-A01-E03"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E03",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E04",
+      "title": "Phương trình tích",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Giải phương trình tích bằng tính chất tích bằng không.",
+      "skills": [
+        {
+          "skill_id": "SK-E04-PRIMARY",
+          "observable_behavior": "Giải phương trình tích bằng tính chất tích bằng không."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Tích hai nhân tử bậc nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A08-E04",
+        "PRE-E02-E04"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E04",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E05",
+      "title": "Phương trình chứa ẩn ở mẫu",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi.",
+      "skills": [
+        {
+          "skill_id": "SK-E05-PRIMARY",
+          "observable_behavior": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Phương trình quy về bậc nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-A09-E05",
+        "PRE-E02-E05"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E05",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E06",
+      "title": "Phương trình bậc hai và biệt thức",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Phân loại số nghiệm và giải phương trình bậc hai.",
+      "skills": [
+        {
+          "skill_id": "SK-E06-PRIMARY",
+          "observable_behavior": "Phân loại số nghiệm và giải phương trình bậc hai."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Phương trình bậc hai hệ số hữu tỉ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N10-E06",
+        "PRE-A05-E06",
+        "PRE-E01-E06"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E06",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E07",
+      "title": "Hệ thức Viète cơ bản",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm.",
+      "skills": [
+        {
+          "skill_id": "SK-E07-PRIMARY",
+          "observable_behavior": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Tổng tích hai nghiệm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-E06-E07"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E07",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E08",
+      "title": "Giải hệ bậc nhất bằng thế",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Thế một biểu thức để giải hệ hai phương trình.",
+      "skills": [
+        {
+          "skill_id": "SK-E08-PRIMARY",
+          "observable_behavior": "Thế một biểu thức để giải hệ hai phương trình."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-E02-E08",
+        "PRE-A01-E08"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E08",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E09",
+      "title": "Giải hệ bậc nhất bằng cộng đại số",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Khử một ẩn bằng phép cộng hai phương trình tương đương.",
+      "skills": [
+        {
+          "skill_id": "SK-E09-PRIMARY",
+          "observable_behavior": "Khử một ẩn bằng phép cộng hai phương trình tương đương."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-E02-E09",
+        "PRE-A03-E09"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E09",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "E10",
+      "title": "Bất phương trình bậc nhất và quy tắc đổi chiều",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Giải bất phương trình, đổi chiều khi nhân chia số âm.",
+      "skills": [
+        {
+          "skill_id": "SK-E10-PRIMARY",
+          "observable_behavior": "Giải bất phương trình, đổi chiều khi nhân chia số âm."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Bất phương trình một ẩn"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N01-E10",
+        "PRE-N02-E10",
+        "PRE-E01-E10"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "E10",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F01",
+      "title": "Khái niệm hàm số và giá trị hàm",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Tính giá trị hàm từ công thức một biến ở điểm đã cho.",
+      "skills": [
+        {
+          "skill_id": "SK-F01-VALUE",
+          "observable_behavior": "Tính giá trị hàm từ công thức một biến ở điểm đã cho."
+        }
+      ],
+      "authoring_task_kinds": [
+        "evaluate"
+      ],
+      "supported_forms": [
+        "Hàm đa thức bậc không quá hai",
+        "Bảng giá trị từ công thức"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8,
+          10
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-A01-F01"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F01",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F02",
+      "title": "Tập xác định",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Xác định các điều kiện của biểu thức hàm.",
+      "skills": [
+        {
+          "skill_id": "SK-F02-PRIMARY",
+          "observable_behavior": "Xác định các điều kiện của biểu thức hàm."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hàm chứa mẫu",
+        "Hàm căn bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F01-F02",
+        "PRE-A09-F02",
+        "PRE-N10-F02"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F02",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F03",
+      "title": "Hệ số góc và giá trị ban đầu của hàm bậc nhất",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Xác định và diễn giải các hệ số của hàm bậc nhất.",
+      "skills": [
+        {
+          "skill_id": "SK-F03-PRIMARY",
+          "observable_behavior": "Xác định và diễn giải các hệ số của hàm bậc nhất."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hàm y=ax+b"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F01-F03"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F03",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F04",
+      "title": "Nghiệm và dấu hàm bậc nhất",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Tìm giao điểm trục hoành và xét dấu trên các khoảng.",
+      "skills": [
+        {
+          "skill_id": "SK-F04-PRIMARY",
+          "observable_behavior": "Tìm giao điểm trục hoành và xét dấu trên các khoảng."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hàm bậc nhất có hệ số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F03-F04",
+        "PRE-E02-F04"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F04",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F05",
+      "title": "Đỉnh và trục đối xứng của hàm bậc hai",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng.",
+      "skills": [
+        {
+          "skill_id": "SK-F05-VERTEX",
+          "observable_behavior": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng."
+        }
+      ],
+      "authoring_task_kinds": [
+        "quadratic_vertex"
+      ],
+      "supported_forms": [
+        "ax*x+b*x+c với a khác không",
+        "Dạng hoàn thành bình phương"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-F01-F05",
+        "PRE-A05-F05"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F05",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F06",
+      "title": "Khoảng đồng biến/nghịch biến của hàm bậc hai",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên.",
+      "skills": [
+        {
+          "skill_id": "SK-F06-PRIMARY",
+          "observable_behavior": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hàm bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F05-F06"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F06",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F07",
+      "title": "Dấu tam thức bậc hai và bất phương trình bậc hai",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Xét dấu theo nghiệm và dấu hệ số bậc hai.",
+      "skills": [
+        {
+          "skill_id": "SK-F07-PRIMARY",
+          "observable_behavior": "Xét dấu theo nghiệm và dấu hệ số bậc hai."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Tam thức và bất phương trình bậc hai"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F05-F07",
+        "PRE-E06-F07",
+        "PRE-E10-F07"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F07",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F08",
+      "title": "Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định.",
+      "skills": [
+        {
+          "skill_id": "SK-F08-PRIMARY",
+          "observable_behavior": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hàm mũ cơ số dương khác một"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N09-F08",
+        "PRE-F01-F08"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F08",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F09",
+      "title": "Logarit và quy tắc logarit",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Dùng định nghĩa và quy tắc logarit kèm điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-F09-PRIMARY",
+          "observable_behavior": "Dùng định nghĩa và quy tắc logarit kèm điều kiện."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Logarit cơ số dương khác một"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F08-F09"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F09",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "F10",
+      "title": "Phương trình mũ/logarit cơ bản",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Giải phương trình cơ bản và đối chiếu điều kiện.",
+      "skills": [
+        {
+          "skill_id": "SK-F10-PRIMARY",
+          "observable_behavior": "Giải phương trình cơ bản và đối chiếu điều kiện."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Dạng cùng cơ số",
+        "Dạng dùng định nghĩa logarit"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-F09-F10",
+        "PRE-E01-F10"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "F10",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N01",
+      "title": "Cộng trừ số có dấu",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả.",
+      "skills": [
+        {
+          "skill_id": "SK-N01-SIGNED-ADD",
+          "observable_behavior": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả."
+        }
+      ],
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "supported_forms": [
+        "Cộng hai số nguyên",
+        "Trừ hai số nguyên",
+        "Trừ số âm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N01",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": true,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N02",
+      "title": "Nhân chia số có dấu",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu.",
+      "skills": [
+        {
+          "skill_id": "SK-N02-SIGNED-MUL",
+          "observable_behavior": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu."
+        }
+      ],
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "supported_forms": [
+        "Tích hai số nguyên",
+        "Thương nguyên khác không",
+        "Tích với nhiều dấu"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [
+        "PRE-N01-N02"
+      ],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N02",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N03",
+      "title": "Thứ tự phép tính",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán.",
+      "skills": [
+        {
+          "skill_id": "SK-N03-PRIMARY",
+          "observable_behavior": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Biểu thức số có ngoặc",
+        "Phép nhân trước cộng trừ"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N01-N03",
+        "PRE-N02-N03"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N03",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N04",
+      "title": "Phân số tương đương và rút gọn",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị.",
+      "skills": [
+        {
+          "skill_id": "SK-N04-FRACTION-VALUE",
+          "observable_behavior": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị."
+        }
+      ],
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "supported_forms": [
+        "Rút gọn phân số",
+        "Phân số âm",
+        "Kiểm tra giá trị phân số"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "source_checked_draft",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "prerequisite_edge_ids": [],
+      "problems": 6,
+      "families": 3,
+      "examples": 3,
+      "error_fixtures": 2,
+      "hints": 3,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N04",
+        "has_pack": true,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": true,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N05",
+      "title": "Quy đồng và so sánh phân số",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Quy đồng hai phân số rồi so sánh giá trị.",
+      "skills": [
+        {
+          "skill_id": "SK-N05-PRIMARY",
+          "observable_behavior": "Quy đồng hai phân số rồi so sánh giá trị."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hai phân số mẫu khác nhau"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N04-N05"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N05",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N06",
+      "title": "Cộng trừ phân số",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Tính tổng hoặc hiệu các phân số với mẫu khác không.",
+      "skills": [
+        {
+          "skill_id": "SK-N06-PRIMARY",
+          "observable_behavior": "Tính tổng hoặc hiệu các phân số với mẫu khác không."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hai phân số",
+        "Biểu thức phân số đơn giản"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N05-N06"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N06",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N07",
+      "title": "Nhân chia phân số",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Tính tích hoặc thương phân số và kiểm tra số chia khác không.",
+      "skills": [
+        {
+          "skill_id": "SK-N07-PRIMARY",
+          "observable_behavior": "Tính tích hoặc thương phân số và kiểm tra số chia khác không."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Hai phân số",
+        "Chia phân số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N04-N07",
+        "PRE-N02-N07"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N07",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N08",
+      "title": "Chuyển đổi phân số–thập phân–phần trăm",
+      "proposed_owner": "Member 2",
+      "proposed_reviewer": "Member 3",
+      "objective": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn.",
+      "skills": [
+        {
+          "skill_id": "SK-N08-PRIMARY",
+          "observable_behavior": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Phân số có thập phân hữu hạn",
+        "Phần trăm"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N04-N08"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N08",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N09",
+      "title": "Lũy thừa với số mũ nguyên",
+      "proposed_owner": "Member 3",
+      "proposed_reviewer": "Member 1",
+      "objective": "Tính lũy thừa và áp dụng quy tắc trong miền xác định.",
+      "skills": [
+        {
+          "skill_id": "SK-N09-PRIMARY",
+          "observable_behavior": "Tính lũy thừa và áp dụng quy tắc trong miền xác định."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Lũy thừa số",
+        "Số mũ nguyên âm với cơ số khác không"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          11
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N02-N09"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N09",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    },
+    {
+      "concept_id": "N10",
+      "title": "Căn bậc hai số học",
+      "proposed_owner": "Member 1",
+      "proposed_reviewer": "Member 2",
+      "objective": "Tính căn bậc hai số học và nêu điều kiện không âm.",
+      "skills": [
+        {
+          "skill_id": "SK-N10-PRIMARY",
+          "observable_behavior": "Tính căn bậc hai số học và nêu điều kiện không âm."
+        }
+      ],
+      "authoring_task_kinds": [],
+      "supported_forms": [
+        "Căn của số chính phương",
+        "Điều kiện căn số học"
+      ],
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "alignment": {
+        "grade_levels": [
+          7,
+          9
+        ],
+        "status": "proposed",
+        "source_id": "SRC-MATH-2018",
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": null
+      },
+      "concept_review": {
+        "status": "draft",
+        "author": "AI-assisted project authoring",
+        "source": "Đề xuất theo plan; nội dung tự biên soạn, chưa được duyệt chuyên môn.",
+        "human_reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_review": null,
+      "prerequisite_edge_ids": [
+        "PRE-N09-N10"
+      ],
+      "problems": 0,
+      "families": 0,
+      "examples": 0,
+      "error_fixtures": 0,
+      "hints": 0,
+      "public_chunks": 0,
+      "readiness": {
+        "concept_id": "N10",
+        "has_pack": false,
+        "alignment_approved": false,
+        "concept_approved": false,
+        "pack_approved": false,
+        "prerequisites_approved": false,
+        "validator_integrated": false,
+        "ui_policy_verified": false,
+        "contract_review_complete": false,
+        "ready": false,
+        "blockers": [
+          "has_pack",
+          "alignment_approved",
+          "concept_approved",
+          "pack_approved",
+          "prerequisites_approved",
+          "validator_integrated",
+          "ui_policy_verified",
+          "contract_review_complete"
+        ]
+      },
+      "last_human_review_at": null,
+      "learner_test_status": "not_verified_for_canonical_ids"
+    }
+  ]
+}

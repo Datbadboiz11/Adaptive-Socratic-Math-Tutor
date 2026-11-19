@@ -11,3 +11,5 @@ python -m research.bkt.benchmark
 ```
 
 Audit và preprocess dùng thư viện chuẩn Python. Benchmark cần [requirements riêng](requirements.txt) gồm NumPy/SciPy; đọc [hướng dẫn chạy](../docs/research/data/RUNBOOK.md), [protocol](../docs/research/data/observation-protocol.md) và [kết quả dev v1](../docs/research/data/bkt-dev-v1.md). Test được giữ lại, không đọc trong lệnh benchmark. Không thay tham số bootstrap sản phẩm bằng kết quả trên dữ liệu công khai.
+
+Member 2: đã có [runner retrieval dev dùng pgvector thật và embedding cục bộ](retrieval/README.md), gồm baseline metadata và semantic trên 24 query AI review. Store nghiên cứu tách khỏi nội dung học sinh; chưa thay thế tích hợp RAG trong Agent.

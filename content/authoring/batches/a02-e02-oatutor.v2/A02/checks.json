@@ -1,0 +1,13 @@
+{
+  "protocol_version": "authoring-1.0.0",
+  "pack_sha256": "a138ad3546e0bc4d305c3195bd5f7b9f217b2af54b3472c4c2dbc3e1333d2cfc",
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "human_review_required",
+      "path": "$",
+      "message": "Curriculum, source rights, Vietnamese, pedagogical goal/form and hint math/disclosure require independent human review"
+    }
+  ],
+  "passed": true
+}

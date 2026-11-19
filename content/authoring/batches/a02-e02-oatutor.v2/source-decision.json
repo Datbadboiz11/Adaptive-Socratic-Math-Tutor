@@ -1,0 +1,29 @@
+{
+  "decision": "proposed_for_human_review",
+  "human_reviewer": null,
+  "reviewed_at": null,
+  "source_id": "SRC-OATUTOR-PILOT-V1",
+  "upstream_commit": "08ef4819889e70835e86926f84037e79141652f3",
+  "role": "Supplemental exercises; Vietnamese curriculum source stays SRC-MATH-2018",
+  "license_basis": "Pinned repository README CC BY 4.0; retain all per-item notices",
+  "items_with_blank_license_fields": [
+    "a60909cdistprop12",
+    "a60909cdistprop13",
+    "a60909cdistprop2",
+    "a60909cdistprop3",
+    "a9c142dVarCon1",
+    "a9c142dVarCon18",
+    "a9c142dVarCon19",
+    "a9c142dVarCon2"
+  ],
+  "rights_review": "pending",
+  "curriculum_alignment_review": "pending",
+  "translation_review": "pending",
+  "measurement_change_review": "pending",
+  "material_changes": [
+    "A02 positive: multiple choice to written expansion",
+    "A02 negative: coefficient/constant questions combined into full expansion; variables renamed",
+    "Reference steps, examples, errors, explanation and hints drafted with AI assistance"
+  ],
+  "instruction": "Reviewer must check grade/objective/form, item notices, attribution and changes; OATutor course names do not establish Vietnamese grade alignment."
+}

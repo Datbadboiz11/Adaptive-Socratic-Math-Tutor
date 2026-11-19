@@ -1,0 +1,151 @@
+{
+  "concept_id": "A07",
+  "revision": "M2-OAT02",
+  "status": "partial_draft_not_pack",
+  "complete_pack": false,
+  "runtime_publication": false,
+  "human_review": "pending",
+  "previous_batch": "content/authoring/batches/a02-e02-oatutor.v1",
+  "previous_pack_sha256": "6b5724d5010b6269e855d5632d70cbe82bad54f69b33d4d33cc5f4755e5d68fd",
+  "problems": [
+    {
+      "case_id": "D-A07-M2-OAT02-P-01",
+      "task": {
+        "kind": "polynomial",
+        "expression": "7*x+28",
+        "variable_value": null
+      },
+      "reference_answer": "7*(x+4)",
+      "reference_steps": [
+        "7*x+7*4",
+        "7*(x+4)"
+      ],
+      "concept_id": "A07",
+      "primary_skill_id": "SK-A07-PRIMARY",
+      "family_id": "FAM-A07-linear-common",
+      "source_group": "GROUP-A07-linear-common",
+      "difficulty": "standard",
+      "prompt": "Đặt nhân tử chung để viết biểu thức sau thành tích 7*x+28. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Transferred AI-authored draft from D-A02-M2-OAT01-P-05; not a newly collected problem."
+    },
+    {
+      "case_id": "D-A07-M2-OAT02-P-02",
+      "task": {
+        "kind": "polynomial",
+        "expression": "-6*x+18",
+        "variable_value": null
+      },
+      "reference_answer": "-6*(x-3)",
+      "reference_steps": [
+        "(-6)*x+(-6)*(-3)",
+        "-6*(x-3)"
+      ],
+      "concept_id": "A07",
+      "primary_skill_id": "SK-A07-PRIMARY",
+      "family_id": "FAM-A07-linear-common",
+      "source_group": "GROUP-A07-linear-common",
+      "difficulty": "standard",
+      "prompt": "Đặt nhân tử chung âm để viết biểu thức sau thành tích -6*x+18. Trình bày các bước.",
+      "split": "authoring_dev",
+      "origin": "Transferred AI-authored draft from D-A02-M2-OAT01-P-06; not a newly collected problem."
+    }
+  ],
+  "examples": [
+    {
+      "case_id": "D-A07-M2-OAT02-EX-01",
+      "task": {
+        "kind": "polynomial",
+        "expression": "9*x-36",
+        "variable_value": null
+      },
+      "reference_answer": "9*(x-4)",
+      "reference_steps": [
+        "9*x+9*(-4)",
+        "9*(x-4)"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "error_id": "D-A07-M2-OAT02-ERR-01",
+      "problem_id": "D-A07-M2-OAT02-P-01",
+      "response_steps": [
+        "7*(x+28)"
+      ],
+      "first_error_step": 1,
+      "family": "factor_constant_not_divided",
+      "hypothesis": "Có thể chưa chia mọi hạng tử cho nhân tử chung; lỗi mẫu tổng hợp.",
+      "diagnostic_question": "Khai triển lại biểu thức vừa đặt nhân tử chung có cho đúng hằng số ban đầu không?",
+      "diagnosis_status": "suspected"
+    }
+  ],
+  "query_drafts": [
+    {
+      "previous_query_id": "DEV-A02-03",
+      "concept_id": "A07",
+      "target_skill_id": "SK-A07-PRIMARY",
+      "text": "Đặt nhân tử chung liên quan thế nào đến khai triển?",
+      "purpose": "explanation",
+      "label_status": "unlabeled_fragment",
+      "split_group": "PROJECT-A02-REVERSE-DEV"
+    },
+    {
+      "previous_query_id": "DEV-A02-04",
+      "concept_id": "A07",
+      "target_skill_id": "SK-A07-PRIMARY",
+      "text": "Làm sao tự kiểm tra biểu thức sau khi đưa nhân tử ra ngoài ngoặc?",
+      "purpose": "explanation",
+      "label_status": "unlabeled_fragment",
+      "split_group": "PROJECT-A02-REVERSE-DEV"
+    },
+    {
+      "previous_query_id": "DEV-A02-09",
+      "concept_id": "A07",
+      "target_skill_id": "SK-A07-PRIMARY",
+      "text": "Em đã tìm được nhân tử chung rồi, phải xử lý các hạng tử còn lại ra sao?",
+      "purpose": "hint",
+      "label_status": "unlabeled_fragment",
+      "split_group": "PROJECT-A02-REVERSE-DEV"
+    },
+    {
+      "previous_query_id": "DEV-A02-10",
+      "concept_id": "A07",
+      "target_skill_id": "SK-A07-PRIMARY",
+      "text": "Em cần một khung bước để kiểm tra dấu sau khi đặt nhân tử chung âm.",
+      "purpose": "hint",
+      "label_status": "unlabeled_fragment",
+      "split_group": "PROJECT-A02-REVERSE-DEV"
+    }
+  ],
+  "provenance": [
+    {
+      "record_id": "D-A07-M2-OAT02-P-01",
+      "previous_record_id": "D-A02-M2-OAT01-P-05",
+      "previous_pack_sha256": "6b5724d5010b6269e855d5632d70cbe82bad54f69b33d4d33cc5f4755e5d68fd",
+      "origin_kind": "relocated_ai_generated_draft",
+      "split_group": "PROJECT-A02-REVERSE-DEV",
+      "human_review": "pending",
+      "not_a_new_independent_problem": true
+    },
+    {
+      "record_id": "D-A07-M2-OAT02-P-02",
+      "previous_record_id": "D-A02-M2-OAT01-P-06",
+      "previous_pack_sha256": "6b5724d5010b6269e855d5632d70cbe82bad54f69b33d4d33cc5f4755e5d68fd",
+      "origin_kind": "relocated_ai_generated_draft",
+      "split_group": "PROJECT-A02-REVERSE-DEV",
+      "human_review": "pending",
+      "not_a_new_independent_problem": true
+    },
+    {
+      "record_id": "D-A07-M2-OAT02-EX-01",
+      "previous_record_id": "D-A02-M2-OAT01-EX-03",
+      "origin_kind": "relocated_ai_generated_draft",
+      "split_group": "PROJECT-A02-SUPPORT-DEV",
+      "human_review": "pending",
+      "not_a_new_independent_problem": true
+    }
+  ],
+  "new_independent_problems": 0,
+  "remaining": "Needs at least six problems across three families, explanation/hints, curriculum review and integration capability; two transferred problems do not complete A07."
+}

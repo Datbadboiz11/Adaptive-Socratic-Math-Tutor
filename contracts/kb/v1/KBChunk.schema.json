@@ -1,0 +1,303 @@
+{
+  "$defs": {
+    "ChunkProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "registry_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Registry Hash",
+          "type": "string"
+        },
+        "pack_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Pack Hash",
+          "type": "string"
+        },
+        "pack_version": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Pack Version",
+          "type": "string"
+        },
+        "origin": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Origin",
+          "type": "string"
+        },
+        "alignment_source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Alignment Source Id",
+          "type": "string"
+        },
+        "alignment_locator": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Alignment Locator",
+          "type": "string"
+        },
+        "projector_version": {
+          "const": "kb-1.0.0",
+          "default": "kb-1.0.0",
+          "title": "Projector Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "registry_hash",
+        "pack_hash",
+        "pack_version",
+        "origin",
+        "alignment_source_id",
+        "alignment_locator"
+      ],
+      "title": "ChunkProvenance",
+      "type": "object"
+    },
+    "ContentSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "title",
+        "locator"
+      ],
+      "title": "ContentSource",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "content_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Content Id",
+      "type": "string"
+    },
+    "content_version": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Content Version",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^[NAEF](0[1-9]|10)$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "skill_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Skill Ids",
+      "type": "array"
+    },
+    "kind": {
+      "enum": [
+        "explanation",
+        "hint",
+        "example"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "text": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    },
+    "hint_level": {
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Hint Level",
+      "type": "integer"
+    },
+    "counts_as_assistance": {
+      "const": true,
+      "default": true,
+      "title": "Counts As Assistance",
+      "type": "boolean"
+    },
+    "disclosure": {
+      "enum": [
+        "conceptual",
+        "strategy",
+        "scaffold",
+        "different_example"
+      ],
+      "title": "Disclosure",
+      "type": "string"
+    },
+    "grade_levels": {
+      "items": {
+        "maximum": 12,
+        "minimum": 6,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Grade Levels",
+      "type": "array"
+    },
+    "difficulty": {
+      "anyOf": [
+        {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Difficulty"
+    },
+    "source": {
+      "$ref": "#/$defs/ContentSource"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    },
+    "problem_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Problem Id"
+    },
+    "source_group": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Group"
+    },
+    "family_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Family Id"
+    },
+    "lineage_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "title": "Lineage Ids",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/ChunkProvenance"
+    }
+  },
+  "required": [
+    "content_id",
+    "content_version",
+    "concept_id",
+    "skill_ids",
+    "kind",
+    "text",
+    "hint_level",
+    "disclosure",
+    "grade_levels",
+    "source",
+    "review",
+    "provenance"
+  ],
+  "title": "KBChunk",
+  "type": "object"
+}

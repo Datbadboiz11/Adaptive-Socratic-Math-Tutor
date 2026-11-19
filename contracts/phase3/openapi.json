@@ -690,6 +690,7 @@
             "enum": [
               "system_unavailable",
               "openai",
+              "gemini",
               "draft_template"
             ],
             "title": "Response Source",

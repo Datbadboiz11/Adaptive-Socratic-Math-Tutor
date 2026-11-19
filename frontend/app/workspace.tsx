@@ -173,11 +173,11 @@ export default function Workspace({ initialReady }: { initialReady: boolean }) {
           {session.tutoring_enabled && session.turns.length > 0 && <div className="tutor-panel" ref={feedbackRef} tabIndex={-1} aria-live="polite">
             <span className="eyebrow">CÂU HỎI TỪ GIA SƯ</span>
             <p>{session.turns[session.turns.length - 1].response.message}</p>
-            <small>{session.turns[session.turns.length - 1].response.response_source === "openai" ? "Cách diễn đạt từ OpenAI, đã qua kiểm tra" : "Mẫu gợi mở thử nghiệm"}</small>
+            <small>{["openai", "gemini"].includes(session.turns[session.turns.length - 1].response.response_source) ? "Cách diễn đạt từ model, đã qua kiểm tra câu cho phép" : "Mẫu gợi mở thử nghiệm"}</small>
           </div>}
           <article className="card"><div className="section-head"><h2>Nhật ký phiên</h2><span className="pill">{session.tutoring_enabled ? `Mức hỗ trợ: ${session.hint_level}/3` : "Phiên cũ chỉ lưu trữ"}</span></div>
             {!session.turns.length && <p className="muted">Chưa có bài nộp. Lưu nháp không tạo lượt chấm hoặc observation.</p>}
-            {session.turns.map(t => <div className="turn" key={t.turn_id}>{t.action === "submit" && <><span className="pill">{assessmentLabel(t.assessment.assessment_status)}{t.assessment.first_error_step ? ` · Bước ${t.assessment.first_error_step}` : ""}</span><pre>{t.steps.join("\n")}</pre></>}<p>{t.response.message}</p><small className="muted">{t.response.response_source === "openai" ? "OpenAI · cách diễn đạt đã được kiểm tra" : t.response.response_source === "draft_template" ? "Mẫu gợi mở thử nghiệm · chưa duyệt chuyên môn" : "Thông báo lưu trữ"}</small></div>)}
+            {session.turns.map(t => <div className="turn" key={t.turn_id}>{t.action === "submit" && <><span className="pill">{assessmentLabel(t.assessment.assessment_status)}{t.assessment.first_error_step ? ` · Bước ${t.assessment.first_error_step}` : ""}</span><pre>{t.steps.join("\n")}</pre></>}<p>{t.response.message}</p><small className="muted">{t.response.response_source === "gemini" ? "Gemini · câu trả lời thuộc danh sách cho phép" : t.response.response_source === "openai" ? "OpenAI · cách diễn đạt đã được kiểm tra" : t.response.response_source === "draft_template" ? "Mẫu gợi mở thử nghiệm · chưa duyệt chuyên môn" : "Thông báo lưu trữ"}</small></div>)}
             <div className="actions"><button disabled={locked || session.status !== "active" || session.available_next === 0} onClick={() => act(() => saveThen("next"))}>Thử bài tiếp ({session.available_next})</button><button disabled={locked} onClick={() => act(() => saveThen("finish"))}>Kết thúc & xem báo cáo</button></div>
           </article>
         </>}
