@@ -152,7 +152,7 @@ class Assessment(Contract):
     primary_skill_id: Identifier | None = None
     error_family: str | None = None
     misconception_candidate: str | None = None
-    diagnosis_status: Literal["suspected", "supported", "unknown"] = "unknown"
+    diagnosis_status: Literal["suspected", "supported", "unknown", "unverified"] = "unknown"
     reason_code: Literal[
         "valid_solution", "invalid_transformation", "wrong_final_answer",
         "valid_partial", "ambiguous_input", "unsupported_scope", "cannot_verify"

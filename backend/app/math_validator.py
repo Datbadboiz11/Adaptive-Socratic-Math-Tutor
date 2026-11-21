@@ -12,7 +12,7 @@ import subprocess
 import sys
 from uuid import uuid4
 
-VERSION = 'symbolic-bounded-2.1.0'
+VERSION = 'symbolic-bounded-2.2.0'
 MAX_TEXT = 160
 MAX_STEPS = 12
 MAX_NODES = 80
@@ -513,12 +513,38 @@ def equivalent(left, right):
     return state_signature(left) == state_signature(right)
 
 
-def _is_isolated_solution(state):
+def _is_isolated_solution(state, text=None):
     if state['kind'] == 'solution_set':
         return bool(state['roots'])
     if state['kind'] != 'equations':
         return False
     sp = _sp()
+    if text is not None:
+        try:
+            rows = split_rows(text)
+            variables = state['variables']
+            if len(rows) != len(variables):
+                return False
+            seen = set()
+            for row in rows:
+                left_text, right_text = row.split('=')
+                left = Parser(left_text).parse()
+                right = Parser(right_text).parse()
+                isolated_variable = None
+                for candidate in variables:
+                    symbol = sp.Symbol(candidate, real=True)
+                    if left.expr == symbol and not right.expr.free_symbols:
+                        isolated_variable = candidate
+                        break
+                    if right.expr == symbol and not left.expr.free_symbols:
+                        isolated_variable = candidate
+                        break
+                if isolated_variable is None or isolated_variable in seen:
+                    return False
+                seen.add(isolated_variable)
+            return seen == set(variables)
+        except (InputIssue, ValueError):
+            return False
     if 'y' in state['variables']:
         signature = _two_variable_signature(state)
         rows = signature[2]
@@ -624,6 +650,7 @@ def validate(problem, steps):
         prompt_text = (problem.get('expression', problem.get('equation')) if original['kind'] == 'expression'
                        else problem.get('equations', problem.get('system', problem.get('equation'))))
         prompt_rows = split_rows(prompt_text)
+        prompt_trace_text = '; '.join(prompt_rows)
         if len(normalized) and [re.sub(r'\s', '', row) for row in split_rows(normalized[0])] == [
             re.sub(r'\s', '', row) for row in prompt_rows
         ]:
@@ -634,6 +661,9 @@ def validate(problem, steps):
         previous = original
         first_error = None
         first_error_text = None
+        first_error_before_text = None
+        first_error_before_state = None
+        first_error_after_state = None
         for index, step in enumerate(normalized, 1):
             try:
                 current = parse_step(step, task)
@@ -650,6 +680,9 @@ def validate(problem, steps):
                 continue
             if not is_equivalent and first_error is None:
                 first_error, first_error_text = index, step
+                first_error_before_text = prompt_trace_text if index == 1 else normalized[index - 2]
+                first_error_before_state = previous
+                first_error_after_state = current
             if first_error is None:
                 result['progress'] = index
             previous = current
@@ -657,30 +690,37 @@ def validate(problem, steps):
         if first_error is not None:
             # A one-line isolated answer gets the answer-specific reason code,
             # while its mismatch with the prompt still identifies step one.
-            single_final = (len(normalized) == 1 and _is_isolated_solution(previous)
+            single_final = (len(normalized) == 1
+                            and _is_isolated_solution(previous, normalized[-1])
                             and _is_linear_equation_task(original))
             evidence = [f'step:{first_error}:not_equivalent']
-            fields = dict(
+            fields: dict[str, object] = dict(
                 primary_skill_id=problem.get('primary_skill_id'),
                 verification_method='symbolic_and_rule',
                 evidence=evidence,
                 first_error_step=first_error,
             )
-            for error in problem.get('common_errors', []):
-                error_steps = error.get('steps', [])
-                normalized_error_text = first_error_text or ''
-                if (error.get('first_error_step') == first_error and first_error <= len(error_steps)
-                        and re.sub(r'\s', '', normalized_error_text)
-                        == re.sub(r'\s', '', normalize(error_steps[first_error - 1]))):
-                    fields.update(error_family=error.get('error_id'),
-                                  misconception_candidate=error.get('hypothesis'),
-                                  diagnosis_status='suspected')
-                    break
+            from .misconceptions import detect_misconception
+            candidate = detect_misconception(
+                problem,
+                step_index=first_error,
+                before_text=first_error_before_text or '',
+                after_text=first_error_text or '',
+                previous_steps=normalized[:first_error - 1],
+                before_state=first_error_before_state,
+                after_state=first_error_after_state,
+            )
+            fields.update(
+                error_family=candidate,
+                misconception_candidate=candidate or 'unknown',
+                diagnosis_status='suspected' if candidate else 'unverified',
+            )
             return finish('verified_incorrect', 'wrong_final_answer' if single_final else
                           'invalid_transformation', **fields)
 
         if normalized and equivalent(original, previous):
-            if original['kind'] == 'expression' or _is_isolated_solution(previous):
+            if (original['kind'] == 'expression'
+                    or _is_isolated_solution(previous, normalized[-1])):
                 return finish('verified_correct', 'valid_solution',
                               primary_skill_id=problem.get('primary_skill_id'),
                               verification_method='symbolic_and_rule',

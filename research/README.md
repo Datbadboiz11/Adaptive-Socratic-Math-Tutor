@@ -10,4 +10,4 @@ python -m research.data.preprocess_assistments_2017
 python -m research.bkt.benchmark
 ```
 
-Audit và preprocess dùng thư viện chuẩn Python. Benchmark cần [requirements riêng](requirements.txt) gồm NumPy/SciPy; đọc [hướng dẫn chạy](../docs/research/data/RUNBOOK.md), [protocol](../docs/research/data/observation-protocol.md) và [kết quả dev v1](../docs/research/data/bkt-dev-v1.md). Test được giữ lại, không đọc trong lệnh benchmark. Không thay tham số bootstrap sản phẩm bằng kết quả trên dữ liệu công khai.
+Benchmark mặc định chỉ fit `train.csv`, đánh giá `dev.csv` và ghi báo cáo RQ1a vào `data/experiments/rq1a_kt_benchmark_report.json` cùng bảng Markdown. Chỉ mở held-out `test.csv` khi gọi tường minh `python -m research.bkt.benchmark --evaluate-test`. Audit và preprocess dùng thư viện chuẩn Python; benchmark cần [requirements riêng](requirements.txt) gồm NumPy/SciPy. Đọc [hướng dẫn chạy](../docs/research/data/RUNBOOK.md), [protocol](../docs/research/data/observation-protocol.md) và [kết quả dev v1](../docs/research/data/bkt-dev-v1.md). Không thay tham số bootstrap sản phẩm bằng kết quả trên dữ liệu công khai.

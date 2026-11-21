@@ -177,6 +177,45 @@ class BKTTests(unittest.TestCase):
             state = after
             evidence.append(observation)
 
+    def test_update_enforces_bkt_emission_constraint_and_eligibility_gates(self):
+        from backend.app.knowledge import eligibility, update
+
+        with self.assertRaisesRegex(ValueError, "Guess must be less than"):
+            update(.2, True, {"learn": .1, "guess": .6, "slip": .5})
+        assessment = {"assessment_status": "verified_correct", "primary_skill_id": "SK-ALG"}
+        opportunity = {"target_skill_id": "SK-ALG", "assistance_level": 0, "relation": "initial"}
+        self.assertTrue(eligibility(assessment, opportunity)["eligible"])
+        for kwargs, op, result in (
+            ({"observed": True}, opportunity, "already_observed"),
+            ({"retry": True}, opportunity, "already_observed"),
+            ({"request_id": "r1", "seen_request_ids": {"r1"}}, opportunity, "already_observed"),
+            ({"first_attempt": False}, opportunity, "repeat"),
+            ({}, {**opportunity, "is_first_attempt": False}, "repeat"),
+            ({}, {**opportunity, "attempt_number": 2}, "repeat"),
+            ({}, {**opportunity, "relation": "repeat"}, "repeat"),
+            ({}, {**opportunity, "assistance_level": 1}, "assisted"),
+            ({}, {**opportunity, "hint_used": True}, "assisted"),
+            ({"near": True}, opportunity, "near_practice"),
+            ({}, {**opportunity, "target_skill_id": "SK-OTHER"}, "not_target_evidence"),
+            ({}, opportunity, "not_verified"),
+        ):
+            candidate_assessment = assessment
+            if result == "not_verified":
+                candidate_assessment = {**assessment, "assessment_status": "unverified"}
+            with self.subTest(reason=result, kwargs=kwargs, opportunity=op):
+                eligibility_result = eligibility(candidate_assessment, op, **kwargs)
+                self.assertFalse(eligibility_result["eligible"])
+                self.assertEqual(eligibility_result["reason"], result)
+
+    def test_moving_average_uses_only_previous_five_student_responses(self):
+        params = {"prior": .2, "learn": .1, "guess": .2, "slip": .1}
+        rows = [{"student_id": "s", "skill_id": f"skill-{i % 2}", "correct": y, "order_id": i}
+                for i, y in enumerate((1, 0, 1, 1, 0, 0, 1), 1)]
+        _, output = evaluate(rows, {}, {"parameters": params}, {}, .4)
+        self.assertEqual(output[0]["history_rate"], .4)
+        self.assertEqual(output[6]["history_count"], 5)
+        self.assertAlmostEqual(output[6]["history_rate"], (0 + 1 + 1 + 0 + 0) / 5)
+
 
 @unittest.skipUnless(importlib.util.find_spec("numpy") and importlib.util.find_spec("scipy"), "Requires research/requirements.txt")
 class OptimizerTests(unittest.TestCase):
@@ -211,12 +250,33 @@ class OptimizerTests(unittest.TestCase):
                 return original_open(path, *args, **kwargs)
 
             fake_fit = {"parameters": {"prior": .2, "learn": .1, "guess": .2, "slip": .1, "forget": 0}, "starts": [], "train_log_loss": .5, "boundary_parameters": []}
+            report_path = root / "data/experiments/rq1a_kt_benchmark_report.json"
             with patch("research.bkt.benchmark.ROOT", root), patch("pathlib.Path.open", no_test_open), patch("research.bkt.benchmark.fit", return_value=fake_fit) as fitting:
-                result = benchmark(processed, root / "data/experiment")
+                result = benchmark(processed, report_path)
             self.assertEqual(fitting.call_count, 1)
             self.assertEqual(fitting.call_args.args[0], [[0, 0, 0]])
             self.assertFalse(result["test_evaluated"])
             self.assertEqual(result["results"]["bkt"]["micro"]["positive"], 3)
+            self.assertEqual(result["results"]["majority_rate"]["micro"]["observations"], 3)
+            self.assertIn("bkt_pooled", result["results"])
+            self.assertIn("bkt_per_skill", result["results"])
+            self.assertTrue(report_path.is_file())
+            self.assertTrue(report_path.with_suffix(".md").is_file())
+            self.assertIn("Calibration: expected vs observed", result["markdown_report"])
+
+            # The sealed split is opened only after an explicit opt-in.
+            with (processed / "test.csv").open("w", encoding="utf-8", newline="") as stream:
+                writer = csv.writer(stream)
+                writer.writerow(columns)
+                writer.writerows(("sealed-student", "skill", f"p{i}", f"test-o{i}", i + 1, i % 2)
+                                  for i in range(3))
+            report["artifact_sha256"]["test.csv"] = digest_file(processed / "test.csv")
+            (processed / "preprocessing_report.json").write_text(json.dumps(report), encoding="utf-8")
+            with patch("research.bkt.benchmark.ROOT", root), patch("research.bkt.benchmark.fit", return_value=fake_fit):
+                with_test = benchmark(processed, root / "data/experiments/rq1a_with_test.json",
+                                      evaluate_test=True)
+            self.assertTrue(with_test["test_evaluated"])
+            self.assertEqual(with_test["test_results"]["bkt_pooled"]["micro"]["observations"], 3)
 
     def test_gradient_matches_finite_differences(self):
         import numpy as np

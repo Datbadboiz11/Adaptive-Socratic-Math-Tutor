@@ -25,6 +25,9 @@ def context(c, row):
         WHERE e.student_id=%s AND o.problem_id=%s AND o.opportunity_id<>%s LIMIT 1''',
         (row['student_id'],op['problem_id'],op['opportunity_id'])).fetchone()
     if earlier or prior_evidence: op['relation']='repeat'
+    prior_attempt=c.execute('SELECT 1 FROM turns WHERE session_id=%s AND opportunity_id=%s LIMIT 1',
+                           (row['session_id'],op['opportunity_id'])).fetchone()
+    op['is_first_attempt']=prior_attempt is None
     return op,observed,near
 
 
@@ -84,7 +87,8 @@ def process(session_id, body, student):
         used=c.execute('SELECT count(*) n FROM turn_jobs WHERE session_id=%s',(session_id,)).fetchone()['n']
         limit=min(20,max(0,int(os.getenv('LLM_MAX_CALLS_PER_SESSION','8'))))
         state={'problem':op['private_payload'],'opportunity':{
-            k:op[k] for k in ('target_skill_id','assistance_level','relation','no_progress_count','best_progress')},
+            k:op[k] for k in ('target_skill_id','assistance_level','relation','no_progress_count','best_progress',
+                              'is_first_attempt')},
             'observed':observed,'near':near,'action':body.action,'steps':body.steps,'llm_allowed':used<=limit}
     thread=f'{session_id}:{body.request_id}'
     if prepared is None:
