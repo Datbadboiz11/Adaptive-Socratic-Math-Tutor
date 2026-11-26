@@ -1,0 +1,1354 @@
+[
+  {
+    "content_id": "A01-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A01-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A01-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A01-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A01-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A01-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A01-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A01-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A01-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A04-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A04-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A04-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A04-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A04-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A04-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A04-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A04-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A04-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A07-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A07-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A07-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A07-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A07-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A07-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A07-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A07-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A07-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A10-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A10-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A10-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A10-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "A10-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A10-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "A10-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-A10-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-A10-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E03-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E03-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E03-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E03-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E03-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E03-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E03-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E03-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E03-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E06-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E06-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E06-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E06-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E06-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E06-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E06-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E06-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E06-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E09-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E09-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E09-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E09-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "E09-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E09-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "E09-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-E09-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-E09-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F02-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F02-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F02-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F02-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F02-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F02-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F05-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F05-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F05-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F05-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F05-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F05-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F08-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F08-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "F08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F08-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "F08-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-F08-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-F08-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N02-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N02-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N02-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N02-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N02-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N02-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N02-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N05-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N05-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N05-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N05-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N05-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N05-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N05-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N08-explanation",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXPLANATION",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N08-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "N08-hint-1",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N08-hint-2",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "N08-hint-3",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-HINT-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-1",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-1",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-01",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-2",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-2",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-02",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-3",
+    "rationale": "Eligible related unit for the same purpose",
+    "relevance": 1
+  },
+  {
+    "content_id": "D-N08-M2-ORIG02-EX-03",
+    "human_reviewed": false,
+    "label_status": "deterministic_dev_judgment_from_reviewed_teaching_intent",
+    "query_id": "M2-N08-EXAMPLE-3",
+    "rationale": "Exact intended teaching unit",
+    "relevance": 2
+  }
+]

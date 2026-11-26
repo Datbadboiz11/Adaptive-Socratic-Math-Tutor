@@ -1,0 +1,84 @@
+name: Stage 4 current release
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage4-current:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_DB: stage4_test
+          POSTGRES_USER: stage4_test
+          POSTGRES_PASSWORD: ci-test-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U stage4_test -d stage4_test"
+          --health-interval 5s --health-timeout 3s --health-retries 15
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGDATABASE: stage4_test
+      PGUSER: stage4_test
+      PGPASSWORD: ci-test-only
+      PYTHONPATH: backend
+      RUN_DB_TESTS: '1'
+      DEMO_MODE: 'true'
+      TUTOR_ENABLED: 'true'
+      LLM_ENABLED: 'false'
+      AUTHORING_LLM_ENABLED: 'false'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: python -m pip install -r backend/requirements-dev.txt
+      - name: Check required deployment and release inputs
+        run: python scripts/checks/check_release_inputs.py
+      - name: Check public contracts and approved KB
+        run: |
+          python scripts/exports/export_contracts.py --check
+          python scripts/exports/export_phase3_openapi.py --check
+          python scripts/exports/export_frontend_types.py --check
+          python scripts/checks/check_stage3_kb.py
+      - name: Test Stage 4 and runtime
+        run: |
+          python - <<'PY'
+          import pytest
+          from scripts.dev.validation_runtime import STAGE4_TESTS
+          raise SystemExit(pytest.main([*STAGE4_TESTS, '-q', '--junitxml=artifacts/stage4-current-tests.xml']))
+          PY
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          suite = ET.parse('artifacts/stage4-current-tests.xml').getroot().find('testsuite')
+          assert int(suite.attrib['tests']) > 0
+          assert all(int(suite.attrib.get(key, 0)) == 0 for key in ('failures', 'errors', 'skipped'))
+          PY
+      - name: Verify frontend
+        working-directory: frontend
+        run: |
+          npm ci
+          npm test
+          npm run typecheck
+          npm run build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage4-current-evidence
+          path: artifacts/stage4-current-tests.xml

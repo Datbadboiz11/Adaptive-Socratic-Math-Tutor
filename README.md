@@ -10,6 +10,10 @@ Repository đã có **nền tảng Phần 1–3 và frontend tích hợp Phần 
 
 Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt MVP G2 đề xuất tập trung vào một chủ đề chạy end-to-end; xem [kế hoạch MVP](docs/planning/mvp/README.md).
 
+**Member 2 — Chặng 3, cập nhật 26/11/2026:** KB local đã kích hoạt 13 pack M2-ORIG02 được người dùng duyệt, gồm 52 explanation/hint và 39 ví dụ có lời giải chi tiết, tổng 91 chunk. CLI sync mặc định dùng nguồn `member2-v2`; benchmark dev phủ đủ 13 concept với 104 query. [Bàn giao, test và giới hạn nghiệm thu](docs/implementation/member2/part3/README.md) · [Runbook KB](content/kb/README.md). Tích hợp retrieved context vào gia sư thuộc Chặng 4; Docker/CI từ xa và chữ ký review độc lập còn chờ nghiệm thu.
+
+**Member 2 — bản đầu Chặng 4:** lượt gia sư cho 13 concept đã dùng nội dung KB, có giải thích/ví dụ, nguồn nội dung thực sự giao và report theo skill đóng băng cuối phiên. `TUTOR_RAG_MODE=full|no_rag` được ghim khi tạo session; phản hồi RAG dùng nguyên văn nội dung đã duyệt và không gọi API model. [Chi tiết phạm vi, test và bước tiếp theo](docs/implementation/member2/part4/README.md).
+
 ## Xem prototype
 
 Clone repo:
@@ -110,6 +114,6 @@ Runner ghi lại ảnh và kết quả trong `design/previews/`; xem diff trư�
 
 Đã có [audit và pipeline ASSISTments 2017](docs/research/data/README.md), [protocol observation](docs/research/data/observation-protocol.md) và [BKT baseline dev](docs/research/data/bkt-dev-v1.md). Cách chạy tái lập ở [runbook](docs/research/data/RUNBOOK.md). Test chưa đánh giá; chưa kiểm chứng ánh xạ skill sang chương trình Việt Nam hoặc đưa tham số nghiên cứu vào ứng dụng.
 
-Bước tiếp theo của dự án đã có [registry và pilot nội dung tiếng Việt](content/curriculum/README.md): 40 concept đề xuất, 10 pack nháp với 60 bài, 30 ví dụ, 20 mẫu lỗi và checker toán/graph. Chưa duyệt chuyên môn, chưa seed các pack vào web; bộ chấm online và các ID MVP giữ nguyên. Xem hướng dẫn để biên soạn, review và tiếp tục tích hợp KG/RAG.
+Nguồn [curriculum pilot](content/curriculum/README.md) lịch sử vẫn có 10 pack nháp với 60 bài, 30 ví dụ và 20 mẫu lỗi. Nguồn phục vụ KB hiện hành của Member 2 là [13 pack M2-ORIG02 đã duyệt](content/authoring/batches/member2-original.v2/manifest.json); không đồng nhất trạng thái duyệt của lô này với các pack draft lịch sử. Xem runbook KB để đồng bộ và tiếp tục tích hợp KG/RAG.
 
 Chưa chọn giấy phép phân phối mã nguồn; không tự áp một giấy phép cho dataset bên ngoài. Nhóm sẽ quyết định giấy phép phù hợp sau.

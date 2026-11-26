@@ -1,0 +1,2 @@
+-r ../backend/requirements.txt
+fastembed==0.9.1

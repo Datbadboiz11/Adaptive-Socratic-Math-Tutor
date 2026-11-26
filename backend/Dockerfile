@@ -1,7 +1,9 @@
 FROM python:3.12-slim
 WORKDIR /app
 COPY backend/requirements.txt ./requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/requirements-rag.txt ./requirements-rag.txt
+ARG INSTALL_RAG=false
+RUN if [ "$INSTALL_RAG" = "true" ]; then pip install --no-cache-dir -r requirements-rag.txt; else pip install --no-cache-dir -r requirements.txt; fi
 COPY backend/app ./app
 COPY backend/migrations ./migrations
 COPY content /content

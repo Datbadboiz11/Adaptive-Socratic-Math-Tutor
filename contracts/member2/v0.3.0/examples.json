@@ -1,0 +1,260 @@
+{
+  "curriculum_drafts": [
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "P-A01-01",
+      "content_version": "0.2.0",
+      "concept_id": "A01",
+      "primary_skill_id": "SK-A01-EVALUATE",
+      "family_id": "FAM-A01-linear",
+      "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 2*x+3. Giá trị x = -2.",
+      "task": {
+        "kind": "evaluate",
+        "expression": "2*x+3",
+        "variable_value": "-2"
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-F08-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "F08",
+      "primary_skill_id": "SK-F08-PRIMARY",
+      "family_id": "FAM-F08-M2-ORIG01-1",
+      "prompt": "Viết 3⁻² · 3⁵ dưới dạng một lũy thừa rồi tính chính xác. Nộp dạng cơ số^số mũ = giá trị.",
+      "task": {
+        "kind": "exponent_numeric",
+        "expression": "product; 3; -2; 5",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-A07-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "A07",
+      "primary_skill_id": "SK-A07-PRIMARY",
+      "family_id": "FAM-A07-M2-ORIG01-1",
+      "prompt": "Đặt nhân tử chung dương lớn nhất của 18*x+30. Nộp kết quả ở dạng tích.",
+      "task": {
+        "kind": "factored_polynomial",
+        "expression": "18*x+30",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-N05-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "N05",
+      "primary_skill_id": "SK-N05-PRIMARY",
+      "family_id": "FAM-N05-M2-ORIG01-1",
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+      "task": {
+        "kind": "fraction_compare",
+        "expression": "5/14 ? 7/18",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-F02-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "F02",
+      "primary_skill_id": "SK-F02-PRIMARY",
+      "family_id": "FAM-F02-M2-ORIG01-1",
+      "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+      "task": {
+        "kind": "function_domain",
+        "expression": "den; x-19",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-E09-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "E09",
+      "primary_skill_id": "SK-E09-PRIMARY",
+      "family_id": "FAM-E09-M2-ORIG01-1",
+      "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "task": {
+        "kind": "linear_elimination",
+        "expression": "2*x+1*y=8;1*x-1*y=1",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "P-E01-01",
+      "content_version": "0.2.0",
+      "concept_id": "E01",
+      "primary_skill_id": "SK-E01-EQUIVALENCE",
+      "family_id": "FAM-E01-add_subtract",
+      "prompt": "Với phương trình 2*x+3=11, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "2*x+3=11",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-N08-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "N08",
+      "primary_skill_id": "SK-N08-PRIMARY",
+      "family_id": "FAM-N08-M2-ORIG01-1",
+      "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+      "task": {
+        "kind": "number_conversion",
+        "expression": "13/40 -> decimal",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "P-N01-01",
+      "content_version": "0.2.0",
+      "concept_id": "N01",
+      "primary_skill_id": "SK-N01-SIGNED-ADD",
+      "family_id": "FAM-N01-opposite",
+      "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -7+4.",
+      "task": {
+        "kind": "numeric",
+        "expression": "-7+4",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "P-A02-01",
+      "content_version": "0.2.0",
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive",
+      "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 3*(x+2).",
+      "task": {
+        "kind": "polynomial",
+        "expression": "3*(x+2)",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-F05-M2-ORIG01-P-03",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "F05",
+      "primary_skill_id": "SK-F05-VERTEX",
+      "family_id": "FAM-F05-M2-ORIG01-2",
+      "prompt": "Tìm phương trình trục đối xứng của y = 4*x*x-12*x+11. Nộp phương trình dạng x = số.",
+      "task": {
+        "kind": "quadratic_axis",
+        "expression": "4*x*x-12*x+11",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-E06-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "E06",
+      "primary_skill_id": "SK-E06-PRIMARY",
+      "family_id": "FAM-E06-M2-ORIG01-1",
+      "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+      "task": {
+        "kind": "quadratic_roots",
+        "expression": "2*x*x-7*x+3",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "P-F05-01",
+      "content_version": "0.2.0",
+      "concept_id": "F05",
+      "primary_skill_id": "SK-F05-VERTEX",
+      "family_id": "FAM-F05-general",
+      "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: x*x-4*x+1.",
+      "task": {
+        "kind": "quadratic_vertex",
+        "expression": "x*x-4*x+1",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-A10-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "A10",
+      "primary_skill_id": "SK-A10-PRIMARY",
+      "family_id": "FAM-A10-M2-ORIG01-1",
+      "prompt": "Thực hiện phép cộng hai phân thức +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "task": {
+        "kind": "rational_operation",
+        "expression": "+; 2*x+5|x-3; x-2|x-3",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.3.0",
+      "problem_id": "D-E03-M2-ORIG01-P-01",
+      "content_version": "0.3.0-stage2-draft",
+      "concept_id": "E03",
+      "primary_skill_id": "SK-E03-PRIMARY",
+      "family_id": "FAM-E03-M2-ORIG01-1",
+      "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Hỏi mỗi ngăn có bao nhiêu quyển vở? Đặt x, ghi đơn vị, điều kiện nguyên dương và lập phương trình, giữ nguyên các thành phần theo đề.",
+      "task": {
+        "kind": "word_equation",
+        "expression": "x; quyển; positive_integer; 4*x+7=39",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    }
+  ],
+  "legacy_demo": {
+    "contract_version": "member2-proposal-0.3.0",
+    "problem_id": "LIN-001",
+    "content_version": "0.1.0",
+    "concept_id": "CON-LINEAR-01",
+    "primary_skill_id": "SK-LIN-SOLVE",
+    "family_id": "F-AX-B-C",
+    "prompt": "Giải phương trình 3x + 5 = 20. Em có thể viết từng bước hoặc nêu nghiệm.",
+    "task": {
+      "kind": "linear_equation",
+      "expression": "3x + 5 = 20",
+      "variable_value": null
+    },
+    "domain": "real_numbers",
+    "difficulty": "introductory"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "$defs": {
+    "ReviewChecklist": {
+      "additionalProperties": false,
+      "properties": {
+        "mathematics": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Mathematics",
+          "type": "string"
+        },
+        "curriculum_scope": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Curriculum Scope",
+          "type": "string"
+        },
+        "pedagogy_language": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Pedagogy Language",
+          "type": "string"
+        },
+        "disclosure": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Disclosure",
+          "type": "string"
+        },
+        "source_rights": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Source Rights",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mathematics",
+        "curriculum_scope",
+        "pedagogy_language",
+        "disclosure",
+        "source_rights"
+      ],
+      "title": "ReviewChecklist",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "protocol_version": {
+      "const": "authoring-1.0.0",
+      "default": "authoring-1.0.0",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "review_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Review Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "reviewed_at": {
+      "format": "date-time",
+      "title": "Reviewed At",
+      "type": "string"
+    },
+    "pack_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Pack Sha256",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "changes_requested",
+        "content_pass_source_pending"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "checklist": {
+      "$ref": "#/$defs/ReviewChecklist"
+    },
+    "comments": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Comments",
+      "type": "string"
+    }
+  },
+  "required": [
+    "review_id",
+    "reviewer",
+    "reviewed_at",
+    "pack_sha256",
+    "decision",
+    "checklist",
+    "comments"
+  ],
+  "title": "ContentReview",
+  "type": "object"
+}

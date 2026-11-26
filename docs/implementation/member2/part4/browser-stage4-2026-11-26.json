@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-11-26T09:56:04.008438+00:00",
+  "schema_isolated": true,
+  "checks": [
+    {
+      "concept": "N02",
+      "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+      "status": "passed"
+    },
+    {
+      "concept": "A10",
+      "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+      "status": "passed"
+    },
+    {
+      "concept": "F05",
+      "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+      "status": "passed"
+    },
+    {
+      "flow": "approved A10 complex fractions and E09 equation system; 390/1440 viewport",
+      "status": "passed"
+    },
+    {
+      "flow": "two-tab conflict rejects stale write and preserves the unsaved draft",
+      "status": "passed"
+    },
+    {
+      "flow": "response loss → same-request replay → example citation → pause/reload/resume",
+      "status": "passed"
+    },
+    {
+      "flow": "native MathML fraction/power/root and escaped untrusted text (synthetic browser payload)",
+      "status": "passed"
+    },
+    {
+      "flow": "switching profile clears session/report/draft; delayed history from the previous profile is discarded",
+      "status": "passed"
+    },
+    {
+      "flow": "keyboard skip link, Ctrl+Enter, feedback focus, Tab/Shift+Tab, report evidence anchors and BKT provenance (real legacy report)",
+      "status": "passed"
+    },
+    {
+      "flow": "production 45-second timeout via virtual clock, loading lock, preserved draft, keyboard retry with identical request ID and one committed turn",
+      "status": "passed"
+    }
+  ],
+  "browser_errors": [],
+  "viewports": [
+    1440,
+    390
+  ],
+  "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+  "chunk_count": 91,
+  "model_api_calls": 0,
+  "real_local_embeddings": true,
+  "schema_removed": true
+}

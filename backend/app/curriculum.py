@@ -7,8 +7,14 @@ from pydantic import Field, model_validator
 from app.contracts import Contract, Identifier, Review
 
 CONTENT_ROOT = Path(__file__).resolve().parents[2] / 'content' / 'curriculum'
+CURRENT_CURRICULUM_REVISION = 'v2'
 Text = Annotated[str, Field(min_length=1, max_length=2000)]
 TaskKind = Literal['numeric', 'evaluate', 'polynomial', 'linear_equation', 'quadratic_vertex']
+AuthoringTaskKind = Literal[
+    TaskKind, 'fraction_compare', 'number_conversion', 'factored_polynomial', 'rational_operation',
+    'word_equation', 'quadratic_roots', 'linear_elimination', 'function_domain', 'quadratic_axis',
+    'exponent_numeric',
+]
 
 
 class Source(Contract):
@@ -47,7 +53,7 @@ class Concept(Contract):
     skills: list[Skill] = Field(min_length=1)
     supported_forms: list[Text] = Field(min_length=1)
     excluded_forms: list[Text] = Field(min_length=1)
-    authoring_task_kinds: list[TaskKind] = Field(default_factory=list)
+    authoring_task_kinds: list[AuthoringTaskKind] = Field(default_factory=list)
     alignment: Alignment
     pilot: bool
     review: Review
@@ -137,9 +143,13 @@ class MathTask(Contract):
         return self
 
 
+class AuthoringMathTask(MathTask):
+    kind: AuthoringTaskKind
+
+
 class MathCase(Contract):
     case_id: Identifier
-    task: MathTask
+    task: AuthoringMathTask
     reference_answer: Annotated[str, Field(min_length=1, max_length=160)]
     reference_steps: list[Annotated[str, Field(min_length=1, max_length=160)]] = Field(min_length=1, max_length=12)
 
@@ -217,9 +227,9 @@ class PilotBank(Contract):
         return self
 
 
-def load_curriculum(root=CONTENT_ROOT):
-    registry = CurriculumRegistry.model_validate_json((root / 'registry.v1.json').read_text(encoding='utf-8'))
-    bank = PilotBank.model_validate_json((root / 'pilot.v1.json').read_text(encoding='utf-8'))
+def load_curriculum(root=CONTENT_ROOT, *, revision: Literal['v1', 'v2'] = 'v1'):
+    registry = CurriculumRegistry.model_validate_json((root / f'registry.{revision}.json').read_text(encoding='utf-8'))
+    bank = PilotBank.model_validate_json((root / f'pilot.{revision}.json').read_text(encoding='utf-8'))
     concepts = {c.concept_id: c for c in registry.concepts}
     if bank.content_version != registry.content_version:
         raise ValueError('Registry/pilot version mismatch')

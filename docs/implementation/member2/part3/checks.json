@@ -1,0 +1,74 @@
+[
+  {
+    "command": "scripts/checks/check_phase1.py",
+    "elapsed_seconds": 0.2763331001624465,
+    "exit_code": 0,
+    "stdout_sha256": "c1c6ab668c1df83eeec9de702fcdef2c2e45412b739c181d39d47c7d4ded50f6"
+  },
+  {
+    "command": "scripts/checks/check_curriculum.py",
+    "elapsed_seconds": 0.2951432999689132,
+    "exit_code": 0,
+    "stdout_sha256": "1bccdd789ef1d5a3c111e7959252deeefd0cd40814968eacd0f16e79aefb3fcc"
+  },
+  {
+    "command": "scripts/checks/check_member2_foundation.py",
+    "elapsed_seconds": 0.3101586000993848,
+    "exit_code": 0,
+    "stdout_sha256": "efd2943a8395c6f566b73b2c09c6cec982616a504561fc264313b63010fe3615"
+  },
+  {
+    "command": "scripts/checks/check_authoring.py",
+    "elapsed_seconds": 0.31695670005865395,
+    "exit_code": 0,
+    "stdout_sha256": "80a1d493c30c12b59f77340ec68868dc49887fb2faa26f3cb0f4dcb74923324b"
+  },
+  {
+    "command": "scripts/checks/check_oatutor_pilot.py",
+    "elapsed_seconds": 0.3359755000565201,
+    "exit_code": 0,
+    "stdout_sha256": "c96fe18b41cb057b63f38bdcd6b464fcffefa56175a8ed80d16b60986dc67f79"
+  },
+  {
+    "command": "scripts/checks/check_stage2_completion.py",
+    "elapsed_seconds": 0.39585929992608726,
+    "exit_code": 0,
+    "stdout_sha256": "d76dca4deea58c17399362a966e710631e119430608883284ac41bb2fb979d75"
+  },
+  {
+    "command": "scripts/checks/check_stage2_math.py",
+    "elapsed_seconds": 0.5866682000923902,
+    "exit_code": 0,
+    "stdout_sha256": "7d877dfb47e803fb357695a35c4f8ffd798567c9d2dfaddcf09e9def621c09e6"
+  },
+  {
+    "command": "scripts/checks/check_member2_ai_review.py",
+    "elapsed_seconds": 0.2981822001747787,
+    "exit_code": 0,
+    "stdout_sha256": "a61f7dd5c3f3e741bdbaa1070eb7b04a5d26b3fbdd148481ea2b85bd61e20ef8"
+  },
+  {
+    "command": "scripts/exports/export_contracts.py --check",
+    "elapsed_seconds": 0.26086179981939495,
+    "exit_code": 0,
+    "stdout_sha256": "ffa3c2893db738aac5de2c89aa41c3eb2244351dc6337e4151b6559841ec0efa"
+  },
+  {
+    "command": "scripts/exports/export_phase3_openapi.py --check",
+    "elapsed_seconds": 0.7022002001758665,
+    "exit_code": 0,
+    "stdout_sha256": "b9fb976d319270d65c153426e8d8dcae8f71860a5d594db800bc67a79ba7dc47"
+  },
+  {
+    "command": "scripts/exports/export_kb_contracts.py --check",
+    "elapsed_seconds": 0.4314129000995308,
+    "exit_code": 0,
+    "stdout_sha256": "9c498a800c803041756b9604d5c0bd2d5625b9b1c2d1606241edc7ea25f512e5"
+  },
+  {
+    "command": "scripts/checks/check_stage3_kb.py",
+    "elapsed_seconds": 0.4834035998210311,
+    "exit_code": 0,
+    "stdout_sha256": "e6092218c84ee65d13ce8b858e32af04716725818bbb5b17f3c9725f019bec88"
+  }
+]

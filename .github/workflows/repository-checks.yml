@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 15
     services:
       postgres:
-        image: postgres:17-bookworm
+        image: pgvector/pgvector:pg17
         env:
           POSTGRES_DB: mo_test
           POSTGRES_USER: mo_test
@@ -60,16 +60,34 @@ jobs:
       - name: Check Python syntax
         run: python3 -m py_compile design/audit_ui.py scripts/checks/check_repository.py
       - name: Check tracked files and documentation links
-        run: python3 scripts/checks/check_repository.py
+        run: |
+          python3 scripts/checks/check_release_inputs.py
+          python3 scripts/checks/check_repository.py
       - name: Install foundation test dependencies
         run: python3 -m pip install -r backend/requirements-dev.txt -r research/requirements.txt
       - name: Check content, schemas and foundation behavior
         run: |
           python3 scripts/checks/check_phase1.py
           python3 scripts/checks/check_curriculum.py
+          python3 scripts/checks/check_member2_foundation.py
+          python3 scripts/checks/check_authoring.py
           python3 scripts/exports/export_contracts.py --check
           python3 scripts/exports/export_phase3_openapi.py --check
-          python3 -m pytest tests -q
+          python3 scripts/exports/export_frontend_types.py --check
+          python3 scripts/exports/export_kb_contracts.py --check
+          python3 scripts/kb/build_member2_stage3_assets.py --check
+          python3 scripts/checks/check_stage3_kb.py
+          python3 scripts/checks/check_current_release.py --junitxml artifacts/ci-tests.xml
+      - name: Build backend image with CPU retrieval dependencies
+        run: docker build --build-arg INSTALL_RAG=true -f backend/Dockerfile -t mo-tutor-stage3:ci .
+      - name: Check packaged 13-concept KB assets
+        run: >-
+          docker run --rm --entrypoint python mo-tutor-stage3:ci -c
+          "from app.kb_projection import load_source,load_example_publications,load_profile,project;
+          r,b,o=load_source('member2-v2');
+          p=project(r,b,load_profile(),origin=o,examples=load_example_publications('member2-v2'));
+          assert len(b.packs)==13 and len(p.chunks)==91 and not p.blocked;
+          print('13 approved packs, 91 packaged chunks')"
       - name: Install frontend dependencies
         working-directory: frontend
         run: npm ci
@@ -78,5 +96,12 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: '1'
         run: |
+          npm test
           npm run typecheck
           npm run build
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-checks-evidence
+          path: artifacts/ci-tests.xml

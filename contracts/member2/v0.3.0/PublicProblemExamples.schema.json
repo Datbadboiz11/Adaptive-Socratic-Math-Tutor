@@ -1,0 +1,156 @@
+{
+  "$defs": {
+    "PublicProblemV3": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "member2-proposal-0.3.0",
+          "default": "member2-proposal-0.3.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "content_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Content Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "anyOf": [
+            {
+              "pattern": "^[NAEF](0[1-9]|10)$",
+              "type": "string"
+            },
+            {
+              "const": "CON-LINEAR-01",
+              "type": "string"
+            }
+          ],
+          "title": "Concept Id"
+        },
+        "primary_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Primary Skill Id",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "task": {
+          "$ref": "#/$defs/PublicTask"
+        },
+        "domain": {
+          "const": "real_numbers",
+          "default": "real_numbers",
+          "title": "Domain",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        }
+      },
+      "required": [
+        "problem_id",
+        "content_version",
+        "concept_id",
+        "primary_skill_id",
+        "family_id",
+        "prompt",
+        "task",
+        "difficulty"
+      ],
+      "title": "PublicProblemV3",
+      "type": "object"
+    },
+    "PublicTask": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex",
+            "fraction_compare",
+            "number_conversion",
+            "factored_polynomial",
+            "rational_operation",
+            "word_equation",
+            "quadratic_roots",
+            "linear_elimination",
+            "function_domain",
+            "quadratic_axis",
+            "exponent_numeric"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "PublicTask",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "curriculum_drafts": {
+      "items": {
+        "$ref": "#/$defs/PublicProblemV3"
+      },
+      "minItems": 1,
+      "title": "Curriculum Drafts",
+      "type": "array"
+    },
+    "legacy_demo": {
+      "$ref": "#/$defs/PublicProblemV3"
+    }
+  },
+  "required": [
+    "curriculum_drafts",
+    "legacy_demo"
+  ],
+  "title": "PublicProblemExamples",
+  "type": "object"
+}

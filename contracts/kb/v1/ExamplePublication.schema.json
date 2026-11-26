@@ -1,0 +1,140 @@
+{
+  "$defs": {
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Explicitly reviewed teaching text; never derive an example from private solutions.",
+  "properties": {
+    "case_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "content_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Version"
+    },
+    "pack_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Pack Hash",
+      "type": "string"
+    },
+    "family_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Family Id",
+      "type": "string"
+    },
+    "source_group": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Source Group",
+      "type": "string"
+    },
+    "lineage_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Lineage Ids",
+      "type": "array"
+    },
+    "difficulty": {
+      "anyOf": [
+        {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Difficulty"
+    },
+    "teaching_text": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Teaching Text",
+      "type": "string"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    }
+  },
+  "required": [
+    "case_id",
+    "pack_hash",
+    "family_id",
+    "source_group",
+    "lineage_ids",
+    "teaching_text",
+    "review"
+  ],
+  "title": "ExamplePublication",
+  "type": "object"
+}

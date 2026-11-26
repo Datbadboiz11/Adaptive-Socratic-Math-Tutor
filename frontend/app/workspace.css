@@ -416,3 +416,5 @@
         font-size: 16px
     }
 }
+.math-text{white-space:pre-wrap;overflow-wrap:anywhere}.math-text code{font-size:.95em;white-space:pre-wrap}.math-text math{font-size:1.1em;margin:0 .15em}.content-sources{list-style:none;padding:0;font-size:12px}.content-sources summary{cursor:pointer;color:#315f4c}.content-sources span{overflow-wrap:anywhere}.tutor-panel .support-note{font-size:12px;color:#506c5d}.skill-evidence{border-top:1px solid var(--line);padding:18px 0;margin-top:14px}.skill-evidence p{font-size:14px;line-height:1.6}
+.problem-formula{max-width:100%;overflow-x:auto;padding:12px 0 22px;font-size:1.3rem}.diagnosis{padding:12px 16px;margin:12px 0;border:1px solid var(--line);border-radius:10px}.report a{color:var(--green);text-decoration:underline}.report a:focus-visible,.report summary:focus-visible,.report-turn:focus-visible{outline:3px solid #bc9c50;outline-offset:3px}.report-turn{scroll-margin-top:24px;padding:12px 0}.bkt-provenance dd{margin:4px 0 12px;overflow-wrap:anywhere}.bkt-provenance dt{font-weight:600}.report details{font-size:13px}.math-text math{max-width:100%;overflow-x:auto;vertical-align:middle}.workspace summary{cursor:pointer}

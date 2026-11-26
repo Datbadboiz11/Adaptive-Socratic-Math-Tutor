@@ -1,0 +1,291 @@
+{
+  "review_date": "2026-11-16",
+  "timezone": "Asia/Bangkok",
+  "stage": "member2-part2",
+  "status": "technical_pipeline_complete_pending_live_api_and_real_human_review",
+  "environment": {
+    "python": "3.11.6",
+    "pydantic": "2.13.0",
+    "openai": "2.31.0"
+  },
+  "unit_test_counts": {
+    "authoring_unit": 30,
+    "foundation_unit": 39
+  },
+  "checks": [
+    {
+      "key": "authoring_unit",
+      "command": "python -m unittest discover -s tests -p test_content_authoring.py -v",
+      "exit_code": 0,
+      "output": "test_bad_math_replay_persists_failed_checks_instead_of_approving (test_content_authoring.AuthoringRunTests.test_bad_math_replay_persists_failed_checks_instead_of_approving) ... ok\r\ntest_manifest_cannot_reference_arbitrary_files (test_content_authoring.AuthoringRunTests.test_manifest_cannot_reference_arbitrary_files) ... ok\r\ntest_model_failure_has_safe_manifest_and_is_not_reviewable (test_content_authoring.AuthoringRunTests.test_model_failure_has_safe_manifest_and_is_not_reviewable) ... ok\r\ntest_modified_artifact_is_detected (test_content_authoring.AuthoringRunTests.test_modified_artifact_is_detected) ... ok\r\ntest_path_escape_and_runtime_bank_destination_are_rejected (test_content_authoring.AuthoringRunTests.test_path_escape_and_runtime_bank_destination_are_rejected) ... ok\r\ntest_review_context_change_is_detected_before_creating_approval (test_content_authoring.AuthoringRunTests.test_review_context_change_is_detected_before_creating_approval) ... ok\r\ntest_review_creates_separate_snapshot_and_preserves_original_draft (test_content_authoring.AuthoringRunTests.test_review_creates_separate_snapshot_and_preserves_original_draft) ... ok\r\ntest_run_is_replayable_and_overwrite_is_rejected_before_model_call (test_content_authoring.AuthoringRunTests.test_run_is_replayable_and_overwrite_is_rejected_before_model_call) ... ok\r\ntest_approval_requires_all_dimensions_and_independent_reviewer (test_content_authoring.AuthoringTests.test_approval_requires_all_dimensions_and_independent_reviewer) ... ok\r\ntest_cross_record_id_collision_and_existing_ids_are_rejected (test_content_authoring.AuthoringTests.test_cross_record_id_collision_and_existing_ids_are_rejected) ... ok\r\ntest_exact_task_duplicates_and_examples_copying_current_task_are_rejected (test_content_authoring.AuthoringTests.test_exact_task_duplicates_and_examples_copying_current_task_are_rejected) ... ok\r\ntest_exported_authoring_schemas_match_models (test_content_authoring.AuthoringTests.test_exported_authoring_schemas_match_models) ... ok\r\ntest_f05_reports_coverage_limit_instead_of_claiming_axis_checker (test_content_authoring.AuthoringTests.test_f05_reports_coverage_limit_instead_of_claiming_axis_checker) ... ok\r\ntest_family_source_group_and_skill_must_match_declared_scope (test_content_authoring.AuthoringTests.test_family_source_group_and_skill_must_match_declared_scope) ... ok\r\ntest_final_answer_in_polynomial_or_equation_hint_is_rejected (test_content_authoring.AuthoringTests.test_final_answer_in_polynomial_or_equation_hint_is_rejected) ... ok\r\ntest_machine_pass_does_not_fill_manual_review_template (test_content_authoring.AuthoringTests.test_machine_pass_does_not_fill_manual_review_template) ... ok\r\ntest_math_fail_cannot_be_approved_and_changes_requested_never_publishes (test_content_authoring.AuthoringTests.test_math_fail_cannot_be_approved_and_changes_requested_never_publishes) ... ok\r\ntest_missing_authoring_scope_or_unknown_source_is_rejected_before_generation (test_content_authoring.AuthoringTests.test_missing_authoring_scope_or_unknown_source_is_rejected_before_generation) ... ok\r\ntest_model_cannot_supply_review_or_version_metadata (test_content_authoring.AuthoringTests.test_model_cannot_supply_review_or_version_metadata) ... ok\r\ntest_n04_requires_reduced_form_not_only_equal_value (test_content_authoring.AuthoringTests.test_n04_requires_reduced_form_not_only_equal_value) ... ok\r\ntest_openai_adapter_uses_bounded_structured_output_without_retries (test_content_authoring.AuthoringTests.test_openai_adapter_uses_bounded_structured_output_without_retries) ... ok\r\ntest_prompt_contains_scope_versions_families_sources_and_budget (test_content_authoring.AuthoringTests.test_prompt_contains_scope_versions_families_sources_and_budget) ... ok\r\ntest_provider_failures_do_not_expose_secrets_or_call_again (test_content_authoring.AuthoringTests.test_provider_failures_do_not_expose_secrets_or_call_again) ... ok\r\ntest_real_sdk_parses_structured_output_with_mock_http_transport (test_content_authoring.AuthoringTests.test_real_sdk_parses_structured_output_with_mock_http_transport) ... ok\r\ntest_refusal_or_incomplete_response_is_not_a_valid_draft (test_content_authoring.AuthoringTests.test_refusal_or_incomplete_response_is_not_a_valid_draft) ... ok\r\ntest_review_is_bound_to_exact_hash_and_future_signatures_are_rejected (test_content_authoring.AuthoringTests.test_review_is_bound_to_exact_hash_and_future_signatures_are_rejected) ... ok\r\ntest_synthetic_pack_approval_does_not_approve_concept_or_alignment (test_content_authoring.AuthoringTests.test_synthetic_pack_approval_does_not_approve_concept_or_alignment) ... ok\r\ntest_two_configured_replays_pass_math_and_keep_drafts_unpublished (test_content_authoring.AuthoringTests.test_two_configured_replays_pass_math_and_keep_drafts_unpublished) ... ok\r\ntest_wrong_answer_step_and_unsupported_task_have_locations (test_content_authoring.AuthoringTests.test_wrong_answer_step_and_unsupported_task_have_locations) ... ok\r\ntest_wrong_first_error_and_unsafe_later_step_are_detected (test_content_authoring.AuthoringTests.test_wrong_first_error_and_unsafe_later_step_are_detected) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 30 tests in 1.923s\r\n\r\nOK\r\n",
+      "wall_time_seconds": 3.1208647,
+      "status": "PASS"
+    },
+    {
+      "key": "foundation_unit",
+      "command": "python -m unittest discover -s tests -p test_member2_foundation.py -v",
+      "exit_code": 0,
+      "output": "test_allowed_targets_do_not_authorize_their_cross_product (test_member2_foundation.Member2ContractTests.test_allowed_targets_do_not_authorize_their_cross_product) ... ok\r\ntest_current_problem_and_near_example_are_excluded (test_member2_foundation.Member2ContractTests.test_current_problem_and_near_example_are_excluded) ... ok\r\ntest_delivered_assistance_is_sticky_idempotent_and_keeps_maximum_level (test_member2_foundation.Member2ContractTests.test_delivered_assistance_is_sticky_idempotent_and_keeps_maximum_level) ... ok\r\ntest_delivery_rejects_wrong_opportunity_even_for_the_same_problem (test_member2_foundation.Member2ContractTests.test_delivery_rejects_wrong_opportunity_even_for_the_same_problem) ... ok\r\ntest_different_example_cannot_be_the_current_problem (test_member2_foundation.Member2ContractTests.test_different_example_cannot_be_the_current_problem) ... ok\r\ntest_different_example_requires_separate_public_task (test_member2_foundation.Member2ContractTests.test_different_example_requires_separate_public_task) ... ok\r\ntest_disclosure_ceiling_and_level_four_are_rejected (test_member2_foundation.Member2ContractTests.test_disclosure_ceiling_and_level_four_are_rejected) ... ok\r\ntest_draft_review_and_missing_provenance_cannot_be_retrieved (test_member2_foundation.Member2ContractTests.test_draft_review_and_missing_provenance_cannot_be_retrieved) ... ok\r\ntest_draft_template_cannot_be_labelled_reviewed_fallback (test_member2_foundation.Member2ContractTests.test_draft_template_cannot_be_labelled_reviewed_fallback) ... ok\r\ntest_empty_result_duplicate_and_semantic_version_rules (test_member2_foundation.Member2ContractTests.test_empty_result_duplicate_and_semantic_version_rules) ... ok\r\ntest_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot (test_member2_foundation.Member2ContractTests.test_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot) ... ok\r\ntest_examples_cover_all_five_supported_authoring_task_types (test_member2_foundation.Member2ContractTests.test_examples_cover_all_five_supported_authoring_task_types) ... ok\r\ntest_format_clarification_does_not_disqualify_independent_work (test_member2_foundation.Member2ContractTests.test_format_clarification_does_not_disqualify_independent_work) ... ok\r\ntest_legacy_eligibility_precedence_stays_unchanged (test_member2_foundation.Member2ContractTests.test_legacy_eligibility_precedence_stays_unchanged) ... ok\r\ntest_level_zero_explanation_is_assistance_only_when_delivered (test_member2_foundation.Member2ContractTests.test_level_zero_explanation_is_assistance_only_when_delivered) ... ok\r\ntest_new_feedback_does_not_retroactively_assist_the_first_submission (test_member2_foundation.Member2ContractTests.test_new_feedback_does_not_retroactively_assist_the_first_submission) ... ok\r\ntest_old_proposal_version_is_rejected_instead_of_silently_migrated (test_member2_foundation.Member2ContractTests.test_old_proposal_version_is_rejected_instead_of_silently_migrated) ... ok\r\ntest_one_observation_cannot_be_reported_as_evidence_for_two_skills (test_member2_foundation.Member2ContractTests.test_one_observation_cannot_be_reported_as_evidence_for_two_skills) ... ok\r\ntest_private_authoring_fields_are_not_projected_or_accepted (test_member2_foundation.Member2ContractTests.test_private_authoring_fields_are_not_projected_or_accepted) ... ok\r\ntest_public_task_requires_substitution_only_when_applicable (test_member2_foundation.Member2ContractTests.test_public_task_requires_substitution_only_when_applicable) ... ok\r\ntest_query_cannot_select_a_concept_or_skill_outside_server_permissions (test_member2_foundation.Member2ContractTests.test_query_cannot_select_a_concept_or_skill_outside_server_permissions) ... ok\r\ntest_report_accepts_two_own_observations_and_one_interleaved_observation (test_member2_foundation.Member2ContractTests.test_report_accepts_two_own_observations_and_one_interleaved_observation) ... ok\r\ntest_report_assisted_outcome_does_not_inflate_observation_count (test_member2_foundation.Member2ContractTests.test_report_assisted_outcome_does_not_inflate_observation_count) ... ok\r\ntest_report_rejects_fabricated_delta_and_inconsistent_totals (test_member2_foundation.Member2ContractTests.test_report_rejects_fabricated_delta_and_inconsistent_totals) ... ok\r\ntest_report_rejects_missing_duplicate_or_miscounted_observation_ids (test_member2_foundation.Member2ContractTests.test_report_rejects_missing_duplicate_or_miscounted_observation_ids) ... ok\r\ntest_retrieval_correlates_request_snapshot_and_limit (test_member2_foundation.Member2ContractTests.test_retrieval_correlates_request_snapshot_and_limit) ... ok\r\ntest_retrieval_enforces_identity_purpose_grade_and_difficulty (test_member2_foundation.Member2ContractTests.test_retrieval_enforces_identity_purpose_grade_and_difficulty) ... ok\r\ntest_retrieved_chunk_rejects_private_fields (test_member2_foundation.Member2ContractTests.test_retrieved_chunk_rejects_private_fields) ... ok\r\ntest_scope_rejects_duplicate_pairs_and_legacy_independent_lists (test_member2_foundation.Member2ContractTests.test_scope_rejects_duplicate_pairs_and_legacy_independent_lists) ... ok\r\ntest_server_scope_factory_checks_every_pair_against_registry (test_member2_foundation.Member2ContractTests.test_server_scope_factory_checks_every_pair_against_registry) ... ok\r\ntest_session_without_own_observations_does_not_import_other_session_changes (test_member2_foundation.Member2ContractTests.test_session_without_own_observations_does_not_import_other_session_changes) ... ok\r\ntest_student_query_cannot_override_server_scope_or_request_private_content (test_member2_foundation.Member2ContractTests.test_student_query_cannot_override_server_scope_or_request_private_content) ... ok\r\ntest_teaching_response_cannot_deny_assistance_even_at_level_zero (test_member2_foundation.Member2ContractTests.test_teaching_response_cannot_deny_assistance_even_at_level_zero) ... ok\r\ntest_approved_edge_to_draft_prerequisite_does_not_pass_readiness (test_member2_foundation.Member2CoverageTests.test_approved_edge_to_draft_prerequisite_does_not_pass_readiness) ... ok\r\ntest_coverage_keeps_registry_drafts_and_runtime_readiness_distinct (test_member2_foundation.Member2CoverageTests.test_coverage_keeps_registry_drafts_and_runtime_readiness_distinct) ... ok\r\ntest_draft_readiness_cannot_be_activated_with_client_ready_flag (test_member2_foundation.Member2CoverageTests.test_draft_readiness_cannot_be_activated_with_client_ready_flag) ... ok\r\ntest_generated_artifacts_match_current_sources_and_schema (test_member2_foundation.Member2CoverageTests.test_generated_artifacts_match_current_sources_and_schema) ... ok\r\ntest_human_content_review_alone_does_not_make_canonical_runtime_ready (test_member2_foundation.Member2CoverageTests.test_human_content_review_alone_does_not_make_canonical_runtime_ready) ... ok\r\ntest_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance (test_member2_foundation.Member2CoverageTests.test_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 39 tests in 0.173s\r\n\r\nOK\r\n",
+      "wall_time_seconds": 1.3171059999999999,
+      "status": "PASS"
+    },
+    {
+      "key": "authoring_check",
+      "command": "python scripts/checks/check_authoring.py",
+      "exit_code": 0,
+      "output": "PASS: authoring schemas, two offline pilot replays and draft publication boundary\r\n[{\"concept_id\": \"A02\", \"problems\": 6, \"examples\": 3, \"error_fixtures\": 2, \"check_passed\": true, \"review_status\": \"draft\", \"provider\": \"pilot_replay\", \"model_calls\": 0}, {\"concept_id\": \"E02\", \"problems\": 6, \"examples\": 3, \"error_fixtures\": 2, \"check_passed\": true, \"review_status\": \"draft\", \"provider\": \"pilot_replay\", \"model_calls\": 0}]\r\n",
+      "wall_time_seconds": 1.2277386,
+      "status": "PASS"
+    },
+    {
+      "key": "foundation_check",
+      "command": "python scripts/checks/check_member2_foundation.py",
+      "exit_code": 0,
+      "output": "PASS: Member 2 proposed schemas, synthetic fixtures and coverage are consistent\r\n{\"approved_packs\": 0, \"draft_packs\": 10, \"error_fixtures\": 20, \"examples\": 30, \"hints\": 30, \"packs_present\": 10, \"problems\": 60, \"proposed_owner_counts\": {\"Member 1\": 13, \"Member 2\": 13, \"Member 3\": 14}, \"public_chunks\": 0, \"ready_concepts\": 0, \"registry_concepts\": 40}\r\n",
+      "wall_time_seconds": 1.2444234,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_contracts",
+      "command": "python scripts/exports/export_contracts.py --check",
+      "exit_code": 0,
+      "output": "PASS: 15 contract schemas\r\n",
+      "wall_time_seconds": 1.3170319,
+      "status": "PASS"
+    },
+    {
+      "key": "curriculum_check",
+      "command": "python scripts/checks/check_curriculum.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"registry_concepts\": 40,\r\n  \"pilot_concepts\": 10,\r\n  \"edges\": 68,\r\n  \"concept_review_counts\": {\r\n    \"draft\": 40\r\n  },\r\n  \"coverage\": [\r\n    {\r\n      \"concept_id\": \"A01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A03\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F05\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N04\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    }\r\n  ],\r\n  \"note\": \"Authoring checks only. Drafts are not seeded into the MVP or published to learners.\"\r\n}\r\n",
+      "wall_time_seconds": 1.1174347,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_content",
+      "command": "python scripts/checks/check_phase1.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"problems\": [\r\n    {\r\n      \"problem_id\": \"LIN-001\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-002\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-003\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-004\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-005\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-006\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    }\r\n  ],\r\n  \"family_counts\": {\r\n    \"F-AX-B-C\": 2,\r\n    \"F-A-XB-C\": 2,\r\n    \"F-AXB-CXD\": 2\r\n  },\r\n  \"note\": \"Authoring checks only; human pedagogical review and learner validator are pending.\"\r\n}\r\n",
+      "wall_time_seconds": 1.0244299,
+      "status": "PASS"
+    },
+    {
+      "key": "python_syntax",
+      "command": "python -c \"import ast; from pathlib import Path; paths=list(Path('.').rglob('*.py')); [ast.parse(p.read_text(encoding='utf-8-sig'), filename=str(p)) for p in paths]; print(f'PASS: {len(paths)} Python source files')\"",
+      "exit_code": 0,
+      "output": "PASS: 56 Python source files\r\n",
+      "wall_time_seconds": 0.6601563,
+      "status": "PASS"
+    }
+  ],
+  "cli_draft_commands": [
+    {
+      "concept": "a02",
+      "exit_code": 0,
+      "output": "{\"run\": \"D:\\\\Download\\\\Adaptive-Socratic-Math-Tutor-update_v1\\\\artifacts\\\\authoring\\\\m2-a02-stage2\", \"status\": \"draft_ready\", \"generation\": {\"provider\": \"pilot_replay\", \"model_calls\": 0, \"source_pack_sha256\": \"7f72c558355570ff2b8660a007616c860bdbb42e1073b71c76d3c1a6d1bbb005\", \"note\": \"Existing draft content replayed for pipeline verification; family/source groups preserved.\"}}\r\n"
+    },
+    {
+      "concept": "e02",
+      "exit_code": 0,
+      "output": "{\"run\": \"D:\\\\Download\\\\Adaptive-Socratic-Math-Tutor-update_v1\\\\artifacts\\\\authoring\\\\m2-e02-stage2\", \"status\": \"draft_ready\", \"generation\": {\"provider\": \"pilot_replay\", \"model_calls\": 0, \"source_pack_sha256\": \"e2b5cd64f3d4d98f9bbc3db3cb96cfa927a45d7ac4af1b9cac2e25e773ff4aa1\", \"note\": \"Existing draft content replayed for pipeline verification; family/source groups preserved.\"}}\r\n"
+    }
+  ],
+  "replay_evidence": [
+    {
+      "run_id": "m2-a02-stage2",
+      "manifest": {
+        "artifact_sha256": {
+          "checks.json": "9da03d05cb178cecb3e8f21c9fef1e313344358cfcbea3387cf9e030a0b16afe",
+          "draft.json": "95b9a89ecfa61513cd4dee423b4692ca7a7d57208838747ce24b38692bf4b118",
+          "generated.json": "4ff7a9a1b89d4b64a81f40702c880d4caf711c189062e3fa315ee51f707791d6",
+          "prompt.json": "6095f844fa7500e22cd2d92debb0c924648c29d24b87ca6a60c81fe3ec964393",
+          "request.json": "cf8efe0a3989b61fdf2b81ff1abfcdb42b96cdb7a593155e5fe8f60523d73689",
+          "review-template.json": "0697c2f848385ca74ff4842fd1a1539f2199ad95b2c7d3389b51e88d4eb27d16"
+        },
+        "bank_sha256": "b70800eca2b0a994321af9fb1b34f356a25c5acbc12a925cdf08c487760ad52a",
+        "created_at": "2026-11-16T16:29:28.929499+00:00",
+        "generation": {
+          "model_calls": 0,
+          "note": "Existing draft content replayed for pipeline verification; family/source groups preserved.",
+          "provider": "pilot_replay",
+          "source_pack_sha256": "7f72c558355570ff2b8660a007616c860bdbb42e1073b71c76d3c1a6d1bbb005"
+        },
+        "human_review": "pending",
+        "prompt_sha256": "2dd1085c4e6bb4f6497ab1a009119632cec1fa7009fbbef088c1e9ab40521660",
+        "prompt_version": "draft-pack-1.0.0",
+        "protocol_version": "authoring-1.0.0",
+        "publication": "draft_only_not_seeded",
+        "registry_sha256": "bbd43bcfabc65b936adfb4ed4e6803cd99b21ac10ea3825856379b04c27e7e1a",
+        "request_sha256": "2912aaee3d999bbd3308914aeb0c82096d9d446c35b45efbfbe28e177d0540a9",
+        "run_id": "m2-a02-stage2",
+        "status": "draft_ready"
+      },
+      "checks": {
+        "issues": [
+          {
+            "code": "human_review_required",
+            "message": "Curriculum, source rights, Vietnamese, pedagogical goal/form and hint math/disclosure require independent human review",
+            "path": "$",
+            "severity": "warning"
+          }
+        ],
+        "pack_sha256": "4553d5cf29d47f7e499fbbbef5db3260d72d0647da0768516835a8cd7990816f",
+        "passed": true,
+        "protocol_version": "authoring-1.0.0"
+      },
+      "review_template": {
+        "checklist": {
+          "curriculum_scope": "not_checked",
+          "disclosure": "not_checked",
+          "mathematics": "not_checked",
+          "pedagogy_language": "not_checked",
+          "source_rights": "not_checked"
+        },
+        "comments": "Điền người/thời điểm review thật, kết quả từng mục và nhận xét trước khi gửi.",
+        "decision": "changes_requested",
+        "pack_sha256": "4553d5cf29d47f7e499fbbbef5db3260d72d0647da0768516835a8cd7990816f",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "FILL-UNIQUE-REVIEW-ID",
+        "reviewed_at": null,
+        "reviewer": null
+      }
+    },
+    {
+      "run_id": "m2-e02-stage2",
+      "manifest": {
+        "artifact_sha256": {
+          "checks.json": "3bbf1a1265cf544612283705c1ee33be668fd896d16fbeb2cc77b11fed636b66",
+          "draft.json": "daf87756588971dc3d7e23743e12bc0c3843af5544cd20d277b4fbf4ee1da797",
+          "generated.json": "81a28827af717de3e8924c0443533eae3ac29fe4bedd8e3939f40195070b7cfb",
+          "prompt.json": "fcd3ac4610996e8ed286b3e4ac03c64ab2aafb10d903f5675bc8c3a3c28c94b1",
+          "request.json": "7679c95e7414bf3bbd7af0e85eeb2d6b21ad266f4aa956bea7a9b70a9cae9f04",
+          "review-template.json": "b7d0b062c062ffce5db60be0caa1f7fd80bb54d4c55c0fb4a543c52bfcf1bd5a"
+        },
+        "bank_sha256": "b70800eca2b0a994321af9fb1b34f356a25c5acbc12a925cdf08c487760ad52a",
+        "created_at": "2026-11-16T16:29:29.567154+00:00",
+        "generation": {
+          "model_calls": 0,
+          "note": "Existing draft content replayed for pipeline verification; family/source groups preserved.",
+          "provider": "pilot_replay",
+          "source_pack_sha256": "e2b5cd64f3d4d98f9bbc3db3cb96cfa927a45d7ac4af1b9cac2e25e773ff4aa1"
+        },
+        "human_review": "pending",
+        "prompt_sha256": "ad1b13d45c6d840acbcea8f2795ebb6c06cfb2ec7a329bbd868d8f8341b00ecc",
+        "prompt_version": "draft-pack-1.0.0",
+        "protocol_version": "authoring-1.0.0",
+        "publication": "draft_only_not_seeded",
+        "registry_sha256": "bbd43bcfabc65b936adfb4ed4e6803cd99b21ac10ea3825856379b04c27e7e1a",
+        "request_sha256": "358ec79d1e1e722848d1b11ab950794f535c21ad4fbaa8ad1173d82b1802c3a3",
+        "run_id": "m2-e02-stage2",
+        "status": "draft_ready"
+      },
+      "checks": {
+        "issues": [
+          {
+            "code": "human_review_required",
+            "message": "Curriculum, source rights, Vietnamese, pedagogical goal/form and hint math/disclosure require independent human review",
+            "path": "$",
+            "severity": "warning"
+          }
+        ],
+        "pack_sha256": "eca050577ce858314dab55f57583ad3e390cf99965f0f125868f859da374c994",
+        "passed": true,
+        "protocol_version": "authoring-1.0.0"
+      },
+      "review_template": {
+        "checklist": {
+          "curriculum_scope": "not_checked",
+          "disclosure": "not_checked",
+          "mathematics": "not_checked",
+          "pedagogy_language": "not_checked",
+          "source_rights": "not_checked"
+        },
+        "comments": "Điền người/thời điểm review thật, kết quả từng mục và nhận xét trước khi gửi.",
+        "decision": "changes_requested",
+        "pack_sha256": "eca050577ce858314dab55f57583ad3e390cf99965f0f125868f859da374c994",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "FILL-UNIQUE-REVIEW-ID",
+        "reviewed_at": null,
+        "reviewer": null
+      }
+    }
+  ],
+  "source_sha256": {
+    "contracts/authoring/v1/GeneratedContent.schema.json": "fe82927f49f1c77582d53a6d9ba347552692a7aa447990a886e89c95c13b2793",
+    "tests/test_content_authoring.py": "e432f203e1ea2ba1e1e0709f0cca45d55b1d159c07f442442acd51272ea4c7be",
+    "docs/planning/member-2-plan.md": "c2f196908091a441c84e03e09633a1be0e6b8f4a00863341dbdc0f51c82b2afc",
+    "contracts/authoring/v1/DraftRequest.schema.json": "4f8e72934ca9e505aae70d9c68f60a8723ad52320d9e344918c07b93aa89e1ac",
+    "contracts/authoring/v1/ContentReview.schema.json": "da8ec86548964770592c9c60677b9d1833cb0171a2917c414daa5d9cff6e7c91",
+    "backend/app/authoring_runs.py": "171d12a25083e214d2ba32835d280fae02a8be5c00a8be8e874337147640b60f",
+    "content/authoring/configs/a02.v1.json": "76e8a6fdb4a332b13ebcd0fad270c62c90e912c481cd386c811c83ec0577b96e",
+    "content/authoring/README.md": "36008b107c0ac2166dc18826c2c7bfa6b2884270b3a408dea3f4f60c9c432ae0",
+    "scripts/authoring/draft_content.py": "ccac18c113d4bad8a63f204cb1106e1aa04ce4d1c1838fbca09bf71b4f1a2fb0",
+    ".github/workflows/repository-checks.yml": "7947a7684f90570320da6d97e6ed062a3df75bc4e29e97633bf219eb97c18244",
+    "scripts/README.md": "b57b801d7ff5b459cd18d48d45797d21e0a5f27b23f2f5cdc295c063f07159b6",
+    "docs/implementation/member2/part2/README.md": "21685cd59e963ad64a69c218ac2bf55e9f6ebc88ad53eba5d90fea93607a4d18",
+    "content/authoring/configs/e02.v1.json": "bd4dc7d7f2f52c79681f191c6d4b3b107c8791e991c8519adda64f7d831ede2a",
+    ".env.example": "e1229ccce8a14c3dbe9c364635508e903c4667e8e3f8f0e91fab02eb08459fb2",
+    "scripts/checks/check_authoring.py": "4e41f64f8ee066b6a41791387d53e593f98bf946148eee9c2d6e897764c0ae2e",
+    "content/authoring/prompts/draft.v1.txt": "2a1cd46a3c1785cd20bffda27cfa703db1c0f24ea2aab98178ab381e6821454e",
+    "backend/app/content_authoring.py": "0c950fb208c5bccece7f4999b2995cd0c8ddcccdc7bce511ed11fc4d3ddecde1"
+  },
+  "protected_baseline_sha256": {
+    "frontend/app/workspace.tsx": "debcee682c2390194170bd893e4ccde34c44039be2cdd406c8c685e64a2eea11",
+    "backend/app/tutor.py": "08086d7cd4b60915a5b1b0856203dc0d406cf8b238f1be2779ef6a855570a0b7",
+    "backend/app/knowledge.py": "50c4388205a446c40d3820ac8830e6f71ce5208a8f5ac2826c6fddb10421fb17",
+    "backend/migrations/001_sessions.sql": "d98f869f99f6e3215c23f8a4bb08af9cdc0d7c52f3b2dfdb134eaeae450a73ff",
+    "backend/app/curriculum.py": "dfeddb165e16a0ddf5c9432bb6667dcd0314e7e6d57a0a6e653eb76d79cde5df",
+    "backend/app/member2_contracts.py": "54341a8872404781090fb1f58778dedcba5e394b1a5034600f09797505ecc47e",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "backend/app/member2_foundation.py": "cdda5bc83b499762be5d348b3f1b71deff0fab929640688b05579e973e69cdd5",
+    "content/curriculum/registry.v1.json": "7b05496609ebf89846de912508ae786119d33d16c59f15467ee513ba01ad76ea",
+    "content/curriculum/pilot.v1.json": "a95bbe718ebd1814390e5023ad84c888199131c4a57369c164f498ca6daddc89",
+    "backend/app/contracts.py": "ec289fb16f4e7ed4322c00661755aef314f72db9382fbabc481837d21f7a05a7",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "backend/app/sessions.py": "8572b9544ea7c17f7a0a0b3b0fd8482844b158149d810f22c71554848d10fceb",
+    "backend/app/authoring_math.py": "c12e3f6f10b6262f6d2e6532b3f411d5aa0313776734317d7ffb8e07176495b8",
+    "backend/migrations/002_tutor.sql": "4eae968ff43a65d8f90b8ee2e8687f0669660be22169e9ad5ca7101785476431",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b",
+    "backend/app/tutor_service.py": "e1e4bacc6ca17f82d134bd19e68018576d889f985a2dd1dfcb2d6560032c568a"
+  },
+  "live_openai": {
+    "status": "NOT_RUN",
+    "reason": "OPENAI_API_KEY was not configured in the execution environment.",
+    "paid_calls_made": 0
+  },
+  "sdk_adapter": {
+    "status": "PASS",
+    "transport": "Real installed OpenAI SDK with httpx.MockTransport; no external network request."
+  },
+  "human_review": {
+    "status": "pending",
+    "real_approved_packs": 0,
+    "note": "Review approvals in unit tests are synthetic and do not approve curriculum."
+  },
+  "runtime_publication": {
+    "new_published_concepts": 0,
+    "pilot_registry_unchanged": true,
+    "stage3_started": false
+  },
+  "not_run": [
+    {
+      "check": "Full pytest / API / DB integration",
+      "reason": "Backend test dependencies/DB runtime are unavailable. This stage changes no runtime API/DB code; targeted authoring and foundation tests passed."
+    },
+    {
+      "check": "Remote CI",
+      "reason": "Workflow check updated locally; no remote run triggered."
+    },
+    {
+      "check": "Frontend build / browser",
+      "reason": "No frontend change in this stage."
+    }
+  ],
+  "review_findings": [
+    "Schema, exact arithmetic checks and simple disclosure checks are not substitutes for independent review of Vietnamese, curriculum alignment, family diversity, source rights or pedagogical correctness.",
+    "Pilot replays preserve source groups, are not newly authored exercises, and are not held-out evaluation data.",
+    "OpenAI output quality, latency and actual usage/cost still need a live pilot with the team's configured key/model.",
+    "Artifacts use immutable run files and hash-bound review; interrupted runs remain for inspection. No files were deleted.",
+    "Scope approval and content publication remain separate gates. Stage 3 has not started."
+  ]
+}

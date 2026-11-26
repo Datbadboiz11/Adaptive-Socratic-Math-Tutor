@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-23T22:39:39+07:00",
+  "diagnostics": [
+    {
+      "check": "model_metadata",
+      "elapsed_ms": 561,
+      "http_status": 200,
+      "model_found": true
+    },
+    {
+      "candidate_count": 0,
+      "check": "minimal_native_generation",
+      "elapsed_ms": 1185,
+      "error_categories": [],
+      "http_status": 503,
+      "provider_error_reasons": [],
+      "provider_error_status": "UNAVAILABLE",
+      "quota_limit_zero_reported": false
+    },
+    {
+      "check": "openai_compatible_authoring",
+      "elapsed_ms": 1418,
+      "http_status": 503,
+      "validated_pack": false
+    }
+  ],
+  "model_requested": "gemini-3.1-flash-lite",
+  "native_cli_authoring": {
+    "http_status": 503,
+    "manifest_sha256": "ca6136585f4e2f0af4f58b32b04b2a6e8f410ca3863985c32fb6d342342aed54",
+    "model_call_attempts": 1,
+    "run_id": "a02-gem-retest-1ff5fdab",
+    "status": "failed",
+    "validated_pack": false
+  },
+  "provider": "gemini",
+  "real_authoring_pack_validated": false
+}
