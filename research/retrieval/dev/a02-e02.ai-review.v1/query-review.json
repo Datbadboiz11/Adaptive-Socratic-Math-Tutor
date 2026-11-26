@@ -1,0 +1,142 @@
+{
+  "review_id": "AI-M1-M3-20261118-v1",
+  "review_kind": "ai_review_for_development",
+  "evidence_origin": "reconstructed_from_retained_query_rationales_and_qrels_on_2026-11-26",
+  "original_review_files_available": false,
+  "queries": [
+    {
+      "query_id": "DEV-A02-01",
+      "comment": "Explanation mô tả phải nhân từng hạng tử nhưng chưa giải thích cơ sở của quy tắc để đáp ứng đầy đủ câu hỏi vì sao. Giữ là hỗ trợ một phần.",
+      "corrections": [
+        {
+          "content_id": "DEV-A02-M2-OAT02-explanation",
+          "from": 2,
+          "to": 1,
+          "reason": "Nội dung nêu quy tắc nhưng chưa giải thích đầy đủ cơ sở của quy tắc phân phối; hạ từ trực tiếp xuống hỗ trợ một phần."
+        }
+      ]
+    },
+    {
+      "query_id": "DEV-A02-02",
+      "comment": "Explanation áp dụng cùng quy tắc phân phối và giải thích dấu khi hệ số âm; đáp ứng trực tiếp.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-03",
+      "comment": "Explanation nêu giữ dấu của hạng tử bị trừ và nhân thừa số với mọi hạng tử; phù hợp dạng hiệu.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-04",
+      "comment": "Câu âm nhân âm cho kết quả dương đáp ứng trực tiếp câu hỏi về dấu. Đây là câu hỏi quy tắc chung, không phải log chẩn đoán học sinh.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-05",
+      "comment": "Explanation chỉ rõ viết riêng các tích để tránh bỏ sót và sai dấu, phù hợp yêu cầu vì sao nên tách bước.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-06",
+      "comment": "Hint 1 là câu hỏi định hướng nhận diện hạng tử; chỉ level 1 đủ quyền nên giữ grade 2 cho hint này.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-07",
+      "comment": "Hint 2 trực tiếp yêu cầu nhân từng hạng tử; hint 1 chỉ hỗ trợ nhận diện, giữ grade 1/2 tương ứng.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-08",
+      "comment": "Hint 3 cung cấp khung viết tích riêng và xác định dấu; hint 1/2 hỗ trợ một phần nhưng chưa đủ scaffold.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-09",
+      "comment": "Hint 2 nhắc nhân mọi hạng tử và giữ dấu trừ, đúng chiến lược tránh bỏ sót hằng số; hint 1 có ích một phần.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-10",
+      "comment": "Hint 3 hướng dẫn xác định dấu từng thừa số trước khi ghép, trực tiếp đáp ứng khung bước; các hint thấp hơn hỗ trợ một phần.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-11",
+      "comment": "Hint level 0 không cho phép lấy hint 1–3; tất cả judgments phải bằng 0 dù đúng concept.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-A02-12",
+      "comment": "Corpus chỉ có explanation/hint. Không lấy bước giải private để đáp ứng purpose example; giữ ca fallback.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-01",
+      "comment": "Explanation định nghĩa giữ tập nghiệm và nêu các phép biến đổi, trực tiếp hỗ trợ khái niệm tương đương.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-02",
+      "comment": "Explanation dùng ý cân bằng khi trừ cùng biểu thức ở hai vế; chấp nhận trực tiếp ở mức giải thích khái niệm của pilot.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-03",
+      "comment": "Revision M2-OAT02 đã nêu chia cho 0 không xác định và phép nhân với 0 không có nghịch đảo. Giữ grade 2 cho revision này, không sửa grade ở v1.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-04",
+      "comment": "Explanation cho phép chia trước cho hệ số khác không khi phù hợp, trả lời trực tiếp khả năng chọn cách làm.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-05",
+      "comment": "Câu hỏi chỉ yêu cầu cách kiểm tra lại; lời nhắc thay kết quả vào phương trình gốc đáp ứng mức này.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-06",
+      "comment": "Hint 1 hướng quan sát cấu trúc và vị trí ẩn, phù hợp mức trợ giúp thấp nhất và không đưa nghiệm.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-07",
+      "comment": "Hint 2 đề xuất cộng/trừ cùng biểu thức để gom ẩn; hint 1 giúp quan sát nhưng chưa đủ chiến lược.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-08",
+      "comment": "Hint 3 nói rõ ghi phép toán ở cả hai vế và chia hệ số khác không, trực tiếp khớp khung tách ẩn.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-09",
+      "comment": "Hint 2 xử lý ngoặc rồi thu gọn trước khi gom ẩn; grade 2 phù hợp, hint 1 hỗ trợ một phần.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-10",
+      "comment": "Query yêu cầu các bước tự đối chiếu. Hint 3 mới nhắc thay kết quả, chưa tách việc tính hai vế và so sánh; chỉ hỗ trợ một phần. Hint 1/2 không hướng dẫn kiểm tra nên giữ 0.",
+      "corrections": [
+        {
+          "content_id": "DEV-E02-M2-OAT02-hint-3",
+          "from": 2,
+          "to": 1,
+          "reason": "Hint nhắc thay nghiệm nhưng chưa tách bước tính hai vế và so sánh; hạ từ trực tiếp xuống hỗ trợ một phần."
+        }
+      ]
+    },
+    {
+      "query_id": "DEV-E02-11",
+      "comment": "Server chỉ cấp hint level 0, không có hint đủ quyền; giữ toàn bộ grade 0.",
+      "corrections": []
+    },
+    {
+      "query_id": "DEV-E02-12",
+      "comment": "Purpose example không có ứng viên trong corpus này; không tự chiếu reference_steps thành ví dụ đã duyệt.",
+      "corrections": []
+    }
+  ]
+}

@@ -74,20 +74,24 @@ def pair(text):
 
 
 def expected(task):
-    p = polynomial(task.expression) if task.kind != 'linear_equation' else None
     if task.kind == 'numeric':
         return scalar(task.expression)
     if task.kind == 'evaluate':
+        p = polynomial(task.expression)
         x = scalar(task.variable_value or '')
         return p[0] + p[1]*x + p[2]*x*x
     if task.kind == 'polynomial':
-        return p
+        return polynomial(task.expression)
     if task.kind == 'linear_equation':
         return linear_solution(task.expression)
-    if task.kind == 'quadratic_vertex' and p[2] != 0:
+    if task.kind == 'quadratic_vertex':
+        p = polynomial(task.expression)
+        if p[2] == 0:
+            raise ValueError('Expected a quadratic')
         x = -p[1]/(2*p[2])
-        return (x, p[0] + p[1]*x + p[2]*x*x)
-    raise ValueError('Unsupported task')
+        return x, p[0] + p[1]*x + p[2]*x*x
+    from app.authoring_extended_math import TASK_CHECKS
+    return TASK_CHECKS[task.kind][0](task.expression)
 
 
 def response_value(task, response):
@@ -99,7 +103,8 @@ def response_value(task, response):
         return linear_solution(response) if '=' in response else scalar(response)
     if task.kind == 'quadratic_vertex':
         return pair(response)
-    raise ValueError('Unsupported response')
+    from app.authoring_extended_math import TASK_CHECKS
+    return TASK_CHECKS[task.kind][1](task.expression, response)
 
 
 def audit_case(case):

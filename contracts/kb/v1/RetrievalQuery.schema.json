@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Query",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^[NAEF](0[1-9]|10)$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "target_skill_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Target Skill Id",
+      "type": "string"
+    },
+    "purpose": {
+      "enum": [
+        "explanation",
+        "hint",
+        "example"
+      ],
+      "title": "Purpose",
+      "type": "string"
+    },
+    "top_k": {
+      "default": 3,
+      "maximum": 10,
+      "minimum": 1,
+      "title": "Top K",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "query",
+    "concept_id",
+    "target_skill_id",
+    "purpose"
+  ],
+  "title": "RetrievalQuery",
+  "type": "object"
+}

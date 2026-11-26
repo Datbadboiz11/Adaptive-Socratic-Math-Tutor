@@ -1,0 +1,678 @@
+{
+  "contract_version": "member2-proposal-0.2.0",
+  "fixture_origin": "synthetic_contract_examples_not_reviewed_curriculum",
+  "problems": [
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "problem_id": "P-A01-01",
+      "content_version": "0.1.0",
+      "concept_id": "A01",
+      "primary_skill_id": "SK-A01-EVALUATE",
+      "family_id": "FAM-A01-linear",
+      "prompt": "Tính giá trị biểu thức tại giá trị biến đã cho. Biểu thức/công thức: 2*x+3. Giá trị x = -2.",
+      "task": {
+        "kind": "evaluate",
+        "expression": "2*x+3",
+        "variable_value": "-2"
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "problem_id": "P-A02-01",
+      "content_version": "0.1.0",
+      "concept_id": "A02",
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "family_id": "FAM-A02-positive",
+      "prompt": "Biến đổi biểu thức theo tính phân phối hoặc thu gọn; trình bày các bước. Biểu thức/công thức: 3*(x+2).",
+      "task": {
+        "kind": "polynomial",
+        "expression": "3*(x+2)",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "problem_id": "P-E01-01",
+      "content_version": "0.1.0",
+      "concept_id": "E01",
+      "primary_skill_id": "SK-E01-EQUIVALENCE",
+      "family_id": "FAM-E01-add_subtract",
+      "prompt": "Với phương trình 2*x+3=11, viết ít nhất một bước biến đổi tương đương rồi tìm nghiệm; kiểm tra phép toán đã làm ở cả hai vế.",
+      "task": {
+        "kind": "linear_equation",
+        "expression": "2*x+3=11",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "problem_id": "P-F05-01",
+      "content_version": "0.1.0",
+      "concept_id": "F05",
+      "primary_skill_id": "SK-F05-VERTEX",
+      "family_id": "FAM-F05-general",
+      "prompt": "Tìm tọa độ đỉnh của hàm bậc hai; viết theo thứ tự (hoành độ, tung độ). Biểu thức/công thức: x*x-4*x+1.",
+      "task": {
+        "kind": "quadratic_vertex",
+        "expression": "x*x-4*x+1",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "problem_id": "P-N01-01",
+      "content_version": "0.1.0",
+      "concept_id": "N01",
+      "primary_skill_id": "SK-N01-SIGNED-ADD",
+      "family_id": "FAM-N01-opposite",
+      "prompt": "Tính và trình bày các bước. Với phân số, viết dạng tối giản có mẫu dương. Biểu thức/công thức: -7+4.",
+      "task": {
+        "kind": "numeric",
+        "expression": "-7+4",
+        "variable_value": null
+      },
+      "domain": "real_numbers",
+      "difficulty": "introductory"
+    }
+  ],
+  "readiness": [
+    {
+      "concept_id": "A02",
+      "has_pack": true,
+      "alignment_approved": false,
+      "concept_approved": false,
+      "pack_approved": false,
+      "prerequisites_approved": false,
+      "validator_integrated": false,
+      "ui_policy_verified": false,
+      "contract_review_complete": false
+    }
+  ],
+  "retrieval_exchanges": [
+    {
+      "request": {
+        "contract_version": "member2-proposal-0.2.0",
+        "request_id": "00000000-0000-4000-8000-000000000003",
+        "query": {
+          "query": "Em chưa hiểu cách nhân vào ngoặc.",
+          "concept_id": "A02",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "purpose": "hint",
+          "top_k": 3
+        },
+        "scope": {
+          "session_id": "00000000-0000-4000-8000-000000000001",
+          "opportunity_id": "00000000-0000-4000-8000-000000000002",
+          "allowed_hint_level": 1,
+          "kb_snapshot_version": "fixture-snapshot-0.1.0",
+          "active_problem_id": "P-A02-01",
+          "excluded_source_groups": [
+            "GROUP-A02-positive"
+          ],
+          "grade_levels": [
+            7,
+            8
+          ],
+          "difficulty": "introductory",
+          "allowed_targets": [
+            {
+              "concept_id": "A02",
+              "skill_id": "SK-A02-DISTRIBUTE"
+            }
+          ]
+        }
+      },
+      "result": {
+        "retrieval_id": "00000000-0000-4000-8000-000000000004",
+        "request_id": "00000000-0000-4000-8000-000000000003",
+        "kb_snapshot_version": "fixture-snapshot-0.1.0",
+        "retrieval_config_version": "fixture-retrieval-0.1.0",
+        "method": "semantic",
+        "embedding_version": "fixture-embedding-0.1.0",
+        "elapsed_ms": 5,
+        "chunks": [
+          {
+            "content_id": "FIX-A02-HINT-1",
+            "content_version": "fixture-0.1.0",
+            "concept_id": "A02",
+            "skill_ids": [
+              "SK-A02-DISTRIBUTE"
+            ],
+            "kind": "hint",
+            "text": "Có bao nhiêu hạng tử trong ngoặc cần được nhân?",
+            "hint_level": 1,
+            "disclosure": "conceptual",
+            "grade_levels": [
+              7,
+              8
+            ],
+            "difficulty": null,
+            "source": {
+              "source_id": "FIX-SOURCE",
+              "title": "Synthetic interface example",
+              "locator": "contracts/member2/v0.2.0/examples.json"
+            },
+            "review": {
+              "status": "human_approved",
+              "author": "synthetic-fixture-author",
+              "source": "Synthetic contract fixture only; not curriculum approval.",
+              "human_reviewer": "synthetic-fixture-reviewer",
+              "reviewed_at": "2026-11-16T09:00:00+07:00"
+            },
+            "problem_id": null,
+            "source_group": null,
+            "counts_as_assistance": true
+          }
+        ],
+        "fallback_reason": null
+      }
+    },
+    {
+      "request": {
+        "contract_version": "member2-proposal-0.2.0",
+        "request_id": "00000000-0000-4000-8000-000000000005",
+        "query": {
+          "query": "Em chưa hiểu cách nhân vào ngoặc.",
+          "concept_id": "A02",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "purpose": "example",
+          "top_k": 3
+        },
+        "scope": {
+          "session_id": "00000000-0000-4000-8000-000000000001",
+          "opportunity_id": "00000000-0000-4000-8000-000000000002",
+          "allowed_hint_level": 3,
+          "kb_snapshot_version": "fixture-snapshot-0.1.0",
+          "active_problem_id": "P-A02-01",
+          "excluded_source_groups": [
+            "GROUP-A02-positive"
+          ],
+          "grade_levels": [
+            7,
+            8
+          ],
+          "difficulty": "introductory",
+          "allowed_targets": [
+            {
+              "concept_id": "A02",
+              "skill_id": "SK-A02-DISTRIBUTE"
+            }
+          ]
+        }
+      },
+      "result": {
+        "retrieval_id": "00000000-0000-4000-8000-000000000006",
+        "request_id": "00000000-0000-4000-8000-000000000005",
+        "kb_snapshot_version": "fixture-snapshot-0.1.0",
+        "retrieval_config_version": "fixture-retrieval-0.1.0",
+        "method": "semantic",
+        "embedding_version": "fixture-embedding-0.1.0",
+        "elapsed_ms": 5,
+        "chunks": [
+          {
+            "content_id": "FIX-A02-EXAMPLE",
+            "content_version": "fixture-0.1.0",
+            "concept_id": "A02",
+            "skill_ids": [
+              "SK-A02-DISTRIBUTE"
+            ],
+            "kind": "example",
+            "text": "Xét ví dụ khác 4*(x+1): hãy viết phép nhân với từng hạng tử trước khi tính.",
+            "hint_level": 3,
+            "disclosure": "different_example",
+            "grade_levels": [
+              7,
+              8
+            ],
+            "difficulty": null,
+            "source": {
+              "source_id": "FIX-SOURCE",
+              "title": "Synthetic interface example",
+              "locator": "contracts/member2/v0.2.0/examples.json"
+            },
+            "review": {
+              "status": "human_approved",
+              "author": "synthetic-fixture-author",
+              "source": "Synthetic contract fixture only; not curriculum approval.",
+              "human_reviewer": "synthetic-fixture-reviewer",
+              "reviewed_at": "2026-11-16T09:00:00+07:00"
+            },
+            "problem_id": "FIX-A02-EXAMPLE-01",
+            "source_group": "FIX-GROUP-A02-EXAMPLE",
+            "counts_as_assistance": true
+          }
+        ],
+        "fallback_reason": null
+      }
+    },
+    {
+      "request": {
+        "contract_version": "member2-proposal-0.2.0",
+        "request_id": "00000000-0000-4000-8000-000000000007",
+        "query": {
+          "query": "Em chưa hiểu cách nhân vào ngoặc.",
+          "concept_id": "A02",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "purpose": "hint",
+          "top_k": 3
+        },
+        "scope": {
+          "session_id": "00000000-0000-4000-8000-000000000001",
+          "opportunity_id": "00000000-0000-4000-8000-000000000002",
+          "allowed_hint_level": 1,
+          "kb_snapshot_version": "fixture-snapshot-0.1.0",
+          "active_problem_id": "P-A02-01",
+          "excluded_source_groups": [
+            "GROUP-A02-positive"
+          ],
+          "grade_levels": [
+            7,
+            8
+          ],
+          "difficulty": "introductory",
+          "allowed_targets": [
+            {
+              "concept_id": "A02",
+              "skill_id": "SK-A02-DISTRIBUTE"
+            }
+          ]
+        }
+      },
+      "result": {
+        "retrieval_id": "00000000-0000-4000-8000-000000000008",
+        "request_id": "00000000-0000-4000-8000-000000000007",
+        "kb_snapshot_version": "fixture-snapshot-0.1.0",
+        "retrieval_config_version": "fixture-retrieval-0.1.0",
+        "method": "semantic",
+        "embedding_version": "fixture-embedding-0.1.0",
+        "elapsed_ms": 5,
+        "chunks": [],
+        "fallback_reason": "no_eligible_content"
+      }
+    },
+    {
+      "request": {
+        "contract_version": "member2-proposal-0.2.0",
+        "request_id": "00000000-0000-4000-8000-000000000009",
+        "query": {
+          "query": "Em chưa hiểu cách nhân vào ngoặc.",
+          "concept_id": "A02",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "purpose": "hint",
+          "top_k": 3
+        },
+        "scope": {
+          "session_id": "00000000-0000-4000-8000-000000000001",
+          "opportunity_id": "00000000-0000-4000-8000-000000000002",
+          "allowed_hint_level": 1,
+          "kb_snapshot_version": "fixture-snapshot-0.1.0",
+          "active_problem_id": "P-A02-01",
+          "excluded_source_groups": [
+            "GROUP-A02-positive"
+          ],
+          "grade_levels": [
+            7,
+            8
+          ],
+          "difficulty": "introductory",
+          "allowed_targets": [
+            {
+              "concept_id": "A02",
+              "skill_id": "SK-A02-DISTRIBUTE"
+            }
+          ]
+        }
+      },
+      "result": {
+        "retrieval_id": "00000000-0000-4000-8000-000000000010",
+        "request_id": "00000000-0000-4000-8000-000000000009",
+        "kb_snapshot_version": "fixture-snapshot-0.1.0",
+        "retrieval_config_version": "fixture-retrieval-0.1.0",
+        "method": "semantic",
+        "embedding_version": "fixture-embedding-0.1.0",
+        "elapsed_ms": 5,
+        "chunks": [],
+        "fallback_reason": "retrieval_unavailable"
+      }
+    },
+    {
+      "request": {
+        "contract_version": "member2-proposal-0.2.0",
+        "request_id": "00000000-0000-4000-8000-000000000011",
+        "query": {
+          "query": "Em chưa hiểu cách nhân vào ngoặc.",
+          "concept_id": "A02",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "purpose": "explanation",
+          "top_k": 3
+        },
+        "scope": {
+          "session_id": "00000000-0000-4000-8000-000000000001",
+          "opportunity_id": "00000000-0000-4000-8000-000000000002",
+          "allowed_hint_level": 0,
+          "kb_snapshot_version": "fixture-snapshot-0.1.0",
+          "active_problem_id": "P-A02-01",
+          "excluded_source_groups": [
+            "GROUP-A02-positive"
+          ],
+          "grade_levels": [
+            7,
+            8
+          ],
+          "difficulty": "introductory",
+          "allowed_targets": [
+            {
+              "concept_id": "A02",
+              "skill_id": "SK-A02-DISTRIBUTE"
+            }
+          ]
+        }
+      },
+      "result": {
+        "retrieval_id": "00000000-0000-4000-8000-000000000012",
+        "request_id": "00000000-0000-4000-8000-000000000011",
+        "kb_snapshot_version": "fixture-snapshot-0.1.0",
+        "retrieval_config_version": "fixture-retrieval-0.1.0",
+        "method": "direct",
+        "embedding_version": null,
+        "elapsed_ms": 5,
+        "chunks": [
+          {
+            "content_id": "FIX-A02-EXPLANATION",
+            "content_version": "fixture-0.1.0",
+            "concept_id": "A02",
+            "skill_ids": [
+              "SK-A02-DISTRIBUTE"
+            ],
+            "kind": "explanation",
+            "text": "Một thừa số ngoài ngoặc nhân với từng hạng tử bên trong.",
+            "hint_level": 0,
+            "disclosure": "conceptual",
+            "grade_levels": [
+              7,
+              8
+            ],
+            "difficulty": null,
+            "source": {
+              "source_id": "FIX-SOURCE",
+              "title": "Synthetic interface example",
+              "locator": "contracts/member2/v0.2.0/examples.json"
+            },
+            "review": {
+              "status": "human_approved",
+              "author": "synthetic-fixture-author",
+              "source": "Synthetic contract fixture only; not curriculum approval.",
+              "human_reviewer": "synthetic-fixture-reviewer",
+              "reviewed_at": "2026-11-16T09:00:00+07:00"
+            },
+            "problem_id": null,
+            "source_group": null,
+            "counts_as_assistance": true
+          }
+        ],
+        "fallback_reason": null
+      }
+    }
+  ],
+  "tutor_presentations": [
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "action": "hint",
+      "message": "Có bao nhiêu hạng tử trong ngoặc cần được nhân?",
+      "hint_level": 1,
+      "response_source": "openai",
+      "content_review_status": "human_approved",
+      "content_refs": [
+        {
+          "content_id": "FIX-A02-HINT-1",
+          "content_version": "fixture-0.1.0"
+        }
+      ],
+      "policy_version": "fixture-policy-0.1.0",
+      "different_example": null,
+      "active_problem_id": "P-A02-01",
+      "assistance_provided": true,
+      "opportunity_id": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "action": "different_example",
+      "message": "Xét ví dụ khác 4*(x+1): hãy viết phép nhân với từng hạng tử trước khi tính.",
+      "hint_level": 3,
+      "response_source": "openai",
+      "content_review_status": "human_approved",
+      "content_refs": [
+        {
+          "content_id": "FIX-A02-EXAMPLE",
+          "content_version": "fixture-0.1.0"
+        }
+      ],
+      "policy_version": "fixture-policy-0.1.0",
+      "different_example": {
+        "contract_version": "member2-proposal-0.2.0",
+        "problem_id": "FIX-A02-EXAMPLE-01",
+        "content_version": "fixture-0.1.0",
+        "concept_id": "A02",
+        "primary_skill_id": "SK-A02-DISTRIBUTE",
+        "family_id": "FIX-FAM-A02-EXAMPLE",
+        "prompt": "Khai triển 4*(x+1).",
+        "task": {
+          "kind": "polynomial",
+          "expression": "4*(x+1)",
+          "variable_value": null
+        },
+        "domain": "real_numbers",
+        "difficulty": "introductory"
+      },
+      "active_problem_id": "P-A02-01",
+      "assistance_provided": true,
+      "opportunity_id": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "action": "hint",
+      "message": "Mẫu nháp dùng để kiểm tra hợp đồng; chưa được duyệt.",
+      "hint_level": 1,
+      "response_source": "draft_template",
+      "content_review_status": "draft",
+      "content_refs": [],
+      "policy_version": "fixture-policy-0.1.0",
+      "different_example": null,
+      "active_problem_id": "P-A02-01",
+      "assistance_provided": true,
+      "opportunity_id": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "action": "ask",
+      "message": "Một thừa số ngoài ngoặc nhân với từng hạng tử bên trong. Em thử chỉ ra các hạng tử trong ngoặc nhé.",
+      "hint_level": 0,
+      "response_source": "openai",
+      "content_review_status": "human_approved",
+      "content_refs": [
+        {
+          "content_id": "FIX-A02-EXPLANATION",
+          "content_version": "fixture-0.1.0"
+        }
+      ],
+      "policy_version": "fixture-policy-0.1.0",
+      "different_example": null,
+      "active_problem_id": "P-A02-01",
+      "assistance_provided": true,
+      "opportunity_id": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "action": "clarify",
+      "message": "Em hãy viết mỗi bước trên một dòng.",
+      "hint_level": 0,
+      "response_source": "openai",
+      "content_review_status": "human_approved",
+      "content_refs": [],
+      "policy_version": "fixture-policy-0.1.0",
+      "different_example": null,
+      "active_problem_id": "P-A02-01",
+      "assistance_provided": false,
+      "opportunity_id": "00000000-0000-4000-8000-000000000002"
+    }
+  ],
+  "reports": [
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "session_id": "00000000-0000-4000-8000-000000000001",
+      "state_version": 5,
+      "status": "completed",
+      "completed_at": "2026-11-16T10:00:00+07:00",
+      "independent_correct": 0,
+      "assisted_correct": 1,
+      "unverified_submissions": 1,
+      "valid_observations": 1,
+      "skills": [
+        {
+          "concept_id": "A02",
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "session_observations": 1,
+          "evidence_count_before": 0,
+          "evidence_count_after": 1,
+          "mastery_before": 0.2,
+          "mastery_after": 0.12727272727272726,
+          "parameter_version": "g2-bootstrap-1.0.0",
+          "parameter_source": "bootstrap",
+          "updated_at": "2026-11-16T09:59:00+07:00",
+          "session_observation_ids": [
+            "00000000-0000-4000-8000-000000000101"
+          ],
+          "other_session_observations": 0
+        }
+      ],
+      "limitations": [
+        "Synthetic scenario: one independent incorrect observation, then assisted correction. No learning-gain claim."
+      ]
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "session_id": "00000000-0000-4000-8000-000000000001",
+      "state_version": 5,
+      "status": "completed",
+      "completed_at": "2026-11-16T10:00:00+07:00",
+      "independent_correct": 0,
+      "assisted_correct": 1,
+      "unverified_submissions": 1,
+      "valid_observations": 0,
+      "skills": [
+        {
+          "concept_id": "A02",
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "session_observations": 0,
+          "evidence_count_before": 0,
+          "evidence_count_after": 0,
+          "mastery_before": null,
+          "mastery_after": null,
+          "parameter_version": null,
+          "parameter_source": null,
+          "updated_at": null,
+          "session_observation_ids": [],
+          "other_session_observations": 0
+        }
+      ],
+      "limitations": [
+        "Synthetic scenario with support before the first answer; no new independent observation."
+      ]
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "session_id": "00000000-0000-4000-8000-000000000001",
+      "state_version": 5,
+      "status": "completed",
+      "completed_at": "2026-11-16T10:00:00+07:00",
+      "independent_correct": 0,
+      "assisted_correct": 1,
+      "unverified_submissions": 1,
+      "valid_observations": 0,
+      "skills": [
+        {
+          "concept_id": "A02",
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "session_observations": 0,
+          "evidence_count_before": 3,
+          "evidence_count_after": 3,
+          "mastery_before": 0.48,
+          "mastery_after": 0.48,
+          "parameter_version": "g2-bootstrap-1.0.0",
+          "parameter_source": "bootstrap",
+          "updated_at": "2026-11-16T09:59:00+07:00",
+          "session_observation_ids": [],
+          "other_session_observations": 0
+        }
+      ],
+      "limitations": [
+        "Synthetic existing skill snapshot; no observation in this session, mastery unchanged."
+      ]
+    },
+    {
+      "contract_version": "member2-proposal-0.2.0",
+      "session_id": "00000000-0000-4000-8000-000000000021",
+      "state_version": 5,
+      "status": "completed",
+      "completed_at": "2026-11-16T10:00:00+07:00",
+      "independent_correct": 1,
+      "assisted_correct": 0,
+      "unverified_submissions": 0,
+      "valid_observations": 2,
+      "skills": [
+        {
+          "concept_id": "A02",
+          "skill_id": "SK-A02-DISTRIBUTE",
+          "session_observations": 2,
+          "evidence_count_before": 5,
+          "evidence_count_after": 8,
+          "mastery_before": 0.2,
+          "mastery_after": 0.8117647058823529,
+          "parameter_version": "g2-bootstrap-1.0.0",
+          "parameter_source": "bootstrap",
+          "updated_at": "2026-11-16T09:59:00+07:00",
+          "session_observation_ids": [
+            "00000000-0000-4000-8000-000000000102",
+            "00000000-0000-4000-8000-000000000104"
+          ],
+          "other_session_observations": 1
+        }
+      ],
+      "limitations": [
+        "Synthetic interleaving: this session contributes two observations; another session contributes one. The mastery delta includes both sessions and is not attributable solely to this session.",
+        "Given prior 0.2, bootstrap updates occur in order: own incorrect, other-session correct, own correct."
+      ]
+    }
+  ],
+  "assistance_states": [
+    {
+      "opportunity_id": "00000000-0000-4000-8000-000000000002",
+      "problem_id": "P-A02-01",
+      "target_skill_id": "SK-A02-DISTRIBUTE",
+      "assistance_level": 0,
+      "assistance_received": false
+    },
+    {
+      "opportunity_id": "00000000-0000-4000-8000-000000000002",
+      "problem_id": "P-A02-01",
+      "target_skill_id": "SK-A02-DISTRIBUTE",
+      "assistance_level": 0,
+      "assistance_received": true
+    },
+    {
+      "opportunity_id": "00000000-0000-4000-8000-000000000002",
+      "problem_id": "P-A02-01",
+      "target_skill_id": "SK-A02-DISTRIBUTE",
+      "assistance_level": 3,
+      "assistance_received": true
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "acceptance_schema_isolated_and_removed": true,
+  "agent_retrieval_integration": false,
+  "checked_at": "2026-11-26T04:26:37.137993+00:00",
+  "checkers_passed": 13,
+  "compose_and_ci_yaml": "passed",
+  "docker_execution": "not_run_no_docker",
+  "evidence_sha256": {
+    "acceptance-2026-11-26.json": "ee3d6c49fdbfda2877e068bb0341cb5e2bda3794e14ea7add8243a3c312c73b2",
+    "checks-2026-11-26.json": "4ef2703e1769fe67816e08a3f60c9d336ba76b6a131d7adc41fdf2d2d668d400",
+    "retrieval-evaluation-2026-11-26.json": "571c2b085b04ec23e2b306d2a445bc55f7fa83983a7be9c0cc1ce23ce95d2f41",
+    "retrieval-traces-2026-11-26.json": "e52ccb71c526eb36717390d7455f1e0316ff6eaad795a342f1c471702de13393",
+    "tests-2026-11-26.xml": "5f0b499d29ff5c41d9c7dd3bcac114f3ffd1bcb595a01e484879c6e9b70efcdd"
+  },
+  "frontend": {
+    "commands": [
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit",
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exit_code": 0,
+        "stdout_sha256": "acc101a413adffa89b03611259381562952ab6cd1e530437a53e0a967c9bf3fd"
+      }
+    ],
+    "status": "passed"
+  },
+  "implemented_scope": "13 approved concepts with 39 verbatim reviewed worked examples",
+  "independent_member1_member3_signoff": "pending_external_review",
+  "model_api_calls": 0,
+  "pytest": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 375
+  },
+  "real_db_and_pgvector": true,
+  "real_local_embedding": true,
+  "remaining_scope": "Agent/generator/UI retrieval use belongs to Chặng 4; final held-out RQ3 belongs to Chặng 6.",
+  "remote_ci": "not_run_workspace_has_no_git_or_connected_repository",
+  "runtime_deployment": {
+    "activated_at": "2026-11-26T11:23:55.819360+07:00",
+    "chunk_count": 91,
+    "concept_count": 40,
+    "example_count": 39,
+    "latest_syncs": [
+      {
+        "status": "published",
+        "summary": {
+          "activated": true,
+          "active_snapshot_before": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+          "bank_hash": "1d8bcc5911d0e7afd7d6431861ca07c87972238aaed9a0399fafc1b6136308a9",
+          "blocked": [],
+          "cached_embeddings": 91,
+          "chunks": 91,
+          "computed_embeddings": 0,
+          "concepts": 40,
+          "dimension": 384,
+          "inserted_chunks": 0,
+          "model_api_calls": 0,
+          "namespace": "runtime",
+          "new_chunk_versions": 0,
+          "new_embeddings": 0,
+          "profile_id": "b91dc530d438749338cd9f5817acd79d6878d2af805470459b12232673d9eae0",
+          "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f",
+          "registry_version": "0.4.0-member2-review",
+          "run_id": "e52f40c3-c591-4de1-a817-cd8e66ce5d78",
+          "skills": 40,
+          "snapshot_exists": true,
+          "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+          "source_files_modified": false,
+          "status": "published",
+          "synthetic_fixture": false
+        }
+      },
+      {
+        "status": "published",
+        "summary": {
+          "activated": true,
+          "active_snapshot_before": "KB-c598a1b40e0b407dc839fbd6f004addb168baa80bc10d56b506d68cebadb53b9",
+          "bank_hash": "1d8bcc5911d0e7afd7d6431861ca07c87972238aaed9a0399fafc1b6136308a9",
+          "blocked": [],
+          "cached_embeddings": 52,
+          "chunks": 91,
+          "computed_embeddings": 39,
+          "concepts": 40,
+          "dimension": 384,
+          "inserted_chunks": 39,
+          "model_api_calls": 0,
+          "namespace": "runtime",
+          "new_chunk_versions": 39,
+          "new_embeddings": 39,
+          "profile_id": "b91dc530d438749338cd9f5817acd79d6878d2af805470459b12232673d9eae0",
+          "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f",
+          "registry_version": "0.4.0-member2-review",
+          "run_id": "b022c0ab-92d8-4725-a063-bcdc95beae3d",
+          "skills": 40,
+          "snapshot_exists": false,
+          "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+          "source_files_modified": false,
+          "status": "published",
+          "synthetic_fixture": false
+        }
+      }
+    ],
+    "member_count": 91,
+    "registry_version": "0.4.0-member2-review",
+    "skill_count": 40,
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c"
+  },
+  "source_file_sha256": {
+    ".github/workflows/repository-checks.yml": "d73bf71b0897327a89c76e48edc1e8d90216e51865fa2577ce5d8d4b9bef009a",
+    "backend/app/kb_cli.py": "0032fab530bccb425ea5cefdfe8a963118f73977cd2b713d93b3d22da819bae4",
+    "backend/app/kb_contracts.py": "65ebe9c23580d756a3d7acbf6e35c4f3a635d3c033bc2010f27567915996ec62",
+    "backend/app/kb_projection.py": "e402516171540af2c02b1884b7da9a5033787eaebf136e3334d32ce9c0863f18",
+    "content/kb/member2-v2/manifest.json": "730c7966b90c5a90da406055d6e96dcdddb5e6b65b2cec9ec52b2971b1c9cf17",
+    "research/retrieval/dev/member2-13.v1/manifest.json": "6579f073032e2012454c113ab30af41cb17f36cdfe3bc2535b6c79d9ddc27cf6",
+    "scripts/checks/check_member2_ai_review.py": "9bf4adc348c78997af9bbe7d0b635140afb6b20bd5502b788b33b63ef2108d44",
+    "scripts/checks/check_stage3_kb.py": "15d4d16ced2edca65230b7e486d3ea6487a1b64bddcae45eeb8d6649370d86d2",
+    "scripts/checks/collect_stage3_completion.py": "898751cdf4e1a0a11ed5cb3495986a14934a3e721c688ea2a5bf0cba41c1eb59",
+    "scripts/kb/build_member2_stage3_assets.py": "ab206d69ffd6e94586921462c79c1774c64a5c0cbe2ba74155cb6b7c1485626d",
+    "tests/test_kb_db.py": "78f1e69fb2fb7c99b1a2bd18f17caff0ae8fa94e61d2f48840cca75a468ba711",
+    "tests/test_stage3_completion.py": "8f942da5231c35dc11249ca50abef66d1415e3b253ff673b53667515a2d0fe62"
+  },
+  "stage": "Member 2 Chặng 3",
+  "status": "local_complete_external_acceptance_pending"
+}

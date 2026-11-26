@@ -21,7 +21,7 @@ def update(prior, correct, params=PARAMETERS):
 
 def eligibility(assessment, opportunity, observed=False, near=False):
     if observed: reason='already_observed'
-    elif opportunity['assistance_level'] > 0: reason='assisted'
+    elif opportunity.get('assistance_received', False) or opportunity['assistance_level'] > 0: reason='assisted'
     elif opportunity['relation'] == 'repeat': reason='repeat'
     elif near or opportunity['relation'] == 'near_practice': reason='near_practice'
     elif assessment['assessment_status'] not in ('verified_correct','verified_incorrect'): reason='not_verified'

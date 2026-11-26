@@ -158,6 +158,41 @@
         "title": "AssessmentStatus",
         "type": "string"
       },
+      "ContentCitation": {
+        "additionalProperties": false,
+        "properties": {
+          "content_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Content Id",
+            "type": "string"
+          },
+          "content_version": {
+            "title": "Content Version",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "explanation",
+              "hint",
+              "example"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content_id",
+          "content_version",
+          "title",
+          "kind"
+        ],
+        "title": "ContentCitation",
+        "type": "object"
+      },
       "CreateSession": {
         "additionalProperties": false,
         "properties": {
@@ -312,9 +347,149 @@
         "title": "ProblemPublic",
         "type": "object"
       },
+      "PublicProblemV3": {
+        "additionalProperties": false,
+        "properties": {
+          "concept_id": {
+            "anyOf": [
+              {
+                "pattern": "^[NAEF](0[1-9]|10)$",
+                "type": "string"
+              },
+              {
+                "const": "CON-LINEAR-01",
+                "type": "string"
+              }
+            ],
+            "title": "Concept Id"
+          },
+          "content_version": {
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Content Version",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "member2-proposal-0.3.0",
+            "default": "member2-proposal-0.3.0",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "difficulty": {
+            "enum": [
+              "introductory",
+              "standard"
+            ],
+            "title": "Difficulty",
+            "type": "string"
+          },
+          "domain": {
+            "const": "real_numbers",
+            "default": "real_numbers",
+            "title": "Domain",
+            "type": "string"
+          },
+          "family_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Family Id",
+            "type": "string"
+          },
+          "primary_skill_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Primary Skill Id",
+            "type": "string"
+          },
+          "problem_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Problem Id",
+            "type": "string"
+          },
+          "prompt": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Prompt",
+            "type": "string"
+          },
+          "task": {
+            "$ref": "#/components/schemas/PublicTask"
+          }
+        },
+        "required": [
+          "problem_id",
+          "content_version",
+          "concept_id",
+          "primary_skill_id",
+          "family_id",
+          "prompt",
+          "task",
+          "difficulty"
+        ],
+        "title": "PublicProblemV3",
+        "type": "object"
+      },
+      "PublicTask": {
+        "additionalProperties": false,
+        "properties": {
+          "expression": {
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Expression",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "numeric",
+              "evaluate",
+              "polynomial",
+              "linear_equation",
+              "quadratic_vertex",
+              "fraction_compare",
+              "number_conversion",
+              "factored_polynomial",
+              "rational_operation",
+              "word_equation",
+              "quadratic_roots",
+              "linear_elimination",
+              "function_domain",
+              "quadratic_axis",
+              "exponent_numeric"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "variable_value": {
+            "anyOf": [
+              {
+                "maxLength": 160,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variable Value"
+          }
+        },
+        "required": [
+          "kind",
+          "expression"
+        ],
+        "title": "PublicTask",
+        "type": "object"
+      },
       "Report": {
         "additionalProperties": false,
         "properties": {
+          "assessment_scope": {
+            "default": "solution_steps",
+            "enum": [
+              "solution_steps",
+              "final_answer"
+            ],
+            "title": "Assessment Scope",
+            "type": "string"
+          },
           "assisted_correct": {
             "title": "Assisted Correct",
             "type": "integer"
@@ -354,6 +529,17 @@
             "title": "Problems Viewed",
             "type": "integer"
           },
+          "repeat_or_near_correct": {
+            "default": 0,
+            "title": "Repeat Or Near Correct",
+            "type": "integer"
+          },
+          "report_version": {
+            "const": "learning-report-2.0.0",
+            "default": "learning-report-2.0.0",
+            "title": "Report Version",
+            "type": "string"
+          },
           "requested_hints": {
             "title": "Requested Hints",
             "type": "integer"
@@ -362,6 +548,13 @@
             "format": "uuid",
             "title": "Session Id",
             "type": "string"
+          },
+          "skills": {
+            "items": {
+              "$ref": "#/components/schemas/SkillReport"
+            },
+            "title": "Skills",
+            "type": "array"
           },
           "status": {
             "enum": [
@@ -444,6 +637,11 @@
       "SessionView": {
         "additionalProperties": false,
         "properties": {
+          "assistance_received": {
+            "default": false,
+            "title": "Assistance Received",
+            "type": "boolean"
+          },
           "available_next": {
             "title": "Available Next",
             "type": "integer"
@@ -490,7 +688,24 @@
             "type": "string"
           },
           "problem": {
-            "$ref": "#/components/schemas/ProblemPublic"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProblemPublic"
+              },
+              {
+                "$ref": "#/components/schemas/PublicProblemV3"
+              }
+            ],
+            "title": "Problem"
+          },
+          "rag_mode": {
+            "default": "no_rag",
+            "enum": [
+              "full",
+              "no_rag"
+            ],
+            "title": "Rag Mode",
+            "type": "string"
           },
           "relation": {
             "title": "Relation",
@@ -554,73 +769,180 @@
         "title": "SessionView",
         "type": "object"
       },
-      "TurnPublic": {
+      "SkillReport": {
         "additionalProperties": false,
         "properties": {
-          "action": {
-            "enum": [
-              "submit",
-              "request_hint"
+          "assisted_correct": {
+            "title": "Assisted Correct",
+            "type": "integer"
+          },
+          "concept_id": {
+            "title": "Concept Id",
+            "type": "string"
+          },
+          "evidence_count_after": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
             ],
-            "title": "Action",
-            "type": "string"
+            "title": "Evidence Count After"
           },
-          "assessment": {
-            "$ref": "#/components/schemas/Assessment"
+          "evidence_count_before": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Count Before"
           },
-          "created_at": {
-            "format": "date-time",
-            "title": "Created At",
-            "type": "string"
-          },
-          "opportunity_id": {
-            "format": "uuid",
-            "title": "Opportunity Id",
-            "type": "string"
-          },
-          "request_id": {
-            "format": "uuid",
-            "title": "Request Id",
-            "type": "string"
-          },
-          "response": {
-            "additionalProperties": true,
-            "title": "Response",
-            "type": "object"
-          },
-          "steps": {
+          "evidence_turn_ids": {
             "items": {
+              "format": "uuid",
               "type": "string"
             },
-            "title": "Steps",
+            "title": "Evidence Turn Ids",
             "type": "array"
           },
-          "turn_id": {
-            "format": "uuid",
-            "title": "Turn Id",
+          "incorrect_submissions": {
+            "title": "Incorrect Submissions",
+            "type": "integer"
+          },
+          "independent_correct": {
+            "title": "Independent Correct",
+            "type": "integer"
+          },
+          "mastery_after": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mastery After"
+          },
+          "mastery_before": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mastery Before"
+          },
+          "observation_ids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "title": "Observation Ids",
+            "type": "array"
+          },
+          "other_session_observations": {
+            "default": 0,
+            "title": "Other Session Observations",
+            "type": "integer"
+          },
+          "parameter_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parameter Source"
+          },
+          "parameter_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parameter Version"
+          },
+          "problems_viewed": {
+            "title": "Problems Viewed",
+            "type": "integer"
+          },
+          "repeat_or_near_correct": {
+            "title": "Repeat Or Near Correct",
+            "type": "integer"
+          },
+          "review_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Review Reason"
+          },
+          "skill_id": {
+            "title": "Skill Id",
             "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "unverified_submissions": {
+            "title": "Unverified Submissions",
+            "type": "integer"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
           }
         },
         "required": [
-          "turn_id",
-          "opportunity_id",
-          "request_id",
-          "action",
-          "steps",
-          "assessment",
-          "response",
-          "created_at"
+          "concept_id",
+          "skill_id",
+          "title",
+          "problems_viewed",
+          "independent_correct",
+          "assisted_correct",
+          "repeat_or_near_correct",
+          "unverified_submissions",
+          "incorrect_submissions",
+          "observation_ids"
         ],
-        "title": "TurnPublic",
+        "title": "SkillReport",
         "type": "object"
       },
-      "TurnRequest": {
+      "TeachingTurnRequest": {
         "additionalProperties": false,
         "properties": {
           "action": {
             "enum": [
               "submit",
-              "request_hint"
+              "request_hint",
+              "request_explanation",
+              "request_example"
             ],
             "title": "Action",
             "type": "string"
@@ -657,7 +979,137 @@
           "expected_state_version",
           "action"
         ],
-        "title": "TurnRequest",
+        "title": "TeachingTurnRequest",
+        "type": "object"
+      },
+      "TopicView": {
+        "additionalProperties": false,
+        "properties": {
+          "internal_demo_available": {
+            "title": "Internal Demo Available",
+            "type": "boolean"
+          },
+          "problem_count": {
+            "title": "Problem Count",
+            "type": "integer"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "topic_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "tutoring_ready": {
+            "title": "Tutoring Ready",
+            "type": "boolean"
+          },
+          "validator_available": {
+            "title": "Validator Available",
+            "type": "boolean"
+          },
+          "validator_task_kinds": {
+            "items": {
+              "enum": [
+                "numeric",
+                "evaluate",
+                "polynomial",
+                "linear_equation",
+                "quadratic_vertex",
+                "fraction_compare",
+                "number_conversion",
+                "factored_polynomial",
+                "rational_operation",
+                "word_equation",
+                "quadratic_roots",
+                "linear_elimination",
+                "function_domain",
+                "quadratic_axis",
+                "exponent_numeric"
+              ],
+              "type": "string"
+            },
+            "title": "Validator Task Kinds",
+            "type": "array"
+          }
+        },
+        "required": [
+          "topic_id",
+          "title",
+          "problem_count",
+          "tutoring_ready",
+          "internal_demo_available",
+          "validator_available",
+          "validator_task_kinds",
+          "reason"
+        ],
+        "title": "TopicView",
+        "type": "object"
+      },
+      "TurnPublic": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "submit",
+              "request_hint",
+              "request_explanation",
+              "request_example"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "assessment": {
+            "$ref": "#/components/schemas/Assessment"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "opportunity_id": {
+            "format": "uuid",
+            "title": "Opportunity Id",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/TutorResponseView"
+          },
+          "steps": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Steps",
+            "type": "array"
+          },
+          "turn_id": {
+            "format": "uuid",
+            "title": "Turn Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "turn_id",
+          "opportunity_id",
+          "request_id",
+          "action",
+          "steps",
+          "assessment",
+          "response",
+          "created_at"
+        ],
+        "title": "TurnPublic",
         "type": "object"
       },
       "TurnResult": {
@@ -690,7 +1142,11 @@
             "enum": [
               "system_unavailable",
               "openai",
-              "draft_template"
+              "gemini",
+              "draft_template",
+              "reviewed_hint",
+              "reviewed_kb",
+              "assessment_feedback"
             ],
             "title": "Response Source",
             "type": "string"
@@ -701,14 +1157,12 @@
           "tutor": {
             "anyOf": [
               {
-                "additionalProperties": true,
-                "type": "object"
+                "$ref": "#/components/schemas/TutorResponseView"
               },
               {
                 "type": "null"
               }
-            ],
-            "title": "Tutor"
+            ]
           }
         },
         "required": [
@@ -719,12 +1173,143 @@
         ],
         "title": "TurnResult",
         "type": "object"
+      },
+      "TutorResponseView": {
+        "properties": {
+          "action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action"
+          },
+          "content_refs": {
+            "items": {
+              "$ref": "#/components/schemas/ContentCitation"
+            },
+            "title": "Content Refs",
+            "type": "array"
+          },
+          "content_review_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Content Review Status"
+          },
+          "counts_as_assistance": {
+            "default": false,
+            "title": "Counts As Assistance",
+            "type": "boolean"
+          },
+          "fallback_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Reason"
+          },
+          "hint_level": {
+            "default": 0,
+            "title": "Hint Level",
+            "type": "integer"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "model_response_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Response Id"
+          },
+          "next_actions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Next Actions",
+            "type": "array"
+          },
+          "policy_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Policy Version"
+          },
+          "prompt_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Version"
+          },
+          "response_source": {
+            "title": "Response Source",
+            "type": "string"
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Usage"
+          }
+        },
+        "required": [
+          "message",
+          "response_source"
+        ],
+        "title": "TutorResponseView",
+        "type": "object"
       }
     }
   },
   "info": {
     "title": "Mở — Socratic tutor API",
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "openapi": "3.1.0",
   "paths": {
@@ -2009,7 +2594,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TurnRequest"
+                "$ref": "#/components/schemas/TeachingTurnRequest"
               }
             }
           },
@@ -2115,7 +2700,13 @@
           "200": {
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/TopicView"
+                  },
+                  "title": "Response Topics Api V1 Topics Get",
+                  "type": "array"
+                }
               }
             },
             "description": "Successful Response"

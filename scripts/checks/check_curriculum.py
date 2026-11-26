@@ -6,12 +6,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'backend'))
-from app.curriculum import load_curriculum, safe_chunks
+from app.curriculum import CURRENT_CURRICULUM_REVISION, load_curriculum, safe_chunks
 from app.authoring_math import audit_case, first_error, scalar
 
 
 def audit():
-    registry, bank = load_curriculum()
+    registry, bank = load_curriculum(revision=CURRENT_CURRICULUM_REVISION)
     if {c.concept_id for c in registry.concepts} != {f'{prefix}{i:02}' for prefix in 'NAEF' for i in range(1, 11)}:
         raise ValueError('Registry differs from the declared 40-concept plan')
     results = []
@@ -32,6 +32,7 @@ def audit():
     return {'content_version': bank.content_version, 'registry_concepts': len(registry.concepts),
             'pilot_concepts': len(bank.packs), 'edges': len(registry.edges),
             'concept_review_counts': dict(Counter(c.review.status for c in registry.concepts)),
+            'alignment_review_counts': dict(Counter(c.alignment.status for c in registry.concepts)),
             'coverage': results,
             'note': 'Authoring checks only. Drafts are not seeded into the MVP or published to learners.'}
 

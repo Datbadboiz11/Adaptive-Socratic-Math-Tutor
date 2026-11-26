@@ -12,6 +12,7 @@ from app.manage import migrate,seed
 from app import tutor,tutor_service,sessions
 from app.knowledge import update,VERSION
 from app.checkpoints import PostgresCheckpoints
+from psycopg.types.json import Jsonb
 
 pytestmark=pytest.mark.skipif(not os.getenv('RUN_DB_TESTS'),reason='PostgreSQL integration requires RUN_DB_TESTS=1')
 
@@ -75,6 +76,40 @@ def test_correct_atomic_replay_and_checkpoint(learner,monkeypatch):
         assert db.execute('SELECT status FROM turn_jobs WHERE request_id=%s',(body['request_id'],)).fetchone()['status']=='committed'
 
 
+def test_topics_and_session_enforce_existing_concept_skill_capability(learner, monkeypatch):
+    client, headers, student = learner
+    with connect() as db:
+        db.execute('INSERT INTO topics VALUES (%s,%s),(%s,%s)', ('TOPIC-TEST-EMPTY', 'Empty', 'TOPIC-TEST-E02', 'E02'))
+        example = db.execute('SELECT * FROM problems ORDER BY problem_id LIMIT 1').fetchone()
+        example['public_payload'].update(problem_id='TEST-E02', concept_id='E02', primary_skill_id='SK-E02-SOLVE')
+        db.execute('''INSERT INTO problems VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''', (
+            'TEST-E02', example['content_version'], 'TOPIC-TEST-E02', example['family_id'], example['source_group'],
+            'SK-E02-SOLVE', 'draft', Jsonb(example['public_payload']), Jsonb(example['private_payload']), 'synthetic-test',
+        ))
+    response = client.get('/api/v1/topics', headers=headers)
+    assert response.status_code == 200
+    rows = {topic['topic_id']: topic for topic in response.json()}
+    assert rows['TOPIC-LINEAR-01']['validator_task_kinds'] == ['linear_equation']
+    assert rows['TOPIC-LINEAR-01']['validator_available'] is True
+    assert rows['TOPIC-LINEAR-01']['tutoring_ready'] is False
+    assert rows['TOPIC-TEST-EMPTY']['internal_demo_available'] is False
+    assert rows['TOPIC-TEST-E02']['validator_available'] is False
+    assert rows['TOPIC-TEST-E02']['validator_task_kinds'] == []
+
+    response = client.post('/api/v1/sessions', headers=headers, json={
+        'request_id': str(uuid4()), 'demo_profile_id': student, 'topic_id': 'TOPIC-TEST-E02',
+    })
+    assert response.status_code == 201
+    assert response.json()['tutoring_enabled'] is False
+    result, _ = act(learner, response.json())
+    assert result['assessment']['assessment_status'] == 'unverified'
+    assert result['observation'] is None
+
+    monkeypatch.setenv('TUTOR_ENABLED', 'false')
+    rows = {topic['topic_id']: topic for topic in client.get('/api/v1/topics', headers=headers).json()}
+    assert rows['TOPIC-LINEAR-01']['validator_available'] is False
+
+
 def test_first_error_hint_correct_near_and_repeat(learner):
     c,h,student=learner; s=start(learner)
     for _ in range(2): s,_=act(learner,s,'next')
@@ -90,7 +125,7 @@ def test_first_error_hint_correct_near_and_repeat(learner):
     s,_=act(learner,s,'next'); assert s['relation']=='near_practice'
     r,_=act(learner,s,steps=['x=-6']); assert r['eligibility']['reason']=='near_practice'
     report,_=act(learner,r['session'],'finish')
-    assert report['assisted_correct']==1 and report['independent_correct']==1 and report['valid_observations']==1
+    assert report['assisted_correct']==1 and report['independent_correct']==0 and report['repeat_or_near_correct']==1 and report['valid_observations']==1
     again=start(learner); assert again['relation']=='repeat'
 
 

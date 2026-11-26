@@ -6,5 +6,9 @@
 **/.next
 **/__pycache__
 data
+artifacts
+.venv-research
+outputs
+runs
 design/previews
 docs/implementation/mvp/phase5

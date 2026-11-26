@@ -6,16 +6,24 @@ from uuid import uuid4
 from psycopg.types.json import Jsonb
 from app.db import connect
 from app.manage import digest
-from app import knowledge, tutor
+from app.member2_runtime import ASSESSMENT_MODE, approved_demo_problem, demo_topic_ids
+from app import knowledge, tutor, teaching_runtime
 
 
 def context(c, row):
-    op=c.execute('''SELECT o.*,p.private_payload,p.family_id,p.source_group FROM opportunities o
+    op=c.execute('''SELECT o.*,p.private_payload,p.public_payload,p.family_id,p.source_group,
+        p.topic_id,p.primary_skill_id,p.review_status,p.content_hash FROM opportunities o
         JOIN problems p USING(problem_id,content_version) WHERE opportunity_id=%s''', (row['current_opportunity_id'],)).fetchone()
+    if row['topic_id'] in demo_topic_ids():
+        from app.sessions import ApiError
+        item = approved_demo_problem(op)
+        if item is None or item.topic_id != row['topic_id'] or op['target_skill_id'] != item.public['primary_skill_id']:
+            raise ApiError(409, 'content_not_ready', 'Bài này hiện không có bộ chấm khả dụng.')
+        op['private_payload'] = item.private
     observed=c.execute('SELECT 1 FROM observations WHERE opportunity_id=%s AND skill_id=%s',
                        (op['opportunity_id'],op['target_skill_id'])).fetchone() is not None
     near=c.execute('''SELECT 1 FROM opportunities o JOIN problems p USING(problem_id,content_version)
-        WHERE o.session_id=%s AND o.opportunity_id<>%s AND o.assistance_level>0
+        WHERE o.session_id=%s AND o.opportunity_id<>%s AND (o.assistance_received OR o.assistance_level>0)
         AND (p.family_id=%s OR p.source_group=%s) LIMIT 1''',
         (row['session_id'],op['opportunity_id'],op['family_id'],op['source_group'])).fetchone() is not None
     earlier=c.execute('''SELECT 1 FROM opportunities WHERE student_id=%s AND problem_id=%s
@@ -25,6 +33,11 @@ def context(c, row):
         WHERE e.student_id=%s AND o.problem_id=%s AND o.opportunity_id<>%s LIMIT 1''',
         (row['student_id'],op['problem_id'],op['opportunity_id'])).fetchone()
     if earlier or prior_evidence: op['relation']='repeat'
+    example_near=c.execute('''SELECT 1 FROM teaching_deliveries d JOIN turns t USING(turn_id)
+        WHERE t.session_id=%s AND (d.family_id=%s OR d.source_group=%s OR %s=ANY(d.lineage_ids)) LIMIT 1''',
+        (row['session_id'],op['family_id'],op['source_group'],op['source_group'])).fetchone()
+    near=near or bool(example_near)
+    if example_near and op['relation']!='repeat': op['relation']='near_practice'
     return op,observed,near
 
 
@@ -84,8 +97,9 @@ def process(session_id, body, student):
         used=c.execute('SELECT count(*) n FROM turn_jobs WHERE session_id=%s',(session_id,)).fetchone()['n']
         limit=min(20,max(0,int(os.getenv('LLM_MAX_CALLS_PER_SESSION','8'))))
         state={'problem':op['private_payload'],'opportunity':{
-            k:op[k] for k in ('target_skill_id','assistance_level','relation','no_progress_count','best_progress')},
-            'observed':observed,'near':near,'action':body.action,'steps':body.steps,'llm_allowed':used<=limit}
+            k:op[k] for k in ('target_skill_id','assistance_level','assistance_received','relation','no_progress_count','best_progress')},
+            'observed':observed,'near':near,'action':body.action,'steps':body.steps,'llm_allowed':used<=limit,
+            'teaching':teaching_runtime.trusted_context(row,op)}
     thread=f'{session_id}:{body.request_id}'
     if prepared is None:
         try:
@@ -110,20 +124,32 @@ def process(session_id, body, student):
         c.execute('SELECT pg_advisory_xact_lock(%s)',(lock_id,))
         op,observed,near=context(c,row)
         a=prepared['validation']['assessment']; policy=prepared['policy']; response=prepared['response']
-        allowed=knowledge.eligibility(a,op,observed,near)
+        if not teaching_runtime.delivery_still_authorized(c,prepared):
+            raise service.ApiError(409,'teaching_content_changed','Nội dung hỗ trợ vừa thay đổi. Bài làm vẫn được giữ; hãy gửi một yêu cầu mới.')
+        final_answer = op['private_payload'].get('assessment_mode') == ASSESSMENT_MODE
+        allowed = tutor.outcome_eligibility(op['private_payload'], a, op, observed, near)
         turn_id=uuid4()
-        pipeline={'pipeline_version':tutor.PIPELINE_VERSION,'parameter_version':knowledge.VERSION,'protocol_version':'g2-v1',
+        pipeline={'pipeline_version':tutor.PIPELINE_VERSION,'parameter_version':None if final_answer else knowledge.VERSION,
+            'protocol_version':'final-answer-demo-v1' if final_answer else 'g2-v1',
             'validation':prepared['validation'],'eligibility':allowed,'policy':{k:v for k,v in policy.items() if k!='candidates'},
-            'checkpoint_thread':thread,'nodes':['validate','eligibility','policy','respond','guard','commit']}
+            'checkpoint_thread':thread,'nodes':['validate','eligibility','policy','retrieve','respond','guard','commit'],
+            'retrieval':prepared.get('retrieval',{})}
         c.execute('''INSERT INTO turns(turn_id,session_id,opportunity_id,request_id,action,steps,assessment,response,pipeline)
             VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
             (turn_id,session_id,body.opportunity_id,body.request_id,body.action,Jsonb(body.steps),Jsonb(a),Jsonb(response),Jsonb(pipeline)))
         evidence=persist_evidence(c,row,op,turn_id,a,allowed)
         # Outcome records the FIRST correct completion, not a later supported retry.
-        outcome=('assisted_correct' if op['assistance_level'] else 'independent_correct') if a['assessment_status']=='verified_correct' else None
-        c.execute('''UPDATE opportunities SET draft=%s,assistance_level=%s,no_progress_count=%s,best_progress=%s,
+        outcome=('assisted_correct' if op['assistance_received'] or op['assistance_level'] else 'independent_correct') if a['assessment_status']=='verified_correct' else None
+        # Delivery and the assistance flag commit atomically with the result. Retrieval alone is not delivery.
+        if response.get('content_refs'):
+            chunk=prepared['selected_chunk']
+            c.execute('''INSERT INTO teaching_deliveries VALUES (%s,%s,%s,%s,%s,%s,%s,%s)''',
+                (turn_id,chunk['content_id'],chunk['content_version'],prepared['retrieval']['snapshot_id'],
+                 chunk['kind'],chunk['family_id'],chunk['source_group'],chunk['lineage_ids']))
+        c.execute('''UPDATE opportunities SET draft=%s,assistance_level=%s,assistance_received=assistance_received OR %s,
+            no_progress_count=%s,best_progress=%s,
             outcome=COALESCE(outcome,%s),relation=%s WHERE opportunity_id=%s''',
-            ('\n'.join(body.steps) if body.action=='submit' else op['draft'],policy['hint_level'],policy['no_progress_count'],
+            ('\n'.join(body.steps) if body.action=='submit' else op['draft'],response['hint_level'],response.get('counts_as_assistance',False),policy['no_progress_count'],
              policy['best_progress'],outcome,op['relation'],body.opportunity_id))
         c.execute('INSERT INTO decisions(decision_id,turn_id,action,reason,pipeline_version) VALUES (%s,%s,%s,%s,%s)',
                   (uuid4(),turn_id,policy['action'],a['reason_code'],tutor.PIPELINE_VERSION))

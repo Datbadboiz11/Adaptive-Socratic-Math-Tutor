@@ -1,0 +1,46 @@
+{
+  "benchmark_version": "member2-13-retrieval-dev-1.0.0",
+  "concept_count": 13,
+  "concept_ids": [
+    "A01",
+    "A04",
+    "A07",
+    "A10",
+    "E03",
+    "E06",
+    "E09",
+    "F02",
+    "F05",
+    "F08",
+    "N02",
+    "N05",
+    "N08"
+  ],
+  "content_version": "0.4.0-member2-review",
+  "document_count": 91,
+  "fallback_query_count": 13,
+  "judgment_count": 169,
+  "label_review": "deterministic_development_labels_not_independent_human_gold",
+  "ndcg_gain_by_grade": {
+    "0": 0,
+    "1": 1,
+    "2": 3
+  },
+  "output_file_sha256": {
+    "corpus.json": "69485f92d8d8b2906756303e69e0d337450ad286c9d9fa0f210af8a987488984",
+    "qrels.json": "0633de4a64a5b1225de22c51235f69bb990237b6a0012fbd13849cdf65e94f6f",
+    "queries.json": "8aaae35380ac3cbe64d0bbbc030dee6eb648de5aa3acf412c4c7c2357d0f1788"
+  },
+  "query_count": 104,
+  "relevance_threshold": 2,
+  "runtime_publication": true,
+  "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+  "source_file_sha256": {
+    "content/authoring/batches/member2-original.v2/approved-bank.json": "b19cb0230767b3763ceeba65dff7fa9fb9c161216dd309b76a790d3e1a63e848",
+    "content/authoring/batches/member2-original.v2/manifest.json": "c0768d6c9c2117b1add612bcabfb0ef4b4965c1c8a40f2aa459742971f04d313",
+    "content/authoring/batches/member2-original.v2/registry-snapshot.json": "9b112bf8bbd3d887c2a94d021cbe8ef31dcba1ee5fc78178ac9fa6cc8131996b",
+    "content/authoring/member2-original-pilot.v1.json": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
+    "content/authoring/member2-original-pilot.v2.json": "c3ef2d3322be965cfd5fbd26c5a4e80e0ea13088473265ad739e430f757bd8d0",
+    "content/kb/member2-v2/example-publications.json": "ccea85530c4cffb261221cee56c55d03fc824f5d9fefb43bb893fd176fdaca29"
+  }
+}

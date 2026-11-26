@@ -1,0 +1,192 @@
+{
+  "base_content_version": "0.3.0-stage2-draft",
+  "version": "0.4.0-member2-review",
+  "revision": "M2-ORIG02",
+  "concept_edits": {
+    "A07": {
+      "families": {
+        "1": {"prompt": "Đặt nhân tử chung lớn nhất của {expression}, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích."},
+        "2": {"prompt": "Đặt nhân tử chung lớn nhất của {expression}, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích."},
+        "3": {"prompt": "Đặt nhân tử chung lớn nhất của {expression}, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích."}
+      }
+    },
+    "A10": {
+      "families": {
+        "1": {
+          "label": "Cộng cùng mẫu và trừ khác mẫu",
+          "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong {expression}. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+          "problems": [
+            ["+; 2*x+5|x-3; x-2|x-3", "3*x+3|x-3;{3}"],
+            ["-; 2*x+9|x+2; x-4|x-1", "x*x+9*x-1|(x+2)*(x-1);{-2,1}"]
+          ],
+          "example": ["-; 4*x+1|x-4; x+2|x+3", "3*x*x+15*x+11|(x-4)*(x+3);{4,-3}"]
+        }
+      }
+    },
+    "E03": {
+      "families": {
+        "1": {
+          "prompt": "{display} Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "problems": [
+            ["groups;4;7;39;quyển", "x; quyển; positive_integer; 4*x+7=39", "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển."],
+            ["groups;6;5;59;bút", "x; bút; positive_integer; 6*x+5=59", "Sáu hộp có cùng số bút, thêm 5 bút rời thì có tổng 59 bút."]
+          ],
+          "example": ["groups;3;8;29;gói", "x; gói; positive_integer; 3*x+8=29", "Ba khay có cùng số gói và 8 gói để ngoài, tổng 29 gói."]
+        },
+        "2": {
+          "prompt": "{display} Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "problems": [
+            ["difference;7;43;cây", "x; cây; positive_integer; x+(x+7)=43", "Hai hàng có tổng 43 cây. Hàng thứ hai hơn hàng thứ nhất 7 cây."],
+            ["difference;9;61;nhãn", "x; nhãn; positive_integer; x+(x+9)=61", "Hai bạn có tổng 61 nhãn. Bạn thứ hai nhiều hơn bạn thứ nhất 9 nhãn."]
+          ],
+          "example": ["difference;11;55;vé", "x; vé; positive_integer; x+(x+11)=55", "Hai quầy có tổng 55 vé, quầy sau có nhiều hơn quầy trước 11 vé."]
+        },
+        "3": {
+          "prompt": "{display} Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "problems": [
+            ["remaining;58;4;26;lọ", "x; lọ; positive_integer; 58-4*x=26", "Kho có 58 lọ, lấy đều trong 4 lượt thì còn 26 lọ."],
+            ["remaining;73;5;38;thẻ", "x; thẻ; positive_integer; 73-5*x=38", "Có 73 thẻ, phát cùng số thẻ ở mỗi lượt trong 5 lượt thì còn 38 thẻ."]
+          ],
+          "example": ["remaining;67;3;40;túi", "x; túi; positive_integer; 67-3*x=40", "Có 67 túi, chuyển cùng số túi trong 3 chuyến thì còn 40 túi."]
+        }
+      }
+    },
+    "E06": {
+      "families": {
+        "1": {
+          "label": "Biệt thức dương, căn hữu tỉ hoặc vô tỉ",
+          "prompt": "Tính biệt thức rồi giải {expression} = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+          "problems": [
+            ["2*x*x-7*x+3", "25;{1/2,3}"],
+            ["2*x*x+2*x-1", "12;{(-1-sqrt(3))/2,(-1+sqrt(3))/2}"]
+          ],
+          "example": ["x*x-8", "32;{-2*sqrt(2),2*sqrt(2)}"]
+        }
+      }
+    },
+    "F05": {
+      "explanation": "Parabol y = ax² + bx + c có hoành độ đỉnh −b/(2a). Từ dạng y = a(x − h)² + k có thể đọc ngay đỉnh (h,k). Trục đối xứng là đường thẳng đứng qua đỉnh.",
+      "hints": [
+        "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?",
+        "Với dạng hoàn thành bình phương, tìm giá trị x làm phần bình phương bằng 0. Với dạng khai triển, dùng −b/(2a).",
+        "Nếu cần tọa độ đỉnh, tính thêm giá trị hàm tại hoành độ đã tìm. Nếu cần trục, viết phương trình đường thẳng đứng đi qua hoành độ đó."
+      ],
+      "families": {
+        "1": {
+          "label": "Tọa độ đỉnh từ dạng khai triển và dạng hoàn thành bình phương",
+          "problems": [
+            ["3*x*x-18*x+7", "(3,-20)"],
+            ["2*(x+3)*(x+3)-27", "(-3,-27)"]
+          ],
+          "example": ["-2*(x-5)*(x-5)+19", "(5,19)"]
+        }
+      }
+    },
+    "F08": {
+      "explanation": "Hàm số mũ y = a^x có cơ số a dương, khác 1 và tập xác định là tập số thực. Với một cơ số hợp lệ, cộng số mũ khi nhân, trừ số mũ khi chia và nhân các số mũ khi lấy lũy thừa của một lũy thừa.",
+      "hints": [
+        "Cơ số có dương và khác 1 không?",
+        "Bài này thuộc tích, thương, lũy thừa của lũy thừa hay kiểm tra điều kiện cơ số?",
+        "Với cơ số hợp lệ, biểu thức a^x xác định với mọi x thực. Kiểm tra số mũ âm bằng quy tắc nghịch đảo."
+      ],
+      "families": {
+        "1": {
+          "prompt": "Rút gọn {display} thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "problems": [
+            ["function;product;3;-2;5", "3^3=27;R", "3⁻² · 3⁵"],
+            ["function;product;2;-5;3", "2^-2=1/4;R", "2⁻⁵ · 2³"]
+          ],
+          "example": ["function;product;5;-1;3", "5^2=25;R", "5⁻¹ · 5³"],
+          "wrong": "3^-7=1/2187;R"
+        },
+        "2": {
+          "prompt": "Rút gọn {display} thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "problems": [
+            ["function;quotient;5;1;3", "5^-2=1/25;R", "5¹ / 5³"],
+            ["function;quotient;3;2;-2", "3^4=81;R", "3² / 3⁻²"]
+          ],
+          "example": ["function;quotient;2;0;3", "2^-3=1/8;R", "2⁰ / 2³"],
+          "wrong": "5^2=25;R"
+        },
+        "3": {
+          "label": "Lũy thừa của lũy thừa và kiểm tra cơ số",
+          "prompt": "{display}",
+          "problems": [
+            ["function;power;2;-2;3", "2^-6=1/64;R", "Rút gọn (2⁻²)³ và ghi tập xác định của hàm y = 2^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định."],
+            ["base;1", "khong-phai-ham-mu", "Xét y = 1^x theo định nghĩa hàm số mũ đang học. Ghi tập xác định nếu là hàm số mũ, hoặc ghi ‘không phải hàm số mũ’."]
+          ],
+          "example": ["function;power;1/2;2;-2", "1/2^-4=16;R", "Rút gọn ((1/2)²)⁻² và ghi tập xác định của hàm y = (1/2)^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định."],
+          "wrong": "2^1=2;R",
+          "question": "Khi lấy lũy thừa của một lũy thừa, hai số mũ được cộng hay nhân?"
+        }
+      }
+    }
+  },
+  "worked_examples": {
+    "N02": [
+      "Hai thừa số cùng âm nên tích dương. Nhân trị tuyệt đối 16 × 5 được 80.",
+      "Số bị chia và số chia trái dấu nên thương âm. Chia 126 cho 9 được 14, vậy thương là −14.",
+      "Tính trong ngoặc trước. −36 chia 9 được −4. Sau đó nhân hai số âm −4 và −8 được 32."
+    ],
+    "N05": [
+      "Mẫu chung 90. Nhân cả tử và mẫu của 4/15 với 6, của 5/18 với 5. So sánh 24 và 25 để được 24/90 < 25/90.",
+      "Mẫu chung 221. Hai tử mới lần lượt là −85 và −91. Vì −85 gần 0 hơn nên −85/221 > −91/221.",
+      "Mẫu chung 140. Nhân phân số thứ nhất với 5/5 và phân số thứ hai với 4/4. Hai phân số đều bằng 80/140."
+    ],
+    "N08": [
+      "Nhân cả tử và mẫu với 5 để có 55/100, rồi viết 0,55.",
+      "Một phần trăm là một phần của 100. Nhân 0,315 với 100 để được 31,5 rồi gắn ký hiệu %, được 31,5%.",
+      "Viết 37,5% thành 37,5/100. Nhân cả hai với 10 được 375/1000, rồi chia cả hai cho 125 để được 3/8."
+    ],
+    "A01": [
+      "Thế −5 vào mọi vị trí của x. Tích (−8)(−5) bằng 40, sau đó 40 − 17 bằng 23.",
+      "Với x = −3, bình phương của x là 9. Tính 4 × 9 + 9 × (−3) − 11 = 36 − 27 − 11 = −2.",
+      "Thế x = 1/3, nên x² = 1/9. Khi đó 6/9 + 5/3 − 1 = 2/3 + 5/3 − 3/3 = 4/3."
+    ],
+    "A04": [
+      "Nhân 7x với 2x được 14x². Nhân 7x với −9 được −63x. Hai hạng tử khác bậc nên giữ 14x² − 63x.",
+      "Nhân −4 lần lượt với 3x², 7x và −13. Ba tích là −12x², −28x và 52, nên đa thức là −12x² − 28x + 52.",
+      "Bốn tích là 6x², −10x, 21x và −35. Gộp hai hạng tử bậc nhất thành 11x, được 6x² + 11x − 35."
+    ],
+    "A07": [
+      "Ước chung lớn nhất của 35 và 49 là 7. Hạng tử 49 không chứa x nên nhân tử chung là 7. Chia mỗi hạng tử cho 7 được 7(5x + 7).",
+      "Hệ số 17 và 6 nguyên tố cùng nhau. Bậc nhỏ nhất của x là 1, nên đặt x ra ngoài để được x(17x + 6).",
+      "Ước chung lớn nhất của 32 và 56 là 8. Cả hai hạng tử có x và bậc nhỏ nhất là 1. Chia cho 8x để được 8x(4x + 7)."
+    ],
+    "A10": [
+      "Loại x = 4 và x = −3. Quy đồng với mẫu (x − 4)(x + 3). Tử là (4x + 1)(x + 3) − (x + 2)(x − 4) = 3x² + 15x + 11.",
+      "Mẫu ban đầu loại x = −9 và x = 2. Nhân tử với tử, mẫu với mẫu rồi khử x + 9, được (x − 8)/(x − 2) với cả hai điều kiện ban đầu.",
+      "Hai mẫu ban đầu loại x = 8 và x = 11. Số chia cũng phải khác 0, nên loại x = −4. Nhân nghịch đảo rồi khử x + 4 được (x − 11)/(x − 8)."
+    ],
+    "E03": [
+      "Gọi x là số gói trong mỗi khay, đơn vị gói, x nguyên dương. Ba khay có 3x gói. Cộng 8 gói ngoài và đối chiếu tổng 29, được 3x + 8 = 29.",
+      "Gọi x là số vé ở quầy trước, đơn vị vé, x nguyên dương. Quầy sau có x + 11 vé. Tổng 55 cho phương trình x + (x + 11) = 55.",
+      "Gọi x là số túi chuyển mỗi chuyến, đơn vị túi, x nguyên dương. Ba chuyến chuyển 3x túi. Lấy 67 trừ 3x và đặt bằng 40, được 67 − 3x = 40."
+    ],
+    "E06": [
+      "Với x² − 8 = 0, a = 1, b = 0, c = −8 nên biệt thức là 32. Hai nghiệm là ±√32/2, rút gọn thành ±2√2.",
+      "Biệt thức 20² − 4 × 25 × 4 bằng 0. Phương trình có nghiệm kép −20/(2 × 25) = −2/5.",
+      "Biệt thức 4² − 4 × 5 × 3 bằng −44. Biệt thức âm nên tập nghiệm thực rỗng."
+    ],
+    "E09": [
+      "Cộng hai hàng với hệ số nhân 1 và 1 để được 3x = 12. Thế x = 4 vào hàng đầu thì y = −3. Cặp (4, −3) thỏa cả hai hàng.",
+      "Lấy hàng đầu trừ hàng sau, tương ứng hệ số 1 và −1. Kết quả −8y = −16 cho y = 2. Thế vào hàng đầu để có x = −1.",
+      "Nhân hàng đầu với 5 và hàng sau với 2. Cộng để khử y và được 23x = 69. Thế x = 3 vào hàng đầu thì y = 1."
+    ],
+    "F02": [
+      "Mẫu số 5x − 16 phải khác 0. Nó bằng 0 tại x = 16/5, nên tập xác định gồm mọi số thực trừ 16/5.",
+      "Biểu thức dưới căn phải không âm. Giải 8x + 17 ≥ 0 được x ≥ −17/8. Lấy cả đầu mút, vì căn của 0 xác định.",
+      "Từ 23 − 6x ≥ 0 suy ra −6x ≥ −23. Chia cho −6 thì đổi chiều, được x ≤ 23/6. Lấy cả đầu mút."
+    ],
+    "F05": [
+      "Bình phương (x − 5)² bằng 0 tại x = 5 và dương ở các x khác. Vì hệ số −2 âm, hàm đạt giá trị lớn nhất 19 tại x = 5. Đỉnh là (5, 19).",
+      "Hệ số a = 6, b = −15 nên hoành độ đỉnh là 15/12 = 5/4. Trục là đường thẳng đứng x = 5/4.",
+      "Hệ số a = −4, b = 24 nên hoành độ đỉnh là −24/(−8) = 3. Đường thẳng đứng qua đỉnh có phương trình x = 3."
+    ],
+    "F08": [
+      "Cộng số mũ −1 và 3 được 2, nên tích là 5² = 25. Cơ số 5 dương và khác 1 nên tập xác định của y = 5^x là R.",
+      "Lấy số mũ ở tử 0 trừ số mũ ở mẫu 3, được −3. Vậy thương là 2⁻³ = 1/8, và y = 2^x xác định trên R.",
+      "Nhân số mũ 2 với −2 được −4. Khi lấy lũy thừa âm, (1/2)⁻⁴ = 2⁴ = 16. Cơ số 1/2 dương và khác 1 nên tập xác định là R."
+    ]
+  }
+}

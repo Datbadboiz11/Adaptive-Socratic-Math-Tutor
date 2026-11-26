@@ -1,0 +1,3952 @@
+{
+  "content_version": "0.4.0-member2-review",
+  "documents": [
+    {
+      "concept_id": "A01",
+      "content_id": "A01-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Đặt giá trị được cho vào từng vị trí của biến. Dùng ngoặc khi thế số âm hoặc phân số, rồi thực hiện phép tính theo thứ tự."
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "A01-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Biểu thức có mấy vị trí cần thay x?"
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "A01-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Khi thế số âm, đặt số đó vào ngoặc ở cả vị trí có bình phương."
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "A01-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tính từng tích và lũy thừa trước khi cộng các hạng tử."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "A04-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nhân từng hạng tử của một thừa số với từng hạng tử của thừa số còn lại. Cuối cùng cộng các hệ số của những hạng tử có cùng phần biến."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "A04-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "A04-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Viết riêng các tích trước khi thu gọn."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "A04-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nhóm các tích có cùng bậc, đặc biệt kiểm tra dấu của nhóm bậc nhất."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "A07-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tìm ước chung lớn nhất của các hệ số và bậc nhỏ nhất của biến xuất hiện ở mọi hạng tử. Đưa nhân tử chung dương ra ngoài ngoặc, rồi nhân ngược để kiểm tra."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "A07-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Hạng tử nào có ít thừa số x nhất?"
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "A07-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tìm ước dương chung lớn nhất của các hệ số trước."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "A07-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Chia từng hạng tử cho nhân tử chung rồi viết kết quả dưới dạng một tích."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "A10-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Ghi điều kiện xác định của từng phân thức từ đầu. Khi chia, loại thêm các giá trị làm phân thức chia bằng 0. Điều kiện đã ghi vẫn giữ sau khi rút gọn."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "A10-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Mẫu gốc nào có thể bằng 0?"
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "A10-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Chọn quy tắc quy đồng, nhân trực tiếp hoặc nhân nghịch đảo theo phép toán."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "A10-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Sau khi khử nhân tử, hãy kiểm tra lại tập giá trị bị loại lúc đầu."
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "D-A01-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A01-M2-ORIG02-1",
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A01-M2-ORIG01-1",
+        "FAM-A01-M2-ORIG02-1"
+      ],
+      "problem_id": "D-A01-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A01-M2-ORIG02-1",
+      "text": "Tính giá trị -8*x-17 tại x = -5.\n\nThế −5 vào mọi vị trí của x. Tích (−8)(−5) bằng 40, sau đó 40 − 17 bằng 23."
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "D-A01-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A01-M2-ORIG02-2",
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A01-M2-ORIG01-2",
+        "FAM-A01-M2-ORIG02-2"
+      ],
+      "problem_id": "D-A01-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A01-M2-ORIG02-2",
+      "text": "Tính giá trị 4*x*x+9*x-11 tại x = -3.\n\nVới x = −3, bình phương của x là 9. Tính 4 × 9 + 9 × (−3) − 11 = 36 − 27 − 11 = −2."
+    },
+    {
+      "concept_id": "A01",
+      "content_id": "D-A01-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A01-M2-ORIG02-3",
+      "grade_levels": [
+        7
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A01-M2-ORIG01-3",
+        "FAM-A01-M2-ORIG02-3"
+      ],
+      "problem_id": "D-A01-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A01-EVALUATE"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A01",
+        "source_id": "PACK-A01",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A01-M2-ORIG02-3",
+      "text": "Tính giá trị 6*x*x+5*x-1 tại x = 1/3. Ghi kết quả chính xác.\n\nThế x = 1/3, nên x² = 1/9. Khi đó 6/9 + 5/3 − 1 = 2/3 + 5/3 − 3/3 = 4/3."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "D-A04-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A04-M2-ORIG02-1",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A04-M2-ORIG01-1",
+        "FAM-A04-M2-ORIG02-1"
+      ],
+      "problem_id": "D-A04-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A04-M2-ORIG02-1",
+      "text": "Khai triển rồi thu gọn 7*x*(2*x-9).\n\nNhân 7x với 2x được 14x². Nhân 7x với −9 được −63x. Hai hạng tử khác bậc nên giữ 14x² − 63x."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "D-A04-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A04-M2-ORIG02-2",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A04-M2-ORIG01-2",
+        "FAM-A04-M2-ORIG02-2"
+      ],
+      "problem_id": "D-A04-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A04-M2-ORIG02-2",
+      "text": "Khai triển rồi thu gọn -4*(3*x*x+7*x-13).\n\nNhân −4 lần lượt với 3x², 7x và −13. Ba tích là −12x², −28x và 52, nên đa thức là −12x² − 28x + 52."
+    },
+    {
+      "concept_id": "A04",
+      "content_id": "D-A04-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A04-M2-ORIG02-3",
+      "grade_levels": [
+        7,
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A04-M2-ORIG01-3",
+        "FAM-A04-M2-ORIG02-3"
+      ],
+      "problem_id": "D-A04-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A04-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A04",
+        "source_id": "PACK-A04",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A04-M2-ORIG02-3",
+      "text": "Khai triển rồi thu gọn (2*x+7)*(3*x-5).\n\nBốn tích là 6x², −10x, 21x và −35. Gộp hai hạng tử bậc nhất thành 11x, được 6x² + 11x − 35."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "D-A07-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A07-M2-ORIG02-1",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A07-M2-ORIG01-1",
+        "FAM-A07-M2-ORIG02-1"
+      ],
+      "problem_id": "D-A07-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A07-M2-ORIG02-1",
+      "text": "Đặt nhân tử chung lớn nhất của 35*x+49, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nƯớc chung lớn nhất của 35 và 49 là 7. Hạng tử 49 không chứa x nên nhân tử chung là 7. Chia mỗi hạng tử cho 7 được 7(5x + 7)."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "D-A07-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A07-M2-ORIG02-2",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A07-M2-ORIG01-2",
+        "FAM-A07-M2-ORIG02-2"
+      ],
+      "problem_id": "D-A07-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A07-M2-ORIG02-2",
+      "text": "Đặt nhân tử chung lớn nhất của 17*x*x+6*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nHệ số 17 và 6 nguyên tố cùng nhau. Bậc nhỏ nhất của x là 1, nên đặt x ra ngoài để được x(17x + 6)."
+    },
+    {
+      "concept_id": "A07",
+      "content_id": "D-A07-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A07-M2-ORIG02-3",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A07-M2-ORIG01-3",
+        "FAM-A07-M2-ORIG02-3"
+      ],
+      "problem_id": "D-A07-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A07-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A07",
+        "source_id": "PACK-A07",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A07-M2-ORIG02-3",
+      "text": "Đặt nhân tử chung lớn nhất của 32*x*x+56*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nƯớc chung lớn nhất của 32 và 56 là 8. Cả hai hạng tử có x và bậc nhỏ nhất là 1. Chia cho 8x để được 8x(4x + 7)."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "D-A10-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A10-M2-ORIG02-1",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A10-M2-ORIG01-1",
+        "FAM-A10-M2-ORIG02-1"
+      ],
+      "problem_id": "D-A10-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A10-M2-ORIG02-1",
+      "text": "Thực hiện phép cộng hoặc trừ đã cho trong -; 4*x+1|x-4; x+2|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.\n\nLoại x = 4 và x = −3. Quy đồng với mẫu (x − 4)(x + 3). Tử là (4x + 1)(x + 3) − (x + 2)(x − 4) = 3x² + 15x + 11."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "D-A10-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A10-M2-ORIG02-2",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A10-M2-ORIG01-2",
+        "FAM-A10-M2-ORIG02-2"
+      ],
+      "problem_id": "D-A10-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A10-M2-ORIG02-2",
+      "text": "Thực hiện phép nhân hai phân thức *; x-8|x+9; x+9|x-2. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.\n\nMẫu ban đầu loại x = −9 và x = 2. Nhân tử với tử, mẫu với mẫu rồi khử x + 9, được (x − 8)/(x − 2) với cả hai điều kiện ban đầu."
+    },
+    {
+      "concept_id": "A10",
+      "content_id": "D-A10-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-A10-M2-ORIG02-3",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-A10-M2-ORIG01-3",
+        "FAM-A10-M2-ORIG02-3"
+      ],
+      "problem_id": "D-A10-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 7–8, PDF trang 55–70",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-A10-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#A10",
+        "source_id": "PACK-A10",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-A10-M2-ORIG02-3",
+      "text": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+4|x-8; x+4|x-11. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.\n\nHai mẫu ban đầu loại x = 8 và x = 11. Số chia cũng phải khác 0, nên loại x = −4. Nhân nghịch đảo rồi khử x + 4 được (x − 11)/(x − 8)."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "D-E03-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E03-M2-ORIG02-1",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E03-M2-ORIG01-1",
+        "FAM-E03-M2-ORIG02-1"
+      ],
+      "problem_id": "D-E03-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E03-M2-ORIG02-1",
+      "text": "Ba khay có cùng số gói và 8 gói để ngoài, tổng 29 gói. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số gói trong mỗi khay, đơn vị gói, x nguyên dương. Ba khay có 3x gói. Cộng 8 gói ngoài và đối chiếu tổng 29, được 3x + 8 = 29."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "D-E03-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E03-M2-ORIG02-2",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E03-M2-ORIG01-2",
+        "FAM-E03-M2-ORIG02-2"
+      ],
+      "problem_id": "D-E03-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E03-M2-ORIG02-2",
+      "text": "Hai quầy có tổng 55 vé, quầy sau có nhiều hơn quầy trước 11 vé. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số vé ở quầy trước, đơn vị vé, x nguyên dương. Quầy sau có x + 11 vé. Tổng 55 cho phương trình x + (x + 11) = 55."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "D-E03-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E03-M2-ORIG02-3",
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E03-M2-ORIG01-3",
+        "FAM-E03-M2-ORIG02-3"
+      ],
+      "problem_id": "D-E03-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E03-M2-ORIG02-3",
+      "text": "Có 67 túi, chuyển cùng số túi trong 3 chuyến thì còn 40 túi. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số túi chuyển mỗi chuyến, đơn vị túi, x nguyên dương. Ba chuyến chuyển 3x túi. Lấy 67 trừ 3x và đặt bằng 40, được 67 − 3x = 40."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "D-E06-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E06-M2-ORIG02-1",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E06-M2-ORIG01-1",
+        "FAM-E06-M2-ORIG02-1"
+      ],
+      "problem_id": "D-E06-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E06-M2-ORIG02-1",
+      "text": "Tính biệt thức rồi giải x*x-8 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.\n\nVới x² − 8 = 0, a = 1, b = 0, c = −8 nên biệt thức là 32. Hai nghiệm là ±√32/2, rút gọn thành ±2√2."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "D-E06-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E06-M2-ORIG02-2",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E06-M2-ORIG01-2",
+        "FAM-E06-M2-ORIG02-2"
+      ],
+      "problem_id": "D-E06-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E06-M2-ORIG02-2",
+      "text": "Tính biệt thức rồi giải 25*x*x+20*x+4 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.\n\nBiệt thức 20² − 4 × 25 × 4 bằng 0. Phương trình có nghiệm kép −20/(2 × 25) = −2/5."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "D-E06-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E06-M2-ORIG02-3",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E06-M2-ORIG01-3",
+        "FAM-E06-M2-ORIG02-3"
+      ],
+      "problem_id": "D-E06-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E06-M2-ORIG02-3",
+      "text": "Tính biệt thức rồi giải 5*x*x+4*x+3 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.\n\nBiệt thức 4² − 4 × 5 × 3 bằng −44. Biệt thức âm nên tập nghiệm thực rỗng."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "D-E09-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E09-M2-ORIG02-1",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E09-M2-ORIG01-1",
+        "FAM-E09-M2-ORIG02-1"
+      ],
+      "problem_id": "D-E09-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E09-M2-ORIG02-1",
+      "text": "Giải hệ 5*x+1*y=17;-2*x-1*y=-5 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.\n\nCộng hai hàng với hệ số nhân 1 và 1 để được 3x = 12. Thế x = 4 vào hàng đầu thì y = −3. Cặp (4, −3) thỏa cả hai hàng."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "D-E09-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E09-M2-ORIG02-2",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E09-M2-ORIG01-2",
+        "FAM-E09-M2-ORIG02-2"
+      ],
+      "problem_id": "D-E09-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E09-M2-ORIG02-2",
+      "text": "Giải hệ 2*x-3*y=-8;2*x+5*y=8 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.\n\nLấy hàng đầu trừ hàng sau, tương ứng hệ số 1 và −1. Kết quả −8y = −16 cho y = 2. Thế vào hàng đầu để có x = −1."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "D-E09-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-E09-M2-ORIG02-3",
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-E09-M2-ORIG01-3",
+        "FAM-E09-M2-ORIG02-3"
+      ],
+      "problem_id": "D-E09-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-E09-M2-ORIG02-3",
+      "text": "Giải hệ 3*x+2*y=11;4*x-5*y=7 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.\n\nNhân hàng đầu với 5 và hàng sau với 2. Cộng để khử y và được 23x = 69. Thế x = 3 vào hàng đầu thì y = 1."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "D-F02-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F02-M2-ORIG02-1",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F02-M2-ORIG01-1",
+        "FAM-F02-M2-ORIG02-1"
+      ],
+      "problem_id": "D-F02-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F02-M2-ORIG02-1",
+      "text": "Tìm tập xác định thực của f(x)=1/(5x−16). Viết R∖{giá trị loại}.\n\nMẫu số 5x − 16 phải khác 0. Nó bằng 0 tại x = 16/5, nên tập xác định gồm mọi số thực trừ 16/5."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "D-F02-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F02-M2-ORIG02-2",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F02-M2-ORIG01-2",
+        "FAM-F02-M2-ORIG02-2"
+      ],
+      "problem_id": "D-F02-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F02-M2-ORIG02-2",
+      "text": "Tìm tập xác định thực của f(x)=√(8x+17). Viết dưới dạng khoảng.\n\nBiểu thức dưới căn phải không âm. Giải 8x + 17 ≥ 0 được x ≥ −17/8. Lấy cả đầu mút, vì căn của 0 xác định."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "D-F02-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F02-M2-ORIG02-3",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F02-M2-ORIG01-3",
+        "FAM-F02-M2-ORIG02-3"
+      ],
+      "problem_id": "D-F02-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F02-M2-ORIG02-3",
+      "text": "Tìm tập xác định thực của f(x)=√(23−6x). Viết dưới dạng khoảng.\n\nTừ 23 − 6x ≥ 0 suy ra −6x ≥ −23. Chia cho −6 thì đổi chiều, được x ≤ 23/6. Lấy cả đầu mút."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "D-F05-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F05-M2-ORIG02-1",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F05-M2-ORIG01-1",
+        "FAM-F05-M2-ORIG02-1"
+      ],
+      "problem_id": "D-F05-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F05-M2-ORIG02-1",
+      "text": "Tìm tọa độ đỉnh của y = -2*(x-5)*(x-5)+19. Nộp cặp (hoành độ,tung độ).\n\nBình phương (x − 5)² bằng 0 tại x = 5 và dương ở các x khác. Vì hệ số −2 âm, hàm đạt giá trị lớn nhất 19 tại x = 5. Đỉnh là (5, 19)."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "D-F05-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F05-M2-ORIG02-2",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F05-M2-ORIG01-2",
+        "FAM-F05-M2-ORIG02-2"
+      ],
+      "problem_id": "D-F05-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F05-M2-ORIG02-2",
+      "text": "Tìm phương trình trục đối xứng của y = 6*x*x-15*x-7. Nộp phương trình dạng x = số.\n\nHệ số a = 6, b = −15 nên hoành độ đỉnh là 15/12 = 5/4. Trục là đường thẳng đứng x = 5/4."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "D-F05-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F05-M2-ORIG02-3",
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F05-M2-ORIG01-3",
+        "FAM-F05-M2-ORIG02-3"
+      ],
+      "problem_id": "D-F05-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F05-M2-ORIG02-3",
+      "text": "Tìm phương trình trục đối xứng của y = -4*x*x+24*x+13. Nộp phương trình dạng x = số.\n\nHệ số a = −4, b = 24 nên hoành độ đỉnh là −24/(−8) = 3. Đường thẳng đứng qua đỉnh có phương trình x = 3."
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "D-F08-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F08-M2-ORIG02-1",
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F08-M2-ORIG01-1",
+        "FAM-F08-M2-ORIG02-1"
+      ],
+      "problem_id": "D-F08-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F08-M2-ORIG02-1",
+      "text": "Rút gọn 5⁻¹ · 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nCộng số mũ −1 và 3 được 2, nên tích là 5² = 25. Cơ số 5 dương và khác 1 nên tập xác định của y = 5^x là R."
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "D-F08-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F08-M2-ORIG02-2",
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F08-M2-ORIG01-2",
+        "FAM-F08-M2-ORIG02-2"
+      ],
+      "problem_id": "D-F08-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F08-M2-ORIG02-2",
+      "text": "Rút gọn 2⁰ / 2³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nLấy số mũ ở tử 0 trừ số mũ ở mẫu 3, được −3. Vậy thương là 2⁻³ = 1/8, và y = 2^x xác định trên R."
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "D-F08-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-F08-M2-ORIG02-3",
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-F08-M2-ORIG01-3",
+        "FAM-F08-M2-ORIG02-3"
+      ],
+      "problem_id": "D-F08-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-F08-M2-ORIG02-3",
+      "text": "Rút gọn ((1/2)²)⁻² và ghi tập xác định của hàm y = (1/2)^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nNhân số mũ 2 với −2 được −4. Khi lấy lũy thừa âm, (1/2)⁻⁴ = 2⁴ = 16. Cơ số 1/2 dương và khác 1 nên tập xác định là R."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "D-N02-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N02-M2-ORIG02-1",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N02-M2-ORIG01-1",
+        "FAM-N02-M2-ORIG02-1"
+      ],
+      "problem_id": "D-N02-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N02-M2-ORIG02-1",
+      "text": "Tính (-16)*(-5) và giải thích dấu của tích.\n\nHai thừa số cùng âm nên tích dương. Nhân trị tuyệt đối 16 × 5 được 80."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "D-N02-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N02-M2-ORIG02-2",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N02-M2-ORIG01-2",
+        "FAM-N02-M2-ORIG02-2"
+      ],
+      "problem_id": "D-N02-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N02-M2-ORIG02-2",
+      "text": "Tính 126/(-9) và giải thích dấu của thương.\n\nSố bị chia và số chia trái dấu nên thương âm. Chia 126 cho 9 được 14, vậy thương là −14."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "D-N02-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N02-M2-ORIG02-3",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N02-M2-ORIG01-3",
+        "FAM-N02-M2-ORIG02-3"
+      ],
+      "problem_id": "D-N02-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N02-M2-ORIG02-3",
+      "text": "Tính ((-36)/9)*(-8), nêu kết quả trong ngoặc trước.\n\nTính trong ngoặc trước. −36 chia 9 được −4. Sau đó nhân hai số âm −4 và −8 được 32."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "D-N05-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N05-M2-ORIG02-1",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N05-M2-ORIG01-1",
+        "FAM-N05-M2-ORIG02-1"
+      ],
+      "problem_id": "D-N05-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N05-M2-ORIG02-1",
+      "text": "Quy đồng rồi thay dấu hỏi trong 4/15 ? 5/18. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 90. Nhân cả tử và mẫu của 4/15 với 6, của 5/18 với 5. So sánh 24 và 25 để được 24/90 < 25/90."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "D-N05-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N05-M2-ORIG02-2",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N05-M2-ORIG01-2",
+        "FAM-N05-M2-ORIG02-2"
+      ],
+      "problem_id": "D-N05-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N05-M2-ORIG02-2",
+      "text": "Quy đồng rồi thay dấu hỏi trong -5/13 ? -7/17. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 221. Hai tử mới lần lượt là −85 và −91. Vì −85 gần 0 hơn nên −85/221 > −91/221."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "D-N05-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N05-M2-ORIG02-3",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N05-M2-ORIG01-3",
+        "FAM-N05-M2-ORIG02-3"
+      ],
+      "problem_id": "D-N05-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N05-M2-ORIG02-3",
+      "text": "Quy đồng rồi thay dấu hỏi trong 16/28 ? 20/35. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 140. Nhân phân số thứ nhất với 5/5 và phân số thứ hai với 4/4. Hai phân số đều bằng 80/140."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "D-N08-M2-ORIG02-EX-01",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N08-M2-ORIG02-1",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N08-M2-ORIG01-1",
+        "FAM-N08-M2-ORIG02-1"
+      ],
+      "problem_id": "D-N08-M2-ORIG02-EX-01",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N08-M2-ORIG02-1",
+      "text": "Đổi theo yêu cầu 11/20 -> decimal. Viết kết quả bằng dấu chấm thập phân.\n\nNhân cả tử và mẫu với 5 để có 55/100, rồi viết 0,55."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "D-N08-M2-ORIG02-EX-02",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N08-M2-ORIG02-2",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N08-M2-ORIG01-2",
+        "FAM-N08-M2-ORIG02-2"
+      ],
+      "problem_id": "D-N08-M2-ORIG02-EX-02",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N08-M2-ORIG02-2",
+      "text": "Đổi theo yêu cầu 0.315 -> percent. Ghi kèm ký hiệu %.\n\nMột phần trăm là một phần của 100. Nhân 0,315 với 100 để được 31,5 rồi gắn ký hiệu %, được 31,5%."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "D-N08-M2-ORIG02-EX-03",
+      "content_version": "0.4.1-member2-kb-examples",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "different_example",
+      "family_id": "FAM-N08-M2-ORIG02-3",
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "example",
+      "lineage_ids": [
+        "GROUP-N08-M2-ORIG01-3",
+        "FAM-N08-M2-ORIG02-3"
+      ],
+      "problem_id": "D-N08-M2-ORIG02-EX-03",
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": "EXAMPLE-N08-M2-ORIG02-3",
+      "text": "Đổi theo yêu cầu 37.5% -> fraction. Ghi phân số tối giản.\n\nViết 37,5% thành 37,5/100. Nhân cả hai với 10 được 375/1000, rồi chia cả hai cho 125 để được 3/8."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "E03-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Đặt x cho đúng đại lượng chưa biết, ghi đơn vị và điều kiện, rồi dịch từng quan hệ trong đề thành biểu thức. Hai vế của phương trình phải biểu diễn cùng một đại lượng."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "E03-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Đại lượng nào chưa biết và có đơn vị gì?"
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "E03-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Viết biểu thức cho từng nhóm cùng đơn vị."
+    },
+    {
+      "concept_id": "E03",
+      "content_id": "E03-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        8
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E03-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E03",
+        "source_id": "PACK-E03",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Đặt tổng các phần bằng tổng đã cho rồi kiểm tra điều kiện của x."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "E06-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Với ax²+bx+c=0 và a khác 0, biệt thức b²−4ac quyết định số nghiệm thực. Khi có nghiệm, thay các hệ số đúng dấu vào công thức nghiệm."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "E06-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Xác định a, b, c và giữ dấu của từng hệ số."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "E06-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tính biệt thức trước rồi xác định có bao nhiêu nghiệm thực."
+    },
+    {
+      "concept_id": "E06",
+      "content_id": "E06-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E06-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E06",
+        "source_id": "PACK-E06",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nếu có nghiệm, kiểm tra mẫu 2a và thử thay lại phương trình."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "E09-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nhân từng phương trình với một số khác 0 để tạo hệ số đối nhau. Cộng hai hàng để khử một ẩn, rồi tìm ẩn còn lại và kiểm tra cả hai phương trình."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "E09-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "E09-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Chọn hai hệ số nhân sao cho tổng hệ số của một ẩn bằng 0."
+    },
+    {
+      "concept_id": "E09",
+      "content_id": "E09-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        9
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8–9, PDF trang 63–78",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-E09-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#E09",
+        "source_id": "PACK-E09",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Giải hàng thu được, thế lại để tìm ẩn còn lại, rồi kiểm tra nghiệm trên cả hai hàng gốc."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "F02-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Mẫu số khác 0 và biểu thức dưới căn bậc hai không âm. Tập xác định là tập giá trị thực đáp ứng mọi điều kiện tại vị trí tương ứng."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "F02-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "F02-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Viết điều kiện mẫu khác 0 hoặc biểu thức dưới căn không âm."
+    },
+    {
+      "concept_id": "F02",
+      "content_id": "F02-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F02-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F02",
+        "source_id": "PACK-F02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Kiểm tra đầu mút có được lấy hay loại sau khi giải điều kiện."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "F05-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Parabol y = ax² + bx + c có hoành độ đỉnh −b/(2a). Từ dạng y = a(x − h)² + k có thể đọc ngay đỉnh (h,k). Trục đối xứng là đường thẳng đứng qua đỉnh."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "F05-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "F05-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Với dạng hoàn thành bình phương, tìm giá trị x làm phần bình phương bằng 0. Với dạng khai triển, dùng −b/(2a)."
+    },
+    {
+      "concept_id": "F05",
+      "content_id": "F05-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        10
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F05-VERTEX"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F05",
+        "source_id": "PACK-F05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nếu cần tọa độ đỉnh, tính thêm giá trị hàm tại hoành độ đã tìm. Nếu cần trục, viết phương trình đường thẳng đứng đi qua hoành độ đó."
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "F08-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Hàm số mũ y = a^x có cơ số a dương, khác 1 và tập xác định là tập số thực. Với một cơ số hợp lệ, cộng số mũ khi nhân, trừ số mũ khi chia và nhân các số mũ khi lấy lũy thừa của một lũy thừa."
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "F08-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Cơ số có dương và khác 1 không?"
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "F08-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Bài này thuộc tích, thương, lũy thừa của lũy thừa hay kiểm tra điều kiện cơ số?"
+    },
+    {
+      "concept_id": "F08",
+      "content_id": "F08-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        11
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-F08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#F08",
+        "source_id": "PACK-F08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Với cơ số hợp lệ, biểu thức a^x xác định với mọi x thực. Kiểm tra số mũ âm bằng quy tắc nghịch đảo."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "N02-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tách tính dấu khỏi tính giá trị tuyệt đối. Hai số cùng dấu cho tích hoặc thương dương, hai số trái dấu cho kết quả âm. Phép chia cần số chia khác 0."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "N02-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "N02-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Tạm bỏ dấu, tính với các giá trị tuyệt đối rồi xác định dấu."
+    },
+    {
+      "concept_id": "N02",
+      "content_id": "N02-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N02-SIGNED-MUL"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N02",
+        "source_id": "PACK-N02",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nếu có nhiều phép tính, em có thể ra dấu và giá trị cho từng kết quả trong ngoặc trước."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "N05-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Quy đồng bằng cách nhân cả tử và mẫu của mỗi phân số với cùng một số dương. Khi mẫu đã bằng nhau, dấu so sánh được quyết định bởi hai tử số."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "N05-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Hai mẫu có thể cùng chia hết cho số nào?"
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "N05-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Nhân cả tử lẫn mẫu để mỗi phân số có mẫu chung."
+    },
+    {
+      "concept_id": "N05",
+      "content_id": "N05-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N05-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N05",
+        "source_id": "PACK-N05",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Sau khi có hai phân số cùng mẫu dương, hãy đặt dấu theo thứ tự các tử số."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "N08-explanation",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 0,
+      "kind": "explanation",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Mỗi cách viết chỉ thay đổi biểu diễn của cùng một giá trị. Chia tử cho mẫu để có số thập phân hữu hạn, và hiểu phần trăm là số phần trên một trăm."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "N08-hint-1",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "conceptual",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 1,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Dạng đích là phân số, thập phân hay phần trăm?"
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "N08-hint-2",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "strategy",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 2,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Viết giá trị dưới dạng phân số hoặc số trên một trăm trước."
+    },
+    {
+      "concept_id": "N08",
+      "content_id": "N08-hint-3",
+      "content_version": "0.4.0-member2-review",
+      "counts_as_assistance": true,
+      "difficulty": null,
+      "disclosure": "scaffold",
+      "family_id": null,
+      "grade_levels": [
+        6
+      ],
+      "hint_level": 3,
+      "kind": "hint",
+      "lineage_ids": [],
+      "problem_id": null,
+      "provenance": {
+        "alignment_locator": "Phần lớp 6–7, PDF trang 46–62",
+        "alignment_source_id": "SRC-MATH-2018",
+        "origin": "content/authoring/batches/member2-original.v2",
+        "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+        "pack_version": "0.4.0-member2-review",
+        "projector_version": "kb-1.0.0",
+        "registry_hash": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f"
+      },
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "skill_ids": [
+        "SK-N08-PRIMARY"
+      ],
+      "source": {
+        "locator": "content/authoring/batches/member2-original.v2#N08",
+        "source_id": "PACK-N08",
+        "title": "AI-assisted authoring draft; source IDs: SRC-MATH-2018"
+      },
+      "source_group": null,
+      "text": "Sau khi đổi, kiểm tra lại giá trị bằng cách chuyển ngược về dạng ban đầu."
+    }
+  ],
+  "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c"
+}

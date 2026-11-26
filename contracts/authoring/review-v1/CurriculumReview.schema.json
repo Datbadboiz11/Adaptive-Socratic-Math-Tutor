@@ -1,0 +1,140 @@
+{
+  "$defs": {
+    "ConceptScopeReview": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "alignment": {
+          "enum": [
+            "pass",
+            "fail",
+            "not_checked"
+          ],
+          "title": "Alignment",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "grade_levels": {
+          "items": {
+            "maximum": 12,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "comments": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Comments",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_id",
+        "scope",
+        "alignment",
+        "source_id",
+        "locator",
+        "grade_levels",
+        "comments"
+      ],
+      "title": "ConceptScopeReview",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "review_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Review Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "reviewed_at": {
+      "format": "date-time",
+      "title": "Reviewed At",
+      "type": "string"
+    },
+    "human_attestation": {
+      "const": true,
+      "title": "Human Attestation",
+      "type": "boolean"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "changes_requested"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "comments": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Comments",
+      "type": "string"
+    },
+    "protocol_version": {
+      "const": "curriculum-review-1.0.0",
+      "default": "curriculum-review-1.0.0",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "registry_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Registry Sha256",
+      "type": "string"
+    },
+    "concepts": {
+      "items": {
+        "$ref": "#/$defs/ConceptScopeReview"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "title": "Concepts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "review_id",
+    "reviewer",
+    "reviewed_at",
+    "human_attestation",
+    "decision",
+    "comments",
+    "registry_sha256",
+    "concepts"
+  ],
+  "title": "CurriculumReview",
+  "type": "object"
+}

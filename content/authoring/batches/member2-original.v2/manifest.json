@@ -1,0 +1,280 @@
+{
+  "basis": "user_confirmed_approval",
+  "content_version": "0.4.0-member2-review",
+  "files_sha256": {
+    "approved-bank.json": "b19cb0230767b3763ceeba65dff7fa9fb9c161216dd309b76a790d3e1a63e848",
+    "registry-snapshot.json": "9b112bf8bbd3d887c2a94d021cbe8ef31dcba1ee5fc78178ac9fa6cc8131996b"
+  },
+  "packs": {
+    "A01": {
+      "approved_pack_sha256": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "42d17998d16545e1def8b2f132c6edf2c564d87888f4720760e7945389a7fd34",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "fe470322d0990b437727db0ff8c67bdbd726fbd7721f1ab160d4d6abba9a7c39"
+    },
+    "A04": {
+      "approved_pack_sha256": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "bbee0e1e3f513d7828cdd691a53d60395d43ab172d7d4581283eeb5ed36fa27d",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "db76666302ca6db2c40c3f8aebe061d294ebc0f50aecaa114f86156639ebb9b6"
+    },
+    "A07": {
+      "approved_pack_sha256": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "99b19f9a6d2c6c8deee8c848ed3cc86530885621bc30cb2aa0e1c6c23ecb95e6",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "cac921c2bd909f5fd12d99b898ad1d6edd0310503ac48b01cf0d8962b40e2130"
+    },
+    "A10": {
+      "approved_pack_sha256": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "78c0edcc284e9be686f1c668ef67c7c7c2f9551b64329eb360a5ab9dc9a0e8ed",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "2f348c295eae1e04a5a4f9cc0d9708784b1618536557bda2c6a73cee7cf3d3a9"
+    },
+    "E03": {
+      "approved_pack_sha256": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "a797e5ecfdb4db6818ed0d6b5aca17464f222461bfdadbc22a5260eb70e5301e",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "2f4e6ce1c71aab7a9f52910be70123b89a21f3f95079917c056c4e15dd0d2462"
+    },
+    "E06": {
+      "approved_pack_sha256": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "2034598ab05d2aa4ab850b76e5b339dc31468c6ace3fd6547cc3a63457d98162",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "83548813cf1f07be8898e892699352ac120a3f3a46edebc81e4f76b334b4084e"
+    },
+    "E09": {
+      "approved_pack_sha256": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "a7a14b2479272c5dd33881b34a5f414199900ef57e219b5a16ba805923779d4b",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "26199d95a912ab45833ae51aa7c204f49bd0ec201d1d004ae6a48e032a3a4438"
+    },
+    "F02": {
+      "approved_pack_sha256": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "4e78c6aa882983bbff1bfa892e9179893c8ba40c0b92c1e85198f0bb13f63611",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "e697e81cf04e0a298ffdbd0b82ef802bb026e6dd981196b69eeeea9ca8f91701"
+    },
+    "F05": {
+      "approved_pack_sha256": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "812b926c4508d21f79f1b90a29efa141e04d37c991cd2ed50fda2bdfaf7e9988",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "4529f9e3879d201512711b3f43534be2940b38073f0f587d5ec1f1ba951c1fb3"
+    },
+    "F08": {
+      "approved_pack_sha256": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "29e0a7b76c1004a932e54d932d5fae7cf7ac6063dd4a3e317bedae7556af6d8e",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "c2b8735a9e3be0ec9712cd7440dca964142874d6f003ac3668a3449400220147"
+    },
+    "N02": {
+      "approved_pack_sha256": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "cb3496bd4519f3ab8073ed02d977298480df279427aa24db8427f6e00334c72a",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "0704c83c9d9e08fbfbe1ecc759ed0661a0e56cfd7c6c90f4fdfb147ba4e37292"
+    },
+    "N05": {
+      "approved_pack_sha256": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "d2456ca6706d12e4163363f601cb665b66de228972927166d1d4e869f8a9b898",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "4c8ab6da6581bb8a5d805e59d285a9901b45416e61fd8cda5ec3e86b18db2453"
+    },
+    "N08": {
+      "approved_pack_sha256": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+      "review": {
+        "checklist": {
+          "curriculum_scope": "pass",
+          "disclosure": "pass",
+          "mathematics": "pass",
+          "pedagogy_language": "pass",
+          "source_rights": "pass"
+        },
+        "comments": "Người dùng xác nhận đã kiểm tra và duyệt đủ 13 pack. Checklist ghi theo quyết định duyệt chung cho đúng hash của lô M2-ORIG02. Thời điểm là lúc ghi nhận xác nhận của người dùng.",
+        "decision": "approved",
+        "pack_sha256": "b17e7b548470163d5fcaebbf1a08aac2a450a11d105a0a08722c5e454ecc9763",
+        "protocol_version": "authoring-1.0.0",
+        "review_id": "M2-ORIG02-USER-20261124",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)"
+      },
+      "review_material_sha256": "3abc78c315c84eb7e122984c32e4f73931b811b65bdee906a454049ceb515168"
+    }
+  },
+  "record_id": "M2-ORIG02-USER-20261124",
+  "recorded_at": "2026-11-24T22:17:10+07:00",
+  "recorded_by": "Codex — ghi nhận xác nhận của người dùng",
+  "review_status": "human_approved",
+  "revision": "M2-ORIG02",
+  "runtime_publication": false,
+  "source_sha256": {
+    "content/authoring/member2-original-pilot.v1.json": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
+    "content/authoring/member2-original-pilot.v2.json": "c3ef2d3322be965cfd5fbd26c5a4e80e0ea13088473265ad739e430f757bd8d0"
+  }
+}
