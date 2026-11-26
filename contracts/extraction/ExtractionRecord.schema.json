@@ -1,0 +1,303 @@
+{
+  "$defs": {
+    "ExtractedStep": {
+      "additionalProperties": false,
+      "description": "Một phương trình học sinh đã viết.\n\n``role = \"restated_problem\"`` là dòng chép lại đề ở đầu bài: được giữ nhưng không đánh số bước\n(FR04-AC1), nên ``index`` là None. Bước giải đánh số từ 1.",
+      "properties": {
+        "role": {
+          "enum": [
+            "restated_problem",
+            "step"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "index": {
+          "anyOf": [
+            {
+              "maximum": 12,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Index"
+        },
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "source": {
+          "maxLength": 400,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "normalized": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Normalized",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "line",
+        "source",
+        "normalized"
+      ],
+      "title": "ExtractedStep",
+      "type": "object"
+    },
+    "ExtractionResult": {
+      "additionalProperties": false,
+      "description": "Đầu ra của extraction, đầu vào của validator.",
+      "properties": {
+        "contract_version": {
+          "const": "extraction-contract-0.1.0",
+          "default": "extraction-contract-0.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "grammar_version": {
+          "title": "Grammar Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "extracted",
+            "needs_clarification"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "rules",
+            "llm"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/$defs/ExtractedStep"
+          },
+          "maxItems": 13,
+          "title": "Steps",
+          "type": "array"
+        },
+        "reasons": {
+          "items": {
+            "$ref": "#/$defs/Reason"
+          },
+          "maxItems": 6,
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "grammar_version",
+        "status",
+        "method"
+      ],
+      "title": "ExtractionResult",
+      "type": "object"
+    },
+    "LLMUsage": {
+      "additionalProperties": false,
+      "description": "Chi phí một lần gọi LLM (plan §18: latency/cost). Dùng chung cho Agent đề xuất và LLM\nextraction; tạo bằng ``app.llm.client.usage_from_call`` / ``usage_from_failure``.\n\nGhi cả khi lần gọi lỗi (``error``): lượt đó vẫn tốn thời gian và có thể tốn token.\n``model_id`` là tên model provider trả về (thường kèm ngày snapshot), không phải tên cấu hình.\nSố token để null khi provider không trả ``usage`` (timeout, lỗi mạng): không biết, khác với 0.\n``cost_usd`` để null khi chưa biết số token hoặc model không có trong bảng giá ``price_version``.",
+      "properties": {
+        "model_id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "prompt_version": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Tokens"
+        },
+        "cached_input_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cached Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        },
+        "latency_ms": {
+          "minimum": 0,
+          "title": "Latency Ms",
+          "type": "number"
+        },
+        "cost_usd": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cost Usd"
+        },
+        "price_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Price Version"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "required": [
+        "model_id",
+        "prompt_version",
+        "latency_ms"
+      ],
+      "title": "LLMUsage",
+      "type": "object"
+    },
+    "Reason": {
+      "description": "Vì sao chưa tách được. Nhóm đầu do luật tất định phát hiện; nhóm hai do LLM báo; nhóm ba\nlà chốt chặn LLM (đầu ra của LLM không trung thành với bài làm) và lỗi gọi model.",
+      "enum": [
+        "empty",
+        "no_equation",
+        "no_steps",
+        "decimal_comma",
+        "chained_equals",
+        "ambiguous_fraction",
+        "syntax",
+        "too_many_steps",
+        "step_too_long",
+        "mixed_text",
+        "math_in_words",
+        "unsupported_notation",
+        "unreadable",
+        "not_verbatim",
+        "partial_span",
+        "unextracted_math",
+        "llm_unavailable",
+        "llm_invalid_output"
+      ],
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Một dòng trong extraction log của phiên: lượt nào, tách bằng gì, tốn bao nhiêu.",
+  "properties": {
+    "turn_id": {
+      "format": "uuid",
+      "title": "Turn Id",
+      "type": "string"
+    },
+    "extractor_version": {
+      "title": "Extractor Version",
+      "type": "string"
+    },
+    "prompt_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prompt Version"
+    },
+    "result": {
+      "$ref": "#/$defs/ExtractionResult"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LLMUsage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "llm_output": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Llm Output"
+    }
+  },
+  "required": [
+    "turn_id",
+    "extractor_version",
+    "result"
+  ],
+  "title": "ExtractionRecord",
+  "type": "object"
+}
