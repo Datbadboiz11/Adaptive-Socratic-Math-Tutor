@@ -353,12 +353,12 @@ class Member2CoverageTests(unittest.TestCase):
     def test_inventory_counts_distinct_concepts_across_versions(self):
         _, report = rendered_artifacts()
         inventory = report["pack_inventory"]
-        self.assertEqual([source["pack_count"] for source in inventory.values()], [10, 13, 2, 13])
+        self.assertEqual([source["pack_count"] for source in inventory.values()], [10, 13, 13])
         self.assertEqual(report["summary"]["concepts_with_any_pack"], 20)
-        self.assertEqual(report["summary"]["concepts_with_any_approved_pack"], 15)
+        self.assertEqual(report["summary"]["concepts_with_any_approved_pack"], 13)
         self.assertEqual(report["edge_review_counts"], {"draft": 68})
         rows = {row["concept_id"]: row for row in report["concepts"]}
-        self.assertEqual(rows["A02"]["pack_sources"]["A02/E02 đã duyệt"]["review"]["status"], "human_approved")
+        self.assertEqual(len(report["pack_inventory"]), 3)
         self.assertEqual(rows["F05"]["pack_sources"]["Nháp Member 2"]["task_kinds"], ["quadratic_axis", "quadratic_vertex"])
         self.assertEqual(rows["F05"]["pack_sources"]["13 pack Member 2 đã duyệt"]["review"]["status"], "human_approved")
         self.assertEqual(rows["F05"]["internal_demo"]["validator_task_kinds"], ["quadratic_axis", "quadratic_vertex"])

@@ -79,8 +79,17 @@ def store():
 
 @pytest.fixture
 def data():
-    corpus = json.loads((ROOT / "content/authoring/batches/a02-e02-oatutor.v2/retrieval-dev/corpus.json").read_text(encoding="utf-8"))
-    queries = json.loads((ROOT / "research/retrieval/dev/a02-e02.ai-review.v1/queries.json").read_text(encoding="utf-8"))
+    from app.curriculum import load_curriculum
+    from app.retrieval_dev import candidate_corpus
+    registry, bank = load_curriculum()
+    prepared = {pack.concept_id: {"draft.json": pack.model_dump(mode="json"),
+                 "request.json": {"revision": "SYNTHETIC"}} for pack in bank.packs
+                if pack.concept_id in ("A02", "E02")}
+    corpus = candidate_corpus(prepared, registry, "SYNTHETIC-RETRIEVAL-ONLY")
+    queries = [{"concept_id": doc["concept_id"], "target_skill_id": doc["skill_ids"][0],
+                "purpose": "explanation", "allowed_hint_level": 0, "grade_levels": doc["grade_levels"],
+                "active_problem_id": "SYNTHETIC-ACTIVE", "excluded_source_groups": []}
+               for doc in corpus["documents"] if doc["kind"] == "explanation"]
     vectors = {doc["content_id"]: [1.0] + [0.0] * 383 for doc in corpus["documents"]}
     return corpus, queries, vectors
 

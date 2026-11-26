@@ -14,7 +14,7 @@ sys.path[:0] = [str(ROOT / "backend"), str(ROOT / "scripts/authoring")]
 
 from app.authoring_math import expected, response_value
 from app.authoring_extended_math import check_expanded_quadratic
-from app.authoring_runs import RunStore, generate_gemini, load_json, pilot_replay
+from app.authoring_runs import RunStore, draft_request_for, generate_gemini, load_json, pilot_replay
 from app.content_authoring import ContentReview, DraftRequest, digest
 from app.curriculum import AuthoringMathTask, ConceptPack, load_curriculum
 from app.member2_contracts import project_problem
@@ -25,7 +25,7 @@ from prepare_member2_pilot import record_review, rendered_pilot
 def test_original_pilot_covers_member2_and_separates_vertex_from_axis():
     artifacts, summary = rendered_pilot()
     assert len(summary["member2_concepts"]) == 13
-    assert summary["original_replacements"] == ["A02", "E02"]
+    assert summary["original_replacements"] == []
     assert sum(summary["packs"][cid]["problems"] for cid in summary["member2_concepts"]) == 78
     assert all(pack["review"] == "draft" for pack in summary["packs"].values())
     pack = ConceptPack.model_validate(artifacts["F05/draft.json"])
@@ -127,21 +127,6 @@ def test_review_edition_records_exact_review_material_and_rejects_edits(tmp_path
         record_review(tmp_path, "A07", input_path, artifacts, summary)
 
 
-def test_team_reviews_are_bound_to_pack_hash_and_hold_source_rights():
-    batch = ROOT / "content/authoring/batches/a02-e02-oatutor.v2"
-    source = load_json(ROOT / "docs/implementation/member2/part2/source-rights.json")
-    assert len(source["items"]) == 8 and source["item_rights_passed"] == 0
-    for concept in ("A02", "E02"):
-        pack = ConceptPack.model_validate(load_json(batch / concept / "draft.json"))
-        review = ContentReview.model_validate(
-            load_json(batch / "reviews" / concept / "M2-TEAM-20261123" / "review.json")
-        )
-        assert review.pack_sha256 == digest(pack.model_dump(mode="json"))
-        assert review.decision == "content_pass_source_pending"
-        assert review.checklist.source_rights == "not_checked"
-        assert not (batch / "reviews" / concept / review.review_id / "approved-pack.json").exists()
-
-
 def test_original_pilot_review_checks_snapshot_and_only_writes_candidate(tmp_path):
     artifacts, summary = rendered_pilot()
     (tmp_path / "A07").mkdir()
@@ -164,7 +149,7 @@ def test_original_pilot_review_checks_snapshot_and_only_writes_candidate(tmp_pat
 def test_gemini_sends_one_bounded_request_and_validates_the_full_pack(monkeypatch):
     monkeypatch.setenv("AUTHORING_LLM_ENABLED", "true")
     monkeypatch.setenv("GEMINI_API_KEY", "synthetic-key")
-    original = DraftRequest.model_validate(load_json(ROOT / "content/authoring/configs/a02.v1.json"))
+    original = draft_request_for("A02")
     request = original.model_copy(update={"model": "gemini-3.1-flash-lite"})
     _, bank = load_curriculum()
     generated, _ = pilot_replay(original, bank)

@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / "backend"))
 sys.path.insert(0, str(ROOT / "scripts/checks"))
 
 from app.authoring_runs import (
-    GenerationError, RunStore, TEMPLATE, create_run, generate_openai, load_json, pilot_replay, review_run, verify_run,
+    GenerationError, RunStore, TEMPLATE, draft_request_for, create_run, generate_openai, load_json, pilot_replay, review_run, verify_run,
 )
 from app.authoring_math import scalar
 from app.content_authoring import (
@@ -35,7 +35,7 @@ class AuthoringTests(unittest.TestCase):
         cls.registry, cls.bank = load_curriculum()
 
     def setUp(self):
-        self.request = DraftRequest.model_validate(load_json(ROOT / "content/authoring/configs/a02.v1.json"))
+        self.request = draft_request_for("A02")
         self.content, _ = pilot_replay(self.request, self.bank)
         self.pack = make_draft(self.content, self.request)
 
@@ -140,7 +140,7 @@ class AuthoringTests(unittest.TestCase):
     def test_final_answer_in_polynomial_or_equation_hint_is_rejected(self):
         pack = self.changed_pack(lambda d: d["hints"][0].update(text="Đáp án là " + d["problems"][0]["reference_answer"]))
         self.assertIn("answer_disclosure", self.codes(pack))
-        request = DraftRequest.model_validate(load_json(ROOT / "content/authoring/configs/e02.v1.json"))
+        request = draft_request_for("E02")
         content, _ = pilot_replay(request, self.bank)
         pack = make_draft(content, request)
         data = pack.model_dump(mode="json")
@@ -257,7 +257,7 @@ class AuthoringTests(unittest.TestCase):
 
 class AuthoringRunTests(unittest.TestCase):
     def setUp(self):
-        self.request = DraftRequest.model_validate(load_json(ROOT / "content/authoring/configs/a02.v1.json"))
+        self.request = draft_request_for("A02")
         # Keep isolated artifacts instead of deleting files; this workspace forbids deletion.
         self.store = RunStore(ROOT / "artifacts/authoring-tests" / uuid4().hex)
 

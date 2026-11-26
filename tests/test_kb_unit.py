@@ -18,8 +18,8 @@ from app.manage import digest
 from kb_support import approved_source, fake_profile, fixture_projection, request_for
 
 
-def test_both_real_sources_are_draft_and_publish_zero_chunks():
-    for source in ("curriculum","oatutor-v2"):
+def test_canonical_draft_source_publishes_zero_chunks():
+    for source in ("curriculum",):
         registry,bank,origin = load_source(source)
         p = project(registry,bank,load_profile(),origin=origin)
         assert p.chunks == () and len(p.blocked) == len(bank.packs)

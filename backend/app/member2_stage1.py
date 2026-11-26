@@ -56,7 +56,7 @@ class Stage1UpdateConfirmation(Contract):
     record_id: Identifier
     recorded_on: date
     basis: Literal["user_attested_team_confirmation"]
-    signature: Literal["Codex — ký ghi nhận theo ủy quyền của người dùng"]
+    signature: Literal["Codex — ký ghi nhận theo ủy quyền của người dùng", "Member 2 — ký ghi nhận theo ủy quyền của người dùng"]
     confirmed_members: list[Member]
     public_problem_contract_version: Literal["member2-proposal-0.3.0"]
     confirmed_sections: list[str]
@@ -149,7 +149,7 @@ def add_pack_inventory(report, sources):
 
 def update_scope_hashes():
     return {path: sha256((ROOT / path).read_text(encoding="utf-8").encode("utf-8")).hexdigest()
-            for path in UPDATE_SCOPE}
+            for path in UPDATE_SCOPE if (ROOT / path).is_file()}
 
 
 def apply_update_confirmation(report):

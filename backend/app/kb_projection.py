@@ -52,25 +52,15 @@ def _verified_member2_source():
     return registry, bank
 
 
-def load_source(source="oatutor-v2"):
+def load_source(source="member2-v2"):
     if source == "member2-v2":
         registry, bank = _verified_member2_source()
         return registry, bank, "content/authoring/batches/member2-original.v2"
-    if source == "original-a02-e02":
-        from app.original_packs import SOURCE, load_original_packs
-        registry, bank = load_original_packs()
-        return registry, bank, SOURCE
     if source == "curriculum":
         revision = CURRENT_CURRICULUM_REVISION
         registry, bank = load_curriculum(revision=revision)
         return registry, bank, f"content/curriculum/pilot.{revision}.json"
-    if source != "oatutor-v2":
-        raise ValueError("Unknown versioned source")
-    base = ROOT / "content/authoring/batches/a02-e02-oatutor.v2"
-    registry = CurriculumRegistry.model_validate_json((base / "registry-snapshot.json").read_text(encoding="utf-8"))
-    packs = [ConceptPack.model_validate_json((base / cid / "draft.json").read_text(encoding="utf-8")) for cid in ("A02", "E02")]
-    bank = PilotBank(schema_version="1.0.0", content_version=registry.content_version, packs=packs)
-    return registry, bank, "content/authoring/batches/a02-e02-oatutor.v2"
+    raise ValueError("Unknown or retired versioned source")
 
 
 def load_example_publications(source):

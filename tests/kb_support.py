@@ -12,8 +12,10 @@ from app.member2_contracts import RetrievalQuery
 
 
 def approved_source(version="0.1.0"):
-    registry,bank,_ = load_source()
+    registry,bank,_ = load_source('curriculum')
     rd,bd = registry.model_dump(mode="json"),bank.model_dump(mode="json")
+    bd['packs'] = sorted([pack for pack in bd['packs'] if pack['concept_id'] in ('A02','E02')],
+                         key=lambda pack: pack['concept_id'])
     review = {"status":"human_approved","author":"Synthetic test fixture",
               "source":"Synthetic approval test only; no human attestation",
               "human_reviewer":"SYNTHETIC-NOT-A-REAL-REVIEWER","reviewed_at":"2026-11-18T00:00:00Z"}

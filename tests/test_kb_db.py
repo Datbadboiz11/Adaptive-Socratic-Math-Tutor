@@ -112,7 +112,7 @@ def test_dry_run_is_read_only_and_sync_twice_reuses_embeddings():
 
 
 def test_real_drafts_write_registry_but_no_chunks_or_embeddings():
-    registry,bank,origin = load_source()
+    registry,bank,origin = load_source("curriculum")
     p = project(registry,bank,load_profile(),namespace="fixture-real-draft-"+uuid4().hex[:8],origin=origin)
     class NeverEmbed:
         profile=p.profile
@@ -339,7 +339,7 @@ def test_no_database_transaction_is_open_during_embedding():
 
 def test_runtime_tool_binds_only_canonical_pair_and_pins_snapshot():
     from app.kb_tool import bind_runtime_tool,TrustedKBState
-    registry,bank,origin = load_source()
+    registry,bank,origin = load_source("curriculum")
     p = project(registry,bank,load_profile(),origin=origin)
     class NoEmbedding:
         profile=p.profile

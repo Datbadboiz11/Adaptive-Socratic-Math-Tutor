@@ -28,6 +28,22 @@ class GenerationError(ValueError):
     pass
 
 
+def draft_request_for(concept_id, bank=None):
+    """Build an unpublished canonical replay request without per-concept legacy files."""
+    if bank is None:
+        _, bank = load_curriculum()
+    pack = next((pack for pack in bank.packs if pack.concept_id == concept_id), None)
+    if pack is None:
+        raise ValueError('No canonical draft for concept ' + concept_id)
+    families = {}
+    for problem in pack.problems:
+        families.setdefault(problem.family_id, dict(family_id=problem.family_id,
+            source_group=problem.source_group, description='Canonical draft family ' + problem.family_id))
+    return DraftRequest(concept_id=concept_id, revision='M2-R001', author='Member 2',
+        content_version=bank.content_version, source_ids=['SRC-MATH-2018'],
+        families=list(families.values()), model='gpt-4o-mini', max_output_tokens=8000, timeout_seconds=45)
+
+
 def load_json(path):
     path = Path(path)
     if path.stat().st_size > MAX_JSON_BYTES:

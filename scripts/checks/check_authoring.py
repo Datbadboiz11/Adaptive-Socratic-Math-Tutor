@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 
 from app.authoring_runs import (
-    RunStore, authoring_prompt, check_run, check_source_draft, load_authoring_source, load_json, pilot_replay, verify_run,
+    RunStore, authoring_prompt, draft_request_for, check_run, check_source_draft, load_authoring_source, load_json, pilot_replay, verify_run,
 )
 from app.content_authoring import ContentReview, DraftRequest, GeneratedContent, make_draft
 from app.curriculum import PilotBank, safe_chunks
@@ -24,11 +24,11 @@ def audit(source="member2-v2"):
     registry, bank = load_authoring_source(source)
     summaries = []
     configs = (sorted((ROOT / "content/authoring/configs/member2-v2").glob("*.json")) if source == "member2-v2" else
-               [ROOT / f"content/authoring/configs/{cid}.v1.json" for cid in ("a02", "e02")])
+               [draft_request_for(cid, bank) for cid in ("A02", "E02")])
     if source == "member2-v2" and {path.stem for path in configs} != {pack.concept_id for pack in bank.packs}:
         raise ValueError("Provide one config for each of the 13 Member 2 concepts")
     for config in configs:
-        request = DraftRequest.model_validate(load_json(config))
+        request = config if isinstance(config, DraftRequest) else DraftRequest.model_validate(load_json(config))
         concept = request.concept_id
         authoring_prompt(request, registry, source)
         content, metadata = pilot_replay(request, bank)

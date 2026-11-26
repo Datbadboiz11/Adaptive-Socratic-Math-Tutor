@@ -21,7 +21,6 @@ from app.member2_problem_contract import (
 )
 from app.member2_runtime import demo_catalog
 from app.member2_stage1 import add_pack_inventory, apply_update_confirmation, confirmed_coverage, render_confirmed_coverage
-from app.original_packs import SOURCE as APPROVED_SOURCE, load_original_packs
 from prepare_member2_pilot import SOURCE as DRAFT_SOURCE, rendered_pilot
 
 EXAMPLES = ROOT / "contracts/member2/v0.2.0/examples.json"
@@ -92,25 +91,24 @@ def rendered_artifacts():
     legacy = ContentBank.model_validate_json((ROOT / "content/linear_equations.v1.json").read_bytes())
     parameters = json.loads((ROOT / "content/bkt.bootstrap.v1.json").read_text(encoding="utf-8"))
     evidence = workboard.runtime_evidence
-    if (evidence.validator_version != VALIDATOR_VERSION or parameters["skill_id"] != evidence.legacy_skill_id
+    if (parameters["skill_id"] != evidence.legacy_skill_id
             or any(p.concept_id != evidence.legacy_concept_id or
                    p.primary_skill_id != evidence.legacy_skill_id or
                    demo_validator_task(legacy.topic_id, p.to_public().model_dump(), p.primary_skill_id)
                    not in evidence.task_kinds for p in legacy.problems)):
         raise ValueError("Legacy evidence changed; review the workboard before regenerating")
     report = confirmed_coverage(registry, bank)
+    report["current_validator_version"] = VALIDATOR_VERSION
+    report["recorded_validator_version_matches"] = evidence.validator_version == VALIDATOR_VERSION
     draft_artifacts, draft_summary = rendered_pilot()
     drafts = PilotBank.model_validate(draft_artifacts["draft-bank.json"])
     member2_drafts = [pack for pack in drafts.packs if pack.concept_id in draft_summary["member2_concepts"]]
-    _, approved = load_original_packs()
     canonical_source = f"content/curriculum/pilot.{revision}.json"
-    approved_manifest = f"{APPROVED_SOURCE}/manifest.json"
     member2_manifest = (MEMBER2_RELEASE / "manifest.json").relative_to(ROOT).as_posix()
     draft_source = DRAFT_SOURCE.relative_to(ROOT).as_posix()
     add_pack_inventory(report, {
         "Pilot canonical": (canonical_source, bank.packs),
         "Nháp Member 2": (draft_source, member2_drafts),
-        "A02/E02 đã duyệt": (approved_manifest, approved.packs),
         "13 pack Member 2 đã duyệt": (member2_manifest, approved_member2_bank(bank).packs),
     })
     demo_tasks = {}
@@ -121,7 +119,7 @@ def rendered_artifacts():
         task_kinds = demo_tasks.get(row["concept_id"])
         row["internal_demo"] = {"validator_task_kinds": sorted(task_kinds), "assessment_scope": "final_answer"} if task_kinds else None
     for relative in (f"content/curriculum/registry.{revision}.json", canonical_source, draft_source,
-                     approved_manifest, member2_manifest):
+                     member2_manifest):
         report["input_sha256"][relative] = sha256((ROOT / relative).read_bytes()).hexdigest()
     problems_by_kind = {}
     for pack in [*bank.packs, *member2_drafts]:

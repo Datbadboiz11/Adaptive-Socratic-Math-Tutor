@@ -108,11 +108,11 @@ Task dưới đây là khả năng kiểm tra authoring. Validator online hiện
 
 Thông tin đầy đủ về nguồn, scope, ngày review và từng readiness gate nằm trong [coverage.json](coverage.json). Ngày review trống nghĩa là chưa ghi nhận review thực tế.
 
-Hồ sơ xác nhận được ghi ngày 2026-11-23. Chữ ký ghi nhận **Codex — ghi nhận theo ủy quyền của người dùng**.
+Hồ sơ xác nhận được ghi ngày 2026-11-23. Chữ ký ghi nhận **Member 2**.
 
 ## Độ phủ theo nguồn pack
 
-20 concept có pack ở ít nhất một nguồn, 15 concept có pack đã duyệt, 20 concept chưa có pack. Bảng phía trên dùng pilot canonical.
+20 concept có pack ở ít nhất một nguồn, 13 concept có pack đã duyệt, 20 concept chưa có pack. Bảng phía trên dùng pilot canonical.
 
 **Demo nội bộ** hỗ trợ 13 concept từ bản M2-ORIG02 sau khi bootstrap. Bộ chấm xác minh kết quả cuối. Xem [nghiệm thu demo](../part4/README.md).
 
@@ -120,31 +120,30 @@ Hồ sơ xác nhận được ghi ngày 2026-11-23. Chữ ký ghi nhận **Codex
 |---|---|---|
 | [Pilot canonical](../../../../content/curriculum/pilot.v2.json) | 10 | 0 |
 | [Nháp Member 2](../../../../content/authoring/member2-original-pilot.v1.json) | 13 | 0 |
-| A02/E02 đã duyệt (`../../../../content/authoring/batches/a02-e02-original.v1/manifest.json`; h? s? l?ch s? kh?ng k?m trong checkout) | 2 | 2 |
 | [13 pack Member 2 đã duyệt](../../../../content/authoring/batches/member2-original.v2/manifest.json) | 13 | 13 |
 
-| Concept | Pilot canonical | Nháp Member 2 | A02/E02 đã duyệt | 13 pack Member 2 đã duyệt |
-|---|---|---|---|---|
-| A01 | draft (6 bài) | draft (6 bài) | — | human_approved (6 bài) |
-| A02 | draft (6 bài) | — | human_approved (6 bài) | — |
-| A03 | draft (6 bài) | — | — | — |
-| A04 | — | draft (6 bài) | — | human_approved (6 bài) |
-| A07 | — | draft (6 bài) | — | human_approved (6 bài) |
-| A10 | — | draft (6 bài) | — | human_approved (6 bài) |
-| E01 | draft (6 bài) | — | — | — |
-| E02 | draft (6 bài) | — | human_approved (6 bài) | — |
-| E03 | — | draft (6 bài) | — | human_approved (6 bài) |
-| E06 | — | draft (6 bài) | — | human_approved (6 bài) |
-| E09 | — | draft (6 bài) | — | human_approved (6 bài) |
-| F01 | draft (6 bài) | — | — | — |
-| F02 | — | draft (6 bài) | — | human_approved (6 bài) |
-| F05 | draft (6 bài) | draft (6 bài) | — | human_approved (6 bài) |
-| F08 | — | draft (6 bài) | — | human_approved (6 bài) |
-| N01 | draft (6 bài) | — | — | — |
-| N02 | draft (6 bài) | draft (6 bài) | — | human_approved (6 bài) |
-| N04 | draft (6 bài) | — | — | — |
-| N05 | — | draft (6 bài) | — | human_approved (6 bài) |
-| N08 | — | draft (6 bài) | — | human_approved (6 bài) |
+| Concept | Pilot canonical | Nháp Member 2 | 13 pack Member 2 đã duyệt |
+|---|---|---|---|
+| A01 | draft (6 bài) | draft (6 bài) | human_approved (6 bài) |
+| A02 | draft (6 bài) | — | — |
+| A03 | draft (6 bài) | — | — |
+| A04 | — | draft (6 bài) | human_approved (6 bài) |
+| A07 | — | draft (6 bài) | human_approved (6 bài) |
+| A10 | — | draft (6 bài) | human_approved (6 bài) |
+| E01 | draft (6 bài) | — | — |
+| E02 | draft (6 bài) | — | — |
+| E03 | — | draft (6 bài) | human_approved (6 bài) |
+| E06 | — | draft (6 bài) | human_approved (6 bài) |
+| E09 | — | draft (6 bài) | human_approved (6 bài) |
+| F01 | draft (6 bài) | — | — |
+| F02 | — | draft (6 bài) | human_approved (6 bài) |
+| F05 | draft (6 bài) | draft (6 bài) | human_approved (6 bài) |
+| F08 | — | draft (6 bài) | human_approved (6 bài) |
+| N01 | draft (6 bài) | — | — |
+| N02 | draft (6 bài) | draft (6 bài) | human_approved (6 bài) |
+| N04 | draft (6 bài) | — | — |
+| N05 | — | draft (6 bài) | human_approved (6 bài) |
+| N08 | — | draft (6 bài) | human_approved (6 bài) |
 
 Chi tiết từng phiên bản, loại bài, người duyệt, ngày review và các cổng còn thiếu nằm trong [coverage.json](coverage.json). Trạng thái này dựa trên các nguồn có version trong repo.
 
@@ -152,7 +151,7 @@ Chi tiết từng phiên bản, loại bài, người duyệt, ngày review và 
 ## Xác nhận cập nhật Chặng 1
 
 Nhóm xác nhận contract member2-proposal-0.3.0, capability theo chủ đề, ma trận độ phủ, 68 cạnh đồ thị và 1 ánh xạ legacy–canonical.
-Hồ sơ ghi ngày 2026-11-24 với chữ ký **Codex — ký ghi nhận theo ủy quyền của người dùng**. Hồ sơ lưu phạm vi phiên bản đã được xác nhận. API tích hợp có thể kiểm riêng theo kết quả nghiệm thu.
+Hồ sơ ghi ngày 2026-11-24 với chữ ký **Member 2 — ký ghi nhận theo ủy quyền của người dùng**. Hồ sơ lưu phạm vi phiên bản đã được xác nhận. API tích hợp có thể kiểm riêng theo kết quả nghiệm thu.
 Xem [hồ sơ xác nhận cập nhật](../../../../content/curriculum/member2-stage1-update-confirmation.v1.json).
 
 Trạng thái tích hợp hiện ghi 0 concept canonical đủ điều kiện mở luồng học. Registry tiếp tục ghi cạnh `draft` và ánh xạ `proposed` cho đến bước đưa vào runtime.

@@ -66,8 +66,6 @@ def main():
         "scripts/kb/build_member2_stage3_assets.py --check",
         "scripts/checks/check_phase1.py", "scripts/checks/check_curriculum.py",
         "scripts/checks/check_member2_foundation.py", "scripts/checks/check_authoring.py",
-        "scripts/checks/check_oatutor_pilot.py", "scripts/checks/check_stage2_completion.py",
-        "scripts/checks/check_stage2_math.py", "scripts/checks/check_member2_ai_review.py",
         "scripts/exports/export_contracts.py --check", "scripts/exports/export_phase3_openapi.py --check",
         "scripts/exports/export_kb_contracts.py --check", "scripts/checks/check_stage3_kb.py",
     ]
@@ -159,7 +157,7 @@ def main():
     source_paths = [
         "backend/app/kb_contracts.py","backend/app/kb_projection.py","backend/app/kb_cli.py",
         "scripts/kb/build_member2_stage3_assets.py","scripts/checks/check_stage3_kb.py",
-        "scripts/checks/check_member2_ai_review.py","scripts/checks/collect_stage3_completion.py",
+        "scripts/checks/check_authoring.py","scripts/checks/collect_stage3_completion.py",
         "tests/test_kb_db.py","tests/test_stage3_completion.py",".github/workflows/repository-checks.yml",
         "content/kb/member2-v2/manifest.json","research/retrieval/dev/member2-13.v1/manifest.json",
     ]

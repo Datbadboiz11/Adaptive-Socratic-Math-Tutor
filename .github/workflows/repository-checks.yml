@@ -60,13 +60,17 @@ jobs:
       - name: Check Python syntax
         run: python3 -m py_compile design/audit_ui.py scripts/checks/check_repository.py
       - name: Check tracked files and documentation links
-        run: python3 scripts/checks/check_repository.py
+        run: |
+          python3 scripts/checks/check_release_inputs.py
+          python3 scripts/checks/check_repository.py
       - name: Install foundation test dependencies
         run: python3 -m pip install -r backend/requirements-dev.txt -r research/requirements.txt
       - name: Check content, schemas and foundation behavior
         run: |
           python3 scripts/checks/check_phase1.py
           python3 scripts/checks/check_curriculum.py
+          python3 scripts/checks/check_member2_foundation.py
+          python3 scripts/checks/check_authoring.py
           python3 scripts/exports/export_contracts.py --check
           python3 scripts/exports/export_phase3_openapi.py --check
           python3 scripts/exports/export_frontend_types.py --check

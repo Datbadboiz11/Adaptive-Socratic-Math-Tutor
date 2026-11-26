@@ -8,9 +8,9 @@ Chạy các lệnh từ thư mục gốc dự án; các script tự xác định
 - `authoring/`: pipeline soạn nháp một concept, kiểm tra và ghi nhận review độc lập; xem [hướng dẫn](../content/authoring/README.md).
 - `kb/`: kiểm bộ publication/benchmark 13 concept, chuẩn bị model và đồng bộ snapshot đã duyệt; xem [runbook KB](../content/kb/README.md).
 
-Lô nguồn OATutor A02/E02 dùng `authoring/prepare_oatutor_batch.py` (`fetch`, `build`, `check`, `review`) và checker `checks/check_oatutor_pilot.py`. [Hồ sơ Chặng 2](../docs/implementation/member2/part2/README.md)
 
-Lô M2-OAT02 dùng `build --edition stage2-v2`, `curriculum-review` và `labels-review`. Checker là `checks/check_stage2_completion.py` và `checks/check_stage2_math.py`. `authoring/prepare_member2_pilot.py` kiểm và tạo bộ pilot tự biên soạn, gồm 13 concept của Member 2 và hai pack A02/E02 dự phòng.
+
+`authoring/prepare_member2_pilot.py` kiểm và dựng 13 concept đang được phân công; request kiểm thử canonical được tạo trong bộ nhớ, không cần config riêng đã loại bỏ.
 
 Ví dụ:
 

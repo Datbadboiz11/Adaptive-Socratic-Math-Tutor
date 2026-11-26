@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 RUNTIME = ROOT / "artifacts/runtime-validation"
 PG_BIN = ROOT / "artifacts/tooling/pg16/Library/bin"
 PG_DATA = RUNTIME / "postgres-data"
-STAGE4_TESTS = ["tests/test_stage4_teaching.py", "tests/test_stage4_reports.py", "tests/test_member2_runtime.py", "tests/test_phase3_db.py",
+STAGE4_TESTS = ["tests/test_stage4_teaching.py", "tests/test_stage4_reports.py", "tests/test_release_inputs.py", "tests/test_member2_runtime.py", "tests/test_phase3_db.py",
                 "tests/test_phase3_math.py", "tests/test_phase2.py", "tests/test_phase1.py", "tests/test_stage3_completion.py"]
 
 

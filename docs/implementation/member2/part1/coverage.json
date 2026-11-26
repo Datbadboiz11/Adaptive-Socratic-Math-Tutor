@@ -23,7 +23,7 @@
     "approved_concepts": 40,
     "approved_alignments": 40,
     "concepts_with_any_pack": 20,
-    "concepts_with_any_approved_pack": 15,
+    "concepts_with_any_approved_pack": 13,
     "concepts_without_pack": 20,
     "demo_concepts_supported": 13
   },
@@ -90,13 +90,12 @@
     "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
     "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
     "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b",
-    "content/curriculum/member2-workboard-confirmation.v1.json": "0a4b58a6a036932e45df63e44e7cf8a19b9a056efd5d2df9ee9f91c3b8405f8c",
+    "content/curriculum/member2-workboard-confirmation.v1.json": "b4d92535b119df2e33952c72cc62ec443e400af6280db861386ca8d3631323b8",
     "content/curriculum/registry.v2.json": "e9c4e5e4f60b5281fc55809040f4021df6b94de3c7757bc23018a769bf57d6a1",
     "content/curriculum/pilot.v2.json": "33f35a3dd8b506a6c51627a40ae0a0298d086d7652f593b23b08b725060a6913",
     "content/authoring/member2-original-pilot.v1.json": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
-    "content/authoring/batches/a02-e02-original.v1/manifest.json": "d12d64bb627eaea0ab8a2e5f3735341e0cfccbcd63aa8c9650bb84ca2500e0ad",
     "content/authoring/batches/member2-original.v2/manifest.json": "c0768d6c9c2117b1add612bcabfb0ef4b4965c1c8a40f2aa459742971f04d313",
-    "content/curriculum/member2-stage1-update-confirmation.v1.json": "b9b9ce48759842f1aff61077cbb4c73654c79c77b8e30cf2edf198468cd8ca45"
+    "content/curriculum/member2-stage1-update-confirmation.v1.json": "0fa78bdc3ae8b0897104a8979d7334628e4dffe3dd7287bd10e226a2cb1d738e"
   },
   "concepts": [
     {
@@ -332,24 +331,6 @@
           "families": 3,
           "examples": 3,
           "error_fixtures": 2,
-          "hints": 3
-        },
-        "A02/E02 đã duyệt": {
-          "content_version": "0.3.0-stage2-draft",
-          "review": {
-            "status": "human_approved",
-            "author": "Codex assisted authoring",
-            "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
-            "human_reviewer": "Người dùng (xác nhận duyệt A02/E02)",
-            "reviewed_at": "2026-11-23T23:03:16+07:00"
-          },
-          "task_kinds": [
-            "polynomial"
-          ],
-          "problems": 6,
-          "families": 3,
-          "examples": 3,
-          "error_fixtures": 3,
           "hints": 3
         }
       },
@@ -1273,24 +1254,6 @@
           "families": 3,
           "examples": 3,
           "error_fixtures": 2,
-          "hints": 3
-        },
-        "A02/E02 đã duyệt": {
-          "content_version": "0.3.0-stage2-draft",
-          "review": {
-            "status": "human_approved",
-            "author": "Codex assisted authoring",
-            "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
-            "human_reviewer": "Người dùng (xác nhận duyệt A02/E02)",
-            "reviewed_at": "2026-11-23T23:03:16+07:00"
-          },
-          "task_kinds": [
-            "linear_equation"
-          ],
-          "problems": 6,
-          "families": 3,
-          "examples": 3,
-          "error_fixtures": 3,
           "hints": 3
         }
       },
@@ -3802,7 +3765,7 @@
     "schema_version": "1.0.0",
     "recorded_on": "2026-11-23",
     "basis": "user_attested_team_confirmation",
-    "signature": "Codex — ghi nhận theo ủy quyền của người dùng",
+    "signature": "Member 2",
     "confirmed_members": [
       "Member 1",
       "Member 2",
@@ -3838,6 +3801,8 @@
       "note": "Đối chiếu phạm vi để chuyển phiên bản sau; chưa đổi ID, seed, lịch sử hoặc tham số BKT đang chạy."
     }
   ],
+  "current_validator_version": "symbolic-bounded-2.2.0",
+  "recorded_validator_version_matches": false,
   "pack_inventory": {
     "Pilot canonical": {
       "source": "content/curriculum/pilot.v2.json",
@@ -3874,15 +3839,6 @@
         "N02",
         "N05",
         "N08"
-      ]
-    },
-    "A02/E02 đã duyệt": {
-      "source": "content/authoring/batches/a02-e02-original.v1/manifest.json",
-      "pack_count": 2,
-      "approved_pack_count": 2,
-      "concept_ids": [
-        "A02",
-        "E02"
       ]
     },
     "13 pack Member 2 đã duyệt": {
@@ -3932,7 +3888,7 @@
     "record_id": "M2-STAGE1-TEAM-20261124",
     "recorded_on": "2026-11-24",
     "basis": "user_attested_team_confirmation",
-    "signature": "Codex — ký ghi nhận theo ủy quyền của người dùng",
+    "signature": "Member 2 — ký ghi nhận theo ủy quyền của người dùng",
     "confirmed_members": [
       "Member 1",
       "Member 2",

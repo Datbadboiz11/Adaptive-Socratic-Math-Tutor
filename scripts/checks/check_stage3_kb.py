@@ -25,7 +25,6 @@ from app.kb_sync import active_snapshot,plan_sync,sync_projection,withdraw_pack
 from app.manage import digest,migrate
 from app.member2_contracts import RetrievalQuery
 from app.retrieval import KBRetriever
-from check_member2_ai_review import audit as ai_audit
 from build_member2_stage3_assets import assets as expected_assets
 from export_kb_contracts import audit as schema_audit
 from research.retrieval.metrics import aggregate,score
@@ -44,15 +43,8 @@ def audit():
     profile = load_profile()
     drafts = []
     draft_names = []
-    missing_history = []
-    for source in ("curriculum","oatutor-v2"):
-        try:
-            registry,bank,origin = load_source(source)
-        except FileNotFoundError:
-            if source!='oatutor-v2':
-                raise
-            missing_history.append(source)
-            continue
+    for source in ("curriculum",):
+        registry,bank,origin = load_source(source)
         drafts.append(project(registry,bank,profile,origin=origin))
         draft_names.append(source)
     if any(p.chunks for p in drafts):
@@ -68,12 +60,12 @@ def audit():
             raise ValueError("Missing or stale Stage 3 asset: " + str(path.relative_to(ROOT)))
     return {"version":"kb-1.0.0","schemas_checked":len(schema_audit(True)),
             "draft_source_runtime_chunks":{name:len(p.chunks) for name,p in zip(draft_names,drafts)},
-            "historical_sources_unavailable":missing_history,
+            "retired_sources":"Removed by user request; only maintained sources are audited",
             "human_approved_real_packs":len(bank.packs),"published_examples":len(publications),
             "runtime_chunks":len(approved.chunks),"runtime_concepts":len({c.concept_id for c in approved.chunks}),
             "benchmark_queries":104,"profile_id":profile.profile_id,"dimension":profile.dimension,
-            "frozen_ai_review":(ai_audit() if not missing_history else {
-                "status":"not_checked","reason":"historical_source_batch_unavailable"}),"model_api_calls":0}
+            "model_api_calls":0}
+
 
 
 @contextmanager

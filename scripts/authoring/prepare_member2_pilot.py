@@ -142,9 +142,9 @@ def rendered_pilot(edition="v1"):
     workboard = load_workboard()
     assignment = next(item for item in workboard.assignments if item.owner == "Member 2")
     assigned = set(assignment.concept_ids)
-    expected = assigned | REPLACEMENTS if edition == "v1" else assigned
-    if len(assigned) != 13 or not expected.issubset(specifications) or (edition == "v1" and set(specifications) != expected):
-        raise ValueError("Pilot must cover the 13 Member 2 concepts and the two original replacements")
+    if len(assigned) != 13 or not assigned.issubset(specifications):
+        raise ValueError("Pilot must cover the 13 assigned Member 2 concepts")
+    specifications = {cid: value for cid, value in specifications.items() if cid in assigned}
 
     revision, worked = REVISION, {}
     if edition == "v2":
@@ -161,13 +161,8 @@ def rendered_pilot(edition="v1"):
         if concept["pilot"]:
             concept["authoring_task_kinds"] = sorted({f["kind"] for f in specifications[concept_id]["families"]})
     registry = CurriculumRegistry.model_validate(registry_data)
-    previous_batch = ROOT / "content/authoring/batches/a02-e02-oatutor.v2"
     legacy_tasks = [case.task.model_dump(mode="json") for pack in baseline_bank.packs
                     for case in [*pack.problems, *pack.examples]]
-    if edition == "v1":
-        for concept_id in sorted(REPLACEMENTS):
-            old = load_json(previous_batch / concept_id / "draft.json")
-            legacy_tasks.extend(case["task"] for case in [*old["problems"], *old["examples"]])
     seen = {digest(task) for task in legacy_tasks}
     reports, packs, artifacts = {}, [], {"registry-snapshot.json": registry.model_dump(mode="json")}
     for concept in registry.concepts:

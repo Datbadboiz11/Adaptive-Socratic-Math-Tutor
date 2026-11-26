@@ -21,7 +21,7 @@ Sau khi chuẩn bị, inference dùng file cục bộ và `local_files_only`; kh
 
 Mặc định `--source member2-v2` đọc [registry và bank M2-ORIG02 đã duyệt](../authoring/batches/member2-original.v2/manifest.json) ở version `0.4.0-member2-review`, gồm 13 pack Member 2. Bộ [39 bản xuất bản ví dụ](member2-v2/example-publications.json) được ghim hash trong [publication manifest](member2-v2/manifest.json). Projection đầy đủ có **91 teaching chunk**: 13 explanation, 39 hint và 39 example.
 
-Hai nguồn lịch sử vẫn có thể chọn tường minh: `--source oatutor-v2` đọc hai pack draft A02/E02; `--source curriculum` đọc registry/pilot canonical `0.2.0` có 10 pack draft. Cả hai tiếp tục tạo 0 chunk và không còn là mặc định runtime.
+Nguồn `--source curriculum` đọc registry/pilot canonical `0.2.0` có 10 pack draft và tạo 0 chunk. Các bộ file riêng đã ngừng dùng không còn là lựa chọn của CLI.
 
 ```powershell
 python scripts/kb/sync_kb.py --workspace-local sync --dry-run

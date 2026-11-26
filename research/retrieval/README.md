@@ -1,41 +1,22 @@
-# Retrieval dev chạy trên pgvector thật
+# Đánh giá retrieval cho 13 concept
 
-Runner này đo retrieval bằng corpus **8 explanation/hint nháp**, 24 query và 192 judgments sau AI review. Dữ liệu giữ nguyên version/hash và trạng thái draft; không xuất bản vào KB cho học sinh, không sửa production review gate và chưa nối vào Agent.
+Bộ [member2-13.v1](dev/member2-13.v1/README.md) hiện có 91 document, 104 query và 169 judgment, phủ đủ 13 concept Member 2 được duyệt. Nhãn dev dùng để kiểm tra kỹ thuật; chưa phải human gold hoặc kết quả RQ3 cuối.
 
-Hai cấu hình dùng cùng filter và cùng tập ứng viên:
+Các bộ file riêng trước đây đã bị loại bỏ theo yêu cầu của người dùng. Runner và fixture hiện hành không đọc lại các snapshot đó.
 
-- `metadata`: sắp theo content ID làm baseline đơn giản, không dùng text similarity.
-- `semantic`: cosine distance trong PostgreSQL/pgvector, embedding CPU miễn phí bằng `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`, 384 chiều, không thêm prefix.
-
-Giữ cả Recall/Hit với relevance ≥2 và graded nDCG với gains 0/1/3. Sáu query không có relevance 2 có Recall/Hit là N/A; bốn query không có gain dương có nDCG là N/A. Macro average chỉ tính query được định nghĩa, báo cả mẫu số. Bốn query bị chặn metadata phải trả rỗng. Không hạ filter để tăng metric.
-
-## Chạy lại trên máy Windows hiện tại
-
-Môi trường `.venv` và PostgreSQL cục bộ đã được chuẩn bị. Từ gốc dự án:
+Kiểm source, publication, schema và benchmark:
 
 ```powershell
-.\.venv\Scripts\python.exe research/retrieval/run_dev.py --workspace-local
+python scripts/checks/check_stage3_kb.py
+python scripts/kb/build_member2_stage3_assets.py --check
 ```
 
-Runner đọc thông tin DB từ `.env` qua helper nội bộ; không gọi model API. Mỗi lần chạy tạo `artifacts/retrieval-validation/<run-id>/benchmark.json` riêng, chứa raw rankings, khoảng cách, metric từng query, latency, hash weights/config/corpus/query/qrels và sync receipts.
-
-Nếu DB đã dừng, khởi động lại bằng `scripts/dev/validation_runtime.py database`. Helper dùng bộ PostgreSQL trong `artifacts/tooling/pg16`, không phải bộ cài toàn hệ thống.
-
-## Chuẩn bị trên môi trường mới
+Nghiệm thu với PostgreSQL/pgvector và model embedding cục bộ:
 
 ```powershell
-python -m pip install -r research/requirements-retrieval.txt -r research/requirements.txt
-python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2', cache_dir='artifacts/tooling/embedding-models', threads=2)"
+python scripts/checks/check_stage3_kb.py --workspace-local --real-db
 ```
 
-Sau lần tải đầu, runner chọn đúng một snapshot weights có sẵn, ghi hash cả năm file và dùng `specific_model_path`. Nếu có nhiều snapshot thì dừng để chọn/cache đúng phiên bản. Cache embedding khóa theo text + fingerprint model/dimension/prefix/weights/runtime. Muốn tái lập **đúng số liệu đã lưu**, dùng commit weights và các hash trong benchmark đã lưu (`../../docs/implementation/member2/runtime-validation-2026-11-18/benchmark.json`; h? s? l?ch s? kh?ng k?m trong checkout); tải bản mới không mặc nhiên tái lập bản cũ.
+Checker tạo schema riêng, đối soát serving trước/sau và lưu kết quả mới trong `artifacts/stage3-validation/<run-id>/acceptance.json`. Không kích hoạt snapshot thử nghiệm trên namespace đang phục vụ. Chuẩn bị weights theo [runbook KB](../../content/kb/README.md); không cần API key để chạy embedding cục bộ.
 
-Trên Linux/CI hoặc PostgreSQL riêng: cấu hình `PGHOST`, `PGPORT`, `PGDATABASE`, `PGUSER`, `PGPASSWORD`, cài extension pgvector trên server; chạy lệnh không có `--workspace-local`. User DB cần quyền tạo extension/schema cho môi trường nghiên cứu. Compose/CI đã đổi sang image `pgvector/pgvector:pg17`; chưa có lần CI từ xa của thay đổi hiện tại.
-
-## Thiết kế và giới hạn
-
-Store nằm trong schema riêng `member2_retrieval_dev`. Sync khóa transaction, kiểm checksum corpus/tài liệu, từ chối đổi nội dung cùng snapshot/model và commit nguyên lô. Sync lần hai không thêm hàng. Bảng chấp nhận riêng explanation/hint draft phi runtime. Truy vấn áp concept–skill, purpose, mức hint, grade, disclosure và exclusions trước khi xếp hạng; không nhận scope từ web/LLM.
-
-Chỉ có 8 chunk nên quét exact cosine là đủ. Chưa cần HNSW, reranker, dịch vụ embedding hay phí API. Đây là phép thử plumbing và xếp hạng dev; bộ dữ liệu còn nhỏ, cùng nguồn authoring/AI review, không phải human gold, final test hay đo hiệu quả học tập. Metadata baseline đơn giản cũng không đại diện cho BM25 hoặc một baseline từ khóa mạnh. Độ trễ chỉ mô tả một lượt chạy cục bộ, chưa có tải đồng thời; tốc độ cache khác với inference đầu tiên.
-
-Chặng 3 đã có migration/projector/sync runtime, snapshot activation/withdrawal và tool bind quyền server; xem [bàn giao mới](../../docs/implementation/member2/part3/README.md). Runner nghiên cứu trong thư mục này vẫn tách riêng để đối chiếu. Tích hợp context/delivery/replay vào Agent thuộc Chặng 4 và chưa triển khai.
+`metrics.py` tính Recall/Hit/nDCG và xử lý query không có tài liệu liên quan. `pgvector_dev.py` giữ store nghiên cứu draft để kiểm transaction, checksum và metadata; test dùng fixture synthetic dựng trong bộ nhớ từ canonical data. Không coi những fixture này là nội dung được người duyệt.

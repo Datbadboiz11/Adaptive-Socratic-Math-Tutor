@@ -32,6 +32,6 @@ npm --prefix frontend run typecheck
 npm --prefix frontend run build
 ```
 
-`check_current_release.py` chạy các test của `main` và phần hiện hành Member 2. Nó in rõ những module/case cần archive A02/E02 hiện không kèm checkout. Các test đó vẫn giữ nguyên trong source; không giả lập phê duyệt hoặc sửa hash hồ sơ lịch sử để làm test đạt. Test workboard lịch sử cũng cần rà lại bằng chứng validator sau khi tích hợp bộ chấm mới. Muốn kiểm toàn bộ lịch sử, phục hồi đúng archive và chạy `python -m pytest tests`.
+Sau sửa PR #8, `check_current_release.py` chạy toàn bộ test còn giữ trong repo. Những bộ file riêng đã ngừng dùng và test chỉ phục vụ chúng đã bị loại bỏ theo yêu cầu người dùng; các kiểm tra gate/retrieval/authoring còn cần thiết dùng fixture trong bộ nhớ. Không còn danh sách loại trừ test vì archive thiếu.
 
 Workflow repository hiện chạy phạm vi trên; workflow Stage 4 tiếp tục chạy suite riêng. Không có kết quả Docker hoặc remote CI được suy ra từ kiểm thử cục bộ. Việc push nhánh không tự merge vào `main`.

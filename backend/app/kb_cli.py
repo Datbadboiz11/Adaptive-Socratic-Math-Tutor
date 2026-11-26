@@ -25,7 +25,7 @@ def main():
     parser.add_argument("--namespace", default="runtime")
     sub = parser.add_subparsers(dest="command", required=True)
     sync = sub.add_parser("sync")
-    sync.add_argument("--source", choices=["member2-v2","oatutor-v2","curriculum","original-a02-e02"], default="member2-v2")
+    sync.add_argument("--source", choices=["member2-v2","curriculum"], default="member2-v2")
     sync.add_argument("--registry", type=Path)
     sync.add_argument("--bank", type=Path)
     sync.add_argument("--examples", type=Path)
