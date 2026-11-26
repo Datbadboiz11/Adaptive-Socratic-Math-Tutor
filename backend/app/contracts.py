@@ -128,7 +128,7 @@ class DraftRequest(Contract):
 
 
 class TurnRequest(Contract):
-    request_id: UUID
+    request_id: UUID | None = None
     opportunity_id: UUID
     expected_state_version: int = Field(ge=1)
     action: Literal["submit", "request_hint"]

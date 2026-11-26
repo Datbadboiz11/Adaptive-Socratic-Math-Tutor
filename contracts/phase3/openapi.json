@@ -53,7 +53,8 @@
             "enum": [
               "suspected",
               "supported",
-              "unknown"
+              "unknown",
+              "unverified"
             ],
             "title": "Diagnosis Status",
             "type": "string"
@@ -344,8 +345,7 @@
           },
           "mastery": {
             "items": {
-              "additionalProperties": true,
-              "type": "object"
+              "$ref": "#/components/schemas/SkillMastery"
             },
             "title": "Mastery",
             "type": "array"
@@ -554,6 +554,58 @@
         "title": "SessionView",
         "type": "object"
       },
+      "SkillMastery": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_count": {
+            "title": "Evidence Count",
+            "type": "integer"
+          },
+          "mastery": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mastery"
+          },
+          "parameter_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parameter Version"
+          },
+          "skill_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Skill Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "estimated",
+              "insufficient_data"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "skill_id",
+          "mastery",
+          "evidence_count",
+          "status"
+        ],
+        "title": "SkillMastery",
+        "type": "object"
+      },
       "TurnPublic": {
         "additionalProperties": false,
         "properties": {
@@ -636,9 +688,16 @@
             "type": "string"
           },
           "request_id": {
-            "format": "uuid",
-            "title": "Request Id",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
           },
           "steps": {
             "items": {
@@ -652,7 +711,6 @@
           }
         },
         "required": [
-          "request_id",
           "opportunity_id",
           "expected_state_version",
           "action"
@@ -1986,6 +2044,40 @@
               "format": "uuid",
               "title": "Session Id",
               "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Request-ID",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
             }
           },
           {

@@ -58,9 +58,17 @@ class TurnResult(Contract):
     observation: dict | None = None
 
 
+class SkillMastery(Contract):
+    skill_id: Identifier
+    mastery: float | None
+    evidence_count: int
+    parameter_version: str | None = None
+    status: Literal['estimated', 'insufficient_data']
+
+
 class Report(Contract):
     tutoring_enabled: bool = False
-    mastery: list[dict] = Field(default_factory=list)
+    mastery: list[SkillMastery] = Field(default_factory=list)
     session_id: UUID
     status: Literal['active', 'paused', 'completed']
     independent_correct: int

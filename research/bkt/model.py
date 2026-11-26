@@ -13,6 +13,10 @@ from collections import defaultdict
 def step(prior: float, correct: int, parameters: dict) -> tuple[float, float]:
     if correct not in (0, 1):
         raise ValueError("Binary observation required")
+    if 1.0 < prior <= 1.0 + 1e-12:
+        prior = 1.0
+    elif -1e-12 <= prior < 0.0:
+        prior = 0.0
     g, s, t = (parameters[k] for k in ("guess", "slip", "learn"))
     if any(not math.isfinite(v) or not 0 <= v <= 1 for v in (prior, g, s, t)) or g >= 1 - s:
         raise ValueError("Invalid probabilities or indistinguishable/reversed emissions")
@@ -21,7 +25,12 @@ def step(prior: float, correct: int, parameters: dict) -> tuple[float, float]:
     if likelihood <= 0:
         raise ValueError("Impossible observation")
     posterior = prior * ((1 - s) if correct else s) / likelihood
-    return prediction, posterior + (1 - posterior) * t
+    after = posterior + (1 - posterior) * t
+    if 1.0 < after <= 1.0 + 1e-12:
+        after = 1.0
+    elif -1e-12 <= after < 0.0:
+        after = 0.0
+    return prediction, after
 
 
 def sequences(rows: list[dict]) -> list[list[int]]:

@@ -108,7 +108,7 @@ def process(session_id, body, student):
     def operation(c):
         row=service.locked(c,session_id,student,body)
         if row['status']!='active' or row['current_opportunity_id']!=body.opportunity_id:
-            raise service.ApiError(409,'state_conflict','Trạng thái đã thay đổi trong khi xử lý. Tải lại phiên.')
+            raise service.ApiError(409,'state_conflict','Trạng thái đã thay đổi trong khi xử lý. Tải lại phiên rồi gửi lại thao tác.',True)
         # Global skill lock also makes repeat/evidence checks across sessions consistent.
         lock_id=int.from_bytes(hashlib.sha256(f'knowledge:{student}:{state["opportunity"]["target_skill_id"]}'.encode()).digest()[:8],'big',signed=True)
         c.execute('SELECT pg_advisory_xact_lock(%s)',(lock_id,))
