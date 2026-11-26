@@ -12,7 +12,7 @@ import subprocess
 import sys
 from uuid import uuid4
 
-from app.member2_runtime import ASSESSMENT_MODE, TASK_KINDS
+from app.assessment_modes import ASSESSMENT_MODE, TASK_KINDS
 
 VERSION = 'symbolic-bounded-2.2.0'
 MAX_TEXT = 160
