@@ -1,0 +1,306 @@
+{
+  "run_id": "m2-n02-openai-2c86dfa109",
+  "source": "member2-v2",
+  "created_at": "2026-11-25T06:17:50.472944+00:00",
+  "prompt_version": "draft-pack-2.2.0",
+  "prompt_sha256": "c66640f70af4335f0bf7a8c081d8d86993c33cf34cdf8270321b42db36cc4364",
+  "generation": {
+    "model_calls": 1,
+    "model_requested": "gpt-4o-mini",
+    "model_returned": "gpt-4o-mini-2024-07-18",
+    "provider": "openai",
+    "response_id": "resp_0c2b942f70a3e836016b067d6f0d7487d098061f4db685b304",
+    "usage": {
+      "input_tokens": 4000,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 1937,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 5937
+    }
+  },
+  "request": {
+    "author": "Member 2",
+    "concept_id": "N02",
+    "content_version": "0.4.0-member2-review",
+    "families": [
+      {
+        "description": "Tích hai số âm",
+        "family_id": "FAM-N02-M2-ORIG02-1",
+        "source_group": "GROUP-N02-M2-ORIG01-1"
+      },
+      {
+        "description": "Thương trái dấu",
+        "family_id": "FAM-N02-M2-ORIG02-2",
+        "source_group": "GROUP-N02-M2-ORIG01-2"
+      },
+      {
+        "description": "Phối hợp nhân và chia",
+        "family_id": "FAM-N02-M2-ORIG02-3",
+        "source_group": "GROUP-N02-M2-ORIG01-3"
+      }
+    ],
+    "max_output_tokens": 8000,
+    "model": "gpt-4o-mini",
+    "protocol_version": "authoring-1.0.0",
+    "revision": "M2-LLM01",
+    "source_ids": [
+      "SRC-MATH-2018"
+    ],
+    "timeout_seconds": 60
+  },
+  "draft": {
+    "concept_id": "N02",
+    "content_version": "0.4.0-member2-review",
+    "errors": [
+      {
+        "diagnosis_status": "suspected",
+        "diagnostic_question": "Tại sao tích của hai số âm lại cho kết quả dương?",
+        "error_id": "D-N02-M2-LLM01-ERR-01",
+        "family": "FAM-N02-M2-ORIG02-1",
+        "first_error_step": 1,
+        "hypothesis": "Có thể đã nhầm lẫn trong việc áp dụng quy tắc dấu.",
+        "problem_id": "D-N02-M2-LLM01-P-01",
+        "response_steps": [
+          "-15"
+        ]
+      },
+      {
+        "diagnosis_status": "suspected",
+        "diagnostic_question": "Phép chia số âm và số dương có đặc điểm gì?",
+        "error_id": "D-N02-M2-LLM01-ERR-02",
+        "family": "FAM-N02-M2-ORIG02-2",
+        "first_error_step": 1,
+        "hypothesis": "Có thể đã quên quy tắc dấu trong phép chia.",
+        "problem_id": "D-N02-M2-LLM01-P-03",
+        "response_steps": [
+          "5"
+        ]
+      },
+      {
+        "diagnosis_status": "suspected",
+        "diagnostic_question": "Khi nào thì cần thực hiện phép chia trước trong phép tính?",
+        "error_id": "D-N02-M2-LLM01-ERR-03",
+        "family": "FAM-N02-M2-ORIG02-3",
+        "first_error_step": 1,
+        "hypothesis": "Có thể đã không thực hiện đầy đủ bước chia trước khi nhân.",
+        "problem_id": "D-N02-M2-LLM01-P-05",
+        "response_steps": [
+          "4"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "case_id": "D-N02-M2-LLM01-EX-01",
+        "reference_answer": "18",
+        "reference_steps": [
+          "18"
+        ],
+        "task": {
+          "expression": "-6 * -3",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-EX-02",
+        "reference_answer": "-3",
+        "reference_steps": [
+          "-3"
+        ],
+        "task": {
+          "expression": "15 / -5",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-EX-03",
+        "reference_answer": "-16",
+        "reference_steps": [
+          "-16"
+        ],
+        "task": {
+          "expression": "8 * -2",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      }
+    ],
+    "explanation": "Tích hai số nguyên có dấu phụ thuộc vào quy tắc dấu: tích của hai số âm là số dương, tích của hai số dương là số dương, và tích của một số âm với một số dương là số âm.",
+    "hints": [
+      {
+        "disclosure": "conceptual",
+        "level": 1,
+        "text": "Khi nhân hai số âm, hãy nhớ rằng tích của chúng sẽ là một số dương."
+      },
+      {
+        "disclosure": "strategy",
+        "level": 2,
+        "text": "Hãy áp dụng quy tắc dấu khi thực hiện phép chia giữa số âm và số dương."
+      },
+      {
+        "disclosure": "scaffold",
+        "level": 3,
+        "text": "Nhớ làm theo thứ tự: nhân trước, chia sau. Thực hiện phép chia trước để có được kết quả chính xác."
+      }
+    ],
+    "problems": [
+      {
+        "case_id": "D-N02-M2-LLM01-P-01",
+        "concept_id": "N02",
+        "difficulty": "introductory",
+        "family_id": "FAM-N02-M2-ORIG02-1",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính tích của hai số âm: -3 và -5.",
+        "reference_answer": "15",
+        "reference_steps": [
+          "15"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-1",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "-3 * -5",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-P-02",
+        "concept_id": "N02",
+        "difficulty": "standard",
+        "family_id": "FAM-N02-M2-ORIG02-1",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính tích của hai số âm: -8 và -4.",
+        "reference_answer": "32",
+        "reference_steps": [
+          "32"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-1",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "-8 * -4",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-P-03",
+        "concept_id": "N02",
+        "difficulty": "introductory",
+        "family_id": "FAM-N02-M2-ORIG02-2",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính thương của số âm -10 chia cho số dương 2.",
+        "reference_answer": "-5",
+        "reference_steps": [
+          "-5"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-2",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "-10 / 2",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-P-04",
+        "concept_id": "N02",
+        "difficulty": "standard",
+        "family_id": "FAM-N02-M2-ORIG02-2",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính thương của số dương 9 chia cho số âm -3.",
+        "reference_answer": "-3",
+        "reference_steps": [
+          "-3"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-2",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "9 / -3",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-P-05",
+        "concept_id": "N02",
+        "difficulty": "introductory",
+        "family_id": "FAM-N02-M2-ORIG02-3",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính: 6 nhân với -2 chia 3.",
+        "reference_answer": "-4",
+        "reference_steps": [
+          "-4"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-3",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "6 * -2 / 3",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      },
+      {
+        "case_id": "D-N02-M2-LLM01-P-06",
+        "concept_id": "N02",
+        "difficulty": "standard",
+        "family_id": "FAM-N02-M2-ORIG02-3",
+        "origin": "Bài toán tự biên soạn.",
+        "primary_skill_id": "SK-N02-SIGNED-MUL",
+        "prompt": "Tính: 9 chia -3 nhân với 2.",
+        "reference_answer": "-6",
+        "reference_steps": [
+          "-6"
+        ],
+        "source_group": "GROUP-N02-M2-ORIG01-3",
+        "split": "authoring_dev",
+        "task": {
+          "expression": "9 / -3 * 2",
+          "kind": "numeric",
+          "variable_value": null
+        }
+      }
+    ],
+    "review": {
+      "author": "Member 2",
+      "human_reviewer": null,
+      "reviewed_at": null,
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "draft"
+    }
+  },
+  "checks": {
+    "issues": [
+      {
+        "code": "human_review_required",
+        "message": "Curriculum, source rights, Vietnamese, pedagogical goal/form and hint math/disclosure require independent human review",
+        "path": "$",
+        "severity": "warning"
+      }
+    ],
+    "pack_sha256": "10302dc27e180e94bee3d1afd137c308d145563f8058dc47cf920425c8758ce0",
+    "passed": true,
+    "protocol_version": "authoring-1.0.0"
+  },
+  "source_snapshot_sha256": {
+    "registry_sha256": "f6039bba4d7e1bc48d13dd7e0189005f52f6a88c467eb7f4cce19b9a7b8b0a7f",
+    "bank_sha256": "1d8bcc5911d0e7afd7d6431861ca07c87972238aaed9a0399fafc1b6136308a9"
+  },
+  "runtime_publication": false,
+  "human_review": "pending"
+}

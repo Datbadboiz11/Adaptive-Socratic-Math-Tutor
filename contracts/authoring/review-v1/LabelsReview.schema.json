@@ -1,0 +1,162 @@
+{
+  "$defs": {
+    "LabelCorrection": {
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "relevance": {
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Relevance",
+          "type": "integer"
+        },
+        "reason": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "relevance",
+        "reason"
+      ],
+      "title": "LabelCorrection",
+      "type": "object"
+    },
+    "QueryLabelReview": {
+      "additionalProperties": false,
+      "properties": {
+        "query_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Query Id",
+          "type": "string"
+        },
+        "checked": {
+          "const": true,
+          "title": "Checked",
+          "type": "boolean"
+        },
+        "proposed_labels_accepted": {
+          "title": "Proposed Labels Accepted",
+          "type": "boolean"
+        },
+        "corrections": {
+          "items": {
+            "$ref": "#/$defs/LabelCorrection"
+          },
+          "title": "Corrections",
+          "type": "array"
+        },
+        "comments": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Comments",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query_id",
+        "checked",
+        "proposed_labels_accepted",
+        "corrections",
+        "comments"
+      ],
+      "title": "QueryLabelReview",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "review_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Review Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "reviewed_at": {
+      "format": "date-time",
+      "title": "Reviewed At",
+      "type": "string"
+    },
+    "human_attestation": {
+      "const": true,
+      "title": "Human Attestation",
+      "type": "boolean"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "changes_requested"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "comments": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Comments",
+      "type": "string"
+    },
+    "protocol_version": {
+      "const": "labels-review-1.0.0",
+      "default": "labels-review-1.0.0",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "snapshot_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "corpus_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Corpus Sha256",
+      "type": "string"
+    },
+    "queries_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Queries Sha256",
+      "type": "string"
+    },
+    "qrels_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Qrels Sha256",
+      "type": "string"
+    },
+    "queries": {
+      "items": {
+        "$ref": "#/$defs/QueryLabelReview"
+      },
+      "maxItems": 30,
+      "minItems": 1,
+      "title": "Queries",
+      "type": "array"
+    }
+  },
+  "required": [
+    "review_id",
+    "reviewer",
+    "reviewed_at",
+    "human_attestation",
+    "decision",
+    "comments",
+    "snapshot_id",
+    "corpus_sha256",
+    "queries_sha256",
+    "qrels_sha256",
+    "queries"
+  ],
+  "title": "LabelsReview",
+  "type": "object"
+}

@@ -1,0 +1,458 @@
+{
+  "recorded_at": "2026-11-25T13:20:00+07:00",
+  "status": "passed",
+  "scope": "13 assigned Member 2 concepts",
+  "concept_ids": [
+    "A01",
+    "A04",
+    "A07",
+    "A10",
+    "E03",
+    "E06",
+    "E09",
+    "F02",
+    "F05",
+    "F08",
+    "N02",
+    "N05",
+    "N08"
+  ],
+  "source": "member2-v2",
+  "source_content_version": "0.4.0-member2-review",
+  "approved_pack_count": 13,
+  "offline_audit": [
+    {
+      "concept_id": "A01",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "A04",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "A07",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "A10",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "E03",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "E06",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "E09",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "F02",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "F05",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "F08",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "N02",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "N05",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    },
+    {
+      "concept_id": "N08",
+      "problems": 6,
+      "examples": 3,
+      "error_fixtures": 3,
+      "check_passed": true,
+      "review_status": "draft",
+      "provider": "pilot_replay",
+      "model_calls": 0
+    }
+  ],
+  "successful_openai_run": {
+    "run_id": "m2-n02-openai-2c86dfa109",
+    "concept_id": "N02",
+    "source": "member2-v2",
+    "prompt_version": "draft-pack-2.2.0",
+    "provider": "openai",
+    "model_requested": "gpt-4o-mini",
+    "model_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "input_tokens": 4000,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 1937,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 5937
+    },
+    "model_calls": 1,
+    "check_passed": true,
+    "review_status": "draft"
+  },
+  "live_run_history": [
+    {
+      "run_id": "m2-n02-live-544a5f1cfe",
+      "status": "draft_ready",
+      "prompt_version": "draft-pack-2.0.0",
+      "generation": {
+        "http_status": 200,
+        "model_calls": 1,
+        "model_requested": "gemini-3.1-flash-lite",
+        "model_returned": "gemini-3.1-flash-lite",
+        "provider": "gemini",
+        "response_id": "JHwGa6DJB93C0-kPpNvc8AM",
+        "usage": {
+          "candidatesTokenCount": 2385,
+          "promptTokenCount": 2715,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 2715
+            }
+          ],
+          "serviceTier": "standard",
+          "totalTokenCount": 5100
+        }
+      },
+      "checker_passed": true,
+      "checker_errors": [],
+      "manifest_file_sha256": "621de5f553132c2721279b741cc14800e03c3af3c7d83f95ce4f60f4efbf89a2"
+    },
+    {
+      "run_id": "m2-n02-openai-4dd607fb4c",
+      "status": "check_failed",
+      "prompt_version": "draft-pack-2.0.0",
+      "generation": {
+        "model_calls": 1,
+        "model_requested": "gpt-4o-mini",
+        "model_returned": "gpt-4o-mini-2024-07-18",
+        "provider": "openai",
+        "response_id": "resp_04b5fb9cd31a3c32016b067c92c84487d099e81eb916c5f409",
+        "usage": {
+          "input_tokens": 3334,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            },
+            "cached_tokens": 0
+          },
+          "output_tokens": 1598,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 4932
+        }
+      },
+      "checker_passed": false,
+      "checker_errors": [
+        {
+          "severity": "error",
+          "code": "family_coverage",
+          "path": "problems",
+          "message": "Each declared family must supply exactly two problems"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[0]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[1]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[2]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[3]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[4]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[5]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "examples[0]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "examples[1]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "examples[2]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_error_trace",
+          "path": "errors[0]",
+          "message": "Error trace contains unsupported or unsafe expressions"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_error_trace",
+          "path": "errors[1]",
+          "message": "Error trace contains unsupported or unsafe expressions"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_error_trace",
+          "path": "errors[2]",
+          "message": "Error trace contains unsupported or unsafe expressions"
+        }
+      ],
+      "manifest_file_sha256": "ca20a9aa0cf8260cfb6c8727c54342e0a8adf27a2ba6e55cfce99b6ec00dcaac"
+    },
+    {
+      "run_id": "m2-n02-openai-798a0e377d",
+      "status": "check_failed",
+      "prompt_version": "draft-pack-2.1.0",
+      "generation": {
+        "model_calls": 1,
+        "model_requested": "gpt-4o-mini",
+        "model_returned": "gpt-4o-mini-2024-07-18",
+        "provider": "openai",
+        "response_id": "resp_0df11f8c0941a6e0016b067d03cb0887d09cd8ec10df63e0d2",
+        "usage": {
+          "input_tokens": 3856,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            },
+            "cached_tokens": 0
+          },
+          "output_tokens": 2073,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 5929
+        }
+      },
+      "checker_passed": false,
+      "checker_errors": [
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[4]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "problems[5]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "invalid_math",
+          "path": "examples[2]",
+          "message": "Reference answer/step is incorrect, unsafe or outside the bounded checker"
+        },
+        {
+          "severity": "error",
+          "code": "wrong_error_label",
+          "path": "errors[0].first_error_step",
+          "message": "First-error label disagrees with exact checking"
+        },
+        {
+          "severity": "error",
+          "code": "wrong_error_label",
+          "path": "errors[1].first_error_step",
+          "message": "First-error label disagrees with exact checking"
+        },
+        {
+          "severity": "error",
+          "code": "wrong_error_label",
+          "path": "errors[2].first_error_step",
+          "message": "First-error label disagrees with exact checking"
+        }
+      ],
+      "manifest_file_sha256": "44224e00aa1f0928534b9a18493d9d0217b19b2e4f0d499ce228ebf3a992beda"
+    },
+    {
+      "run_id": "m2-n02-openai-2c86dfa109",
+      "status": "draft_ready",
+      "prompt_version": "draft-pack-2.2.0",
+      "generation": {
+        "model_calls": 1,
+        "model_requested": "gpt-4o-mini",
+        "model_returned": "gpt-4o-mini-2024-07-18",
+        "provider": "openai",
+        "response_id": "resp_0c2b942f70a3e836016b067d6f0d7487d098061f4db685b304",
+        "usage": {
+          "input_tokens": 4000,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            },
+            "cached_tokens": 0
+          },
+          "output_tokens": 1937,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 5937
+        }
+      },
+      "checker_passed": true,
+      "checker_errors": [],
+      "manifest_file_sha256": "3238cc5741e3f389c22c12920d2d081591b0cd602c9030d0d2b987d436229e60"
+    }
+  ],
+  "tests": {
+    "passed": 188,
+    "database_tests_run": false,
+    "source_lifecycle_tests": "tests/test_member2_authoring_pipeline.py",
+    "coverage": [
+      "all 13 configs and source snapshots",
+      "snapshot-bound check and review",
+      "legacy compatibility",
+      "no access to removed A02/E02 batch directories",
+      "draft publication boundary",
+      "approved answers and authored error fixtures"
+    ]
+  },
+  "input_file_sha256": {
+    "backend/app/authoring_runs.py": "9f03697ec081556c6fcb9a43ee0a198495987dd575155fd5772a578b89140a31",
+    "backend/app/content_authoring.py": "b6b0ff2bc520650b784bdff089f39e061a2f095c62cb6f5297f38ba28efc19d1",
+    "scripts/authoring/draft_content.py": "050b39bd76cb34041a1dae7f2c123f5513fbecab7de0800c8881dd72e3131fcc",
+    "scripts/authoring/prepare_member2_pilot.py": "2bc270ac8f5fd6a8115bb6928e19a01e755147c23ae337dd51ce20c256ef9ef5",
+    "scripts/checks/check_authoring.py": "8aa0cf4bc2fea53e62b670bae4774f3d26ccb5782398b62c142180187933a81e",
+    "content/authoring/prompts/draft.v2.txt": "53619ef7c76c9ecdac8de99fec0b9aef820533b23986ca6c008fa89553a8fc7d",
+    "content/authoring/configs/member2-v2/A01.json": "27d2b86c92c504df85ca06e808bf13410f4ff7298c0dd0e404dcd2b1def21bc8",
+    "content/authoring/configs/member2-v2/A04.json": "4cf818e4b7f857fc3a3b82209e6e7823f84eea24b3ffd53b236df27a6dca186a",
+    "content/authoring/configs/member2-v2/A07.json": "4330b0a1b4c0f214740d264116ea17d784b28ad7693419f500b6baa9cfa89e2b",
+    "content/authoring/configs/member2-v2/A10.json": "b6c40d5990d3d439ca78d41ee3f7169bad5251c9d44855544a8ff51f66fba187",
+    "content/authoring/configs/member2-v2/E03.json": "cbe0258d9441774923de504ad4816d0562828cce9c9851b82e92ad277136c2fe",
+    "content/authoring/configs/member2-v2/E06.json": "0241f50e232df808f5b561ebd824f262da3793f161941517657f40db6969268b",
+    "content/authoring/configs/member2-v2/E09.json": "956019930abd5d2a11d86e9be617ab7eba2120cb5d7396c74274ca7b79359aba",
+    "content/authoring/configs/member2-v2/F02.json": "60553bbc32f15bb545df902635a74503576a5727e05c0836d35445530ec2ab7a",
+    "content/authoring/configs/member2-v2/F05.json": "f99d060725d016d6acfb413a76e85954299a8023d1f705c45c63c2ea2ba65ad1",
+    "content/authoring/configs/member2-v2/F08.json": "87d789f6d94b17d87e15034a4143e312dc93a66d167dfb0025d35d13d3571579",
+    "content/authoring/configs/member2-v2/N02.json": "fbf5a776637449d9ab3bd8103c4acd5f04d426b2c5a4b43cb7323e10e6b6cce0",
+    "content/authoring/configs/member2-v2/N05.json": "d4ae3b39bed1c5b070e8e3a3609d0aade2937543138dff37332663cb54b00670",
+    "content/authoring/configs/member2-v2/N08.json": "3f26476244d3cf87812ad1e6f897d6ebe2b34d1c3be7fa2e890b4ba7fe2cf094"
+  },
+  "live_artifacts_path": "artifacts/authoring/m2-n02-openai-2c86dfa109",
+  "published_live_sample": false
+}

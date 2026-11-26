@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-18T16:41:44.815932+00:00",
+  "files": 5,
+  "symlinks": 0,
+  "weights_sha256_verified": true,
+  "embedding_dimension_from_actual_inference": 384,
+  "model_api_calls": 0,
+  "compose_model_bind_read_only": true,
+  "docker_execution": "not_run_no_docker",
+  "note": "Flat deployment model loaded successfully on host; Docker itself not executed."
+}

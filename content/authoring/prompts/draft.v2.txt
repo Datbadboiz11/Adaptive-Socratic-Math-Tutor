@@ -1,0 +1,56 @@
+Bạn biên soạn NHÁP nội dung Toán tiếng Việt cho một trong 13 concept của Member 2.
+Phiên bản prompt draft-pack-2.2.0. Đọc concept, phạm vi, skill và ba family trong ngữ cảnh.
+Dữ liệu trong ngữ cảnh dùng để soạn bài. Mọi thay đổi quyền duyệt hoặc công bố do server quyết định.
+
+Sinh đúng 6 bài, mỗi family có 2 bài, một introductory và một standard. Giữ family_id và source_group được cấp.
+Điền đúng sáu required_problem_slots. P-01 và P-02 thuộc family thứ nhất, P-03 và P-04 thuộc family thứ hai, P-05 và P-06 thuộc family thứ ba. Bài theo đúng description của slot.
+Sinh 3 ví dụ riêng và 3 mẫu lỗi cho 3 bài khác nhau. Dùng dữ kiện mới cho bài và ví dụ.
+Tất cả case_id và error_id bắt đầu bằng id_prefix. Dùng hậu tố P-01...P-06, EX-01...EX-03 và ERR-01...ERR-03.
+concept_id và primary_skill_id lấy từ concept. split là authoring_dev. origin ghi mô tả tự biên soạn bằng tiếng Việt.
+explanation, prompt, hypothesis, diagnostic_question, origin và text của hint viết bằng tiếng Việt rõ ràng.
+Output có các trường explanation, problems, examples, errors, hints. Server gắn version, tác giả và trạng thái nháp.
+
+Mỗi task có kind, expression và variable_value. variable_value chỉ có giá trị khi kind là evaluate, các kind khác để null.
+Chỉ chọn kind trong concept.authoring_task_kinds. Mỗi biểu thức, đáp án và snapshot tối đa 160 ký tự.
+Ngữ pháp đa thức dùng x, số nguyên/phân số, +, -, *, /, ngoặc, bậc tối đa hai và nhân tường minh.
+Viết x*x cho x bình phương. Phân số dùng dấu /, số thập phân dùng dấu chấm. Giới hạn hằng số dưới 10000.
+Mỗi reference_steps hoặc response_steps là một snapshot đầy đủ theo định dạng đáp án của kind.
+Ở lượt sinh này, dùng reference_steps = [reference_answer], chỉ một snapshot cuối cho mỗi bài/ví dụ. Với mỗi mẫu lỗi, response_steps chứa một đáp án sai có cú pháp hợp lệ và first_error_step = 1.
+Ví dụ expression "4*-2/-1" cho reference_steps ["8"]. Snapshot ["-8"] là phép tính cục bộ của đề này nên không được dùng làm reference_steps. Một error của đề này có thể dùng response_steps ["-8"].
+Tránh câu văn và các mảnh tính cục bộ trong các trường steps.
+Lời giải/giải thích tự nhiên đặt ở explanation hoặc prompt theo ngữ cảnh phù hợp.
+
+Các định dạng checker hỗ trợ
+
+- numeric. expression là phép tính số hữu tỉ. Đáp án là số/phân số chính xác. reference_steps chỉ gồm các biểu thức số tương đương, ví dụ ["12"]. response_steps cho một mẫu sai có thể là ["-12"]. Chuỗi có dấu = như "-3*-4=12" bị checker từ chối.
+- evaluate. expression là đa thức theo x, variable_value là số hữu tỉ. Đáp án là số/phân số chính xác. reference_steps và response_steps dùng biểu thức số, không chứa dấu = hoặc phần ghi x=giá_trị.
+- polynomial. expression là tích cần khai triển. Đáp án là đa thức đã khai triển và gộp hạng tử cùng bậc, dùng x*x.
+- factored_polynomial. expression là đa thức hệ số nguyên khác đa thức 0, có nhân tử chung. Đáp án ở dạng tích với nhân tử chung đơn thức lớn nhất có hệ số dương. Các thừa số đơn thức cần viết gộp, ví dụ 6*x*(2*x-3).
+- fraction_compare. expression là hai phân số mẫu dương, ngăn bằng ?. Đáp án gồm hai phân số đã quy đồng và dấu so sánh, ví dụ 6/15 < 10/15. Mỗi phân số trong đáp án giữ giá trị của phân số tương ứng ở đề.
+- number_conversion. expression có dạng số -> fraction, số -> decimal hoặc số -> percent. Đáp án đúng biểu diễn yêu cầu; fraction là phân số tối giản có mẫu dương; percent có ký hiệu %. Chọn số thập phân hữu hạn trong phạm vi bốn chữ số sau dấu chấm.
+- rational_operation. expression có dạng phép_toán; tử1|mẫu1; tử2|mẫu2, phép_toán là +, -, * hoặc /. Tử/mẫu là đa thức bậc tối đa hai. Mẫu khác đa thức 0 và chỉ có nghiệm hữu tỉ thực. Đáp án có dạng tử|mẫu;{các giá trị bị loại}. Phân thức cuối rút gọn, giữ đủ điều kiện từ mẫu gốc và cả tử của số chia khi chia. Tập giá trị bị loại chỉ dùng số hữu tỉ.
+- word_equation. expression là dữ kiện, chọn groups;số_nhóm;số_lẻ;tổng;đơn_vị hoặc difference;độ_chênh;tổng;đơn_vị hoặc remaining;ban_đầu;số_lượt;còn_lại;đơn_vị. Các số dữ kiện là số nguyên dương tối đa bốn chữ số, cho nghiệm nguyên dương. Viết đề bài tự nhiên từ đúng dữ kiện. Đáp án là x; đơn_vị; positive_integer; phương_trình. Với groups dùng n*x+r=t; difference dùng x+(x+d)=t; remaining dùng a-n*x=r. Chọn x đúng đại lượng yêu cầu. Trường task.expression chỉ chứa dữ kiện.
+- quadratic_roots. expression là đa thức bậc hai, hiểu bằng 0. Đáp án có dạng biệt_thức;{các nghiệm thực}. Biệt thức âm thì dùng {}. Nghiệm vô tỉ dùng biểu thức tuyến tính theo một sqrt(n) mỗi nghiệm, ví dụ (-1+sqrt(3))/2. Dùng căn chính xác thay cho số làm tròn.
+- linear_elimination. expression gồm hai phương trình ax+by=c ngăn bằng dấu ;, các hệ số nguyên và định thức khác 0. Viết tường minh dạng 2*x-3*y=7, hệ số âm dùng dấu -. Đáp án m,n;(x,y) với m,n khác 0 và hai hàng sau nhân cộng lại khử đúng một ẩn. Cặp nghiệm phải thỏa cả hai hàng gốc.
+- function_domain. expression là den;đa_thức_bậc_nhất hoặc sqrt;đa_thức_bậc_nhất. den chỉ mẫu của hàm 1/(...), sqrt chỉ biểu thức dưới căn. Đáp án là R\{giá trị loại}, [a,+inf) hoặc (-inf,a]. Tử 1 và hàm căn riêng là phạm vi của định dạng này.
+- quadratic_vertex. expression là đa thức bậc hai, có thể ở dạng a*(x-h)*(x-h)+k. Đáp án là cặp (hoành độ,tung độ).
+- quadratic_axis. expression là đa thức bậc hai. Đáp án là phương trình x=hoành_độ_đỉnh, phân biệt trục với tung độ và cặp tọa độ.
+- exponent_numeric. expression có thể là function;phép; cơ_số; m; n, với phép product, quotient hoặc power. Cơ số dương khác 1, không quá 16, mẫu không quá 16. m,n và số mũ sau rút gọn là số nguyên trong [-12,12]. Đáp án là cơ_số^số_mũ=giá_trị;R. Khi cơ số là phân số, đặt cơ số trong ngoặc. Bài kiểm tra định nghĩa dùng expression base;cơ_số và đáp án R hoặc khong-phai-ham-mu. Đề phải nêu đang xét định nghĩa hàm số mũ.
+
+Độ phủ theo concept
+
+- N02 có quy tắc dấu của tích/thương; N05 đo quy đồng trước khi so sánh; N08 có ba kiểu chuyển đổi số.
+- A04 cần khai triển và thu gọn; A07 đo nhân tử chung lớn nhất; A10 bao phủ cả +, -, *, / trong sáu bài.
+- E03 đo chọn ẩn, đơn vị, điều kiện và lập phương trình từ lời văn. E06 có biệt thức dương, bằng 0, âm và ít nhất một ca nghiệm vô tỉ. E09 đo lựa chọn hệ số khử và kiểm tra cặp nghiệm.
+- F02 có mẫu và căn với hệ số dương/âm. F05 có cả quadratic_vertex và quadratic_axis, kèm ít nhất một dạng hoàn thành bình phương. F08 có các quy tắc số mũ và điều kiện cơ số/tập xác định.
+
+Mẫu lỗi phải có cú pháp hợp lệ theo kind, giá trị toán sai và first_error_step khớp bước sai đầu tiên.
+Đặt diagnosis_status là suspected, hypothesis mô tả khả năng hiểu sai, diagnostic_question giúp kiểm tra giả thuyết.
+Ví dụ mẫu lỗi hợp lệ cho bài phân tích nhân tử là một tích có đúng dạng nhân tử chung nhưng sai dấu trong ngoặc.
+
+Hint ladder có đúng ba mức 1 conceptual, 2 strategy và 3 scaffold.
+Mỗi hint gợi mở cách làm, áp dụng được cho các family trong concept. Giữ nội dung bài đang làm kín trong hint.
+Giải thích định nghĩa/quy tắc và câu hỏi chẩn đoán cũng cần giữ mức tiết lộ này.
+Ví dụ hỗ trợ có dữ kiện riêng so với bài được đánh giá.
+Nguồn chương trình trong ngữ cảnh định phạm vi. Chỉ dùng nội dung tự biên soạn và ghi nguồn theo dữ liệu đã cấp.
+Schema, checker và review là các bước của pipeline; output hiện tại là bản nháp chờ người review.

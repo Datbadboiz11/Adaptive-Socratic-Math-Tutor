@@ -1,0 +1,83 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "embedding-1.0.0",
+      "default": "embedding-1.0.0",
+      "title": "Version",
+      "type": "string"
+    },
+    "provider": {
+      "enum": [
+        "fastembed",
+        "synthetic_fixture"
+      ],
+      "title": "Provider",
+      "type": "string"
+    },
+    "model_name": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Model Name",
+      "type": "string"
+    },
+    "revision": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Revision",
+      "type": "string"
+    },
+    "dimension": {
+      "maximum": 4096,
+      "minimum": 1,
+      "title": "Dimension",
+      "type": "integer"
+    },
+    "distance": {
+      "const": "cosine",
+      "default": "cosine",
+      "title": "Distance",
+      "type": "string"
+    },
+    "normalization": {
+      "const": "l2",
+      "default": "l2",
+      "title": "Normalization",
+      "type": "string"
+    },
+    "query_prefix": {
+      "const": "",
+      "default": "",
+      "title": "Query Prefix",
+      "type": "string"
+    },
+    "passage_prefix": {
+      "const": "",
+      "default": "",
+      "title": "Passage Prefix",
+      "type": "string"
+    },
+    "files_sha256": {
+      "additionalProperties": {
+        "pattern": "^[a-f0-9]{64}$",
+        "type": "string"
+      },
+      "title": "Files Sha256",
+      "type": "object"
+    },
+    "runtime_versions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Runtime Versions",
+      "type": "object"
+    }
+  },
+  "required": [
+    "provider",
+    "model_name",
+    "revision",
+    "dimension"
+  ],
+  "title": "EmbeddingProfile",
+  "type": "object"
+}

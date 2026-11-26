@@ -1,0 +1,438 @@
+{
+  "decision": "Giữ ghi công từng mục và hồ sơ gốc. Chưa đủ bằng chứng nối chính xác tám bài với bản phát hành theo giấy phép dùng được cho luồng AI. Dùng bản tự biên soạn để chuẩn bị review riêng.",
+  "item_rights_passed": 0,
+  "items": [
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop2; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a60909cdistprop2",
+        "a60909cdistprop2a",
+        "a60909cdistprop2a-h1"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Đổi trắc nghiệm thành tự luận có bước giải",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+      ],
+      "concept_id": "A02",
+      "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+      "raw_files": [
+        "content-pool/a60909cdistprop2/a60909cdistprop2.json",
+        "content-pool/a60909cdistprop2/steps/a60909cdistprop2a/a60909cdistprop2a.json",
+        "content-pool/a60909cdistprop2/steps/a60909cdistprop2a/tutoring/a60909cdistprop2aDefaultPathway.json"
+      ],
+      "record_id": "D-A02-M2-OAT02-P-01",
+      "upstream_license_fields": [
+        {
+          "license": "",
+          "record_id": "a60909cdistprop2"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop2a"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop2a-h1"
+        }
+      ],
+      "upstream_problem_id": "a60909cdistprop2"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop3; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a60909cdistprop3",
+        "a60909cdistprop3a",
+        "a60909cdistprop3a-h1"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Đổi trắc nghiệm thành tự luận có bước giải",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ biểu thức và đáp án gốc"
+      ],
+      "concept_id": "A02",
+      "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+      "raw_files": [
+        "content-pool/a60909cdistprop3/a60909cdistprop3.json",
+        "content-pool/a60909cdistprop3/steps/a60909cdistprop3a/a60909cdistprop3a.json",
+        "content-pool/a60909cdistprop3/steps/a60909cdistprop3a/tutoring/a60909cdistprop3aDefaultPathway.json"
+      ],
+      "record_id": "D-A02-M2-OAT02-P-02",
+      "upstream_license_fields": [
+        {
+          "license": "",
+          "record_id": "a60909cdistprop3"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop3a"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop3a-h1"
+        }
+      ],
+      "upstream_problem_id": "a60909cdistprop3"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop12; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a60909cdistprop12",
+        "a60909cdistprop12a",
+        "a60909cdistprop12b",
+        "a60909cdistprop12a-h1",
+        "a60909cdistprop12a-h2",
+        "a60909cdistprop12b-h1",
+        "a60909cdistprop12b-h2"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Đổi biến y thành x",
+        "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+        "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+      ],
+      "concept_id": "A02",
+      "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+      "raw_files": [
+        "content-pool/a60909cdistprop12/a60909cdistprop12.json",
+        "content-pool/a60909cdistprop12/steps/a60909cdistprop12a/a60909cdistprop12a.json",
+        "content-pool/a60909cdistprop12/steps/a60909cdistprop12a/tutoring/a60909cdistprop12aDefaultPathway.json",
+        "content-pool/a60909cdistprop12/steps/a60909cdistprop12b/a60909cdistprop12b.json",
+        "content-pool/a60909cdistprop12/steps/a60909cdistprop12b/tutoring/a60909cdistprop12bDefaultPathway.json"
+      ],
+      "record_id": "D-A02-M2-OAT02-P-05",
+      "upstream_license_fields": [
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12a"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12b"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12a-h1"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12a-h2"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12b-h1"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop12b-h2"
+        }
+      ],
+      "upstream_problem_id": "a60909cdistprop12"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a60909cdistprop13; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a60909cdistprop13",
+        "a60909cdistprop13a",
+        "a60909cdistprop13b",
+        "a60909cdistprop13a-h1",
+        "a60909cdistprop13a-h2",
+        "a60909cdistprop13b-h1",
+        "a60909cdistprop13b-h2"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Đổi biến m thành x",
+        "Gộp hai bước hỏi hệ số và hằng số thành yêu cầu khai triển toàn biểu thức",
+        "Chuẩn hóa TeX; bổ sung bước giải do AI soạn, kiểm tra hệ số và hằng số với hai đáp án gốc"
+      ],
+      "concept_id": "A02",
+      "oer": "https://openstax.org/books/elementary-algebra-2e/pages/1-9-properties-of-real-numbers",
+      "raw_files": [
+        "content-pool/a60909cdistprop13/a60909cdistprop13.json",
+        "content-pool/a60909cdistprop13/steps/a60909cdistprop13a/a60909cdistprop13a.json",
+        "content-pool/a60909cdistprop13/steps/a60909cdistprop13a/tutoring/a60909cdistprop13aDefaultPathway.json",
+        "content-pool/a60909cdistprop13/steps/a60909cdistprop13b/a60909cdistprop13b.json",
+        "content-pool/a60909cdistprop13/steps/a60909cdistprop13b/tutoring/a60909cdistprop13bDefaultPathway.json"
+      ],
+      "record_id": "D-A02-M2-OAT02-P-06",
+      "upstream_license_fields": [
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13a"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13b"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13a-h1"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13a-h2"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13b-h1"
+        },
+        {
+          "license": "",
+          "record_id": "a60909cdistprop13b-h2"
+        }
+      ],
+      "upstream_problem_id": "a60909cdistprop13"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon1; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a9c142dVarCon1a"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+        "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+      ],
+      "concept_id": "E02",
+      "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+      "raw_files": [
+        "content-pool/a9c142dVarCon1/a9c142dVarCon1.json",
+        "content-pool/a9c142dVarCon1/steps/a9c142dVarCon1a/a9c142dVarCon1a.json",
+        "content-pool/a9c142dVarCon1/steps/a9c142dVarCon1a/tutoring/a9c142dVarCon1aDefaultPathway.json"
+      ],
+      "record_id": "D-E02-M2-OAT02-P-01",
+      "upstream_license_fields": [
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1"
+        },
+        {
+          "license": "",
+          "record_id": "a9c142dVarCon1a"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h1"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h2"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h3"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h4"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h5"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon1a-h6"
+        }
+      ],
+      "upstream_problem_id": "a9c142dVarCon1"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon2; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a9c142dVarCon2a"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+        "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+      ],
+      "concept_id": "E02",
+      "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+      "raw_files": [
+        "content-pool/a9c142dVarCon2/a9c142dVarCon2.json",
+        "content-pool/a9c142dVarCon2/steps/a9c142dVarCon2a/a9c142dVarCon2a.json",
+        "content-pool/a9c142dVarCon2/steps/a9c142dVarCon2a/tutoring/a9c142dVarCon2aDefaultPathway.json"
+      ],
+      "record_id": "D-E02-M2-OAT02-P-02",
+      "upstream_license_fields": [
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2"
+        },
+        {
+          "license": "",
+          "record_id": "a9c142dVarCon2a"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h1"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h2"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h3"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h4"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h5"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon2a-h6"
+        }
+      ],
+      "upstream_problem_id": "a9c142dVarCon2"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon18; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a9c142dVarCon18a"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+        "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+      ],
+      "concept_id": "E02",
+      "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+      "raw_files": [
+        "content-pool/a9c142dVarCon18/a9c142dVarCon18.json",
+        "content-pool/a9c142dVarCon18/steps/a9c142dVarCon18a/a9c142dVarCon18a.json",
+        "content-pool/a9c142dVarCon18/steps/a9c142dVarCon18a/tutoring/a9c142dVarCon18aDefaultPathway.json"
+      ],
+      "record_id": "D-E02-M2-OAT02-P-05",
+      "upstream_license_fields": [
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18"
+        },
+        {
+          "license": "",
+          "record_id": "a9c142dVarCon18a"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h1"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h2"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h3"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h4"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h5"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon18a-h6"
+        }
+      ],
+      "upstream_problem_id": "a9c142dVarCon18"
+    },
+    {
+      "attribution": "Adapted from OATutor Project / OpenStax; https://github.com/CAHLR/OATutor-Content/tree/08ef4819889e70835e86926f84037e79141652f3/content-pool/a9c142dVarCon19; https://creativecommons.org/licenses/by/4.0/",
+      "blank_license_record_ids": [
+        "a9c142dVarCon19a"
+      ],
+      "changes": [
+        "Dịch yêu cầu sang tiếng Việt",
+        "Chuẩn hóa TeX sang phép nhân tường minh",
+        "Bổ sung bước giải do AI soạn; giữ phương trình và nghiệm gốc",
+        "Chỉ lưu hint gốc trong vùng nguồn để review, không xuất terminal hint"
+      ],
+      "concept_id": "E02",
+      "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+      "raw_files": [
+        "content-pool/a9c142dVarCon19/a9c142dVarCon19.json",
+        "content-pool/a9c142dVarCon19/steps/a9c142dVarCon19a/a9c142dVarCon19a.json",
+        "content-pool/a9c142dVarCon19/steps/a9c142dVarCon19a/tutoring/a9c142dVarCon19aDefaultPathway.json"
+      ],
+      "record_id": "D-E02-M2-OAT02-P-06",
+      "upstream_license_fields": [
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19"
+        },
+        {
+          "license": "",
+          "record_id": "a9c142dVarCon19a"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h1"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h2"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h3"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h4"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h5"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h6"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h7"
+        },
+        {
+          "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+          "record_id": "a9c142dVarCon19a-h8"
+        }
+      ],
+      "upstream_problem_id": "a9c142dVarCon19"
+    }
+  ],
+  "oatutor_repo_notice": "https://raw.githubusercontent.com/CAHLR/OATutor-Content/08ef4819889e70835e86926f84037e79141652f3/README.md",
+  "openstax_2020_pdf_notice": "https://assets.openstax.org/oscms-prodcms/media/documents/ElementaryAlgebra2e-WEB_EjIP4sI.pdf",
+  "openstax_current_notice": "https://openstax.org/books/elementary-algebra-2e/pages/preface",
+  "openstax_current_web_license": "CC BY-NC-SA 4.0, states prior permission for generative AI use",
+  "openstax_pdf_license": "CC BY 4.0",
+  "pinned_readme_sha256": "4e81744e6acfd90cb6799027e6803e60b004f363d59df86227d0db60a251b87c",
+  "recorded_at": "2026-11-23T22:26:41+07:00",
+  "repository_license": "CC BY 4.0",
+  "runtime_publication": false,
+  "source_commit": "08ef4819889e70835e86926f84037e79141652f3",
+  "source_files_checksum_verified": 29,
+  "status": "hold_openstax_version_and_ai_use_unverified"
+}

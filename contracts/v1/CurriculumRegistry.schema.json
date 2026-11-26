@@ -120,7 +120,17 @@
               "evaluate",
               "polynomial",
               "linear_equation",
-              "quadratic_vertex"
+              "quadratic_vertex",
+              "fraction_compare",
+              "number_conversion",
+              "factored_polynomial",
+              "rational_operation",
+              "word_equation",
+              "quadratic_roots",
+              "linear_elimination",
+              "function_domain",
+              "quadratic_axis",
+              "exponent_numeric"
             ],
             "type": "string"
           },

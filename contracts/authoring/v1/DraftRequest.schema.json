@@ -1,0 +1,112 @@
+{
+  "$defs": {
+    "FamilySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "source_group": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Group",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "family_id",
+        "source_group",
+        "description"
+      ],
+      "title": "FamilySpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "protocol_version": {
+      "const": "authoring-1.0.0",
+      "default": "authoring-1.0.0",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^[NAEF](0[1-9]|10)$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "revision": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,23}$",
+      "title": "Revision",
+      "type": "string"
+    },
+    "author": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Author",
+      "type": "string"
+    },
+    "content_version": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Content Version",
+      "type": "string"
+    },
+    "source_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "families": {
+      "items": {
+        "$ref": "#/$defs/FamilySpec"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Families",
+      "type": "array"
+    },
+    "model": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Model",
+      "type": "string"
+    },
+    "max_output_tokens": {
+      "default": 8000,
+      "maximum": 16000,
+      "minimum": 512,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "timeout_seconds": {
+      "default": 45,
+      "maximum": 60,
+      "minimum": 1,
+      "title": "Timeout Seconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "concept_id",
+    "revision",
+    "author",
+    "content_version",
+    "source_ids",
+    "families",
+    "model"
+  ],
+  "title": "DraftRequest",
+  "type": "object"
+}

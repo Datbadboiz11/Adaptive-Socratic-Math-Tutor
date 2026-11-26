@@ -1,0 +1,1133 @@
+{
+  "$defs": {
+    "ConceptReadiness": {
+      "additionalProperties": false,
+      "description": "Evidence gates for canonical curriculum; client flags cannot activate a topic.",
+      "properties": {
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "has_pack": {
+          "title": "Has Pack",
+          "type": "boolean"
+        },
+        "alignment_approved": {
+          "title": "Alignment Approved",
+          "type": "boolean"
+        },
+        "concept_approved": {
+          "title": "Concept Approved",
+          "type": "boolean"
+        },
+        "pack_approved": {
+          "title": "Pack Approved",
+          "type": "boolean"
+        },
+        "prerequisites_approved": {
+          "title": "Prerequisites Approved",
+          "type": "boolean"
+        },
+        "validator_integrated": {
+          "title": "Validator Integrated",
+          "type": "boolean"
+        },
+        "ui_policy_verified": {
+          "title": "Ui Policy Verified",
+          "type": "boolean"
+        },
+        "contract_review_complete": {
+          "title": "Contract Review Complete",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "concept_id",
+        "has_pack",
+        "alignment_approved",
+        "concept_approved",
+        "pack_approved",
+        "prerequisites_approved",
+        "validator_integrated",
+        "ui_policy_verified",
+        "contract_review_complete"
+      ],
+      "title": "ConceptReadiness",
+      "type": "object"
+    },
+    "ConceptSkillTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_id",
+        "skill_id"
+      ],
+      "title": "ConceptSkillTarget",
+      "type": "object"
+    },
+    "ContentRef": {
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "content_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Content Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "content_version"
+      ],
+      "title": "ContentRef",
+      "type": "object"
+    },
+    "ContentSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "title",
+        "locator"
+      ],
+      "title": "ContentSource",
+      "type": "object"
+    },
+    "CurriculumProblemPublic": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "member2-proposal-0.2.0",
+          "default": "member2-proposal-0.2.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "content_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Content Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "primary_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Primary Skill Id",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "task": {
+          "$ref": "#/$defs/PublicTask"
+        },
+        "domain": {
+          "const": "real_numbers",
+          "default": "real_numbers",
+          "title": "Domain",
+          "type": "string"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        }
+      },
+      "required": [
+        "problem_id",
+        "content_version",
+        "concept_id",
+        "primary_skill_id",
+        "family_id",
+        "prompt",
+        "task",
+        "difficulty"
+      ],
+      "title": "CurriculumProblemPublic",
+      "type": "object"
+    },
+    "LearningReportSnapshot": {
+      "additionalProperties": false,
+      "description": "Server-computed, end-of-session facts; no client/LLM tallying.",
+      "properties": {
+        "contract_version": {
+          "const": "member2-proposal-0.2.0",
+          "default": "member2-proposal-0.2.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "session_id": {
+          "format": "uuid",
+          "title": "Session Id",
+          "type": "string"
+        },
+        "state_version": {
+          "minimum": 1,
+          "title": "State Version",
+          "type": "integer"
+        },
+        "status": {
+          "const": "completed",
+          "title": "Status",
+          "type": "string"
+        },
+        "completed_at": {
+          "format": "date-time",
+          "title": "Completed At",
+          "type": "string"
+        },
+        "independent_correct": {
+          "minimum": 0,
+          "title": "Independent Correct",
+          "type": "integer"
+        },
+        "assisted_correct": {
+          "minimum": 0,
+          "title": "Assisted Correct",
+          "type": "integer"
+        },
+        "unverified_submissions": {
+          "minimum": 0,
+          "title": "Unverified Submissions",
+          "type": "integer"
+        },
+        "valid_observations": {
+          "minimum": 0,
+          "title": "Valid Observations",
+          "type": "integer"
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/$defs/SkillReport"
+          },
+          "title": "Skills",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "session_id",
+        "state_version",
+        "status",
+        "completed_at",
+        "independent_correct",
+        "assisted_correct",
+        "unverified_submissions",
+        "valid_observations",
+        "skills",
+        "limitations"
+      ],
+      "title": "LearningReportSnapshot",
+      "type": "object"
+    },
+    "OpportunityAssistance": {
+      "additionalProperties": false,
+      "description": "Server-owned summary, committed with a delivered turn, never on retrieval alone.",
+      "properties": {
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "assistance_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Assistance Level",
+          "type": "integer"
+        },
+        "assistance_received": {
+          "title": "Assistance Received",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "opportunity_id",
+        "problem_id",
+        "target_skill_id",
+        "assistance_level",
+        "assistance_received"
+      ],
+      "title": "OpportunityAssistance",
+      "type": "object"
+    },
+    "PublicTask": {
+      "additionalProperties": false,
+      "description": "The kind selects the task; expression/value are public problem inputs.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "PublicTask",
+      "type": "object"
+    },
+    "RetrievalExchange": {
+      "additionalProperties": false,
+      "description": "Cross-check a result against the server scope before it reaches a generator.",
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/RetrievalRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/RetrievalResult"
+        }
+      },
+      "required": [
+        "request",
+        "result"
+      ],
+      "title": "RetrievalExchange",
+      "type": "object"
+    },
+    "RetrievalQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "query": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Query",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "explanation",
+            "hint",
+            "example"
+          ],
+          "title": "Purpose",
+          "type": "string"
+        },
+        "top_k": {
+          "default": 3,
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Top K",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "query",
+        "concept_id",
+        "target_skill_id",
+        "purpose"
+      ],
+      "title": "RetrievalQuery",
+      "type": "object"
+    },
+    "RetrievalRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "member2-proposal-0.2.0",
+          "default": "member2-proposal-0.2.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "query": {
+          "$ref": "#/$defs/RetrievalQuery"
+        },
+        "scope": {
+          "$ref": "#/$defs/ServerRetrievalScope"
+        }
+      },
+      "required": [
+        "request_id",
+        "query",
+        "scope"
+      ],
+      "title": "RetrievalRequest",
+      "type": "object"
+    },
+    "RetrievalResult": {
+      "additionalProperties": false,
+      "properties": {
+        "retrieval_id": {
+          "format": "uuid",
+          "title": "Retrieval Id",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "kb_snapshot_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Kb Snapshot Version",
+          "type": "string"
+        },
+        "retrieval_config_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Retrieval Config Version",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "direct",
+            "metadata",
+            "semantic"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "embedding_version": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Embedding Version"
+        },
+        "elapsed_ms": {
+          "minimum": 0,
+          "title": "Elapsed Ms",
+          "type": "number"
+        },
+        "chunks": {
+          "items": {
+            "$ref": "#/$defs/TeachingChunk"
+          },
+          "maxItems": 10,
+          "title": "Chunks",
+          "type": "array"
+        },
+        "fallback_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "no_eligible_content",
+                "retrieval_unavailable"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fallback Reason"
+        }
+      },
+      "required": [
+        "retrieval_id",
+        "request_id",
+        "kb_snapshot_version",
+        "retrieval_config_version",
+        "method",
+        "elapsed_ms",
+        "chunks"
+      ],
+      "title": "RetrievalResult",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "human_reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status",
+        "author",
+        "source"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "ServerRetrievalScope": {
+      "additionalProperties": false,
+      "description": "Internal only: never accept this object from student HTTP payloads/LLM tools.",
+      "properties": {
+        "session_id": {
+          "format": "uuid",
+          "title": "Session Id",
+          "type": "string"
+        },
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "allowed_targets": {
+          "items": {
+            "$ref": "#/$defs/ConceptSkillTarget"
+          },
+          "minItems": 1,
+          "title": "Allowed Targets",
+          "type": "array"
+        },
+        "allowed_hint_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Allowed Hint Level",
+          "type": "integer"
+        },
+        "kb_snapshot_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Kb Snapshot Version",
+          "type": "string"
+        },
+        "active_problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Active Problem Id",
+          "type": "string"
+        },
+        "excluded_source_groups": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Excluded Source Groups",
+          "type": "array"
+        },
+        "grade_levels": {
+          "items": {
+            "maximum": 12,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "difficulty": {
+          "enum": [
+            "introductory",
+            "standard"
+          ],
+          "title": "Difficulty",
+          "type": "string"
+        }
+      },
+      "required": [
+        "session_id",
+        "opportunity_id",
+        "allowed_targets",
+        "allowed_hint_level",
+        "kb_snapshot_version",
+        "active_problem_id",
+        "excluded_source_groups",
+        "grade_levels",
+        "difficulty"
+      ],
+      "title": "ServerRetrievalScope",
+      "type": "object"
+    },
+    "SkillReport": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "session_observations": {
+          "minimum": 0,
+          "title": "Session Observations",
+          "type": "integer"
+        },
+        "session_observation_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "title": "Session Observation Ids",
+          "type": "array"
+        },
+        "other_session_observations": {
+          "minimum": 0,
+          "title": "Other Session Observations",
+          "type": "integer"
+        },
+        "evidence_count_before": {
+          "minimum": 0,
+          "title": "Evidence Count Before",
+          "type": "integer"
+        },
+        "evidence_count_after": {
+          "minimum": 0,
+          "title": "Evidence Count After",
+          "type": "integer"
+        },
+        "mastery_before": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Mastery Before"
+        },
+        "mastery_after": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Mastery After"
+        },
+        "parameter_version": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parameter Version"
+        },
+        "parameter_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "bootstrap",
+                "default",
+                "pooled",
+                "fitted"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parameter Source"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Updated At"
+        }
+      },
+      "required": [
+        "concept_id",
+        "skill_id",
+        "session_observations",
+        "session_observation_ids",
+        "other_session_observations",
+        "evidence_count_before",
+        "evidence_count_after",
+        "mastery_before",
+        "mastery_after",
+        "parameter_version",
+        "parameter_source",
+        "updated_at"
+      ],
+      "title": "SkillReport",
+      "type": "object"
+    },
+    "TeachingChunk": {
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "content_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Content Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[NAEF](0[1-9]|10)$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Skill Ids",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "explanation",
+            "hint",
+            "example"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "hint_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        },
+        "counts_as_assistance": {
+          "const": true,
+          "default": true,
+          "title": "Counts As Assistance",
+          "type": "boolean"
+        },
+        "disclosure": {
+          "enum": [
+            "conceptual",
+            "strategy",
+            "scaffold",
+            "different_example"
+          ],
+          "title": "Disclosure",
+          "type": "string"
+        },
+        "grade_levels": {
+          "items": {
+            "maximum": 12,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Grade Levels",
+          "type": "array"
+        },
+        "difficulty": {
+          "anyOf": [
+            {
+              "enum": [
+                "introductory",
+                "standard"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Difficulty"
+        },
+        "source": {
+          "$ref": "#/$defs/ContentSource"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        },
+        "problem_id": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Problem Id"
+        },
+        "source_group": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Group"
+        }
+      },
+      "required": [
+        "content_id",
+        "content_version",
+        "concept_id",
+        "skill_ids",
+        "kind",
+        "text",
+        "hint_level",
+        "disclosure",
+        "grade_levels",
+        "source",
+        "review"
+      ],
+      "title": "TeachingChunk",
+      "type": "object"
+    },
+    "TutorPresentation": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "member2-proposal-0.2.0",
+          "default": "member2-proposal-0.2.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "opportunity_id": {
+          "format": "uuid",
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "ask",
+            "hint",
+            "different_example",
+            "confirm",
+            "clarify",
+            "offer_pause"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "active_problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Active Problem Id",
+          "type": "string"
+        },
+        "message": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "hint_level": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        },
+        "assistance_provided": {
+          "title": "Assistance Provided",
+          "type": "boolean"
+        },
+        "response_source": {
+          "enum": [
+            "openai",
+            "draft_template",
+            "reviewed_fallback",
+            "system_unavailable"
+          ],
+          "title": "Response Source",
+          "type": "string"
+        },
+        "content_review_status": {
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Content Review Status",
+          "type": "string"
+        },
+        "content_refs": {
+          "items": {
+            "$ref": "#/$defs/ContentRef"
+          },
+          "title": "Content Refs",
+          "type": "array"
+        },
+        "policy_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "different_example": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CurriculumProblemPublic"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "opportunity_id",
+        "action",
+        "active_problem_id",
+        "message",
+        "hint_level",
+        "assistance_provided",
+        "response_source",
+        "content_review_status",
+        "content_refs",
+        "policy_version"
+      ],
+      "title": "TutorPresentation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "member2-proposal-0.2.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "fixture_origin": {
+      "const": "synthetic_contract_examples_not_reviewed_curriculum",
+      "title": "Fixture Origin",
+      "type": "string"
+    },
+    "problems": {
+      "items": {
+        "$ref": "#/$defs/CurriculumProblemPublic"
+      },
+      "minItems": 5,
+      "title": "Problems",
+      "type": "array"
+    },
+    "readiness": {
+      "items": {
+        "$ref": "#/$defs/ConceptReadiness"
+      },
+      "minItems": 1,
+      "title": "Readiness",
+      "type": "array"
+    },
+    "retrieval_exchanges": {
+      "items": {
+        "$ref": "#/$defs/RetrievalExchange"
+      },
+      "minItems": 1,
+      "title": "Retrieval Exchanges",
+      "type": "array"
+    },
+    "tutor_presentations": {
+      "items": {
+        "$ref": "#/$defs/TutorPresentation"
+      },
+      "minItems": 1,
+      "title": "Tutor Presentations",
+      "type": "array"
+    },
+    "assistance_states": {
+      "items": {
+        "$ref": "#/$defs/OpportunityAssistance"
+      },
+      "minItems": 1,
+      "title": "Assistance States",
+      "type": "array"
+    },
+    "reports": {
+      "items": {
+        "$ref": "#/$defs/LearningReportSnapshot"
+      },
+      "minItems": 1,
+      "title": "Reports",
+      "type": "array"
+    }
+  },
+  "required": [
+    "contract_version",
+    "fixture_origin",
+    "problems",
+    "readiness",
+    "retrieval_exchanges",
+    "tutor_presentations",
+    "assistance_states",
+    "reports"
+  ],
+  "title": "FoundationExamples",
+  "type": "object"
+}

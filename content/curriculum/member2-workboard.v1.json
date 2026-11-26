@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "status": "proposed_pending_team_review",
+  "assignments": [
+    {
+      "owner": "Member 1",
+      "reviewer": "Member 2",
+      "concept_ids": ["N01", "N04", "N07", "N10", "A03", "A06", "A09", "E02", "E05", "E08", "F01", "F04", "F07"]
+    },
+    {
+      "owner": "Member 2",
+      "reviewer": "Member 3",
+      "concept_ids": ["N02", "N05", "N08", "A01", "A04", "A07", "A10", "E03", "E06", "E09", "F02", "F05", "F08"]
+    },
+    {
+      "owner": "Member 3",
+      "reviewer": "Member 1",
+      "concept_ids": ["N03", "N06", "N09", "A02", "A05", "A08", "E01", "E04", "E07", "E10", "F03", "F06", "F09", "F10"]
+    }
+  ],
+  "runtime_evidence": {
+    "legacy_concept_id": "CON-LINEAR-01",
+    "legacy_skill_id": "SK-LIN-SOLVE",
+    "validator_version": "linear-rational-1.0.0",
+    "task_kinds": ["linear_equation"],
+    "mode": "internal_demo",
+    "canonical_mapping_status": "proposed_not_active"
+  },
+  "integration_gates": [
+    {"id": "M2-C01", "topic": "legacy_identity", "owner": "Member 1", "reviewer": "Member 2", "status": "pending_review"},
+    {"id": "M2-C02", "topic": "public_task_and_readiness", "owner": "Member 1", "reviewer": "Member 2", "status": "pending_review"},
+    {"id": "M2-C03", "topic": "hint_levels", "owner": "Member 3", "reviewer": "Member 1", "status": "pending_review"},
+    {"id": "M2-C04", "topic": "retrieval_and_tutor_response", "owner": "Member 2", "reviewer": "Member 3", "status": "pending_review"},
+    {"id": "M2-C05", "topic": "learning_report_snapshot", "owner": "Member 2", "reviewer": "Member 1", "status": "pending_review"}
+  ]
+}

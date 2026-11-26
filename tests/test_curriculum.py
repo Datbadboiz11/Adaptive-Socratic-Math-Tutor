@@ -11,7 +11,10 @@ from pydantic import ValidationError
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'backend'))
 sys.path.insert(0, str(ROOT / 'scripts/checks'))
-from app.curriculum import CurriculumRegistry, PilotBank, MathTask, load_curriculum, prerequisite_candidates, safe_chunks
+from app.curriculum import (
+    CURRENT_CURRICULUM_REVISION, CurriculumRegistry, PilotBank, MathTask,
+    load_curriculum, prerequisite_candidates, safe_chunks,
+)
 from app.authoring_math import polynomial, expected, response_value, audit_case, first_error
 from check_curriculum import audit
 
@@ -28,13 +31,28 @@ def approve(review):
     review.update(status='human_approved', human_reviewer='synthetic-test-reviewer', reviewed_at='2026-10-04T09:00:00+07:00')
 
 
-def test_real_pilot_math_and_coverage_without_inventing_review():
+def test_real_pilot_math_and_coverage_with_registry_review():
     result = audit()
     assert result['registry_concepts'] == 40 and result['pilot_concepts'] == 10
-    assert result['concept_review_counts'] == {'draft': 40}
+    assert result['concept_review_counts'] == {'human_approved': 40}
+    assert result['alignment_review_counts'] == {'human_approved': 40}
     assert sum(c['problems'] for c in result['coverage']) == 60
     assert sum(c['examples'] for c in result['coverage']) == 30
     assert all(c['families'] >= 3 and c['public_chunks'] == 0 for c in result['coverage'])
+
+
+def test_registry_review_revision_preserves_pilot_graph_and_math_content():
+    registry, bank = load_curriculum(revision=CURRENT_CURRICULUM_REVISION)
+    previous_registry, previous_bank = load_curriculum()
+    assert registry.content_version == bank.content_version == '0.2.0'
+    assert registry.edges == previous_registry.edges
+    assert registry.legacy_mappings == previous_registry.legacy_mappings
+    for current, previous in zip(registry.concepts, previous_registry.concepts, strict=True):
+        assert current.model_dump(exclude={'review', 'alignment'}) == previous.model_dump(exclude={'review', 'alignment'})
+        assert current.alignment.model_dump(exclude={'status', 'reviewer'}) == previous.alignment.model_dump(exclude={'status', 'reviewer'})
+        assert current.review.human_reviewer == current.alignment.reviewer
+    for current, previous in zip(bank.packs, previous_bank.packs, strict=True):
+        assert current.model_dump(exclude={'content_version'}) == previous.model_dump(exclude={'content_version'})
 
 
 @pytest.mark.parametrize('change', ['duplicate', 'missing_source', 'missing_endpoint', 'self_edge', 'duplicate_edge', 'cycle', 'strand', 'skill'])

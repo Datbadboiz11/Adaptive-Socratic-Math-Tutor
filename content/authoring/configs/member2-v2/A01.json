@@ -1,0 +1,30 @@
+{
+  "protocol_version": "authoring-1.0.0",
+  "concept_id": "A01",
+  "revision": "M2-LLM01",
+  "author": "Member 2",
+  "content_version": "0.4.0-member2-review",
+  "source_ids": [
+    "SRC-MATH-2018"
+  ],
+  "families": [
+    {
+      "family_id": "FAM-A01-M2-ORIG02-1",
+      "source_group": "GROUP-A01-M2-ORIG01-1",
+      "description": "Thế số âm vào biểu thức bậc nhất"
+    },
+    {
+      "family_id": "FAM-A01-M2-ORIG02-2",
+      "source_group": "GROUP-A01-M2-ORIG01-2",
+      "description": "Thế vào cả x và x bình phương"
+    },
+    {
+      "family_id": "FAM-A01-M2-ORIG02-3",
+      "source_group": "GROUP-A01-M2-ORIG01-3",
+      "description": "Thế phân số và tính chính xác"
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "max_output_tokens": 8000,
+  "timeout_seconds": 60
+}

@@ -38,7 +38,7 @@ def eligibility(assessment, opportunity, observed=False, near=False, *, first_at
     assistance_level = opportunity.get('assistance_level', 0)
     relation = opportunity.get('relation', 'initial')
     if has_observation or repeated_request: reason='already_observed'
-    elif assistance_level > 0 or opportunity.get('hint_used', False) or opportunity.get('hint_count', 0) > 0: reason='assisted'
+    elif opportunity.get('assistance_received', False) or assistance_level > 0 or opportunity.get('hint_used', False) or opportunity.get('hint_count', 0) > 0: reason='assisted'
     elif (first_attempt is False or opportunity.get('is_first_attempt') is False
           or opportunity.get('first_attempt') is False
           or opportunity.get('attempt_number', 1) > 1
