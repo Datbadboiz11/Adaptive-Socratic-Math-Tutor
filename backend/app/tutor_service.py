@@ -25,9 +25,14 @@ def context(c, row):
         WHERE e.student_id=%s AND o.problem_id=%s AND o.opportunity_id<>%s LIMIT 1''',
         (row['student_id'],op['problem_id'],op['opportunity_id'])).fetchone()
     if earlier or prior_evidence: op['relation']='repeat'
-    prior_attempt=c.execute('SELECT 1 FROM turns WHERE session_id=%s AND opportunity_id=%s LIMIT 1',
-                           (row['session_id'],op['opportunity_id'])).fetchone()
-    op['is_first_attempt']=prior_attempt is None
+    # A parse failure or a mathematically unverified draft is not a completed
+    # attempt.  Count only verified submissions here so a learner can clarify
+    # their work and still make their first independent, evidence-eligible try.
+    prior_verified_attempt=c.execute('''SELECT 1 FROM turns
+        WHERE session_id=%s AND opportunity_id=%s AND action='submit'
+          AND assessment->>'assessment_status' IN ('verified_correct','verified_incorrect')
+        LIMIT 1''',(row['session_id'],op['opportunity_id'])).fetchone()
+    op['is_first_attempt']=prior_verified_attempt is None
     return op,observed,near
 
 
