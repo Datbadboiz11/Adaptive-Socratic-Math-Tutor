@@ -2,9 +2,17 @@
   "additionalProperties": false,
   "properties": {
     "request_id": {
-      "format": "uuid",
-      "title": "Request Id",
-      "type": "string"
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Request Id"
     },
     "opportunity_id": {
       "format": "uuid",
@@ -36,7 +44,6 @@
     }
   },
   "required": [
-    "request_id",
     "opportunity_id",
     "expected_state_version",
     "action"

@@ -53,7 +53,7 @@ export default function Workspace({ initialReady }: { initialReady: boolean }) {
   }, []);
   useEffect(() => {
     api<Profile[]>("demo/profiles").then(setProfiles).catch(e => setError(e.message));
-    api<Profile>("me").then(p => { setProfile(p); return Promise.all([refreshHistory(), refreshTopics()]); }).catch(() => {});
+    api<Profile>("me").then(p => { setProfile(p); return Promise.all([refreshHistory(), refreshTopics()]); }).catch(() => { });
   }, [refreshHistory, refreshTopics]);
   const dirty = Boolean(session && draft !== session.draft);
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function Workspace({ initialReady }: { initialReady: boolean }) {
       else { next = request.apply === "turn" ? data.session : data; accept(next); }
       setNotice(request.apply === "turn" ? data.message : "Đã lưu vào PostgreSQL.");
       if (request.apply === "turn") window.setTimeout(() => feedbackRef.current?.focus(), 0);
-      refreshHistory().catch(() => {});
+      refreshHistory().catch(() => { });
       return next;
     } catch (e) { if ((e as ApiFailure).retryable) setPending(request); else setPending(null); throw e; }
   };
@@ -95,7 +95,7 @@ export default function Workspace({ initialReady }: { initialReady: boolean }) {
     if (!session) return;
     let current = session;
     if (dirty) current = (await mutation(current, "draft", { draft }))!;
-    if (action === "request_hint") await mutation(current,"turns",{ opportunity_id: current.current_opportunity_id, action: "request_hint", steps: [] },"turn");
+    if (action === "request_hint") await mutation(current, "turns", { opportunity_id: current.current_opportunity_id, action: "request_hint", steps: [] }, "turn");
     else await mutation(current, action, {}, action === "finish" ? "report" : "session");
   };
   const openSession = async (id: string) => {
@@ -137,10 +137,12 @@ export default function Workspace({ initialReady }: { initialReady: boolean }) {
     {notice && <div className="notice" role="status">{notice}</div>}
     <div className="learning-grid">
       <aside className="card sidebar"><p className="eyebrow">KHÔNG GIAN CỦA EM</p><h2>Hồ sơ demo</h2><label htmlFor="profile">Chọn hồ sơ để thử</label>
-        <select id="profile" value={profile?.student_id || ""} disabled={locked} onChange={e => { const id = e.target.value; if (!id || id === profile?.student_id) return; act(async () => {
-          await saveCurrentDraft();
-          const data = await api<{ profile: Profile }>("demo/login", "POST", { demo_profile_id: id }); setProfile(data.profile); setSession(null); setDraft(""); setReport(null); await Promise.all([refreshHistory(), refreshTopics()]);
-        }); }}><option value="">Chọn một hồ sơ</option>{profiles.map(p => <option key={p.student_id} value={p.student_id}>{p.display_name}</option>)}</select>
+        <select id="profile" value={profile?.student_id || ""} disabled={locked} onChange={e => {
+          const id = e.target.value; if (!id || id === profile?.student_id) return; act(async () => {
+            await saveCurrentDraft();
+            const data = await api<{ profile: Profile }>("demo/login", "POST", { demo_profile_id: id }); setProfile(data.profile); setSession(null); setDraft(""); setReport(null); await Promise.all([refreshHistory(), refreshTopics()]);
+          });
+        }}><option value="">Chọn một hồ sơ</option>{profiles.map(p => <option key={p.student_id} value={p.student_id}>{p.display_name}</option>)}</select>
         {profile && <div className="topic-picker"><label htmlFor="topic">Chủ đề có thể thử</label>
           <select id="topic" value={selectedTopic} disabled={locked || !topics.length} onChange={e => setSelectedTopic(e.target.value)}>
             {!topics.length && <option value="">Chưa có chủ đề</option>}

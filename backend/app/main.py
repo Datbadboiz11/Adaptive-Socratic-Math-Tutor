@@ -60,7 +60,7 @@ def ready():
     try:
         with psycopg.connect(dsn or "", connect_timeout=3) as connection:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT to_regclass('schema_migrations'), to_regclass('sessions'), to_regclass('turn_jobs')")
+                cursor.execute("SELECT to_regclass('schema_migrations'), to_regclass('sessions'), to_regclass('turn_jobs'), to_regclass('session_checkpoints')")
                 if not all(cursor.fetchone()):
                     return JSONResponse(status_code=503, content={"status": "not_ready", "database": "schema_missing"})
     except psycopg.Error:

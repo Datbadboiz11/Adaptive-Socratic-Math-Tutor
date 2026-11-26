@@ -146,7 +146,7 @@ def locked(connection, session_id, student, body, allow_completed=False):
     if allow_completed and row['status'] == 'completed':
         return row
     if row['state_version'] != body.expected_state_version:
-        raise ApiError(409, 'state_conflict', 'Phiên đã thay đổi. Tải trạng thái mới trước khi tiếp tục.')
+        raise ApiError(409, 'state_conflict', 'Phiên đã thay đổi. Tải trạng thái mới rồi gửi lại thao tác.', True)
     if row['status'] == 'completed':
         raise ApiError(409, 'session_completed', 'Phiên đã kết thúc; bài làm đã lưu chỉ có thể xem lại.')
     return row
@@ -209,7 +209,20 @@ def save_draft(session_id: UUID, body: SaveDraft, student=Depends(principal)):
 
 
 @router.post('/sessions/{session_id}/turns', response_model=TurnResult)
-def turn(session_id: UUID, body: TurnRequest, student=Depends(principal)):
+def turn(session_id: UUID, body: TurnRequest,
+         idempotency_key: UUID | None = Header(default=None, alias='Idempotency-Key'),
+         request_id_header: UUID | None = Header(default=None, alias='X-Request-ID'),
+         student=Depends(principal)):
+    header_request_id = idempotency_key or request_id_header
+    if idempotency_key and request_id_header and idempotency_key != request_id_header:
+        raise ApiError(409, 'idempotency_conflict', 'Hai header request ID không khớp nhau.')
+    if body.request_id and header_request_id and body.request_id != header_request_id:
+        raise ApiError(409, 'idempotency_conflict', 'Request ID trong header không khớp nội dung yêu cầu.')
+    effective_request_id = body.request_id or header_request_id
+    if effective_request_id is None:
+        raise ApiError(422, 'invalid_input', 'Cần request_id trong body hoặc Idempotency-Key/X-Request-ID header.')
+    if body.request_id is None:
+        body = body.model_copy(update={'request_id': effective_request_id})
     with connect() as connection:
         tutoring = session_row(connection,session_id,student)['tutoring_enabled']
     if tutoring:
@@ -240,10 +253,52 @@ def turn(session_id: UUID, body: TurnRequest, student=Depends(principal)):
     return mutation(student, f'{session_id}/turns', body, operation)
 
 
+def save_checkpoint(connection, row):
+    opportunity = connection.execute('''SELECT opportunity_id,draft,assistance_level,relation,
+        no_progress_count,best_progress FROM opportunities WHERE opportunity_id=%s FOR UPDATE''',
+        (row['current_opportunity_id'],)).fetchone()
+    if not opportunity:
+        raise ApiError(409, 'state_conflict', 'Không thể lưu checkpoint vì bài hiện tại đã thay đổi.')
+    snapshot = {
+        'status': row['status'],
+        'state_version': row['state_version'],
+        'current_opportunity_id': str(opportunity['opportunity_id']),
+        'draft': opportunity['draft'],
+        'assistance_level': opportunity['assistance_level'],
+        'relation': opportunity['relation'],
+        'no_progress_count': opportunity['no_progress_count'],
+        'best_progress': opportunity['best_progress'],
+    }
+    connection.execute('''INSERT INTO session_checkpoints(session_id,state_version,snapshot)
+        VALUES (%s,%s,%s) ON CONFLICT (session_id) DO UPDATE SET
+        state_version=EXCLUDED.state_version,snapshot=EXCLUDED.snapshot,saved_at=now()''',
+        (row['session_id'], row['state_version'], Jsonb(snapshot)))
+
+
+def restore_checkpoint(connection, row):
+    checkpoint = connection.execute('SELECT state_version,snapshot FROM session_checkpoints WHERE session_id=%s FOR UPDATE',
+                                    (row['session_id'],)).fetchone()
+    if not checkpoint:
+        return
+    snapshot = checkpoint['snapshot']
+    if (checkpoint['state_version'] != row['state_version']
+            or snapshot.get('current_opportunity_id') != str(row['current_opportunity_id'])):
+        raise ApiError(409, 'checkpoint_conflict', 'Checkpoint đã cũ. Tải lại trạng thái phiên rồi thử tiếp.', True)
+    connection.execute('''UPDATE opportunities SET draft=%s,assistance_level=%s,relation=%s,
+        no_progress_count=%s,best_progress=%s WHERE opportunity_id=%s''',
+        (snapshot['draft'], snapshot['assistance_level'], snapshot['relation'],
+         snapshot['no_progress_count'], snapshot['best_progress'], row['current_opportunity_id']))
+
+
 def change_status(session_id, body, student, status):
     def operation(connection):
         row = locked(connection, session_id, student, body)
-        return view(connection, row if row['status'] == status else advance(connection, row, status=status))
+        if status == 'active' and row['status'] == 'paused':
+            restore_checkpoint(connection, row)
+        updated = row if row['status'] == status else advance(connection, row, status=status)
+        if status == 'paused':
+            save_checkpoint(connection, updated)
+        return view(connection, updated)
     return mutation(student, f'{session_id}/{status}', body, operation)
 
 
@@ -288,17 +343,22 @@ def report(connection, row):
     turns = turn_rows(connection, row['session_id'])
     observations = connection.execute('''SELECT count(*) AS n FROM observations
         WHERE opportunity_id IN (SELECT opportunity_id FROM opportunities WHERE session_id=%s)''', (row['session_id'],)).fetchone()['n']
+    mastery = connection.execute('''WITH session_skills AS (
+            SELECT DISTINCT target_skill_id AS skill_id FROM opportunities WHERE session_id=%s
+        )
+        SELECT s.skill_id,ks.mastery,COALESCE(ks.evidence_count,0)::int AS evidence_count,
+            ks.parameter_version,
+            CASE WHEN COALESCE(ks.evidence_count,0)<3 THEN 'insufficient_data' ELSE 'estimated' END AS status
+        FROM session_skills s LEFT JOIN knowledge_states ks
+            ON ks.student_id=%s AND ks.skill_id=s.skill_id ORDER BY s.skill_id''',
+        (row['session_id'], row['student_id'])).fetchall()
     return Report(session_id=row['session_id'], status=row['status'], independent_correct=counts['independent'],
                   assisted_correct=counts['assisted'], valid_observations=observations,
                   unverified_submissions=sum(t['action']=='submit' and t['assessment']['assessment_status'] in ('unverified','needs_clarification') for t in turns),
                   submitted_turns=sum(t['action']=='submit' for t in turns), requested_hints=sum(t['action']=='request_hint' for t in turns),
                   problems_viewed=counts['viewed'], completed_at=row['completed_at'], timeline=turns,
                   tutoring_enabled=row['tutoring_enabled'],
-                  mastery=connection.execute('''SELECT DISTINCT ON (o.skill_id) o.skill_id,o.mastery_after AS mastery,
-                      (h.state_after->>'evidence_count')::int AS evidence_count,o.parameter_version
-                      FROM observations o JOIN mastery_history h USING(observation_id)
-                      JOIN opportunities p USING(opportunity_id) WHERE p.session_id=%s
-                      ORDER BY o.skill_id,(h.state_after->>'evidence_count')::int DESC''',(row['session_id'],)).fetchall(),
+                  mastery=mastery,
                   limitations=['Bản thử nội bộ; nội dung/gợi ý chưa được người có chuyên môn duyệt.',
                                'BKT là ước lượng với tham số khởi tạo, chưa fit dataset hay hiệu chỉnh cho người học Việt Nam.',
                                'Chỉ theo dõi kỹ năng giải phương trình trong phạm vi hỗ trợ; chưa đủ bằng chứng cho các kỹ năng con.'] if row['tutoring_enabled'] else

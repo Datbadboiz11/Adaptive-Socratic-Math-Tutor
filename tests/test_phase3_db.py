@@ -122,8 +122,14 @@ def test_failure_after_bkt_rolls_back_and_reuses_prepared_graph(learner,monkeypa
     monkeypatch.setattr(sessions,'advance',fail)
     assert c.post(url,headers=h,json=body).status_code==503
     with connect() as db:
+        assert db.execute('SELECT count(*) n FROM turns WHERE session_id=%s AND request_id=%s',
+                          (s['session_id'],body['request_id'])).fetchone()['n']==0
         assert db.execute('SELECT count(*) n FROM observations WHERE student_id=%s',(student,)).fetchone()['n']==0
+        assert db.execute('SELECT count(*) n FROM mastery_history h JOIN observations o USING(observation_id) WHERE o.student_id=%s',
+                          (student,)).fetchone()['n']==0
         assert db.execute('SELECT count(*) n FROM knowledge_states WHERE student_id=%s',(student,)).fetchone()['n']==0
+        assert db.execute('SELECT state_version FROM sessions WHERE session_id=%s',
+                          (s['session_id'],)).fetchone()['state_version']==s['state_version']
     monkeypatch.setattr(sessions,'advance',original)
     def no_call(*args): raise AssertionError('Prepared graph should be reused')
     monkeypatch.setattr(tutor,'run_graph',no_call)

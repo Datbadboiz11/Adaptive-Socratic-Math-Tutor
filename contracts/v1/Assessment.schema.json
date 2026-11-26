@@ -76,7 +76,8 @@
       "enum": [
         "suspected",
         "supported",
-        "unknown"
+        "unknown",
+        "unverified"
       ],
       "title": "Diagnosis Status",
       "type": "string"

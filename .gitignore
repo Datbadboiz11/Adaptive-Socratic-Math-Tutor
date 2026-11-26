@@ -1,5 +1,15 @@
 # Local datasets are acquired separately; do not publish raw student records.
 /data/
+# Curated synthetic RQ4 benchmark and its reproducible evaluation outputs.
+!/data/
+/data/*
+!/data/evaluation/
+/data/evaluation/*
+!/data/evaluation/step_errors_benchmark.json
+!/data/experiments/
+/data/experiments/*
+!/data/experiments/rq4_evaluation_report.json
+!/data/experiments/rq4_evaluation_report.md
 
 # Secrets and machine-specific agent configuration
 .env
@@ -97,3 +107,5 @@ test-results/
 *.pth
 *.ckpt
 *.h5
+
+.venv312/
