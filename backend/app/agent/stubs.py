@@ -1,7 +1,8 @@
 """Stub cho các phần chưa có để khung LangGraph chạy được từ đầu đến cuối.
 
 KHÔNG phải triển khai thật:
-- StubAnalyzer thay validator/analyzer của Member 1 (chỉ so khớp chuỗi trên vài bài mẫu).
+- StubAnalyzer: bản so khớp chuỗi cũ, không còn là mặc định. Graph chấm bằng validator thật của
+  Member 1 qua ``app.agent.validator_analyzer``; ở đây chỉ còn đề bài mẫu (``demo_validator_task``).
 - stub_observe thay observation builder + BKT của Member 1 (tham số mặc định, không fit).
 - StubTools thay RAG (Member 2) và problem bank. KG là bản thật (``kg_tool.KGTool``): đọc registry,
   dùng cả cạnh nháp vì registry chưa có cạnh nào được duyệt.
@@ -41,6 +42,9 @@ class DemoProblem:
     prompt: str
     answer_forms: tuple[str, ...]
     errors: tuple[DemoError, ...] = ()
+    # Đề ở dạng validator của Member 1 đọc được: {"equation": ...} hoặc {"expression": ...}.
+    # Bài lời văn (E03) dùng phương trình đúng làm mốc so tương đương.
+    task: tuple[str, str] | None = None
 
 
 def _ref(pid, concept, skill, family, difficulty=1):
@@ -54,20 +58,27 @@ SIGNED = "SK-N01-SIGNED-ADD"
 
 DEMO_PROBLEMS = {p.ref.problem_id: p for p in [
     DemoProblem(_ref("E02-P001", "E02", SOLVE, "linear_with_distribution"), "Giải phương trình 2(x - 3) = 10.",
-                ("x=8",), (DemoError("2x-3", "distribution_error", DIST, "M_DIST_01"),)),
+                ("x=8",), (DemoError("2x-3", "distribution_error", DIST, "M_DIST_01"),),
+                ("equation", "2(x - 3) = 10")),
     DemoProblem(_ref("E02-P002", "E02", SOLVE, "linear_with_distribution"), "Giải phương trình 3(x + 1) = 12.",
-                ("x=3",), (DemoError("3x+1", "distribution_error", DIST, "M_DIST_01"),)),
+                ("x=3",), (DemoError("3x+1", "distribution_error", DIST, "M_DIST_01"),),
+                ("equation", "3(x + 1) = 12")),
     DemoProblem(_ref("E02-P003", "E02", SOLVE, "linear_both_sides", 2), "Giải phương trình 5x - 7 = 2x + 8.",
-                ("x=5",), (DemoError("7x", "sign_error", SOLVE, "M_MOVE_SIGN"),)),
+                ("x=5",), (DemoError("7x", "sign_error", SOLVE, "M_MOVE_SIGN"),),
+                ("equation", "5x - 7 = 2x + 8")),
     DemoProblem(_ref("A02-P001", "A02", DIST, "distribute_negative"), "Khai triển -2(3y + 4).",
                 ("-6y-8",), (DemoError("-6y+4", "distribution_error", DIST, "M_DIST_01"),
-                             DemoError("-6y+8", "sign_error", DIST, "M_NEG_DIST"))),
-    DemoProblem(_ref("A02-P002", "A02", DIST, "distribute_basic"), "Khai triển 4(a - 5).",
-                ("4a-20",), (DemoError("4a-5", "distribution_error", DIST, "M_DIST_01"),)),
+                             DemoError("-6y+8", "sign_error", DIST, "M_NEG_DIST")),
+                ("expression", "-2(3y + 4)")),
+    # Validator chỉ đọc biến x, y: mọi bài mẫu phải dùng hai biến này để bài nào giao ra cũng chấm được.
+    DemoProblem(_ref("A02-P002", "A02", DIST, "distribute_basic"), "Khai triển 4(x - 5).",
+                ("4x-20",), (DemoError("4x-5", "distribution_error", DIST, "M_DIST_01"),),
+                ("expression", "4(x - 5)")),
     DemoProblem(_ref("N01-P001", "N01", SIGNED, "signed_add_basic"), "Tính (-7) + 3.",
-                ("-4",), (DemoError("-10", "sign_error", SIGNED, None),)),
+                ("-4",), (DemoError("-10", "sign_error", SIGNED, None),), ("expression", "(-7) + 3")),
     DemoProblem(_ref("E03-P001", "E03", "SK-E03-PRIMARY", "word_to_linear", 2),
-                "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó.", ("x=7",)),
+                "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó.", ("x=7",),
+                task=("equation", "x + 5 = 12")),
 ]}
 
 DEMO_CONTENT = [
@@ -96,6 +107,16 @@ def problem_ref(problem_id: str) -> ProblemRef:
 def problem_prompt(problem_id: str) -> str | None:
     problem = DEMO_PROBLEMS.get(problem_id)
     return problem.prompt if problem else None
+
+
+def demo_validator_task(problem_id: str) -> dict | None:
+    """Đề bài mẫu ở dạng validator đọc được. Bản thật lấy từ problem bank (Member 2)."""
+    problem = DEMO_PROBLEMS.get(problem_id)
+    if problem is None or problem.task is None:
+        return None
+    kind, text = problem.task
+    return {"problem_id": problem_id, "concept_id": problem.ref.concept_id,
+            "primary_skill_id": problem.ref.target_skill_id, kind: text}
 
 
 # --------------------------------------------------------------------------- analyzer (Member 1)

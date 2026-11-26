@@ -116,7 +116,7 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-P002",
-      "prompt": "Khai triển 4(a - 5)."
+      "prompt": "Khai triển 4(x - 5)."
     },
     {
       "problem": {
@@ -9828,7 +9828,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -9887,7 +9887,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -10319,7 +10319,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -10340,7 +10340,7 @@
         }
       ],
       "context": {
-        "current_problem_prompt": "Khai triển 4(a - 5).",
+        "current_problem_prompt": "Khai triển 4(x - 5).",
         "retrieved": [
           {
             "content_id": "KB-A02-QUESTION-01",
@@ -10630,7 +10630,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -11137,7 +11137,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -11196,7 +11196,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -11763,7 +11763,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -11822,7 +11822,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -12329,7 +12329,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -12388,7 +12388,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {

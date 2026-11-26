@@ -35,9 +35,10 @@ from app.agent.decision import (
 from app.agent.kg_tool import skill_title
 from app.agent.rule_policy import READINESS_VERSION, compute_readiness
 from app.agent.stubs import (
-    ObservationResult, StubAnalyzer, StubTools, demo_answer_key, problem_prompt, problem_ref, stub_observe,
-    unverified_probe,
+    ObservationResult, StubTools, demo_answer_key, demo_validator_task, problem_prompt, problem_ref,
+    stub_observe, unverified_probe,
 )
+from app.agent.validator_analyzer import ValidatorAnalyzer
 from app.agent.tools import ProblemRef, TurnContext
 from app.extraction.contracts import ExtractionRecord
 from app.extraction.extractor import ExtractionOutcome, StepExtractor
@@ -121,7 +122,9 @@ class TurnInProgress(RuntimeError):
 
 @dataclass
 class Services:
-    analyzer: Callable[[StudentState, list[str]], object] = field(default_factory=StubAnalyzer)
+    # Chấm bài bằng validator của Member 1. Đề lấy từ bài mẫu cho tới khi có problem bank.
+    analyzer: Callable[[StudentState, list[str]], object] = field(
+        default_factory=lambda: ValidatorAnalyzer(demo_validator_task))
     observer: Callable[[StudentState, object, frozenset[str]], ObservationResult] = stub_observe
     tools: Callable[[StudentState, DecisionConfig], TurnContext] = field(default_factory=StubTools)
     # Tách bài làm tự do thành các bước trước khi chấm (LLM extraction). None: đưa thẳng bài làm cho
