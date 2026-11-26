@@ -1,0 +1,175 @@
+{
+  "checked_at": "2026-11-26T09:57:12.067602+00:00",
+  "stage": "Member 2 Chặng 4",
+  "status": "requested_stage4_gaps_verified_pending_independent_review",
+  "pytest": {
+    "tests": 149,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "frontend_tests": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "checked_at": "2026-11-26T09:56:04.008438+00:00",
+    "schema_isolated": true,
+    "checks": [
+      {
+        "concept": "N02",
+        "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+        "status": "passed"
+      },
+      {
+        "concept": "A10",
+        "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+        "status": "passed"
+      },
+      {
+        "concept": "F05",
+        "flow": "wrong → KB hint → assisted correct → independent problem → frozen report",
+        "status": "passed"
+      },
+      {
+        "flow": "approved A10 complex fractions and E09 equation system; 390/1440 viewport",
+        "status": "passed"
+      },
+      {
+        "flow": "two-tab conflict rejects stale write and preserves the unsaved draft",
+        "status": "passed"
+      },
+      {
+        "flow": "response loss → same-request replay → example citation → pause/reload/resume",
+        "status": "passed"
+      },
+      {
+        "flow": "native MathML fraction/power/root and escaped untrusted text (synthetic browser payload)",
+        "status": "passed"
+      },
+      {
+        "flow": "switching profile clears session/report/draft; delayed history from the previous profile is discarded",
+        "status": "passed"
+      },
+      {
+        "flow": "keyboard skip link, Ctrl+Enter, feedback focus, Tab/Shift+Tab, report evidence anchors and BKT provenance (real legacy report)",
+        "status": "passed"
+      },
+      {
+        "flow": "production 45-second timeout via virtual clock, loading lock, preserved draft, keyboard retry with identical request ID and one committed turn",
+        "status": "passed"
+      }
+    ],
+    "browser_errors": [],
+    "viewports": [
+      1440,
+      390
+    ],
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "chunk_count": 91,
+    "model_api_calls": 0,
+    "real_local_embeddings": true,
+    "schema_removed": true
+  },
+  "suite_scope": "stage4_and_runtime",
+  "historical_suite_limit": "Historical A02/E02 source batches are absent in the current workspace; archived tests requiring them are not part of the current scoped acceptance.",
+  "configuration_files_unavailable": [
+    ".env.example"
+  ],
+  "checks": [
+    {
+      "command": "scripts/exports/export_frontend_types.py --check",
+      "exit_code": 0,
+      "stdout_sha256": "b0790fecc0c740d5a11399b4143d115482f122f4f46d2a3157ab0c95691556de"
+    },
+    {
+      "command": "scripts/exports/export_phase3_openapi.py --check",
+      "exit_code": 0,
+      "stdout_sha256": "b9fb976d319270d65c153426e8d8dcae8f71860a5d594db800bc67a79ba7dc47"
+    },
+    {
+      "command": "scripts/exports/export_contracts.py --check",
+      "exit_code": 0,
+      "stdout_sha256": "ffa3c2893db738aac5de2c89aa41c3eb2244351dc6337e4151b6559841ec0efa"
+    },
+    {
+      "command": "scripts/checks/check_stage3_kb.py",
+      "exit_code": 0,
+      "stdout_sha256": "cd6a35ce2b169f0e008bc26b0afdff64864f1383d5eadcef280487cb4abf5feb"
+    }
+  ],
+  "model_api_calls": 0,
+  "public_api_version": "0.4.0",
+  "frontend_build_and_typecheck": "passed_before_browser_acceptance",
+  "implemented": [
+    "canonical session pins Full/No-RAG and KB snapshot",
+    "retrieved/generator/delivered refs separated",
+    "direct/metadata KB node outside session transaction",
+    "verbatim reviewed content assembler and exact guard",
+    "atomic delivery/assistance including level zero",
+    "durable replay and withdrawal recheck",
+    "per-skill evidence and immutable finished report",
+    "generated public TS types and extracted feedback/report components",
+    "bounded native MathML: nested fractions, exponents, roots and equation systems; escaped fallback",
+    "session/request hook preserving replay IDs, draft, conflict and profile isolation",
+    "diagnoses with suspected/supported/rejected status, narrow evidence scope and report turn anchors",
+    "BKT version/source/time display and honest unavailable provenance for unknown versions",
+    "keyboard/focus including first submission and actual AbortController timeout via virtual time",
+    "independent reviewer handoff and scoped current-release CI configuration"
+  ],
+  "remaining": [
+    "independent Member 1/3 sign-off and remote CI/Docker execution evidence"
+  ],
+  "separate_scope": [
+    "free-form LLM generation",
+    "graph prerequisite navigation",
+    "mixed-skill session authoring",
+    "formal Full/No-RAG RQ3",
+    "mathematical notation beyond the declared presentation grammar"
+  ],
+  "source_sha256": {
+    "backend/migrations/004_teaching_delivery.sql": "ddf27664ea807708647745aaf55a01a3bbbf6525fee62c002f478269dcb939d5",
+    "backend/app/main.py": "7b0164c666372b7b94956f7397e44b9a18771b8fbc620c4c6d88db4de5ebc104",
+    "backend/app/teaching_runtime.py": "494eb38065ec51455ebe8984af64b5531b8f4495b120aed666d11c49e9e9bc63",
+    "backend/app/tutor.py": "2f91b67aacb81fac047162443967dd54bd0de1bbe3d2e6d3d01535e160be5a03",
+    "backend/app/tutor_service.py": "7e6ddab9eabd6b6e3de1503d2c909b467f8185c522d3389af779e5713ba22924",
+    "backend/app/sessions.py": "544373348af947f6d9ad7d1d1e5cb635aaa813975ffeb6fe4e939d62284e079f",
+    "backend/app/session_contracts.py": "4491503621f0eb92e07a1a2fadbe43bb8da56ea0e17b72f5ccef1114c518c39d",
+    "backend/app/report_diagnoses.py": "e8b5a4fba39bdf59a4192c0390cb2b19dfa5c9f6c38270b73f8b11168ac2b1a0",
+    "frontend/app/workspace.tsx": "cd9edd5680b3a1a2a478ccd42d04b164e34dc50eec98ca6402ddaeac7431e03a",
+    "frontend/app/workspace.css": "fafd0d8ad1b33b5610d6ccff55e5cdb83f5174cdb817c241c1d9d8e41b16dd71",
+    "frontend/app/lib/api.ts": "a0a3775d9c9cef0111bb0c90dfd427d59268fcc36f4c284119cf5e3d23ce3a46",
+    "frontend/app/lib/api-types.ts": "86ba3609838d27fe3494c507700f8d17f1f885164ed3ce60be1bc2654ebacf40",
+    "frontend/app/hooks/useTutorSession.ts": "be71c6823c8871e14feee93f4382334c0a97a52cfc93045efec700535f351f99",
+    "frontend/app/lib/math-layout.ts": "65c0a29a6bfd25627d847ce5ef83ae380b93a63f4b36c0d0588a4c6d2506e299",
+    "frontend/tests/math-layout.test.mjs": "6af560a3462feecb2c030bc4ae7c8a95e5a40b5f32f0568cc5538a18c2d6c5c3",
+    "frontend/app/components/ProblemFormula.tsx": "e88332a1d049b14ddee4cace513bad0032df0e10a31e98626bad20859635bd17",
+    "frontend/app/components/LearningReport.tsx": "49a9843caff4338efe9d880c0cb6cf9ce6b2d19c803269295a388eacb899f2de",
+    "frontend/package.json": "3b4b9db3cae896c7ce97faa422c6335a42d22b8a3f2429487437d01b1e9a8fbd",
+    "frontend/app/components/MathText.tsx": "73526d77c54aa169ae9eb520d4f909373b566aafac881b0033c0c14935665bfb",
+    "frontend/app/components/TeachingFeedback.tsx": "c66d2b68e96eaf5d9ce0930d19a30a8a8fd1289bd459e01bcb59ec764cb551a4",
+    "frontend/app/components/SkillEvidence.tsx": "1bad8911c7a9bb8c9cf882fc29da0aee47ea11728b920f2aaf30d91278992e7e",
+    "scripts/exports/export_frontend_types.py": "8afdba97ae893dfa49e4e22f65602636cb58a2b27eb7289ce6b8a9e6adb38091",
+    "scripts/checks/check_stage4_browser.py": "e9f0812e7221058db5d5daa7a38fafa57e0db9efd043893661ed7093e36bedf1",
+    "tests/test_stage4_teaching.py": "22ba8f69c7636eef2e0522fad14dd4e62a83d534fa9642634561532163cd8808",
+    "tests/test_phase3_db.py": "a8b6608059025a3eccaea8a1a273cb99e14ab0d7fb5c6dff0fb2c914651a88a0",
+    "scripts/checks/check_stage3_kb.py": "270dc89d86ef79cbd27dba9a7cb4c62ffcd6a0cd3d1df584a36101c90c73272b",
+    "scripts/checks/collect_stage4_validation.py": "5258801bd6d218e793d6c94ea50e89ead251fb3530aba4e90cba7ff806b25bf9",
+    "tests/test_stage4_reports.py": "bb1677fddf5cd7417b228131144a42a3dd0a7e00bd3565b632994c73c986406c",
+    ".github/workflows/stage4-current-checks.yml": "750e4131f31b3a9897d46a10080429379e2716e329c7253278bfce5b2fafbffa",
+    "docs/implementation/member2/part4/independent-review.md": "10dd1ce5a532758da159a69e1b67c2ad9109e8271c270d2fc61b8d9bb1db0c6b",
+    "docs/implementation/member2/part4/README.md": "4076964ba8f8f0219ab3f1d63ce946fcf740181fca6c14bd4ecda5fd3aa2ba94",
+    "docs/planning/member-2-plan.md": "b7eb4caafeaece8d73c54ccd3e08290f4a7e2ef844bd39f0496da230742c710b",
+    "scripts/dev/validation_runtime.py": "4f9037f3e2a8f5dd4db438fc6db624f6cc11b8b5c44184192352baa977b62707",
+    "contracts/phase3/openapi.json": "04b79b23f1720bf07b20a46a3306e4c27f77b5a9a553fce2b1ee34fbb14e006a",
+    ".github/workflows/repository-checks.yml": "30954169d137a05b3f63c147f84a03df8d254fd9dee8bd7a5d16911db6561203",
+    "compose.yaml": "547d4dcc44eb3b6bc877fbe485bb494cdaa6c0ae0fdafb6ed1de801d83051e12"
+  },
+  "evidence_sha256": {
+    "tests-stage4-2026-11-26.xml": "651fc981d6a6540e2bce2a1ee75ac490935f2967dfb28ce53f041f1b2cb6e181",
+    "browser-stage4-2026-11-26.json": "b51d1938bfb1f4ba2b635f5de0b7c1adc88d0906bdab125b1b281dfeee1b5a5a",
+    "tests-frontend-stage4-2026-11-26.xml": "8dbe1de215718ec1a9ba8e79fcea2e02efde6cb8026316bbaf9c0913b90952a3"
+  }
+}

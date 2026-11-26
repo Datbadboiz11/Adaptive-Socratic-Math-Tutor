@@ -1,0 +1,131 @@
+{
+  "review_date": "2026-11-16",
+  "timezone": "Asia/Bangkok",
+  "stage": "member2-part1-review-fixes",
+  "contract_version": "member2-proposal-0.2.0",
+  "status": "three_review_findings_fixed_and_locally_verified",
+  "environment": {
+    "python": "3.11.6",
+    "pydantic": "2.13.0"
+  },
+  "unit_test_count": 39,
+  "checks": [
+    {
+      "key": "member2_unit",
+      "command": "python -m unittest discover -s tests -p test_member2_foundation.py -v",
+      "exit_code": 0,
+      "output": "test_allowed_targets_do_not_authorize_their_cross_product (test_member2_foundation.Member2ContractTests.test_allowed_targets_do_not_authorize_their_cross_product) ... ok\r\ntest_current_problem_and_near_example_are_excluded (test_member2_foundation.Member2ContractTests.test_current_problem_and_near_example_are_excluded) ... ok\r\ntest_delivered_assistance_is_sticky_idempotent_and_keeps_maximum_level (test_member2_foundation.Member2ContractTests.test_delivered_assistance_is_sticky_idempotent_and_keeps_maximum_level) ... ok\r\ntest_delivery_rejects_wrong_opportunity_even_for_the_same_problem (test_member2_foundation.Member2ContractTests.test_delivery_rejects_wrong_opportunity_even_for_the_same_problem) ... ok\r\ntest_different_example_cannot_be_the_current_problem (test_member2_foundation.Member2ContractTests.test_different_example_cannot_be_the_current_problem) ... ok\r\ntest_different_example_requires_separate_public_task (test_member2_foundation.Member2ContractTests.test_different_example_requires_separate_public_task) ... ok\r\ntest_disclosure_ceiling_and_level_four_are_rejected (test_member2_foundation.Member2ContractTests.test_disclosure_ceiling_and_level_four_are_rejected) ... ok\r\ntest_draft_review_and_missing_provenance_cannot_be_retrieved (test_member2_foundation.Member2ContractTests.test_draft_review_and_missing_provenance_cannot_be_retrieved) ... ok\r\ntest_draft_template_cannot_be_labelled_reviewed_fallback (test_member2_foundation.Member2ContractTests.test_draft_template_cannot_be_labelled_reviewed_fallback) ... ok\r\ntest_empty_result_duplicate_and_semantic_version_rules (test_member2_foundation.Member2ContractTests.test_empty_result_duplicate_and_semantic_version_rules) ... ok\r\ntest_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot (test_member2_foundation.Member2ContractTests.test_empty_session_uses_unknown_mastery_or_unchanged_existing_snapshot) ... ok\r\ntest_examples_cover_all_five_supported_authoring_task_types (test_member2_foundation.Member2ContractTests.test_examples_cover_all_five_supported_authoring_task_types) ... ok\r\ntest_format_clarification_does_not_disqualify_independent_work (test_member2_foundation.Member2ContractTests.test_format_clarification_does_not_disqualify_independent_work) ... ok\r\ntest_legacy_eligibility_precedence_stays_unchanged (test_member2_foundation.Member2ContractTests.test_legacy_eligibility_precedence_stays_unchanged) ... ok\r\ntest_level_zero_explanation_is_assistance_only_when_delivered (test_member2_foundation.Member2ContractTests.test_level_zero_explanation_is_assistance_only_when_delivered) ... ok\r\ntest_new_feedback_does_not_retroactively_assist_the_first_submission (test_member2_foundation.Member2ContractTests.test_new_feedback_does_not_retroactively_assist_the_first_submission) ... ok\r\ntest_old_proposal_version_is_rejected_instead_of_silently_migrated (test_member2_foundation.Member2ContractTests.test_old_proposal_version_is_rejected_instead_of_silently_migrated) ... ok\r\ntest_one_observation_cannot_be_reported_as_evidence_for_two_skills (test_member2_foundation.Member2ContractTests.test_one_observation_cannot_be_reported_as_evidence_for_two_skills) ... ok\r\ntest_private_authoring_fields_are_not_projected_or_accepted (test_member2_foundation.Member2ContractTests.test_private_authoring_fields_are_not_projected_or_accepted) ... ok\r\ntest_public_task_requires_substitution_only_when_applicable (test_member2_foundation.Member2ContractTests.test_public_task_requires_substitution_only_when_applicable) ... ok\r\ntest_query_cannot_select_a_concept_or_skill_outside_server_permissions (test_member2_foundation.Member2ContractTests.test_query_cannot_select_a_concept_or_skill_outside_server_permissions) ... ok\r\ntest_report_accepts_two_own_observations_and_one_interleaved_observation (test_member2_foundation.Member2ContractTests.test_report_accepts_two_own_observations_and_one_interleaved_observation) ... ok\r\ntest_report_assisted_outcome_does_not_inflate_observation_count (test_member2_foundation.Member2ContractTests.test_report_assisted_outcome_does_not_inflate_observation_count) ... ok\r\ntest_report_rejects_fabricated_delta_and_inconsistent_totals (test_member2_foundation.Member2ContractTests.test_report_rejects_fabricated_delta_and_inconsistent_totals) ... ok\r\ntest_report_rejects_missing_duplicate_or_miscounted_observation_ids (test_member2_foundation.Member2ContractTests.test_report_rejects_missing_duplicate_or_miscounted_observation_ids) ... ok\r\ntest_retrieval_correlates_request_snapshot_and_limit (test_member2_foundation.Member2ContractTests.test_retrieval_correlates_request_snapshot_and_limit) ... ok\r\ntest_retrieval_enforces_identity_purpose_grade_and_difficulty (test_member2_foundation.Member2ContractTests.test_retrieval_enforces_identity_purpose_grade_and_difficulty) ... ok\r\ntest_retrieved_chunk_rejects_private_fields (test_member2_foundation.Member2ContractTests.test_retrieved_chunk_rejects_private_fields) ... ok\r\ntest_scope_rejects_duplicate_pairs_and_legacy_independent_lists (test_member2_foundation.Member2ContractTests.test_scope_rejects_duplicate_pairs_and_legacy_independent_lists) ... ok\r\ntest_server_scope_factory_checks_every_pair_against_registry (test_member2_foundation.Member2ContractTests.test_server_scope_factory_checks_every_pair_against_registry) ... ok\r\ntest_session_without_own_observations_does_not_import_other_session_changes (test_member2_foundation.Member2ContractTests.test_session_without_own_observations_does_not_import_other_session_changes) ... ok\r\ntest_student_query_cannot_override_server_scope_or_request_private_content (test_member2_foundation.Member2ContractTests.test_student_query_cannot_override_server_scope_or_request_private_content) ... ok\r\ntest_teaching_response_cannot_deny_assistance_even_at_level_zero (test_member2_foundation.Member2ContractTests.test_teaching_response_cannot_deny_assistance_even_at_level_zero) ... ok\r\ntest_approved_edge_to_draft_prerequisite_does_not_pass_readiness (test_member2_foundation.Member2CoverageTests.test_approved_edge_to_draft_prerequisite_does_not_pass_readiness) ... ok\r\ntest_coverage_keeps_registry_drafts_and_runtime_readiness_distinct (test_member2_foundation.Member2CoverageTests.test_coverage_keeps_registry_drafts_and_runtime_readiness_distinct) ... ok\r\ntest_draft_readiness_cannot_be_activated_with_client_ready_flag (test_member2_foundation.Member2CoverageTests.test_draft_readiness_cannot_be_activated_with_client_ready_flag) ... ok\r\ntest_generated_artifacts_match_current_sources_and_schema (test_member2_foundation.Member2CoverageTests.test_generated_artifacts_match_current_sources_and_schema) ... ok\r\ntest_human_content_review_alone_does_not_make_canonical_runtime_ready (test_member2_foundation.Member2CoverageTests.test_human_content_review_alone_does_not_make_canonical_runtime_ready) ... ok\r\ntest_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance (test_member2_foundation.Member2CoverageTests.test_workboard_rejects_overlap_self_review_missing_concept_and_fake_acceptance) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 39 tests in 0.171s\r\n\r\nOK\r\n",
+      "wall_time_seconds": 1.0769782,
+      "status": "PASS"
+    },
+    {
+      "key": "member2_artifacts",
+      "command": "python scripts/checks/check_member2_foundation.py",
+      "exit_code": 0,
+      "output": "PASS: Member 2 proposed schemas, synthetic fixtures and coverage are consistent\r\n{\"approved_packs\": 0, \"draft_packs\": 10, \"error_fixtures\": 20, \"examples\": 30, \"hints\": 30, \"packs_present\": 10, \"problems\": 60, \"proposed_owner_counts\": {\"Member 1\": 13, \"Member 2\": 13, \"Member 3\": 14}, \"public_chunks\": 0, \"ready_concepts\": 0, \"registry_concepts\": 40}\r\n",
+      "wall_time_seconds": 0.9999736,
+      "status": "PASS"
+    },
+    {
+      "key": "curriculum_audit",
+      "command": "python scripts/checks/check_curriculum.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"registry_concepts\": 40,\r\n  \"pilot_concepts\": 10,\r\n  \"edges\": 68,\r\n  \"concept_review_counts\": {\r\n    \"draft\": 40\r\n  },\r\n  \"coverage\": [\r\n    {\r\n      \"concept_id\": \"A01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"A03\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"E02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"F05\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N01\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N02\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    },\r\n    {\r\n      \"concept_id\": \"N04\",\r\n      \"problems\": 6,\r\n      \"families\": 3,\r\n      \"examples\": 3,\r\n      \"error_fixtures\": 2,\r\n      \"math_audit\": \"pass\",\r\n      \"human_review\": \"draft\",\r\n      \"public_chunks\": 0\r\n    }\r\n  ],\r\n  \"note\": \"Authoring checks only. Drafts are not seeded into the MVP or published to learners.\"\r\n}\r\n",
+      "wall_time_seconds": 0.9689301,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_content_audit",
+      "command": "python scripts/checks/check_phase1.py",
+      "exit_code": 0,
+      "output": "{\r\n  \"content_version\": \"0.1.0\",\r\n  \"problems\": [\r\n    {\r\n      \"problem_id\": \"LIN-001\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-002\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-003\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-004\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-005\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    },\r\n    {\r\n      \"problem_id\": \"LIN-006\",\r\n      \"math_check\": \"pass\",\r\n      \"human_review\": \"draft\"\r\n    }\r\n  ],\r\n  \"family_counts\": {\r\n    \"F-AX-B-C\": 2,\r\n    \"F-A-XB-C\": 2,\r\n    \"F-AXB-CXD\": 2\r\n  },\r\n  \"note\": \"Authoring checks only; human pedagogical review and learner validator are pending.\"\r\n}\r\n",
+      "wall_time_seconds": 0.8357141,
+      "status": "PASS"
+    },
+    {
+      "key": "legacy_schemas",
+      "command": "python scripts/exports/export_contracts.py --check",
+      "exit_code": 0,
+      "output": "PASS: 15 contract schemas\r\n",
+      "wall_time_seconds": 0.9212519,
+      "status": "PASS"
+    },
+    {
+      "key": "python_syntax",
+      "command": "python -c \"import ast; from pathlib import Path; paths=list(Path('.').rglob('*.py')); [ast.parse(p.read_text(encoding='utf-8-sig'), filename=str(p)) for p in paths]; print(f'PASS: {len(paths)} Python source files')\"",
+      "exit_code": 0,
+      "output": "PASS: 51 Python source files\r\n",
+      "wall_time_seconds": 1.0348609,
+      "status": "PASS"
+    }
+  ],
+  "regressions": {
+    "C03": "Level-zero explanation remains support after delivery; retrieval alone is read-only; format-only clarification remains independent. Assistance is sticky, idempotent and bound to opportunity/problem. Feedback does not retroactively change the first answer.",
+    "C04": "Requests must match an authorized concept/skill pair, not a Cartesian product. The registry factory checks all pairs, including unused targets. Duplicates and legacy independent lists are rejected.",
+    "C05": "Two own observation IDs plus one other-session observation reconcile cumulative counts 5 to 8, while the session total remains 2. Duplicate/missing/shared IDs, fabricated deltas and importing external changes into a zero-observation session are rejected."
+  },
+  "source_sha256": {
+    "backend/app/tutor.py": "08086d7cd4b60915a5b1b0856203dc0d406cf8b238f1be2779ef6a855570a0b7",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "contracts/member2/v0.2.0/examples.json": "0abc505c373f98ab94d1846a8c39c3428845259f36662e464cf60d84c9e53e42",
+    "backend/migrations/001_sessions.sql": "d98f869f99f6e3215c23f8a4bb08af9cdc0d7c52f3b2dfdb134eaeae450a73ff",
+    "docs/planning/member-2-plan.md": "c14327bbc3a747af462483270db2c734394c596e69b4f658df3b778701e14cf1",
+    "content/curriculum/pilot.v1.json": "a95bbe718ebd1814390e5023ad84c888199131c4a57369c164f498ca6daddc89",
+    "backend/app/member2_contracts.py": "54341a8872404781090fb1f58778dedcba5e394b1a5034600f09797505ecc47e",
+    "contracts/member2/v0.2.0/FoundationExamples.schema.json": "e0ef3c5b777fac8acb3386ef6d4bc22ef58c6127d28e85885b6140f578b4ec7f",
+    "backend/app/session_contracts.py": "813ac9a91b276fe9f7e981ac2b08fcd8f3ae43efae9b28eba5acc515874b0843",
+    "contracts/member2/v0.1.0/examples.json": "fcc1f985cc18f34fa5b349ffee58bc113fe2e42c0420581733174a518a35f3bc",
+    "backend/app/tutor_service.py": "e1e4bacc6ca17f82d134bd19e68018576d889f985a2dd1dfcb2d6560032c568a",
+    "content/curriculum/registry.v1.json": "7b05496609ebf89846de912508ae786119d33d16c59f15467ee513ba01ad76ea",
+    "contracts/member2/v0.1.0/FoundationExamples.schema.json": "e4263f56aba4b2186ddded876a190367f7e39b40699fc5fbe33a3f887ddb4dc6",
+    "backend/app/contracts.py": "ec289fb16f4e7ed4322c00661755aef314f72db9382fbabc481837d21f7a05a7",
+    "docs/implementation/member2/part1/README.md": "e0ee2a0afd48b285ab846364a44fde72e460e44a8e95d6a7e11d9f57ce948f90",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "scripts/checks/check_member2_foundation.py": "f4c8fe560b1818b29e7c24c8ceaa8ccc9672625856b7c5f7743e169a501c35ac",
+    "backend/app/sessions.py": "8572b9544ea7c17f7a0a0b3b0fd8482844b158149d810f22c71554848d10fceb",
+    "tests/test_member2_foundation.py": "ae8a43f003d86015f710467a2472df244441f1781ad67082ef23d53fcdb4ab3c",
+    "backend/app/knowledge.py": "50c4388205a446c40d3820ac8830e6f71ce5208a8f5ac2826c6fddb10421fb17",
+    "backend/migrations/002_tutor.sql": "4eae968ff43a65d8f90b8ee2e8687f0669660be22169e9ad5ca7101785476431",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b",
+    "docs/implementation/member2/part1/review-fixes.md": "2d172be404eb0313ec000927f7bafa96bb96f3899254076cd6bb73b00869fa81"
+  },
+  "protected_baseline_sha256": {
+    "backend/app/sessions.py": "8572b9544ea7c17f7a0a0b3b0fd8482844b158149d810f22c71554848d10fceb",
+    "backend/app/tutor.py": "08086d7cd4b60915a5b1b0856203dc0d406cf8b238f1be2779ef6a855570a0b7",
+    "backend/app/contracts.py": "ec289fb16f4e7ed4322c00661755aef314f72db9382fbabc481837d21f7a05a7",
+    "backend/migrations/001_sessions.sql": "d98f869f99f6e3215c23f8a4bb08af9cdc0d7c52f3b2dfdb134eaeae450a73ff",
+    "backend/app/session_contracts.py": "813ac9a91b276fe9f7e981ac2b08fcd8f3ae43efae9b28eba5acc515874b0843",
+    "contracts/member2/v0.1.0/examples.json": "fcc1f985cc18f34fa5b349ffee58bc113fe2e42c0420581733174a518a35f3bc",
+    "backend/app/tutor_service.py": "e1e4bacc6ca17f82d134bd19e68018576d889f985a2dd1dfcb2d6560032c568a",
+    "content/curriculum/registry.v1.json": "7b05496609ebf89846de912508ae786119d33d16c59f15467ee513ba01ad76ea",
+    "content/curriculum/pilot.v1.json": "a95bbe718ebd1814390e5023ad84c888199131c4a57369c164f498ca6daddc89",
+    "content/curriculum/member2-workboard.v1.json": "635042f7cefb17d86b874f2d89fe3ccf3a2416f8bfc702ccf76c003f773be9e3",
+    "contracts/member2/v0.1.0/FoundationExamples.schema.json": "e4263f56aba4b2186ddded876a190367f7e39b40699fc5fbe33a3f887ddb4dc6",
+    "content/linear_equations.v1.json": "800c9512cd967e1a7137da10e070e63da185485e18edc1483abf4c18fbe1effd",
+    "backend/migrations/002_tutor.sql": "4eae968ff43a65d8f90b8ee2e8687f0669660be22169e9ad5ca7101785476431",
+    "content/bkt.bootstrap.v1.json": "384153fc8b516633ab21b066dd071f8f5f0db047fbe5133bab2a5b661c144b7b"
+  },
+  "protected_files_changed": [],
+  "team_review_status": "pending_review_unchanged",
+  "not_run": [
+    {
+      "check": "Full pytest / DB / API integration",
+      "reason": "Backend test dependencies and DB runtime are unavailable; focused unittest coverage exercises changed contracts and legacy eligibility behavior."
+    },
+    {
+      "check": "frontend build / browser",
+      "reason": "No UI changes in this fix; no frontend dependencies or Docker CLI installed."
+    },
+    {
+      "check": "remote CI",
+      "reason": "No external CI run or repository write was triggered."
+    }
+  ],
+  "integration_requirements": [
+    "Persist assistance_received in the future DB adapter and use the persisted history for outcome, near-practice, resume and retry.",
+    "Build retrieval scopes from trusted server state using ServerRetrievalScope.from_registry; snapshot publication checks still belong to KB integration.",
+    "Resolve session_observation_ids through authorized DB joins; UUID shape validation is not ownership verification.",
+    "Do not attribute global mastery changes exclusively to one session when other_session_observations is nonzero."
+  ],
+  "stop_point": "Part 1 review; Stage 2 has not started."
+}

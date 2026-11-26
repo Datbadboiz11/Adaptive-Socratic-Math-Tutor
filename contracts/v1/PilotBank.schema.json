@@ -9,7 +9,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/MathTask"
+          "$ref": "#/$defs/AuthoringMathTask"
         },
         "reference_answer": {
           "maxLength": 160,
@@ -89,6 +89,56 @@
         "origin"
       ],
       "title": "AuthoredProblem",
+      "type": "object"
+    },
+    "AuthoringMathTask": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex",
+            "fraction_compare",
+            "number_conversion",
+            "factored_polynomial",
+            "rational_operation",
+            "word_equation",
+            "quadratic_roots",
+            "linear_elimination",
+            "function_domain",
+            "quadratic_axis",
+            "exponent_numeric"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "AuthoringMathTask",
       "type": "object"
     },
     "ConceptPack": {
@@ -265,7 +315,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/MathTask"
+          "$ref": "#/$defs/AuthoringMathTask"
         },
         "reference_answer": {
           "maxLength": 160,
@@ -292,46 +342,6 @@
         "reference_steps"
       ],
       "title": "MathCase",
-      "type": "object"
-    },
-    "MathTask": {
-      "additionalProperties": false,
-      "properties": {
-        "kind": {
-          "enum": [
-            "numeric",
-            "evaluate",
-            "polynomial",
-            "linear_equation",
-            "quadratic_vertex"
-          ],
-          "title": "Kind",
-          "type": "string"
-        },
-        "expression": {
-          "maxLength": 160,
-          "minLength": 1,
-          "title": "Expression",
-          "type": "string"
-        },
-        "variable_value": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Variable Value"
-        }
-      },
-      "required": [
-        "kind",
-        "expression"
-      ],
-      "title": "MathTask",
       "type": "object"
     },
     "Review": {

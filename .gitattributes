@@ -13,3 +13,8 @@
 *.jpg binary
 *.pdf binary
 *.zip binary
+
+# Preserve hash-pinned upstream snapshots and recorded evidence byte for byte.
+docs/implementation/member2/part3/*.json -text whitespace=cr-at-eol
+docs/implementation/member2/part4/*.json -text whitespace=cr-at-eol
+docs/implementation/member2/part4/*.xml -text whitespace=cr-at-eol

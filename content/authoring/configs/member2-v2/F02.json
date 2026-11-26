@@ -1,0 +1,30 @@
+{
+  "protocol_version": "authoring-1.0.0",
+  "concept_id": "F02",
+  "revision": "M2-LLM01",
+  "author": "Member 2",
+  "content_version": "0.4.0-member2-review",
+  "source_ids": [
+    "SRC-MATH-2018"
+  ],
+  "families": [
+    {
+      "family_id": "FAM-F02-M2-ORIG02-1",
+      "source_group": "GROUP-F02-M2-ORIG01-1",
+      "description": "Mẫu bậc nhất"
+    },
+    {
+      "family_id": "FAM-F02-M2-ORIG02-2",
+      "source_group": "GROUP-F02-M2-ORIG01-2",
+      "description": "Căn bậc hai với hệ số x dương"
+    },
+    {
+      "family_id": "FAM-F02-M2-ORIG02-3",
+      "source_group": "GROUP-F02-M2-ORIG01-3",
+      "description": "Căn bậc hai với hệ số x âm"
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "max_output_tokens": 8000,
+  "timeout_seconds": 60
+}

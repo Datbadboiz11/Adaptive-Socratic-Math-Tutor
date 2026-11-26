@@ -1,0 +1,132 @@
+{
+  "recorded_at": "2026-11-23T22:31:08+07:00",
+  "team_review": {
+    "pack_content_pass_source_pending": [
+      "A02",
+      "E02"
+    ],
+    "alignment_pass": [
+      "A02",
+      "E02"
+    ],
+    "review_record_sha256": {
+      "content/authoring/batches/a02-e02-oatutor.v2/reviews/A02/M2-TEAM-20261123/review.json": "c38fccdb373215875dc74815db69bb7319354363cd81947ff8cfb1e11f4e5a33",
+      "content/authoring/batches/a02-e02-oatutor.v2/reviews/E02/M2-TEAM-20261123/review.json": "e7514909cfd2ceb00c69830982b4f5bff762df970323d10065f5a97796c8248a",
+      "content/authoring/batches/a02-e02-oatutor.v2/reviews/curriculum/M2-TEAM-20261123/review.json": "509aba4795e1c3667778a7db39922cc13f6a505464f57e707ab8e505965fd8df"
+    },
+    "source_rights_items": 8,
+    "source_rights_passed": 0,
+    "publishable_packs": 0
+  },
+  "original_authoring": {
+    "content_version": "0.3.0-stage2-draft",
+    "member2_concepts": [
+      "A01",
+      "A04",
+      "A07",
+      "A10",
+      "E03",
+      "E06",
+      "E09",
+      "F02",
+      "F05",
+      "F08",
+      "N02",
+      "N05",
+      "N08"
+    ],
+    "problems_for_member2": 78,
+    "examples_for_member2": 39,
+    "error_fixtures_for_member2": 39,
+    "original_replacements": [
+      "A02",
+      "E02"
+    ],
+    "original_replacement_problems": 12,
+    "all_packs_draft": true,
+    "authoring_case_count": 135,
+    "all_packs_checker_pass": true,
+    "same_task_check": "exact task objects compared with current pilot and OATutor M2-OAT02",
+    "source_sha256": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
+    "local_batch_manifest_sha256": "f5058d07e10a3e14b5fce72be5f387a375d9744a6cec6471056c678d7353985f",
+    "pack_draft_hashes": {
+      "A01": "fc306f7311ea67cd83c82bffb23c5292e448c95200ef374538983af117f554b4",
+      "A02": "7407687a6f2dd1181a22971caccbf69615acec25b76e3a4e47750673f4f6c21b",
+      "A04": "713636b09d26fc4bdd388101630f2396f0d86923ad451c451fb61cd94a45c032",
+      "A07": "ce0036c50beff1bde84e5e7a84147dc18906935e07681a7432f1d71e9ecce32c",
+      "A10": "08e6270e482a64a288c8aaf7a852dfb5ca0ff8a68098d5285bba83fb089ffbcc",
+      "E02": "54fc4e0716f307fc9b37563d46424cb88e29563bf4c9562c24367a0cf6c4da79",
+      "E03": "98f71a544e661d282aad3c9bc02a48abb1f59ff8746cdf1d5ae4685962530348",
+      "E06": "645563bb534ae6848689a9dd4f696ae3d37945ae46fd40aeb952373f67a6bcd3",
+      "E09": "b06c0d31f6ec68bdb4386fb417597e0023c761429a8483f58b1ab6c3064c9626",
+      "F02": "3225902699344b5edc9714bd8d20ed3dee2c956de8768307b2620925ce5e2a1a",
+      "F05": "dc030fbd7efa2445102f6006c8251d94cc41880f5f368b77ad0f2e7b5c2fa200",
+      "F08": "d66c4f755e6608c29c5b79fe00998a3e024cd78bde0510a10d1a375cb387c198",
+      "N02": "65a720c29400dd96623b20971e532b1e5290c68ba8f069d562cd660cb20d4e20",
+      "N05": "977249e3b36f6c7fea1b90f7ed3e68e00a969aac84e7decf12b75f91c9b24128",
+      "N08": "6ae9d71e6d796ec63abf8589608da16916580ea04a7f95ef22e6bd81448fb184"
+    }
+  },
+  "gemini_live_authoring": {
+    "requests": [
+      {
+        "run_id": "a02-gemini-live-01",
+        "created_at": "2026-11-23T15:16:56.880245+00:00",
+        "model": "gemini-3.1-flash-lite",
+        "http_status": 503,
+        "validated_pack": false,
+        "request_sha256": "79eff3243efc195fdb8ec07d1aad34e5743612a3d35acefa280fcbb20d70ae85",
+        "prompt_sha256": "409a12849b10ff744f39b5bfe3c1407357057788a3d8fb0b8d5ae8fe907895fb",
+        "artifact_manifest_sha256": "0df77377830ca791453351840f6115eb47cd3ff2f62ff0f9f291986ef6d33f67"
+      },
+      {
+        "run_id": "a02-gemini-live-02",
+        "created_at": "2026-11-23T15:20:22.624801+00:00",
+        "model": "gemini-3.1-flash-lite",
+        "http_status": 503,
+        "validated_pack": false,
+        "request_sha256": "79eff3243efc195fdb8ec07d1aad34e5743612a3d35acefa280fcbb20d70ae85",
+        "prompt_sha256": "409a12849b10ff744f39b5bfe3c1407357057788a3d8fb0b8d5ae8fe907895fb",
+        "artifact_manifest_sha256": "5edb54b7b31271ef1fb34009f00e705c1b5b7a2857fbd390070e16b588912172"
+      },
+      {
+        "run_id": "a02-gemini-live-03",
+        "created_at": "2026-11-23T15:26:05.011973+00:00",
+        "model": "gemini-flash-lite-latest",
+        "http_status": 400,
+        "validated_pack": false,
+        "request_sha256": "3fa707c122445dfb0d78db4159d550422e9e75a8654b83d7488faaebfcabc4bb",
+        "prompt_sha256": "ed716d0b16456b6d91cdba7dfa9b233f0419b277f423ead5f879be9a1086484b",
+        "artifact_manifest_sha256": "8c97f6464999c95c5b48e99c7167e7c395a87184a732d98ccc25322365a41d91"
+      },
+      {
+        "run_id": "a02-gemini-live-04",
+        "created_at": "2026-11-23T15:27:25.421666+00:00",
+        "model": "gemini-flash-lite-latest",
+        "http_status": 503,
+        "validated_pack": false,
+        "request_sha256": "c5b03db7d3191f63d093ef29cc26059259aefe44da6e8ec2205795621d66eae0",
+        "prompt_sha256": "2b87c07bbda716f28d75a9d86420bfbdfdc89bd5ebaa63a6a5041d5464132e72",
+        "artifact_manifest_sha256": "1a5212c35cf9824c0594cd2be490373775dd65122283b4b39a43500543e0c4ae"
+      }
+    ],
+    "successful_packs": 0,
+    "model_metadata_http_status": 200,
+    "minimal_generation_http_status": 503,
+    "minimal_generation_provider_status": "UNAVAILABLE",
+    "mock_transport_success_verified": true
+  },
+  "pytest": {
+    "passed": 311,
+    "skipped": 0,
+    "failed": 0,
+    "postgresql_enabled": true
+  },
+  "kb_dry_run": {
+    "chunks": 0,
+    "pack_review_blocks": 15,
+    "database_writes": 0,
+    "embedding_calls": 0,
+    "activated": false
+  }
+}

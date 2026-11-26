@@ -1,0 +1,782 @@
+[
+  {
+    "case_id": "D-A01-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A01-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A01-M2-ORIG02-1",
+    "teaching_text": "Tính giá trị -8*x-17 tại x = -5.\n\nThế −5 vào mọi vị trí của x. Tích (−8)(−5) bằng 40, sau đó 40 − 17 bằng 23."
+  },
+  {
+    "case_id": "D-A01-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A01-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-A01-M2-ORIG01-2",
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A01-M2-ORIG02-2",
+    "teaching_text": "Tính giá trị 4*x*x+9*x-11 tại x = -3.\n\nVới x = −3, bình phương của x là 9. Tính 4 × 9 + 9 × (−3) − 11 = 36 − 27 − 11 = −2."
+  },
+  {
+    "case_id": "D-A01-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A01-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-A01-M2-ORIG01-3",
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "pack_hash": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A01-M2-ORIG02-3",
+    "teaching_text": "Tính giá trị 6*x*x+5*x-1 tại x = 1/3. Ghi kết quả chính xác.\n\nThế x = 1/3, nên x² = 1/9. Khi đó 6/9 + 5/3 − 1 = 2/3 + 5/3 − 3/3 = 4/3."
+  },
+  {
+    "case_id": "D-A04-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A04-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A04-M2-ORIG02-1",
+    "teaching_text": "Khai triển rồi thu gọn 7*x*(2*x-9).\n\nNhân 7x với 2x được 14x². Nhân 7x với −9 được −63x. Hai hạng tử khác bậc nên giữ 14x² − 63x."
+  },
+  {
+    "case_id": "D-A04-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A04-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-A04-M2-ORIG01-2",
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A04-M2-ORIG02-2",
+    "teaching_text": "Khai triển rồi thu gọn -4*(3*x*x+7*x-13).\n\nNhân −4 lần lượt với 3x², 7x và −13. Ba tích là −12x², −28x và 52, nên đa thức là −12x² − 28x + 52."
+  },
+  {
+    "case_id": "D-A04-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A04-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-A04-M2-ORIG01-3",
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "pack_hash": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A04-M2-ORIG02-3",
+    "teaching_text": "Khai triển rồi thu gọn (2*x+7)*(3*x-5).\n\nBốn tích là 6x², −10x, 21x và −35. Gộp hai hạng tử bậc nhất thành 11x, được 6x² + 11x − 35."
+  },
+  {
+    "case_id": "D-A07-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A07-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A07-M2-ORIG02-1",
+    "teaching_text": "Đặt nhân tử chung lớn nhất của 35*x+49, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nƯớc chung lớn nhất của 35 và 49 là 7. Hạng tử 49 không chứa x nên nhân tử chung là 7. Chia mỗi hạng tử cho 7 được 7(5x + 7)."
+  },
+  {
+    "case_id": "D-A07-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A07-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-A07-M2-ORIG01-2",
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A07-M2-ORIG02-2",
+    "teaching_text": "Đặt nhân tử chung lớn nhất của 17*x*x+6*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nHệ số 17 và 6 nguyên tố cùng nhau. Bậc nhỏ nhất của x là 1, nên đặt x ra ngoài để được x(17x + 6)."
+  },
+  {
+    "case_id": "D-A07-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A07-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-A07-M2-ORIG01-3",
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "pack_hash": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A07-M2-ORIG02-3",
+    "teaching_text": "Đặt nhân tử chung lớn nhất của 32*x*x+56*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nƯớc chung lớn nhất của 32 và 56 là 8. Cả hai hạng tử có x và bậc nhỏ nhất là 1. Chia cho 8x để được 8x(4x + 7)."
+  },
+  {
+    "case_id": "D-A10-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A10-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A10-M2-ORIG02-1",
+    "teaching_text": "Thực hiện phép cộng hoặc trừ đã cho trong -; 4*x+1|x-4; x+2|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.\n\nLoại x = 4 và x = −3. Quy đồng với mẫu (x − 4)(x + 3). Tử là (4x + 1)(x + 3) − (x + 2)(x − 4) = 3x² + 15x + 11."
+  },
+  {
+    "case_id": "D-A10-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A10-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-A10-M2-ORIG01-2",
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A10-M2-ORIG02-2",
+    "teaching_text": "Thực hiện phép nhân hai phân thức *; x-8|x+9; x+9|x-2. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.\n\nMẫu ban đầu loại x = −9 và x = 2. Nhân tử với tử, mẫu với mẫu rồi khử x + 9, được (x − 8)/(x − 2) với cả hai điều kiện ban đầu."
+  },
+  {
+    "case_id": "D-A10-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-A10-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-A10-M2-ORIG01-3",
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "pack_hash": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-A10-M2-ORIG02-3",
+    "teaching_text": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+4|x-8; x+4|x-11. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.\n\nHai mẫu ban đầu loại x = 8 và x = 11. Số chia cũng phải khác 0, nên loại x = −4. Nhân nghịch đảo rồi khử x + 4 được (x − 11)/(x − 8)."
+  },
+  {
+    "case_id": "D-E03-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E03-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E03-M2-ORIG02-1",
+    "teaching_text": "Ba khay có cùng số gói và 8 gói để ngoài, tổng 29 gói. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số gói trong mỗi khay, đơn vị gói, x nguyên dương. Ba khay có 3x gói. Cộng 8 gói ngoài và đối chiếu tổng 29, được 3x + 8 = 29."
+  },
+  {
+    "case_id": "D-E03-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E03-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-E03-M2-ORIG01-2",
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E03-M2-ORIG02-2",
+    "teaching_text": "Hai quầy có tổng 55 vé, quầy sau có nhiều hơn quầy trước 11 vé. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số vé ở quầy trước, đơn vị vé, x nguyên dương. Quầy sau có x + 11 vé. Tổng 55 cho phương trình x + (x + 11) = 55."
+  },
+  {
+    "case_id": "D-E03-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E03-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-E03-M2-ORIG01-3",
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "pack_hash": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E03-M2-ORIG02-3",
+    "teaching_text": "Có 67 túi, chuyển cùng số túi trong 3 chuyến thì còn 40 túi. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số túi chuyển mỗi chuyến, đơn vị túi, x nguyên dương. Ba chuyến chuyển 3x túi. Lấy 67 trừ 3x và đặt bằng 40, được 67 − 3x = 40."
+  },
+  {
+    "case_id": "D-E06-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E06-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E06-M2-ORIG02-1",
+    "teaching_text": "Tính biệt thức rồi giải x*x-8 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.\n\nVới x² − 8 = 0, a = 1, b = 0, c = −8 nên biệt thức là 32. Hai nghiệm là ±√32/2, rút gọn thành ±2√2."
+  },
+  {
+    "case_id": "D-E06-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E06-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-E06-M2-ORIG01-2",
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E06-M2-ORIG02-2",
+    "teaching_text": "Tính biệt thức rồi giải 25*x*x+20*x+4 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.\n\nBiệt thức 20² − 4 × 25 × 4 bằng 0. Phương trình có nghiệm kép −20/(2 × 25) = −2/5."
+  },
+  {
+    "case_id": "D-E06-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E06-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-E06-M2-ORIG01-3",
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "pack_hash": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E06-M2-ORIG02-3",
+    "teaching_text": "Tính biệt thức rồi giải 5*x*x+4*x+3 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.\n\nBiệt thức 4² − 4 × 5 × 3 bằng −44. Biệt thức âm nên tập nghiệm thực rỗng."
+  },
+  {
+    "case_id": "D-E09-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E09-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E09-M2-ORIG02-1",
+    "teaching_text": "Giải hệ 5*x+1*y=17;-2*x-1*y=-5 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.\n\nCộng hai hàng với hệ số nhân 1 và 1 để được 3x = 12. Thế x = 4 vào hàng đầu thì y = −3. Cặp (4, −3) thỏa cả hai hàng."
+  },
+  {
+    "case_id": "D-E09-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E09-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-E09-M2-ORIG01-2",
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E09-M2-ORIG02-2",
+    "teaching_text": "Giải hệ 2*x-3*y=-8;2*x+5*y=8 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.\n\nLấy hàng đầu trừ hàng sau, tương ứng hệ số 1 và −1. Kết quả −8y = −16 cho y = 2. Thế vào hàng đầu để có x = −1."
+  },
+  {
+    "case_id": "D-E09-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-E09-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-E09-M2-ORIG01-3",
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "pack_hash": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-E09-M2-ORIG02-3",
+    "teaching_text": "Giải hệ 3*x+2*y=11;4*x-5*y=7 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.\n\nNhân hàng đầu với 5 và hàng sau với 2. Cộng để khử y và được 23x = 69. Thế x = 3 vào hàng đầu thì y = 1."
+  },
+  {
+    "case_id": "D-F02-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F02-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F02-M2-ORIG02-1",
+    "teaching_text": "Tìm tập xác định thực của f(x)=1/(5x−16). Viết R∖{giá trị loại}.\n\nMẫu số 5x − 16 phải khác 0. Nó bằng 0 tại x = 16/5, nên tập xác định gồm mọi số thực trừ 16/5."
+  },
+  {
+    "case_id": "D-F02-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F02-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-F02-M2-ORIG01-2",
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F02-M2-ORIG02-2",
+    "teaching_text": "Tìm tập xác định thực của f(x)=√(8x+17). Viết dưới dạng khoảng.\n\nBiểu thức dưới căn phải không âm. Giải 8x + 17 ≥ 0 được x ≥ −17/8. Lấy cả đầu mút, vì căn của 0 xác định."
+  },
+  {
+    "case_id": "D-F02-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F02-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-F02-M2-ORIG01-3",
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "pack_hash": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F02-M2-ORIG02-3",
+    "teaching_text": "Tìm tập xác định thực của f(x)=√(23−6x). Viết dưới dạng khoảng.\n\nTừ 23 − 6x ≥ 0 suy ra −6x ≥ −23. Chia cho −6 thì đổi chiều, được x ≤ 23/6. Lấy cả đầu mút."
+  },
+  {
+    "case_id": "D-F05-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F05-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F05-M2-ORIG02-1",
+    "teaching_text": "Tìm tọa độ đỉnh của y = -2*(x-5)*(x-5)+19. Nộp cặp (hoành độ,tung độ).\n\nBình phương (x − 5)² bằng 0 tại x = 5 và dương ở các x khác. Vì hệ số −2 âm, hàm đạt giá trị lớn nhất 19 tại x = 5. Đỉnh là (5, 19)."
+  },
+  {
+    "case_id": "D-F05-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F05-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-F05-M2-ORIG01-2",
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F05-M2-ORIG02-2",
+    "teaching_text": "Tìm phương trình trục đối xứng của y = 6*x*x-15*x-7. Nộp phương trình dạng x = số.\n\nHệ số a = 6, b = −15 nên hoành độ đỉnh là 15/12 = 5/4. Trục là đường thẳng đứng x = 5/4."
+  },
+  {
+    "case_id": "D-F05-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F05-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-F05-M2-ORIG01-3",
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "pack_hash": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F05-M2-ORIG02-3",
+    "teaching_text": "Tìm phương trình trục đối xứng của y = -4*x*x+24*x+13. Nộp phương trình dạng x = số.\n\nHệ số a = −4, b = 24 nên hoành độ đỉnh là −24/(−8) = 3. Đường thẳng đứng qua đỉnh có phương trình x = 3."
+  },
+  {
+    "case_id": "D-F08-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F08-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F08-M2-ORIG02-1",
+    "teaching_text": "Rút gọn 5⁻¹ · 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nCộng số mũ −1 và 3 được 2, nên tích là 5² = 25. Cơ số 5 dương và khác 1 nên tập xác định của y = 5^x là R."
+  },
+  {
+    "case_id": "D-F08-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F08-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-F08-M2-ORIG01-2",
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F08-M2-ORIG02-2",
+    "teaching_text": "Rút gọn 2⁰ / 2³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nLấy số mũ ở tử 0 trừ số mũ ở mẫu 3, được −3. Vậy thương là 2⁻³ = 1/8, và y = 2^x xác định trên R."
+  },
+  {
+    "case_id": "D-F08-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-F08-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-F08-M2-ORIG01-3",
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "pack_hash": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-F08-M2-ORIG02-3",
+    "teaching_text": "Rút gọn ((1/2)²)⁻² và ghi tập xác định của hàm y = (1/2)^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nNhân số mũ 2 với −2 được −4. Khi lấy lũy thừa âm, (1/2)⁻⁴ = 2⁴ = 16. Cơ số 1/2 dương và khác 1 nên tập xác định là R."
+  },
+  {
+    "case_id": "D-N02-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N02-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N02-M2-ORIG02-1",
+    "teaching_text": "Tính (-16)*(-5) và giải thích dấu của tích.\n\nHai thừa số cùng âm nên tích dương. Nhân trị tuyệt đối 16 × 5 được 80."
+  },
+  {
+    "case_id": "D-N02-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N02-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-N02-M2-ORIG01-2",
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N02-M2-ORIG02-2",
+    "teaching_text": "Tính 126/(-9) và giải thích dấu của thương.\n\nSố bị chia và số chia trái dấu nên thương âm. Chia 126 cho 9 được 14, vậy thương là −14."
+  },
+  {
+    "case_id": "D-N02-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N02-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-N02-M2-ORIG01-3",
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "pack_hash": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N02-M2-ORIG02-3",
+    "teaching_text": "Tính ((-36)/9)*(-8), nêu kết quả trong ngoặc trước.\n\nTính trong ngoặc trước. −36 chia 9 được −4. Sau đó nhân hai số âm −4 và −8 được 32."
+  },
+  {
+    "case_id": "D-N05-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N05-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N05-M2-ORIG02-1",
+    "teaching_text": "Quy đồng rồi thay dấu hỏi trong 4/15 ? 5/18. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 90. Nhân cả tử và mẫu của 4/15 với 6, của 5/18 với 5. So sánh 24 và 25 để được 24/90 < 25/90."
+  },
+  {
+    "case_id": "D-N05-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N05-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-N05-M2-ORIG01-2",
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N05-M2-ORIG02-2",
+    "teaching_text": "Quy đồng rồi thay dấu hỏi trong -5/13 ? -7/17. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 221. Hai tử mới lần lượt là −85 và −91. Vì −85 gần 0 hơn nên −85/221 > −91/221."
+  },
+  {
+    "case_id": "D-N05-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N05-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-N05-M2-ORIG01-3",
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "pack_hash": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N05-M2-ORIG02-3",
+    "teaching_text": "Quy đồng rồi thay dấu hỏi trong 16/28 ? 20/35. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 140. Nhân phân số thứ nhất với 5/5 và phân số thứ hai với 4/4. Hai phân số đều bằng 80/140."
+  },
+  {
+    "case_id": "D-N08-M2-ORIG02-EX-01",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N08-M2-ORIG02-1",
+    "lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N08-M2-ORIG02-1",
+    "teaching_text": "Đổi theo yêu cầu 11/20 -> decimal. Viết kết quả bằng dấu chấm thập phân.\n\nNhân cả tử và mẫu với 5 để có 55/100, rồi viết 0,55."
+  },
+  {
+    "case_id": "D-N08-M2-ORIG02-EX-02",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N08-M2-ORIG02-2",
+    "lineage_ids": [
+      "GROUP-N08-M2-ORIG01-2",
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N08-M2-ORIG02-2",
+    "teaching_text": "Đổi theo yêu cầu 0.315 -> percent. Ghi kèm ký hiệu %.\n\nMột phần trăm là một phần của 100. Nhân 0,315 với 100 để được 31,5 rồi gắn ký hiệu %, được 31,5%."
+  },
+  {
+    "case_id": "D-N08-M2-ORIG02-EX-03",
+    "content_version": "0.4.1-member2-kb-examples",
+    "difficulty": null,
+    "family_id": "FAM-N08-M2-ORIG02-3",
+    "lineage_ids": [
+      "GROUP-N08-M2-ORIG01-3",
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "pack_hash": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+    "review": {
+      "author": "Codex assisted authoring",
+      "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+      "reviewed_at": "2026-11-24T22:17:10+07:00",
+      "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+      "status": "human_approved"
+    },
+    "source_group": "EXAMPLE-N08-M2-ORIG02-3",
+    "teaching_text": "Đổi theo yêu cầu 37.5% -> fraction. Ghi phân số tối giản.\n\nViết 37,5% thành 37,5/100. Nhân cả hai với 10 được 375/1000, rồi chia cả hai cho 125 để được 3/8."
+  }
+]

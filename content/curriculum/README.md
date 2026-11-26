@@ -1,13 +1,13 @@
-# Bộ nội dung Toán tiếng Việt — registry và pilot v1
+# Bộ nội dung Toán tiếng Việt — registry và pilot
 
-Đợt triển khai ngày 04/10/2026 theo [plan tổng, mục 5/12/24](../../docs/planning/project-plan.md) và [PRD](../../docs/product/prd.md). Nhóm chưa có tài liệu bắt buộc hoặc người duyệt. **Toàn bộ nội dung và cạnh graph hiện là nháp**, chưa công bố cho học sinh.
+Đợt triển khai ban đầu ngày 04/10/2026 theo [plan tổng, mục 5/12/24](../../docs/planning/project-plan.md) và [PRD](../../docs/product/prd.md). Ngày 23/11/2026, theo xác nhận của người dùng về kết quả review của nhóm, cả 40 concept và alignment trong [registry v2](registry.v2.json) được ghi nhận là `human_approved`. `reviewed_at` là thời điểm ghi nhận vào repo. 10 pack bài và 68 cạnh graph hiện vẫn ở trạng thái `draft`.
 
 Đã có danh mục 40 concept và pilot 10 concept: N01, N02, N04, A01, A02, A03, E01, E02, F01, F05. Pilot gồm 60 bài thuộc 30 họ mẫu, 30 ví dụ giải, 20 mẫu lỗi và 30 mức gợi ý. E02 dùng lại 6 bài MVP trong bản authoring mới; không đổi dữ liệu gốc. Tất cả bản ghi pilot là `authoring_dev`, không phải bộ test kín hoặc bộ evaluation đã đủ quy mô.
 
 ## Thứ tự đọc
 
-1. [registry.v1.json](registry.v1.json): mục tiêu, skill, dạng hỗ trợ, lớp đề xuất, nguồn và cạnh prerequisite.
-2. [pilot.v1.json](pilot.v1.json): giải thích, bài, đáp án riêng, ví dụ, mẫu lỗi và hint ladder cho từng concept.
+1. [registry.v2.json](registry.v2.json) ghi mục tiêu, skill, các dạng hỗ trợ, lớp, nguồn, review và cạnh prerequisite.
+2. [pilot.v2.json](pilot.v2.json) giữ nội dung pilot nháp với cùng `content_version` `0.2.0` của registry. [Registry v1](registry.v1.json) và [pilot v1](pilot.v1.json) lưu bản trước khi cập nhật nhãn review.
 3. [curriculum.py](../../backend/app/curriculum.py): schema, loader, kiểm tra graph và ranh giới công bố.
 4. [authoring_math.py](../../backend/app/authoring_math.py): kiểm tra toán chính xác cho nội dung do nhóm biên soạn.
 5. [check_curriculum.py](../../scripts/checks/check_curriculum.py) và [tests](../../tests/test_curriculum.py): kiểm tra độ phủ, tham chiếu, an toàn parser và nội dung nháp.
@@ -16,56 +16,56 @@ Schema JSON có thể xem ở [CurriculumRegistry](../../contracts/v1/Curriculum
 
 ## Ma trận độ phủ
 
-Tên và phạm vi 40 concept lấy từ plan. Lớp bên dưới là đề xuất để review, không phải kết quả nghiệm thu chương trình. Dấu `—` nghĩa là chưa biên soạn pack; có tên trong registry chưa được tính là concept hoàn chỉnh.
+Danh mục và lớp của 40 concept đã được nhóm duyệt theo xác nhận của người dùng. Bảng dưới đây ghi tiến độ biên soạn pack. Dấu `—` ở cột số lượng đánh dấu concept chưa có pack.
 
-| Mã | Concept | Lớp đề xuất | Bài / ví dụ / mẫu lỗi | Trạng thái |
+| Mã | Concept | Lớp đã duyệt | Bài / ví dụ / mẫu lỗi | Trạng thái pack |
 |---|---|---|---|---|
 | N01 | Cộng trừ số có dấu | 6 | 6 / 3 / 2 | Nháp có kiểm tra toán |
 | N02 | Nhân chia số có dấu | 6 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| N03 | Thứ tự phép tính | 6 | — | Danh mục đề xuất |
+| N03 | Thứ tự phép tính | 6 | — | Chưa có pack |
 | N04 | Phân số tương đương và rút gọn | 6 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| N05 | Quy đồng và so sánh phân số | 6 | — | Danh mục đề xuất |
-| N06 | Cộng trừ phân số | 6 | — | Danh mục đề xuất |
-| N07 | Nhân chia phân số | 6 | — | Danh mục đề xuất |
-| N08 | Chuyển đổi phân số–thập phân–phần trăm | 6 | — | Danh mục đề xuất |
-| N09 | Lũy thừa với số mũ nguyên | 7, 11 | — | Danh mục đề xuất |
-| N10 | Căn bậc hai số học | 7, 9 | — | Danh mục đề xuất |
+| N05 | Quy đồng và so sánh phân số | 6 | — | Chưa có pack |
+| N06 | Cộng trừ phân số | 6 | — | Chưa có pack |
+| N07 | Nhân chia phân số | 6 | — | Chưa có pack |
+| N08 | Chuyển đổi phân số–thập phân–phần trăm | 6 | — | Chưa có pack |
+| N09 | Lũy thừa với số mũ nguyên | 7, 11 | — | Chưa có pack |
+| N10 | Căn bậc hai số học | 7, 9 | — | Chưa có pack |
 | A01 | Thay giá trị vào biểu thức | 7 | 6 / 3 / 2 | Nháp có kiểm tra toán |
 | A02 | Tính phân phối | 7, 8 | 6 / 3 / 2 | Nháp có kiểm tra toán |
 | A03 | Thu gọn hạng tử đồng dạng | 7, 8 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| A04 | Nhân đơn thức và đa thức | 7, 8 | — | Danh mục đề xuất |
-| A05 | Bình phương một tổng/hiệu | 8 | — | Danh mục đề xuất |
-| A06 | Hiệu hai bình phương | 8 | — | Danh mục đề xuất |
-| A07 | Phân tích nhân tử bằng đặt nhân tử chung | 8 | — | Danh mục đề xuất |
-| A08 | Phân tích nhân tử bằng hằng đẳng thức/nhóm | 8 | — | Danh mục đề xuất |
-| A09 | Rút gọn phân thức và điều kiện xác định | 8 | — | Danh mục đề xuất |
-| A10 | Cộng trừ nhân chia phân thức | 8 | — | Danh mục đề xuất |
+| A04 | Nhân đơn thức và đa thức | 7, 8 | — | Chưa có pack |
+| A05 | Bình phương một tổng/hiệu | 8 | — | Chưa có pack |
+| A06 | Hiệu hai bình phương | 8 | — | Chưa có pack |
+| A07 | Phân tích nhân tử bằng đặt nhân tử chung | 8 | — | Chưa có pack |
+| A08 | Phân tích nhân tử bằng hằng đẳng thức/nhóm | 8 | — | Chưa có pack |
+| A09 | Rút gọn phân thức và điều kiện xác định | 8 | — | Chưa có pack |
+| A10 | Cộng trừ nhân chia phân thức | 8 | — | Chưa có pack |
 | E01 | Phép biến đổi tương đương và điều kiện | 8 | 6 / 3 / 2 | Nháp có kiểm tra toán |
 | E02 | Phương trình bậc nhất một ẩn | 8 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| E03 | Lập phương trình từ bài toán bằng lời | 8 | — | Danh mục đề xuất |
-| E04 | Phương trình tích | 9 | — | Danh mục đề xuất |
-| E05 | Phương trình chứa ẩn ở mẫu | 9 | — | Danh mục đề xuất |
-| E06 | Phương trình bậc hai và biệt thức | 9 | — | Danh mục đề xuất |
-| E07 | Hệ thức Viète cơ bản | 9 | — | Danh mục đề xuất |
-| E08 | Giải hệ bậc nhất bằng thế | 9 | — | Danh mục đề xuất |
-| E09 | Giải hệ bậc nhất bằng cộng đại số | 9 | — | Danh mục đề xuất |
-| E10 | Bất phương trình bậc nhất và quy tắc đổi chiều | 9 | — | Danh mục đề xuất |
+| E03 | Lập phương trình từ bài toán bằng lời | 8 | — | Chưa có pack |
+| E04 | Phương trình tích | 9 | — | Chưa có pack |
+| E05 | Phương trình chứa ẩn ở mẫu | 9 | — | Chưa có pack |
+| E06 | Phương trình bậc hai và biệt thức | 9 | — | Chưa có pack |
+| E07 | Hệ thức Viète cơ bản | 9 | — | Chưa có pack |
+| E08 | Giải hệ bậc nhất bằng thế | 9 | — | Chưa có pack |
+| E09 | Giải hệ bậc nhất bằng cộng đại số | 9 | — | Chưa có pack |
+| E10 | Bất phương trình bậc nhất và quy tắc đổi chiều | 9 | — | Chưa có pack |
 | F01 | Khái niệm hàm số và giá trị hàm | 8, 10 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| F02 | Tập xác định | 10 | — | Danh mục đề xuất |
-| F03 | Hệ số góc và giá trị ban đầu của hàm bậc nhất | 8 | — | Danh mục đề xuất |
-| F04 | Nghiệm và dấu hàm bậc nhất | 10 | — | Danh mục đề xuất |
+| F02 | Tập xác định | 10 | — | Chưa có pack |
+| F03 | Hệ số góc và giá trị ban đầu của hàm bậc nhất | 8 | — | Chưa có pack |
+| F04 | Nghiệm và dấu hàm bậc nhất | 10 | — | Chưa có pack |
 | F05 | Đỉnh và trục đối xứng của hàm bậc hai | 10 | 6 / 3 / 2 | Nháp có kiểm tra toán |
-| F06 | Khoảng đồng biến/nghịch biến của hàm bậc hai | 10 | — | Danh mục đề xuất |
-| F07 | Dấu tam thức bậc hai và bất phương trình bậc hai | 10 | — | Danh mục đề xuất |
-| F08 | Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng | 11 | — | Danh mục đề xuất |
-| F09 | Logarit và quy tắc logarit | 11 | — | Danh mục đề xuất |
-| F10 | Phương trình mũ/logarit cơ bản | 11 | — | Danh mục đề xuất |
+| F06 | Khoảng đồng biến/nghịch biến của hàm bậc hai | 10 | — | Chưa có pack |
+| F07 | Dấu tam thức bậc hai và bất phương trình bậc hai | 10 | — | Chưa có pack |
+| F08 | Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng | 11 | — | Chưa có pack |
+| F09 | Logarit và quy tắc logarit | 11 | — | Chưa có pack |
+| F10 | Phương trình mũ/logarit cơ bản | 11 | — | Chưa có pack |
 
-Registry có 68 cạnh prerequisite đề xuất. `PREREQUISITE_OF` từ A → B nghĩa là A cần trước B. Đây không phải bằng chứng học sinh yếu A khi làm sai B; Agent vẫn cần bằng chứng hoặc câu hỏi chẩn đoán. Những cạnh có tính chất thiết kế theo scope phải được người duyệt xác nhận, sửa hoặc bỏ.
+Registry có 68 cạnh prerequisite ở trạng thái `draft`. Nhóm đã xác nhận đúng các cạnh trong registry v2 ngày 24/11/2026. `PREREQUISITE_OF` từ A → B nghĩa là A cần trước B. Agent vẫn cần bằng chứng hoặc câu hỏi chẩn đoán để đánh giá học sinh có yếu A khi làm sai B. [Hồ sơ xác nhận Chặng 1](member2-stage1-update-confirmation.v1.json)
 
 ## Mẫu biên soạn
 
-Để thêm pack, lấy cấu trúc hoàn chỉnh của N01 trong `pilot.v1.json` làm mẫu rồi đổi toàn bộ ID, mục tiêu và nội dung. Không tạo thêm một thư mục/file riêng cho mỗi bài.
+Để thêm pack, lấy cấu trúc hoàn chỉnh của N01 trong `pilot.v2.json` làm mẫu rồi đổi toàn bộ ID, mục tiêu và nội dung. Không tạo thêm một thư mục/file riêng cho mỗi bài.
 
 Một pack cần:
 
@@ -120,11 +120,11 @@ F05 giới hạn bài đo ở tọa độ đỉnh. Trục đối xứng được
 
 `safe_chunks()` hiện là **tra cứu trực tiếp theo metadata**, chỉ trả giải thích/gợi ý của concept và pack đã duyệt, kèm content IDs, version, skill/lớp, nguồn và mức tiết lộ. Không trả các trường đáp án, lời giải chuẩn, examples hoặc errors. Cơ chế này chưa phải semantic RAG và chưa nối vào Agent. Các texts vẫn cần người duyệt kiểm tra tiết lộ; lọc schema không tự bảo đảm gợi ý đúng về sư phạm.
 
-Vì chưa có reviewer, hiện có 0 nội dung công bố qua hai hàm trên. Bank nháp không được seed vào PostgreSQL sản phẩm và không xuất thành topic mới trên web. Bộ chấm online cũ vẫn chỉ hỗ trợ phương trình bậc nhất; checker authoring mới không được mô tả là đã có 10 bộ chấm người học.
+Hiện có 0 teaching chunk được công bố vì các pack vẫn ở trạng thái `draft`. Cạnh graph cũng chờ hồ sơ duyệt riêng. Bộ chấm online hiện chỉ hỗ trợ phương trình bậc nhất của MVP.
 
 ## Đối chiếu nguồn
 
-Nguồn nội dung và lớp được lưu trong `sources`/`alignment`, ngày truy cập 04/10/2026. Đã đọc [Chương trình môn Toán 2018 do Bộ GDĐT ban hành, bản Trường THCS Trương Công Định đăng lại](https://filethcs.hcm.shieldix.app/data/hcmedu/thcstruongcongdinh/2019_10/3_cttoan_610201915.pdf): phần lớp 6 cho số nguyên/phân số; lớp 7–8 cho biểu thức; lớp 8 cho phương trình bậc nhất và giá trị hàm; lớp 10 cho đỉnh hàm bậc hai. Các grade và scope vẫn cần review, nhất là concept tổng hợp nhiều hành vi.
+Nguồn nội dung và lớp được lưu trong `sources`/`alignment`, ngày truy cập 04/10/2026. Đã đọc [Chương trình môn Toán 2018 do Bộ GDĐT ban hành, bản Trường THCS Trương Công Định đăng lại](https://filethcs.hcm.shieldix.app/data/hcmedu/thcstruongcongdinh/2019_10/3_cttoan_610201915.pdf): phần lớp 6 cho số nguyên/phân số; lớp 7–8 cho biểu thức; lớp 8 cho phương trình bậc nhất và giá trị hàm; lớp 10 cho đỉnh hàm bậc hai. Registry v2 giữ các mốc đối chiếu đã ghi trong từng `alignment.locator`.
 
 Đã rà [Thông tư 17/2025 và tài liệu đính kèm trên Cổng văn bản Chính phủ](https://vanban.chinhphu.vn/?docid=215347&orggroupid=4&pageid=27160); Điều 1 của bản đính kèm liệt kê thay đổi môn Lịch sử/Địa lí/GDCD. Không dùng văn bản đó để chứng minh grade môn Toán. Nguồn 2018 là căn cứ đối chiếu sơ bộ, cần rà phiên bản và hướng dẫn chương trình trước nghiệm thu; chưa chọn bộ SGK. Bài pilot tự biên soạn hoặc lấy lại nội dung MVP của dự án, không sao chép bài từ PDF/SGK và không biến raw skill ASSISTments thành skill tiếng Việt.
 

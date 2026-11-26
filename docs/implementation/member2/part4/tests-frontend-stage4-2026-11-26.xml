@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="nested fractions preserve numerator and denominator structure" time="0.001810" classname="test"/>
+	<testcase name="powers, signed exponent and square roots preserve precedence" time="0.000311" classname="test"/>
+	<testcase name="system of equations has two MathML rows and implicit multiplication" time="0.000143" classname="test"/>
+	<testcase name="unsupported and excessive inputs fail safely to escaped text" time="0.000566" classname="test"/>
+	<!-- tests 4 -->
+	<!-- suites 0 -->
+	<!-- pass 4 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 111.2145 -->
+</testsuites>

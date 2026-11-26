@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "M2-STAGE1-TEAM-20261124",
+  "recorded_on": "2026-11-24",
+  "basis": "user_attested_team_confirmation",
+  "signature": "Member 2 — ký ghi nhận theo ủy quyền của người dùng",
+  "confirmed_members": [
+    "Member 1",
+    "Member 2",
+    "Member 3"
+  ],
+  "public_problem_contract_version": "member2-proposal-0.3.0",
+  "confirmed_sections": [
+    "concept_and_pack_coverage",
+    "curriculum_graph",
+    "legacy_canonical_mapping",
+    "public_problem_contract_and_legacy_adapter",
+    "topic_and_session_readiness"
+  ],
+  "registry_version": "0.2.0",
+  "confirmed_edge_count": 68,
+  "confirmed_legacy_mapping_count": 1,
+  "scope_sha256": {
+    "content/curriculum/member2-workboard-confirmation.v1.json": "0a4b58a6a036932e45df63e44e7cf8a19b9a056efd5d2df9ee9f91c3b8405f8c",
+    "backend/app/member2_problem_contract.py": "46c2ebdc9c77f75e6d47d1e5e85f77daa0f3cd4d63398dffc35b1016b3887703",
+    "backend/app/session_contracts.py": "0c42c6a7259e1d214aef92625fff02711936f8dd78036a25ca50db4c64ded03c",
+    "backend/app/sessions.py": "f4fac58f02a8186583d3fc8c8b818392596a3c0e2838f59b0d625532b506ee43",
+    "contracts/member2/v0.3.0/examples.json": "9be1033bb84baf52dc618194655d0f7aff7776eface59f749606963fd183fae2",
+    "contracts/member2/v0.3.0/PublicProblemExamples.schema.json": "0334f0abe2885f237621c6a6f2e3a072cc2695e1275a393705b759f5df57d978",
+    "contracts/phase3/openapi.json": "3e3c29883c6def43c34ba18ae57232776c91fdb741cafe1618edec3b6b6f8e37",
+    "content/curriculum/registry.v2.json": "e9c4e5e4f60b5281fc55809040f4021df6b94de3c7757bc23018a769bf57d6a1",
+    "content/curriculum/pilot.v2.json": "33f35a3dd8b506a6c51627a40ae0a0298d086d7652f593b23b08b725060a6913",
+    "content/authoring/member2-original-pilot.v1.json": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
+    "content/authoring/batches/a02-e02-original.v1/manifest.json": "d12d64bb627eaea0ab8a2e5f3735341e0cfccbcd63aa8c9650bb84ca2500e0ad"
+  }
+}

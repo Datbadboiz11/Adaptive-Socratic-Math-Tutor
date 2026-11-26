@@ -1,0 +1,49 @@
+{
+  "concept_count": 13,
+  "concept_ids": [
+    "A01",
+    "A04",
+    "A07",
+    "A10",
+    "E03",
+    "E06",
+    "E09",
+    "F02",
+    "F05",
+    "F08",
+    "N02",
+    "N05",
+    "N08"
+  ],
+  "content_version": "0.4.0-member2-review",
+  "example_content_version": "0.4.1-member2-kb-examples",
+  "example_count": 39,
+  "expected_runtime_chunk_count": 91,
+  "explanation_hint_chunk_count": 52,
+  "pack_count": 13,
+  "publication_version": "member2-kb-publication-1.0.0",
+  "review_basis": "Verbatim example prompts and worked explanations extracted from the exact review materials approved in M2-ORIG02; no new human review claimed.",
+  "review_material_sha256": {
+    "A01": "fe470322d0990b437727db0ff8c67bdbd726fbd7721f1ab160d4d6abba9a7c39",
+    "A04": "db76666302ca6db2c40c3f8aebe061d294ebc0f50aecaa114f86156639ebb9b6",
+    "A07": "cac921c2bd909f5fd12d99b898ad1d6edd0310503ac48b01cf0d8962b40e2130",
+    "A10": "2f348c295eae1e04a5a4f9cc0d9708784b1618536557bda2c6a73cee7cf3d3a9",
+    "E03": "2f4e6ce1c71aab7a9f52910be70123b89a21f3f95079917c056c4e15dd0d2462",
+    "E06": "83548813cf1f07be8898e892699352ac120a3f3a46edebc81e4f76b334b4084e",
+    "E09": "26199d95a912ab45833ae51aa7c204f49bd0ec201d1d004ae6a48e032a3a4438",
+    "F02": "e697e81cf04e0a298ffdbd0b82ef802bb026e6dd981196b69eeeea9ca8f91701",
+    "F05": "4529f9e3879d201512711b3f43534be2940b38073f0f587d5ec1f1ba951c1fb3",
+    "F08": "c2b8735a9e3be0ec9712cd7440dca964142874d6f003ac3668a3449400220147",
+    "N02": "0704c83c9d9e08fbfbe1ecc759ed0661a0e56cfd7c6c90f4fdfb147ba4e37292",
+    "N05": "4c8ab6da6581bb8a5d805e59d285a9901b45416e61fd8cda5ec3e86b18db2453",
+    "N08": "3abc78c315c84eb7e122984c32e4f73931b811b65bdee906a454049ceb515168"
+  },
+  "source_file_sha256": {
+    "content/authoring/batches/member2-original.v2/approved-bank.json": "b19cb0230767b3763ceeba65dff7fa9fb9c161216dd309b76a790d3e1a63e848",
+    "content/authoring/batches/member2-original.v2/manifest.json": "c0768d6c9c2117b1add612bcabfb0ef4b4965c1c8a40f2aa459742971f04d313",
+    "content/authoring/batches/member2-original.v2/registry-snapshot.json": "9b112bf8bbd3d887c2a94d021cbe8ef31dcba1ee5fc78178ac9fa6cc8131996b",
+    "content/authoring/member2-original-pilot.v1.json": "e014aaef0882d29ba63c5df5a78f4bb6bacb993921dd8ebf688c6af4e174316a",
+    "content/authoring/member2-original-pilot.v2.json": "c3ef2d3322be965cfd5fbd26c5a4e80e0ea13088473265ad739e430f757bd8d0",
+    "content/kb/member2-v2/example-publications.json": "ccea85530c4cffb261221cee56c55d03fc824f5d9fefb43bb893fd176fdaca29"
+  }
+}

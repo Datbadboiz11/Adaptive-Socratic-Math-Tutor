@@ -1,0 +1,2957 @@
+{
+  "content_version": "0.4.0-member2-review",
+  "packs": [
+    {
+      "concept_id": "A01",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Sau khi thế, hai thừa số của hạng tử chứa x mang dấu gì?",
+          "error_id": "D-A01-M2-ORIG02-ERR-01",
+          "family": "Thế số âm vào biểu thức bậc nhất",
+          "first_error_step": 1,
+          "hypothesis": "Có thể bỏ dấu âm của giá trị được thế.",
+          "problem_id": "D-A01-M2-ORIG02-P-01",
+          "response_steps": [
+            "17"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi nhân hai giá trị x âm, tích có dấu gì?",
+          "error_id": "D-A01-M2-ORIG02-ERR-02",
+          "family": "Thế vào cả x và x bình phương",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã coi bình phương của số âm là số âm.",
+          "problem_id": "D-A01-M2-ORIG02-P-03",
+          "response_steps": [
+            "-4"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Viết phép nhân hệ số với phân số trước khi trừ hằng số được không?",
+          "error_id": "D-A01-M2-ORIG02-ERR-03",
+          "family": "Thế phân số và tính chính xác",
+          "first_error_step": 1,
+          "hypothesis": "Có thể nhân vào mẫu hoặc nhầm tử với mẫu.",
+          "problem_id": "D-A01-M2-ORIG02-P-05",
+          "response_steps": [
+            "50/3"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-A01-M2-ORIG02-EX-01",
+          "reference_answer": "23",
+          "reference_steps": [
+            "23"
+          ],
+          "task": {
+            "expression": "-8*x-17",
+            "kind": "evaluate",
+            "variable_value": "-5"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-EX-02",
+          "reference_answer": "-2",
+          "reference_steps": [
+            "-2"
+          ],
+          "task": {
+            "expression": "4*x*x+9*x-11",
+            "kind": "evaluate",
+            "variable_value": "-3"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-EX-03",
+          "reference_answer": "4/3",
+          "reference_steps": [
+            "4/3"
+          ],
+          "task": {
+            "expression": "6*x*x+5*x-1",
+            "kind": "evaluate",
+            "variable_value": "1/3"
+          }
+        }
+      ],
+      "explanation": "Đặt giá trị được cho vào từng vị trí của biến. Dùng ngoặc khi thế số âm hoặc phân số, rồi thực hiện phép tính theo thứ tự.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Biểu thức có mấy vị trí cần thay x?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Khi thế số âm, đặt số đó vào ngoặc ở cả vị trí có bình phương."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Tính từng tích và lũy thừa trước khi cộng các hạng tử."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-A01-M2-ORIG02-P-01",
+          "concept_id": "A01",
+          "difficulty": "introductory",
+          "family_id": "FAM-A01-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị 7*x-11 tại x = -4.",
+          "reference_answer": "-39",
+          "reference_steps": [
+            "-39"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "7*x-11",
+            "kind": "evaluate",
+            "variable_value": "-4"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-P-02",
+          "concept_id": "A01",
+          "difficulty": "standard",
+          "family_id": "FAM-A01-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị -9*x+13 tại x = -6.",
+          "reference_answer": "67",
+          "reference_steps": [
+            "67"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-9*x+13",
+            "kind": "evaluate",
+            "variable_value": "-6"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-P-03",
+          "concept_id": "A01",
+          "difficulty": "introductory",
+          "family_id": "FAM-A01-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị 3*x*x-5*x-2 tại x = -2.",
+          "reference_answer": "20",
+          "reference_steps": [
+            "20"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "3*x*x-5*x-2",
+            "kind": "evaluate",
+            "variable_value": "-2"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-P-04",
+          "concept_id": "A01",
+          "difficulty": "standard",
+          "family_id": "FAM-A01-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị -2*x*x+7*x+5 tại x = 4.",
+          "reference_answer": "1",
+          "reference_steps": [
+            "1"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-2*x*x+7*x+5",
+            "kind": "evaluate",
+            "variable_value": "4"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-P-05",
+          "concept_id": "A01",
+          "difficulty": "introductory",
+          "family_id": "FAM-A01-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị 9*x-4 tại x = 2/3. Ghi kết quả chính xác.",
+          "reference_answer": "2",
+          "reference_steps": [
+            "2"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "9*x-4",
+            "kind": "evaluate",
+            "variable_value": "2/3"
+          }
+        },
+        {
+          "case_id": "D-A01-M2-ORIG02-P-06",
+          "concept_id": "A01",
+          "difficulty": "standard",
+          "family_id": "FAM-A01-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A01-EVALUATE",
+          "prompt": "Tính giá trị 8*x*x-3*x+2 tại x = -1/4. Ghi kết quả chính xác.",
+          "reference_answer": "13/4",
+          "reference_steps": [
+            "13/4"
+          ],
+          "source_group": "GROUP-A01-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "8*x*x-3*x+2",
+            "kind": "evaluate",
+            "variable_value": "-1/4"
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "A04",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Đơn thức bên ngoài cũng nhân với hằng số trong ngoặc chứ?",
+          "error_id": "D-A04-M2-ORIG02-ERR-01",
+          "family": "Đơn thức x nhân nhị thức",
+          "first_error_step": 1,
+          "hypothesis": "Có thể mới phân phối cho hạng tử đầu.",
+          "problem_id": "D-A04-M2-ORIG02-P-01",
+          "response_steps": [
+            "12*x*x-7"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hệ số ngoài ngoặc và hệ số bậc nhất bên trong mang dấu gì?",
+          "error_id": "D-A04-M2-ORIG02-ERR-02",
+          "family": "Hệ số nhân tam thức",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã bỏ qua hai dấu âm ở tích tạo hạng tử bậc nhất.",
+          "problem_id": "D-A04-M2-ORIG02-P-03",
+          "response_steps": [
+            "-12*x*x-18*x-42"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Có bao nhiêu tích bậc nhất trước khi gộp?",
+          "error_id": "D-A04-M2-ORIG02-ERR-03",
+          "family": "Tích hai nhị thức",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã bỏ một trong hai tích chéo.",
+          "problem_id": "D-A04-M2-ORIG02-P-05",
+          "response_steps": [
+            "6*x*x+27*x-36"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-A04-M2-ORIG02-EX-01",
+          "reference_answer": "14*x*x-63*x",
+          "reference_steps": [
+            "14*x*x-63*x"
+          ],
+          "task": {
+            "expression": "7*x*(2*x-9)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-EX-02",
+          "reference_answer": "-12*x*x-28*x+52",
+          "reference_steps": [
+            "-12*x*x-28*x+52"
+          ],
+          "task": {
+            "expression": "-4*(3*x*x+7*x-13)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-EX-03",
+          "reference_answer": "6*x*x+11*x-35",
+          "reference_steps": [
+            "6*x*x+11*x-35"
+          ],
+          "task": {
+            "expression": "(2*x+7)*(3*x-5)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Nhân từng hạng tử của một thừa số với từng hạng tử của thừa số còn lại. Cuối cùng cộng các hệ số của những hạng tử có cùng phần biến.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Viết riêng các tích trước khi thu gọn."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Nhóm các tích có cùng bậc, đặc biệt kiểm tra dấu của nhóm bậc nhất."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-A04-M2-ORIG02-P-01",
+          "concept_id": "A04",
+          "difficulty": "introductory",
+          "family_id": "FAM-A04-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn 4*x*(3*x-7).",
+          "reference_answer": "12*x*x-28*x",
+          "reference_steps": [
+            "12*x*x-28*x"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "4*x*(3*x-7)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-P-02",
+          "concept_id": "A04",
+          "difficulty": "standard",
+          "family_id": "FAM-A04-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn -3*x*(5*x+2).",
+          "reference_answer": "-15*x*x-6*x",
+          "reference_steps": [
+            "-15*x*x-6*x"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-3*x*(5*x+2)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-P-03",
+          "concept_id": "A04",
+          "difficulty": "introductory",
+          "family_id": "FAM-A04-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn -6*(2*x*x-3*x+7).",
+          "reference_answer": "-12*x*x+18*x-42",
+          "reference_steps": [
+            "-12*x*x+18*x-42"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-6*(2*x*x-3*x+7)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-P-04",
+          "concept_id": "A04",
+          "difficulty": "standard",
+          "family_id": "FAM-A04-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn 5*(4*x*x-6*x-11).",
+          "reference_answer": "20*x*x-30*x-55",
+          "reference_steps": [
+            "20*x*x-30*x-55"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "5*(4*x*x-6*x-11)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-P-05",
+          "concept_id": "A04",
+          "difficulty": "introductory",
+          "family_id": "FAM-A04-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn (3*x-4)*(2*x+9).",
+          "reference_answer": "6*x*x+19*x-36",
+          "reference_steps": [
+            "6*x*x+19*x-36"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(3*x-4)*(2*x+9)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A04-M2-ORIG02-P-06",
+          "concept_id": "A04",
+          "difficulty": "standard",
+          "family_id": "FAM-A04-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A04-PRIMARY",
+          "prompt": "Khai triển rồi thu gọn (5*x+2)*(x-8).",
+          "reference_answer": "5*x*x-38*x-16",
+          "reference_steps": [
+            "5*x*x-38*x-16"
+          ],
+          "source_group": "GROUP-A04-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(5*x+2)*(x-8)",
+            "kind": "polynomial",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "A07",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Nhân hạng tử tự do trong ngoặc với nhân tử chung có khôi phục hằng số đầu không?",
+          "error_id": "D-A07-M2-ORIG02-ERR-01",
+          "family": "Ước chung của hệ số",
+          "first_error_step": 1,
+          "hypothesis": "Có thể chưa chia hạng tử tự do cho nhân tử chung.",
+          "problem_id": "D-A07-M2-ORIG02-P-01",
+          "response_steps": [
+            "6*(3*x+30)"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hạng tử bậc nhất chia cho x còn bậc mấy?",
+          "error_id": "D-A07-M2-ORIG02-ERR-02",
+          "family": "Nhân tử chung x có hệ số 1",
+          "first_error_step": 1,
+          "hypothesis": "Có thể còn giữ một thừa số x sau khi đưa x ra ngoài.",
+          "problem_id": "D-A07-M2-ORIG02-P-03",
+          "response_steps": [
+            "x*(7*x+11*x)"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi chia hạng tử có hệ số âm cho hệ số dương, dấu phần còn lại là gì?",
+          "error_id": "D-A07-M2-ORIG02-ERR-03",
+          "family": "Nhân tử chung hệ số và biến",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đổi dấu một hạng tử khi chia cho nhân tử chung dương.",
+          "problem_id": "D-A07-M2-ORIG02-P-05",
+          "response_steps": [
+            "12*x*(2*x+3)"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-A07-M2-ORIG02-EX-01",
+          "reference_answer": "7*(5*x+7)",
+          "reference_steps": [
+            "7*(5*x+7)"
+          ],
+          "task": {
+            "expression": "35*x+49",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-EX-02",
+          "reference_answer": "x*(17*x+6)",
+          "reference_steps": [
+            "x*(17*x+6)"
+          ],
+          "task": {
+            "expression": "17*x*x+6*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-EX-03",
+          "reference_answer": "8*x*(4*x+7)",
+          "reference_steps": [
+            "8*x*(4*x+7)"
+          ],
+          "task": {
+            "expression": "32*x*x+56*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Tìm ước chung lớn nhất của các hệ số và bậc nhỏ nhất của biến xuất hiện ở mọi hạng tử. Đưa nhân tử chung dương ra ngoài ngoặc, rồi nhân ngược để kiểm tra.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Hạng tử nào có ít thừa số x nhất?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Tìm ước dương chung lớn nhất của các hệ số trước."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Chia từng hạng tử cho nhân tử chung rồi viết kết quả dưới dạng một tích."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-A07-M2-ORIG02-P-01",
+          "concept_id": "A07",
+          "difficulty": "introductory",
+          "family_id": "FAM-A07-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "6*(3*x+5)",
+          "reference_steps": [
+            "6*(3*x+5)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "18*x+30",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-P-02",
+          "concept_id": "A07",
+          "difficulty": "standard",
+          "family_id": "FAM-A07-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của 28*x-44, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "4*(7*x-11)",
+          "reference_steps": [
+            "4*(7*x-11)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "28*x-44",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-P-03",
+          "concept_id": "A07",
+          "difficulty": "introductory",
+          "family_id": "FAM-A07-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của 7*x*x+11*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "x*(7*x+11)",
+          "reference_steps": [
+            "x*(7*x+11)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "7*x*x+11*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-P-04",
+          "concept_id": "A07",
+          "difficulty": "standard",
+          "family_id": "FAM-A07-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của 13*x*x-8*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "x*(13*x-8)",
+          "reference_steps": [
+            "x*(13*x-8)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "13*x*x-8*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-P-05",
+          "concept_id": "A07",
+          "difficulty": "introductory",
+          "family_id": "FAM-A07-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của 24*x*x-36*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "12*x*(2*x-3)",
+          "reference_steps": [
+            "12*x*(2*x-3)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "24*x*x-36*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A07-M2-ORIG02-P-06",
+          "concept_id": "A07",
+          "difficulty": "standard",
+          "family_id": "FAM-A07-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A07-PRIMARY",
+          "prompt": "Đặt nhân tử chung lớn nhất của -27*x*x+45*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+          "reference_answer": "9*x*(-3*x+5)",
+          "reference_steps": [
+            "9*x*(-3*x+5)"
+          ],
+          "source_group": "GROUP-A07-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-27*x*x+45*x",
+            "kind": "factored_polynomial",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "A10",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hai hằng số trong tử mang dấu gì trước khi cộng?",
+          "error_id": "D-A10-M2-ORIG02-ERR-01",
+          "family": "Cộng cùng mẫu và trừ khác mẫu",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã bỏ dấu trừ trong tử số thứ hai.",
+          "problem_id": "D-A10-M2-ORIG02-P-01",
+          "response_steps": [
+            "3*x+7|x-3;{3}"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Trước khi rút gọn, mẫu của phân thức thứ nhất bằng 0 tại đâu?",
+          "error_id": "D-A10-M2-ORIG02-ERR-02",
+          "family": "Nhân và giữ điều kiện sau khi khử",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã mất điều kiện của nhân tử bị khử.",
+          "problem_id": "D-A10-M2-ORIG02-P-03",
+          "response_steps": [
+            "x-2|x-5;{5}"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Tử số của phân thức chia bằng 0 tại giá trị nào?",
+          "error_id": "D-A10-M2-ORIG02-ERR-03",
+          "family": "Chia và loại thêm tử của số chia",
+          "first_error_step": 1,
+          "hypothesis": "Có thể nhớ điều kiện mẫu nhưng quên phân thức chia phải khác 0.",
+          "problem_id": "D-A10-M2-ORIG02-P-05",
+          "response_steps": [
+            "x+3|x-7;{7,-3}"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-A10-M2-ORIG02-EX-01",
+          "reference_answer": "3*x*x+15*x+11|(x-4)*(x+3);{4,-3}",
+          "reference_steps": [
+            "3*x*x+15*x+11|(x-4)*(x+3);{4,-3}"
+          ],
+          "task": {
+            "expression": "-; 4*x+1|x-4; x+2|x+3",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-EX-02",
+          "reference_answer": "x-8|x-2;{-9,2}",
+          "reference_steps": [
+            "x-8|x-2;{-9,2}"
+          ],
+          "task": {
+            "expression": "*; x-8|x+9; x+9|x-2",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-EX-03",
+          "reference_answer": "x-11|x-8;{8,11,-4}",
+          "reference_steps": [
+            "x-11|x-8;{8,11,-4}"
+          ],
+          "task": {
+            "expression": "/; x+4|x-8; x+4|x-11",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Ghi điều kiện xác định của từng phân thức từ đầu. Khi chia, loại thêm các giá trị làm phân thức chia bằng 0. Điều kiện đã ghi vẫn giữ sau khi rút gọn.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Mẫu gốc nào có thể bằng 0?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Chọn quy tắc quy đồng, nhân trực tiếp hoặc nhân nghịch đảo theo phép toán."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Sau khi khử nhân tử, hãy kiểm tra lại tập giá trị bị loại lúc đầu."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-A10-M2-ORIG02-P-01",
+          "concept_id": "A10",
+          "difficulty": "introductory",
+          "family_id": "FAM-A10-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "3*x+3|x-3;{3}",
+          "reference_steps": [
+            "3*x+3|x-3;{3}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "+; 2*x+5|x-3; x-2|x-3",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-P-02",
+          "concept_id": "A10",
+          "difficulty": "standard",
+          "family_id": "FAM-A10-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong -; 2*x+9|x+2; x-4|x-1. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "x*x+9*x-1|(x+2)*(x-1);{-2,1}",
+          "reference_steps": [
+            "x*x+9*x-1|(x+2)*(x-1);{-2,1}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-; 2*x+9|x+2; x-4|x-1",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-P-03",
+          "concept_id": "A10",
+          "difficulty": "introductory",
+          "family_id": "FAM-A10-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Thực hiện phép nhân hai phân thức *; x-2|x+4; x+4|x-5. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "x-2|x-5;{-4,5}",
+          "reference_steps": [
+            "x-2|x-5;{-4,5}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "*; x-2|x+4; x+4|x-5",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-P-04",
+          "concept_id": "A10",
+          "difficulty": "standard",
+          "family_id": "FAM-A10-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Thực hiện phép nhân hai phân thức *; x+6|x-1; x-1|x+8. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "x+6|x+8;{1,-8}",
+          "reference_steps": [
+            "x+6|x+8;{1,-8}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "*; x+6|x-1; x-1|x+8",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-P-05",
+          "concept_id": "A10",
+          "difficulty": "introductory",
+          "family_id": "FAM-A10-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+1|x-7; x+1|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.",
+          "reference_answer": "x+3|x-7;{7,-3,-1}",
+          "reference_steps": [
+            "x+3|x-7;{7,-3,-1}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "/; x+1|x-7; x+1|x+3",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-A10-M2-ORIG02-P-06",
+          "concept_id": "A10",
+          "difficulty": "standard",
+          "family_id": "FAM-A10-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-A10-PRIMARY",
+          "prompt": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x-6|x+2; x-6|x-9. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.",
+          "reference_answer": "x-9|x+2;{-2,9,6}",
+          "reference_steps": [
+            "x-9|x+2;{-2,9,6}"
+          ],
+          "source_group": "GROUP-A10-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "/; x-6|x+2; x-6|x-9",
+            "kind": "rational_operation",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "E03",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Số vở của cả bốn ngăn viết theo x như thế nào?",
+          "error_id": "D-E03-M2-ORIG02-ERR-01",
+          "family": "Số món trong mỗi nhóm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể mới tính một nhóm trong tổng.",
+          "problem_id": "D-E03-M2-ORIG02-P-01",
+          "response_steps": [
+            "x; quyển; positive_integer; x+7=39"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Biểu thức của hàng thứ hai phải lớn hơn hay nhỏ hơn x?",
+          "error_id": "D-E03-M2-ORIG02-ERR-02",
+          "family": "Hai đại lượng hơn kém",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã dịch quan hệ hơn thành phép trừ.",
+          "problem_id": "D-E03-M2-ORIG02-P-03",
+          "response_steps": [
+            "x; cây; positive_integer; x+(x-7)=43"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Lượng trong kho sau mỗi lượt tăng hay giảm?",
+          "error_id": "D-E03-M2-ORIG02-ERR-03",
+          "family": "Ban đầu trừ đi số lượng giống nhau",
+          "first_error_step": 1,
+          "hypothesis": "Có thể dùng phép cộng cho lượng được lấy ra.",
+          "problem_id": "D-E03-M2-ORIG02-P-05",
+          "response_steps": [
+            "x; lọ; positive_integer; 58+4*x=26"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-E03-M2-ORIG02-EX-01",
+          "reference_answer": "x; gói; positive_integer; 3*x+8=29",
+          "reference_steps": [
+            "x; gói; positive_integer; 3*x+8=29"
+          ],
+          "task": {
+            "expression": "groups;3;8;29;gói",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-EX-02",
+          "reference_answer": "x; vé; positive_integer; x+(x+11)=55",
+          "reference_steps": [
+            "x; vé; positive_integer; x+(x+11)=55"
+          ],
+          "task": {
+            "expression": "difference;11;55;vé",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-EX-03",
+          "reference_answer": "x; túi; positive_integer; 67-3*x=40",
+          "reference_steps": [
+            "x; túi; positive_integer; 67-3*x=40"
+          ],
+          "task": {
+            "expression": "remaining;67;3;40;túi",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Đặt x cho đúng đại lượng chưa biết, ghi đơn vị và điều kiện, rồi dịch từng quan hệ trong đề thành biểu thức. Hai vế của phương trình phải biểu diễn cùng một đại lượng.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Đại lượng nào chưa biết và có đơn vị gì?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Viết biểu thức cho từng nhóm cùng đơn vị."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Đặt tổng các phần bằng tổng đã cho rồi kiểm tra điều kiện của x."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-E03-M2-ORIG02-P-01",
+          "concept_id": "E03",
+          "difficulty": "introductory",
+          "family_id": "FAM-E03-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; quyển; positive_integer; 4*x+7=39",
+          "reference_steps": [
+            "x; quyển; positive_integer; 4*x+7=39"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "groups;4;7;39;quyển",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-P-02",
+          "concept_id": "E03",
+          "difficulty": "standard",
+          "family_id": "FAM-E03-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Sáu hộp có cùng số bút, thêm 5 bút rời thì có tổng 59 bút. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; bút; positive_integer; 6*x+5=59",
+          "reference_steps": [
+            "x; bút; positive_integer; 6*x+5=59"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "groups;6;5;59;bút",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-P-03",
+          "concept_id": "E03",
+          "difficulty": "introductory",
+          "family_id": "FAM-E03-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Hai hàng có tổng 43 cây. Hàng thứ hai hơn hàng thứ nhất 7 cây. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; cây; positive_integer; x+(x+7)=43",
+          "reference_steps": [
+            "x; cây; positive_integer; x+(x+7)=43"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "difference;7;43;cây",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-P-04",
+          "concept_id": "E03",
+          "difficulty": "standard",
+          "family_id": "FAM-E03-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Hai bạn có tổng 61 nhãn. Bạn thứ hai nhiều hơn bạn thứ nhất 9 nhãn. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; nhãn; positive_integer; x+(x+9)=61",
+          "reference_steps": [
+            "x; nhãn; positive_integer; x+(x+9)=61"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "difference;9;61;nhãn",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-P-05",
+          "concept_id": "E03",
+          "difficulty": "introductory",
+          "family_id": "FAM-E03-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Kho có 58 lọ, lấy đều trong 4 lượt thì còn 26 lọ. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; lọ; positive_integer; 58-4*x=26",
+          "reference_steps": [
+            "x; lọ; positive_integer; 58-4*x=26"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "remaining;58;4;26;lọ",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E03-M2-ORIG02-P-06",
+          "concept_id": "E03",
+          "difficulty": "standard",
+          "family_id": "FAM-E03-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E03-PRIMARY",
+          "prompt": "Có 73 thẻ, phát cùng số thẻ ở mỗi lượt trong 5 lượt thì còn 38 thẻ. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+          "reference_answer": "x; thẻ; positive_integer; 73-5*x=38",
+          "reference_steps": [
+            "x; thẻ; positive_integer; 73-5*x=38"
+          ],
+          "source_group": "GROUP-E03-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "remaining;73;5;38;thẻ",
+            "kind": "word_equation",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "E06",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Tử số của công thức nghiệm bắt đầu bằng b hay −b?",
+          "error_id": "D-E06-M2-ORIG02-ERR-01",
+          "family": "Biệt thức dương, căn hữu tỉ hoặc vô tỉ",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã dùng b thay cho −b trong công thức nghiệm.",
+          "problem_id": "D-E06-M2-ORIG02-P-01",
+          "response_steps": [
+            "25;{-1/2,-3}"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi biệt thức bằng 0, mẫu của −b chia cho bao nhiêu?",
+          "error_id": "D-E06-M2-ORIG02-ERR-02",
+          "family": "Biệt thức bằng 0",
+          "first_error_step": 1,
+          "hypothesis": "Có thể thiếu hệ số 2 ở mẫu nghiệm kép.",
+          "problem_id": "D-E06-M2-ORIG02-P-03",
+          "response_steps": [
+            "0;{-10/3}"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Căn bậc hai của biệt thức âm có giá trị thực không?",
+          "error_id": "D-E06-M2-ORIG02-ERR-03",
+          "family": "Biệt thức âm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể dùng công thức nghiệm kép cho biệt thức âm.",
+          "problem_id": "D-E06-M2-ORIG02-P-05",
+          "response_steps": [
+            "-56;{1/3}"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-E06-M2-ORIG02-EX-01",
+          "reference_answer": "32;{-2*sqrt(2),2*sqrt(2)}",
+          "reference_steps": [
+            "32;{-2*sqrt(2),2*sqrt(2)}"
+          ],
+          "task": {
+            "expression": "x*x-8",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-EX-02",
+          "reference_answer": "0;{-2/5}",
+          "reference_steps": [
+            "0;{-2/5}"
+          ],
+          "task": {
+            "expression": "25*x*x+20*x+4",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-EX-03",
+          "reference_answer": "-44;{}",
+          "reference_steps": [
+            "-44;{}"
+          ],
+          "task": {
+            "expression": "5*x*x+4*x+3",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Với ax²+bx+c=0 và a khác 0, biệt thức b²−4ac quyết định số nghiệm thực. Khi có nghiệm, thay các hệ số đúng dấu vào công thức nghiệm.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Xác định a, b, c và giữ dấu của từng hệ số."
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Tính biệt thức trước rồi xác định có bao nhiêu nghiệm thực."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Nếu có nghiệm, kiểm tra mẫu 2a và thử thay lại phương trình."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-E06-M2-ORIG02-P-01",
+          "concept_id": "E06",
+          "difficulty": "introductory",
+          "family_id": "FAM-E06-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+          "reference_answer": "25;{1/2,3}",
+          "reference_steps": [
+            "25;{1/2,3}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x*x-7*x+3",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-P-02",
+          "concept_id": "E06",
+          "difficulty": "standard",
+          "family_id": "FAM-E06-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 2*x*x+2*x-1 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+          "reference_answer": "12;{(-1-sqrt(3))/2,(-1+sqrt(3))/2}",
+          "reference_steps": [
+            "12;{(-1-sqrt(3))/2,(-1+sqrt(3))/2}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x*x+2*x-1",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-P-03",
+          "concept_id": "E06",
+          "difficulty": "introductory",
+          "family_id": "FAM-E06-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 9*x*x+30*x+25 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "0;{-5/3}",
+          "reference_steps": [
+            "0;{-5/3}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "9*x*x+30*x+25",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-P-04",
+          "concept_id": "E06",
+          "difficulty": "standard",
+          "family_id": "FAM-E06-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 16*x*x-56*x+49 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "0;{7/4}",
+          "reference_steps": [
+            "0;{7/4}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "16*x*x-56*x+49",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-P-05",
+          "concept_id": "E06",
+          "difficulty": "introductory",
+          "family_id": "FAM-E06-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 3*x*x-2*x+5 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "-56;{}",
+          "reference_steps": [
+            "-56;{}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "3*x*x-2*x+5",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E06-M2-ORIG02-P-06",
+          "concept_id": "E06",
+          "difficulty": "standard",
+          "family_id": "FAM-E06-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E06-PRIMARY",
+          "prompt": "Tính biệt thức rồi giải 2*x*x+6*x+7 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "-20;{}",
+          "reference_steps": [
+            "-20;{}"
+          ],
+          "source_group": "GROUP-E06-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x*x+6*x+7",
+            "kind": "quadratic_roots",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "E09",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Thử cặp nghiệm vào phương trình có hệ số y âm được không?",
+          "error_id": "D-E09-M2-ORIG02-ERR-01",
+          "family": "Cộng trực tiếp",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đổi dấu y sai khi thế ngược.",
+          "problem_id": "D-E09-M2-ORIG02-P-01",
+          "response_steps": [
+            "1,1;(3,-2)"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi trừ cả hàng thứ hai, hệ số của y trong hàng đó đổi dấu thế nào?",
+          "error_id": "D-E09-M2-ORIG02-ERR-02",
+          "family": "Trừ khi hệ số bằng nhau",
+          "first_error_step": 1,
+          "hypothesis": "Có thể trừ sai phần hệ số y hoặc vế phải.",
+          "problem_id": "D-E09-M2-ORIG02-P-03",
+          "response_steps": [
+            "1,-1;(2,3)"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi nhân một phương trình, những hạng tử và vế nào cùng đổi?",
+          "error_id": "D-E09-M2-ORIG02-ERR-03",
+          "family": "Nhân hệ số trước khi khử",
+          "first_error_step": 1,
+          "hypothesis": "Có thể chỉ nhân hạng tử định khử mà quên nhân vế phải.",
+          "problem_id": "D-E09-M2-ORIG02-P-05",
+          "response_steps": [
+            "3,-2;(2,2)"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-E09-M2-ORIG02-EX-01",
+          "reference_answer": "1,1;(4,-3)",
+          "reference_steps": [
+            "1,1;(4,-3)"
+          ],
+          "task": {
+            "expression": "5*x+1*y=17;-2*x-1*y=-5",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-EX-02",
+          "reference_answer": "1,-1;(-1,2)",
+          "reference_steps": [
+            "1,-1;(-1,2)"
+          ],
+          "task": {
+            "expression": "2*x-3*y=-8;2*x+5*y=8",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-EX-03",
+          "reference_answer": "5,2;(3,1)",
+          "reference_steps": [
+            "5,2;(3,1)"
+          ],
+          "task": {
+            "expression": "3*x+2*y=11;4*x-5*y=7",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Nhân từng phương trình với một số khác 0 để tạo hệ số đối nhau. Cộng hai hàng để khử một ẩn, rồi tìm ẩn còn lại và kiểm tra cả hai phương trình.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Chọn hai hệ số nhân sao cho tổng hệ số của một ẩn bằng 0."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Giải hàng thu được, thế lại để tìm ẩn còn lại, rồi kiểm tra nghiệm trên cả hai hàng gốc."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-E09-M2-ORIG02-P-01",
+          "concept_id": "E09",
+          "difficulty": "introductory",
+          "family_id": "FAM-E09-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "1,1;(3,2)",
+          "reference_steps": [
+            "1,1;(3,2)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x+1*y=8;1*x-1*y=1",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-P-02",
+          "concept_id": "E09",
+          "difficulty": "standard",
+          "family_id": "FAM-E09-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 3*x-2*y=0;4*x+2*y=14 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "1,1;(2,3)",
+          "reference_steps": [
+            "1,1;(2,3)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "3*x-2*y=0;4*x+2*y=14",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-P-03",
+          "concept_id": "E09",
+          "difficulty": "introductory",
+          "family_id": "FAM-E09-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 3*x+2*y=14;3*x-1*y=2 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.",
+          "reference_answer": "1,-1;(2,4)",
+          "reference_steps": [
+            "1,-1;(2,4)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "3*x+2*y=14;3*x-1*y=2",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-P-04",
+          "concept_id": "E09",
+          "difficulty": "standard",
+          "family_id": "FAM-E09-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 4*x+1*y=10;4*x+3*y=6 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.",
+          "reference_answer": "1,-1;(3,-2)",
+          "reference_steps": [
+            "1,-1;(3,-2)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "4*x+1*y=10;4*x+3*y=6",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-P-05",
+          "concept_id": "E09",
+          "difficulty": "introductory",
+          "family_id": "FAM-E09-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 2*x+3*y=8;3*x+4*y=11 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "3,-2;(1,2)",
+          "reference_steps": [
+            "3,-2;(1,2)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x+3*y=8;3*x+4*y=11",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-E09-M2-ORIG02-P-06",
+          "concept_id": "E09",
+          "difficulty": "standard",
+          "family_id": "FAM-E09-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-E09-PRIMARY",
+          "prompt": "Giải hệ 2*x-3*y=7;5*x+1*y=9 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+          "reference_answer": "1,3;(2,-1)",
+          "reference_steps": [
+            "1,3;(2,-1)"
+          ],
+          "source_group": "GROUP-E09-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*x-3*y=7;5*x+1*y=9",
+            "kind": "linear_elimination",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "F02",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Thế giá trị bị loại vào mẫu thì mẫu có bằng 0 không?",
+          "error_id": "D-F02-M2-ORIG02-ERR-01",
+          "family": "Mẫu bậc nhất",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đổi dấu sai khi giải điều kiện mẫu bằng 0.",
+          "problem_id": "D-F02-M2-ORIG02-P-01",
+          "response_steps": [
+            "R\\{-19}"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Một giá trị x lớn hơn đầu mút làm biểu thức dưới căn dương hay âm?",
+          "error_id": "D-F02-M2-ORIG02-ERR-02",
+          "family": "Căn bậc hai với hệ số x dương",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đổi chiều khi chia cho hệ số dương.",
+          "problem_id": "D-F02-M2-ORIG02-P-03",
+          "response_steps": [
+            "(-inf,-7]"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi chia hai vế cho hệ số của x trong bài này, chiều thay đổi thế nào?",
+          "error_id": "D-F02-M2-ORIG02-ERR-03",
+          "family": "Căn bậc hai với hệ số x âm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể quên đổi chiều khi chia bất phương trình cho số âm.",
+          "problem_id": "D-F02-M2-ORIG02-P-05",
+          "response_steps": [
+            "[31/4,+inf)"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-F02-M2-ORIG02-EX-01",
+          "reference_answer": "R\\{16/5}",
+          "reference_steps": [
+            "R\\{16/5}"
+          ],
+          "task": {
+            "expression": "den; 5*x-16",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-EX-02",
+          "reference_answer": "[-17/8,+inf)",
+          "reference_steps": [
+            "[-17/8,+inf)"
+          ],
+          "task": {
+            "expression": "sqrt; 8*x+17",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-EX-03",
+          "reference_answer": "(-inf,23/6]",
+          "reference_steps": [
+            "(-inf,23/6]"
+          ],
+          "task": {
+            "expression": "sqrt; 23-6*x",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Mẫu số khác 0 và biểu thức dưới căn bậc hai không âm. Tập xác định là tập giá trị thực đáp ứng mọi điều kiện tại vị trí tương ứng.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Viết điều kiện mẫu khác 0 hoặc biểu thức dưới căn không âm."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Kiểm tra đầu mút có được lấy hay loại sau khi giải điều kiện."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-F02-M2-ORIG02-P-01",
+          "concept_id": "F02",
+          "difficulty": "introductory",
+          "family_id": "FAM-F02-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+          "reference_answer": "R\\{19}",
+          "reference_steps": [
+            "R\\{19}"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "den; x-19",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-P-02",
+          "concept_id": "F02",
+          "difficulty": "standard",
+          "family_id": "FAM-F02-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=1/(3x+10). Viết R∖{giá trị loại}.",
+          "reference_answer": "R\\{-10/3}",
+          "reference_steps": [
+            "R\\{-10/3}"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "den; 3*x+10",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-P-03",
+          "concept_id": "F02",
+          "difficulty": "introductory",
+          "family_id": "FAM-F02-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=√(2x+14). Viết dưới dạng khoảng.",
+          "reference_answer": "[-7,+inf)",
+          "reference_steps": [
+            "[-7,+inf)"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "sqrt; 2*x+14",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-P-04",
+          "concept_id": "F02",
+          "difficulty": "standard",
+          "family_id": "FAM-F02-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=√(5x−18). Viết dưới dạng khoảng.",
+          "reference_answer": "[18/5,+inf)",
+          "reference_steps": [
+            "[18/5,+inf)"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "sqrt; 5*x-18",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-P-05",
+          "concept_id": "F02",
+          "difficulty": "introductory",
+          "family_id": "FAM-F02-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=√(31−4x). Viết dưới dạng khoảng.",
+          "reference_answer": "(-inf,31/4]",
+          "reference_steps": [
+            "(-inf,31/4]"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "sqrt; 31-4*x",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F02-M2-ORIG02-P-06",
+          "concept_id": "F02",
+          "difficulty": "standard",
+          "family_id": "FAM-F02-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F02-PRIMARY",
+          "prompt": "Tìm tập xác định thực của f(x)=√(−9−5x). Viết dưới dạng khoảng.",
+          "reference_answer": "(-inf,-9/5]",
+          "reference_steps": [
+            "(-inf,-9/5]"
+          ],
+          "source_group": "GROUP-F02-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "sqrt; -9-5*x",
+            "kind": "function_domain",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "F05",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Tung độ đỉnh tìm bằng cách thay giá trị x nào vào hàm?",
+          "error_id": "D-F05-M2-ORIG02-ERR-01",
+          "family": "Tọa độ đỉnh từ dạng khai triển và dạng hoàn thành bình phương",
+          "first_error_step": 1,
+          "hypothesis": "Có thể dùng hằng số làm tung độ đỉnh mà chưa thế hoành độ đỉnh.",
+          "problem_id": "D-F05-M2-ORIG02-P-01",
+          "response_steps": [
+            "(3,7)"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Mẫu khi tính hoành độ đỉnh là a hay 2a?",
+          "error_id": "D-F05-M2-ORIG02-ERR-02",
+          "family": "Đường thẳng đứng với a dương",
+          "first_error_step": 1,
+          "hypothesis": "Có thể thiếu hệ số 2 trong công thức hoành độ đỉnh.",
+          "problem_id": "D-F05-M2-ORIG02-P-03",
+          "response_steps": [
+            "x=3"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hệ số a trong mẫu mang dấu gì?",
+          "error_id": "D-F05-M2-ORIG02-ERR-03",
+          "family": "Đường thẳng đứng với a âm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã lấy giá trị tuyệt đối của hệ số bậc hai.",
+          "problem_id": "D-F05-M2-ORIG02-P-05",
+          "response_steps": [
+            "x=5/2"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-F05-M2-ORIG02-EX-01",
+          "reference_answer": "(5,19)",
+          "reference_steps": [
+            "(5,19)"
+          ],
+          "task": {
+            "expression": "-2*(x-5)*(x-5)+19",
+            "kind": "quadratic_vertex",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-EX-02",
+          "reference_answer": "x=5/4",
+          "reference_steps": [
+            "x=5/4"
+          ],
+          "task": {
+            "expression": "6*x*x-15*x-7",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-EX-03",
+          "reference_answer": "x=3",
+          "reference_steps": [
+            "x=3"
+          ],
+          "task": {
+            "expression": "-4*x*x+24*x+13",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Parabol y = ax² + bx + c có hoành độ đỉnh −b/(2a). Từ dạng y = a(x − h)² + k có thể đọc ngay đỉnh (h,k). Trục đối xứng là đường thẳng đứng qua đỉnh.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Với dạng hoàn thành bình phương, tìm giá trị x làm phần bình phương bằng 0. Với dạng khai triển, dùng −b/(2a)."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Nếu cần tọa độ đỉnh, tính thêm giá trị hàm tại hoành độ đã tìm. Nếu cần trục, viết phương trình đường thẳng đứng đi qua hoành độ đó."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-F05-M2-ORIG02-P-01",
+          "concept_id": "F05",
+          "difficulty": "introductory",
+          "family_id": "FAM-F05-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ).",
+          "reference_answer": "(3,-20)",
+          "reference_steps": [
+            "(3,-20)"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "3*x*x-18*x+7",
+            "kind": "quadratic_vertex",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-P-02",
+          "concept_id": "F05",
+          "difficulty": "standard",
+          "family_id": "FAM-F05-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm tọa độ đỉnh của y = 2*(x+3)*(x+3)-27. Nộp cặp (hoành độ,tung độ).",
+          "reference_answer": "(-3,-27)",
+          "reference_steps": [
+            "(-3,-27)"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2*(x+3)*(x+3)-27",
+            "kind": "quadratic_vertex",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-P-03",
+          "concept_id": "F05",
+          "difficulty": "introductory",
+          "family_id": "FAM-F05-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm phương trình trục đối xứng của y = 4*x*x-12*x+11. Nộp phương trình dạng x = số.",
+          "reference_answer": "x=3/2",
+          "reference_steps": [
+            "x=3/2"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "4*x*x-12*x+11",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-P-04",
+          "concept_id": "F05",
+          "difficulty": "standard",
+          "family_id": "FAM-F05-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm phương trình trục đối xứng của y = 5*x*x+30*x+17. Nộp phương trình dạng x = số.",
+          "reference_answer": "x=-3",
+          "reference_steps": [
+            "x=-3"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "5*x*x+30*x+17",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-P-05",
+          "concept_id": "F05",
+          "difficulty": "introductory",
+          "family_id": "FAM-F05-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm phương trình trục đối xứng của y = -3*x*x-15*x+8. Nộp phương trình dạng x = số.",
+          "reference_answer": "x=-5/2",
+          "reference_steps": [
+            "x=-5/2"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-3*x*x-15*x+8",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F05-M2-ORIG02-P-06",
+          "concept_id": "F05",
+          "difficulty": "standard",
+          "family_id": "FAM-F05-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F05-VERTEX",
+          "prompt": "Tìm phương trình trục đối xứng của y = -7*x*x+21*x+4. Nộp phương trình dạng x = số.",
+          "reference_answer": "x=3/2",
+          "reference_steps": [
+            "x=3/2"
+          ],
+          "source_group": "GROUP-F05-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-7*x*x+21*x+4",
+            "kind": "quadratic_axis",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "F08",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Trong tích cùng cơ số, số mũ được cộng hay trừ?",
+          "error_id": "D-F08-M2-ORIG02-ERR-01",
+          "family": "Tích lũy thừa cùng cơ số",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã trừ các số mũ trong phép nhân.",
+          "problem_id": "D-F08-M2-ORIG02-P-01",
+          "response_steps": [
+            "3^-7=1/2187;R"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Lấy số mũ ở tử trừ số mũ ở mẫu hay ngược lại?",
+          "error_id": "D-F08-M2-ORIG02-ERR-02",
+          "family": "Thương lũy thừa cùng cơ số",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đảo thứ tự trừ số mũ của tử và mẫu.",
+          "problem_id": "D-F08-M2-ORIG02-P-03",
+          "response_steps": [
+            "5^2=25;R"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi lấy lũy thừa của một lũy thừa, hai số mũ được cộng hay nhân?",
+          "error_id": "D-F08-M2-ORIG02-ERR-03",
+          "family": "Lũy thừa của lũy thừa và kiểm tra cơ số",
+          "first_error_step": 1,
+          "hypothesis": "Có thể cộng hai số mũ thay vì nhân.",
+          "problem_id": "D-F08-M2-ORIG02-P-05",
+          "response_steps": [
+            "2^1=2;R"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-F08-M2-ORIG02-EX-01",
+          "reference_answer": "5^2=25;R",
+          "reference_steps": [
+            "5^2=25;R"
+          ],
+          "task": {
+            "expression": "function;product;5;-1;3",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-EX-02",
+          "reference_answer": "2^-3=1/8;R",
+          "reference_steps": [
+            "2^-3=1/8;R"
+          ],
+          "task": {
+            "expression": "function;quotient;2;0;3",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-EX-03",
+          "reference_answer": "1/2^-4=16;R",
+          "reference_steps": [
+            "1/2^-4=16;R"
+          ],
+          "task": {
+            "expression": "function;power;1/2;2;-2",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Hàm số mũ y = a^x có cơ số a dương, khác 1 và tập xác định là tập số thực. Với một cơ số hợp lệ, cộng số mũ khi nhân, trừ số mũ khi chia và nhân các số mũ khi lấy lũy thừa của một lũy thừa.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Cơ số có dương và khác 1 không?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Bài này thuộc tích, thương, lũy thừa của lũy thừa hay kiểm tra điều kiện cơ số?"
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Với cơ số hợp lệ, biểu thức a^x xác định với mọi x thực. Kiểm tra số mũ âm bằng quy tắc nghịch đảo."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-F08-M2-ORIG02-P-01",
+          "concept_id": "F08",
+          "difficulty": "introductory",
+          "family_id": "FAM-F08-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "reference_answer": "3^3=27;R",
+          "reference_steps": [
+            "3^3=27;R"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "function;product;3;-2;5",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-P-02",
+          "concept_id": "F08",
+          "difficulty": "standard",
+          "family_id": "FAM-F08-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Rút gọn 2⁻⁵ · 2³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "reference_answer": "2^-2=1/4;R",
+          "reference_steps": [
+            "2^-2=1/4;R"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "function;product;2;-5;3",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-P-03",
+          "concept_id": "F08",
+          "difficulty": "introductory",
+          "family_id": "FAM-F08-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Rút gọn 5¹ / 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "reference_answer": "5^-2=1/25;R",
+          "reference_steps": [
+            "5^-2=1/25;R"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "function;quotient;5;1;3",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-P-04",
+          "concept_id": "F08",
+          "difficulty": "standard",
+          "family_id": "FAM-F08-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Rút gọn 3² / 3⁻² thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "reference_answer": "3^4=81;R",
+          "reference_steps": [
+            "3^4=81;R"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "function;quotient;3;2;-2",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-P-05",
+          "concept_id": "F08",
+          "difficulty": "introductory",
+          "family_id": "FAM-F08-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Rút gọn (2⁻²)³ và ghi tập xác định của hàm y = 2^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+          "reference_answer": "2^-6=1/64;R",
+          "reference_steps": [
+            "2^-6=1/64;R"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "function;power;2;-2;3",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-F08-M2-ORIG02-P-06",
+          "concept_id": "F08",
+          "difficulty": "standard",
+          "family_id": "FAM-F08-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-F08-PRIMARY",
+          "prompt": "Xét y = 1^x theo định nghĩa hàm số mũ đang học. Ghi tập xác định nếu là hàm số mũ, hoặc ghi ‘không phải hàm số mũ’.",
+          "reference_answer": "khong-phai-ham-mu",
+          "reference_steps": [
+            "khong-phai-ham-mu"
+          ],
+          "source_group": "GROUP-F08-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "base;1",
+            "kind": "exponent_numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "N02",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hai thừa số cùng dấu thì tích mang dấu gì?",
+          "error_id": "D-N02-M2-ORIG02-ERR-01",
+          "family": "Tích hai số âm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể giữ dấu âm khi cả hai thừa số đều âm.",
+          "problem_id": "D-N02-M2-ORIG02-P-01",
+          "response_steps": [
+            "-52"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Số bị chia và số chia có cùng dấu không?",
+          "error_id": "D-N02-M2-ORIG02-ERR-02",
+          "family": "Thương trái dấu",
+          "first_error_step": 1,
+          "hypothesis": "Có thể chỉ chia các giá trị tuyệt đối rồi quên dấu.",
+          "problem_id": "D-N02-M2-ORIG02-P-03",
+          "response_steps": [
+            "13"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Kết quả trong ngoặc và số chia có dấu như thế nào?",
+          "error_id": "D-N02-M2-ORIG02-ERR-03",
+          "family": "Phối hợp nhân và chia",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã chọn sai dấu ở bước chia sau khi tính tích âm.",
+          "problem_id": "D-N02-M2-ORIG02-P-05",
+          "response_steps": [
+            "-18"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-N02-M2-ORIG02-EX-01",
+          "reference_answer": "80",
+          "reference_steps": [
+            "80"
+          ],
+          "task": {
+            "expression": "(-16)*(-5)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-EX-02",
+          "reference_answer": "-14",
+          "reference_steps": [
+            "-14"
+          ],
+          "task": {
+            "expression": "126/(-9)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-EX-03",
+          "reference_answer": "32",
+          "reference_steps": [
+            "32"
+          ],
+          "task": {
+            "expression": "((-36)/9)*(-8)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Tách tính dấu khỏi tính giá trị tuyệt đối. Hai số cùng dấu cho tích hoặc thương dương, hai số trái dấu cho kết quả âm. Phép chia cần số chia khác 0.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Tạm bỏ dấu, tính với các giá trị tuyệt đối rồi xác định dấu."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Nếu có nhiều phép tính, em có thể ra dấu và giá trị cho từng kết quả trong ngoặc trước."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-N02-M2-ORIG02-P-01",
+          "concept_id": "N02",
+          "difficulty": "introductory",
+          "family_id": "FAM-N02-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính (-13)*(-4) và giải thích dấu của tích.",
+          "reference_answer": "52",
+          "reference_steps": [
+            "52"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(-13)*(-4)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-P-02",
+          "concept_id": "N02",
+          "difficulty": "standard",
+          "family_id": "FAM-N02-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính (-17)*(-3) và giải thích dấu của tích.",
+          "reference_answer": "51",
+          "reference_steps": [
+            "51"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(-17)*(-3)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-P-03",
+          "concept_id": "N02",
+          "difficulty": "introductory",
+          "family_id": "FAM-N02-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính 104/(-8) và giải thích dấu của thương.",
+          "reference_answer": "-13",
+          "reference_steps": [
+            "-13"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "104/(-8)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-P-04",
+          "concept_id": "N02",
+          "difficulty": "standard",
+          "family_id": "FAM-N02-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính (-119)/7 và giải thích dấu của thương.",
+          "reference_answer": "-17",
+          "reference_steps": [
+            "-17"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(-119)/7",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-P-05",
+          "concept_id": "N02",
+          "difficulty": "introductory",
+          "family_id": "FAM-N02-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính ((-9)*6)/(-3), nêu kết quả trong ngoặc trước.",
+          "reference_answer": "18",
+          "reference_steps": [
+            "18"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "((-9)*6)/(-3)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N02-M2-ORIG02-P-06",
+          "concept_id": "N02",
+          "difficulty": "standard",
+          "family_id": "FAM-N02-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N02-SIGNED-MUL",
+          "prompt": "Tính (84/(-7))*(-2), nêu kết quả trong ngoặc trước.",
+          "reference_answer": "24",
+          "reference_steps": [
+            "24"
+          ],
+          "source_group": "GROUP-N02-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(84/(-7))*(-2)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "N05",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Tử nào bé hơn sau khi cả hai đã có cùng mẫu?",
+          "error_id": "D-N05-M2-ORIG02-ERR-01",
+          "family": "Nhỏ hơn sau quy đồng",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đảo dấu so sánh khi các tử gần nhau.",
+          "problem_id": "D-N05-M2-ORIG02-P-01",
+          "response_steps": [
+            "45/126 > 49/126"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Trên trục số, tử âm nào nằm gần 0 hơn?",
+          "error_id": "D-N05-M2-ORIG02-ERR-02",
+          "family": "So sánh hai phân số âm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể so sánh các giá trị tuyệt đối như đối với hai số dương.",
+          "problem_id": "D-N05-M2-ORIG02-P-03",
+          "response_steps": [
+            "-48/176 < -55/176"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hai tử mới có bằng nhau không?",
+          "error_id": "D-N05-M2-ORIG02-ERR-03",
+          "family": "Hai biểu diễn tương đương",
+          "first_error_step": 1,
+          "hypothesis": "Có thể vẫn so sánh các tử ban đầu dù hai phân số đã quy đồng.",
+          "problem_id": "D-N05-M2-ORIG02-P-05",
+          "response_steps": [
+            "45/105 < 45/105"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-N05-M2-ORIG02-EX-01",
+          "reference_answer": "24/90 < 25/90",
+          "reference_steps": [
+            "24/90 < 25/90"
+          ],
+          "task": {
+            "expression": "4/15 ? 5/18",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-EX-02",
+          "reference_answer": "-85/221 > -91/221",
+          "reference_steps": [
+            "-85/221 > -91/221"
+          ],
+          "task": {
+            "expression": "-5/13 ? -7/17",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-EX-03",
+          "reference_answer": "80/140 = 80/140",
+          "reference_steps": [
+            "80/140 = 80/140"
+          ],
+          "task": {
+            "expression": "16/28 ? 20/35",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Quy đồng bằng cách nhân cả tử và mẫu của mỗi phân số với cùng một số dương. Khi mẫu đã bằng nhau, dấu so sánh được quyết định bởi hai tử số.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Hai mẫu có thể cùng chia hết cho số nào?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Nhân cả tử lẫn mẫu để mỗi phân số có mẫu chung."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Sau khi có hai phân số cùng mẫu dương, hãy đặt dấu theo thứ tự các tử số."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-N05-M2-ORIG02-P-01",
+          "concept_id": "N05",
+          "difficulty": "introductory",
+          "family_id": "FAM-N05-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "45/126 < 49/126",
+          "reference_steps": [
+            "45/126 < 49/126"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "5/14 ? 7/18",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-P-02",
+          "concept_id": "N05",
+          "difficulty": "standard",
+          "family_id": "FAM-N05-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong 11/24 ? 10/21. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "77/168 < 80/168",
+          "reference_steps": [
+            "77/168 < 80/168"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "11/24 ? 10/21",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-P-03",
+          "concept_id": "N05",
+          "difficulty": "introductory",
+          "family_id": "FAM-N05-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong -3/11 ? -5/16. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "-48/176 > -55/176",
+          "reference_steps": [
+            "-48/176 > -55/176"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-3/11 ? -5/16",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-P-04",
+          "concept_id": "N05",
+          "difficulty": "standard",
+          "family_id": "FAM-N05-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong -7/18 ? -11/24. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "-28/72 > -33/72",
+          "reference_steps": [
+            "-28/72 > -33/72"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-7/18 ? -11/24",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-P-05",
+          "concept_id": "N05",
+          "difficulty": "introductory",
+          "family_id": "FAM-N05-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong 9/21 ? 15/35. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "45/105 = 45/105",
+          "reference_steps": [
+            "45/105 = 45/105"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "9/21 ? 15/35",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N05-M2-ORIG02-P-06",
+          "concept_id": "N05",
+          "difficulty": "standard",
+          "family_id": "FAM-N05-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N05-PRIMARY",
+          "prompt": "Quy đồng rồi thay dấu hỏi trong 14/22 ? 21/33. Ghi cả hai phân số có cùng mẫu.",
+          "reference_answer": "42/66 = 42/66",
+          "reference_steps": [
+            "42/66 = 42/66"
+          ],
+          "source_group": "GROUP-N05-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "14/22 ? 21/33",
+            "kind": "fraction_compare",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    },
+    {
+      "concept_id": "N08",
+      "content_version": "0.4.0-member2-review",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Thương gần 0 hay gần một phần ba?",
+          "error_id": "D-N08-M2-ORIG02-ERR-01",
+          "family": "Phân số thành số thập phân",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đặt lệch dấu chấm ở thương.",
+          "problem_id": "D-N08-M2-ORIG02-P-01",
+          "response_steps": [
+            "0.0325"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Phần trăm biểu diễn giá trị trên bao nhiêu phần?",
+          "error_id": "D-N08-M2-ORIG02-ERR-02",
+          "family": "Thập phân thành phần trăm",
+          "first_error_step": 1,
+          "hypothesis": "Có thể chỉ nhân 10 khi đổi sang phần trăm.",
+          "problem_id": "D-N08-M2-ORIG02-P-03",
+          "response_steps": [
+            "1.84%"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Em viết phần trăm này trên mẫu 100 như thế nào?",
+          "error_id": "D-N08-M2-ORIG02-ERR-03",
+          "family": "Phần trăm thành phân số",
+          "first_error_step": 1,
+          "hypothesis": "Có thể chia tử và mẫu cho hai số khác nhau khi rút gọn.",
+          "problem_id": "D-N08-M2-ORIG02-P-05",
+          "response_steps": [
+            "1/8"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-N08-M2-ORIG02-EX-01",
+          "reference_answer": "0.55",
+          "reference_steps": [
+            "0.55"
+          ],
+          "task": {
+            "expression": "11/20 -> decimal",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-EX-02",
+          "reference_answer": "31.5%",
+          "reference_steps": [
+            "31.5%"
+          ],
+          "task": {
+            "expression": "0.315 -> percent",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-EX-03",
+          "reference_answer": "3/8",
+          "reference_steps": [
+            "3/8"
+          ],
+          "task": {
+            "expression": "37.5% -> fraction",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Mỗi cách viết chỉ thay đổi biểu diễn của cùng một giá trị. Chia tử cho mẫu để có số thập phân hữu hạn, và hiểu phần trăm là số phần trên một trăm.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Dạng đích là phân số, thập phân hay phần trăm?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Viết giá trị dưới dạng phân số hoặc số trên một trăm trước."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Sau khi đổi, kiểm tra lại giá trị bằng cách chuyển ngược về dạng ban đầu."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-N08-M2-ORIG02-P-01",
+          "concept_id": "N08",
+          "difficulty": "introductory",
+          "family_id": "FAM-N08-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+          "reference_answer": "0.325",
+          "reference_steps": [
+            "0.325"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "13/40 -> decimal",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-P-02",
+          "concept_id": "N08",
+          "difficulty": "standard",
+          "family_id": "FAM-N08-M2-ORIG02-1",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 19/80 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+          "reference_answer": "0.2375",
+          "reference_steps": [
+            "0.2375"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "19/80 -> decimal",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-P-03",
+          "concept_id": "N08",
+          "difficulty": "introductory",
+          "family_id": "FAM-N08-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 0,184 thành phần trăm. Ghi kèm ký hiệu %.",
+          "reference_answer": "18.4%",
+          "reference_steps": [
+            "18.4%"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "0.184 -> percent",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-P-04",
+          "concept_id": "N08",
+          "difficulty": "standard",
+          "family_id": "FAM-N08-M2-ORIG02-2",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 1,087 thành phần trăm. Ghi kèm ký hiệu %.",
+          "reference_answer": "108.7%",
+          "reference_steps": [
+            "108.7%"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "1.087 -> percent",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-P-05",
+          "concept_id": "N08",
+          "difficulty": "introductory",
+          "family_id": "FAM-N08-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 6,25% thành phân số. Ghi phân số tối giản.",
+          "reference_answer": "1/16",
+          "reference_steps": [
+            "1/16"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "6.25% -> fraction",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N08-M2-ORIG02-P-06",
+          "concept_id": "N08",
+          "difficulty": "standard",
+          "family_id": "FAM-N08-M2-ORIG02-3",
+          "origin": "Bài tự biên soạn cho pilot Chặng 2. Nguồn chương trình chỉ dùng để định phạm vi.",
+          "primary_skill_id": "SK-N08-PRIMARY",
+          "prompt": "Đổi theo yêu cầu 145% thành phân số. Ghi phân số tối giản.",
+          "reference_answer": "29/20",
+          "reference_steps": [
+            "29/20"
+          ],
+          "source_group": "GROUP-N08-M2-ORIG01-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "145% -> fraction",
+            "kind": "number_conversion",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex assisted authoring",
+        "human_reviewer": "Người dùng (xác nhận duyệt 13 concept Member 2)",
+        "reviewed_at": "2026-11-24T22:17:10+07:00",
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "human_approved"
+      }
+    }
+  ],
+  "schema_version": "1.0.0"
+}

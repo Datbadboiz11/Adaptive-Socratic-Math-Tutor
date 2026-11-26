@@ -40,22 +40,27 @@ def seed(connection, path=CONTENT):
     connection.execute('INSERT INTO topics VALUES (%s,%s) ON CONFLICT DO NOTHING', (bank.topic_id, bank.title))
     for student, name in [('DEMO-STUDENT-01', 'Minh Anh · hồ sơ demo'), ('DEMO-STUDENT-02', 'Gia Huy · hồ sơ demo')]:
         connection.execute('INSERT INTO profiles(student_id,display_name) VALUES (%s,%s) ON CONFLICT DO NOTHING', (student, name))
-    inserted = 0
-    for problem in bank.problems:
-        payload = problem.model_dump(mode='json')
-        checksum = digest(payload)
-        old = connection.execute('SELECT content_hash FROM problems WHERE problem_id=%s AND content_version=%s', (problem.problem_id, problem.content_version)).fetchone()
-        if old:
-            if old['content_hash'] != checksum:
-                raise ValueError(f'Content version is immutable: {problem.problem_id}; create a new version')
-            continue
-        connection.execute('''INSERT INTO problems
-            (problem_id,content_version,topic_id,family_id,source_group,primary_skill_id,review_status,public_payload,private_payload,content_hash)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
-            (problem.problem_id, problem.content_version, bank.topic_id, problem.family_id, problem.source_group,
-             problem.primary_skill_id, problem.review.status, Jsonb(problem.to_public().model_dump(mode='json')), Jsonb(payload), checksum))
-        inserted += 1
+    inserted = sum(seed_problem(connection, bank.topic_id, problem.source_group,
+                                problem.to_public().model_dump(mode='json'), problem.model_dump(mode='json'))
+                   for problem in bank.problems)
     return {'inserted': inserted, 'total_in_bank': len(bank.problems), 'human_review': 'unchanged'}
+
+
+def seed_problem(connection, topic_id, source_group, public, private):
+    problem_id, version = public['problem_id'], public['content_version']
+    checksum = digest(private)
+    old = connection.execute('SELECT topic_id,content_hash FROM problems WHERE problem_id=%s AND content_version=%s',
+                             (problem_id, version)).fetchone()
+    if old:
+        if old['content_hash'] != checksum or old['topic_id'] != topic_id:
+            raise ValueError(f'Content version is immutable: {problem_id}; create a new version')
+        return False
+    connection.execute('''INSERT INTO problems
+        (problem_id,content_version,topic_id,family_id,source_group,primary_skill_id,review_status,public_payload,private_payload,content_hash)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
+        (problem_id, version, topic_id, public['family_id'], source_group, public['primary_skill_id'],
+         private['review']['status'], Jsonb(public), Jsonb(private), checksum))
+    return True
 
 
 if __name__ == '__main__':
@@ -68,4 +73,6 @@ if __name__ == '__main__':
             result['migrations'] = migrate(connection)
         if args.command in ('seed', 'bootstrap'):
             result['seed'] = seed(connection)
+            from app.member2_runtime import seed_member2
+            result['member2_seed'] = seed_member2(connection)
     print(json.dumps(result))
