@@ -175,21 +175,25 @@ Một số hệ quả cần biết khi biên soạn:
 Replay khác graph ở hai nguồn dữ liệu:
 
 1. Assessment lấy từ lịch sử thay cho analyzer.
-2. Observation và BKT dùng `app.knowledge.eligibility` và `app.knowledge.update` với tham số khai
-   báo cho từng skill, thay cho `stub_observe` mà graph đang dùng. Mỗi skill có tham số bắt đầu từ
-   prior. Observation hợp lệ ghi prediction trước đáp án, mastery trước/sau và phiên bản tham số.
+2. Observation và BKT dùng cùng hàm với graph (`app.agent.observation.observe_submission`, gọi
+   `app.knowledge.eligibility` và `app.knowledge.update` của Member 1). Chỉ khác ở tham số: replay
+   dùng tham số khai báo cho từng skill trong bộ dữ liệu, graph dùng bộ khởi đầu
+   `content/bkt.bootstrap.v1.json` chung cho mọi skill. Mỗi skill có tham số bắt đầu từ prior.
+   Observation hợp lệ ghi prediction trước đáp án, mastery trước/sau và phiên bản tham số.
    Readiness tính lại bằng `compute_readiness`.
 
-Hai quy tắc observation khác nhau ở ba điểm, **cần chốt với Member 1** trước khi dùng cho thực nghiệm BKT:
+Đầu vào của luật ghi nhận được dựng như backend của Member 1 (`app/tutor_service.py`), từ sổ ghi
+`ObservationLedger` mà graph và replay cùng cập nhật:
 
-| Trường hợp | `app.knowledge` (replay) | `stub_observe` (graph) |
-|---|---|---|
-| Bài cùng họ mẫu (`near_practice`), bài cha khi quay lại (`repeat`) | Không tạo observation | Vẫn tạo observation |
-| Lỗi thuộc skill khác skill đích của bài | Không cập nhật skill nào (`not_target_evidence`) | Cập nhật skill có lỗi |
-| Tham số BKT | Theo từng skill, khai báo trong bộ dữ liệu | Một bộ chung |
-
-Ví dụ trên AD-EX-05 (bài E02, lỗi phân phối thuộc A02): replay giữ nguyên mastery của A02, còn
-`stub_observe` hạ nó sau lần sai đó.
+- Bài cùng họ mẫu chỉ bị loại (`near_practice`) khi trong phiên đã có bài khác cùng họ nhận trợ giúp.
+  Cùng họ mà học sinh tự làm thì vẫn được ghi nhận.
+- Chỉ lần nộp chấm được đầu tiên trên một opportunity là lần thử đầu; các lần sau trả `repeat`. Lần
+  nộp không đọc được hoặc chưa xác minh không tính.
+- Quay lại bài cha (`repeat`) không tạo observation.
+- Lỗi thuộc skill khác skill đích của bài không cập nhật skill nào (`not_target_evidence`). Ví dụ
+  trên AD-EX-05 (bài E02, lỗi phân phối thuộc A02): mastery của A02 giữ nguyên sau lần sai đó.
+- Mastery tính bằng một phiên bản tham số không được cập nhật tiếp bằng phiên bản khác: phải tính lại
+  từ lịch sử hoặc chuyển đổi tường minh.
 
 Request trùng hoàn toàn được bỏ qua, request trùng nhưng khác nội dung bị báo lỗi. Tạm dừng và xin
 gợi ý không tạo observation. Sửa đúng sau hỗ trợ được đếm riêng.

@@ -3,7 +3,6 @@
 KHÔNG phải triển khai thật:
 - StubAnalyzer: bản so khớp chuỗi cũ, không còn là mặc định. Graph chấm bằng validator thật của
   Member 1 qua ``app.agent.validator_analyzer``; ở đây chỉ còn đề bài mẫu (``demo_validator_task``).
-- stub_observe thay observation builder + BKT của Member 1 (tham số mặc định, không fit).
 - StubTools thay RAG (Member 2) và problem bank. KG là bản thật (``kg_tool.KGTool``): đọc registry,
   dùng cả cạnh nháp vì registry chưa có cạnh nào được duyệt.
 - demo_answer_key thay phần đáp án của problem bank (Member 2): đáp án các bài mẫu, chỉ verifier đọc.
@@ -18,9 +17,7 @@ from dataclasses import dataclass, field
 import re
 from uuid import uuid4
 
-from app.agent.decision import (
-    AssessmentView, DecisionConfig, ExperimentConfiguration, ObservationStatus, SkillState, StudentState,
-)
+from app.agent.decision import AssessmentView, DecisionConfig, ExperimentConfiguration, StudentState
 from app.agent.kg_tool import KGTool
 from app.agent.tools import GraphEdge, ProblemRef, RetrievedContent, TurnContext
 from app.generation.verifier import AnswerKey
@@ -148,54 +145,6 @@ class StubAnalyzer:
             return view("verified_correct", primary_skill_id=problem.ref.target_skill_id)
         return view("verified_incorrect", primary_skill_id=problem.ref.target_skill_id,
                     final_answer_only=len(lines) == 1)
-
-
-# --------------------------------------------------------------------------- observation + BKT (Member 1)
-
-BKT_VERSION = "stub-bkt-0.1.0"
-BKT_PARAMS = {"L0": 0.3, "T": 0.1, "G": 0.2, "S": 0.1}
-
-
-@dataclass(frozen=True)
-class ObservationResult:
-    status: ObservationStatus
-    skills: list[SkillState]
-    observed_opportunities: frozenset[str]
-    observed_skill_id: str | None = None
-
-
-def bkt_update(p: float, correct: bool, params=BKT_PARAMS) -> float:
-    g, s, t = params["G"], params["S"], params["T"]
-    if correct:
-        posterior = p * (1 - s) / (p * (1 - s) + (1 - p) * g)
-    else:
-        posterior = p * s / (p * s + (1 - p) * (1 - g))
-    return posterior + (1 - posterior) * t
-
-
-def stub_observe(state: StudentState, a: AssessmentView, observed: frozenset[str]) -> ObservationResult:
-    skills = {s.skill_id: s for s in state.skills}
-    correct = a.assessment_status == "verified_correct"
-    if a.assessment_status not in {"verified_correct", "verified_incorrect"}:
-        return ObservationResult(ObservationStatus(eligible=False, reason="not_gradable"), list(skills.values()), observed)
-    skill_id = state.current.target_skill_id if correct else (a.primary_skill_id or state.current.target_skill_id)
-    skill = skills.get(skill_id) or SkillState(skill_id=skill_id, independent_observations=0,
-                                               parameter_version=BKT_VERSION)
-    opportunity = str(state.current.opportunity_id)
-    assisted = state.support.hint_level > 0 or state.support.support_turns_on_node > 0
-    if opportunity in observed or assisted:
-        if correct:
-            skills[skill_id] = skill.model_copy(update={"assisted_correct": skill.assisted_correct + 1})
-        reason = "already_observed" if opportunity in observed else "assisted_attempt"
-        return ObservationResult(ObservationStatus(eligible=False, reason=reason), list(skills.values()), observed)
-    p = skill.p_mastery if skill.p_mastery is not None else BKT_PARAMS["L0"]
-    skills[skill_id] = skill.model_copy(update={
-        "p_mastery": round(bkt_update(p, correct), 6),
-        "independent_observations": skill.independent_observations + 1,
-        "recent_independent": (skill.recent_independent + [correct])[-5:],
-        "parameter_version": BKT_VERSION})
-    status = ObservationStatus(eligible=True, reason="first_independent_attempt", observation_id=uuid4())
-    return ObservationResult(status, list(skills.values()), observed | {opportunity}, skill_id)
 
 
 def unverified_probe(state: StudentState, probe, message: str) -> str:

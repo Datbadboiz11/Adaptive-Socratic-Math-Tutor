@@ -16,6 +16,7 @@ from uuid import NAMESPACE_URL, UUID, uuid5
 from app.agent.decision import ACTION_SPECS, DecisionIntent, StudentState
 from app.agent.graph import Services, task_for
 from app.agent.kg_tool import KGTool
+from app.agent.observation import ObservationLedger
 from app.agent.stubs import retrieval_skills
 from app.agent.tools import RetrievedContent, TurnContext
 from research.scenarios.contracts import (
@@ -39,7 +40,7 @@ class Session:
         self.parameters, self.content, self.kg, self.source_reference = parameters, content, kg, source_reference
         self.events: list[HistoryEvent] = []
         self._count = 0
-        self._observed: frozenset[str] = frozenset()
+        self._ledger = ObservationLedger()
         self._services = Services(problem_ref=self.refs.__getitem__)
         self._first_task = task_for(self.refs[first_problem], self._uuid("opportunity"), "initial")
         self.state: StudentState | None = None
@@ -66,7 +67,7 @@ class Session:
             self.state = _initial_state(draft, self._dataset, event, self.refs)
         elif self.events[-1].actor == "student":
             raise ValueError(f"{self.id}: the tutor must answer before the next student turn")
-        self.state, self._observed = _student_turn(self.state, event, self._services, self._observed,
+        self.state, self._ledger = _student_turn(self.state, event, self._services, self._ledger,
                                                    self.parameters, [], f"{self.id} event {len(self.events) + 1}")
         self.events.append(event)
         return self
@@ -115,8 +116,8 @@ class Session:
                              actor="tutor", kind="decision", action=action, intent=intent, hint_level=level,
                              problem_id=problem, target_skill_id=skill)
         upcoming = SimpleNamespace(task=SimpleNamespace(opportunity_id=self._uuid("opportunity")))
-        self.state = _tutor_turn(self.state, event, upcoming, self._services, self.refs, self.kg,
-                                 f"{self.id} event {len(self.events) + 1}")
+        self.state, self._ledger = _tutor_turn(self.state, self._ledger, event, upcoming, self._services,
+                                               self.refs, self.kg, f"{self.id} event {len(self.events) + 1}")
         self.events.append(event)
         return self
 
