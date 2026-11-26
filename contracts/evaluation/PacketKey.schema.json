@@ -1,0 +1,253 @@
+{
+  "$defs": {
+    "DecisionIntent": {
+      "description": "Mục đích cụ thể của action. Đây không phải bộ strategy thứ hai (PRD FR-10):\nmỗi intent chỉ thuộc đúng một action và cho generator biết cần viết loại câu nào.",
+      "enum": [
+        "resolve_input",
+        "restate_task",
+        "elicit_reasoning",
+        "distinguish_hypothesis",
+        "probe_prerequisite",
+        "prompt_self_check",
+        "locate_error",
+        "recall_rule",
+        "target_misconception",
+        "decompose_step",
+        "analogous_example",
+        "explain_concept",
+        "review_prerequisite",
+        "independent_check",
+        "continue_practice",
+        "advance_difficulty",
+        "advance_concept",
+        "return_to_parent",
+        "switch_problem",
+        "student_request",
+        "session_goal_met",
+        "budget_exhausted",
+        "stuck_limit",
+        "content_exhausted",
+        "system_fallback"
+      ],
+      "title": "DecisionIntent",
+      "type": "string"
+    },
+    "ItemKey": {
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "pattern": "^I[0-9a-f]{8}$",
+          "title": "Item Id",
+          "type": "string"
+        },
+        "scenario_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "system": {
+          "pattern": "^[a-z0-9][a-z0-9_.:-]{0,59}$",
+          "title": "System",
+          "type": "string"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PedagogicalAction"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "intent": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DecisionIntent"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "hint_level": {
+          "anyOf": [
+            {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hint Level"
+        },
+        "response_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "template",
+                "template_fallback",
+                "llm",
+                "system"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Response Source"
+        },
+        "acceptable_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "title": "Acceptable Actions",
+          "type": "array"
+        },
+        "forbidden_actions": {
+          "items": {
+            "$ref": "#/$defs/PedagogicalAction"
+          },
+          "title": "Forbidden Actions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "item_id",
+        "scenario_id",
+        "system",
+        "acceptable_actions",
+        "forbidden_actions"
+      ],
+      "title": "ItemKey",
+      "type": "object"
+    },
+    "PairKey": {
+      "additionalProperties": false,
+      "properties": {
+        "pair_id": {
+          "pattern": "^P[0-9a-f]{8}$",
+          "title": "Pair Id",
+          "type": "string"
+        },
+        "scenario_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "systems": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "pattern": "^[a-z0-9][a-z0-9_.:-]{0,59}$",
+              "type": "string"
+            },
+            {
+              "pattern": "^[a-z0-9][a-z0-9_.:-]{0,59}$",
+              "type": "string"
+            }
+          ],
+          "title": "Systems",
+          "type": "array"
+        },
+        "shown_as_a": {
+          "patternProperties": {
+            "^[a-z0-9][a-z0-9_-]{0,29}$": {
+              "pattern": "^[a-z0-9][a-z0-9_.:-]{0,59}$",
+              "type": "string"
+            }
+          },
+          "title": "Shown As A",
+          "type": "object"
+        }
+      },
+      "required": [
+        "pair_id",
+        "scenario_id",
+        "systems",
+        "shown_as_a"
+      ],
+      "title": "PairKey",
+      "type": "object"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Ánh xạ mã → hệ thống. Không đưa cho người chấm.",
+  "properties": {
+    "rubric_version": {
+      "title": "Rubric Version",
+      "type": "string"
+    },
+    "packet_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+      "title": "Packet Id",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    },
+    "source": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "raters": {
+      "items": {
+        "pattern": "^[a-z0-9][a-z0-9_-]{0,29}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Raters",
+      "type": "array"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/ItemKey"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "pairs": {
+      "items": {
+        "$ref": "#/$defs/PairKey"
+      },
+      "title": "Pairs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "rubric_version",
+    "packet_id",
+    "seed",
+    "source",
+    "raters",
+    "items"
+  ],
+  "title": "PacketKey",
+  "type": "object"
+}

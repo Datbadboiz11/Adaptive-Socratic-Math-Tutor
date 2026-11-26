@@ -1,0 +1,316 @@
+{
+  "$defs": {
+    "GraphEdge": {
+      "additionalProperties": false,
+      "description": "Cạnh PREREQUISITE_OF do KG trả về: concept nguồn cần học trước concept đích.\n\n``depth`` = 1 khi đích là concept đang học, = 2 khi đích là một prerequisite trực tiếp của\nnó (PRD FR08-AC2: tối đa 2 tầng). ``review_status`` cho biết cạnh đã được người duyệt chưa;\ncạnh nháp chỉ xuất hiện khi tool được bật chế độ dev một cách tường minh.",
+      "properties": {
+        "edge_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Edge Id",
+          "type": "string"
+        },
+        "source_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Source Concept Id",
+          "type": "string"
+        },
+        "target_concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Concept Id",
+          "type": "string"
+        },
+        "source_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Skill Ids",
+          "type": "array"
+        },
+        "relation": {
+          "const": "PREREQUISITE_OF",
+          "default": "PREREQUISITE_OF",
+          "title": "Relation",
+          "type": "string"
+        },
+        "depth": {
+          "default": 1,
+          "enum": [
+            1,
+            2
+          ],
+          "title": "Depth",
+          "type": "integer"
+        },
+        "review_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "edge_id",
+        "source_concept_id",
+        "target_concept_id",
+        "source_skill_ids"
+      ],
+      "title": "GraphEdge",
+      "type": "object"
+    },
+    "NextConcept": {
+      "additionalProperties": false,
+      "description": "Concept có thể học tiếp: nhận concept đang học làm prerequisite (cạnh ``edge_id``).\n\n``other_prerequisite_skill_ids`` là skill của các prerequisite trực tiếp khác của concept\nđó, để người chọn biết học sinh còn cần gì trước khi chuyển.",
+      "properties": {
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Skill Ids",
+          "type": "array"
+        },
+        "edge_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Edge Id",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "machine_checked",
+            "human_approved"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "other_prerequisite_skill_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Other Prerequisite Skill Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "concept_id",
+        "skill_ids",
+        "edge_id"
+      ],
+      "title": "NextConcept",
+      "type": "object"
+    },
+    "ProblemRef": {
+      "additionalProperties": false,
+      "description": "Bài ứng viên lấy từ problem bank. Không có đáp án.",
+      "properties": {
+        "problem_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Problem Id",
+          "type": "string"
+        },
+        "problem_version": {
+          "title": "Problem Version",
+          "type": "string"
+        },
+        "concept_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "target_skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Target Skill Id",
+          "type": "string"
+        },
+        "template_family_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Template Family Id",
+          "type": "string"
+        },
+        "difficulty": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Difficulty",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "problem_id",
+        "problem_version",
+        "concept_id",
+        "target_skill_id",
+        "template_family_id",
+        "difficulty"
+      ],
+      "title": "ProblemRef",
+      "type": "object"
+    },
+    "RetrievedContent": {
+      "additionalProperties": false,
+      "description": "Một mục nội dung đã duyệt được đưa vào context.\n\n``disclosure_level`` là mức hint thấp nhất được phép hiển thị nội dung này: nội dung có\nmức tiết lộ 4 chỉ dùng được trong phản hồi mức 4. Không bao giờ chứa lời giải bài đang làm.",
+      "properties": {
+        "content_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Content Id",
+          "type": "string"
+        },
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "content_type": {
+          "enum": [
+            "question",
+            "hint",
+            "explanation",
+            "example",
+            "template"
+          ],
+          "title": "Content Type",
+          "type": "string"
+        },
+        "disclosure_level": {
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Disclosure Level",
+          "type": "integer"
+        },
+        "text": {
+          "maxLength": 1200,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_id",
+        "skill_id",
+        "content_type",
+        "disclosure_level",
+        "text"
+      ],
+      "title": "RetrievedContent",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "current_problem_prompt": {
+      "anyOf": [
+        {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Current Problem Prompt"
+    },
+    "retrieved": {
+      "items": {
+        "$ref": "#/$defs/RetrievedContent"
+      },
+      "maxItems": 10,
+      "title": "Retrieved",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/GraphEdge"
+      },
+      "maxItems": 24,
+      "title": "Edges",
+      "type": "array"
+    },
+    "next_concepts": {
+      "items": {
+        "$ref": "#/$defs/NextConcept"
+      },
+      "maxItems": 12,
+      "title": "Next Concepts",
+      "type": "array"
+    },
+    "problems": {
+      "items": {
+        "$ref": "#/$defs/ProblemRef"
+      },
+      "maxItems": 20,
+      "title": "Problems",
+      "type": "array"
+    },
+    "tool_calls_used": {
+      "default": 0,
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Tool Calls Used",
+      "type": "integer"
+    },
+    "kg_enabled": {
+      "default": true,
+      "title": "Kg Enabled",
+      "type": "boolean"
+    },
+    "rag_enabled": {
+      "default": true,
+      "title": "Rag Enabled",
+      "type": "boolean"
+    },
+    "kg_source": {
+      "anyOf": [
+        {
+          "enum": [
+            "neo4j",
+            "registry_file"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Kg Source"
+    },
+    "graph_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Graph Version"
+    },
+    "tool_errors": {
+      "items": {
+        "maxLength": 120,
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Tool Errors",
+      "type": "array"
+    }
+  },
+  "title": "TurnContext",
+  "type": "object"
+}
