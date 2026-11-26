@@ -1,0 +1,105 @@
+{
+  "$defs": {
+    "Dimension": {
+      "enum": [
+        "math_correct",
+        "error_focus",
+        "learner_fit",
+        "elicits",
+        "no_reveal",
+        "clarity"
+      ],
+      "title": "Dimension",
+      "type": "string"
+    },
+    "SevereFlag": {
+      "description": "Vi phạm làm lượt thất bại dù tổng điểm cao (plan §19.2).",
+      "enum": [
+        "serious_math_error",
+        "solution_revealed"
+      ],
+      "title": "SevereFlag",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "item_id": {
+      "pattern": "^I[0-9a-f]{8}$",
+      "title": "Item Id",
+      "type": "string"
+    },
+    "rater_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,29}$",
+      "title": "Rater Id",
+      "type": "string"
+    },
+    "stage": {
+      "default": "independent",
+      "enum": [
+        "independent",
+        "reconciled"
+      ],
+      "title": "Stage",
+      "type": "string"
+    },
+    "rubric_version": {
+      "default": "socratic-rubric-0.1.0",
+      "title": "Rubric Version",
+      "type": "string"
+    },
+    "unratable": {
+      "default": false,
+      "title": "Unratable",
+      "type": "boolean"
+    },
+    "scores": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "propertyNames": {
+        "$ref": "#/$defs/Dimension"
+      },
+      "title": "Scores",
+      "type": "object"
+    },
+    "severe": {
+      "items": {
+        "$ref": "#/$defs/SevereFlag"
+      },
+      "title": "Severe",
+      "type": "array"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "maxLength": 500,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    }
+  },
+  "required": [
+    "item_id",
+    "rater_id"
+  ],
+  "title": "Rating",
+  "type": "object"
+}

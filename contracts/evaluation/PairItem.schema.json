@@ -1,0 +1,360 @@
+{
+  "$defs": {
+    "AssessmentSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_correct",
+            "verified_incorrect",
+            "unverified",
+            "needs_clarification"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "first_error_step": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "First Error Step"
+        },
+        "error_family": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Family"
+        },
+        "misconception_candidate": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Misconception Candidate"
+        },
+        "diagnosis_status": {
+          "default": "unknown",
+          "enum": [
+            "suspected",
+            "supported",
+            "unknown"
+          ],
+          "title": "Diagnosis Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "AssessmentSummary",
+      "type": "object"
+    },
+    "HistoryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "enum": [
+            "student",
+            "tutor"
+          ],
+          "title": "Actor",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PedagogicalAction"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "hint_level": {
+          "anyOf": [
+            {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hint Level"
+        },
+        "assessment_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "verified_correct",
+                "verified_incorrect",
+                "unverified",
+                "needs_clarification"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessment Status"
+        }
+      },
+      "required": [
+        "actor",
+        "kind"
+      ],
+      "title": "HistoryEntry",
+      "type": "object"
+    },
+    "PedagogicalAction": {
+      "enum": [
+        "clarify",
+        "diagnose",
+        "minimal_hint",
+        "conceptual_question",
+        "backtrack",
+        "scaffold",
+        "check_transfer",
+        "next_problem",
+        "end_session"
+      ],
+      "title": "PedagogicalAction",
+      "type": "string"
+    },
+    "RatingContext": {
+      "additionalProperties": false,
+      "description": "Tình huống trước lượt được chấm, giống nhau cho mọi hệ thống (chấm ghép cặp, plan §18.2).",
+      "properties": {
+        "scenario_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "problem": {
+          "title": "Problem",
+          "type": "string"
+        },
+        "reference_answers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reference Answers",
+          "type": "array"
+        },
+        "trigger": {
+          "enum": [
+            "submit",
+            "request_hint",
+            "message",
+            "pause",
+            "resume"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        },
+        "student_work": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Student Work",
+          "type": "array"
+        },
+        "student_message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Student Message"
+        },
+        "assessment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssessmentSummary"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "hint_level": {
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Hint Level",
+          "type": "integer"
+        },
+        "support_turns_on_node": {
+          "minimum": 0,
+          "title": "Support Turns On Node",
+          "type": "integer"
+        },
+        "no_progress_turns": {
+          "minimum": 0,
+          "title": "No Progress Turns",
+          "type": "integer"
+        },
+        "reviewing_prerequisite": {
+          "title": "Reviewing Prerequisite",
+          "type": "boolean"
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/$defs/SkillEvidence"
+          },
+          "title": "Skills",
+          "type": "array"
+        },
+        "history": {
+          "items": {
+            "$ref": "#/$defs/HistoryEntry"
+          },
+          "title": "History",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "problem",
+        "reference_answers",
+        "trigger",
+        "student_work",
+        "hint_level",
+        "support_turns_on_node",
+        "no_progress_turns",
+        "reviewing_prerequisite",
+        "skills",
+        "history"
+      ],
+      "title": "RatingContext",
+      "type": "object"
+    },
+    "SkillEvidence": {
+      "additionalProperties": false,
+      "description": "Bằng chứng quan sát được của một skill. Không có xác suất mastery: người chấm đánh giá \"phù hợp\nngười học\" từ lịch sử, không lấy giá trị BKT làm chuẩn (PRD §9.4).",
+      "properties": {
+        "skill_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "title": "Skill Id",
+          "type": "string"
+        },
+        "independent_observations": {
+          "minimum": 0,
+          "title": "Independent Observations",
+          "type": "integer"
+        },
+        "recent_independent": {
+          "items": {
+            "type": "boolean"
+          },
+          "title": "Recent Independent",
+          "type": "array"
+        },
+        "assisted_correct": {
+          "minimum": 0,
+          "title": "Assisted Correct",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "skill_id",
+        "independent_observations",
+        "assisted_correct"
+      ],
+      "title": "SkillEvidence",
+      "type": "object"
+    },
+    "TutorTurn": {
+      "additionalProperties": false,
+      "description": "Câu gia sư gửi, kèm bài mới mà câu giao (nếu có). Đề và đáp án bài mới để người chấm đối chiếu\nlỗi toán và tiết lộ trên bài vừa giao; hai hệ thống có thể giao hai bài khác nhau.",
+      "properties": {
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "new_problem": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "New Problem"
+        },
+        "new_problem_answers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "New Problem Answers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "title": "TutorTurn",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Hai câu của hai hệ thống trên cùng tình huống; thứ tự A/B ngẫu nhiên theo từng người chấm.",
+  "properties": {
+    "pair_id": {
+      "pattern": "^P[0-9a-f]{8}$",
+      "title": "Pair Id",
+      "type": "string"
+    },
+    "context": {
+      "$ref": "#/$defs/RatingContext"
+    },
+    "a": {
+      "$ref": "#/$defs/TutorTurn"
+    },
+    "b": {
+      "$ref": "#/$defs/TutorTurn"
+    }
+  },
+  "required": [
+    "pair_id",
+    "context",
+    "a",
+    "b"
+  ],
+  "title": "PairItem",
+  "type": "object"
+}

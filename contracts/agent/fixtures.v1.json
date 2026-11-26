@@ -1,0 +1,286 @@
+{
+  "contract_version": "agent-contract-0.1.0",
+  "note": "Fixtures nháp cho tình huống 2(x - 3) = 10 ở plan §6. ID bài, nội dung và cạnh là ví dụ; chưa phải dữ liệu đã duyệt.",
+  "student_state": {
+    "contract_version": "agent-contract-0.1.0",
+    "student_id": "demo-student-a",
+    "session_id": "11111111-1111-4111-8111-111111111111",
+    "state_version": 4,
+    "turn_id": "22222222-2222-4222-8222-222222222222",
+    "request_id": "33333333-3333-4333-8333-333333333333",
+    "status": "active",
+    "trigger": "submit",
+    "latest_submission": ["2x - 3 = 10", "2x = 13", "x = 6.5"],
+    "current": {
+      "problem_id": "E02-P001",
+      "problem_version": "0.1.0",
+      "opportunity_id": "44444444-4444-4444-8444-444444444444",
+      "concept_id": "E02",
+      "target_skill_id": "SK-E02-SOLVE",
+      "template_family_id": "linear_with_distribution",
+      "relation": "initial"
+    },
+    "latest_assessment": {
+      "assessment_id": "55555555-5555-4555-8555-555555555555",
+      "assessment_status": "verified_incorrect",
+      "first_error_step": 1,
+      "primary_skill_id": "SK-A02-DISTRIBUTE",
+      "error_family": "distribution_error",
+      "misconception_candidate": "M_DIST_01",
+      "diagnosis_status": "suspected",
+      "final_answer_only": false
+    },
+    "observation": {
+      "eligible": true,
+      "reason": "first_independent_attempt",
+      "observation_id": "66666666-6666-4666-8666-666666666666"
+    },
+    "skills": [
+      {
+        "skill_id": "SK-A02-DISTRIBUTE",
+        "p_mastery": 0.42,
+        "independent_observations": 3,
+        "recent_independent": [true, false, false],
+        "assisted_correct": 1,
+        "parameter_version": "bkt-default-0.1.0"
+      },
+      {
+        "skill_id": "SK-E02-SOLVE",
+        "p_mastery": 0.61,
+        "independent_observations": 4,
+        "recent_independent": [true, true, false, true],
+        "assisted_correct": 0,
+        "parameter_version": "bkt-default-0.1.0"
+      }
+    ],
+    "hypotheses": [
+      {
+        "hypothesis_id": "HYP-001",
+        "misconception_id": "M_DIST_01",
+        "skill_id": "SK-A02-DISTRIBUTE",
+        "status": "suspected",
+        "evidence_ids": ["55555555-5555-4555-8555-555555555555"]
+      }
+    ],
+    "support": {"hint_level": 0, "support_turns_on_node": 0, "no_progress_turns": 0},
+    "return_stack": [],
+    "visited_concept_ids": ["E02"],
+    "recent_turns": [
+      {
+        "turn_id": "22222222-2222-4222-8222-222222222222",
+        "actor": "student",
+        "kind": "submit",
+        "assessment_status": "verified_incorrect"
+      }
+    ],
+    "budget": {"tool_calls_remaining": 3, "regenerations_remaining": 1},
+    "readiness": {
+      "ready_to_advance": false,
+      "criteria_version": "stop-0.1.0",
+      "unmet": ["p_mastery_below_threshold", "unresolved_hypothesis"]
+    }
+  },
+  "decisions": [
+    {
+      "case": "accepted_conceptual_question",
+      "explain": "Lỗi phân phối có giả thuyết M_DIST_01 (suspected). Agent hỏi khái niệm ở mức 0, đúng ví dụ plan §6; gate chấp nhận.",
+      "decision": {
+        "contract_version": "agent-contract-0.1.0",
+        "decision_id": "a0000000-0000-4000-8000-000000000001",
+        "session_id": "11111111-1111-4111-8111-111111111111",
+        "turn_id": "22222222-2222-4222-8222-222222222222",
+        "opportunity_id": "44444444-4444-4444-8444-444444444444",
+        "state_version": 4,
+        "proposed_by": "agent",
+        "proposed": {
+          "action": "conceptual_question",
+          "intent": "target_misconception",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 0,
+          "evidence": [
+            {"kind": "assessment", "id": "55555555-5555-4555-8555-555555555555"},
+            {"kind": "hypothesis", "id": "HYP-001"}
+          ],
+          "content_ids": ["KB-A02-QUESTION-01"],
+          "edge_ids": [],
+          "problem_id": null,
+          "reason": "Bước 1 biến 2(x - 3) thành 2x - 3; nghi M_DIST_01, mới có một bằng chứng nên hỏi khái niệm trước khi gợi ý."
+        },
+        "gate": {"status": "accepted", "violated_rules": [], "gate_version": "gate-0.1.0"},
+        "final": {
+          "action": "conceptual_question",
+          "intent": "target_misconception",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 0,
+          "evidence": [
+            {"kind": "assessment", "id": "55555555-5555-4555-8555-555555555555"},
+            {"kind": "hypothesis", "id": "HYP-001"}
+          ],
+          "content_ids": ["KB-A02-QUESTION-01"],
+          "edge_ids": [],
+          "problem_id": null,
+          "reason": "Bước 1 biến 2(x - 3) thành 2x - 3; nghi M_DIST_01, mới có một bằng chứng nên hỏi khái niệm trước khi gợi ý."
+        },
+        "final_source": "agent",
+        "fallback_reason": null,
+        "tool_calls_used": 1,
+        "regenerations_used": 0,
+        "config": {
+          "configuration": "full",
+          "policy_version": "policy-0.1.0",
+          "prompt_version": "agent-prompt-0.1.0",
+          "model_id": "example-model",
+          "kb_version": "kb-0.1.0",
+          "graph_version": "graph-0.1.0"
+        },
+        "created_at": "2026-11-13T10:00:00+07:00"
+      }
+    },
+    {
+      "case": "gate_rejected_advance",
+      "explain": "Agent đề xuất chuyển concept dù vừa có lỗi mới và readiness=false. Gate từ chối, Rule-policy thay bằng gợi ý tự kiểm tra.",
+      "decision": {
+        "contract_version": "agent-contract-0.1.0",
+        "decision_id": "a0000000-0000-4000-8000-000000000002",
+        "session_id": "11111111-1111-4111-8111-111111111111",
+        "turn_id": "22222222-2222-4222-8222-222222222222",
+        "opportunity_id": "44444444-4444-4444-8444-444444444444",
+        "state_version": 4,
+        "proposed_by": "agent",
+        "proposed": {
+          "action": "next_problem",
+          "intent": "advance_concept",
+          "target_skill_id": "SK-E02-SOLVE",
+          "hint_level": 0,
+          "evidence": [{"kind": "observation", "id": "66666666-6666-4666-8666-666666666666"}],
+          "content_ids": [],
+          "edge_ids": [],
+          "problem_id": "E03-P001",
+          "reason": "Mastery giải phương trình đã khá cao."
+        },
+        "gate": {
+          "status": "rejected",
+          "violated_rules": ["G06_new_error_blocks_advance", "G07_readiness_required"],
+          "gate_version": "gate-0.1.0"
+        },
+        "final": {
+          "action": "minimal_hint",
+          "intent": "prompt_self_check",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 1,
+          "evidence": [{"kind": "assessment", "id": "55555555-5555-4555-8555-555555555555"}],
+          "content_ids": [],
+          "edge_ids": [],
+          "problem_id": null,
+          "reason": "Fallback luật: lỗi mới ở bước 1 nên đề nghị học sinh tự kiểm tra bước khai triển."
+        },
+        "final_source": "fallback",
+        "fallback_reason": "gate_rejected",
+        "fallback_gate": {"status": "accepted", "violated_rules": [], "gate_version": "gate-0.1.0"},
+        "tool_calls_used": 0,
+        "regenerations_used": 0,
+        "config": {
+          "configuration": "full",
+          "policy_version": "policy-0.1.0",
+          "prompt_version": "agent-prompt-0.1.0",
+          "model_id": "example-model",
+          "kb_version": "kb-0.1.0",
+          "graph_version": "graph-0.1.0"
+        },
+        "created_at": "2026-11-13T10:00:01+07:00"
+      }
+    },
+    {
+      "case": "rule_policy_check_transfer",
+      "explain": "Cấu hình Rule-policy: học sinh đã sửa đúng sau hỗ trợ, nên giao bài khác họ mẫu để kiểm tra độc lập.",
+      "decision": {
+        "contract_version": "agent-contract-0.1.0",
+        "decision_id": "a0000000-0000-4000-8000-000000000003",
+        "session_id": "11111111-1111-4111-8111-111111111111",
+        "turn_id": "77777777-7777-4777-8777-777777777777",
+        "opportunity_id": "44444444-4444-4444-8444-444444444444",
+        "state_version": 6,
+        "proposed_by": "rule_policy",
+        "proposed": {
+          "action": "check_transfer",
+          "intent": "independent_check",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 0,
+          "evidence": [{"kind": "assessment", "id": "88888888-8888-4888-8888-888888888888"}],
+          "content_ids": [],
+          "edge_ids": [],
+          "problem_id": "A02-P007",
+          "reason": "Đã sửa đúng sau hỗ trợ; cần một bài khác họ mẫu, không kèm hint."
+        },
+        "gate": {"status": "accepted", "violated_rules": [], "gate_version": "gate-0.1.0"},
+        "final": {
+          "action": "check_transfer",
+          "intent": "independent_check",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 0,
+          "evidence": [{"kind": "assessment", "id": "88888888-8888-4888-8888-888888888888"}],
+          "content_ids": [],
+          "edge_ids": [],
+          "problem_id": "A02-P007",
+          "reason": "Đã sửa đúng sau hỗ trợ; cần một bài khác họ mẫu, không kèm hint."
+        },
+        "final_source": "rule_policy",
+        "fallback_reason": null,
+        "tool_calls_used": 1,
+        "regenerations_used": 0,
+        "config": {
+          "configuration": "rule_policy",
+          "policy_version": "policy-0.1.0",
+          "prompt_version": null,
+          "model_id": null,
+          "kb_version": "kb-0.1.0",
+          "graph_version": "graph-0.1.0"
+        },
+        "created_at": "2026-11-13T10:02:00+07:00"
+      }
+    },
+    {
+      "case": "agent_timeout_fallback",
+      "explain": "Agent quá thời gian nên không có đề xuất. Rule-policy chọn quay về prerequisite qua cạnh PRE-A02-E02 đã truy vấn.",
+      "decision": {
+        "contract_version": "agent-contract-0.1.0",
+        "decision_id": "a0000000-0000-4000-8000-000000000004",
+        "session_id": "11111111-1111-4111-8111-111111111111",
+        "turn_id": "99999999-9999-4999-8999-999999999999",
+        "opportunity_id": "44444444-4444-4444-8444-444444444444",
+        "state_version": 8,
+        "proposed_by": "agent",
+        "proposed": null,
+        "gate": null,
+        "final": {
+          "action": "backtrack",
+          "intent": "review_prerequisite",
+          "target_skill_id": "SK-A02-DISTRIBUTE",
+          "hint_level": 0,
+          "evidence": [
+            {"kind": "hypothesis", "id": "HYP-001"},
+            {"kind": "assessment", "id": "55555555-5555-4555-8555-555555555555"}
+          ],
+          "content_ids": [],
+          "edge_ids": ["PRE-A02-E02"],
+          "problem_id": "A02-P003",
+          "reason": "Fallback luật: M_DIST_01 lặp lại ở mức hint 3; ôn tính phân phối rồi quay lại bài phương trình."
+        },
+        "final_source": "fallback",
+        "fallback_reason": "agent_timeout",
+        "fallback_gate": {"status": "accepted", "violated_rules": [], "gate_version": "gate-0.1.0"},
+        "tool_calls_used": 2,
+        "regenerations_used": 0,
+        "config": {
+          "configuration": "full",
+          "policy_version": "policy-0.1.0",
+          "prompt_version": "agent-prompt-0.1.0",
+          "model_id": "example-model",
+          "kb_version": "kb-0.1.0",
+          "graph_version": "graph-0.1.0"
+        },
+        "created_at": "2026-11-13T10:05:00+07:00"
+      }
+    }
+  ]
+}

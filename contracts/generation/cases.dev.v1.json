@@ -1,0 +1,113 @@
+{
+  "version": "generation-cases-0.1.1",
+  "split": "dev",
+  "note": "Bộ dev tự soạn (Member 3) để phát triển prompt và verifier sinh phản hồi; chưa qua người duyệt, không phải test chính thức (plan §11.5, §19.3). Mỗi ca dùng state/context của một tình huống trong contracts/agent/scenarios.dev.v1.json và quyết định Rule-policy của tình huống đó. 'oracle' là câu một generator trung thành có thể viết (phải qua verifier). 'variants' là câu có lỗi đã gán nhãn, để đo verifier bắt được gì; 'expected' là tập lỗi verifier phải báo.",
+  "cases": [
+    {
+      "id": "GN-01", "scenario": "SC-01",
+      "oracle": {"message": "Ở bước 1, em viết 2(x - 3) thành 2x - 3. Em đã nhân 2 với những số hạng nào trong ngoặc?", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-01a", "title": "Tự viết bước đúng", "message": "Em xem lại nhé: 2(x - 3) = 2x - 6 chứ không phải 2x - 3.", "content_ids_used": [], "expected": ["unsourced_equation", "unsourced_expression", "missing_question"]},
+        {"id": "GN-01b", "title": "Nói thẳng đáp án", "message": "Đáp án đúng là x = 8, em xem lại bước 1 nhé.", "content_ids_used": [], "expected": ["answer_leak", "unsourced_equation", "missing_question"]},
+        {"id": "GN-01c", "title": "Đáp án viết ngược vế", "message": "Em thử nghĩ xem 8 = x có thỏa mãn đề bài không?", "content_ids_used": [], "expected": ["answer_leak", "unsourced_equation"]},
+        {"id": "GN-01d", "title": "Bước trung gian không phải đáp án", "message": "Nếu em có 2x = 16 thì em làm gì tiếp?", "content_ids_used": [], "expected": ["unsourced_equation"]},
+        {"id": "GN-01e", "title": "Đáp án viết dạng tương đương (review 14/11)", "message": "Nghiệm là 16/2, em xem lại bước 1 có ra như vậy không?", "content_ids_used": [], "expected": ["answer_leak"]},
+        {"id": "GN-01f", "title": "Khen bước sai là đúng (review 14/11)", "message": "Bước 2x − 3 = 10 của em là phép khai triển đúng. Bước 2 em làm thế nào?", "content_ids_used": [], "expected": ["unverified_affirmation"]},
+        {"id": "GN-01g", "title": "Kể cách giải ở lượt chẩn đoán mức 0 (review 14/11)", "message": "Em hãy nhân hai với từng số hạng trong ngoặc, rồi cộng sáu vào hai vế và chia hai để tìm nghiệm.", "content_ids_used": [], "expected": ["hint_level_exceeded", "missing_question"]},
+        {"id": "GN-01h", "title": "Đáp án viết bằng ký hiệu ngoài phạm vi", "message": "Em có biết nghiệm là √64 không?", "content_ids_used": [], "expected": ["math_unverified"]},
+        {"id": "GN-01i", "title": "Đáp án có dấu âm trước lũy thừa (review 14/11, lần 2)", "message": "Nghiệm là -2^2 + 12, em thấy sao?", "content_ids_used": [], "expected": ["answer_leak"]},
+        {"id": "GN-01j", "title": "Khen bước sai trong câu có dấu hỏi (review 14/11, lần 2)", "message": "Bước 2x − 3 = 10 của em đúng rồi, em làm bước tiếp theo thế nào?", "content_ids_used": [], "expected": ["unverified_affirmation"]},
+        {"id": "GN-01k", "title": "Chỉ dẫn thao tác rồi hỏi lại ở cuối (review 14/11, lần 2)", "message": "Em hãy cộng sáu vào hai vế nhé, em hiểu chưa?", "content_ids_used": [], "expected": ["hint_level_exceeded"]}
+      ]
+    },
+    {
+      "id": "GN-02", "scenario": "SC-02",
+      "oracle": {"message": "Mình hỏi em một câu nhé: nếu viết 2(x - 3) thành (x - 3) + (x - 3), em thấy số -3 xuất hiện mấy lần?", "content_ids_used": ["KB-A02-QUESTION-01"]}
+    },
+    {
+      "id": "GN-03", "scenario": "SC-03",
+      "oracle": {"message": "Em thử nghĩ xem: nếu viết 2(x - 3) thành (x - 3) + (x - 3), số -3 xuất hiện mấy lần? Từ đó em xem lại bước 1 nhé.", "content_ids_used": ["KB-A02-QUESTION-01"]}
+    },
+    {
+      "id": "GN-04", "scenario": "SC-04",
+      "oracle": {"message": "Em thử thay x = 6 vào đề bài 2(x - 3) = 10 để xem hai vế có bằng nhau không nhé.", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-04a", "title": "Nghiệm nói bằng lời", "message": "Nghiệm của phương trình là 8, em thử thay vào kiểm tra nhé.", "content_ids_used": [], "expected": ["answer_leak"]},
+        {"id": "GN-04b", "title": "Đáp án dùng chữ bằng", "message": "Em kiểm tra lại nhé, x bằng 8 mới thỏa mãn đề bài.", "content_ids_used": [], "expected": ["answer_leak", "unsourced_equation"]},
+        {"id": "GN-04c", "title": "Tự tính hộ phép thử", "message": "Em thay x = 6 vào thì 2(6 - 3) = 6, khác 10 đúng không?", "content_ids_used": [], "expected": ["unsourced_equation"]},
+        {"id": "GN-04d", "title": "Bảo làm thao tác ở mức 1", "message": "Em cộng 6 vào hai vế của bước 1 rồi kiểm tra lại nhé.", "content_ids_used": [], "expected": ["hint_level_exceeded"]}
+      ]
+    },
+    {
+      "id": "GN-05", "scenario": "SC-05",
+      "oracle": {"message": "Mình chưa đọc được bài làm này. Em viết lại mỗi bước trên một dòng, có dấu = giữa hai vế nhé.", "content_ids_used": []}
+    },
+    {
+      "id": "GN-06", "scenario": "SC-06",
+      "oracle": {"message": "Bước 1 cần xem lại. Khi nhân một số với một tổng hoặc hiệu trong ngoặc, em cần nhân số đó với từng số hạng trong ngoặc. Em làm lại bước 1 nhé.", "content_ids_used": ["KB-A02-HINT-01"]},
+      "variants": [
+        {"id": "GN-06a", "title": "Hỏi dồn hai câu", "message": "Bước 1 có chỗ chưa ổn. Em nhân lại xem được gì? Rồi bước 2 em sẽ làm thế nào?", "content_ids_used": [], "expected": ["too_many_questions"]},
+        {"id": "GN-06b", "title": "Trích nội dung không được chọn", "message": "Bước 1 cần xem lại: em nhân số ngoài ngoặc với từng số hạng trong ngoặc nhé.", "content_ids_used": ["KB-A02-EXPLAIN-01"], "expected": ["unknown_content"]},
+        {"id": "GN-06c", "title": "Viết hộ bước đã sửa, không có dấu =", "message": "Bước 1 phải là 2x - 6, em sửa lại rồi làm tiếp nhé.", "content_ids_used": [], "expected": ["unsourced_expression"]}
+      ]
+    },
+    {
+      "id": "GN-07", "scenario": "SC-07",
+      "oracle": {"message": "Mình chia nhỏ bước 1 nhé. Ví dụ khác: 3(a + 2) = 3·a + 3·2 = 3a + 6, số 3 được nhân với cả a và 2. Giờ em chỉ làm một việc: nhân 2 với từng số hạng trong ngoặc của 2(x - 3). Em được gì?", "content_ids_used": ["KB-A02-EXAMPLE-01"]},
+      "variants": [
+        {"id": "GN-07a", "title": "Scaffold không dùng nội dung", "message": "Em thử nhân 2 với từng số hạng trong ngoặc của 2(x - 3) nhé.", "content_ids_used": [], "expected": ["missing_content"]},
+        {"id": "GN-07b", "title": "Ví dụ chính là bài đang làm", "message": "Ví dụ: 2(x - 3) = 2x - 6. Giờ em làm tiếp nhé.", "content_ids_used": ["KB-A02-EXAMPLE-01"], "expected": ["unsourced_equation", "unsourced_expression"]}
+      ]
+    },
+    {
+      "id": "GN-08", "scenario": "SC-08",
+      "oracle": {"message": "Mình cùng ôn một kiến thức nền trước, xong sẽ quay lại bài cũ nhé. Bài ôn: Khai triển -2(3y + 4).", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-08a", "title": "Lộ đáp án bài ôn vừa giao", "message": "Bài ôn: Khai triển -2(3y + 4). Kết quả sẽ là -6y - 8, em thử làm xem có ra như vậy không.", "content_ids_used": [], "expected": ["answer_leak", "unsourced_expression"]},
+        {"id": "GN-08b", "title": "Đáp án bài ôn viết đổi thứ tự", "message": "Bài ôn: Khai triển -2(3y + 4). Em có ra -8 - 6y không?", "content_ids_used": [], "expected": ["answer_leak", "unsourced_expression"]}
+      ]
+    },
+    {
+      "id": "GN-09", "scenario": "SC-09",
+      "oracle": {"message": "Ví dụ khác: theo tính chất phân phối, k(a - b) = ka - kb, chẳng hạn 5(y - 1) = 5y - 5, cả hai số hạng trong ngoặc đều được nhân với 5. Em thử làm lại bước 1 của bài mình theo cách này nhé.", "content_ids_used": ["KB-A02-EXPLAIN-01"]}
+    },
+    {
+      "id": "GN-10", "scenario": "SC-10",
+      "oracle": {"message": "Em sửa được rồi! Giờ em tự làm bài mới này, không có gợi ý nhé: Giải phương trình 5x - 7 = 2x + 8.", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-10a", "title": "Lộ nghiệm của bài kiểm tra mới", "message": "Em tự làm bài mới nhé: Giải phương trình 5x - 7 = 2x + 8. Gợi ý: nghiệm là 5.", "content_ids_used": [], "expected": ["answer_leak"]},
+        {"id": "GN-10b", "title": "Xác nhận đáp án học sinh đã tự giải đúng (được phép)", "message": "Đúng rồi, em tìm được x = 8! Giờ em tự làm bài mới nhé: Giải phương trình 5x - 7 = 2x + 8.", "content_ids_used": [], "expected": []}
+      ]
+    },
+    {
+      "id": "GN-11", "scenario": "SC-11",
+      "oracle": {"message": "Tốt lắm, em khai triển xong rồi! Giờ mình quay lại bài lúc nãy nhé: Giải phương trình 2(x - 3) = 10.", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-11a", "title": "Lộ đáp án bài gốc khi quay lại", "message": "Quay lại bài cũ nhé: Giải phương trình 2(x - 3) = 10. Lần này em sẽ ra x = 8.", "content_ids_used": [], "expected": ["answer_leak", "unsourced_equation"]}
+      ]
+    },
+    {
+      "id": "GN-12", "scenario": "SC-12",
+      "oracle": {"message": "Em đã sẵn sàng cho phần tiếp theo. Bài mới: Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó.", "content_ids_used": []}
+    },
+    {
+      "id": "GN-13", "scenario": "SC-13",
+      "oracle": {"message": "Mình tạm dừng ở đây nhé. Lần sau em có thể học tiếp từ bài đang làm.", "content_ids_used": []},
+      "variants": [
+        {"id": "GN-13a", "title": "Lặp nguyên văn câu vừa gửi", "message": "Mình tạm dừng ở đây nhé.", "content_ids_used": [], "previous_messages": ["mình tạm dừng ở  đây nhé."], "expected": ["repeated_message"]}
+      ]
+    },
+    {
+      "id": "GN-14", "scenario": "SC-14",
+      "oracle": {"message": "Mình đổi sang một bài khác để thử cách làm mới nhé: Giải phương trình 3(x + 1) = 12.", "content_ids_used": []}
+    },
+    {
+      "id": "GN-15", "scenario": "SC-15",
+      "oracle": {"message": "Trước khi làm tiếp, em nhắc lại giúp mình: khi nhân một số với một biểu thức trong ngoặc, em nhân số đó với những phần nào?", "content_ids_used": []}
+    },
+    {
+      "id": "GN-16", "scenario": "SC-16",
+      "oracle": {"message": "Em nhớ quy tắc này nhé: khi giải phương trình, em làm cùng một phép toán ở cả hai vế. Em thử áp dụng cho 2(x - 3) = 10 xem bước đầu tiên là gì?", "content_ids_used": ["KB-E02-HINT-01"]}
+    }
+  ]
+}

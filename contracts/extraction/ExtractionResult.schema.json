@@ -1,0 +1,135 @@
+{
+  "$defs": {
+    "ExtractedStep": {
+      "additionalProperties": false,
+      "description": "Một phương trình học sinh đã viết.\n\n``role = \"restated_problem\"`` là dòng chép lại đề ở đầu bài: được giữ nhưng không đánh số bước\n(FR04-AC1), nên ``index`` là None. Bước giải đánh số từ 1.",
+      "properties": {
+        "role": {
+          "enum": [
+            "restated_problem",
+            "step"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "index": {
+          "anyOf": [
+            {
+              "maximum": 12,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Index"
+        },
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "source": {
+          "maxLength": 400,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "normalized": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Normalized",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "line",
+        "source",
+        "normalized"
+      ],
+      "title": "ExtractedStep",
+      "type": "object"
+    },
+    "Reason": {
+      "description": "Vì sao chưa tách được. Nhóm đầu do luật tất định phát hiện; nhóm hai do LLM báo; nhóm ba\nlà chốt chặn LLM (đầu ra của LLM không trung thành với bài làm) và lỗi gọi model.",
+      "enum": [
+        "empty",
+        "no_equation",
+        "no_steps",
+        "decimal_comma",
+        "chained_equals",
+        "ambiguous_fraction",
+        "syntax",
+        "too_many_steps",
+        "step_too_long",
+        "mixed_text",
+        "math_in_words",
+        "unsupported_notation",
+        "unreadable",
+        "not_verbatim",
+        "partial_span",
+        "unextracted_math",
+        "llm_unavailable",
+        "llm_invalid_output"
+      ],
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Đầu ra của extraction, đầu vào của validator.",
+  "properties": {
+    "contract_version": {
+      "const": "extraction-contract-0.1.0",
+      "default": "extraction-contract-0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "grammar_version": {
+      "title": "Grammar Version",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "extracted",
+        "needs_clarification"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "method": {
+      "enum": [
+        "rules",
+        "llm"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/ExtractedStep"
+      },
+      "maxItems": 13,
+      "title": "Steps",
+      "type": "array"
+    },
+    "reasons": {
+      "items": {
+        "$ref": "#/$defs/Reason"
+      },
+      "maxItems": 6,
+      "title": "Reasons",
+      "type": "array"
+    }
+  },
+  "required": [
+    "grammar_version",
+    "status",
+    "method"
+  ],
+  "title": "ExtractionResult",
+  "type": "object"
+}
