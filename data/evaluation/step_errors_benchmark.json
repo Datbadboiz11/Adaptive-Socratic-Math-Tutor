@@ -1,0 +1,3839 @@
+{
+  "schema_version": "rq4-v1",
+  "language": "vi",
+  "benchmark_type": "step_error_localization_and_misconception",
+  "limitations_vi": "Tập dữ liệu được nhóm tự biên soạn, gồm các biểu thức, phương trình và quan hệ tuyến tính trong phạm vi parser hiện tại. Lỗi được tạo có chủ đích, không đại diện cho tần suất lỗi thực tế của học sinh. Đây là dev_sanity_check có quan hệ với quá trình phát triển validator, không phải independent_test. Bootstrap theo họ dạng bài gán thủ công; N/F chỉ gồm trường hợp parser hiện hỗ trợ.",
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "category": "correct",
+      "problem": {
+        "equation": "2x-6=10",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x-3=5",
+        "x=8"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-002",
+      "category": "correct",
+      "problem": {
+        "equation": "3x+6=18",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x+2=6",
+        "x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-003",
+      "category": "correct",
+      "problem": {
+        "equation": "5x-10=0",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "5x=10",
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-004",
+      "category": "correct",
+      "problem": {
+        "equation": "4x+8=20",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "4x=12",
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-005",
+      "category": "correct",
+      "problem": {
+        "equation": "-2x+4=10",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "-2x=6",
+        "x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-006",
+      "category": "correct",
+      "problem": {
+        "equation": "7x-14=21",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "7x=35",
+        "x=5"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-007",
+      "category": "correct",
+      "problem": {
+        "equation": "2*(x+3)=14",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "2x+6=14",
+        "2x=8",
+        "x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-008",
+      "category": "correct",
+      "problem": {
+        "equation": "(x-1)/2=3",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x-1=6",
+        "x=7"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-009",
+      "category": "correct",
+      "problem": {
+        "equation": "3x+2x",
+        "primary_skill_id": "A03",
+        "concept_id": "A03"
+      },
+      "steps": [
+        "5x"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A03"
+    },
+    {
+      "case_id": "CASE-010",
+      "category": "correct",
+      "problem": {
+        "equation": "6+(-2)",
+        "primary_skill_id": "A03",
+        "concept_id": "A03"
+      },
+      "steps": [
+        "4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A03"
+    },
+    {
+      "case_id": "CASE-011",
+      "category": "correct",
+      "problem": {
+        "equation": "4*(x+2)",
+        "primary_skill_id": "A02",
+        "concept_id": "A02"
+      },
+      "steps": [
+        "4x+8"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A02"
+    },
+    {
+      "case_id": "CASE-012",
+      "category": "correct",
+      "problem": {
+        "equation": "x^2+2x+x^2",
+        "primary_skill_id": "A03",
+        "concept_id": "A03"
+      },
+      "steps": [
+        "2x^2+2x"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A03"
+    },
+    {
+      "case_id": "CASE-013",
+      "category": "correct",
+      "problem": {
+        "equation": "(x+3)(x-3)",
+        "primary_skill_id": "A06",
+        "concept_id": "A06"
+      },
+      "steps": [
+        "x^2-9"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A06"
+    },
+    {
+      "case_id": "CASE-014",
+      "category": "correct",
+      "problem": {
+        "equation": "x^2-16",
+        "primary_skill_id": "A06",
+        "concept_id": "A06"
+      },
+      "steps": [
+        "(x-4)(x+4)"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A06"
+    },
+    {
+      "case_id": "CASE-015",
+      "category": "correct",
+      "problem": {
+        "equation": "x^2=16",
+        "primary_skill_id": "E06",
+        "concept_id": "E06"
+      },
+      "steps": [
+        "x=4 or x=-4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E06"
+    },
+    {
+      "case_id": "CASE-016",
+      "category": "correct",
+      "problem": {
+        "equation": "x+y=5; x-y=1",
+        "primary_skill_id": "E08",
+        "concept_id": "E08"
+      },
+      "steps": [
+        "x=3; y=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E08"
+    },
+    {
+      "case_id": "CASE-017",
+      "category": "correct",
+      "problem": {
+        "equation": "2x+y=8; x-y=1",
+        "primary_skill_id": "E08",
+        "concept_id": "E08"
+      },
+      "steps": [
+        "x=3; y=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E08"
+    },
+    {
+      "case_id": "CASE-018",
+      "category": "correct",
+      "problem": {
+        "equation": "4x=12",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-E02"
+    },
+    {
+      "case_id": "CASE-019",
+      "category": "correct",
+      "problem": {
+        "equation": "3*(-2)+10",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A01"
+    },
+    {
+      "case_id": "CASE-020",
+      "category": "correct",
+      "problem": {
+        "equation": "2*(5-1)+3",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "11"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-correct-A01"
+    },
+    {
+      "case_id": "CASE-021",
+      "category": "slip",
+      "problem": {
+        "equation": "2+3",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-022",
+      "category": "slip",
+      "problem": {
+        "equation": "9-4",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-023",
+      "category": "slip",
+      "problem": {
+        "equation": "3*4",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "11"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-024",
+      "category": "slip",
+      "problem": {
+        "equation": "18/3",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-025",
+      "category": "slip",
+      "problem": {
+        "equation": "7+(-2)",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-026",
+      "category": "slip",
+      "problem": {
+        "equation": "10-(-3)",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "12"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-027",
+      "category": "slip",
+      "problem": {
+        "equation": "2*(3+4)",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "13"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-028",
+      "category": "slip",
+      "problem": {
+        "equation": "20/4+1",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-029",
+      "category": "slip",
+      "problem": {
+        "equation": "6+3*2",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "13"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-030",
+      "category": "slip",
+      "problem": {
+        "equation": "14-2*3",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-031",
+      "category": "slip",
+      "problem": {
+        "equation": "(8+4)/2",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-032",
+      "category": "slip",
+      "problem": {
+        "equation": "3*(5-2)+1",
+        "primary_skill_id": "A01",
+        "concept_id": "A01"
+      },
+      "steps": [
+        "9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-A01"
+    },
+    {
+      "case_id": "CASE-033",
+      "category": "slip",
+      "problem": {
+        "equation": "2x+4=12",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "2x=8",
+        "x=5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-034",
+      "category": "slip",
+      "problem": {
+        "equation": "3x+5=20",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "3x=15",
+        "x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-035",
+      "category": "slip",
+      "problem": {
+        "equation": "4x+2=14",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "4x=10",
+        "x=2.5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-036",
+      "category": "slip",
+      "problem": {
+        "equation": "5x-3=17",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "5x=20",
+        "x=4.5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-037",
+      "category": "slip",
+      "problem": {
+        "equation": "-2x+7=1",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "-2x=-6",
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-038",
+      "category": "slip",
+      "problem": {
+        "equation": "3x+9=0",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "3x=-9",
+        "x=-2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-039",
+      "category": "slip",
+      "problem": {
+        "equation": "6x-4=8",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "6x=12",
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-040",
+      "category": "slip",
+      "problem": {
+        "equation": "2*(x+1)=10",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "2x+2=10",
+        "2x=8",
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3
+      },
+      "problem_family": "legacy-slip-E02"
+    },
+    {
+      "case_id": "CASE-041",
+      "category": "misconception",
+      "problem": {
+        "equation": "3*(x+2)",
+        "primary_skill_id": "A02",
+        "concept_id": "A02"
+      },
+      "steps": [
+        "3x+2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      },
+      "problem_family": "distribution_missing_term"
+    },
+    {
+      "case_id": "CASE-042",
+      "category": "misconception",
+      "problem": {
+        "equation": "-2*(x-5)",
+        "primary_skill_id": "A02",
+        "concept_id": "A02"
+      },
+      "steps": [
+        "-2x-10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      },
+      "problem_family": "negative_distribution_sign"
+    },
+    {
+      "case_id": "CASE-043",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x+2)^2",
+        "primary_skill_id": "A05",
+        "concept_id": "A05"
+      },
+      "steps": [
+        "x^2+4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      },
+      "problem_family": "square_missing_middle_term"
+    },
+    {
+      "case_id": "CASE-044",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-3)^2",
+        "primary_skill_id": "A05",
+        "concept_id": "A05"
+      },
+      "steps": [
+        "x^2-9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      },
+      "problem_family": "square_identity_confusion"
+    },
+    {
+      "case_id": "CASE-045",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x+2)(x+3)",
+        "primary_skill_id": "A04",
+        "concept_id": "A04"
+      },
+      "steps": [
+        "x^2+6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      },
+      "problem_family": "binomial_missing_cross_terms"
+    },
+    {
+      "case_id": "CASE-046",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)(x+3)",
+        "primary_skill_id": "A04",
+        "concept_id": "A04"
+      },
+      "steps": [
+        "x^2+x+6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      },
+      "problem_family": "binomial_constant_sign"
+    },
+    {
+      "case_id": "CASE-047",
+      "category": "misconception",
+      "problem": {
+        "equation": "2x+3x",
+        "primary_skill_id": "A03",
+        "concept_id": "A03"
+      },
+      "steps": [
+        "5x*x"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      },
+      "problem_family": "like_terms_multiplied"
+    },
+    {
+      "case_id": "CASE-048",
+      "category": "misconception",
+      "problem": {
+        "equation": "6+(-4)",
+        "primary_skill_id": "A03",
+        "concept_id": "A03"
+      },
+      "steps": [
+        "10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      },
+      "problem_family": "integer_sign_arithmetic"
+    },
+    {
+      "case_id": "CASE-049",
+      "category": "misconception",
+      "problem": {
+        "equation": "6x+9",
+        "primary_skill_id": "A07",
+        "concept_id": "A07"
+      },
+      "steps": [
+        "6(x+9)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_FACTOR_01",
+        "misconception_family": "incomplete_common_factor"
+      },
+      "problem_family": "incomplete_common_factor"
+    },
+    {
+      "case_id": "CASE-050",
+      "category": "misconception",
+      "problem": {
+        "equation": "4x^2+6x",
+        "primary_skill_id": "A07",
+        "concept_id": "A07"
+      },
+      "steps": [
+        "2(2x^2+3)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_FACTOR_02",
+        "misconception_family": "incomplete_common_factor"
+      },
+      "problem_family": "incomplete_common_factor"
+    },
+    {
+      "case_id": "CASE-051",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x+4)(x-4)",
+        "primary_skill_id": "A06",
+        "concept_id": "A06"
+      },
+      "steps": [
+        "x^2+16"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      },
+      "problem_family": "difference_of_squares_sign"
+    },
+    {
+      "case_id": "CASE-052",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-25",
+        "primary_skill_id": "A06",
+        "concept_id": "A06"
+      },
+      "steps": [
+        "(x-5)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      },
+      "problem_family": "difference_of_squares_confusion"
+    },
+    {
+      "case_id": "CASE-053",
+      "category": "misconception",
+      "problem": {
+        "equation": "2x+3=7",
+        "primary_skill_id": "E01",
+        "concept_id": "E01"
+      },
+      "steps": [
+        "2x=10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      },
+      "problem_family": "one_sided_equation_operation"
+    },
+    {
+      "case_id": "CASE-054",
+      "category": "misconception",
+      "problem": {
+        "equation": "3x+5=20",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "3x=25"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      },
+      "problem_family": "inverse_operation"
+    },
+    {
+      "case_id": "CASE-055",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)(x+3)=0",
+        "primary_skill_id": "E04",
+        "concept_id": "E04"
+      },
+      "steps": [
+        "x-2=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      },
+      "problem_family": "missing_product_branch"
+    },
+    {
+      "case_id": "CASE-056",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-4)=0",
+        "primary_skill_id": "E04",
+        "concept_id": "E04"
+      },
+      "steps": [
+        "x-4=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      },
+      "problem_family": "dividing_out_possible_zero_factor"
+    },
+    {
+      "case_id": "CASE-057",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)/(x-2)=1",
+        "primary_skill_id": "E05",
+        "concept_id": "E05"
+      },
+      "steps": [
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      },
+      "problem_family": "lost_domain_restriction"
+    },
+    {
+      "case_id": "CASE-058",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-1)/(x+2)=0",
+        "primary_skill_id": "E05",
+        "concept_id": "E05"
+      },
+      "steps": [
+        "x=-2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      },
+      "problem_family": "accepted_excluded_root"
+    },
+    {
+      "case_id": "CASE-059",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2=9",
+        "primary_skill_id": "E06",
+        "concept_id": "E06"
+      },
+      "steps": [
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      },
+      "problem_family": "missing_quadratic_root"
+    },
+    {
+      "case_id": "CASE-060",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-5x+6=0",
+        "primary_skill_id": "E06",
+        "concept_id": "E06"
+      },
+      "steps": [
+        "x=-2 or x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      },
+      "problem_family": "quadratic_root_sign"
+    },
+    {
+      "case_id": "CASE-061",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "x^3=1",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=1"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-out_of_scope-E02"
+    },
+    {
+      "case_id": "CASE-062",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "x^4=16",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-out_of_scope-E02"
+    },
+    {
+      "case_id": "CASE-063",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "sqrt(x)=2",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=4"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-out_of_scope-E02"
+    },
+    {
+      "case_id": "CASE-064",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "x^2>4",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-out_of_scope-E02"
+    },
+    {
+      "case_id": "CASE-065",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "x^2<9",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=0"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-out_of_scope-E02"
+    },
+    {
+      "case_id": "CASE-066",
+      "category": "abstention",
+      "problem": {
+        "equation": "x=1",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-abstention-E02"
+    },
+    {
+      "case_id": "CASE-067",
+      "category": "abstention",
+      "problem": {
+        "equation": "2x+3=7",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        ""
+      ],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-abstention-E02"
+    },
+    {
+      "case_id": "CASE-068",
+      "category": "abstention",
+      "problem": {
+        "equation": "1/2x=3",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "x=6"
+      ],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-abstention-E02"
+    },
+    {
+      "case_id": "CASE-069",
+      "category": "abstention",
+      "problem": {
+        "equation": "2x+3=7",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "2x="
+      ],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-abstention-E02"
+    },
+    {
+      "case_id": "CASE-070",
+      "category": "abstention",
+      "problem": {
+        "equation": "2x+3=7",
+        "primary_skill_id": "E02",
+        "concept_id": "E02"
+      },
+      "steps": [
+        "2x=4"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      },
+      "problem_family": "legacy-abstention-E02"
+    },
+    {
+      "case_id": "EXT-MIS-001",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*(1*x+(4))",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "3*x+(4)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-002",
+      "category": "misconception",
+      "problem": {
+        "expression": "2*(2*y+(5))+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "2*(2*y+(5))",
+        "4*y+(5)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-003",
+      "category": "misconception",
+      "problem": {
+        "expression": "5*(1*x+(-3))+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "5*(1*x+(-3))",
+        "5*x+(-3)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-004",
+      "category": "misconception",
+      "problem": {
+        "expression": "2*(1/2*y+(6))+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(2*(1/2*y+(6)))",
+        "2*(1/2*y+(6))",
+        "1*y+(6)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-005",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*(2*x+(-5))+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(3*(2*x+(-5)))",
+        "3*(2*x+(-5))",
+        "6*x+(-5)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-006",
+      "category": "misconception",
+      "problem": {
+        "expression": "-2*(1*x-3)",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "-2*x-6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-007",
+      "category": "misconception",
+      "problem": {
+        "expression": "-3*(2*y-4)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "-3*(2*y-4)",
+        "-6*y-12"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-008",
+      "category": "misconception",
+      "problem": {
+        "expression": "-5*(1*x-2)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "-5*(1*x-2)",
+        "-5*x-10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-009",
+      "category": "misconception",
+      "problem": {
+        "expression": "-2*(3*y-5)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(-2*(3*y-5))",
+        "-2*(3*y-5)",
+        "-6*y-10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-010",
+      "category": "misconception",
+      "problem": {
+        "expression": "-4*(1*x-7)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(-4*(1*x-7))",
+        "-4*(1*x-7)",
+        "-4*x-28"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_02",
+        "misconception_family": "negative_distribution_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-011",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*x+2)^2",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "1*x^2+4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-012",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*y-3)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "(2*y-3)^2",
+        "4*y^2+9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-013",
+      "category": "misconception",
+      "problem": {
+        "expression": "(3*x+1)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "(3*x+1)^2",
+        "9*x^2+1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-014",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*y-4)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "((1*y-4)^2)",
+        "(1*y-4)^2",
+        "1*y^2+16"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-015",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*x+5)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "((2*x+5)^2)",
+        "(2*x+5)^2",
+        "4*x^2+25"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SQUARE_01",
+        "misconception_family": "square_missing_middle_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-016",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*x-3)^2",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "1*x^2-9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-017",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*y-4)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "(2*y-4)^2",
+        "4*y^2-16"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-018",
+      "category": "misconception",
+      "problem": {
+        "expression": "(3*x-2)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "(3*x-2)^2",
+        "9*x^2-4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-019",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*y-5)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "((1*y-5)^2)",
+        "(1*y-5)^2",
+        "1*y^2-25"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-020",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*x-6)^2+0",
+        "concept_id": "A05",
+        "primary_skill_id": "A05"
+      },
+      "problem_family": "binomial-square",
+      "steps": [
+        "((2*x-6)^2)",
+        "(2*x-6)^2",
+        "4*x^2-36"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SQUARE_02",
+        "misconception_family": "square_identity_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-021",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*x+2)*(3*x+2)",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "3*x^2+4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-022",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*y+1)*(4*y+3)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "(2*y+1)*(4*y+3)",
+        "8*y^2+3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-023",
+      "category": "misconception",
+      "problem": {
+        "expression": "(3*x+2)*(5*x+4)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "(3*x+2)*(5*x+4)",
+        "15*x^2+8"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-024",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*y+3)*(2*y+5)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "((1*y+3)*(2*y+5))",
+        "(1*y+3)*(2*y+5)",
+        "2*y^2+15"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-025",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*x+4)*(1*x+6)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "((2*x+4)*(1*x+6))",
+        "(2*x+4)*(1*x+6)",
+        "2*x^2+24"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_POLY_01",
+        "misconception_family": "binomial_missing_cross_terms"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-026",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*x+2)*(3*x+2)",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "3*x^2+8*x-4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-027",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*y+1)*(4*y+3)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "(2*y+1)*(4*y+3)",
+        "8*y^2+10*y-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-028",
+      "category": "misconception",
+      "problem": {
+        "expression": "(3*x+2)*(5*x+4)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "(3*x+2)*(5*x+4)",
+        "15*x^2+22*x-8"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-029",
+      "category": "misconception",
+      "problem": {
+        "expression": "(1*y+3)*(2*y+5)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "((1*y+3)*(2*y+5))",
+        "(1*y+3)*(2*y+5)",
+        "2*y^2+11*y-15"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-030",
+      "category": "misconception",
+      "problem": {
+        "expression": "(2*x+4)*(1*x+6)+0",
+        "concept_id": "A04",
+        "primary_skill_id": "A04"
+      },
+      "problem_family": "binomial-product",
+      "steps": [
+        "((2*x+4)*(1*x+6))",
+        "(2*x+4)*(1*x+6)",
+        "2*x^2+16*x-24"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_POLY_02",
+        "misconception_family": "binomial_constant_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-031",
+      "category": "misconception",
+      "problem": {
+        "expression": "2*x+3*x",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "like-term-combination",
+      "steps": [
+        "6*x^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-032",
+      "category": "misconception",
+      "problem": {
+        "expression": "4*x+5*x+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "like-term-combination",
+      "steps": [
+        "4*x+5*x",
+        "20*x^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-033",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*x+6*x+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "like-term-combination",
+      "steps": [
+        "3*x+6*x",
+        "18*x^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-034",
+      "category": "misconception",
+      "problem": {
+        "expression": "5*x+2*x+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "like-term-combination",
+      "steps": [
+        "(5*x+2*x)",
+        "5*x+2*x",
+        "10*x^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-035",
+      "category": "misconception",
+      "problem": {
+        "expression": "7*x+3*x+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "like-term-combination",
+      "steps": [
+        "(7*x+3*x)",
+        "7*x+3*x",
+        "21*x^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_LIKE_01",
+        "misconception_family": "like_terms_multiplied"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-036",
+      "category": "misconception",
+      "problem": {
+        "expression": "6+(-4)",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "integer-sign-arithmetic",
+      "steps": [
+        "10"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-037",
+      "category": "misconception",
+      "problem": {
+        "expression": "8+(-3)+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "integer-sign-arithmetic",
+      "steps": [
+        "8+(-3)",
+        "11"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-038",
+      "category": "misconception",
+      "problem": {
+        "expression": "5+(-2)+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "integer-sign-arithmetic",
+      "steps": [
+        "5+(-2)",
+        "7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-039",
+      "category": "misconception",
+      "problem": {
+        "expression": "9+(-7)+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "integer-sign-arithmetic",
+      "steps": [
+        "(9+(-7))",
+        "9+(-7)",
+        "16"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-040",
+      "category": "misconception",
+      "problem": {
+        "expression": "4+(-1)+0",
+        "concept_id": "A03",
+        "primary_skill_id": "A03"
+      },
+      "problem_family": "integer-sign-arithmetic",
+      "steps": [
+        "(4+(-1))",
+        "4+(-1)",
+        "5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_LIKE_02",
+        "misconception_family": "integer_sign_arithmetic"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-041",
+      "category": "misconception",
+      "problem": {
+        "expression": "2*x+5",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "2*(x+5)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_FACTOR_01",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-042",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*y+4+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "3*y+4",
+        "3*(y+4)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_FACTOR_01",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-043",
+      "category": "misconception",
+      "problem": {
+        "expression": "4*x+7+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "4*x+7",
+        "4*(x+7)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_FACTOR_01",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-044",
+      "category": "misconception",
+      "problem": {
+        "expression": "5*y+2+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "(5*y+2)",
+        "5*y+2",
+        "5*(y+2)"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_FACTOR_01",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-045",
+      "category": "misconception",
+      "problem": {
+        "expression": "4*(2*x+3)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(4*(2*x+3))",
+        "4*(2*x+3)",
+        "8*x+3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-046",
+      "category": "misconception",
+      "problem": {
+        "expression": "2*x^2+5*x",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "2*x^2+5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_FACTOR_02",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-047",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*y^2+4*y+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "3*y^2+4*y",
+        "3*y^2+4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_FACTOR_02",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-048",
+      "category": "misconception",
+      "problem": {
+        "expression": "4*x^2+7*x+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "4*x^2+7*x",
+        "4*x^2+7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_FACTOR_02",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-049",
+      "category": "misconception",
+      "problem": {
+        "expression": "5*y^2+2*y+0",
+        "concept_id": "A07",
+        "primary_skill_id": "A07"
+      },
+      "problem_family": "common-factor-extraction",
+      "steps": [
+        "(5*y^2+2*y)",
+        "5*y^2+2*y",
+        "5*y^2+2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_FACTOR_02",
+        "misconception_family": "incomplete_common_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-050",
+      "category": "misconception",
+      "problem": {
+        "expression": "3*(2*y-5)+0",
+        "concept_id": "A02",
+        "primary_skill_id": "A02"
+      },
+      "problem_family": "binomial-distribution",
+      "steps": [
+        "(3*(2*y-5))",
+        "3*(2*y-5)",
+        "6*y-5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIST_01",
+        "misconception_family": "distribution_missing_term"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-051",
+      "category": "misconception",
+      "problem": {
+        "expression": "(x+2)*(x-2)",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "x^2+4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-052",
+      "category": "misconception",
+      "problem": {
+        "expression": "(y+3)*(y-3)+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "(y+3)*(y-3)",
+        "y^2+9"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-053",
+      "category": "misconception",
+      "problem": {
+        "expression": "(x+4)*(x-4)+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "(x+4)*(x-4)",
+        "x^2+16"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-054",
+      "category": "misconception",
+      "problem": {
+        "expression": "(y+5)*(y-5)+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "((y+5)*(y-5))",
+        "(y+5)*(y-5)",
+        "y^2+25"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-055",
+      "category": "misconception",
+      "problem": {
+        "expression": "(x+6)*(x-6)+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "((x+6)*(x-6))",
+        "(x+6)*(x-6)",
+        "x^2+36"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIFFSQ_01",
+        "misconception_family": "difference_of_squares_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-056",
+      "category": "misconception",
+      "problem": {
+        "expression": "4*x^2-9",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "(2*x-3)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-057",
+      "category": "misconception",
+      "problem": {
+        "expression": "9*y^2-16+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "9*y^2-16",
+        "(3*y-4)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-058",
+      "category": "misconception",
+      "problem": {
+        "expression": "16*x^2-25+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "16*x^2-25",
+        "(4*x-5)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-059",
+      "category": "misconception",
+      "problem": {
+        "expression": "25*y^2-4+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "(25*y^2-4)",
+        "25*y^2-4",
+        "(5*y-2)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-060",
+      "category": "misconception",
+      "problem": {
+        "expression": "36*x^2-1+0",
+        "concept_id": "A06",
+        "primary_skill_id": "A06"
+      },
+      "problem_family": "difference-of-squares",
+      "steps": [
+        "(36*x^2-1)",
+        "36*x^2-1",
+        "(6*x-1)^2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DIFFSQ_02",
+        "misconception_family": "difference_of_squares_confusion"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-061",
+      "category": "misconception",
+      "problem": {
+        "equation": "2*x+(3)=11",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "2*x=14"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-062",
+      "category": "misconception",
+      "problem": {
+        "equation": "3*y+(-4)+0=8",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "3*y+(-4)=8",
+        "3*y=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-063",
+      "category": "misconception",
+      "problem": {
+        "equation": "4*x+(5)+0=17",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "4*x+(5)=17",
+        "4*x=22"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-064",
+      "category": "misconception",
+      "problem": {
+        "equation": "5*y+(-2)+0=13",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "5*y+(-2)=13+0",
+        "5*y+(-2)=13",
+        "5*y=11"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-065",
+      "category": "misconception",
+      "problem": {
+        "equation": "6*x+(1)+0=19",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "6*x+(1)=19+0",
+        "6*x+(1)=19",
+        "6*x=20"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_EQ_01",
+        "misconception_family": "one_sided_equation_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-066",
+      "category": "misconception",
+      "problem": {
+        "equation": "-2*x=6",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "negative-coefficient-sign",
+      "steps": [
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_EQ_02",
+        "misconception_family": "negative_coefficient_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-067",
+      "category": "misconception",
+      "problem": {
+        "equation": "-3*y+0=9",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "negative-coefficient-sign",
+      "steps": [
+        "-3*y=9",
+        "y=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_EQ_02",
+        "misconception_family": "negative_coefficient_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-068",
+      "category": "misconception",
+      "problem": {
+        "equation": "-4*x+0=12",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "negative-coefficient-sign",
+      "steps": [
+        "-4*x=12",
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_EQ_02",
+        "misconception_family": "negative_coefficient_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-069",
+      "category": "misconception",
+      "problem": {
+        "equation": "-5*x+0=10",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "negative-coefficient-sign",
+      "steps": [
+        "-5*x=10+0",
+        "-5*x=10",
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SIGN_01",
+        "misconception_family": "negative_coefficient_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-070",
+      "category": "misconception",
+      "problem": {
+        "equation": "-2*y+0=14",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "negative-coefficient-sign",
+      "steps": [
+        "-2*y=14+0",
+        "-2*y=14",
+        "y=7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_SIGN_01",
+        "misconception_family": "negative_coefficient_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-071",
+      "category": "misconception",
+      "problem": {
+        "equation": "2*x+(5)=19",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "2*x=24"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-072",
+      "category": "misconception",
+      "problem": {
+        "equation": "3*y+(-4)+0=8",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "3*y+(-4)=8",
+        "3*y=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-073",
+      "category": "misconception",
+      "problem": {
+        "equation": "4*x+(7)+0=23",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "4*x+(7)=23",
+        "4*x=30"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-074",
+      "category": "misconception",
+      "problem": {
+        "equation": "5*y+(-2)+0=13",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "5*y+(-2)=13+0",
+        "5*y+(-2)=13",
+        "5*y=11"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-075",
+      "category": "misconception",
+      "problem": {
+        "equation": "6*x+(1)+0=19",
+        "concept_id": "E02",
+        "primary_skill_id": "E02"
+      },
+      "problem_family": "linear-equation-transformation",
+      "steps": [
+        "6*x+(1)=19+0",
+        "6*x+(1)=19",
+        "6*x=20"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_INV_01",
+        "misconception_family": "inverse_operation"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-076",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)*(x+5)=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x-2=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-077",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-3)*(x+7)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "(x-3)*(x+7)=0",
+        "x-3=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-078",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-4)*(x+1)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "(x-4)*(x+1)=0",
+        "x-4=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-079",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-5)*(x+2)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "(x-5)*(x+2)=0+0",
+        "(x-5)*(x+2)=0",
+        "x-5=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-080",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-6)*(x+3)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "(x-6)*(x+3)=0+0",
+        "(x-6)*(x+3)=0",
+        "x-6=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_ZERO_01",
+        "misconception_family": "missing_product_branch"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-081",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-3)=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x-3=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-082",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-4)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x*(x-4)=0",
+        "x-4=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-083",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-5)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x*(x-5)=0",
+        "x-5=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-084",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-6)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x*(x-6)=0+0",
+        "x*(x-6)=0",
+        "x-6=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-085",
+      "category": "misconception",
+      "problem": {
+        "equation": "x*(x-7)+0=0",
+        "concept_id": "E04",
+        "primary_skill_id": "E04"
+      },
+      "problem_family": "zero-product-equation",
+      "steps": [
+        "x*(x-7)=0+0",
+        "x*(x-7)=0",
+        "x-7=0"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_ZERO_02",
+        "misconception_family": "dividing_out_possible_zero_factor"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-086",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)/(x-2)=1",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-087",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-3)/(x-3)+0=1",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-3)/(x-3)=1",
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-088",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-4)/(x-4)+0=1",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-4)/(x-4)=1",
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-089",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-5)/(x-5)+0=1",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-5)/(x-5)=1+0",
+        "(x-5)/(x-5)=1",
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-090",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-6)/(x-6)+0=1",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-6)/(x-6)=1+0",
+        "(x-6)/(x-6)=1",
+        "1=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DOMAIN_01",
+        "misconception_family": "lost_domain_restriction"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-091",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-1)/(x+3)=0",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-092",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-2)/(x+5)+0=0",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-2)/(x+5)=0",
+        "x=-5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-093",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-4)/(x+1)+0=0",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-4)/(x+1)=0",
+        "x=-1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-094",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-5)/(x+2)+0=0",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-5)/(x+2)=0+0",
+        "(x-5)/(x+2)=0",
+        "x=-2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-095",
+      "category": "misconception",
+      "problem": {
+        "equation": "(x-7)/(x+3)+0=0",
+        "concept_id": "E05",
+        "primary_skill_id": "E05"
+      },
+      "problem_family": "rational-domain-equation",
+      "steps": [
+        "(x-7)/(x+3)=0+0",
+        "(x-7)/(x+3)=0",
+        "x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_DOMAIN_02",
+        "misconception_family": "accepted_excluded_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-096",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2=4",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-097",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2+0=9",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2=9",
+        "x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-098",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2+0=16",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2=16",
+        "x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-099",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2+0=25",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2=25+0",
+        "x^2=25",
+        "x=5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-100",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2+0=49",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2=49+0",
+        "x^2=49",
+        "x=7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_QUAD_01",
+        "misconception_family": "missing_quadratic_root"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-101",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-4*x+3=0",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x=-1 or x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-102",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-7*x+10+0=0",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2-7*x+10=0",
+        "x=-2 or x=-5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-103",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-10*x+21+0=0",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2-10*x+21=0",
+        "x=-3 or x=-7"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-104",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-5*x+4+0=0",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2-5*x+4=0+0",
+        "x^2-5*x+4=0",
+        "x=-1 or x=-4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      }
+    },
+    {
+      "case_id": "EXT-MIS-105",
+      "category": "misconception",
+      "problem": {
+        "equation": "x^2-7*x+10+0=0",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "quadratic-equation-roots",
+      "steps": [
+        "x^2-7*x+10=0+0",
+        "x^2-7*x+10=0",
+        "x=-2 or x=-5"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 3,
+        "error_id": "M_QUAD_02",
+        "misconception_family": "quadratic_root_sign"
+      }
+    },
+    {
+      "case_id": "EXT-N01",
+      "category": "correct",
+      "problem": {
+        "expression": "8+(-3)",
+        "concept_id": "N01",
+        "primary_skill_id": "N01"
+      },
+      "problem_family": "integer-add-subtract",
+      "steps": [
+        "5"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-N02",
+      "category": "correct",
+      "problem": {
+        "expression": "3/4+1/4",
+        "concept_id": "N02",
+        "primary_skill_id": "N02"
+      },
+      "problem_family": "fraction-addition",
+      "steps": [
+        "1"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-N03",
+      "category": "correct",
+      "problem": {
+        "expression": "2+3*4",
+        "concept_id": "N03",
+        "primary_skill_id": "N03"
+      },
+      "problem_family": "order-of-operations",
+      "steps": [
+        "14"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-N04",
+      "category": "correct",
+      "problem": {
+        "expression": "5.5-2.25",
+        "concept_id": "N04",
+        "primary_skill_id": "N04"
+      },
+      "problem_family": "decimal-arithmetic",
+      "steps": [
+        "3.25"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-N05",
+      "category": "correct",
+      "problem": {
+        "expression": "2/5*10",
+        "concept_id": "N05",
+        "primary_skill_id": "N05"
+      },
+      "problem_family": "rational-scaling",
+      "steps": [
+        "4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-N06",
+      "category": "slip",
+      "problem": {
+        "expression": "5/6-1/3",
+        "concept_id": "N06",
+        "primary_skill_id": "N06"
+      },
+      "problem_family": "fraction-subtraction",
+      "steps": [
+        "2/3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      }
+    },
+    {
+      "case_id": "EXT-N07",
+      "category": "slip",
+      "problem": {
+        "expression": "3/5*10/9",
+        "concept_id": "N07",
+        "primary_skill_id": "N07"
+      },
+      "problem_family": "fraction-multiplication",
+      "steps": [
+        "1/3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      }
+    },
+    {
+      "case_id": "EXT-N08",
+      "category": "slip",
+      "problem": {
+        "expression": "12/3/2",
+        "concept_id": "N08",
+        "primary_skill_id": "N08"
+      },
+      "problem_family": "division-order",
+      "steps": [
+        "8"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      }
+    },
+    {
+      "case_id": "EXT-N09",
+      "category": "slip",
+      "problem": {
+        "expression": "3^2",
+        "concept_id": "N09",
+        "primary_skill_id": "N09"
+      },
+      "problem_family": "integer-exponent",
+      "steps": [
+        "8"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      }
+    },
+    {
+      "case_id": "EXT-N10",
+      "category": "slip",
+      "problem": {
+        "expression": "sqrt(49)",
+        "concept_id": "N10",
+        "primary_skill_id": "N10"
+      },
+      "problem_family": "arithmetic-square-root",
+      "steps": [
+        "6"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 1
+      }
+    },
+    {
+      "case_id": "EXT-F01",
+      "category": "correct",
+      "problem": {
+        "equation": "y=2*x+1; x=3",
+        "concept_id": "F01",
+        "primary_skill_id": "F01"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y-2*x=1; x=3",
+        "y=7; x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "alternative_methods": [
+        [
+          "x=3; y=2*x+1",
+          "x=3; y=7"
+        ]
+      ]
+    },
+    {
+      "case_id": "EXT-F02",
+      "category": "correct",
+      "problem": {
+        "equation": "y=-x+4; x=1",
+        "concept_id": "F02",
+        "primary_skill_id": "F02"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y+x=4; x=1",
+        "y=3; x=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "alternative_methods": [
+        [
+          "x=1; y=-x+4",
+          "x=1; y=3"
+        ]
+      ]
+    },
+    {
+      "case_id": "EXT-F03",
+      "category": "correct",
+      "problem": {
+        "equation": "y=1/2*x+3; x=4",
+        "concept_id": "F03",
+        "primary_skill_id": "F03"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "2*y=x+6; x=4",
+        "y=5; x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "alternative_methods": [
+        [
+          "x=4; y=1/2*x+3",
+          "x=4; y=5"
+        ]
+      ]
+    },
+    {
+      "case_id": "EXT-F04",
+      "category": "correct",
+      "problem": {
+        "equation": "y=3*x-2; x=2",
+        "concept_id": "F04",
+        "primary_skill_id": "F04"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y-3*x=-2; x=2",
+        "y=4; x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "alternative_methods": [
+        [
+          "x=2; y=3*x-2",
+          "x=2; y=4"
+        ]
+      ]
+    },
+    {
+      "case_id": "EXT-F05",
+      "category": "correct",
+      "problem": {
+        "equation": "y=-2*x-1; x=-3",
+        "concept_id": "F05",
+        "primary_skill_id": "F05"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y+2*x=-1; x=-3",
+        "y=5; x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_correct",
+        "first_error_step": null
+      },
+      "alternative_methods": [
+        [
+          "x=-3; y=-2*x-1",
+          "x=-3; y=5"
+        ]
+      ]
+    },
+    {
+      "case_id": "EXT-F06",
+      "category": "slip",
+      "problem": {
+        "equation": "y=2*x+1; x=3",
+        "concept_id": "F06",
+        "primary_skill_id": "F06"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y-2*x=1; x=3",
+        "y=8; x=3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      }
+    },
+    {
+      "case_id": "EXT-F07",
+      "category": "slip",
+      "problem": {
+        "equation": "y=-x+4; x=1",
+        "concept_id": "F07",
+        "primary_skill_id": "F07"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y+x=4; x=1",
+        "y=4; x=1"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      }
+    },
+    {
+      "case_id": "EXT-F08",
+      "category": "slip",
+      "problem": {
+        "equation": "y=1/2*x+3; x=4",
+        "concept_id": "F08",
+        "primary_skill_id": "F08"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "2*y=x+6; x=4",
+        "y=4; x=4"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      }
+    },
+    {
+      "case_id": "EXT-F09",
+      "category": "slip",
+      "problem": {
+        "equation": "y=3*x-2; x=2",
+        "concept_id": "F09",
+        "primary_skill_id": "F09"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y-3*x=-2; x=2",
+        "y=5; x=2"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      }
+    },
+    {
+      "case_id": "EXT-F10",
+      "category": "slip",
+      "problem": {
+        "equation": "y=-2*x-1; x=-3",
+        "concept_id": "F10",
+        "primary_skill_id": "F10"
+      },
+      "problem_family": "linear-function-value",
+      "steps": [
+        "y+2*x=-1; x=-3",
+        "y=6; x=-3"
+      ],
+      "expected": {
+        "assessment_status": "verified_incorrect",
+        "first_error_step": 2
+      }
+    },
+    {
+      "case_id": "EXT-OOS-FUNC-01",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "m^2=9",
+        "concept_id": "F10",
+        "primary_skill_id": "F10"
+      },
+      "problem_family": "unsupported-variable",
+      "steps": [
+        "m=3"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-OOS-MULTISKILL-ANSWER-01",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "sqrt(x+1)=3",
+        "concept_id": "E06",
+        "primary_skill_id": "E06"
+      },
+      "problem_family": "answer-only-multiskill-outside-parser",
+      "steps": [
+        "x=8"
+      ],
+      "expected": {
+        "assessment_status": "unverified",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-OOS-TRIG-01",
+      "category": "out_of_scope",
+      "problem": {
+        "equation": "sin(x)=0",
+        "concept_id": "F06",
+        "primary_skill_id": "F06"
+      },
+      "problem_family": "unsupported-function",
+      "steps": [
+        "x=0"
+      ],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-ABSTAIN-INCOMPLETE-01",
+      "category": "abstention",
+      "problem": {
+        "equation": "x=",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "incomplete-equation",
+      "steps": [
+        "x=2"
+      ],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      }
+    },
+    {
+      "case_id": "EXT-ABSTAIN-NOSTEPS-01",
+      "category": "abstention",
+      "problem": {
+        "equation": "2*x+3=7",
+        "concept_id": "E01",
+        "primary_skill_id": "E01"
+      },
+      "problem_family": "missing-solution-steps",
+      "steps": [],
+      "expected": {
+        "assessment_status": "needs_clarification",
+        "first_error_step": null
+      }
+    }
+  ],
+  "dataset_split": "dev_sanity_check"
+}

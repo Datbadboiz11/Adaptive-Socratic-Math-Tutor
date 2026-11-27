@@ -156,6 +156,192 @@ def rational_operation(expression):
     return sp.cancel(result), excluded
 
 
+def rational_simplify(expression):
+    """Simplify one rational expression while retaining its original domain."""
+    numerator, denominator, excluded = rational_parts(expression)
+    return sp.cancel(numerator / denominator), excluded
+
+
+def rational_simplify_answer(expression, response):
+    fraction, domain = fields(response, ';', 2)
+    a, b, _ = rational_parts(fraction)
+    if sp.gcd(a, b).degree() > 0:
+        raise ValueError('Expected the fraction in reduced form')
+    return sp.cancel(a / b), parse_set(domain)
+
+
+def square_root(expression):
+    value = scalar(expression)
+    if value < 0:
+        raise ValueError('The arithmetic square root requires a nonnegative radicand')
+    return sp.sqrt(sp.Rational(value.numerator, value.denominator))
+
+
+def square_root_answer(expression, response):
+    text = response.strip().replace(' ', '')
+    if text.startswith('-sqrt(') and text.endswith(')'):
+        value = scalar(text[6:-1])
+        if value < 0:
+            raise ValueError('A real square root requires a nonnegative radicand')
+        return -sp.sqrt(sp.Rational(value.numerator, value.denominator))
+    elif text.startswith('sqrt(') and text.endswith(')'):
+        text = text[5:-1]
+        value = scalar(text)
+        if value < 0:
+            raise ValueError('A real square root requires a nonnegative radicand')
+        return sp.sqrt(sp.Rational(value.numerator, value.denominator))
+    return scalar(text)
+
+
+def rational_equation(expression):
+    """Solve `numerator|denominator; numerator|denominator` over the reals."""
+    left, right = fields(expression, ';', 2)
+    a, b, excluded_left = rational_parts(left)
+    c, d, excluded_right = rational_parts(right)
+    excluded = excluded_left | excluded_right
+    numerator = a*d - c*b
+    coefficients = tuple(Fraction(numerator.nth(i)) for i in range(3))
+    solutions = real_rational_roots(coefficients) - excluded
+    return excluded, solutions
+
+
+def rational_equation_answer(expression, response):
+    restrictions, solutions = fields(response, ';', 2)
+    if not restrictions.startswith('x!='):
+        raise ValueError('State all excluded denominator values as x!=...')
+    excluded_text = restrictions[3:]
+    excluded = frozenset() if excluded_text in ('none', '{}') else frozenset(
+        scalar(part) for part in excluded_text.split(',')
+    )
+    if not solutions.startswith('S='):
+        raise ValueError('State the solution set as S={...}')
+    return excluded, parse_set(solutions[2:])
+
+
+def linear_function_sign(expression):
+    c, b, a = polynomial(expression)
+    if a or not b:
+        raise ValueError('Expected a linear function with nonzero slope')
+    root = -c / b
+    return root, ('>' if b > 0 else '<'), root, ('<' if b > 0 else '>'), root
+
+
+def linear_function_sign_answer(expression, response):
+    text = re.sub(r'\s+', '', response)
+    match = re.fullmatch(
+        r'x=([^;]+);positive:x([<>])([^;]+);negative:x([<>])(.+)', text,
+    )
+    if not match:
+        raise ValueError('Expected root and positive/negative half-lines')
+    root, positive_direction, positive_root, negative_direction, negative_root = match.groups()
+    return scalar(root), positive_direction, scalar(positive_root), negative_direction, scalar(negative_root)
+
+
+def quadratic_sign(expression):
+    operator, polynomial_text = fields(expression, ';', 2)
+    if operator not in ('sign', '>', '>=', '<', '<='):
+        raise ValueError('Expected sign, >, >=, < or <=')
+    c, b, a = polynomial(polynomial_text)
+    if not a:
+        raise ValueError('Expected a quadratic trinomial')
+    roots = tuple(sorted(real_rational_roots((c, b, a))))
+    leading_sign = '+' if a > 0 else '-'
+    if not roots:
+        signs = (leading_sign,)
+    elif len(roots) == 1:
+        signs = (leading_sign, '0', leading_sign)
+    else:
+        opposite = '-' if leading_sign == '+' else '+'
+        signs = (leading_sign, '0', opposite, '0', leading_sign)
+    solution = None
+    if operator != 'sign':
+        wants_positive = operator in ('>', '>=')
+        inclusive = operator in ('>=', '<=')
+        leading_positive = leading_sign == '+'
+        if not roots:
+            solution = 'all' if leading_positive == wants_positive else 'empty'
+        elif len(roots) == 1:
+            if leading_positive == wants_positive:
+                solution = 'all' if inclusive else 'all_except_root'
+            else:
+                solution = 'singleton_root' if inclusive else 'empty'
+        else:
+            outer = leading_positive == wants_positive
+            region = 'outside' if outer else 'inside'
+            endpoint = 'closed' if inclusive else 'open'
+            solution = f'{region}_{endpoint}'
+        solution = _interval_solution(roots, solution)
+    return roots, signs, solution
+
+
+def _interval_solution(roots, form):
+    if form == 'empty':
+        return ()
+    if form == 'all':
+        return ((None, False, None, False),)
+    if form == 'all_except_root':
+        root = roots[0]
+        return ((None, False, root, False), (root, False, None, False))
+    if form == 'singleton_root':
+        root = roots[0]
+        return ((root, True, root, True),)
+    left, right = roots
+    region, endpoint = form.split('_')
+    closed = endpoint == 'closed'
+    if region == 'inside':
+        return ((left, closed, right, closed),)
+    return ((None, False, left, closed), (right, closed, None, False))
+
+
+def parse_interval_solution(text):
+    text = re.sub(r'\s+', '', text).replace('∞', 'inf').replace('∪', 'U')
+    if text in ('R', 'ℝ'):
+        return ((None, False, None, False),)
+    if text in ('{}', 'empty', '∅'):
+        return ()
+    if text.startswith('{') and text.endswith('}'):
+        values = parse_set(text)
+        return tuple(sorted(((value, True, value, True) for value in values), key=lambda item: item[0]))
+    parsed = []
+    for interval in text.split('U'):
+        match = re.fullmatch(r'(\[|\()([^,]+),([^\]\)]+)(\]|\))', interval)
+        if not match:
+            raise ValueError('Use real interval notation for the inequality solution')
+        left_bracket, lower_text, upper_text, right_bracket = match.groups()
+        if lower_text in ('-inf', '-∞'):
+            lower, lower_closed = None, False
+        else:
+            lower, lower_closed = scalar(lower_text), left_bracket == '['
+        if upper_text in ('inf', '+inf', '∞', '+∞'):
+            upper, upper_closed = None, False
+        else:
+            upper, upper_closed = scalar(upper_text), right_bracket == ']'
+        if lower is not None and upper is not None:
+            if lower > upper or (lower == upper and not (lower_closed and upper_closed)):
+                raise ValueError('Invalid or empty interval')
+        parsed.append((lower, lower_closed, upper, upper_closed))
+    return tuple(sorted(parsed, key=lambda item: (item[0] is not None, item[0] or Fraction(0))))
+
+
+def quadratic_sign_answer(expression, response):
+    operator, _ = fields(expression, ';', 2)
+    expected_fields = 2 if operator == 'sign' else 3
+    parts = fields(response, ';', expected_fields)
+    if not parts[0].startswith('roots=') or not parts[1].startswith('signs='):
+        raise ValueError('Expected roots and signs')
+    roots = parse_set(parts[0][6:])
+    signs_text = parts[1][6:]
+    signs = tuple(sign.strip() for sign in signs_text.split(','))
+    if not signs or any(sign not in ('+', '-', '0') for sign in signs):
+        raise ValueError('Sign chart uses only +, - and 0')
+    solution = None
+    if expected_fields == 3:
+        if not parts[2].startswith('solution='):
+            raise ValueError('State the inequality solution')
+        solution = parse_interval_solution(parts[2][9:])
+    return tuple(sorted(roots)), signs, solution
+
+
 def rational_answer(expression, response):
     fraction, domain = fields(response, ';', 2)
     a, b, _ = rational_parts(fraction)
@@ -259,6 +445,16 @@ def elimination_answer(expression, response):
     return pair(coordinates)
 
 
+def substitution_answer(expression, response):
+    variable, row, coordinates = fields(response, ';', 3)
+    if variable not in ('x', 'y') or row not in ('1', '2'):
+        raise ValueError('Name the isolated variable and source equation')
+    a, b, _ = system_rows(expression)[int(row) - 1]
+    if (variable == 'x' and not a) or (variable == 'y' and not b):
+        raise ValueError('The selected equation cannot isolate that variable')
+    return pair(coordinates)
+
+
 def function_domain(expression):
     mode, inner = fields(expression, ';', 2)
     c, b, a = polynomial(inner)
@@ -355,9 +551,15 @@ TASK_CHECKS = {
     'number_conversion': (lambda text: conversion_value(fields(text, ' -> ', 2)[0]), conversion_answer),
     'factored_polynomial': (polynomial, factored_answer),
     'rational_operation': (rational_operation, rational_answer),
+    'rational_simplify': (rational_simplify, rational_simplify_answer),
+    'square_root': (square_root, square_root_answer),
+    'rational_equation': (rational_equation, rational_equation_answer),
+    'linear_function_sign': (linear_function_sign, linear_function_sign_answer),
+    'quadratic_sign': (quadratic_sign, quadratic_sign_answer),
     'word_equation': (word_equation, lambda expression, response: equation_submission(response)),
     'quadratic_roots': (quadratic_roots, quadratic_roots_answer),
     'linear_elimination': (solve_system, elimination_answer),
+    'linear_substitution': (solve_system, substitution_answer),
     'function_domain': (function_domain, domain_answer),
     'quadratic_axis': (quadratic_axis, axis_answer),
     'exponent_numeric': (exponential_value, exponential_answer),
