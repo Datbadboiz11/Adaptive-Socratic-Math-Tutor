@@ -660,6 +660,11 @@
           "minLength": 1,
           "title": "Prompt",
           "type": "string"
+        },
+        "target_evidence": {
+          "default": true,
+          "title": "Target Evidence",
+          "type": "boolean"
         }
       },
       "required": [

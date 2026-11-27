@@ -235,5 +235,11 @@ Quan sát:
     --compare full:no_bkt full:heuristic full:no_kg full:no_rag full:rule_policy --out data/rating/dev-02
 # Lô có baseline: thêm cặp full:socratic_llm vào --compare.
 
+# Lô chạy trên bộ tình huống đã replay (run_ablation.py --scenario-set): đưa đúng file đó. Script so dấu
+# vân tay từng tình huống (run.scenario_fingerprints trong summary.json của lô) với tình huống hiện tại và
+# dừng nếu khác: bài làm, ngữ cảnh hay đề đã đổi, sai --scenario-set, hoặc lô không có summary.json.
+.\.venv\Scripts\python.exe research/evaluation/build_rating_packet.py --outputs data/ablation/ap-01/outputs.jsonl `
+    --scenario-set data/scenarios/approved-v1/dev.json --raters r1 r2 --compare full:no_kg --out data/rating/ap-01
+
 .\.venv\Scripts\python.exe -m pytest -q tests/test_ablation.py tests/test_socratic_baseline.py
 ```

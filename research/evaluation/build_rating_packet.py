@@ -21,6 +21,8 @@ from __future__ import annotations
 import argparse
 import csv
 from dataclasses import dataclass
+import hashlib
+import json
 from pathlib import Path
 import random
 import sys
@@ -29,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 sys.path.insert(0, str(ROOT))
 from app.agent.decision import PedagogicalAction  # noqa: E402
-from app.agent.stubs import demo_answer_key, problem_prompt  # noqa: E402
+from app.agent.approved_content import any_problem_prompt, reference_answers  # noqa: E402
 from app.generation.templates import TemplateGenerator  # noqa: E402
 from research.agent.scenarios import Scenario, load_scenarios  # noqa: E402
 from research.evaluation.rubric import (  # noqa: E402
@@ -56,12 +58,11 @@ STATUSES = {"verified_correct": "đúng", "verified_incorrect": "sai", "unverifi
 
 def rating_context(sc: Scenario) -> RatingContext:
     s = sc.state
-    key = demo_answer_key(s.current.problem_id)
     a = s.latest_assessment
     return RatingContext(
         scenario_id=sc.id,
-        problem=problem_prompt(s.current.problem_id) or sc.context.current_problem_prompt or "",
-        reference_answers=list(key.final_answers) if key else [],
+        problem=any_problem_prompt(s.current.problem_id) or sc.context.current_problem_prompt or "",
+        reference_answers=reference_answers(s.current.problem_id),
         trigger=s.trigger, student_work=list(s.latest_submission), student_message=s.latest_student_message,
         assessment=None if a is None else AssessmentSummary(
             status=a.assessment_status, first_error_step=a.first_error_step, error_family=a.error_family,
@@ -76,9 +77,8 @@ def rating_context(sc: Scenario) -> RatingContext:
 
 
 def tutor_turn(o: SystemOutput) -> TutorTurn:
-    key = demo_answer_key(o.problem_id) if o.problem_id else None
-    return TutorTurn(message=o.message, new_problem=problem_prompt(o.problem_id) if o.problem_id else None,
-                     new_problem_answers=list(key.final_answers) if key else [])
+    return TutorTurn(message=o.message, new_problem=any_problem_prompt(o.problem_id) if o.problem_id else None,
+                     new_problem_answers=reference_answers(o.problem_id) if o.problem_id else [])
 
 
 def load_outputs(path: Path) -> list[SystemOutput]:
@@ -126,9 +126,11 @@ class Packet:
 
 
 def build_packet(outputs: list[SystemOutput], raters: list[str], *, seed: int, source: str, packet_id: str,
-                 compare: list[tuple[str, str]] = ()) -> Packet:
+                 compare: list[tuple[str, str]] = (), scenario_set: Path | None = None) -> Packet:
+    """``scenario_set``: dev.json/test.json đã replay mà ``run_ablation.py --scenario-set`` đã chạy; None là
+    bộ 16 tình huống mặc định."""
     outputs = sorted(outputs, key=lambda o: (o.scenario_id, o.system))
-    scenarios = {sc.id: sc for sc in load_scenarios(sorted({o.scenario_id for o in outputs}))}
+    scenarios = {sc.id: sc for sc in load_scenarios(sorted({o.scenario_id for o in outputs}), path=scenario_set)}
     contexts = {sid: rating_context(sc) for sid, sc in scenarios.items()}
     rng = random.Random(seed)
     used: set[str] = set()
@@ -288,6 +290,65 @@ def write_packet(packet: Packet, out: Path) -> None:
 
 # --------------------------------------------------------------------------- CLI
 
+LEGACY_RUNS = ROOT / "contracts" / "evaluation" / "legacy-runs.v1.json"
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_outputs(outputs: list[SystemOutput], source_run: Path, scenario_set: Path | None) -> None:
+    """Câu chỉ được ghép với đúng tình huống đã sinh ra nó; sai thì ``ValueError``.
+
+    ``source_run`` là thư mục lô của ``run_ablation.py`` / ``run_dev_repeat.py``. Mọi câu phải có nguyên
+    văn trong ``outputs.jsonl`` của lô đó (đầu vào có thể là một phần đã lọc, như pilot v2). Theo thứ tự:
+
+    - Lô ghi ``run.scenario_fingerprints``: dấu vân tay của mỗi tình huống bây giờ phải trùng lúc chạy, nếu
+      không thì bài làm hay ngữ cảnh đã đổi.
+    - Lô trên bộ đã replay chạy trước khi có dấu vân tay, chỉ ghi ``run.scenario_set_sha256``: file
+      ``--scenario-set`` phải trùng hash đó (so cả file).
+    - Lô trên bộ mặc định chưa có dấu vân tay: chỉ được nhận khi có trong ``legacy-runs.v1.json``, theo ghi
+      chép của nhóm, và luôn loại các tình huống đã sửa sau lô đó."""
+    summary_path, outputs_path = source_run / "summary.json", source_run / "outputs.jsonl"
+    for path in (summary_path, outputs_path):
+        if not path.exists():
+            raise ValueError(f"{path} not found: cannot tell which scenarios produced these outputs")
+    produced = {o.model_dump_json() for o in load_outputs(outputs_path)}
+    if foreign := sorted({o.scenario_id for o in outputs if o.model_dump_json() not in produced}):
+        raise ValueError(f"outputs for {foreign} are not in {outputs_path}")
+    ids = sorted({o.scenario_id for o in outputs})
+    run = json.loads(summary_path.read_text(encoding="utf-8-sig")).get("run", {})
+    recorded = run.get("scenario_fingerprints")
+    if recorded is not None:
+        current = {sc.id: sc.fingerprint for sc in load_scenarios(ids, path=scenario_set)}
+        if changed := [sid for sid in ids if recorded.get(sid) != current[sid]]:
+            raise ValueError(f"{changed} differ from the scenarios this run used (state, context or prompt "
+                             "changed, or another --scenario-set)")
+        return
+    set_hash = run.get("scenario_set_sha256")
+    if set_hash is not None:
+        # Lô chạy trên bộ đã replay trước khi có dấu vân tay từng ca: chỉ so được cả file.
+        if scenario_set is None:
+            raise ValueError(f"{source_run} ran on a scenario set (sha256 {set_hash}); pass that file as --scenario-set")
+        if (actual := _sha256(scenario_set)) != set_hash:
+            raise ValueError(f"{scenario_set} (sha256 {actual}) is not the scenario set that {source_run} ran on "
+                             f"(sha256 {set_hash})")
+        return
+    if scenario_set is not None:
+        raise ValueError(f"{source_run} records neither scenario fingerprints nor a scenario set, so it ran on "
+                         "the default scenarios; drop --scenario-set")
+    legacy = json.loads(LEGACY_RUNS.read_text(encoding="utf-8"))["runs"]
+    entry = next((r for r in legacy if r["outputs_sha256"] == _sha256(outputs_path)), None)
+    if entry is None:
+        raise ValueError(f"{source_run} has no scenario fingerprints and is not a recorded legacy run")
+    files = {name: _sha256(ROOT / name) for name in entry["scenario_files_checked"]}
+    if files != entry["scenario_files_checked"]:
+        raise ValueError(f"scenario files changed since legacy run {entry['run_id']} was checked; recheck "
+                         f"{LEGACY_RUNS.name}")
+    if stale := sorted(set(ids) & set(entry["stale_scenarios"])):
+        raise ValueError(f"{stale} changed after legacy run {entry['run_id']}; leave them out ({entry['reference']})")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     source = parser.add_mutually_exclusive_group(required=True)
@@ -295,16 +356,28 @@ def main(argv: list[str] | None = None) -> int:
     source.add_argument("--pilot", action="store_true", help="câu template/oracle/câu lỗi của bộ ca dev")
     parser.add_argument("--raters", nargs="+", required=True, help="mã người chấm, ví dụ r1 r2")
     parser.add_argument("--compare", nargs="*", default=[], help="cặp so sánh tham_chiếu:hệ_thống, ví dụ full:no_kg")
+    parser.add_argument("--scenario-set", type=Path,
+                        help="dev.json hoặc test.json đã dùng cho run_ablation.py --scenario-set")
+    parser.add_argument("--source-run", type=Path,
+                        help="thư mục lô đã sinh các câu, khi --outputs là bản đã lọc nằm chỗ khác "
+                             "(mặc định: thư mục chứa --outputs)")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--out", type=Path, required=True, help="thư mục mới, ví dụ data/rating/pilot-01")
     args = parser.parse_args(argv)
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8", errors="replace")
 
+    if args.pilot and (args.scenario_set or args.source_run):
+        parser.error("--pilot uses the default scenario set; drop --scenario-set and --source-run")
     outputs = pilot_outputs() if args.pilot else load_outputs(args.outputs)
+    if args.outputs:
+        try:
+            verify_outputs(outputs, args.source_run or args.outputs.parent, args.scenario_set)
+        except (ValueError, KeyError) as error:
+            parser.error(str(error))
     packet = build_packet(outputs, args.raters, seed=args.seed, packet_id=args.out.name,
                           source="pilot" if args.pilot else args.outputs.as_posix(),
-                          compare=parse_compare(args.compare))
+                          compare=parse_compare(args.compare), scenario_set=args.scenario_set)
     write_packet(packet, args.out)
     systems = sorted({k.system for k in packet.key.items})
     print(f"{len(packet.items)} câu từ {len(packet.contexts)} tình huống, {len(systems)} hệ thống, "

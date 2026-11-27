@@ -123,7 +123,13 @@ Pilot rubric của plan §19.3 bước 1, dùng câu model thật của lô `dev
 
 - **Phạm vi:** 14 tình huống × 3 hệ thống (Full, Rule-policy, Socratic LLM baseline) = 42 câu, và 28 cặp ghép (Full với Rule-policy, Full với baseline), cho hai người chấm `r1`, `r2`. Ba hệ thống này phủ RQ5 và mốc tham chiếu baseline; cả lô (7 hệ thống, 112 câu, 96 cặp mỗi người) quá nặng cho bước thử guideline.
 - **Bỏ `SC-04` và `SC-15`:** ngữ cảnh của hai tình huống này trong lô `dev-04` mâu thuẫn (bài làm không khớp kết quả chấm), và fixture đã được sửa sau lô đó. Phiếu dựng ngữ cảnh từ fixture hiện tại, nên giữ chúng thì người chấm thấy bài làm mới cạnh câu trả lời viết cho bài cũ.
-- **Đầu vào đã lọc** ở `data/rating/dev-04-pilot-v2-input.jsonl`; seed mặc định 0.
+- **Đầu vào đã lọc** ở `data/rating/dev-04-pilot-v2-input.jsonl`; seed mặc định 0. Tạo lại phiếu bằng
+  `--source-run data/ablation/dev-04` (lệnh ở cuối mục): file đã lọc không nằm cạnh `summary.json` của lô, và
+  script kiểm mọi câu trong đó đều có nguyên văn trong `outputs.jsonl` của `dev-04`.
+- **Lô cũ:** `dev-04` chạy trước khi runner ghi dấu vân tay từng tình huống, nên chỉ được nhận vì có trong
+  [`contracts/evaluation/legacy-runs.v1.json`](../../../contracts/evaluation/legacy-runs.v1.json), theo ghi
+  chép của nhóm. Bản ghi đó luôn loại `SC-04`, `SC-15`, và hết hiệu lực khi file tình huống mặc định đổi tiếp.
+  Lô mới có dấu vân tay nên không cần bản ghi này.
 - **Người chấm:** câu do model sinh, không do Member 3 soạn, nên Member 3 có thể là một trong hai người chấm pilot. Người thứ hai nên là Member 1 hoặc Member 2. Mỗi người chỉ nhận thư mục `raters/<mã>/` của mình, không nhận `key.json`, và chấm đủ cả bộ.
 - **Đây là chấm nội bộ.** Member 3 phát triển prompt và policy nên có thể nhận ra kiểu câu của từng hệ thống dù đã ẩn tên. Báo cáo điểm pilot phải ghi rõ điều này.
 - **Giữ điểm ban đầu:** phiếu của từng người giữ nguyên sau khi nộp; hòa giải ghi vào `reconciled/`, không sửa phiếu gốc. Độ đồng thuận tính trên điểm trước hòa giải (§4).
@@ -131,6 +137,9 @@ Pilot rubric của plan §19.3 bước 1, dùng câu model thật của lô `dev
 - Bản phiếu đầu `data/rating/dev-04-pilot` (còn `SC-04`, `SC-15`) được thay bằng bản này và không dùng; nó chưa có điểm nào.
 
 ```powershell
+# Tạo lại phiếu pilot v2 từ 42 câu đã lọc của lô dev-04
+.\.venv\Scripts\python.exe research/evaluation/build_rating_packet.py --outputs data/rating/dev-04-pilot-v2-input.jsonl `
+    --source-run data/ablation/dev-04 --raters r1 r2 --compare full:rule_policy full:socratic_llm --out data/rating/dev-04-pilot-v2
 # Sau khi hai người điền raters/r1/ratings.csv, pairs.csv và raters/r2/...
 .\.venv\Scripts\python.exe research/evaluation/score_ratings.py --packet data/rating/dev-04-pilot-v2
 ```
@@ -156,6 +165,12 @@ Pilot rubric của plan §19.3 bước 1, dùng câu model thật của lô `dev
 # Bộ bài từ lô dev-02 đã hoàn tất, có so sánh ghép cặp; không gọi API.
 .\.venv\Scripts\python.exe research/evaluation/build_rating_packet.py --outputs data/ablation/dev-02/outputs.jsonl --raters r1 r2 `
     --compare full:no_bkt full:heuristic full:no_kg full:no_rag full:rule_policy --out data/rating/dev-02
+
+# Lô chạy trên bộ tình huống đã replay (run_ablation.py --scenario-set): đưa đúng file đó. Script so dấu
+# vân tay từng tình huống (run.scenario_fingerprints trong summary.json của lô) với tình huống hiện tại và
+# dừng nếu khác: bài làm, ngữ cảnh hay đề đã đổi, sai --scenario-set, hoặc lô không có summary.json.
+.\.venv\Scripts\python.exe research/evaluation/build_rating_packet.py --outputs data/ablation/ap-01/outputs.jsonl `
+    --scenario-set data/scenarios/approved-v1/dev.json --raters r1 r2 --compare full:no_kg --out data/rating/ap-01
 
 # Tính điểm (chạy lại sau khi hòa giải)
 .\.venv\Scripts\python.exe research/evaluation/score_ratings.py --packet data/rating/pilot-01

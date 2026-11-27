@@ -68,7 +68,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-P001",
-      "prompt": "Giải phương trình 2(x - 3) = 10."
+      "prompt": "Giải phương trình 2(x - 3) = 10.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -80,7 +81,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-P002",
-      "prompt": "Giải phương trình 3(x + 1) = 12."
+      "prompt": "Giải phương trình 3(x + 1) = 12.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -92,7 +94,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E02-P003",
-      "prompt": "Giải phương trình 5x - 7 = 2x + 8."
+      "prompt": "Giải phương trình 5x - 7 = 2x + 8.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -104,7 +107,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-P001",
-      "prompt": "Khai triển -2(3y + 4)."
+      "prompt": "Khai triển -2(3y + 4).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -116,7 +120,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-P002",
-      "prompt": "Khai triển 4(x - 5)."
+      "prompt": "Khai triển 4(x - 5).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -128,7 +133,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-P001",
-      "prompt": "Tính (-7) + 3."
+      "prompt": "Tính (-7) + 3.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -140,7 +146,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E03-P001",
-      "prompt": "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó."
+      "prompt": "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -152,7 +159,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-EX-P002",
-      "prompt": "Tính 5 + (-8)."
+      "prompt": "Tính 5 + (-8).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -164,7 +172,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-PL-P003",
-      "prompt": "Tính (-4) - 6."
+      "prompt": "Tính (-4) - 6.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -176,7 +185,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-PL-P003",
-      "prompt": "Khai triển 3(2x - 5)."
+      "prompt": "Khai triển 3(2x - 5).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -188,7 +198,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A03-PL-P001",
-      "prompt": "Thu gọn 3x + 5 - x + 2."
+      "prompt": "Thu gọn 3x + 5 - x + 2.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -200,7 +211,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A03-PL-P002",
-      "prompt": "Thu gọn 4a - 7 - 6a + 1."
+      "prompt": "Thu gọn 4a - 7 - 6a + 1.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -212,7 +224,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-PL-P004",
-      "prompt": "Giải phương trình 3x + 5 = 20."
+      "prompt": "Giải phương trình 3x + 5 = 20.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -224,7 +237,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-PL-P005",
-      "prompt": "Giải phương trình -4x + 6 = -10."
+      "prompt": "Giải phương trình -4x + 6 = -10.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -236,7 +250,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E02-PL-P006",
-      "prompt": "Giải phương trình 7 - 2(x + 1) = 1."
+      "prompt": "Giải phương trình 7 - 2(x + 1) = 1.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -248,7 +263,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E05-PL-P001",
-      "prompt": "Giải phương trình (x + 1)/(x - 2) = 3/(x - 2)."
+      "prompt": "Giải phương trình (x + 1)/(x - 2) = 3/(x - 2).",
+      "target_evidence": true
     }
   ],
   "scenarios": [

@@ -242,3 +242,33 @@ def approved_services(content: ApprovedContent | None = None, **overrides):
                     observer=KnowledgeObserver(counts_as_evidence=content.counts_as_evidence),
                     problem_ref=content.problem_ref, problem_prompt=content.problem_prompt)
     return Services(**{**defaults, **overrides})
+
+
+# --------------------------------------------------------------------------- tra cứu chung
+
+def _is_demo(problem_id: str) -> bool:
+    from app.agent.stubs import DEMO_PROBLEMS
+    return problem_id in DEMO_PROBLEMS
+
+
+def any_answer_key(problem_id: str) -> AnswerKey | None:
+    """Bộ đáp án cho verifier khi bộ tình huống có thể là bài mẫu hoặc bài đã duyệt (đánh giá, ablation).
+    Bài mẫu không cần nạp kho đã duyệt."""
+    from app.agent.stubs import demo_answer_key
+    return demo_answer_key(problem_id) if _is_demo(problem_id) else load_approved_content().answer_key(problem_id)
+
+
+def any_problem_prompt(problem_id: str) -> str | None:
+    from app.agent.stubs import problem_prompt
+    return problem_prompt(problem_id) if _is_demo(problem_id) else load_approved_content().problem_prompt(problem_id)
+
+
+def reference_answers(problem_id: str) -> list[str]:
+    """Đáp án hiển thị cho người chấm. Bài đã duyệt: nguyên đáp án gốc, vì các giá trị tách cho verifier
+    làm mất thông tin (``[-7,+inf)`` chỉ còn ``-7``: không biết phía nào, có lấy đầu mút không). Bài mẫu:
+    các dạng đáp án của verifier."""
+    if not _is_demo(problem_id):
+        problem = load_approved_content().problems.get(problem_id)
+        return [problem.reference_answer] if problem else []
+    key = any_answer_key(problem_id)
+    return list(key.final_answers) if key else []

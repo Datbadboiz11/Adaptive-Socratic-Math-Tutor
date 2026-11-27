@@ -423,18 +423,19 @@ STATUS_TEXT = {"verified_correct": "đúng", "verified_incorrect": "sai", "unver
 STUDENT_TEXT = {"request_hint": "xin gợi ý", "message": "nhắn", "pause": "xin tạm dừng", "resume": "quay lại"}
 
 
-def review_sheet(blind: bool = False) -> str:
+def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: KGTool | None = None) -> str:
     """Phiếu rà soát bằng Markdown: mỗi ca có đề, lịch sử, state trước quyết định và nhãn.
-    ``blind`` bỏ nhãn và lý do, để người thứ hai gán nhãn độc lập (plan §12)."""
+    ``blind`` bỏ nhãn và lý do, để người thứ hai gán nhãn độc lập (plan §12). ``data`` mặc định là bộ
+    pilot này; bộ khác (``approved_dev``) truyền dataset của nó."""
     from research.scenarios.replay import replay
-    data = dataset()
+    data, kg = data or dataset(), kg or KG
     prompts = {p.problem.problem_id: p.prompt for p in data.problems}
     lines = [f"# Phiếu {'gán nhãn độc lập' if blind else 'rà soát nhãn'}: {data.dataset_version}", "",
              "Mỗi ca kết thúc ở lượt của học sinh; cần chọn gia sư nên làm gì tiếp theo.",
              "Action: clarify, diagnose, minimal_hint, conceptual_question, scaffold, backtrack, check_transfer, "
              "next_problem, end_session.", ""]
     for draft in data.scenarios:
-        state, _ = replay(draft, data, KG)
+        state, _ = replay(draft, data, kg)
         lines += [f"## {draft.scenario_id}. {draft.title}", "",
                   f"- Loại: {', '.join(draft.tags)}", f"- Bài đang làm: {prompts[state.current.problem_id]}", "- Lịch sử:"]
         for event in draft.history:

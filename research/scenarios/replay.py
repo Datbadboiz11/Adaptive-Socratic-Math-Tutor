@@ -57,6 +57,7 @@ def replay(draft: ScenarioDraft, dataset: ScenarioDataset,
     events = _unique_events(draft)
     state = _initial_state(draft, dataset, events[0], problems)
     services = Services(problem_ref=problems.__getitem__)
+    no_evidence = frozenset(p.problem.problem_id for p in dataset.problems if not p.target_evidence)
     ledger = ObservationLedger()
     opportunities = {state.current.opportunity_id}
     trace: list[ReplayRecord] = []
@@ -70,7 +71,8 @@ def replay(draft: ScenarioDraft, dataset: ScenarioDataset,
         if index and event.actor == events[index - 1].actor:
             raise ValueError(f"{where}: student turns and tutor decisions must alternate")
         if event.actor == "student":
-            state, ledger = _student_turn(state, event, services, ledger, dataset.parameters, trace, where)
+            state, ledger = _student_turn(state, event, services, ledger, dataset.parameters, trace, where,
+                                          no_evidence)
             continue
         state, ledger = _tutor_turn(state, ledger, event, events[index + 1], services, problems, kg, where)
         assigns_new_task = event.problem_id is not None and event.intent != I.RETURN_TO_PARENT
@@ -123,7 +125,8 @@ def _new_skill(skill_id: str, p: BKTParameters) -> SkillState:
 
 def _student_turn(state: StudentState, event: HistoryEvent, services: Services, ledger: ObservationLedger,
                   parameters: dict[str, BKTParameters], trace: list[ReplayRecord],
-                  where: str) -> tuple[StudentState, ObservationLedger]:
+                  where: str, no_evidence: frozenset[str] = frozenset()) -> tuple[StudentState, ObservationLedger]:
+    """``no_evidence``: bài không tạo observation BKT (``ProblemSource.target_evidence``)."""
     if state.status == "completed" or (state.status == "paused" and event.kind != "resume"):
         raise ValueError(f"{where}: session is {state.status}; this turn cannot happen")
     turn = TurnInput(request_id=event.request_id, trigger=event.kind, steps=event.submission, message=event.message)
@@ -131,16 +134,18 @@ def _student_turn(state: StudentState, event: HistoryEvent, services: Services, 
     state = record_student_turn(state, turn, services, event.assessment, event.submission)
     if event.assessment is None:
         return state, ledger
-    result, record = observe(state, ledger, parameters)
+    result, record = observe(state, ledger, parameters,
+                             target_evidence=state.current.problem_id not in no_evidence)
     trace.append(record)
     return record_observation(state, result), result.ledger
 
 
-def observe(state: StudentState, ledger: ObservationLedger,
-            parameters: dict[str, BKTParameters]) -> tuple[ObservationResult, ReplayRecord]:
+def observe(state: StudentState, ledger: ObservationLedger, parameters: dict[str, BKTParameters], *,
+            target_evidence: bool = True) -> tuple[ObservationResult, ReplayRecord]:
     """Observation và BKT cho lần nộp vừa chấm: đúng hàm graph dùng (``observe_submission``), chỉ khác
     tham số BKT lấy theo từng skill từ bộ dữ liệu."""
-    result, t = observe_submission(state, ledger, lambda skill_id: parameters[skill_id].model_dump())
+    result, t = observe_submission(state, ledger, lambda skill_id: parameters[skill_id].model_dump(),
+                                   target_evidence=target_evidence)
     return result, ReplayRecord(turn_id=state.turn_id, skill_id=t.skill_id, prediction_before=t.prediction_before,
                                 mastery_before=t.mastery_before, mastery_after=t.mastery_after,
                                 eligible=t.eligible, reason=t.reason)

@@ -10,12 +10,14 @@ from __future__ import annotations
 from app.agent.decision import DecisionIntent, DecisionProposal
 from app.generation.contracts import ResponseInput
 
-TEMPLATE_VERSION = "templates-0.3.0"
+TEMPLATE_VERSION = "templates-0.4.0"
 
 I = DecisionIntent
 
 TEMPLATES = {
-    I.RESOLVE_INPUT: "Mình chưa đọc được bài làm này. Em viết mỗi bước trên một dòng, ví dụ: 2x + 1 = 7 nhé.",
+    # Không nói "chưa đọc được": bài chỉ chấm đáp án cuối có thể đọc được nhưng chưa đúng dạng đề yêu cầu.
+    I.RESOLVE_INPUT: "Mình chưa chấm được bài làm này. Em đọc lại đề xem cần nộp gì rồi viết lại cho rõ nhé; "
+                     "nếu ghi cách làm thì mỗi bước một dòng.",
     I.RESTATE_TASK: "Mình cùng đọc lại đề nhé: {prompt} Đề bài đang yêu cầu em tìm gì?",
     I.ELICIT_REASONING: "Em giải thích giúp mình vì sao em viết được bước{step} như vậy không?",
     I.DISTINGUISH_HYPOTHESIS: "Ở bước{step}, em đã biến đổi phần nào của biểu thức? "

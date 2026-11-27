@@ -10,7 +10,8 @@ Kiểm tra trên câu của LLM:
 
 - ``answer_leak``: đáp án cuối của bài đang làm hoặc bài vừa giao, kể cả viết dạng tương đương
   ("x = 16/2", "nghiệm là 2^3", "-8 - 6y"). Bỏ qua bài đang làm khi học sinh đã tự giải đúng và được
-  xác minh (FR12-AC2).
+  xác minh (FR12-AC2). Đề bài chép nguyên văn không tính: đề "giải 9x² + 30x + 25 = 0" chứa số 0 trùng
+  đáp án biệt thức nhưng không lộ gì (``statements``); phần còn lại của câu vẫn được kiểm.
 - ``math_unverified``: có toán mà verifier không đọc được (căn, lũy thừa của biến, π...) hoặc bộ so
   tương đương trả "chưa xác minh được". Không chứng minh được là không lộ thì không gửi.
 - ``unsourced_equation`` / ``unsourced_expression``: đẳng thức, hay biểu thức có biến, không có trong
@@ -46,7 +47,7 @@ from app.generation.wording import (
     affirms_correctness, is_question, mentioned_operations, operations, sentences, without_named_topic,
 )
 
-VERIFIER_VERSION = "response-verifier-0.4.0"
+VERIFIER_VERSION = "response-verifier-0.5.0"
 # Ngưỡng khởi đầu cho "ngắn, một câu hỏi rõ ràng" (PRD FR-12); chốt lại trên dev.
 MAX_MESSAGE_CHARS = 500
 MAX_QUESTIONS = 1
@@ -103,6 +104,13 @@ def _same_text(text: str) -> str:
     return " ".join(text.casefold().split())
 
 
+def without_statements(message: str, statements: Sequence[str]) -> str:
+    """Câu sau khi bỏ các đề bài được chép nguyên văn (đề dài trước, để đề chứa đề khác không sót)."""
+    for statement in sorted({s.strip() for s in statements if s and s.strip()}, key=len, reverse=True):
+        message = message.replace(statement, " ")
+    return message
+
+
 class ResponseVerifier:
     def __init__(self, answer_keys: AnswerKeys, equivalence: Equivalence = linear_equivalent):
         self.answer_keys = answer_keys
@@ -121,6 +129,11 @@ class ResponseVerifier:
         return cls.reviewed_sources(inp) + [s for s in (*inp.submission, inp.student_message) if s]
 
     # ------------------------------------------------------------------ đáp án
+
+    @staticmethod
+    def statements(inp: ResponseInput) -> list[str]:
+        """Đề bài công khai trong lượt này: đề đang làm và đề vừa giao."""
+        return [s for s in (inp.problem_prompt, inp.new_problem_prompt) if s]
 
     @staticmethod
     def problems_to_check(inp: ResponseInput) -> list[str]:
@@ -169,10 +182,12 @@ class ResponseVerifier:
     def answer_check(self, inp: ResponseInput, message: str) -> Check | None:
         """``answer_leak``, ``math_unverified`` hoặc None. Bài không có đáp án thì bỏ qua: gọi
         ``has_keys`` trước khi cho LLM viết."""
-        return self._answer_result(self.problems_to_check(inp), self.sources(inp), message)
+        return self._answer_result(self.problems_to_check(inp), self.sources(inp), message, self.statements(inp))
 
-    def _answer_result(self, problem_ids: Sequence[str], sources: Sequence[str], message: str) -> Check | None:
+    def _answer_result(self, problem_ids: Sequence[str], sources: Sequence[str], message: str,
+                       statements: Sequence[str] = ()) -> Check | None:
         keys = [k for pid in problem_ids if (k := self.answer_keys(pid)) is not None]
+        message = without_statements(message, statements)
         quoted = set().union(*(sides(s) for s in sources))
         results = [self._reveals(form, message, quoted) for key in keys for form in key.final_answers]
         if any(r is True for r in results):
@@ -182,11 +197,12 @@ class ResponseVerifier:
         return None
 
     def solution_checks(self, problem_ids: Sequence[str], sources: Sequence[str], message: str, *,
-                        reviewed_sources: Sequence[str], topic: str | None = None) -> list[Check]:
+                        reviewed_sources: Sequence[str], topic: str | None = None,
+                        statements: Sequence[str] = ()) -> list[Check]:
         """Các kiểm tra chống lộ đáp án và lời giải, không cần quyết định của policy: ``problem_ids`` là
         bài có đáp án phải giữ, ``sources`` là mọi chữ người viết câu được đưa, ``reviewed_sources``
         là phần đã duyệt hoặc công khai trong đó (đề, nội dung được trích), ``topic`` là tên chủ đề
-        được phép gọi. Câu của hệ thống (``check_generated``) và câu của Socratic LLM baseline dùng
+        được phép gọi, ``statements`` là các đề bài (chép nguyên văn thì không tính là lộ đáp án). Câu của hệ thống (``check_generated``) và câu của Socratic LLM baseline dùng
         chung phần này (plan §18.2: cùng policy về tiết lộ).
 
         ``hint_level_exceeded`` ở đây là phần không phụ thuộc mức hint: kể ra quá một thao tác mới là
@@ -195,7 +211,7 @@ class ResponseVerifier:
         # Một phần của vế có trong nguồn ("x - 3" trong "2(x - 3)") cũng là có nguồn.
         new_expression = any(has_variable(side) and not any(side in known for known in source_sides)
                              for side in sides(message))
-        answer = self._answer_result(problem_ids, sources, message)
+        answer = self._answer_result(problem_ids, sources, message, statements)
         new_operations = {op for op, _ in self.new_operations(reviewed_sources, message, topic)}
         found = {
             Check.ANSWER_KEY_MISSING: any(self.answer_keys(pid) is None for pid in problem_ids),
@@ -235,7 +251,8 @@ class ResponseVerifier:
         decision = inp.decision
         asks = any(is_question(s) for s in sentences(message))
         shared = self.solution_checks(self.problems_to_check(inp), self.sources(inp), message,
-                                      reviewed_sources=self.reviewed_sources(inp), topic=inp.target_skill_title)
+                                      reviewed_sources=self.reviewed_sources(inp), topic=inp.target_skill_title,
+                                      statements=self.statements(inp))
         found = {
             **{check: True for check in shared if check != Check.HINT_LEVEL_EXCEEDED},
             Check.UNVERIFIED_AFFIRMATION: not inp.solved_current and affirms_correctness(message),
