@@ -130,7 +130,15 @@
               "linear_elimination",
               "function_domain",
               "quadratic_axis",
-              "exponent_numeric"
+              "exponent_numeric",
+              "linear_inequality",
+              "log_value",
+              "exp_log_equation",
+              "vieta",
+              "quadratic_monotonic",
+              "slope_intercept",
+              "special_factoring",
+              "product_equation"
             ],
             "type": "string"
           },
