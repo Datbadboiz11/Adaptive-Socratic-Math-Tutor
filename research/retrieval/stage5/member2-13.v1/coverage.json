@@ -1,0 +1,354 @@
+{
+  "concepts": [
+    {
+      "authoring_task_kinds": [
+        "evaluate"
+      ],
+      "concept_id": "A01",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác.",
+          "skill_id": "SK-A01-EVALUATE"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Thay giá trị vào biểu thức"
+    },
+    {
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "concept_id": "A04",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Nhân các đa thức trong các dạng đã mô tả.",
+          "skill_id": "SK-A04-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Nhân đơn thức và đa thức"
+    },
+    {
+      "authoring_task_kinds": [
+        "factored_polynomial"
+      ],
+      "concept_id": "A07",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Tìm nhân tử chung và viết đa thức thành tích.",
+          "skill_id": "SK-A07-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Phân tích nhân tử bằng đặt nhân tử chung"
+    },
+    {
+      "authoring_task_kinds": [
+        "rational_operation"
+      ],
+      "concept_id": "A10",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Thực hiện phép toán phân thức kèm điều kiện.",
+          "skill_id": "SK-A10-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Cộng trừ nhân chia phân thức"
+    },
+    {
+      "authoring_task_kinds": [
+        "word_equation"
+      ],
+      "concept_id": "E03",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Chọn ẩn và lập phương trình có đơn vị và điều kiện.",
+          "skill_id": "SK-E03-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Lập phương trình từ bài toán bằng lời"
+    },
+    {
+      "authoring_task_kinds": [
+        "quadratic_roots"
+      ],
+      "concept_id": "E06",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Phân loại số nghiệm và giải phương trình bậc hai.",
+          "skill_id": "SK-E06-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Phương trình bậc hai và biệt thức"
+    },
+    {
+      "authoring_task_kinds": [
+        "linear_elimination"
+      ],
+      "concept_id": "E09",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Khử một ẩn bằng phép cộng hai phương trình tương đương.",
+          "skill_id": "SK-E09-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Giải hệ bậc nhất bằng cộng đại số"
+    },
+    {
+      "authoring_task_kinds": [
+        "function_domain"
+      ],
+      "concept_id": "F02",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Xác định các điều kiện của biểu thức hàm.",
+          "skill_id": "SK-F02-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Tập xác định"
+    },
+    {
+      "authoring_task_kinds": [
+        "quadratic_axis",
+        "quadratic_vertex"
+      ],
+      "concept_id": "F05",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng.",
+          "skill_id": "SK-F05-VERTEX"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Đỉnh và trục đối xứng của hàm bậc hai"
+    },
+    {
+      "authoring_task_kinds": [
+        "exponent_numeric"
+      ],
+      "concept_id": "F08",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định.",
+          "skill_id": "SK-F08-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng"
+    },
+    {
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "concept_id": "N02",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu.",
+          "skill_id": "SK-N02-SIGNED-MUL"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Nhân chia số có dấu"
+    },
+    {
+      "authoring_task_kinds": [
+        "fraction_compare"
+      ],
+      "concept_id": "N05",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Quy đồng hai phân số rồi so sánh giá trị.",
+          "skill_id": "SK-N05-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Quy đồng và so sánh phân số"
+    },
+    {
+      "authoring_task_kinds": [
+        "number_conversion"
+      ],
+      "concept_id": "N08",
+      "content_status": "ready",
+      "content_version": "0.4.0-member2-review",
+      "error_fixtures": 3,
+      "examples": 3,
+      "families": 3,
+      "label_review_status": "pending",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+      "problems": 6,
+      "queries": 12,
+      "reviewer": "Member 3",
+      "skills": [
+        {
+          "observable_behavior": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn.",
+          "skill_id": "SK-N08-PRIMARY"
+        }
+      ],
+      "teaching_chunks": 7,
+      "title": "Chuyển đổi phân số–thập phân–phần trăm"
+    }
+  ],
+  "scope": "Member 2 only",
+  "summary": {
+    "approved_examples": 39,
+    "approved_packs": 13,
+    "approved_problems": 78,
+    "concepts_awaiting_reviewed_content": 0,
+    "error_fixtures": 39,
+    "owned_concepts": 13,
+    "proposed_error_categories": 32,
+    "query_count": 156
+  }
+}

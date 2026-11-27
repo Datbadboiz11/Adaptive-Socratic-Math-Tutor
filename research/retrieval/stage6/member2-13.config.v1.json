@@ -1,0 +1,20 @@
+{
+  "protocol_version": "member2-stage6-dev-1.0.0",
+  "owner": "Member 2",
+  "methods": ["metadata", "semantic"],
+  "cutoffs": [1, 3, 5],
+  "top_k": 5,
+  "warm_repeats": 2,
+  "seed": 20261126,
+  "bootstrap_samples": 1000,
+  "bootstrap_cluster": "concept_id",
+  "relevance_threshold": 2,
+  "ndcg_gain_by_grade": {"0": 0, "1": 1, "2": 3},
+  "corpus_source": "member2-v2",
+  "labelled_dev": "research/retrieval/dev/member2-13.v1",
+  "unjudged_dev": "research/retrieval/stage5/member2-13.v1",
+  "formal_test": false,
+  "selection_priority": ["ndcg@1", "ndcg@3", "query_cache_warm_wall_p95_ms"],
+  "hybrid_policy": "defer_until_dev_error_analysis_demonstrates_a_need",
+  "latency_note": "Retrieval wall time includes trace persistence. Report query-cache cold and warm separately; this is not end-to-end tutor p95."
+}

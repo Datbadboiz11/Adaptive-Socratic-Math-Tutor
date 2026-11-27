@@ -1,0 +1,21 @@
+{
+  "files_sha256": {
+    "config.json": "bcc563ba6227ab3ac866ff020bc4e09d776fbc2e433ed5342b3584b16c5f4373",
+    "inputs.json": "eebcab062dafd589e0d01f7c4f86e9a4e38605f5e9e0a1d3f21834cd295fafee",
+    "paired-blind.json": "515420a4ca7c10395cf097bae5cedb9f7b06ca0d5c3e30328d7f7b60de8b9890",
+    "paired-key.json": "645ac11fcdded241be18a162993df47098300e29c67c78d165ff62b631d9ae8e",
+    "paired-raw.json": "2ba7c4b88620982b5d88bd4e8b47410d8668a2ec79a2af941ef572e078a63f55",
+    "paired-review-A.template.json": "51bda3b24b16ff2fe3c00701212c137227451b938b1fec251ae711ed03393263",
+    "paired-review-B.template.json": "51bda3b24b16ff2fe3c00701212c137227451b938b1fec251ae711ed03393263",
+    "query-plans.json": "0a9ce18be4b9435b6892017e9cc8d4512648a20f4680045d71f87d67c161f650",
+    "ranking-errors.json": "05d0851bd440a4526cd70ac74e77ea81c29ba106c17f1125cf95c985e5aa711f",
+    "rankings.json": "66efc2e2e6a27540502c78594904a4a489ff86f652ae2f21f74d971b2ea40413",
+    "report.json": "47b6a4f8883a119642ed8fe95941ebe6ebe2cd0373a3b0020188a4c877c1f894",
+    "report.md": "cb5789205acf16f12515a76b1d749239b0f5c2c6a1394f6b7568e9c8ba88fbae",
+    "retrieval-checkpoint.json": "27f0032710f8bcd6f912d7a60d7e320c9548452e0f1480339ca3f6a2cdeed0a9",
+    "retrieval-traces.json": "5fd9a09f8d0fbea9ee08036d5522f090bb890afc0f3236aa7ad033d955701cb5"
+  },
+  "formal_test_ready": false,
+  "run_id": "7a4abbed6b04",
+  "status": "dev_evaluation_completed"
+}

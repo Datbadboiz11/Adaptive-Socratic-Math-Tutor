@@ -1,0 +1,2510 @@
+{
+  "corpus_sha256": "69485f92d8d8b2906756303e69e0d337450ad286c9d9fa0f210af8a987488984",
+  "dataset_id": "stage5-member2-13-dev-1.0.0",
+  "judgments": [
+    {
+      "content_id": "A01-explanation",
+      "content_sha256": "6d78ba8c7af23b4aedb538f08eb8215d2e85d871e9ad32784b625ff0c20c1289",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-explanation",
+      "content_sha256": "6d78ba8c7af23b4aedb538f08eb8215d2e85d871e9ad32784b625ff0c20c1289",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-explanation",
+      "content_sha256": "6d78ba8c7af23b4aedb538f08eb8215d2e85d871e9ad32784b625ff0c20c1289",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-1",
+      "content_sha256": "8c8c90d2159b3f6691e0a6ed0bc12dc4c126b082c3c094810066d53c015af8b1",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-1",
+      "content_sha256": "8c8c90d2159b3f6691e0a6ed0bc12dc4c126b082c3c094810066d53c015af8b1",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-2",
+      "content_sha256": "cca530d8398f3d74b68914e1f803524c7e3ba1bf74d1e5dde08e0b7e9c5f0003",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-1",
+      "content_sha256": "8c8c90d2159b3f6691e0a6ed0bc12dc4c126b082c3c094810066d53c015af8b1",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-2",
+      "content_sha256": "cca530d8398f3d74b68914e1f803524c7e3ba1bf74d1e5dde08e0b7e9c5f0003",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-3",
+      "content_sha256": "ba6bd28dba5f74afc360c7881e2f9c06170c88c1f201ff44cd09bddb6cbc98b0",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-01",
+      "content_sha256": "ebc9a10c1f1c900a51c34875b1ef12c7c16459d30550dca3f808f41da3aa2c8f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-03",
+      "content_sha256": "eb79ee3d1108f5d59cca60dda2b107dcf745b1118240a51c351f7b7e97e56cc1",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-02",
+      "content_sha256": "e7b42c454e41bab075bd197f4c90dfd1f7a4c48c2f5d629d4251f0a066df7d96",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-03",
+      "content_sha256": "eb79ee3d1108f5d59cca60dda2b107dcf745b1118240a51c351f7b7e97e56cc1",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-01",
+      "content_sha256": "ebc9a10c1f1c900a51c34875b1ef12c7c16459d30550dca3f808f41da3aa2c8f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A01-M2-ORIG02-EX-02",
+      "content_sha256": "e7b42c454e41bab075bd197f4c90dfd1f7a4c48c2f5d629d4251f0a066df7d96",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-explanation",
+      "content_sha256": "3e4bec18668a7d16138c7e793529dd6bcce615d627af61f91d933cf7f2eaaca9",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-explanation",
+      "content_sha256": "3e4bec18668a7d16138c7e793529dd6bcce615d627af61f91d933cf7f2eaaca9",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-explanation",
+      "content_sha256": "3e4bec18668a7d16138c7e793529dd6bcce615d627af61f91d933cf7f2eaaca9",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-1",
+      "content_sha256": "42a1b9ce1ae7387b0263f6f0ef6e22dc93383d714e7756995a3b24beca3fa0c2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-1",
+      "content_sha256": "42a1b9ce1ae7387b0263f6f0ef6e22dc93383d714e7756995a3b24beca3fa0c2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-2",
+      "content_sha256": "71acdde04b6e522fc71caa33923bbcba7ba377f4fa85606ea5336ac20377dcc2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-1",
+      "content_sha256": "42a1b9ce1ae7387b0263f6f0ef6e22dc93383d714e7756995a3b24beca3fa0c2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-2",
+      "content_sha256": "71acdde04b6e522fc71caa33923bbcba7ba377f4fa85606ea5336ac20377dcc2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-3",
+      "content_sha256": "6e0dcff6e669a6fbffd5b976b31708e1d034d183ba96e497e89cefa1c21cd13d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-01",
+      "content_sha256": "f91b01352a27e7e6b11a0850001b7b45f7cac92bc84b5a44ecd4a60764d050af",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-03",
+      "content_sha256": "836f4bbe661aeb0e466d2ea3802c7398b1478a58c06198b3f02ab0c4a6bed6f8",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-02",
+      "content_sha256": "a844436b6ee50f186bdd9be8291a2611d5b70384ac21bd6c6497c6fabf5d8b9a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-03",
+      "content_sha256": "836f4bbe661aeb0e466d2ea3802c7398b1478a58c06198b3f02ab0c4a6bed6f8",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-01",
+      "content_sha256": "f91b01352a27e7e6b11a0850001b7b45f7cac92bc84b5a44ecd4a60764d050af",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A04-M2-ORIG02-EX-02",
+      "content_sha256": "a844436b6ee50f186bdd9be8291a2611d5b70384ac21bd6c6497c6fabf5d8b9a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-explanation",
+      "content_sha256": "b1aad8f26e4d0be63a8a8a8acb048822ae44ac172e7cfbfa64402973299e5c56",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-explanation",
+      "content_sha256": "b1aad8f26e4d0be63a8a8a8acb048822ae44ac172e7cfbfa64402973299e5c56",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-explanation",
+      "content_sha256": "b1aad8f26e4d0be63a8a8a8acb048822ae44ac172e7cfbfa64402973299e5c56",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-1",
+      "content_sha256": "8095c1211db90c6df7c93d1b4c762e11ac7e3b5ef5c6cd7a771531e5b921a988",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-1",
+      "content_sha256": "8095c1211db90c6df7c93d1b4c762e11ac7e3b5ef5c6cd7a771531e5b921a988",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-2",
+      "content_sha256": "79141d676ff3952e87d959147b179be364b472cae0aa5d22313bb5d000fb1d07",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-1",
+      "content_sha256": "8095c1211db90c6df7c93d1b4c762e11ac7e3b5ef5c6cd7a771531e5b921a988",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-2",
+      "content_sha256": "79141d676ff3952e87d959147b179be364b472cae0aa5d22313bb5d000fb1d07",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-3",
+      "content_sha256": "bed7f22786048f6a461dd4336334ba4977d7d67253ce9ec802da7fd9b54974d5",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-01",
+      "content_sha256": "963bd38394bffc2c28340240465700e463708570b5deb235964d397e0c36adda",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-03",
+      "content_sha256": "b0949d3265c9fb3e7faf3bda83bec42994582501ecee9af3af29fbb995be3534",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-02",
+      "content_sha256": "40cd772cc55babf9ba19d7ab5a9c9a60798282f0a726ce80099ef650cfff7743",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-03",
+      "content_sha256": "b0949d3265c9fb3e7faf3bda83bec42994582501ecee9af3af29fbb995be3534",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-01",
+      "content_sha256": "963bd38394bffc2c28340240465700e463708570b5deb235964d397e0c36adda",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A07-M2-ORIG02-EX-02",
+      "content_sha256": "40cd772cc55babf9ba19d7ab5a9c9a60798282f0a726ce80099ef650cfff7743",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-explanation",
+      "content_sha256": "5602fb60838ad63b1e61b6824905298ea88b6a0e798b7d0c881e28614d71911a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-explanation",
+      "content_sha256": "5602fb60838ad63b1e61b6824905298ea88b6a0e798b7d0c881e28614d71911a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-explanation",
+      "content_sha256": "5602fb60838ad63b1e61b6824905298ea88b6a0e798b7d0c881e28614d71911a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-1",
+      "content_sha256": "c61ec379d1b02298e0801a9c0e623f3df24cb8ea03c822649f621810f2b8c9b3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-1",
+      "content_sha256": "c61ec379d1b02298e0801a9c0e623f3df24cb8ea03c822649f621810f2b8c9b3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-2",
+      "content_sha256": "2ccab7b64e998e04e45677027e3e5557550288b70976cb95faaa23af7277a41c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-1",
+      "content_sha256": "c61ec379d1b02298e0801a9c0e623f3df24cb8ea03c822649f621810f2b8c9b3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-2",
+      "content_sha256": "2ccab7b64e998e04e45677027e3e5557550288b70976cb95faaa23af7277a41c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-3",
+      "content_sha256": "f63d5650936b902375aebabe29d26b661fd9107239bcbd8b7001aff634e2b166",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-01",
+      "content_sha256": "d43bd76eefdab8f25114eb0dfe3cf264394f71028179ef26f4f79d434ed9da08",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-03",
+      "content_sha256": "0c48efcf0bd375d7b7fdca34f3d2b32af8d483e60233e7100ad00df0958cf549",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-02",
+      "content_sha256": "15eade686d9abab4559c1050a0309bfa7eda09de2da09856add1763c26491042",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-03",
+      "content_sha256": "0c48efcf0bd375d7b7fdca34f3d2b32af8d483e60233e7100ad00df0958cf549",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-01",
+      "content_sha256": "d43bd76eefdab8f25114eb0dfe3cf264394f71028179ef26f4f79d434ed9da08",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-A10-M2-ORIG02-EX-02",
+      "content_sha256": "15eade686d9abab4559c1050a0309bfa7eda09de2da09856add1763c26491042",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-explanation",
+      "content_sha256": "93769bbec9965b1abbf9d544dbf652d8c12c264de8ee5f168848120c9441ab5a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-explanation",
+      "content_sha256": "93769bbec9965b1abbf9d544dbf652d8c12c264de8ee5f168848120c9441ab5a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-explanation",
+      "content_sha256": "93769bbec9965b1abbf9d544dbf652d8c12c264de8ee5f168848120c9441ab5a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-1",
+      "content_sha256": "d0ffb223c493740ca4d8e1d9f9f8134e8620396f876236ea7843f64670b43b66",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-1",
+      "content_sha256": "d0ffb223c493740ca4d8e1d9f9f8134e8620396f876236ea7843f64670b43b66",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-2",
+      "content_sha256": "bdc40d50ca0570fca14598e3781941dff0380ff025a708c51879dc1e6eb5b8b8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-1",
+      "content_sha256": "d0ffb223c493740ca4d8e1d9f9f8134e8620396f876236ea7843f64670b43b66",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-2",
+      "content_sha256": "bdc40d50ca0570fca14598e3781941dff0380ff025a708c51879dc1e6eb5b8b8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-3",
+      "content_sha256": "fe3109a61ec15fa0e1cb220e1598a78806c0d632b9195a85aff182709dd8c10d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-01",
+      "content_sha256": "31cf574e235615b0d98d11eff5f658def38a4ce6a99e18cbf55c6140a57cc74a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-03",
+      "content_sha256": "b3700ae703a3dbf1f08ae37068027e727bc2ce9d78d16c394c1a4d8bac257ca6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-02",
+      "content_sha256": "4d7daba6b623ccf0330ac206673d167ac23b75a5232885a6ff996f3e5ee9e62f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-03",
+      "content_sha256": "b3700ae703a3dbf1f08ae37068027e727bc2ce9d78d16c394c1a4d8bac257ca6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-01",
+      "content_sha256": "31cf574e235615b0d98d11eff5f658def38a4ce6a99e18cbf55c6140a57cc74a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E03-M2-ORIG02-EX-02",
+      "content_sha256": "4d7daba6b623ccf0330ac206673d167ac23b75a5232885a6ff996f3e5ee9e62f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-explanation",
+      "content_sha256": "7afe5d65e84878147fa7524b58a945d359c73ece19d40b1b9c2f6ce8d4678602",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-explanation",
+      "content_sha256": "7afe5d65e84878147fa7524b58a945d359c73ece19d40b1b9c2f6ce8d4678602",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-explanation",
+      "content_sha256": "7afe5d65e84878147fa7524b58a945d359c73ece19d40b1b9c2f6ce8d4678602",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-1",
+      "content_sha256": "16538f9008d6ffe73527b62232675cb878ae5b8ae12eecca2e74c535e847635a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-1",
+      "content_sha256": "16538f9008d6ffe73527b62232675cb878ae5b8ae12eecca2e74c535e847635a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-2",
+      "content_sha256": "3b1721a72c2f907369f8d05d815c6d956bb71475f8caad8693a9113068da7dd6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-1",
+      "content_sha256": "16538f9008d6ffe73527b62232675cb878ae5b8ae12eecca2e74c535e847635a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-2",
+      "content_sha256": "3b1721a72c2f907369f8d05d815c6d956bb71475f8caad8693a9113068da7dd6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-3",
+      "content_sha256": "e8f008696b11658726f60bd639823e7a2a8bfb39d8dc7485100f425c6081f880",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-01",
+      "content_sha256": "0e93587878da8d2742a0b4ab77cb050d44bc6aaccb3f963bceae7ed76794a0ed",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-03",
+      "content_sha256": "5206a559579607d47161e9a79a7582d88f401537eb34a086a73c4d18822e11d2",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-02",
+      "content_sha256": "a44f563e082ee5f207774fe1bf11fe9b928d84cb2328e96f60922d6fdbd9f3f9",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-03",
+      "content_sha256": "5206a559579607d47161e9a79a7582d88f401537eb34a086a73c4d18822e11d2",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-01",
+      "content_sha256": "0e93587878da8d2742a0b4ab77cb050d44bc6aaccb3f963bceae7ed76794a0ed",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E06-M2-ORIG02-EX-02",
+      "content_sha256": "a44f563e082ee5f207774fe1bf11fe9b928d84cb2328e96f60922d6fdbd9f3f9",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-explanation",
+      "content_sha256": "4943504a40a913008f5b01403146ed3bbeb9c62e6f92a1ca60b94c15da689972",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-explanation",
+      "content_sha256": "4943504a40a913008f5b01403146ed3bbeb9c62e6f92a1ca60b94c15da689972",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-explanation",
+      "content_sha256": "4943504a40a913008f5b01403146ed3bbeb9c62e6f92a1ca60b94c15da689972",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-1",
+      "content_sha256": "83cabf219c7e199e018215fbbad5252e017220d368e7e32a1e736a5bf12e22d3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-1",
+      "content_sha256": "83cabf219c7e199e018215fbbad5252e017220d368e7e32a1e736a5bf12e22d3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-2",
+      "content_sha256": "33f8ba7b8ea5d7b1f15e815fbd9088c4306bce13c706e6479db1f4c2a0911580",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-1",
+      "content_sha256": "83cabf219c7e199e018215fbbad5252e017220d368e7e32a1e736a5bf12e22d3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-2",
+      "content_sha256": "33f8ba7b8ea5d7b1f15e815fbd9088c4306bce13c706e6479db1f4c2a0911580",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-3",
+      "content_sha256": "80f5cbc11c676de1e890a18331aacd2809da6b8832a382db27dc6230b7f1dd04",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-01",
+      "content_sha256": "c3e472a15b6f26c7671bc22d66bfb77f079080d5b36f80d59236976d79761b65",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-03",
+      "content_sha256": "de8ad955664ac9248495e6fcc0a7f8169d436420ce18041f5954f097ebae4d7e",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-02",
+      "content_sha256": "e73f6dd4f69f0190c53e490ee07ed8e39ca27f393f4c05c2a9f2b6fe1470635c",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-03",
+      "content_sha256": "de8ad955664ac9248495e6fcc0a7f8169d436420ce18041f5954f097ebae4d7e",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-01",
+      "content_sha256": "c3e472a15b6f26c7671bc22d66bfb77f079080d5b36f80d59236976d79761b65",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-E09-M2-ORIG02-EX-02",
+      "content_sha256": "e73f6dd4f69f0190c53e490ee07ed8e39ca27f393f4c05c2a9f2b6fe1470635c",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-explanation",
+      "content_sha256": "c63019e8e248af038bda706fef7f548c229b1867dec85da84eb794ae657d109b",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-explanation",
+      "content_sha256": "c63019e8e248af038bda706fef7f548c229b1867dec85da84eb794ae657d109b",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-explanation",
+      "content_sha256": "c63019e8e248af038bda706fef7f548c229b1867dec85da84eb794ae657d109b",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-1",
+      "content_sha256": "2822d3f078c74eef72cf5cba6b5584b48a61c3f69af863652683c408d1cdba52",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-1",
+      "content_sha256": "2822d3f078c74eef72cf5cba6b5584b48a61c3f69af863652683c408d1cdba52",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-2",
+      "content_sha256": "d2b030cbf0965f6d7fe8b2b95c559f5f6ea1cdaa437379c97b15994a7ce37831",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-1",
+      "content_sha256": "2822d3f078c74eef72cf5cba6b5584b48a61c3f69af863652683c408d1cdba52",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-2",
+      "content_sha256": "d2b030cbf0965f6d7fe8b2b95c559f5f6ea1cdaa437379c97b15994a7ce37831",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-3",
+      "content_sha256": "be04e3e3012f1cd462420627899a33201429173cb8632f77988a86f6515fe614",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-01",
+      "content_sha256": "aabdf52ec76409ad36701385679c88803eefc2302c3200f24e51e306f57b647b",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-03",
+      "content_sha256": "8410206538faa87bd16a88de0d7d8bc28b0b107854786f5284c79acc4f817727",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-02",
+      "content_sha256": "8c4d67a33d17b78756230f72b50fd839c0f63e3bda0ed45dfb6e1ac2838ef3ff",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-03",
+      "content_sha256": "8410206538faa87bd16a88de0d7d8bc28b0b107854786f5284c79acc4f817727",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-01",
+      "content_sha256": "aabdf52ec76409ad36701385679c88803eefc2302c3200f24e51e306f57b647b",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F02-M2-ORIG02-EX-02",
+      "content_sha256": "8c4d67a33d17b78756230f72b50fd839c0f63e3bda0ed45dfb6e1ac2838ef3ff",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-explanation",
+      "content_sha256": "c33446a6007d014a3596ee8d8abd80442f6cd410b6662dd96a3f151e44f94974",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-explanation",
+      "content_sha256": "c33446a6007d014a3596ee8d8abd80442f6cd410b6662dd96a3f151e44f94974",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-explanation",
+      "content_sha256": "c33446a6007d014a3596ee8d8abd80442f6cd410b6662dd96a3f151e44f94974",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-1",
+      "content_sha256": "12f6bcf9127279122ece3e1be0e3a9410e136a197644e225bd24fac3bf5de59d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-1",
+      "content_sha256": "12f6bcf9127279122ece3e1be0e3a9410e136a197644e225bd24fac3bf5de59d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-2",
+      "content_sha256": "6a02f5940060989cfb6fec5e6971017fb2ab19d4643988b027ef8cc3628ea56e",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-1",
+      "content_sha256": "12f6bcf9127279122ece3e1be0e3a9410e136a197644e225bd24fac3bf5de59d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-2",
+      "content_sha256": "6a02f5940060989cfb6fec5e6971017fb2ab19d4643988b027ef8cc3628ea56e",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-3",
+      "content_sha256": "d20825c5823719db5efa7b7987a2085e50d62bf07d2a3a20ec24f190c1bede1b",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-01",
+      "content_sha256": "1447f359327d62752a0c3c934f922f140349409980748325ea6b26ab19f283e6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-03",
+      "content_sha256": "ca9361ee2d1a1c9fda8917e6ba75e1f4bbb818e9398bd3c9adcbe80ceadea5dd",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-02",
+      "content_sha256": "b04e1f62c898c07884dcc85abd978f4ac8ae060efe4e81b127dab2ac67dd85ad",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-03",
+      "content_sha256": "ca9361ee2d1a1c9fda8917e6ba75e1f4bbb818e9398bd3c9adcbe80ceadea5dd",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-01",
+      "content_sha256": "1447f359327d62752a0c3c934f922f140349409980748325ea6b26ab19f283e6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F05-M2-ORIG02-EX-02",
+      "content_sha256": "b04e1f62c898c07884dcc85abd978f4ac8ae060efe4e81b127dab2ac67dd85ad",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-explanation",
+      "content_sha256": "92f8167d83ee41f121f9f2aaf6c06213e57f1eb568bbdbf85064690a71616ef6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-explanation",
+      "content_sha256": "92f8167d83ee41f121f9f2aaf6c06213e57f1eb568bbdbf85064690a71616ef6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-explanation",
+      "content_sha256": "92f8167d83ee41f121f9f2aaf6c06213e57f1eb568bbdbf85064690a71616ef6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-1",
+      "content_sha256": "98f1ab9fe11c31232e785921ff013ce0e3a1dd706c358326a5ecbaa3258dd4d6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-1",
+      "content_sha256": "98f1ab9fe11c31232e785921ff013ce0e3a1dd706c358326a5ecbaa3258dd4d6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-2",
+      "content_sha256": "2feb8a6a22e13849c0370425ad4b3a2e68592ddbc703799abae0841a89413f92",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-1",
+      "content_sha256": "98f1ab9fe11c31232e785921ff013ce0e3a1dd706c358326a5ecbaa3258dd4d6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-2",
+      "content_sha256": "2feb8a6a22e13849c0370425ad4b3a2e68592ddbc703799abae0841a89413f92",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-3",
+      "content_sha256": "5e780e64817c17f6e74bc2cb673778147ad40ad0a96f596ec200e7dd88eda371",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-01",
+      "content_sha256": "23345c8ae7bcb0444def0667d5c100741e5a687738204965506729c32b4083e6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-03",
+      "content_sha256": "1a53f7052ba121d2fa235f5cff57ec29f4e4a977f156c8f4737b958c4f468718",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-02",
+      "content_sha256": "f1277919d733061a1c11d5791fba599e553ddb89814ad8029f88db701925de6d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-03",
+      "content_sha256": "1a53f7052ba121d2fa235f5cff57ec29f4e4a977f156c8f4737b958c4f468718",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-01",
+      "content_sha256": "23345c8ae7bcb0444def0667d5c100741e5a687738204965506729c32b4083e6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-F08-M2-ORIG02-EX-02",
+      "content_sha256": "f1277919d733061a1c11d5791fba599e553ddb89814ad8029f88db701925de6d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-explanation",
+      "content_sha256": "54feb011d8cd7e2710d8e3cbeec035a578003c788383d27e7cfbbb46f6e809a0",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-explanation",
+      "content_sha256": "54feb011d8cd7e2710d8e3cbeec035a578003c788383d27e7cfbbb46f6e809a0",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-explanation",
+      "content_sha256": "54feb011d8cd7e2710d8e3cbeec035a578003c788383d27e7cfbbb46f6e809a0",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-1",
+      "content_sha256": "839b54fbff29e1cba5e8c776a3c19c9bb1b4777ebd6d17cab87560194823e79c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-1",
+      "content_sha256": "839b54fbff29e1cba5e8c776a3c19c9bb1b4777ebd6d17cab87560194823e79c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-2",
+      "content_sha256": "44aa4a8a92fcbff8e26a309fc3d6c28c88d3c31a877088e93fc4851818b12ea5",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-1",
+      "content_sha256": "839b54fbff29e1cba5e8c776a3c19c9bb1b4777ebd6d17cab87560194823e79c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-2",
+      "content_sha256": "44aa4a8a92fcbff8e26a309fc3d6c28c88d3c31a877088e93fc4851818b12ea5",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-3",
+      "content_sha256": "35d5905692c3e1e9c7ed416ff4c28165dc5e71b149027d433a99c44eaf6e671e",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-01",
+      "content_sha256": "83852c9ede3353442a44967f290fedc1b388466d6fe17739a3907d37ea1c7303",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-03",
+      "content_sha256": "7aff595c1abff03a0c3ef85871093acc0d4b9567d45dea33bd51c3f22b50d95f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-02",
+      "content_sha256": "b2ea4856a6db68f06722b7d34da08e719f1858a485355b47f49228158d78b7aa",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-03",
+      "content_sha256": "7aff595c1abff03a0c3ef85871093acc0d4b9567d45dea33bd51c3f22b50d95f",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-01",
+      "content_sha256": "83852c9ede3353442a44967f290fedc1b388466d6fe17739a3907d37ea1c7303",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N02-M2-ORIG02-EX-02",
+      "content_sha256": "b2ea4856a6db68f06722b7d34da08e719f1858a485355b47f49228158d78b7aa",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-explanation",
+      "content_sha256": "2b6b926d86fdcd96bae3849897b60186029d0ac683323e877a614b52c40320d8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-explanation",
+      "content_sha256": "2b6b926d86fdcd96bae3849897b60186029d0ac683323e877a614b52c40320d8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-explanation",
+      "content_sha256": "2b6b926d86fdcd96bae3849897b60186029d0ac683323e877a614b52c40320d8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-1",
+      "content_sha256": "4bb09b70bbb66c86f6c0734c116b057713dc5a9ca45a3737f6df5f697a01d8db",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-1",
+      "content_sha256": "4bb09b70bbb66c86f6c0734c116b057713dc5a9ca45a3737f6df5f697a01d8db",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-2",
+      "content_sha256": "91079243e9f6612149199bee6f38aed7d409819bbb4a4e11499ec78ab73eb759",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-1",
+      "content_sha256": "4bb09b70bbb66c86f6c0734c116b057713dc5a9ca45a3737f6df5f697a01d8db",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-2",
+      "content_sha256": "91079243e9f6612149199bee6f38aed7d409819bbb4a4e11499ec78ab73eb759",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-3",
+      "content_sha256": "d4efc4074dd58d150f4dd76d106bf813aacc1027a2363f9ae33f55c95dee7b15",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-01",
+      "content_sha256": "2459334f26bb83c4c5126613fe0b914364cf9239b48862f32f474b646305665d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-03",
+      "content_sha256": "d5790ef091d16fd58ba1071e68ce2115be3e30392153a8239e0336819e10e24a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-02",
+      "content_sha256": "f9026f6e2443150375f61a826f57f45ac093fbc1a5df1436ecd08fc59d356a7d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-03",
+      "content_sha256": "d5790ef091d16fd58ba1071e68ce2115be3e30392153a8239e0336819e10e24a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-01",
+      "content_sha256": "2459334f26bb83c4c5126613fe0b914364cf9239b48862f32f474b646305665d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N05-M2-ORIG02-EX-02",
+      "content_sha256": "f9026f6e2443150375f61a826f57f45ac093fbc1a5df1436ecd08fc59d356a7d",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-explanation",
+      "content_sha256": "12ee1d9a9b936fa3554605e97b110521c85454845d35e9879d8cafdeac1a5c53",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXPLAIN",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-explanation",
+      "content_sha256": "12ee1d9a9b936fa3554605e97b110521c85454845d35e9879d8cafdeac1a5c53",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-explanation",
+      "content_sha256": "12ee1d9a9b936fa3554605e97b110521c85454845d35e9879d8cafdeac1a5c53",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-TERMINOLOGY",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-1",
+      "content_sha256": "ebf465a581ae46c513619275fa5d49463dd756c1ee5a007971fc4ba4e3e4e700",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-1",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-1",
+      "content_sha256": "ebf465a581ae46c513619275fa5d49463dd756c1ee5a007971fc4ba4e3e4e700",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-2",
+      "content_sha256": "10cacc5ddad12fba9a09f464e7f79f28da619b0eb5b330b656102e90975adb64",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-1",
+      "content_sha256": "ebf465a581ae46c513619275fa5d49463dd756c1ee5a007971fc4ba4e3e4e700",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-2",
+      "content_sha256": "10cacc5ddad12fba9a09f464e7f79f28da619b0eb5b330b656102e90975adb64",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-3",
+      "content_sha256": "a8bf02aa14afb560cabe758f68533e8c246f8bbea2cd93e7eaa6be94f17c035c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-3",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-01",
+      "content_sha256": "d827a56828a0cbff37fa2dd2e3b27e32dfc01101ba877704b8f130e248193b21",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-03",
+      "content_sha256": "0b84cb37aedc3a9543c7e5d4d53714b3d82df25e36287e6f05e2cdadbae8440a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-1",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-02",
+      "content_sha256": "cfa573094c658e9c35ed65ccbec6cde7e9b46f3baa729cd40a45c0f2a0490fe6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-03",
+      "content_sha256": "0b84cb37aedc3a9543c7e5d4d53714b3d82df25e36287e6f05e2cdadbae8440a",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-2",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-01",
+      "content_sha256": "d827a56828a0cbff37fa2dd2e3b27e32dfc01101ba877704b8f130e248193b21",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    },
+    {
+      "content_id": "D-N08-M2-ORIG02-EX-02",
+      "content_sha256": "cfa573094c658e9c35ed65ccbec6cde7e9b46f3baa729cd40a45c0f2a0490fe6",
+      "content_version": "0.4.1-member2-kb-examples",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-EXAMPLE-PARAPHRASE",
+      "relevance": null
+    }
+  ],
+  "method": "independent_human",
+  "queries": [
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-OUT-OF-SCOPE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-EXPLAIN"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-TERMINOLOGY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-HINT-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-HINT-3"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-EXAMPLE-1"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-EXAMPLE-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-EXAMPLE-PARAPHRASE"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-EMPTY"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-AMBIGUOUS"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-OUT-OF-SCOPE"
+    }
+  ],
+  "queries_sha256": "e71723084983b01e1380e936feaa32307321b5f9947d66aecbae99884aa47075",
+  "reviewed_at": null,
+  "reviewer": null,
+  "schema_version": "1.0.0",
+  "slot": "B"
+}

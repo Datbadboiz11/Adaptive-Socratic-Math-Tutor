@@ -1,0 +1,31 @@
+{
+  "concept_ids": [
+    "N03",
+    "N06"
+  ],
+  "content_version": "0.5.0-stage5-draft",
+  "files_sha256": {
+    "N03/check.json": "be8bd8ad281154c96f7ee813f10c44f35e77bdfbae4be2fd8e62a2fbed150094",
+    "N03/request.json": "21aa0e32d72eb46f0f87cbd3bb95e54c37d5f3ce0a5e7b6e7cea324d8362ca5f",
+    "N03/review-template.json": "a316f5b089819dad950deebea3f063248c1153094ee78a198dd906781d94a36e",
+    "N03/review.md": "e36b2a79470a60d43c353d4751cb0aa0233b2073f61110a5aebfc5b5a0b11a80",
+    "N06/check.json": "b4d2093d031dbbc849842023d305322094fa76467fc2f94fb919e00a59cdf76d",
+    "N06/request.json": "08c462c793894a88c40a61f38197422cada560e743195a6b9369d6996fe32f9c",
+    "N06/review-template.json": "828bdaff9479fb43ac40f89ed883f8f929053b545c8482a5dfb9f0b41f77fa9b",
+    "N06/review.md": "6bd22e9f57a18031a2f08e464453df4a0f12fbf5885e22e2bc0635ee63aa51ef",
+    "draft-bank.json": "b4efa5574ab3fd1e4b88fe09f79bf3ab8c7480bda0acc58cbba28349af12248b",
+    "registry-snapshot.json": "edca16fab824f4b6867119717315524ac3a73866c7d2a5aa3c8a4b28a6944817"
+  },
+  "generation": {
+    "method": "offline_original_ai_assisted",
+    "model_api_calls": 0
+  },
+  "runtime_publication": false,
+  "schema_version": "1.0.0",
+  "source_sha256": {
+    "backend/app/stage5_content.py": "83cdf9ab71adb17e052c1fa3b40025852af1860293c4b4d97a878eb978e453c1",
+    "content/curriculum/pilot.v2.json": "33f35a3dd8b506a6c51627a40ae0a0298d086d7652f593b23b08b725060a6913",
+    "content/curriculum/registry.v2.json": "e9c4e5e4f60b5281fc55809040f4021df6b94de3c7757bc23018a769bf57d6a1"
+  },
+  "status": "draft_pending_independent_review"
+}

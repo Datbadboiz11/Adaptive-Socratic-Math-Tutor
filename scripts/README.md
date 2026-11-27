@@ -7,6 +7,9 @@ Chạy các lệnh từ thư mục gốc dự án; các script tự xác định
 - `dev/`: runner hồi quy dùng PostgreSQL Compose và schema test riêng.
 - `authoring/`: pipeline soạn nháp một concept, kiểm tra và ghi nhận review độc lập; xem [hướng dẫn](../content/authoring/README.md).
 - `kb/`: kiểm bộ publication/benchmark 13 concept, chuẩn bị model và đồng bộ snapshot đã duyệt; xem [runbook KB](../content/kb/README.md).
+- `retrieval/`: `prepare_member2_stage5.py --check` kiểm gói Chặng 5 cho đúng 13 concept Member 2; `curate_stage5.py` mặc định dùng gói này để tạo workset và đối chiếu hai review. `prepare_stage5.py` giữ để đối soát hồ sơ 40 concept trước khi chốt phạm vi. Xem [bàn giao](../docs/implementation/member2/part5/README.md).
+
+Chặng 6 dùng `retrieval/run_member2_stage6.py --audit-only` để kiểm đầu vào, hoặc `--workspace-local` để chạy phép đo với PostgreSQL/pgvector và model CPU local. `retrieval/review_member2_stage6.py` đối chiếu hai bộ chấm packet Full/No-RAG có kiểm hash và giữ bất đồng. Xem [phương pháp](../research/retrieval/stage6/README.md).
 
 
 

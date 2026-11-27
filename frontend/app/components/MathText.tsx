@@ -7,7 +7,7 @@ function render(node: MathNode, key = 0): React.ReactNode {
 
 export function Formula({ value }: { value: string }) {
   const layout = mathLayout(value);
-  if (layout) return element("math", { "aria-label": value }, render(layout));
+  if (layout) return element("math", { "aria-label": value, tabIndex: 0 }, render(layout));
   return <code>{value}</code>;
 }
 

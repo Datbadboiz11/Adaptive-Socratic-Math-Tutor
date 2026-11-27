@@ -12,8 +12,6 @@ Mục tiêu đồ án là 30–50 concept, hướng tới 40 concept. Lát cắt
 
 **Member 2 — Chặng 3, cập nhật 26/11/2026:** KB local đã kích hoạt 13 pack M2-ORIG02 được người dùng duyệt, gồm 52 explanation/hint và 39 ví dụ có lời giải chi tiết, tổng 91 chunk. CLI sync mặc định dùng nguồn `member2-v2`; benchmark dev phủ đủ 13 concept với 104 query. [Bàn giao, test và giới hạn nghiệm thu](docs/implementation/member2/part3/README.md) · [Runbook KB](content/kb/README.md). Tích hợp retrieved context vào gia sư thuộc Chặng 4; Docker/CI từ xa và chữ ký review độc lập còn chờ nghiệm thu.
 
-**Member 2 — bản đầu Chặng 4:** lượt gia sư cho 13 concept đã dùng nội dung KB, có giải thích/ví dụ, nguồn nội dung thực sự giao và report theo skill đóng băng cuối phiên. `TUTOR_RAG_MODE=full|no_rag` được ghim khi tạo session; phản hồi RAG dùng nguyên văn nội dung đã duyệt và không gọi API model. [Chi tiết phạm vi, test và bước tiếp theo](docs/implementation/member2/part4/README.md).
-
 ## Xem prototype
 
 Clone repo:
