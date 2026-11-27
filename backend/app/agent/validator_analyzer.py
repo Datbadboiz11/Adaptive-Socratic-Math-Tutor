@@ -102,7 +102,8 @@ class ValidatorAnalyzer:
         if status != "verified_incorrect":
             skill = raw.get("primary_skill_id") if status == "verified_correct" else None
             return AssessmentView(assessment_id=self.new_id(), assessment_status=status,
-                                  primary_skill_id=skill)
+                                  primary_skill_id=skill,
+                                  unfinished=status == "unverified" and raw.get("reason_code") == "valid_partial")
 
         offset = 1 if lines and _repeats_prompt(lines[0], task) else 0
         candidate = raw.get("misconception_candidate")

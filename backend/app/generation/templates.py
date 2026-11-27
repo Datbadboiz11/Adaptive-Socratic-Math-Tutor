@@ -10,7 +10,7 @@ from __future__ import annotations
 from app.agent.decision import DecisionIntent, DecisionProposal
 from app.generation.contracts import ResponseInput
 
-TEMPLATE_VERSION = "templates-0.2.0"
+TEMPLATE_VERSION = "templates-0.3.0"
 
 I = DecisionIntent
 
@@ -58,6 +58,12 @@ TOPIC_CONTENT = {
 SYSTEM_MESSAGE = "Mình cần kiểm tra lại câu trả lời này. Em đợi một chút rồi gửi lại nhé."
 
 
+# Validator báo bài làm còn tương đương đề nhưng chưa xong (chép đề, mới một bước, chưa rút gọn). Không
+# nói kết quả đúng hay sai để khỏi xác nhận giá trị trước khi học sinh tự hoàn thành.
+UNFINISHED_MESSAGE = ("Bài làm của em chưa phải đáp án cuối. Em hãy tính tiếp, rút gọn và nộp kết quả "
+                      "theo đúng dạng đề yêu cầu nhé.")
+
+
 def _generic(intent: DecisionIntent, topic: str | None = None) -> str:
     if topic and intent in TOPIC_CONTENT:
         return TOPIC_CONTENT[intent].format(topic=topic)
@@ -73,6 +79,8 @@ class TemplateGenerator:
 
     def __call__(self, inp: ResponseInput) -> str:
         p, a = inp.decision, inp.assessment
+        if p.intent == I.RESOLVE_INPUT and a is not None and a.unfinished:
+            return UNFINISHED_MESSAGE
         content = " ".join(c.text for c in inp.content)
         return _fill(p.intent, content=content or _generic(p.intent, inp.target_skill_title),
                      step=f" {a.first_error_step}" if a and a.first_error_step else " vừa rồi",

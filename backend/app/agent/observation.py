@@ -119,16 +119,24 @@ class ObservationTrace:
 
 
 def observe_submission(state: StudentState, ledger: ObservationLedger,
-                       parameters: ParametersFor = bootstrap_parameters) -> tuple[ObservationResult, ObservationTrace]:
-    """Quyết định lần nộp vừa chấm có được ghi observation không và cập nhật BKT của skill đích."""
+                       parameters: ParametersFor = bootstrap_parameters, *,
+                       target_evidence: bool = True) -> tuple[ObservationResult, ObservationTrace]:
+    """Quyết định lần nộp vừa chấm có được ghi observation không và cập nhật BKT của skill đích.
+
+    ``target_evidence=False``: bài chỉ chấm đáp án cuối (chế độ của Member 2), web trả
+    ``not_target_evidence`` và không tạo observation (``tutor.outcome_eligibility``). Agent làm giống hệt:
+    vẫn giữ kết quả chấm và lịch sử làm bài, nhưng không cập nhật BKT."""
     task, a = state.current, state.latest_assessment
     opportunity = str(task.opportunity_id)
-    verdict = knowledge.eligibility(
-        a.model_dump(),
-        {"assistance_level": int(assisted_now(state)), "target_skill_id": task.target_skill_id,
-         "relation": "repeat" if task.relation == "repeat" else "initial"},
-        observed=opportunity in ledger.observed, near=ledger.assisted_family_elsewhere(state),
-        first_attempt=opportunity not in ledger.verified_attempts)
+    if not target_evidence:
+        verdict = {"eligible": False, "reason": "not_target_evidence"}
+    else:
+        verdict = knowledge.eligibility(
+            a.model_dump(),
+            {"assistance_level": int(assisted_now(state)), "target_skill_id": task.target_skill_id,
+             "relation": "repeat" if task.relation == "repeat" else "initial"},
+            observed=opportunity in ledger.observed, near=ledger.assisted_family_elsewhere(state),
+            first_attempt=opportunity not in ledger.verified_attempts)
     skills = {skill.skill_id: skill for skill in state.skills}
     params = parameters(task.target_skill_id)
     existing = skills.get(task.target_skill_id)
@@ -169,8 +177,11 @@ def observe_submission(state: StudentState, ledger: ObservationLedger,
 
 @dataclass(frozen=True)
 class KnowledgeObserver:
-    """Observer cho graph."""
+    """Observer cho graph. ``counts_as_evidence(problem_id)`` cho biết bài có được dùng làm bằng chứng BKT
+    không (mặc định: có); bài chỉ chấm đáp án cuối thì không, như web."""
     parameters: ParametersFor = bootstrap_parameters
+    counts_as_evidence: Callable[[str], bool] | None = None
 
     def __call__(self, state: StudentState, assessment, ledger: ObservationLedger) -> ObservationResult:
-        return observe_submission(state, ledger, self.parameters)[0]
+        evidence = self.counts_as_evidence is None or self.counts_as_evidence(state.current.problem_id)
+        return observe_submission(state, ledger, self.parameters, target_evidence=evidence)[0]
