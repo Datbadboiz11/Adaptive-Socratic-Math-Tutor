@@ -79,6 +79,8 @@ def choose_policy(s):
                 message='Em hãy kiểm tra lại phép biến đổi: khi làm một phép toán ở một vế, em cần làm gì ở vế còn lại?'
     elif a['reason_code']=='valid_partial':
         action='ask'; message='Các bước đã gửi vẫn tương đương với đề. Em hãy viết tiếp đến khi tìm được giá trị của x nhé.'
+        if final_answer:
+            message='Kết quả của em đúng giá trị nhưng chưa phải đáp án cuối. Em hãy tính tiếp, rút gọn và viết đúng dạng đề yêu cầu nhé.'
         count=0 if progress>op['best_progress'] else count
     else:
         action='clarify'

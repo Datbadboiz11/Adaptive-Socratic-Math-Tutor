@@ -10,4 +10,9 @@ TASK_KINDS = frozenset({
     'numeric', 'evaluate', 'polynomial', 'quadratic_vertex', 'fraction_compare', 'number_conversion',
     'factored_polynomial', 'rational_operation', 'word_equation', 'quadratic_roots', 'linear_elimination',
     'function_domain', 'quadratic_axis', 'exponent_numeric',
+    # Chấm đáp án cuối x = số (E01); bước giải vẫn do validator theo bước của Member 1 chấm.
+    'linear_equation',
+    # Member 3 (app.member3_math)
+    'linear_inequality', 'log_value', 'exp_log_equation', 'vieta', 'quadratic_monotonic', 'slope_intercept',
+    'special_factoring', 'product_equation',
 })

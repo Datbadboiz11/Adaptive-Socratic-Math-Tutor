@@ -362,3 +362,8 @@ TASK_CHECKS = {
     'quadratic_axis': (quadratic_axis, axis_answer),
     'exponent_numeric': (exponential_value, exponential_answer),
 }
+
+# Dạng kiểm của Member 3: thêm vào, không thay dạng có sẵn.
+from app.member3_math import MEMBER3_CHECKS  # noqa: E402
+
+TASK_CHECKS.update({kind: check for kind, check in MEMBER3_CHECKS.items() if kind not in TASK_CHECKS})
