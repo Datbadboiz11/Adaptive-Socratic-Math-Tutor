@@ -10,9 +10,12 @@ The evaluator uses only the hand-authored benchmark and the deterministic
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import platform
+import random
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -22,13 +25,15 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 
-from app.math_validator import VERSION, validate  # noqa: E402
+from app.math_validator import VERSION, validate_bounded  # noqa: E402
 from app.misconceptions import MISCONCEPTION_CATALOG  # noqa: E402
 
 DEFAULT_DATASET = ROOT / "data" / "evaluation" / "step_errors_benchmark.json"
-DEFAULT_REPORT = ROOT / "data" / "experiments" / "rq4_evaluation_report.json"
-DEFAULT_MARKDOWN = ROOT / "data" / "experiments" / "rq4_evaluation_report.md"
+DEFAULT_REPORT = ROOT / "data" / "evaluation" / "rq4_evaluation_report.json"
+DEFAULT_MARKDOWN = ROOT / "data" / "evaluation" / "rq4_evaluation_report.md"
 ABSTENTION_STATUSES = {"unverified", "needs_clarification"}
+BOOTSTRAP_REPLICATES = 2000
+BOOTSTRAP_SEED = 20261127
 
 # Catalog IDs are fine-grained detectors.  RQ4 reports their broader reasoning
 # family so that related algebraic misconceptions share one classification.
@@ -89,6 +94,8 @@ def load_dataset(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]], str]
         ids.add(case_id)
         if not isinstance(case.get("problem"), dict) or not isinstance(case.get("steps"), list):
             raise ValueError(f"Malformed problem or steps in {case_id}")
+        if not isinstance(case.get("problem_family"), str) or not case["problem_family"].strip():
+            raise ValueError(f"Missing problem_family cluster label in {case_id}")
         if case["category"] in {"slip", "misconception"}:
             expected_step = case.get("expected", {}).get("first_error_step")
             if not isinstance(expected_step, int) or expected_step < 1:
@@ -116,16 +123,26 @@ def _classification_metrics(cases: list[dict[str, Any]], results: list[dict[str,
         if case["category"] == "misconception"
     ]
     gold_labels = sorted({case["expected"]["misconception_family"] for case, _ in scored})
-    labels = gold_labels + (["unknown"] if "unknown" not in gold_labels else [])
+    # Include every labeled case in the matrix. Slips, correct traces, and
+    # abstentions have ground-truth "unknown", so false positive diagnoses are
+    # visible in the unknown row as well as in the dedicated slip metric.
+    labels = sorted(set(ERROR_FAMILY.values()) | {"unknown"})
     confusion = {gold: {predicted: 0 for predicted in labels} for gold in labels}
+    for case, result in zip(cases, results):
+        gold = (case["expected"]["misconception_family"]
+                if case["category"] == "misconception" else "unknown")
+        predicted = result["actual"]["misconception_family"]
+        if predicted not in confusion[gold]:
+            predicted = "unknown"
+        confusion[gold][predicted] += 1
+
     predicted_families = []
     true_families = []
     for case, result in scored:
         gold = case["expected"]["misconception_family"]
         predicted = result["actual"]["misconception_family"]
-        if predicted not in confusion[gold]:
+        if predicted not in gold_labels:
             predicted = "unknown"
-        confusion[gold][predicted] += 1
         true_families.append(gold)
         predicted_families.append(predicted)
 
@@ -166,10 +183,148 @@ def _classification_metrics(cases: list[dict[str, Any]], results: list[dict[str,
     }
 
 
+def _case_concept(case: dict[str, Any]) -> str | None:
+    problem = case.get("problem", {})
+    concept = problem.get("concept_id") or problem.get("primary_skill_id") or ""
+    match = re.search(r"\b([NAEF]\d{2})\b", str(concept).upper())
+    return match.group(1) if match else None
+
+
+def _domain_for_case(case: dict[str, Any]) -> str:
+    concept = _case_concept(case)
+    prefix = concept[0] if concept else "?"
+    return {
+        "N": "Toán số (N01–N10)",
+        "A": "Biểu thức đại số (A01–A10)",
+        "E": "Phương trình & BPT (E01–E10)",
+        "F": "Hàm số (F01–F10)",
+    }.get(prefix, "Chưa gán miền")
+
+
+def _subset_metrics(cases: list[dict[str, Any]], results: list[dict[str, Any]]) -> dict[str, Any]:
+    incorrect = [
+        (case, result) for case, result in zip(cases, results)
+        if case["category"] in {"slip", "misconception"}
+    ]
+    localized = sum(
+        result["actual"]["first_error_step"] == case["expected"].get("first_error_step")
+        for case, result in incorrect
+    )
+    structural_cases = [case for case in cases if case["category"] == "misconception"]
+    structural_results = [
+        result for case, result in zip(cases, results) if case["category"] == "misconception"
+    ]
+    abstention_pairs = [
+        (case, result) for case, result in zip(cases, results)
+        if case["category"] in {"out_of_scope", "ambiguous", "abstention"}
+    ]
+    abstained = sum(result["actual"]["assessment_status"] in ABSTENTION_STATUSES
+                    for _, result in abstention_pairs)
+    slips = [result for case, result in zip(cases, results) if case["category"] == "slip"]
+    false_positives = sum(result["actual"]["misconception_family"] != "unknown" for result in slips)
+    return {
+        "case_count": len(cases),
+        "incorrect_case_count": len(incorrect),
+        "step_localization_accuracy": localized / len(incorrect) if incorrect else None,
+        "misconception_case_count": len(structural_cases),
+        "misconception_macro_f1": _classification_metrics(
+            structural_cases, structural_results
+        )["macro_f1"] if structural_cases else None,
+        "arithmetic_slip_count": len(slips),
+        "arithmetic_slip_fp_rate": false_positives / len(slips) if slips else None,
+        "abstention_case_count": len(abstention_pairs),
+        "abstention_rate": abstained / len(abstention_pairs) if abstention_pairs else None,
+    }
+
+
+def _stratified_breakdowns(cases: list[dict[str, Any]], results: list[dict[str, Any]]) -> dict[str, Any]:
+    incorrect_groups: dict[str, list[tuple[dict[str, Any], dict[str, Any]]]] = {
+        "first_error_step_1": [], "first_error_step_2_or_later": []
+    }
+    domains: dict[str, list[tuple[dict[str, Any], dict[str, Any]]]] = {}
+    for case, result in zip(cases, results):
+        if case["category"] in {"slip", "misconception"}:
+            step = case["expected"].get("first_error_step", 0)
+            key = "first_error_step_1" if step == 1 else "first_error_step_2_or_later"
+            incorrect_groups[key].append((case, result))
+        domains.setdefault(_domain_for_case(case), []).append((case, result))
+
+    step_breakdown = {}
+    for key, pairs in incorrect_groups.items():
+        subset = _subset_metrics([case for case, _ in pairs], [result for _, result in pairs])
+        step_breakdown[key] = {
+            "incorrect_case_count": subset["incorrect_case_count"],
+            "localized_count": round((subset["step_localization_accuracy"] or 0)
+                                      * subset["incorrect_case_count"]),
+            "step_localization_accuracy": subset["step_localization_accuracy"],
+            "misconception_macro_f1": subset["misconception_macro_f1"],
+        }
+
+    domain_breakdown = {}
+    for domain, pairs in sorted(domains.items()):
+        domain_breakdown[domain] = _subset_metrics(
+            [case for case, _ in pairs], [result for _, result in pairs]
+        )
+    return {"by_error_step_position": step_breakdown, "by_knowledge_domain": domain_breakdown}
+
+
+def _percentile(values: list[float], quantile: float) -> float:
+    ordered = sorted(values)
+    position = (len(ordered) - 1) * quantile
+    lower = int(position)
+    upper = min(lower + 1, len(ordered) - 1)
+    weight = position - lower
+    return ordered[lower] * (1 - weight) + ordered[upper] * weight
+
+
+def _cluster_bootstrap(cases: list[dict[str, Any]], results: list[dict[str, Any]]) -> dict[str, Any]:
+    clusters: dict[str, list[int]] = {}
+    for index, case in enumerate(cases):
+        clusters.setdefault(case["problem_family"], []).append(index)
+    cluster_names = sorted(clusters)
+    if not cluster_names:
+        return {}
+    rng = random.Random(BOOTSTRAP_SEED)
+    samples: dict[str, list[float]] = {
+        "step_localization_accuracy": [],
+        "misconception_macro_f1": [],
+        "arithmetic_slip_fp_rate": [],
+        "abstention_rate": [],
+    }
+    for _ in range(BOOTSTRAP_REPLICATES):
+        selected = [rng.choice(cluster_names) for _ in cluster_names]
+        indices = [index for cluster in selected for index in clusters[cluster]]
+        sample_cases = [cases[index] for index in indices]
+        sample_results = [results[index] for index in indices]
+        metrics = _subset_metrics(sample_cases, sample_results)
+        for metric_name in samples:
+            value = metrics[metric_name]
+            if value is not None:
+                samples[metric_name].append(value)
+    return {
+        metric_name: {
+            "confidence_level": 0.95,
+            "lower": _percentile(values, 0.025) if values else None,
+            "upper": _percentile(values, 0.975) if values else None,
+            "valid_replicates": len(values),
+            "replicates_requested": BOOTSTRAP_REPLICATES,
+            "resampling_unit": "problem_family cluster, sampled with replacement",
+            "seed": BOOTSTRAP_SEED,
+        }
+        for metric_name, values in samples.items()
+    }
+
+
 def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha256: str) -> dict[str, Any]:
     case_results: list[dict[str, Any]] = []
-    for case in cases:
-        raw_result = validate(case["problem"], case["steps"])
+    # Keep a small bounded worker pool: each case still runs in its own
+    # sandboxed math_worker process with an independent 2.75-second timeout.
+    with ThreadPoolExecutor(max_workers=min(4, max(1, len(cases)))) as pool:
+        raw_results = list(pool.map(
+            lambda case: validate_bounded(case["problem"], case["steps"], timeout=2.75),
+            cases,
+        ))
+    for case, raw_result in zip(cases, raw_results):
         assessment = raw_result["assessment"]
         actual = {
             "assessment_status": assessment["assessment_status"],
@@ -219,6 +374,10 @@ def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha2
     category_counts = Counter(case["category"] for case in cases)
     status_matches = sum(result["matches"]["assessment_status"] for result in case_results)
     all_expected_matches = sum(all(result["matches"].values()) for result in case_results)
+    classification = _classification_metrics(cases, case_results)
+    dataset_split = document.get("dataset_split", "dev_sanity_check")
+    if dataset_split not in {"dev_sanity_check", "independent_test"}:
+        raise ValueError("dataset_split must be dev_sanity_check or independent_test")
 
     return {
         "report_version": "rq4-step-errors-v1",
@@ -229,12 +388,17 @@ def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha2
             "sha256": dataset_sha256,
             "language": document.get("language", "vi"),
             "benchmark_type": document.get("benchmark_type", "unspecified"),
+            "dataset_split": dataset_split,
             "limitations": document.get("limitations_vi"),
             "case_count": len(cases),
             "category_counts": dict(sorted(category_counts.items())),
             "required_core_cases": {"correct": 20, "slip": 20, "misconception": 20},
         },
-        "validator": {"api": "app.math_validator.validate", "version": VERSION},
+        "validator": {
+            "api": "app.math_validator.validate via app.math_worker.py stdin/stdout",
+            "per_case_timeout_seconds": 2.75,
+            "version": VERSION,
+        },
         "metrics": {
             "step_localization": {
                 "correct": localized,
@@ -255,7 +419,7 @@ def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha2
                 "status_accuracy": status_matches / len(case_results) if case_results else None,
                 "exact_label_accuracy": all_expected_matches / len(case_results) if case_results else None,
             },
-            "misconception_classification": _classification_metrics(cases, case_results),
+            "misconception_classification": classification,
             "arithmetic_slip_diagnosis": {
                 "false_positive_known_misconception": slip_false_positives,
                 "total_arithmetic_slips": len(slip_results),
@@ -268,6 +432,8 @@ def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha2
                 "rate": abstained / len(abstention_cases) if abstention_cases else None,
                 "accepted_statuses": sorted(ABSTENTION_STATUSES),
             },
+            "bootstrap_95_confidence_intervals": _cluster_bootstrap(cases, case_results),
+            "stratified_breakdown": _stratified_breakdowns(cases, case_results),
         },
         "case_results": case_results,
     }
@@ -275,6 +441,13 @@ def evaluate(document: dict[str, Any], cases: list[dict[str, Any]], dataset_sha2
 
 def _pct(value: float | None) -> str:
     return "n/a" if value is None else f"{100 * value:.1f}%"
+
+
+def _ci_pct(interval: dict[str, Any]) -> str:
+    lower, upper = interval.get("lower"), interval.get("upper")
+    if lower is None or upper is None:
+        return "n/a"
+    return f"{100 * lower:.1f}%–{100 * upper:.1f}%"
 
 
 def markdown_report(report: dict[str, Any]) -> str:
@@ -286,6 +459,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         "# RQ4: Step Error and Misconception Evaluation",
         "",
         f"- Dataset: `{report['dataset']['path']}` ({report['dataset']['case_count']} cases)",
+        f"- Split: `{report['dataset']['dataset_split']}`",
         f"- Validator: `{report['validator']['api']}` (`{report['validator']['version']}`)",
         "- Misconception classification is scored on structural-misconception cases only; labels are broad families mapped from catalog error IDs.",
         "- Step numbers are 1-based. Abstention is scored on out-of-scope or ambiguous cases.",
@@ -304,11 +478,56 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"| Arithmetic-slip false-positive rate | {_pct(metrics['arithmetic_slip_diagnosis']['false_positive_rate'])} | {metrics['arithmetic_slip_diagnosis']['false_positive_known_misconception']} / {metrics['arithmetic_slip_diagnosis']['total_arithmetic_slips']} slips assigned a known misconception |",
         f"| Abstention rate | {_pct(abstention['rate'])} | {abstention['abstained']} / {abstention['total_out_of_scope_or_ambiguous']} out-of-scope/ambiguous cases |",
         "",
+        "## Cluster-bootstrap 95% confidence intervals",
+        "",
+        "Resampling uses `problem_family` clusters with replacement; the seed and valid replicate count are recorded in JSON.",
+        "",
+        "| Metric | 95% CI | Valid replicates |",
+        "|---|---:|---:|",
+    ]
+    intervals = metrics["bootstrap_95_confidence_intervals"]
+    for metric_name, label in (
+        ("step_localization_accuracy", "Step localization accuracy"),
+        ("misconception_macro_f1", "Misconception macro-F1"),
+        ("arithmetic_slip_fp_rate", "Arithmetic-slip false-positive rate"),
+        ("abstention_rate", "Abstention rate"),
+    ):
+        interval = intervals[metric_name]
+        lines.append(f"| {label} | {_ci_pct(interval)} | {interval['valid_replicates']} / {interval['replicates_requested']} |")
+    lines.extend([
+        "",
+        "## Stratified breakdown",
+        "",
+        "### By first-error step",
+        "",
+        "| Stratum | Incorrect cases | Exact step localization | Misconception macro-F1 |",
+        "|---|---:|---:|---:|",
+    ])
+    for stratum, scores in metrics["stratified_breakdown"]["by_error_step_position"].items():
+        label = "first_error_step = 1" if stratum == "first_error_step_1" else "first_error_step ≥ 2"
+        lines.append(
+            f"| {label} | {scores['incorrect_case_count']} | {_pct(scores['step_localization_accuracy'])} | {_pct(scores['misconception_macro_f1'])} |"
+        )
+    lines.extend([
+        "",
+        "### By knowledge domain",
+        "",
+        "| Domain | Cases | Incorrect | Step localization | Misconception macro-F1 | Slip FP rate | Abstention rate |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ])
+    for domain, scores in metrics["stratified_breakdown"]["by_knowledge_domain"].items():
+        lines.append(
+            f"| {domain} | {scores['case_count']} | {scores['incorrect_case_count']} | "
+            f"{_pct(scores['step_localization_accuracy'])} | {_pct(scores['misconception_macro_f1'])} | "
+            f"{_pct(scores['arithmetic_slip_fp_rate'])} | {_pct(scores['abstention_rate'])} |"
+        )
+    lines.extend([
+        "",
         "## Per-family classification",
         "",
         "| Misconception family | Precision | Recall | F1 | Support |",
         "|---|---:|---:|---:|---:|",
-    ]
+    ])
     for family, scores in classification["per_family"].items():
         lines.append(
             f"| `{family}` | {_pct(scores['precision'])} | {_pct(scores['recall'])} | {_pct(scores['f1'])} | {scores['support']} |"

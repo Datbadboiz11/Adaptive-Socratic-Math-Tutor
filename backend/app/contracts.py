@@ -73,6 +73,8 @@ class ProblemPrivate(ProblemPublic):
     target_scope: Literal["task_solution"]
     prerequisite_skill_ids: list[Identifier]
     reference_answer: str
+    solution_steps: list[str] | None = Field(default=None, min_length=1, max_length=12)
+    alternative_valid_steps: list[str] | None = Field(default=None, min_length=1, max_length=12)
     reference_methods: list[ReferenceMethod] = Field(min_length=2)
     common_errors: list[CommonError] = Field(min_length=1)
     hint_ladder: list[str] = Field(min_length=3, max_length=3)
@@ -91,6 +93,10 @@ class ContentBank(Contract):
     content_version: str
     topic_id: Identifier
     title: str
+    concept_id: Identifier | None = None
+    primary_skill_id: Identifier | None = None
+    strand: Literal["numbers", "algebra", "equations", "functions"] | None = None
+    prerequisites: list[Identifier] | None = None
     problems: list[ProblemPrivate] = Field(min_length=6)
 
     @model_validator(mode="after")
@@ -100,6 +106,21 @@ class ContentBank(Contract):
             raise ValueError("Duplicate problem IDs")
         if any(p.content_version != self.content_version for p in self.problems):
             raise ValueError("Mixed content versions")
+        if self.concept_id is not None:
+            if self.topic_id != self.concept_id:
+                raise ValueError("topic_id must match concept_id for concept banks")
+            if not self.primary_skill_id or not self.strand or self.prerequisites is None:
+                raise ValueError("Concept banks require skill, strand, and prerequisite metadata")
+            if len(self.problems) != 6:
+                raise ValueError("Authored concept banks must contain exactly six problems")
+            if len({p.family_id for p in self.problems}) < 3:
+                raise ValueError("Authored concept banks must contain at least three families")
+            if any(p.concept_id != self.concept_id for p in self.problems):
+                raise ValueError("Problem concept_id must match the bank concept_id")
+            if any(p.primary_skill_id != self.primary_skill_id for p in self.problems):
+                raise ValueError("Problem primary_skill_id must match the bank primary_skill_id")
+            if any(not p.solution_steps or not p.alternative_valid_steps for p in self.problems):
+                raise ValueError("Authored concept problems require a solution and an alternative method")
         return self
 
 
