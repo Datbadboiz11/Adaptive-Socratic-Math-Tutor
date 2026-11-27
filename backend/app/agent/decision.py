@@ -397,6 +397,9 @@ class AssessmentView(Contract):
     misconception_candidate: Identifier | None = None
     diagnosis_status: Literal["suspected", "supported", "unknown"] = "unknown"
     final_answer_only: bool = False
+    # Validator xác định bài làm vẫn tương đương đề nhưng chưa phải đáp án cuối (``valid_partial``):
+    # chép lại đề, mới đi một bước, chưa rút gọn. Chỉ có nghĩa khi ``assessment_status="unverified"``.
+    unfinished: bool = False
 
 
 class ObservationStatus(Contract):

@@ -1,0 +1,1240 @@
+{
+  "version": "0.1.0-member3-draft",
+  "revision": "M3-ORIG01",
+  "note": "Nháp do Claude soạn offline cho Member 3, chưa gọi API model, chưa review. Tám concept dùng dạng kiểm mới trong backend/app/member3_math.py.",
+  "pending_checker": {},
+  "packs": {
+    "N03": {
+      "explanation": "Trong một biểu thức, phần trong ngoặc được tính trước. Sau đó làm nhân và chia, rồi mới đến cộng và trừ. Các phép tính cùng cấp được làm lần lượt từ trái sang phải.",
+      "hints": [
+        "Biểu thức có dấu ngoặc không, và phép tính nào được ưu tiên cao nhất?",
+        "Tính phần trong ngoặc trước, rồi đến nhân và chia, sau cùng mới cộng và trừ.",
+        "Với các phép tính cùng cấp, làm lần lượt từ trái sang phải và ghi kết quả của từng bước."
+      ],
+      "families": [
+        {
+          "kind": "numeric",
+          "label": "Nhân chia trước, cộng trừ sau",
+          "prompt": "Tính {display}, ghi rõ phép tính được làm trước.",
+          "problems": [
+            [
+              "17+6*8",
+              "65",
+              "17 + 6 · 8"
+            ],
+            [
+              "94-45/9",
+              "89",
+              "94 − 45 : 9"
+            ]
+          ],
+          "example": [
+            "23+7*9",
+            "86",
+            "23 + 7 · 9"
+          ],
+          "worked": "Phép nhân được làm trước phép cộng: 7 · 9 = 63. Sau đó cộng: 23 + 63 = 86.",
+          "wrong": "184",
+          "hypothesis": "Có thể đã làm phép cộng trước rồi mới nhân, tức là tính theo thứ tự từ trái sang phải.",
+          "question": "Trong 17 + 6 · 8, phép nhân hay phép cộng được làm trước?"
+        },
+        {
+          "kind": "numeric",
+          "label": "Phép tính cùng cấp: từ trái sang phải",
+          "prompt": "Tính {display}, làm các phép tính cùng cấp theo đúng thứ tự.",
+          "problems": [
+            [
+              "96/8*3",
+              "36",
+              "96 : 8 · 3"
+            ],
+            [
+              "50-18+7",
+              "39",
+              "50 − 18 + 7"
+            ]
+          ],
+          "example": [
+            "72/6*2",
+            "24",
+            "72 : 6 · 2"
+          ],
+          "worked": "Chia và nhân cùng cấp nên làm từ trái sang phải: 72 : 6 = 12, rồi 12 · 2 = 24. Nếu nhân trước sẽ ra 72 : 12 = 6, là sai.",
+          "wrong": "4",
+          "hypothesis": "Có thể đã làm phép nhân trước phép chia dù hai phép tính cùng cấp.",
+          "question": "Phép chia và phép nhân cùng cấp thì em làm theo thứ tự nào?"
+        },
+        {
+          "kind": "numeric",
+          "label": "Biểu thức có ngoặc",
+          "prompt": "Tính {display}, ghi kết quả của từng ngoặc trước.",
+          "problems": [
+            [
+              "(15-7)*4+36/(2+7)",
+              "36",
+              "(15 − 7) · 4 + 36 : (2 + 7)"
+            ],
+            [
+              "120/(4+11)-3*(9-6)",
+              "-1",
+              "120 : (4 + 11) − 3 · (9 − 6)"
+            ]
+          ],
+          "example": [
+            "(20-8)*3-45/(2+3)",
+            "27",
+            "(20 − 8) · 3 − 45 : (2 + 3)"
+          ],
+          "worked": "Tính các ngoặc: 20 − 8 = 12 và 2 + 3 = 5. Biểu thức thành 12 · 3 − 45 : 5. Nhân và chia trước: 36 − 9. Kết quả là 27.",
+          "wrong": "12",
+          "hypothesis": "Có thể đã bỏ qua dấu ngoặc và tính như biểu thức không có ngoặc.",
+          "question": "Phần nào phải tính xong trước khi nhân với 4?"
+        }
+      ]
+    },
+    "N06": {
+      "explanation": "Chỉ cộng hoặc trừ các tử số khi hai phân số đã có cùng một mẫu dương. Muốn vậy, quy đồng mẫu bằng một mẫu chung, thường là bội chung nhỏ nhất của các mẫu. Cộng hoặc trừ các tử, giữ mẫu chung, rồi rút gọn kết quả.",
+      "hints": [
+        "Các mẫu số đã bằng nhau chưa?",
+        "Tìm một mẫu chung chia hết cho mọi mẫu, rồi nhân cả tử và mẫu của từng phân số với cùng một số.",
+        "Khi đã cùng mẫu, chỉ cộng hoặc trừ các tử, giữ nguyên mẫu, chú ý dấu và rút gọn nếu được."
+      ],
+      "families": [
+        {
+          "kind": "numeric",
+          "label": "Cộng hai phân số khác mẫu",
+          "prompt": "Tính {display}. Viết kết quả là phân số tối giản.",
+          "problems": [
+            [
+              "5/12+7/18",
+              "29/36",
+              "5/12 + 7/18"
+            ],
+            [
+              "3/10+4/15",
+              "17/30",
+              "3/10 + 4/15"
+            ]
+          ],
+          "example": [
+            "7/20+5/12",
+            "23/30",
+            "7/20 + 5/12"
+          ],
+          "worked": "Mẫu chung nhỏ nhất của 20 và 12 là 60. 7/20 = 21/60 và 5/12 = 25/60. Cộng tử: 46/60. Rút gọn cho 2: 23/30.",
+          "wrong": "12/30",
+          "hypothesis": "Có thể đã cộng tử với tử và mẫu với mẫu.",
+          "question": "Hai phân số 5/12 và 7/18 đã có cùng mẫu chưa? Nếu chưa thì mẫu chung là bao nhiêu?"
+        },
+        {
+          "kind": "numeric",
+          "label": "Trừ phân số, kết quả âm",
+          "prompt": "Tính {display}. Viết kết quả là phân số tối giản, giữ đúng dấu.",
+          "problems": [
+            [
+              "5/8-11/12",
+              "-7/24",
+              "5/8 − 11/12"
+            ],
+            [
+              "2/9-7/15",
+              "-11/45",
+              "2/9 − 7/15"
+            ]
+          ],
+          "example": [
+            "3/10-5/6",
+            "-8/15",
+            "3/10 − 5/6"
+          ],
+          "worked": "Mẫu chung nhỏ nhất là 30: 3/10 = 9/30 và 5/6 = 25/30. 9 − 25 = −16 nên kết quả là −16/30. Rút gọn cho 2: −8/15.",
+          "wrong": "7/24",
+          "hypothesis": "Có thể đã lấy tử lớn trừ tử bé nên mất dấu âm.",
+          "question": "Sau khi quy đồng, tử của số bị trừ lớn hơn hay nhỏ hơn tử của số trừ?"
+        },
+        {
+          "kind": "numeric",
+          "label": "Phân số âm trong dãy cộng trừ",
+          "prompt": "Tính {display}. Viết kết quả là phân số tối giản.",
+          "problems": [
+            [
+              "-3/4+5/6-1/3",
+              "-1/4",
+              "−3/4 + 5/6 − 1/3"
+            ],
+            [
+              "(-2/5)-(-7/10)+1/4",
+              "11/20",
+              "(−2/5) − (−7/10) + 1/4"
+            ]
+          ],
+          "example": [
+            "-5/6+3/8-(-1/4)",
+            "-5/24",
+            "−5/6 + 3/8 − (−1/4)"
+          ],
+          "worked": "Trừ một số âm là cộng số đối: −(−1/4) = +1/4. Mẫu chung là 24: −20/24 + 9/24 + 6/24 = −5/24.",
+          "wrong": "5/4",
+          "hypothesis": "Có thể đã bỏ dấu âm của phân số đầu tiên.",
+          "question": "Phân số đầu tiên mang dấu gì khi đổi sang mẫu 12?"
+        }
+      ]
+    },
+    "N09": {
+      "explanation": "Với cơ số khác 0, a mũ âm n bằng 1 chia a mũ n. Các quy tắc của số mũ tự nhiên vẫn đúng với số mũ nguyên: nhân hai lũy thừa cùng cơ số thì cộng số mũ, chia thì trừ số mũ, lũy thừa của lũy thừa thì nhân các số mũ.",
+      "hints": [
+        "Các lũy thừa có cùng cơ số không, và đây là phép nhân, phép chia hay lũy thừa của lũy thừa?",
+        "Giữ nguyên cơ số, rồi cộng, trừ hoặc nhân các số mũ theo đúng phép tính, chú ý dấu của số mũ âm.",
+        "Nếu số mũ cuối cùng âm, đổi sang một chia cho lũy thừa có số mũ dương để tính giá trị."
+      ],
+      "families": [
+        {
+          "kind": "exponent_numeric",
+          "label": "Tích lũy thừa có số mũ âm",
+          "prompt": "Viết {display} dưới dạng một lũy thừa rồi tính chính xác. Nộp dạng cơ số^số mũ = giá trị.",
+          "problems": [
+            [
+              "product; 4; -3; 1",
+              "4^-2=1/16",
+              "4⁻³ · 4¹"
+            ],
+            [
+              "product; 6; 2; -4",
+              "6^-2=1/36",
+              "6² · 6⁻⁴"
+            ]
+          ],
+          "example": [
+            "product; 7; -3; 2",
+            "7^-1=1/7",
+            "7⁻³ · 7²"
+          ],
+          "worked": "Cùng cơ số 7 nên cộng số mũ: −3 + 2 = −1. Vậy tích bằng 7⁻¹ = 1/7.",
+          "wrong": "4^-3=1/64",
+          "hypothesis": "Có thể đã nhân các số mũ thay vì cộng.",
+          "question": "Khi nhân hai lũy thừa cùng cơ số, số mũ mới tạo từ hai số mũ bằng phép tính nào?"
+        },
+        {
+          "kind": "exponent_numeric",
+          "label": "Thương lũy thừa có số mũ âm",
+          "prompt": "Viết {display} dưới dạng một lũy thừa rồi tính chính xác. Nộp dạng cơ số^số mũ = giá trị.",
+          "problems": [
+            [
+              "quotient; 2; -3; 2",
+              "2^-5=1/32",
+              "2⁻³ : 2²"
+            ],
+            [
+              "quotient; 10; -1; -3",
+              "10^2=100",
+              "10⁻¹ : 10⁻³"
+            ]
+          ],
+          "example": [
+            "quotient; 3; -1; 2",
+            "3^-3=1/27",
+            "3⁻¹ : 3²"
+          ],
+          "worked": "Cùng cơ số 3 nên trừ số mũ: −1 − 2 = −3. Vậy thương bằng 3⁻³ = 1/27.",
+          "wrong": "2^-1=1/2",
+          "hypothesis": "Có thể đã cộng các số mũ khi chia.",
+          "question": "Chia hai lũy thừa cùng cơ số thì số mũ mới bằng tổng hay hiệu của hai số mũ?"
+        },
+        {
+          "kind": "exponent_numeric",
+          "label": "Lũy thừa của lũy thừa với cơ số phân số",
+          "prompt": "Viết {display} dưới dạng một lũy thừa rồi tính chính xác. Nộp dạng (cơ số)^số mũ = giá trị, cơ số phân số đặt trong ngoặc.",
+          "problems": [
+            [
+              "power; 1/2; -2; 2",
+              "(1/2)^-4=16",
+              "((1/2)⁻²)²"
+            ],
+            [
+              "power; 2/3; -1; 2",
+              "(2/3)^-2=9/4",
+              "((2/3)⁻¹)²"
+            ]
+          ],
+          "example": [
+            "power; 3/4; -1; 2",
+            "(3/4)^-2=16/9",
+            "((3/4)⁻¹)²"
+          ],
+          "worked": "Lũy thừa của lũy thừa nên nhân số mũ: (−1) · 2 = −2. (3/4)⁻² là nghịch đảo của (3/4)² = 9/16, nên bằng 16/9.",
+          "wrong": "(1/2)^-4=1/16",
+          "hypothesis": "Có thể nghĩ số mũ âm luôn cho kết quả nhỏ hơn 1, quên rằng cơ số là phân số.",
+          "question": "(1/2)⁻¹ bằng bao nhiêu, và giá trị đó lớn hơn hay nhỏ hơn 1?"
+        }
+      ]
+    },
+    "A02": {
+      "explanation": "Muốn nhân một số với một tổng hoặc hiệu, nhân số đó với từng hạng tử trong ngoặc và giữ đúng dấu của từng tích. Dấu trừ trước ngoặc làm đổi dấu mọi hạng tử trong ngoặc. Khai triển xong thì thu gọn các hạng tử đồng dạng.",
+      "hints": [
+        "Trong ngoặc có mấy hạng tử, và số đứng trước ngoặc mang dấu gì?",
+        "Viết riêng một tích cho mỗi hạng tử trong ngoặc trước khi bỏ ngoặc.",
+        "Xét dấu của từng tích, rồi gom các hạng tử chứa x với nhau và các số với nhau."
+      ],
+      "families": [
+        {
+          "kind": "polynomial",
+          "label": "Số dương nhân với tổng hoặc hiệu",
+          "prompt": "Khai triển {display}.",
+          "problems": [
+            [
+              "6*(5*x+4)",
+              "30*x+24",
+              "6(5x + 4)"
+            ],
+            [
+              "9*(7-2*x)",
+              "-18*x+63",
+              "9(7 − 2x)"
+            ]
+          ],
+          "example": [
+            "8*(3*x-5)",
+            "24*x-40",
+            "8(3x − 5)"
+          ],
+          "worked": "Nhân 8 với từng hạng tử: 8 · 3x = 24x và 8 · (−5) = −40. Vậy 8(3x − 5) = 24x − 40.",
+          "wrong": "30*x+4",
+          "hypothesis": "Có thể chỉ nhân 6 với hạng tử đầu tiên trong ngoặc.",
+          "question": "Trong ngoặc có mấy hạng tử, và 6 đã được nhân với những hạng tử nào?"
+        },
+        {
+          "kind": "polynomial",
+          "label": "Dấu trừ hoặc số âm trước ngoặc",
+          "prompt": "Bỏ ngoặc và khai triển {display}.",
+          "problems": [
+            [
+              "-(4*x-9)",
+              "-4*x+9",
+              "−(4x − 9)"
+            ],
+            [
+              "-7*(2*x-3)",
+              "-14*x+21",
+              "−7(2x − 3)"
+            ]
+          ],
+          "example": [
+            "-(6*x+5)",
+            "-6*x-5",
+            "−(6x + 5)"
+          ],
+          "worked": "Dấu trừ trước ngoặc đổi dấu mọi hạng tử: 6x thành −6x và +5 thành −5. Vậy −(6x + 5) = −6x − 5.",
+          "wrong": "-4*x-9",
+          "hypothesis": "Có thể chỉ đổi dấu hạng tử đầu tiên khi bỏ ngoặc có dấu trừ.",
+          "question": "Dấu trừ trước ngoặc tác động lên mấy hạng tử trong ngoặc?"
+        },
+        {
+          "kind": "polynomial",
+          "label": "Phân phối hai lần rồi thu gọn",
+          "prompt": "Khai triển rồi thu gọn {display}.",
+          "problems": [
+            [
+              "3*(2*x+5)-4*(x-2)",
+              "2*x+23",
+              "3(2x + 5) − 4(x − 2)"
+            ],
+            [
+              "5*(x-3)-2*(3*x-4)",
+              "-x-7",
+              "5(x − 3) − 2(3x − 4)"
+            ]
+          ],
+          "example": [
+            "4*(3*x-1)-3*(2*x+5)",
+            "6*x-19",
+            "4(3x − 1) − 3(2x + 5)"
+          ],
+          "worked": "Khai triển: 4(3x − 1) = 12x − 4 và −3(2x + 5) = −6x − 15. Gom lại: 12x − 6x = 6x và −4 − 15 = −19. Kết quả là 6x − 19.",
+          "wrong": "2*x+7",
+          "hypothesis": "Có thể đã tính (−4) · (−2) thành −8.",
+          "question": "Tích của −4 và −2 mang dấu gì?"
+        }
+      ]
+    },
+    "A05": {
+      "explanation": "Bình phương một tổng: (a + b)² = a² + 2ab + b². Bình phương một hiệu: (a − b)² = a² − 2ab + b². Hạng tử giữa là hai lần tích của hai số hạng, và bình phương của một số luôn không âm.",
+      "hints": [
+        "Biểu thức là bình phương của một tổng hay của một hiệu, và hai số hạng a, b là gì?",
+        "Tính lần lượt a², hai lần tích 2ab và b², chú ý dấu của hạng tử giữa.",
+        "Kiểm tra lại bằng cách nhân hai thừa số giống nhau và đếm đủ bốn tích."
+      ],
+      "families": [
+        {
+          "kind": "polynomial",
+          "label": "Bình phương một tổng",
+          "prompt": "Dùng hằng đẳng thức để khai triển {display}. Viết kết quả đã thu gọn.",
+          "problems": [
+            [
+              "(x+6)*(x+6)",
+              "x*x+12*x+36",
+              "(x + 6)²"
+            ],
+            [
+              "(2*x+3)*(2*x+3)",
+              "4*x*x+12*x+9",
+              "(2x + 3)²"
+            ]
+          ],
+          "example": [
+            "(x+7)*(x+7)",
+            "x*x+14*x+49",
+            "(x + 7)²"
+          ],
+          "worked": "Với a = x và b = 7: a² = x², 2ab = 2 · x · 7 = 14x, b² = 49. Vậy (x + 7)² = x² + 14x + 49.",
+          "wrong": "x*x+36",
+          "hypothesis": "Có thể nghĩ (a + b)² = a² + b², quên hạng tử 2ab.",
+          "question": "Nhân (x + 6)(x + 6) thành bốn tích, có những tích nào chứa x đúng một lần?"
+        },
+        {
+          "kind": "polynomial",
+          "label": "Bình phương một hiệu",
+          "prompt": "Dùng hằng đẳng thức để khai triển {display}. Viết kết quả đã thu gọn.",
+          "problems": [
+            [
+              "(x-9)*(x-9)",
+              "x*x-18*x+81",
+              "(x − 9)²"
+            ],
+            [
+              "(3*x-4)*(3*x-4)",
+              "9*x*x-24*x+16",
+              "(3x − 4)²"
+            ]
+          ],
+          "example": [
+            "(x-5)*(x-5)",
+            "x*x-10*x+25",
+            "(x − 5)²"
+          ],
+          "worked": "Với a = x và b = 5: a² = x², 2ab = 10x mang dấu trừ, b² = 25. Vậy (x − 5)² = x² − 10x + 25.",
+          "wrong": "x*x-18*x-81",
+          "hypothesis": "Có thể nghĩ bình phương của −9 mang dấu âm.",
+          "question": "(−9) · (−9) bằng bao nhiêu?"
+        },
+        {
+          "kind": "polynomial",
+          "label": "Hai lần tích khi hệ số lớn hoặc số đứng trước",
+          "prompt": "Dùng hằng đẳng thức để khai triển {display}. Viết kết quả đã thu gọn.",
+          "problems": [
+            [
+              "(5*x+2)*(5*x+2)",
+              "25*x*x+20*x+4",
+              "(5x + 2)²"
+            ],
+            [
+              "(7-3*x)*(7-3*x)",
+              "9*x*x-42*x+49",
+              "(7 − 3x)²"
+            ]
+          ],
+          "example": [
+            "(6-x)*(6-x)",
+            "x*x-12*x+36",
+            "(6 − x)²"
+          ],
+          "worked": "Với a = 6 và b = x: a² = 36, 2ab = 12x mang dấu trừ, b² = x². Vậy (6 − x)² = x² − 12x + 36.",
+          "wrong": "25*x*x+10*x+4",
+          "hypothesis": "Có thể đã tính tích ab mà quên nhân 2.",
+          "question": "Hạng tử giữa của (a + b)² bằng ab hay 2ab?"
+        }
+      ]
+    },
+    "E01": {
+      "explanation": "Hai phương trình tương đương khi có cùng tập nghiệm. Cộng hoặc trừ cùng một biểu thức ở hai vế, hoặc nhân, chia hai vế cho cùng một số khác 0, cho phương trình tương đương. Khi ẩn nằm ở mẫu, cần tìm điều kiện xác định trước khi biến đổi.",
+      "hints": [
+        "Em định làm phép biến đổi nào, và có làm giống nhau ở cả hai vế không?",
+        "Khi chuyển một hạng tử sang vế kia thì đổi dấu nó; khi nhân hoặc chia hai vế thì dùng số khác 0.",
+        "Nếu ẩn nằm ở mẫu, tìm giá trị làm mẫu bằng 0 và loại giá trị đó trước khi giải."
+      ],
+      "families": [
+        {
+          "kind": "linear_equation",
+          "label": "Nhân hai vế để khử mẫu số",
+          "prompt": "Giải phương trình {display} trên số thực, ghi phép biến đổi tương đương ở từng bước.",
+          "problems": [
+            [
+              "x/3+5=9",
+              "x=12",
+              "x/3 + 5 = 9"
+            ],
+            [
+              "(2*x-1)/5=3",
+              "x=8",
+              "(2x − 1)/5 = 3"
+            ]
+          ],
+          "example": [
+            "x/4-2=3",
+            "x=20",
+            "x/4 − 2 = 3"
+          ],
+          "worked": "Cộng 2 vào hai vế: x/4 = 5. Nhân hai vế với 4, là số khác 0: x = 20. Thử lại: 20/4 − 2 = 3.",
+          "wrong": "x=4/3",
+          "hypothesis": "Có thể đã chia hai vế cho 3 thay vì nhân với 3.",
+          "question": "Để bỏ phép chia cho 3 ở vế trái, em cần làm phép tính nào ở cả hai vế?"
+        },
+        {
+          "kind": "linear_equation",
+          "label": "Chuyển vế và đổi dấu",
+          "prompt": "Giải phương trình {display} trên số thực, ghi phép biến đổi tương đương ở từng bước.",
+          "problems": [
+            [
+              "7*x+12=3*x-8",
+              "x=-5",
+              "7x + 12 = 3x − 8"
+            ],
+            [
+              "15-4*x=2*x+33",
+              "x=-3",
+              "15 − 4x = 2x + 33"
+            ]
+          ],
+          "example": [
+            "9*x-5=4*x+20",
+            "x=5",
+            "9x − 5 = 4x + 20"
+          ],
+          "worked": "Trừ 4x ở hai vế: 5x − 5 = 20. Cộng 5 vào hai vế: 5x = 25. Chia hai vế cho 5: x = 5.",
+          "wrong": "x=1",
+          "hypothesis": "Có thể đã chuyển 12 sang vế phải mà không đổi dấu.",
+          "question": "Khi chuyển +12 từ vế trái sang vế phải, hạng tử đó trở thành gì?"
+        },
+        {
+          "kind": "function_domain",
+          "label": "Điều kiện xác định khi ẩn ở mẫu",
+          "prompt": "Trước khi biến đổi {display}, tìm điều kiện xác định. Viết R∖{giá trị bị loại}.",
+          "problems": [
+            [
+              "den; x-6",
+              "R\\{6}",
+              "phương trình 5/(x − 6) = 2"
+            ],
+            [
+              "den; 2*x+9",
+              "R\\{-9/2}",
+              "phương trình (x + 1)/(2x + 9) = 4"
+            ]
+          ],
+          "example": [
+            "den; 3*x-7",
+            "R\\{7/3}",
+            "phương trình 4/(3x − 7) = 1"
+          ],
+          "worked": "Mẫu 3x − 7 phải khác 0. 3x − 7 = 0 khi x = 7/3, nên điều kiện là x ≠ 7/3, tức tập R∖{7/3}.",
+          "wrong": "R\\{-6}",
+          "hypothesis": "Có thể đã lấy số đối của giá trị làm mẫu bằng 0.",
+          "question": "Với x bằng bao nhiêu thì x − 6 bằng 0?"
+        }
+      ]
+    },
+    "A08": {
+      "explanation": "Hiệu hai bình phương: a² − b² = (a − b)(a + b). Bình phương một tổng hoặc hiệu: a² ± 2ab + b² = (a ± b)². Với bốn hạng tử, nhóm hai cặp sao cho mỗi cặp có nhân tử chung và phần còn lại trong ngoặc giống nhau, rồi đặt ngoặc đó ra ngoài.",
+      "hints": [
+        "Biểu thức có dạng hiệu hai bình phương, bình phương một tổng hoặc hiệu, hay có bốn hạng tử để nhóm?",
+        "Xác định a và b, rồi kiểm tra hạng tử giữa có bằng hai lần tích của a và b không; với bốn hạng tử, đặt nhân tử chung trong từng cặp.",
+        "Nhân ngược các nhân tử vừa tìm để kiểm tra có ra đúng biểu thức ban đầu không, chú ý dấu."
+      ],
+      "families": [
+        {
+          "kind": "special_factoring",
+          "label": "Hiệu hai bình phương",
+          "prompt": "Phân tích {display} thành nhân tử. Nộp dạng tích của các nhân tử bậc nhất.",
+          "problems": [
+            [
+              "x*x-49",
+              "(x-7)*(x+7)",
+              "x² − 49"
+            ],
+            [
+              "9*x*x-16",
+              "(3*x-4)*(3*x+4)",
+              "9x² − 16"
+            ]
+          ],
+          "example": [
+            "x*x-64",
+            "(x-8)*(x+8)",
+            "x² − 64"
+          ],
+          "worked": "x² − 64 = x² − 8² nên áp dụng a² − b² = (a − b)(a + b) với a = x, b = 8: kết quả (x − 8)(x + 8).",
+          "wrong": "(x-7)*(x-7)",
+          "hypothesis": "Có thể nhầm hiệu hai bình phương với bình phương một hiệu.",
+          "question": "Nhân (x − 7)(x − 7) ra thì còn hạng tử chứa x không, trong khi x² − 49 không có hạng tử đó?"
+        },
+        {
+          "kind": "special_factoring",
+          "label": "Bình phương một tổng hoặc hiệu",
+          "prompt": "Phân tích {display} thành nhân tử. Nộp dạng tích của các nhân tử bậc nhất.",
+          "problems": [
+            [
+              "x*x+10*x+25",
+              "(x+5)*(x+5)",
+              "x² + 10x + 25"
+            ],
+            [
+              "4*x*x-12*x+9",
+              "(2*x-3)*(2*x-3)",
+              "4x² − 12x + 9"
+            ]
+          ],
+          "example": [
+            "x*x-14*x+49",
+            "(x-7)*(x-7)",
+            "x² − 14x + 49"
+          ],
+          "worked": "x² = x · x, 49 = 7 · 7 và 14x = 2 · x · 7 mang dấu trừ. Vậy x² − 14x + 49 = (x − 7)², tức (x − 7)(x − 7).",
+          "wrong": "(x+5)*(x-5)",
+          "hypothesis": "Có thể thấy x² và 25 là hai bình phương nên dùng hiệu hai bình phương, bỏ qua hạng tử 10x.",
+          "question": "Hạng tử giữa 10x có bằng 2 · x · 5 không, và biểu thức là tổng hay hiệu của hai bình phương?"
+        },
+        {
+          "kind": "special_factoring",
+          "label": "Nhóm bốn hạng tử",
+          "prompt": "Nhóm các hạng tử để phân tích {display} thành nhân tử. Nộp dạng tích của các nhân tử bậc nhất.",
+          "problems": [
+            [
+              "x*x-5*x+3*x-15",
+              "(x-5)*(x+3)",
+              "x² − 5x + 3x − 15"
+            ],
+            [
+              "2*x*x+6*x-x-3",
+              "(x+3)*(2*x-1)",
+              "2x² + 6x − x − 3"
+            ]
+          ],
+          "example": [
+            "x*x+4*x-2*x-8",
+            "(x+4)*(x-2)",
+            "x² + 4x − 2x − 8"
+          ],
+          "worked": "Nhóm (x² + 4x) − (2x + 8) = x(x + 4) − 2(x + 4). Hai nhóm có chung (x + 4) nên kết quả là (x + 4)(x − 2).",
+          "wrong": "(x-5)*(x-3)",
+          "hypothesis": "Có thể đặt nhân tử chung ở nhóm sau sai dấu.",
+          "question": "Đặt 3 ra ngoài từ 3x − 15 thì trong ngoặc còn gì, và dấu trước 3 là gì?"
+        }
+      ]
+    },
+    "E04": {
+      "explanation": "Một tích bằng 0 khi và chỉ khi ít nhất một thừa số bằng 0. Vì vậy phương trình A · B = 0 tương đương với A = 0 hoặc B = 0. Nếu hai vế còn chung một nhân tử, chuyển hết về một vế rồi đặt nhân tử chung, không chia hai vế cho biểu thức chứa ẩn vì có thể mất nghiệm.",
+      "hints": [
+        "Phương trình đã có dạng một tích bằng 0 chưa?",
+        "Nếu chưa, chuyển mọi hạng tử về một vế và đặt nhân tử chung; không chia hai vế cho biểu thức chứa x.",
+        "Cho từng nhân tử bằng 0, giải từng phương trình bậc nhất rồi gộp các nghiệm vào một tập."
+      ],
+      "families": [
+        {
+          "kind": "product_equation",
+          "label": "Nhân tử dạng x cộng trừ một số",
+          "prompt": "Giải phương trình {display}. Nộp tập nghiệm dạng {nghiệm 1; nghiệm 2}.",
+          "problems": [
+            [
+              "(x-6)*(x+4)",
+              "{6; -4}",
+              "(x − 6)(x + 4) = 0"
+            ],
+            [
+              "(x+9)*(x-2)",
+              "{-9; 2}",
+              "(x + 9)(x − 2) = 0"
+            ]
+          ],
+          "example": [
+            "(x-3)*(x+8)",
+            "{3; -8}",
+            "(x − 3)(x + 8) = 0"
+          ],
+          "worked": "Tích bằng 0 nên x − 3 = 0 hoặc x + 8 = 0. Từ đó x = 3 hoặc x = −8. Tập nghiệm {3; −8}.",
+          "wrong": "{-6; 4}",
+          "hypothesis": "Có thể đã lấy luôn số trong ngoặc làm nghiệm mà không giải từng phương trình.",
+          "question": "x bằng bao nhiêu thì x − 6 bằng 0?"
+        },
+        {
+          "kind": "product_equation",
+          "label": "Nhân tử có hệ số khác 1",
+          "prompt": "Giải phương trình {display}. Nộp tập nghiệm dạng {nghiệm 1; nghiệm 2}.",
+          "problems": [
+            [
+              "(2*x-3)*(3*x+4)",
+              "{3/2; -4/3}",
+              "(2x − 3)(3x + 4) = 0"
+            ],
+            [
+              "(5*x+2)*(x-7)",
+              "{-2/5; 7}",
+              "(5x + 2)(x − 7) = 0"
+            ]
+          ],
+          "example": [
+            "(4*x-1)*(2*x+5)",
+            "{1/4; -5/2}",
+            "(4x − 1)(2x + 5) = 0"
+          ],
+          "worked": "4x − 1 = 0 cho 4x = 1, x = 1/4. 2x + 5 = 0 cho 2x = −5, x = −5/2. Tập nghiệm {1/4; −5/2}.",
+          "wrong": "{3; -4}",
+          "hypothesis": "Có thể quên chia cho hệ số của x khi giải từng nhân tử.",
+          "question": "Từ 2x − 3 = 0, sau khi chuyển vế em còn phải làm gì để tìm x?"
+        },
+        {
+          "kind": "product_equation",
+          "label": "Chuyển vế rồi đặt nhân tử chung",
+          "prompt": "Giải phương trình {display}. Nộp tập nghiệm dạng {nghiệm 1; nghiệm 2}.",
+          "problems": [
+            [
+              "x*(x-4)=3*(x-4)",
+              "{3; 4}",
+              "x(x − 4) = 3(x − 4)"
+            ],
+            [
+              "(x+2)*(2*x-1)=5*(x+2)",
+              "{-2; 3}",
+              "(x + 2)(2x − 1) = 5(x + 2)"
+            ]
+          ],
+          "example": [
+            "x*(x+5)=2*(x+5)",
+            "{-5; 2}",
+            "x(x + 5) = 2(x + 5)"
+          ],
+          "worked": "Chuyển vế: x(x + 5) − 2(x + 5) = 0, đặt nhân tử chung: (x + 5)(x − 2) = 0. Vậy x = −5 hoặc x = 2.",
+          "wrong": "{3}",
+          "hypothesis": "Có thể đã chia hai vế cho x − 4 nên mất nghiệm làm x − 4 bằng 0.",
+          "question": "Được chia hai vế cho x − 4 không, nếu x − 4 có thể bằng 0?"
+        }
+      ]
+    },
+    "E07": {
+      "explanation": "Nếu phương trình ax² + bx + c = 0 (a ≠ 0) có hai nghiệm, tức biệt thức không âm, thì tổng hai nghiệm S = −b/a và tích P = c/a. Ngược lại, hai số có tổng S và tích P là nghiệm của x² − Sx + P = 0, khi S² − 4P không âm.",
+      "hints": [
+        "Phương trình có nghiệm không? Hãy kiểm tra biệt thức trước khi dùng hệ thức Viète.",
+        "Xác định đúng a, b, c kèm dấu, rồi dùng tổng bằng −b/a và tích bằng c/a.",
+        "Khi đã biết một nghiệm, lấy tổng trừ nghiệm đó hoặc lấy tích chia cho nghiệm đó để tìm nghiệm còn lại."
+      ],
+      "families": [
+        {
+          "kind": "vieta",
+          "label": "Tính tổng và tích hai nghiệm",
+          "prompt": "Không giải phương trình {display}. Kiểm tra phương trình có nghiệm, rồi dùng hệ thức Viète tính tổng S và tích P của hai nghiệm. Nộp dạng S=...; P=....",
+          "problems": [
+            [
+              "sum_product; x*x-9*x+14",
+              "S=9; P=14",
+              "x² − 9x + 14 = 0"
+            ],
+            [
+              "sum_product; 2*x*x+5*x-3",
+              "S=-5/2; P=-3/2",
+              "2x² + 5x − 3 = 0"
+            ]
+          ],
+          "example": [
+            "sum_product; 3*x*x-8*x+2",
+            "S=8/3; P=2/3",
+            "3x² − 8x + 2 = 0"
+          ],
+          "worked": "a = 3, b = −8, c = 2. Biệt thức 64 − 24 = 40 > 0 nên có hai nghiệm. S = −b/a = 8/3 và P = c/a = 2/3.",
+          "wrong": "S=-9; P=14",
+          "hypothesis": "Có thể quên dấu trừ trong công thức tổng S = −b/a.",
+          "question": "Với ax² + bx + c = 0, tổng hai nghiệm bằng b/a hay −b/a?"
+        },
+        {
+          "kind": "vieta",
+          "label": "Biết một nghiệm, tìm nghiệm còn lại",
+          "prompt": "Phương trình {display}. Dùng hệ thức Viète tìm nghiệm còn lại. Nộp dạng x=....",
+          "problems": [
+            [
+              "other_root; x*x-11*x+18; 2",
+              "x=9",
+              "x² − 11x + 18 = 0 có một nghiệm x = 2"
+            ],
+            [
+              "other_root; 3*x*x+7*x-6; -3",
+              "x=2/3",
+              "3x² + 7x − 6 = 0 có một nghiệm x = −3"
+            ]
+          ],
+          "example": [
+            "other_root; 2*x*x-7*x+3; 3",
+            "x=1/2",
+            "2x² − 7x + 3 = 0 có một nghiệm x = 3"
+          ],
+          "worked": "Tổng hai nghiệm là −b/a = 7/2. Một nghiệm là 3 nên nghiệm còn lại là 7/2 − 3 = 1/2. Kiểm tra tích: 3 · 1/2 = 3/2 = c/a.",
+          "wrong": "x=-13",
+          "hypothesis": "Có thể lấy tổng hai nghiệm bằng b/a, tức sai dấu.",
+          "question": "Tổng hai nghiệm của x² − 11x + 18 = 0 bằng bao nhiêu?"
+        },
+        {
+          "kind": "vieta",
+          "label": "Lập phương trình từ tổng và tích",
+          "prompt": "Lập phương trình bậc hai có hai nghiệm với {display}. Nộp dạng x^2 + bx + c = 0.",
+          "problems": [
+            [
+              "from_sum_product; 9; 20",
+              "x*x-9*x+20=0",
+              "tổng S = 9 và tích P = 20"
+            ],
+            [
+              "from_sum_product; -3; -10",
+              "x*x+3*x-10=0",
+              "tổng S = −3 và tích P = −10"
+            ]
+          ],
+          "example": [
+            "from_sum_product; 5; 6",
+            "x*x-5*x+6=0",
+            "tổng S = 5 và tích P = 6"
+          ],
+          "worked": "S² − 4P = 25 − 24 = 1 ≥ 0 nên hai số tồn tại. Chúng là nghiệm của x² − Sx + P = 0, tức x² − 5x + 6 = 0.",
+          "wrong": "x*x+9*x+20=0",
+          "hypothesis": "Có thể viết x² + Sx + P = 0, sai dấu hạng tử giữa.",
+          "question": "Hai số có tổng S và tích P là nghiệm của x² − Sx + P = 0 hay x² + Sx + P = 0?"
+        }
+      ]
+    },
+    "E10": {
+      "explanation": "Giải bất phương trình bậc nhất giống giải phương trình: chuyển vế thì đổi dấu hạng tử, cộng trừ cùng một số ở hai vế. Khác biệt: khi nhân hoặc chia hai vế cho một số âm, phải đổi chiều bất phương trình; với số dương thì giữ nguyên chiều.",
+      "hints": [
+        "Sau khi gom các hạng tử chứa x về một vế, hệ số của x là số dương hay số âm?",
+        "Chuyển vế thì đổi dấu hạng tử; chia hai vế cho hệ số của x, và nếu hệ số âm thì đổi chiều dấu bất phương trình.",
+        "Thử lại bằng một giá trị cụ thể thuộc tập nghiệm em vừa tìm."
+      ],
+      "families": [
+        {
+          "kind": "linear_inequality",
+          "label": "Hệ số của x dương",
+          "prompt": "Giải bất phương trình {display}. Nộp nghiệm dạng x < số, x > số, x <= số hoặc x >= số.",
+          "problems": [
+            [
+              "2*x-7<5",
+              "x<6",
+              "2x − 7 < 5"
+            ],
+            [
+              "5*x+3>=2*x+18",
+              "x>=5",
+              "5x + 3 ≥ 2x + 18"
+            ]
+          ],
+          "example": [
+            "3*x+4>19",
+            "x>5",
+            "3x + 4 > 19"
+          ],
+          "worked": "Trừ 4 ở hai vế: 3x > 15. Chia hai vế cho 3 là số dương nên giữ chiều: x > 5.",
+          "wrong": "x<-1",
+          "hypothesis": "Có thể chuyển −7 sang vế phải mà không đổi dấu.",
+          "question": "Chuyển −7 từ vế trái sang vế phải thì nó trở thành gì?"
+        },
+        {
+          "kind": "linear_inequality",
+          "label": "Chia cho số âm thì đổi chiều",
+          "prompt": "Giải bất phương trình {display}. Nộp nghiệm dạng x < số, x > số, x <= số hoặc x >= số.",
+          "problems": [
+            [
+              "-3*x+4<19",
+              "x>-5",
+              "−3x + 4 < 19"
+            ],
+            [
+              "-4*x-6>=10",
+              "x<=-4",
+              "−4x − 6 ≥ 10"
+            ]
+          ],
+          "example": [
+            "-2*x+5>11",
+            "x<-3",
+            "−2x + 5 > 11"
+          ],
+          "worked": "Trừ 5 ở hai vế: −2x > 6. Chia hai vế cho −2 là số âm nên đổi chiều: x < −3.",
+          "wrong": "x<-5",
+          "hypothesis": "Có thể đã chia hai vế cho −3 mà không đổi chiều bất phương trình.",
+          "question": "Khi chia hai vế cho một số âm, chiều của bất phương trình thay đổi thế nào?"
+        },
+        {
+          "kind": "linear_inequality",
+          "label": "Ẩn ở hai vế",
+          "prompt": "Giải bất phương trình {display}. Nộp nghiệm dạng x < số, x > số, x <= số hoặc x >= số.",
+          "problems": [
+            [
+              "7-2*x<=3*x-8",
+              "x>=3",
+              "7 − 2x ≤ 3x − 8"
+            ],
+            [
+              "4*(x-1)>6*x+2",
+              "x<-3",
+              "4(x − 1) > 6x + 2"
+            ]
+          ],
+          "example": [
+            "3*(x+2)<=5*x-4",
+            "x>=5",
+            "3(x + 2) ≤ 5x − 4"
+          ],
+          "worked": "Khai triển: 3x + 6 ≤ 5x − 4. Gom về vế trái: −2x ≤ −10. Chia cho −2 và đổi chiều: x ≥ 5.",
+          "wrong": "x<=3",
+          "hypothesis": "Có thể gom ẩn về một vế được hệ số âm rồi chia mà quên đổi chiều.",
+          "question": "Sau khi gom các hạng tử chứa x về vế trái, hệ số của x mang dấu gì?"
+        }
+      ]
+    },
+    "F03": {
+      "explanation": "Hàm bậc nhất y = ax + b (a ≠ 0) có hệ số góc a: khi x tăng 1 đơn vị thì y thay đổi a đơn vị. Giá trị ban đầu b là giá trị của y khi x = 0, cũng là tung độ giao điểm của đồ thị với trục tung. Biết hai điểm thì a bằng độ chênh của y chia độ chênh của x.",
+      "hints": [
+        "Số nào nhân với x, và số nào là giá trị của y khi x = 0?",
+        "Viết lại hàm số theo đúng thứ tự y = ax + b trước khi đọc hệ số; khi biết điểm, thay tọa độ vào để tìm hệ số còn thiếu.",
+        "Với hai điểm, tính độ chênh của y chia độ chênh của x theo cùng một thứ tự điểm, rồi thay một điểm để tìm b."
+      ],
+      "families": [
+        {
+          "kind": "slope_intercept",
+          "label": "Đọc hệ số từ công thức",
+          "prompt": "Cho hàm số {display}. Xác định hệ số góc a và giá trị ban đầu b. Nộp dạng a=...; b=....",
+          "problems": [
+            [
+              "linear; 7-2*x",
+              "a=-2; b=7",
+              "y = 7 − 2x"
+            ],
+            [
+              "linear; 5-x/2",
+              "a=-1/2; b=5",
+              "y = 5 − x/2"
+            ]
+          ],
+          "example": [
+            "linear; 4-3*x",
+            "a=-3; b=4",
+            "y = 4 − 3x"
+          ],
+          "worked": "Viết lại theo thứ tự y = −3x + 4. Số nhân với x là −3 nên a = −3; khi x = 0 thì y = 4 nên b = 4.",
+          "wrong": "a=7; b=-2",
+          "hypothesis": "Có thể lấy số đứng đầu làm hệ số góc mà không xét hạng tử chứa x.",
+          "question": "Trong y = 7 − 2x, số nào nhân với x?"
+        },
+        {
+          "kind": "slope_intercept",
+          "label": "Biết hệ số góc và một điểm",
+          "prompt": "Hàm số y = ax + b có {display}. Tìm a và b. Nộp dạng a=...; b=....",
+          "problems": [
+            [
+              "point; 3; 2; 5",
+              "a=3; b=-1",
+              "hệ số góc 3 và đồ thị đi qua điểm (2; 5)"
+            ],
+            [
+              "point; -2; -3; 4",
+              "a=-2; b=-2",
+              "hệ số góc −2 và đồ thị đi qua điểm (−3; 4)"
+            ]
+          ],
+          "example": [
+            "point; 4; 1; 7",
+            "a=4; b=3",
+            "hệ số góc 4 và đồ thị đi qua điểm (1; 7)"
+          ],
+          "worked": "a = 4. Thay x = 1, y = 7 vào y = 4x + b: 7 = 4 + b nên b = 3.",
+          "wrong": "a=3; b=5",
+          "hypothesis": "Có thể lấy tung độ của điểm làm b, trong khi b là giá trị của y tại x = 0.",
+          "question": "Điểm (2; 5) có nằm trên trục tung không?"
+        },
+        {
+          "kind": "slope_intercept",
+          "label": "Biết hai điểm",
+          "prompt": "Hàm số y = ax + b có đồ thị đi qua hai điểm {display}. Tìm a và b. Nộp dạng a=...; b=....",
+          "problems": [
+            [
+              "points; 1,4; 3,10",
+              "a=3; b=1",
+              "(1; 4) và (3; 10)"
+            ],
+            [
+              "points; -2,7; 2,-1",
+              "a=-2; b=3",
+              "(−2; 7) và (2; −1)"
+            ]
+          ],
+          "example": [
+            "points; 0,-5; 4,3",
+            "a=2; b=-5",
+            "(0; −5) và (4; 3)"
+          ],
+          "worked": "a = (3 − (−5)) : (4 − 0) = 8 : 4 = 2. Điểm (0; −5) nằm trên trục tung nên b = −5.",
+          "wrong": "a=1/3; b=11/3",
+          "hypothesis": "Có thể lấy độ chênh của x chia độ chênh của y.",
+          "question": "Hệ số góc cho biết y thay đổi bao nhiêu khi x tăng 1, vậy phải chia cho độ chênh của biến nào?"
+        }
+      ]
+    },
+    "F06": {
+      "explanation": "Hàm số y = ax² + bx + c có đỉnh tại hoành độ h = −b/(2a). Nếu a > 0, hàm nghịch biến trên (−∞; h) và đồng biến trên (h; +∞). Nếu a < 0 thì ngược lại: đồng biến trên (−∞; h) và nghịch biến trên (h; +∞).",
+      "hints": [
+        "Hệ số a dương hay âm, và parabol quay bề lõm lên hay xuống?",
+        "Tính hoành độ đỉnh bằng −b chia cho 2a, chú ý dấu của b.",
+        "Chia trục số tại hoành độ đỉnh, rồi dựa vào dấu của a để biết bên nào tăng, bên nào giảm."
+      ],
+      "families": [
+        {
+          "kind": "quadratic_monotonic",
+          "label": "Hệ số a dương",
+          "prompt": "Tìm khoảng đồng biến và nghịch biến của hàm số {display}. Nộp dạng: nghịch biến trên (-inf; h), đồng biến trên (h; +inf), hoặc ngược lại.",
+          "problems": [
+            [
+              "x*x-6*x+5",
+              "nghịch biến trên (-inf; 3), đồng biến trên (3; +inf)",
+              "y = x² − 6x + 5"
+            ],
+            [
+              "2*x*x+8*x-1",
+              "nghịch biến trên (-inf; -2), đồng biến trên (-2; +inf)",
+              "y = 2x² + 8x − 1"
+            ]
+          ],
+          "example": [
+            "x*x-2*x-3",
+            "nghịch biến trên (-inf; 1), đồng biến trên (1; +inf)",
+            "y = x² − 2x − 3"
+          ],
+          "worked": "a = 1 > 0, đỉnh tại h = −(−2)/(2 · 1) = 1. Parabol quay lên nên hàm nghịch biến trên (−∞; 1) và đồng biến trên (1; +∞).",
+          "wrong": "đồng biến trên (-inf; 3), nghịch biến trên (3; +inf)",
+          "hypothesis": "Có thể nhầm chiều biến thiên khi hệ số a dương.",
+          "question": "Với a > 0, bên trái đỉnh đồ thị đi xuống hay đi lên?"
+        },
+        {
+          "kind": "quadratic_monotonic",
+          "label": "Hệ số a âm",
+          "prompt": "Tìm khoảng đồng biến và nghịch biến của hàm số {display}. Nộp dạng: nghịch biến trên (-inf; h), đồng biến trên (h; +inf), hoặc ngược lại.",
+          "problems": [
+            [
+              "-x*x+4*x+1",
+              "đồng biến trên (-inf; 2), nghịch biến trên (2; +inf)",
+              "y = −x² + 4x + 1"
+            ],
+            [
+              "-3*x*x-6*x+2",
+              "đồng biến trên (-inf; -1), nghịch biến trên (-1; +inf)",
+              "y = −3x² − 6x + 2"
+            ]
+          ],
+          "example": [
+            "-x*x-8*x",
+            "đồng biến trên (-inf; -4), nghịch biến trên (-4; +inf)",
+            "y = −x² − 8x"
+          ],
+          "worked": "a = −1 < 0, đỉnh tại h = −(−8)/(2 · (−1)) = −4. Parabol quay xuống nên hàm đồng biến trên (−∞; −4) và nghịch biến trên (−4; +∞).",
+          "wrong": "nghịch biến trên (-inf; 2), đồng biến trên (2; +inf)",
+          "hypothesis": "Có thể áp dụng chiều của trường hợp a > 0 khi a âm.",
+          "question": "Khi a < 0, đỉnh là điểm cao nhất hay thấp nhất của parabol?"
+        },
+        {
+          "kind": "quadratic_monotonic",
+          "label": "Hoành độ đỉnh là phân số",
+          "prompt": "Tìm khoảng đồng biến và nghịch biến của hàm số {display}. Nộp dạng: nghịch biến trên (-inf; h), đồng biến trên (h; +inf), hoặc ngược lại.",
+          "problems": [
+            [
+              "2*x*x-6*x+1",
+              "nghịch biến trên (-inf; 3/2), đồng biến trên (3/2; +inf)",
+              "y = 2x² − 6x + 1"
+            ],
+            [
+              "-4*x*x+2*x+3",
+              "đồng biến trên (-inf; 1/4), nghịch biến trên (1/4; +inf)",
+              "y = −4x² + 2x + 3"
+            ]
+          ],
+          "example": [
+            "2*x*x+5*x-1",
+            "nghịch biến trên (-inf; -5/4), đồng biến trên (-5/4; +inf)",
+            "y = 2x² + 5x − 1"
+          ],
+          "worked": "a = 2 > 0, h = −5/(2 · 2) = −5/4. Hàm nghịch biến trên (−∞; −5/4) và đồng biến trên (−5/4; +∞).",
+          "wrong": "nghịch biến trên (-inf; 3), đồng biến trên (3; +inf)",
+          "hypothesis": "Có thể tính hoành độ đỉnh bằng −b/a, quên chia cho 2a.",
+          "question": "Hoành độ đỉnh của y = ax² + bx + c là −b/a hay −b/(2a)?"
+        }
+      ]
+    },
+    "F09": {
+      "explanation": "Với a > 0, a ≠ 1 và b > 0, log_a b là số mũ c sao cho a^c = b. Với các số dương M, N: log_a M + log_a N = log_a (MN) và log_a M − log_a N = log_a (M/N). Logarit chỉ xác định khi cơ số dương khác 1 và biểu thức dưới logarit dương.",
+      "hints": [
+        "Cơ số là bao nhiêu, và các số dưới logarit có dương không?",
+        "Với tổng hoặc hiệu hai logarit cùng cơ số, gộp thành logarit của tích hoặc của thương trước khi tính.",
+        "Viết số dưới logarit thành một lũy thừa của cơ số; số mũ đó là giá trị cần tìm."
+      ],
+      "families": [
+        {
+          "kind": "log_value",
+          "label": "Tính bằng định nghĩa",
+          "prompt": "Tính chính xác {display}. Nộp một số.",
+          "problems": [
+            [
+              "log; 2; 64",
+              "6",
+              "log₂ 64"
+            ],
+            [
+              "log; 3; 1/27",
+              "-3",
+              "log₃ (1/27)"
+            ]
+          ],
+          "example": [
+            "log; 5; 125",
+            "3",
+            "log₅ 125"
+          ],
+          "worked": "125 = 5 · 5 · 5 = 5³ nên log₅ 125 = 3.",
+          "wrong": "32",
+          "hypothesis": "Có thể đã chia 64 cho 2 thay vì tìm số mũ.",
+          "question": "2 mũ bao nhiêu thì bằng 64?"
+        },
+        {
+          "kind": "log_value",
+          "label": "Quy tắc logarit của tích",
+          "prompt": "Tính chính xác {display}. Nộp một số.",
+          "problems": [
+            [
+              "sum; 6; 4; 9",
+              "2",
+              "log₆ 4 + log₆ 9"
+            ],
+            [
+              "sum; 10; 25; 4",
+              "2",
+              "log 25 + log 4 (logarit thập phân)"
+            ]
+          ],
+          "example": [
+            "sum; 3; 6; 9/2",
+            "3",
+            "log₃ 6 + log₃ (9/2)"
+          ],
+          "worked": "Gộp thành log₃ (6 · 9/2) = log₃ 27. Vì 27 = 3³ nên kết quả là 3.",
+          "wrong": "6",
+          "hypothesis": "Có thể đã nhân 4 · 9 = 36 rồi chia 36 cho 6 thay vì tìm số mũ.",
+          "question": "6 mũ bao nhiêu thì bằng 36?"
+        },
+        {
+          "kind": "log_value",
+          "label": "Quy tắc logarit của thương",
+          "prompt": "Tính chính xác {display}. Nộp một số.",
+          "problems": [
+            [
+              "difference; 3; 54; 2",
+              "3",
+              "log₃ 54 − log₃ 2"
+            ],
+            [
+              "difference; 5; 50; 2",
+              "2",
+              "log₅ 50 − log₅ 2"
+            ]
+          ],
+          "example": [
+            "difference; 2; 48; 3",
+            "4",
+            "log₂ 48 − log₂ 3"
+          ],
+          "worked": "Gộp thành log₂ (48 : 3) = log₂ 16. Vì 16 = 2⁴ nên kết quả là 4.",
+          "wrong": "27",
+          "hypothesis": "Có thể dừng ở 54 : 2 = 27 mà quên lấy logarit cơ số 3.",
+          "question": "Sau khi gộp thành log₃ 27, em cần tìm số mũ của 3 để được bao nhiêu?"
+        }
+      ]
+    },
+    "F10": {
+      "explanation": "Phương trình mũ cơ bản: viết hai vế thành lũy thừa cùng một cơ số a (a > 0, a ≠ 1), rồi cho hai số mũ bằng nhau. Phương trình log_a A = c tương đương A = a^c; biểu thức A khi đó bằng a^c nên luôn dương, thỏa điều kiện xác định.",
+      "hints": [
+        "Hai vế có viết được thành lũy thừa của cùng một cơ số không, hay phương trình có dạng logarit bằng một số?",
+        "Đưa về cùng cơ số rồi cho hai số mũ bằng nhau; với logarit, dùng định nghĩa để bỏ logarit.",
+        "Giải phương trình bậc nhất vừa nhận được, rồi thay nghiệm vào phương trình ban đầu để kiểm tra."
+      ],
+      "families": [
+        {
+          "kind": "exp_log_equation",
+          "label": "Đưa về cùng cơ số",
+          "prompt": "Giải phương trình {display}. Nộp dạng x=....",
+          "problems": [
+            [
+              "exp; 2; x+3; 32",
+              "x=2",
+              "2^(x + 3) = 32"
+            ],
+            [
+              "exp; 3; 2*x-1; 1/27",
+              "x=-1",
+              "3^(2x − 1) = 1/27"
+            ]
+          ],
+          "example": [
+            "exp; 5; x-2; 125",
+            "x=5",
+            "5^(x − 2) = 125"
+          ],
+          "worked": "125 = 5³ nên 5^(x − 2) = 5³. Hai số mũ bằng nhau: x − 2 = 3, vậy x = 5.",
+          "wrong": "x=29",
+          "hypothesis": "Có thể đã trừ 3 trực tiếp từ 32 thay vì viết 32 thành lũy thừa của 2.",
+          "question": "32 bằng 2 mũ mấy?"
+        },
+        {
+          "kind": "exp_log_equation",
+          "label": "Hai cơ số cùng là lũy thừa của một số",
+          "prompt": "Giải phương trình {display}. Nộp dạng x=....",
+          "problems": [
+            [
+              "exp; 4; x; 8",
+              "x=3/2",
+              "4^x = 8"
+            ],
+            [
+              "exp; 9; x+1; 27",
+              "x=1/2",
+              "9^(x + 1) = 27"
+            ]
+          ],
+          "example": [
+            "exp; 8; x; 16",
+            "x=4/3",
+            "8^x = 16"
+          ],
+          "worked": "8 = 2³ và 16 = 2⁴ nên 2^(3x) = 2⁴. Vậy 3x = 4, x = 4/3.",
+          "wrong": "x=2",
+          "hypothesis": "Có thể đã chia 8 cho 4 thay vì đưa hai vế về cùng cơ số 2.",
+          "question": "Viết 4 và 8 thành lũy thừa của 2 thì được gì?"
+        },
+        {
+          "kind": "exp_log_equation",
+          "label": "Dùng định nghĩa logarit",
+          "prompt": "Giải phương trình {display}. Nộp dạng x=....",
+          "problems": [
+            [
+              "log; 3; 2*x-1; 2",
+              "x=5",
+              "log₃(2x − 1) = 2"
+            ],
+            [
+              "log; 2; x+5; -1",
+              "x=-9/2",
+              "log₂(x + 5) = −1"
+            ]
+          ],
+          "example": [
+            "log; 5; 3*x+1; 2",
+            "x=8",
+            "log₅(3x + 1) = 2"
+          ],
+          "worked": "Theo định nghĩa: 3x + 1 = 5² = 25, nên 3x = 24, x = 8. Khi đó 3x + 1 = 25 > 0 nên thỏa điều kiện.",
+          "wrong": "x=7/2",
+          "hypothesis": "Có thể nghĩ log₃(2x − 1) = 2 nghĩa là 2x − 1 = 3 · 2.",
+          "question": "log₃ A = 2 nghĩa là A bằng 3 nhân 2 hay 3 mũ 2?"
+        }
+      ]
+    }
+  }
+}

@@ -85,6 +85,11 @@
           "default": false,
           "title": "Final Answer Only",
           "type": "boolean"
+        },
+        "unfinished": {
+          "default": false,
+          "title": "Unfinished",
+          "type": "boolean"
         }
       },
       "required": [

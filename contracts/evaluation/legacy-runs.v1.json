@@ -1,0 +1,21 @@
+{
+  "schema_version": "legacy-runs-1.0.0",
+  "note": "Lô chạy trước khi runner ghi dấu vân tay từng tình huống. build_rating_packet.py chỉ nhận câu của các lô có trong file này, nhận theo bản ghi của nhóm (không kiểm được bằng dấu vân tay), và luôn loại các tình huống trong stale_scenarios.",
+  "runs": [
+    {
+      "run_id": "dev-04",
+      "outputs_sha256": "cd8527ae52fa3c075ea917ba271a9f99344f52ee8cedd067a018b56c400379f0",
+      "scenario_files_at_run": {
+        "contracts/agent/fixtures.v1.json": "2a2255aaf27055ed8a337939993df56d359c1371863737ea26e8e2c8fd67db25",
+        "contracts/agent/scenarios.dev.v1.json": "b14a7da0c74e7fae6cdea4343a0a9cb970148552231eaea2742ef8fec6a6909c"
+      },
+      "scenario_files_checked": {
+        "contracts/agent/fixtures.v1.json": "2a2255aaf27055ed8a337939993df56d359c1371863737ea26e8e2c8fd67db25",
+        "contracts/agent/scenarios.dev.v1.json": "bae57b3cec3119aed23630370af62ccc7a2a094a4f0c2bc1dbff4db591c4c1c4"
+      },
+      "stale_scenarios": ["SC-04", "SC-15"],
+      "basis": "Bản scenarios.dev.v1.json lúc chạy không có trong git, nên 14 tình huống còn lại được nhận theo ghi chép của nhóm, không kiểm bằng dấu vân tay. SC-04 và SC-15 được sửa bài làm sau lô này.",
+      "reference": "docs/implementation/evaluation/ablation-runner.v1.md §5.3 mục 9; docs/implementation/evaluation/rating-workflow.v1.md §6.1"
+    }
+  ]
+}

@@ -6,16 +6,21 @@ luôn là bài hệ thống đang giữ, quyết định giao bài sai luật ga
 soạn xem được state (mastery, số observation) ở bất kỳ lúc nào. Người soạn chỉ cung cấp những gì hệ
 thống nhận từ bên ngoài: lượt của học sinh, assessment và quyết định của tutor.
 
+Với bài thật, ``Session(analyzer=...)`` và ``work(...)`` lấy assessment từ chính validator của hệ
+thống thay cho người soạn, và ``tools`` lấy context bằng công cụ của hệ thống (``ApprovedTools``).
+
 Mọi ID là UUID5 từ mã tình huống và số thứ tự, nên chạy lại cho đúng file cũ.
 """
 from __future__ import annotations
 
 from types import SimpleNamespace
+from typing import Callable
 from uuid import NAMESPACE_URL, UUID, uuid5
 
-from app.agent.decision import ACTION_SPECS, DecisionIntent, StudentState
+from app.agent.decision import ACTION_SPECS, DecisionConfig, DecisionIntent, StudentState
 from app.agent.graph import Services, task_for
 from app.agent.kg_tool import KGTool
+from app.agent.observation import ObservationLedger
 from app.agent.stubs import retrieval_skills
 from app.agent.tools import RetrievedContent, TurnContext
 from research.scenarios.contracts import (
@@ -32,14 +37,19 @@ class Session:
 
     def __init__(self, scenario_id: str, first_problem: str, *, problems: list[ProblemSource],
                  parameters: dict[str, BKTParameters], content: list[RetrievedContent], kg: KGTool,
-                 source_reference: str):
+                 source_reference: str, analyzer: Callable[..., object] | None = None,
+                 tools: Callable[[StudentState, DecisionConfig], TurnContext] | None = None):
         self.id = scenario_id
         self.sources = {p.problem.problem_id: p for p in problems}
         self.refs = {pid: p.problem for pid, p in self.sources.items()}
         self.parameters, self.content, self.kg, self.source_reference = parameters, content, kg, source_reference
+        self.no_evidence = frozenset(pid for pid, p in self.sources.items() if not p.target_evidence)
+        # ``analyzer(state, lines)`` trả AssessmentView, như ``Services.analyzer``; ``tools`` trả context
+        # như ``Services.tools``. None: người soạn tự cung cấp assessment, context lấy từ ``content``.
+        self.analyzer, self.tools = analyzer, tools
         self.events: list[HistoryEvent] = []
         self._count = 0
-        self._observed: frozenset[str] = frozenset()
+        self._ledger = ObservationLedger()
         self._services = Services(problem_ref=self.refs.__getitem__)
         self._first_task = task_for(self.refs[first_problem], self._uuid("opportunity"), "initial")
         self.state: StudentState | None = None
@@ -66,8 +76,9 @@ class Session:
             self.state = _initial_state(draft, self._dataset, event, self.refs)
         elif self.events[-1].actor == "student":
             raise ValueError(f"{self.id}: the tutor must answer before the next student turn")
-        self.state, self._observed = _student_turn(self.state, event, self._services, self._observed,
-                                                   self.parameters, [], f"{self.id} event {len(self.events) + 1}")
+        self.state, self._ledger = _student_turn(self.state, event, self._services, self._ledger,
+                                                   self.parameters, [], f"{self.id} event {len(self.events) + 1}",
+                                                   self.no_evidence)
         self.events.append(event)
         return self
 
@@ -79,6 +90,20 @@ class Session:
             "primary_skill_id": skill or (self._task().target_skill_id if status.startswith("verified") else None),
             "error_family": family, "misconception_candidate": misconception,
             "diagnosis_status": "suspected" if misconception else "unknown", "final_answer_only": final_only}
+        return self._student("submit", submission=lines, assessment=assessment)
+
+    def work(self, lines: list[str], expect: str) -> "Session":
+        """Nộp bài và để validator của hệ thống chấm. ``expect`` là kết quả người soạn muốn có
+        (``verified_correct``, ``verified_incorrect``, ``unfinished``, ``needs_clarification``...); chấm
+        ra khác thì báo lỗi ngay, để nhãn không dựa trên một lần chấm mà hệ thống không đưa ra."""
+        if self.analyzer is None:
+            raise ValueError(f"{self.id}: work() needs a Session analyzer")
+        view = self.analyzer(SimpleNamespace(current=self._task()), lines)
+        got = "unfinished" if view.unfinished else view.assessment_status
+        if got != expect:
+            raise ValueError(f"{self.id}: validator graded {lines} on {self._task().problem_id} as {got}, "
+                             f"not {expect}")
+        assessment = view.model_copy(update={"assessment_id": self._uuid("assessment")})
         return self._student("submit", submission=lines, assessment=assessment)
 
     def correct(self, lines: list[str], *, final_only: bool = False) -> "Session":
@@ -115,8 +140,8 @@ class Session:
                              actor="tutor", kind="decision", action=action, intent=intent, hint_level=level,
                              problem_id=problem, target_skill_id=skill)
         upcoming = SimpleNamespace(task=SimpleNamespace(opportunity_id=self._uuid("opportunity")))
-        self.state = _tutor_turn(self.state, event, upcoming, self._services, self.refs, self.kg,
-                                 f"{self.id} event {len(self.events) + 1}")
+        self.state, self._ledger = _tutor_turn(self.state, self._ledger, event, upcoming, self._services,
+                                               self.refs, self.kg, f"{self.id} event {len(self.events) + 1}")
         self.events.append(event)
         return self
 
@@ -128,11 +153,17 @@ class Session:
         skill đang học, skill của lỗi vừa chấm và prerequisite trực tiếp; cạnh KG để ``build`` điền."""
         if self.state is None or self.events[-1].actor != "student":
             raise ValueError(f"{self.id}: a scenario ends at a student turn")
-        edges = self.kg(self.state.current.concept_id).edges
-        skills = retrieval_skills(self.state, edges)
-        retrieved = [c for c in self.content if c.skill_id in skills][:MAX_CONTEXT_CONTENT]
-        context = TurnContext(current_problem_prompt=self.sources[self.state.current.problem_id].prompt,
-                              retrieved=retrieved, problems=list(self.refs.values())[:MAX_CONTEXT_PROBLEMS])
+        prompt = self.sources[self.state.current.problem_id].prompt
+        if self.tools is not None:
+            found = self.tools(self.state, DecisionConfig(configuration="full", policy_version="scenario-authoring"))
+            context = TurnContext(current_problem_prompt=prompt, retrieved=found.retrieved,
+                                  problems=found.problems[:MAX_CONTEXT_PROBLEMS])
+        else:
+            edges = self.kg(self.state.current.concept_id).edges
+            skills = retrieval_skills(self.state, edges)
+            retrieved = [c for c in self.content if c.skill_id in skills][:MAX_CONTEXT_CONTENT]
+            context = TurnContext(current_problem_prompt=prompt, retrieved=retrieved,
+                                  problems=list(self.refs.values())[:MAX_CONTEXT_PROBLEMS])
         return ScenarioDraft(
             scenario_id=self.id, title=title, student_id=self.state.student_id, session_id=self.state.session_id,
             history_group_id=f"{self.id}-history", source=source, source_reference=self.source_reference,

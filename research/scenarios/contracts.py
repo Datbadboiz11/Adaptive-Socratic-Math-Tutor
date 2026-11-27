@@ -35,6 +35,9 @@ class ProblemSource(Contract):
     problem: ProblemRef
     original_problem_id: Identifier
     prompt: str = Field(min_length=1, max_length=1000)
+    # False: bài chỉ chấm đáp án cuối (Member 2). Hệ thống không tạo observation BKT từ bài này
+    # (``not_target_evidence``, giống web), nên replay cũng không.
+    target_evidence: bool = True
 
 
 class HistoryEvent(Contract):

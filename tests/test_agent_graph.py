@@ -23,6 +23,9 @@ from app.generation.templates import TemplateGenerator  # noqa: E402
 
 WRONG = ["2x - 3 = 10", "2x = 13", "x = 6.5"]
 RIGHT = ["2x - 6 = 10", "2x = 16", "x = 8"]
+# Sai ở chính skill của bài (E02: dùng sai phép toán ngược). WRONG sai ở skill phân phối (A02), nên theo
+# luật của Member 1 không tạo observation cho skill nào (not_target_evidence).
+WRONG_TARGET = ["2x - 6 = 10", "2x = 4", "x = 2"]
 
 
 def config(name="rule_policy"):
@@ -67,27 +70,36 @@ def test_full_session_flow(engine):
 
 def test_bkt_only_updates_on_independent_first_attempt(engine):
     sid = engine.start("demo-a", "E02-P001").session_id
-    run(engine, sid, "submit", WRONG)
-    first = engine.state(sid).skill("SK-A02-DISTRIBUTE")
-    assert first.independent_observations == 1
-    run(engine, sid, "submit", WRONG)  # cùng opportunity: không thêm observation
+    run(engine, sid, "submit", WRONG_TARGET)
+    first = engine.state(sid).skill("SK-E02-SOLVE")
+    assert first.independent_observations == 1 and first.p_mastery < 0.2  # prior khởi đầu 0.2
+    run(engine, sid, "submit", WRONG_TARGET)  # cùng opportunity: không thêm observation
     run(engine, sid, "request_hint")
     run(engine, sid, "submit", RIGHT)  # đúng sau hỗ trợ: chỉ tăng assisted_correct
+    after = engine.state(sid).skill("SK-E02-SOLVE")
+    assert (after.independent_observations, after.p_mastery) == (1, first.p_mastery)
+    assert after.assisted_correct == 1
+
+
+def test_error_in_another_skill_is_not_evidence_for_any_skill(engine):
+    """Luật Member 1 (knowledge.eligibility): lỗi phân phối (A02) trong bài phương trình (E02) không
+    cập nhật E02, cũng không cập nhật A02."""
+    sid = engine.start("demo-a", "E02-P001").session_id
+    run(engine, sid, "submit", WRONG)
     state = engine.state(sid)
-    assert state.skill("SK-A02-DISTRIBUTE") == first
-    assert state.skill("SK-E02-SOLVE").independent_observations == 0
-    assert state.skill("SK-E02-SOLVE").assisted_correct == 1
+    assert state.latest_assessment.primary_skill_id == "SK-A02-DISTRIBUTE"
+    assert state.observation.reason == "not_target_evidence" and state.skills == []
 
 
 def test_duplicate_request_is_not_processed_twice(engine):
     sid = engine.start("demo-a", "E02-P001").session_id
     request_id = uuid4()
-    first = run(engine, sid, "submit", WRONG, request_id=request_id)
-    second = run(engine, sid, "submit", WRONG, request_id=request_id)
+    first = run(engine, sid, "submit", WRONG_TARGET, request_id=request_id)
+    second = run(engine, sid, "submit", WRONG_TARGET, request_id=request_id)
     assert second.duplicate and second.decision_id == first.decision_id
     assert engine.state(sid).state_version == first.state_version
     assert len(engine.decisions(sid)) == 1
-    assert engine.state(sid).skill("SK-A02-DISTRIBUTE").independent_observations == 1
+    assert engine.state(sid).skill("SK-E02-SOLVE").independent_observations == 1
 
 
 def test_old_request_replayed_after_other_turns_returns_stored_reply(engine):
@@ -128,7 +140,7 @@ def test_retry_after_mid_turn_failure_resumes_without_reanalysis():
     # Review P1: retry chạy lại analyze nên một bài nộp thành hai bằng chứng.
     eng = TutorEngine(config(), Services(templates=FlakyGenerator()))
     sid = eng.start("demo-a", "E02-P001").session_id
-    request = TurnInput(request_id=uuid4(), trigger="submit", steps=WRONG)
+    request = TurnInput(request_id=uuid4(), trigger="submit", steps=WRONG_TARGET)
     with pytest.raises(RuntimeError, match="generator down"):
         eng.turn(sid, request)
     with pytest.raises(TurnInProgress):  # request khác phải đợi lượt dở dang xong
@@ -137,7 +149,7 @@ def test_retry_after_mid_turn_failure_resumes_without_reanalysis():
     state = eng.state(sid)
     assert [(h.status, len(h.evidence_ids)) for h in state.hypotheses] == [("suspected", 1)]
     assert state.support.no_progress_turns == 1
-    assert state.skill("SK-A02-DISTRIBUTE").independent_observations == 1
+    assert state.skill("SK-E02-SOLVE").independent_observations == 1
     assert len(eng.decisions(sid)) == 1 and reply.action == "diagnose"
     assert eng.turn(sid, request).duplicate
 
@@ -357,8 +369,8 @@ def test_no_bkt_hides_mastery_from_policy_only():
     script = ScriptedProposer([None] * 3)
     eng = TutorEngine(config("no_bkt"), Services(proposer=script))
     sid = eng.start("demo-a", "E02-P001").session_id
-    run(eng, sid, "submit", WRONG)
-    run(eng, sid, "submit", WRONG)
+    run(eng, sid, "submit", WRONG_TARGET)
+    run(eng, sid, "submit", WRONG_TARGET)
     assert all(s.mastery_view == "none" for s in script.seen_states)
     assert all(k.p_mastery is None for s in script.seen_states for k in s.skills)
     assert engine_skill(eng, sid).p_mastery is not None  # BKT vẫn chạy để báo cáo
@@ -366,7 +378,7 @@ def test_no_bkt_hides_mastery_from_policy_only():
 
 
 def engine_skill(eng, sid):
-    return eng.state(sid).skill("SK-A02-DISTRIBUTE")
+    return eng.state(sid).skill("SK-E02-SOLVE")
 
 
 # ---------------------------------------------------------------- Nhất quán lượt khi gửi đồng thời (FR-11)

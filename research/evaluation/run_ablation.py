@@ -55,7 +55,8 @@ from app.agent.llm_proposer import (  # noqa: E402
     AGENT_POLICY_VERSION, PROMPT_VERSION as AGENT_PROMPT_VERSION, LLMProposer, decision_config, proposal_to_output,
 )
 from app.agent.rule_policy import POLICY_VERSION as RULE_POLICY_VERSION, READINESS_VERSION, rule_policy  # noqa: E402
-from app.agent.stubs import demo_answer_key, problem_prompt, retrieval_skills  # noqa: E402
+from app.agent.approved_content import any_answer_key, any_problem_prompt, load_approved_content  # noqa: E402
+from app.agent.stubs import retrieval_skills  # noqa: E402
 from app.agent.tools import TurnContext  # noqa: E402
 from app.generation.llm_generator import PROMPT_VERSION as RESPONSE_PROMPT_VERSION, LLMResponseGenerator  # noqa: E402
 from app.generation.templates import TEMPLATE_VERSION, TemplateGenerator  # noqa: E402
@@ -79,7 +80,8 @@ WITHOUT_DECISION = frozenset({SOCRATIC_LLM})  # không có policy, nên không c
 WITHOUT_AGENT = frozenset({E.RULE_POLICY.value, SOCRATIC_LLM})
 CALLS_PER_RESPONSE = 1 + MAX_REGENERATIONS
 # Một verifier cho mọi cấu hình, kể cả baseline: cùng đáp án, cùng kiểm tra (plan §18.2).
-VERIFIER = ResponseVerifier(demo_answer_key)
+# Đáp án của bài mẫu hoặc của bài đã duyệt (bộ approved.dev), chỉ verifier đọc.
+VERIFIER = ResponseVerifier(any_answer_key)
 # State của tình huống đã có kết quả chấm và observation: chạy tiếp từ sau node này.
 ENTRY_NODE = "observe"
 
@@ -87,8 +89,10 @@ ENTRY_NODE = "observe"
 # --------------------------------------------------------------------------- cấu hình
 
 def project_context(ctx: TurnContext, state: StudentState, configuration: E) -> TurnContext:
-    """Context của tình huống như tool trả về dưới cấu hình đó (cùng quy tắc với ``stubs.StubTools``).
-    Full giữ nguyên context đã soạn."""
+    """Context của tình huống như tool trả về dưới cấu hình đó. Full giữ nguyên context đã soạn.
+
+    Cạnh, concept kế tiếp và nội dung: cùng quy tắc với ``stubs.StubTools`` và ``ApprovedTools``. Bài ứng
+    viên theo tool đã tạo ra bộ tình huống (``candidate_problems``)."""
     kg = ctx.kg_enabled and configuration != E.NO_KG
     rag = ctx.rag_enabled and configuration != E.NO_RAG
     edges = ctx.edges if kg else []
@@ -97,9 +101,23 @@ def project_context(ctx: TurnContext, state: StudentState, configuration: E) -> 
     return ctx.model_copy(update={
         "edges": edges, "next_concepts": ctx.next_concepts if kg else [],
         "retrieved": [c for c in ctx.retrieved if c.skill_id not in via_kg_only] if rag else [],
+        "problems": candidate_problems(ctx, state, kg),
         "kg_enabled": kg, "rag_enabled": rag,
         "kg_source": ctx.kg_source if kg else None, "graph_version": ctx.graph_version if kg else None,
         "tool_calls_used": kg + rag + 1})  # KG, RAG và problem bank
+
+
+def candidate_problems(ctx: TurnContext, state: StudentState, kg: bool) -> list:
+    """Bài ứng viên như tool thật trả về. Bộ trên bài đã duyệt (``approved_dev``): ``ApprovedTools`` lấy
+    bài của concept đang học, prerequisite và concept kế tiếp theo KG, nên tắt KG chỉ còn bài của concept
+    đang học (``ApprovedContent.candidates``). Bộ bài mẫu: ``StubTools`` trả cả ngân hàng mẫu, không theo
+    KG, nên giữ nguyên."""
+    if kg:
+        return ctx.problems
+    content = load_approved_content()
+    if state.current.problem_id not in content.problems:
+        return ctx.problems
+    return content.candidates([state.current.concept_id])
 
 
 def max_calls(scenarios: int, configurations: list[str], repeat: int) -> int:
@@ -183,8 +201,8 @@ class Models:
 # --------------------------------------------------------------------------- chạy
 
 def prompt_source(sc: Scenario):
-    """Đề bài theo mã bài: của bộ tình huống đã replay nếu có, không thì của problem bank mẫu."""
-    return sc.problem_prompts.get if sc.problem_refs else problem_prompt
+    """Đề bài theo mã bài: của bộ tình huống đã replay nếu có, không thì của problem bank."""
+    return sc.problem_prompts.get if sc.problem_refs else any_problem_prompt
 
 
 def seeded_graph(sc: Scenario, configuration: str, models: Models, attempt: int):
@@ -417,6 +435,8 @@ def run_info(llm: str, model: str, scenarios: list[Scenario], configurations: li
             "scenario_split": scenarios[0].split if scenarios else scenario_file()["split"],
             "dataset_version": scenarios[0].dataset_version if scenarios else None,
             "configurations": [str(c) for c in configurations],
+            # Phiếu chấm chỉ ghép câu với đúng tình huống đã sinh ra nó (build_rating_packet.py).
+            "scenario_fingerprints": {sc.id: sc.fingerprint for sc in scenarios},
             "repeat": repeat, "max_regenerations": MAX_REGENERATIONS,
             "versions": {"workflow": WORKFLOW_VERSION, "agent_policy": AGENT_POLICY_VERSION,
                          "agent_prompt": AGENT_PROMPT_VERSION, "rule_policy": RULE_POLICY_VERSION,

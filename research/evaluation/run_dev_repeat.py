@@ -116,6 +116,10 @@ def merge_parts(out: Path, manifest: dict, parts: list[Path]) -> None:
         for field in SHARED_RUN_FIELDS:
             if info[field] != manifest["run"][field]:
                 raise ValueError(f"{part}: inconsistent {field}")
+        expected_prints = manifest["run"].get("scenario_fingerprints", {})
+        if expected_prints and any(expected_prints.get(sid) != value
+                                   for sid, value in info.get("scenario_fingerprints", {}).items()):
+            raise ValueError(f"{part}: scenarios changed during the run")
         rows.extend(read_rows(part / "runs.jsonl"))
     expected = {(sc, config, attempt) for sc in manifest["run"]["scenarios"]
                 for config in manifest["run"]["configurations"] for attempt in range(1, REPEAT + 1)}

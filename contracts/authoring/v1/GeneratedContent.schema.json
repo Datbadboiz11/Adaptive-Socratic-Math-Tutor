@@ -9,7 +9,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/AuthoringMathTask"
+          "$ref": "#/$defs/DraftMathTask"
         },
         "reference_answer": {
           "maxLength": 160,
@@ -91,7 +91,7 @@
       "title": "AuthoredProblem",
       "type": "object"
     },
-    "AuthoringMathTask": {
+    "DraftMathTask": {
       "additionalProperties": false,
       "properties": {
         "kind": {
@@ -110,7 +110,15 @@
             "linear_elimination",
             "function_domain",
             "quadratic_axis",
-            "exponent_numeric"
+            "exponent_numeric",
+            "linear_inequality",
+            "log_value",
+            "exp_log_equation",
+            "vieta",
+            "quadratic_monotonic",
+            "slope_intercept",
+            "special_factoring",
+            "product_equation"
           ],
           "title": "Kind",
           "type": "string"
@@ -138,7 +146,7 @@
         "kind",
         "expression"
       ],
-      "title": "AuthoringMathTask",
+      "title": "DraftMathTask",
       "type": "object"
     },
     "ErrorFixture": {
@@ -247,7 +255,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/AuthoringMathTask"
+          "$ref": "#/$defs/DraftMathTask"
         },
         "reference_answer": {
           "maxLength": 160,

@@ -9,7 +9,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/AuthoringMathTask"
+          "$ref": "#/$defs/DraftMathTask"
         },
         "reference_answer": {
           "maxLength": 160,
@@ -91,56 +91,6 @@
       "title": "AuthoredProblem",
       "type": "object"
     },
-    "AuthoringMathTask": {
-      "additionalProperties": false,
-      "properties": {
-        "kind": {
-          "enum": [
-            "numeric",
-            "evaluate",
-            "polynomial",
-            "linear_equation",
-            "quadratic_vertex",
-            "fraction_compare",
-            "number_conversion",
-            "factored_polynomial",
-            "rational_operation",
-            "word_equation",
-            "quadratic_roots",
-            "linear_elimination",
-            "function_domain",
-            "quadratic_axis",
-            "exponent_numeric"
-          ],
-          "title": "Kind",
-          "type": "string"
-        },
-        "expression": {
-          "maxLength": 160,
-          "minLength": 1,
-          "title": "Expression",
-          "type": "string"
-        },
-        "variable_value": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Variable Value"
-        }
-      },
-      "required": [
-        "kind",
-        "expression"
-      ],
-      "title": "AuthoringMathTask",
-      "type": "object"
-    },
     "ConceptPack": {
       "additionalProperties": false,
       "properties": {
@@ -207,6 +157,64 @@
         "review"
       ],
       "title": "ConceptPack",
+      "type": "object"
+    },
+    "DraftMathTask": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "numeric",
+            "evaluate",
+            "polynomial",
+            "linear_equation",
+            "quadratic_vertex",
+            "fraction_compare",
+            "number_conversion",
+            "factored_polynomial",
+            "rational_operation",
+            "word_equation",
+            "quadratic_roots",
+            "linear_elimination",
+            "function_domain",
+            "quadratic_axis",
+            "exponent_numeric",
+            "linear_inequality",
+            "log_value",
+            "exp_log_equation",
+            "vieta",
+            "quadratic_monotonic",
+            "slope_intercept",
+            "special_factoring",
+            "product_equation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Expression",
+          "type": "string"
+        },
+        "variable_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable Value"
+        }
+      },
+      "required": [
+        "kind",
+        "expression"
+      ],
+      "title": "DraftMathTask",
       "type": "object"
     },
     "ErrorFixture": {
@@ -315,7 +323,7 @@
           "type": "string"
         },
         "task": {
-          "$ref": "#/$defs/AuthoringMathTask"
+          "$ref": "#/$defs/DraftMathTask"
         },
         "reference_answer": {
           "maxLength": 160,

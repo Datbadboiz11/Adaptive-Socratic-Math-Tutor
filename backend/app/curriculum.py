@@ -15,6 +15,14 @@ AuthoringTaskKind = Literal[
     'word_equation', 'quadratic_roots', 'linear_elimination', 'function_domain', 'quadratic_axis',
     'exponent_numeric',
 ]
+# Dạng kiểm của Member 3 (app.member3_math). Không gộp vào AuthoringTaskKind: hợp đồng bài công khai
+# v0.3.0 (PublicTask kế thừa AuthoringMathTask) đã được nhóm xác nhận. Các dạng này chỉ dùng cho nháp
+# và review; đưa lên hợp đồng công khai cần nhóm xác nhận lại.
+Member3TaskKind = Literal[
+    'linear_inequality', 'log_value', 'exp_log_equation', 'vieta', 'quadratic_monotonic', 'slope_intercept',
+    'special_factoring', 'product_equation',
+]
+DraftTaskKind = Literal[AuthoringTaskKind, Member3TaskKind]
 
 
 class Source(Contract):
@@ -53,7 +61,7 @@ class Concept(Contract):
     skills: list[Skill] = Field(min_length=1)
     supported_forms: list[Text] = Field(min_length=1)
     excluded_forms: list[Text] = Field(min_length=1)
-    authoring_task_kinds: list[AuthoringTaskKind] = Field(default_factory=list)
+    authoring_task_kinds: list[DraftTaskKind] = Field(default_factory=list)
     alignment: Alignment
     pilot: bool
     review: Review
@@ -147,9 +155,13 @@ class AuthoringMathTask(MathTask):
     kind: AuthoringTaskKind
 
 
+class DraftMathTask(MathTask):
+    kind: DraftTaskKind
+
+
 class MathCase(Contract):
     case_id: Identifier
-    task: AuthoringMathTask
+    task: DraftMathTask
     reference_answer: Annotated[str, Field(min_length=1, max_length=160)]
     reference_steps: list[Annotated[str, Field(min_length=1, max_length=160)]] = Field(min_length=1, max_length=12)
 

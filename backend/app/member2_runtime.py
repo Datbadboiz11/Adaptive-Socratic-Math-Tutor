@@ -5,6 +5,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 
+from app.assessment_modes import ASSESSMENT_MODE, TASK_KINDS  # noqa: F401 (xuất lại)
 from app.content_authoring import ContentReview
 from app.curriculum import CurriculumRegistry, PilotBank
 from app.manage import digest, seed_problem
@@ -12,12 +13,6 @@ from app.member2_foundation import load_workboard
 from app.member2_problem_contract import project_curriculum_problem
 
 RELEASE = Path(__file__).resolve().parents[2] / 'content/authoring/batches/member2-original.v2'
-ASSESSMENT_MODE = 'member2-final-answer-1.0.0'
-TASK_KINDS = frozenset({
-    'numeric', 'evaluate', 'polynomial', 'quadratic_vertex', 'fraction_compare', 'number_conversion',
-    'factored_polynomial', 'rational_operation', 'word_equation', 'quadratic_roots', 'linear_elimination',
-    'function_domain', 'quadratic_axis', 'exponent_numeric',
-})
 
 
 @dataclass(frozen=True)

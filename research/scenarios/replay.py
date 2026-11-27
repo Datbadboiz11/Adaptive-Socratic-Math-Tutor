@@ -5,8 +5,8 @@ Lượt của học sinh đi qua ``start_turn`` → ``record_student_turn`` → 
 nên state dựng lại là state hệ thống có sau đúng lịch sử đó. Replay chỉ khác graph ở hai nguồn:
 
 - Assessment lấy từ lịch sử thay cho analyzer.
-- Observation và BKT dùng ``app.knowledge`` với tham số khai báo trong bộ dữ liệu, thay cho
-  ``stubs.stub_observe`` của graph (xem ``observe``).
+- Tham số BKT lấy theo từng skill từ bộ dữ liệu; graph dùng bộ khởi đầu chung. Observation và BKT
+  dùng cùng hàm ``app.agent.observation.observe_submission`` với graph (xem ``observe``).
 
 Replay không tin ``task`` của sự kiện: bài chỉ đổi qua quyết định của tutor, và ``task`` phải khớp
 với bài mà state đang giữ (kể cả ``relation`` do graph gán).
@@ -30,9 +30,8 @@ from app.agent.graph import (
 )
 from app.agent.kg_tool import KGLookup, KGTool
 from app.agent.rule_policy import READINESS_VERSION, compute_readiness
-from app.agent.stubs import ObservationResult
+from app.agent.observation import ObservationLedger, ObservationResult, observe_submission
 from app.agent.tools import ProblemRef, TurnContext
-from app.knowledge import eligibility, update
 from research.scenarios.contracts import BKTParameters, HistoryEvent, ReplayRecord, ScenarioDataset, ScenarioDraft
 
 A, I = PedagogicalAction, DecisionIntent
@@ -45,9 +44,6 @@ REPLAY_VERSION = "scenario-replay-2.1.0"
 # backtrack), không đổi cách state được ghi, và cần những trường lịch sử không lưu (evidence, nội dung).
 TRANSITION_RULES = ("G05_", "G08_backtrack_depth", "G08_backtrack_loop", "G08_backtrack_one_level_per_step",
                     "G09_", "G12_", "G13_", "G19_", "G20_")
-# Kết quả không đủ điều kiện nhưng vẫn là "làm đúng có hỗ trợ" (plan §8.3: sửa sau hint hoặc lặp
-# cùng opportunity thì lưu kết quả có hỗ trợ).
-ASSISTED_REASONS = frozenset({"already_observed", "assisted"})
 
 
 def replay(draft: ScenarioDraft, dataset: ScenarioDataset,
@@ -61,7 +57,8 @@ def replay(draft: ScenarioDraft, dataset: ScenarioDataset,
     events = _unique_events(draft)
     state = _initial_state(draft, dataset, events[0], problems)
     services = Services(problem_ref=problems.__getitem__)
-    observed: frozenset[str] = frozenset()
+    no_evidence = frozenset(p.problem.problem_id for p in dataset.problems if not p.target_evidence)
+    ledger = ObservationLedger()
     opportunities = {state.current.opportunity_id}
     trace: list[ReplayRecord] = []
     for index, event in enumerate(events):
@@ -74,9 +71,10 @@ def replay(draft: ScenarioDraft, dataset: ScenarioDataset,
         if index and event.actor == events[index - 1].actor:
             raise ValueError(f"{where}: student turns and tutor decisions must alternate")
         if event.actor == "student":
-            state, observed = _student_turn(state, event, services, observed, dataset.parameters, trace, where)
+            state, ledger = _student_turn(state, event, services, ledger, dataset.parameters, trace, where,
+                                          no_evidence)
             continue
-        state = _tutor_turn(state, event, events[index + 1], services, problems, kg, where)
+        state, ledger = _tutor_turn(state, ledger, event, events[index + 1], services, problems, kg, where)
         assigns_new_task = event.problem_id is not None and event.intent != I.RETURN_TO_PARENT
         if assigns_new_task and state.current.opportunity_id in opportunities:
             raise ValueError(f"{where}: a new task cannot reuse an earlier opportunity_id")
@@ -125,59 +123,39 @@ def _new_skill(skill_id: str, p: BKTParameters) -> SkillState:
                       parameter_version=p.parameter_version)
 
 
-def _student_turn(state: StudentState, event: HistoryEvent, services: Services, observed: frozenset[str],
+def _student_turn(state: StudentState, event: HistoryEvent, services: Services, ledger: ObservationLedger,
                   parameters: dict[str, BKTParameters], trace: list[ReplayRecord],
-                  where: str) -> tuple[StudentState, frozenset[str]]:
+                  where: str, no_evidence: frozenset[str] = frozenset()) -> tuple[StudentState, ObservationLedger]:
+    """``no_evidence``: bài không tạo observation BKT (``ProblemSource.target_evidence``)."""
     if state.status == "completed" or (state.status == "paused" and event.kind != "resume"):
         raise ValueError(f"{where}: session is {state.status}; this turn cannot happen")
     turn = TurnInput(request_id=event.request_id, trigger=event.kind, steps=event.submission, message=event.message)
     state = start_turn(state, turn, event.turn_id)
     state = record_student_turn(state, turn, services, event.assessment, event.submission)
     if event.assessment is None:
-        return state, observed
-    result, record = observe(state, observed, parameters)
+        return state, ledger
+    result, record = observe(state, ledger, parameters,
+                             target_evidence=state.current.problem_id not in no_evidence)
     trace.append(record)
-    return record_observation(state, result), result.observed_opportunities
+    return record_observation(state, result), result.ledger
 
 
-def observe(state: StudentState, observed: frozenset[str],
-            parameters: dict[str, BKTParameters]) -> tuple[ObservationResult, ReplayRecord]:
-    """Điều kiện ghi observation và cập nhật BKT của backend (``app.knowledge``) cho lần nộp vừa chấm.
-
-    Khác ``stubs.stub_observe`` mà graph đang dùng ở ba điểm, cần chốt với Member 1:
-    - Bài cùng họ mẫu (``near_practice``) và bài cha khi quay lại (``repeat``) không tạo observation.
-    - Lỗi thuộc skill khác skill đích của bài thì không cập nhật skill nào; stub cập nhật skill có lỗi.
-    - Tham số BKT lấy theo từng skill từ bộ dữ liệu, không dùng một bộ chung."""
-    task, a = state.current, state.latest_assessment
-    opportunity = str(task.opportunity_id)
-    assisted = state.support.hint_level > 0 or state.support.support_turns_on_node > 0
-    verdict = eligibility(a.model_dump(), {"assistance_level": int(assisted), "relation": task.relation,
-                                           "target_skill_id": task.target_skill_id}, observed=opportunity in observed)
-    skills = {skill.skill_id: skill for skill in state.skills}
-    skill = skills.get(task.target_skill_id) or _new_skill(task.target_skill_id, parameters[task.target_skill_id])
-    correct = a.assessment_status == "verified_correct"
-    before, prediction, observation_id = skill.p_mastery, None, None
-    if verdict["eligible"]:
-        values = update(before, correct, parameters[skill.skill_id].model_dump())
-        prediction = values["prediction_before"]
-        skill = skill.model_copy(update={
-            "p_mastery": values["mastery_after"], "independent_observations": skill.independent_observations + 1,
-            "recent_independent": (skill.recent_independent + [correct])[-5:]})
-        observed = observed | {opportunity}
-        observation_id = uuid5(NAMESPACE_URL, f"{state.student_id}:{opportunity}:{skill.skill_id}")
-    elif correct and verdict["reason"] in ASSISTED_REASONS:
-        skill = skill.model_copy(update={"assisted_correct": skill.assisted_correct + 1})
-    skills[skill.skill_id] = skill
-    result = ObservationResult(ObservationStatus(**verdict, observation_id=observation_id), list(skills.values()),
-                               observed, skill.skill_id if verdict["eligible"] else None)
-    return result, ReplayRecord(turn_id=state.turn_id, skill_id=skill.skill_id, prediction_before=prediction,
-                                mastery_before=before, mastery_after=skill.p_mastery, **verdict)
+def observe(state: StudentState, ledger: ObservationLedger, parameters: dict[str, BKTParameters], *,
+            target_evidence: bool = True) -> tuple[ObservationResult, ReplayRecord]:
+    """Observation và BKT cho lần nộp vừa chấm: đúng hàm graph dùng (``observe_submission``), chỉ khác
+    tham số BKT lấy theo từng skill từ bộ dữ liệu."""
+    result, t = observe_submission(state, ledger, lambda skill_id: parameters[skill_id].model_dump(),
+                                   target_evidence=target_evidence)
+    return result, ReplayRecord(turn_id=state.turn_id, skill_id=t.skill_id, prediction_before=t.prediction_before,
+                                mastery_before=t.mastery_before, mastery_after=t.mastery_after,
+                                eligible=t.eligible, reason=t.reason)
 
 
-def _tutor_turn(state: StudentState, event: HistoryEvent, upcoming: HistoryEvent, services: Services,
-                problems: dict[str, ProblemRef], kg: Callable[[str], KGLookup], where: str) -> StudentState:
+def _tutor_turn(state: StudentState, ledger: ObservationLedger, event: HistoryEvent, upcoming: HistoryEvent,
+                services: Services, problems: dict[str, ProblemRef], kg: Callable[[str], KGLookup],
+                where: str) -> tuple[StudentState, ObservationLedger]:
     """Áp quyết định đã ghi trong lịch sử, sau khi các luật chuyển bài của gate cho qua. Bài mới nhận
-    ``opportunity_id`` mà lượt kế tiếp ghi."""
+    ``opportunity_id`` mà lượt kế tiếp ghi. Trợ giúp được ghi vào sổ trước khi áp, như node commit."""
     context, edge_ids = TurnContext(), []
     if event.problem_id is not None:
         assigned = problems.get(event.problem_id)
@@ -202,5 +180,6 @@ def _tutor_turn(state: StudentState, event: HistoryEvent, upcoming: HistoryEvent
     if broken:
         raise ValueError(f"{where}: the policy gate does not let the system make this decision here "
                          f"({', '.join(broken)})")
+    ledger = ledger.note_decision(state, decision)
     return finish_turn(state, decision, replace(services, new_id=lambda: upcoming.task.opportunity_id),
-                       event.turn_id)
+                       event.turn_id), ledger

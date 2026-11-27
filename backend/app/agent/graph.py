@@ -35,9 +35,10 @@ from app.agent.decision import (
 from app.agent.kg_tool import skill_title
 from app.agent.rule_policy import READINESS_VERSION, compute_readiness
 from app.agent.stubs import (
-    ObservationResult, StubAnalyzer, StubTools, demo_answer_key, problem_prompt, problem_ref, stub_observe,
-    unverified_probe,
+    StubTools, demo_answer_key, demo_validator_task, problem_prompt, problem_ref, unverified_probe,
 )
+from app.agent.observation import KnowledgeObserver, ObservationLedger, ObservationResult, ledger_from_checkpoint
+from app.agent.validator_analyzer import ValidatorAnalyzer
 from app.agent.tools import ProblemRef, TurnContext
 from app.extraction.contracts import ExtractionRecord
 from app.extraction.extractor import ExtractionOutcome, StepExtractor
@@ -121,8 +122,12 @@ class TurnInProgress(RuntimeError):
 
 @dataclass
 class Services:
-    analyzer: Callable[[StudentState, list[str]], object] = field(default_factory=StubAnalyzer)
-    observer: Callable[[StudentState, object, frozenset[str]], ObservationResult] = stub_observe
+    # Chấm bài bằng validator của Member 1. Đề lấy từ bài mẫu cho tới khi có problem bank.
+    analyzer: Callable[[StudentState, list[str]], object] = field(
+        default_factory=lambda: ValidatorAnalyzer(demo_validator_task))
+    # Observation + BKT của Member 1 (app.knowledge), tham số khởi đầu dùng chung cho mọi skill.
+    observer: Callable[[StudentState, object, ObservationLedger], ObservationResult] = field(
+        default_factory=KnowledgeObserver)
     tools: Callable[[StudentState, DecisionConfig], TurnContext] = field(default_factory=StubTools)
     # Tách bài làm tự do thành các bước trước khi chấm (LLM extraction). None: đưa thẳng bài làm cho
     # analyzer. Chỉ áp cho concept mà extractor hỗ trợ (``applies_to``).
@@ -147,6 +152,11 @@ class Services:
 class TutorGraphState(TypedDict, total=False):
     student: dict
     turn_input: dict
+    # Sổ ghi của luật ghi nhận observation (ObservationLedger): opportunity đã có observation, đã có lần
+    # nộp chấm được, đã nhận trợ giúp (kèm họ mẫu).
+    observation_ledger: dict
+    # Khóa của bản trước (chỉ opportunity đã có observation). Không còn ghi; giữ khai báo để checkpoint
+    # cũ vẫn đọc ra được khóa này và bị từ chối rõ ràng (LegacyCheckpoint) thay vì coi như sổ trống.
     observed_opportunities: list[str]
     context: dict
     decision: dict
@@ -388,9 +398,9 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
         s = StudentState.model_validate(gs["student"])
         if s.trigger != "submit" or s.latest_assessment is None:
             return {}
-        result = services.observer(s, s.latest_assessment, frozenset(gs.get("observed_opportunities", [])))
+        result = services.observer(s, s.latest_assessment, ledger_from_checkpoint(gs))
         return {"student": record_observation(s, result).model_dump(mode="json"),
-                "observed_opportunities": sorted(result.observed_opportunities)}
+                "observation_ledger": result.ledger.model_dump(mode="json")}
 
     def readiness(gs: TutorGraphState):
         s = StudentState.model_validate(gs["student"])
@@ -448,6 +458,7 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
         record = PedagogicalDecision.model_validate(gs["decision"])
         response = ResponseRecord.model_validate(gs["response"])
         final = record.final
+        ledger = ledger_from_checkpoint(gs).note_decision(s, final)
         s = finish_turn(s, final, services, record.decision_id)
         reply = TutorReply(session_id=s.session_id, state_version=s.state_version, decision_id=record.decision_id,
                            action=final.action, intent=final.intent, hint_level=final.hint_level,
@@ -456,6 +467,7 @@ def build_graph(services: Services, config: DecisionConfig, checkpointer=None):
                            status=s.status, next_actions=_next_actions(s.status))
         reply_json = reply.model_dump(mode="json")
         return {"student": s.model_dump(mode="json"), "reply": reply_json,
+                "observation_ledger": ledger.model_dump(mode="json"),
                 "processed": {**gs.get("processed", {}), gs["turn_input"]["request_id"]: reply_json},
                 "decision_log": gs.get("decision_log", []) + [gs["decision"]],
                 "response_log": gs.get("response_log", []) + [gs["response"]]}
@@ -544,7 +556,7 @@ class TutorEngine:
             if self.graph.get_state(self._cfg(sid)).values:
                 raise ValueError(f"session {sid} already exists")
             self.graph.update_state(self._cfg(sid), {
-                "student": state.model_dump(mode="json"), "observed_opportunities": [], "decision_log": [],
+                "student": state.model_dump(mode="json"), "observation_ledger": {}, "decision_log": [],
                 "extraction_log": [], "response_log": [],
                 "reply": reply.model_dump(mode="json"), "processed": {}, "duplicate": False}, as_node="commit")
         return reply
@@ -563,6 +575,7 @@ class TutorEngine:
             snapshot = self.graph.get_state(cfg)
             if not snapshot.values:
                 raise KeyError(f"unknown session {session_id}")
+            ledger_from_checkpoint(snapshot.values)  # checkpoint cũ: báo rõ trước khi chạy graph
             request_id = str(turn.request_id)
             done = snapshot.values.get("processed", {})
             if request_id in done:

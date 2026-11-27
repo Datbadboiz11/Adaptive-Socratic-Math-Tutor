@@ -310,8 +310,8 @@ def scenarios() -> list[ScenarioDraft]:
                 .submit(["2x - 3 = 10", "2x = 13", "x = 13/2"], "verified_incorrect", **DIST)
                 .tutor("backtrack", "review_prerequisite", problem="A02-P002"))
 
-    add(in_prerequisite_branch("DP-26").submit(["4a - 5"], "verified_incorrect", **DIST)
-        .tutor("minimal_hint", "recall_rule", 1).correct(["4a - 20"])
+    add(in_prerequisite_branch("DP-26").submit(["4x - 5"], "verified_incorrect", **DIST)
+        .tutor("minimal_hint", "recall_rule", 1).correct(["4x - 20"])
         .tutor("next_problem", "continue_practice", problem="A02-PL-P003")
         .submit(["6x - 5"], "verified_incorrect", **DIST),
         "Trong nhánh ôn tính phân phối: sai lần đầu ở cả hai bài nền", ["prerequisite_gap", "misconception_repeated",
@@ -320,14 +320,14 @@ def scenarios() -> list[ScenarioDraft]:
                "Em lặp lỗi phân phối ngay ở bài nền dù vừa được nhắc quy tắc: cần giải thích hoặc ví dụ về tính phân "
                "phối, hay câu hỏi khái niệm. Chưa quay lại bài gốc và chưa đổi bài khi lỗi nền chưa sửa.",
                skills=[A02]))
-    add(in_prerequisite_branch("DP-27").correct(["4a - 20"]),
+    add(in_prerequisite_branch("DP-27").correct(["4x - 20"]),
         "Trong nhánh ôn tính phân phối: làm đúng bài nền ngay lần đầu", ["prerequisite_gap", "correct_independent"],
         labels(["next_problem", "check_transfer"], ["minimal_hint", "scaffold", "backtrack", "conceptual_question"],
                "Bài nền đúng độc lập: quay lại bài gốc đang dang dở, hoặc kiểm tra thêm một bài phân phối khác họ mẫu. "
                "Không ôn sâu hơn khi chưa có bằng chứng thiếu kiến thức nền tầng dưới.",
                intents=["return_to_parent"]))
     strong_a02 = (session("DP-28", "A02-P001").correct(["-6y - 8"])
-                  .tutor("next_problem", "continue_practice", problem="A02-P002").correct(["4a - 20"])
+                  .tutor("next_problem", "continue_practice", problem="A02-P002").correct(["4x - 20"])
                   .tutor("next_problem", "continue_practice", problem="A02-PL-P003").correct(["6x - 15"])
                   .tutor("next_problem", "advance_concept", problem="E02-P001")
                   .submit(P001_DIST, "verified_incorrect", **DIST))
@@ -338,8 +338,8 @@ def scenarios() -> list[ScenarioDraft]:
                "cần xem lại hoặc hỏi em đã nhân thế nào. Quay lại ôn tính phân phối là không cần thiết."))
 
     back_title = "Quay lại bài gốc sau nhánh ôn tính phân phối rồi lặp lỗi phân phối; kết quả độc lập ở bài nền: "
-    add(in_prerequisite_branch("DP-31").submit(["4a - 5"], "verified_incorrect", **DIST)
-        .tutor("minimal_hint", "recall_rule", 1).correct(["4a - 20"])
+    add(in_prerequisite_branch("DP-31").submit(["4x - 5"], "verified_incorrect", **DIST)
+        .tutor("minimal_hint", "recall_rule", 1).correct(["4x - 20"])
         .tutor("next_problem", "continue_practice", problem="A02-PL-P003")
         .submit(["6x - 5"], "verified_incorrect", **DIST)
         .tutor("scaffold", "explain_concept", 4).correct(["6x - 15"])
@@ -351,8 +351,8 @@ def scenarios() -> list[ScenarioDraft]:
                "nền chưa vững. Hỗ trợ phải nhắm vào tính phân phối (giải thích, ví dụ, câu hỏi khái niệm, hoặc ôn lại). "
                "Hỏi chẩn đoán lần nữa không thêm thông tin; đổi bài là bỏ lỗi chưa sửa.",
                skills=[A02]))
-    add(in_prerequisite_branch("DP-32").submit(["4a - 5"], "verified_incorrect", **DIST)
-        .tutor("minimal_hint", "recall_rule", 1).correct(["4a - 20"])
+    add(in_prerequisite_branch("DP-32").submit(["4x - 5"], "verified_incorrect", **DIST)
+        .tutor("minimal_hint", "recall_rule", 1).correct(["4x - 20"])
         .tutor("next_problem", "continue_practice", problem="A02-PL-P003").correct(["6x - 15"])
         .tutor("next_problem", "return_to_parent")
         .submit(P001_DIST, "verified_incorrect", **DIST),
@@ -362,8 +362,8 @@ def scenarios() -> list[ScenarioDraft]:
                "tắc sang phương trình. Hỏi khái niệm, chỉ bước sai, hỏi em đã nhân thế nào hoặc ví dụ tương tự đều hợp "
                "lý. Ca nằm giữa: không ràng buộc intent hay skill."))
 
-    add(in_prerequisite_branch("DP-33").submit(["4a - 5"], "verified_incorrect", **DIST)
-        .tutor("minimal_hint", "recall_rule", 1).correct(["4a - 20"])
+    add(in_prerequisite_branch("DP-33").submit(["4x - 5"], "verified_incorrect", **DIST)
+        .tutor("minimal_hint", "recall_rule", 1).correct(["4x - 20"])
         .tutor("next_problem", "continue_practice", problem="A02-PL-P003")
         .submit(["6x - 5"], "verified_incorrect", **DIST)
         .tutor("scaffold", "explain_concept", 4).correct(["6x - 15"])
@@ -423,18 +423,19 @@ STATUS_TEXT = {"verified_correct": "đúng", "verified_incorrect": "sai", "unver
 STUDENT_TEXT = {"request_hint": "xin gợi ý", "message": "nhắn", "pause": "xin tạm dừng", "resume": "quay lại"}
 
 
-def review_sheet(blind: bool = False) -> str:
+def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: KGTool | None = None) -> str:
     """Phiếu rà soát bằng Markdown: mỗi ca có đề, lịch sử, state trước quyết định và nhãn.
-    ``blind`` bỏ nhãn và lý do, để người thứ hai gán nhãn độc lập (plan §12)."""
+    ``blind`` bỏ nhãn và lý do, để người thứ hai gán nhãn độc lập (plan §12). ``data`` mặc định là bộ
+    pilot này; bộ khác (``approved_dev``) truyền dataset của nó."""
     from research.scenarios.replay import replay
-    data = dataset()
+    data, kg = data or dataset(), kg or KG
     prompts = {p.problem.problem_id: p.prompt for p in data.problems}
     lines = [f"# Phiếu {'gán nhãn độc lập' if blind else 'rà soát nhãn'}: {data.dataset_version}", "",
              "Mỗi ca kết thúc ở lượt của học sinh; cần chọn gia sư nên làm gì tiếp theo.",
              "Action: clarify, diagnose, minimal_hint, conceptual_question, scaffold, backtrack, check_transfer, "
              "next_problem, end_session.", ""]
     for draft in data.scenarios:
-        state, _ = replay(draft, data, KG)
+        state, _ = replay(draft, data, kg)
         lines += [f"## {draft.scenario_id}. {draft.title}", "",
                   f"- Loại: {', '.join(draft.tags)}", f"- Bài đang làm: {prompts[state.current.problem_id]}", "- Lịch sử:"]
         for event in draft.history:

@@ -68,7 +68,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-P001",
-      "prompt": "Giải phương trình 2(x - 3) = 10."
+      "prompt": "Giải phương trình 2(x - 3) = 10.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -80,7 +81,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-P002",
-      "prompt": "Giải phương trình 3(x + 1) = 12."
+      "prompt": "Giải phương trình 3(x + 1) = 12.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -92,7 +94,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E02-P003",
-      "prompt": "Giải phương trình 5x - 7 = 2x + 8."
+      "prompt": "Giải phương trình 5x - 7 = 2x + 8.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -104,7 +107,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-P001",
-      "prompt": "Khai triển -2(3y + 4)."
+      "prompt": "Khai triển -2(3y + 4).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -116,7 +120,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-P002",
-      "prompt": "Khai triển 4(a - 5)."
+      "prompt": "Khai triển 4(x - 5).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -128,7 +133,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-P001",
-      "prompt": "Tính (-7) + 3."
+      "prompt": "Tính (-7) + 3.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -140,7 +146,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E03-P001",
-      "prompt": "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó."
+      "prompt": "Tổng của một số và 5 bằng 12. Lập phương trình và tìm số đó.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -152,7 +159,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-EX-P002",
-      "prompt": "Tính 5 + (-8)."
+      "prompt": "Tính 5 + (-8).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -164,7 +172,8 @@
         "difficulty": 1
       },
       "original_problem_id": "N01-PL-P003",
-      "prompt": "Tính (-4) - 6."
+      "prompt": "Tính (-4) - 6.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -176,7 +185,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A02-PL-P003",
-      "prompt": "Khai triển 3(2x - 5)."
+      "prompt": "Khai triển 3(2x - 5).",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -188,7 +198,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A03-PL-P001",
-      "prompt": "Thu gọn 3x + 5 - x + 2."
+      "prompt": "Thu gọn 3x + 5 - x + 2.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -200,7 +211,8 @@
         "difficulty": 1
       },
       "original_problem_id": "A03-PL-P002",
-      "prompt": "Thu gọn 4a - 7 - 6a + 1."
+      "prompt": "Thu gọn 4a - 7 - 6a + 1.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -212,7 +224,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-PL-P004",
-      "prompt": "Giải phương trình 3x + 5 = 20."
+      "prompt": "Giải phương trình 3x + 5 = 20.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -224,7 +237,8 @@
         "difficulty": 1
       },
       "original_problem_id": "E02-PL-P005",
-      "prompt": "Giải phương trình -4x + 6 = -10."
+      "prompt": "Giải phương trình -4x + 6 = -10.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -236,7 +250,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E02-PL-P006",
-      "prompt": "Giải phương trình 7 - 2(x + 1) = 1."
+      "prompt": "Giải phương trình 7 - 2(x + 1) = 1.",
+      "target_evidence": true
     },
     {
       "problem": {
@@ -248,7 +263,8 @@
         "difficulty": 2
       },
       "original_problem_id": "E05-PL-P001",
-      "prompt": "Giải phương trình (x + 1)/(x - 2) = 3/(x - 2)."
+      "prompt": "Giải phương trình (x + 1)/(x - 2) = 3/(x - 2).",
+      "target_evidence": true
     }
   ],
   "scenarios": [
@@ -294,7 +310,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -561,7 +578,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -827,7 +845,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": true
+            "final_answer_only": true,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -1094,7 +1113,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": true
+            "final_answer_only": true,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -1361,7 +1381,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -1626,7 +1647,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -1687,7 +1709,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -1960,7 +1983,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -2226,7 +2250,8 @@
             "error_family": "condition_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -2462,7 +2487,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -2724,7 +2750,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -2992,7 +3019,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -3788,7 +3816,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4104,7 +4133,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4465,7 +4495,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4526,7 +4557,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4793,7 +4825,8 @@
             "error_family": "sign_error",
             "misconception_candidate": "M_MOVE_SIGN",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4853,7 +4886,8 @@
             "error_family": "sign_error",
             "misconception_candidate": "M_MOVE_SIGN",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -4914,7 +4948,8 @@
             "error_family": "sign_error",
             "misconception_candidate": "M_MOVE_SIGN",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5226,7 +5261,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5286,7 +5322,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5347,7 +5384,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5408,7 +5446,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5469,7 +5508,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5735,7 +5775,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5795,7 +5836,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5855,7 +5897,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5916,7 +5959,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -5977,7 +6021,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6038,7 +6083,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6301,7 +6347,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6361,7 +6408,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6421,7 +6469,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6482,7 +6531,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6543,7 +6593,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6604,7 +6655,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6665,7 +6717,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6932,7 +6985,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -6992,7 +7046,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7052,7 +7107,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7112,7 +7168,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7173,7 +7230,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7234,7 +7292,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7295,7 +7354,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7356,7 +7416,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7623,7 +7684,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7683,7 +7745,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7744,7 +7807,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -7805,7 +7869,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8072,7 +8137,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8132,7 +8198,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8192,7 +8259,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8253,7 +8321,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8314,7 +8383,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8578,7 +8648,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8638,7 +8709,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8698,7 +8770,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8758,7 +8831,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8819,7 +8893,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -8880,7 +8955,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9147,7 +9223,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9207,7 +9284,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9267,7 +9345,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9328,7 +9407,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9389,7 +9469,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9450,7 +9531,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9719,7 +9801,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9780,7 +9863,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9828,7 +9912,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -9839,7 +9923,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9887,7 +9972,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -9898,7 +9983,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -9957,7 +10043,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10210,7 +10297,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10271,7 +10359,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10319,7 +10408,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -10330,7 +10419,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10340,7 +10430,7 @@
         }
       ],
       "context": {
-        "current_problem_prompt": "Khai triển 4(a - 5).",
+        "current_problem_prompt": "Khai triển 4(x - 5).",
         "retrieved": [
           {
             "content_id": "KB-A02-QUESTION-01",
@@ -10582,7 +10672,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10630,7 +10721,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -10641,7 +10732,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10700,7 +10792,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -10761,7 +10854,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11028,7 +11122,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11089,7 +11184,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11137,7 +11233,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -11148,7 +11244,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11196,7 +11293,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -11207,7 +11304,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11266,7 +11364,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11325,7 +11424,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11386,7 +11486,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11654,7 +11755,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11715,7 +11817,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11763,7 +11866,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -11774,7 +11877,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11822,7 +11926,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -11833,7 +11937,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11892,7 +11997,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -11953,7 +12059,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12220,7 +12327,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12281,7 +12389,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12329,7 +12438,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 5"
+            "4x - 5"
           ],
           "message": null,
           "assessment": {
@@ -12340,7 +12449,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12388,7 +12498,7 @@
           "actor": "student",
           "kind": "submit",
           "submission": [
-            "4a - 20"
+            "4x - 20"
           ],
           "message": null,
           "assessment": {
@@ -12399,7 +12509,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12458,7 +12569,8 @@
             "error_family": "distribution_error",
             "misconception_candidate": "M_DIST_01",
             "diagnosis_status": "suspected",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12517,7 +12629,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12578,7 +12691,8 @@
             "error_family": "arithmetic_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12845,7 +12959,8 @@
             "error_family": null,
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": true
+            "final_answer_only": true,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -12904,7 +13019,8 @@
             "error_family": "sign_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": true
+            "final_answer_only": true,
+            "unfinished": false
           },
           "action": null,
           "intent": null,
@@ -13123,7 +13239,8 @@
             "error_family": "sign_error",
             "misconception_candidate": null,
             "diagnosis_status": "unknown",
-            "final_answer_only": false
+            "final_answer_only": false,
+            "unfinished": false
           },
           "action": null,
           "intent": null,

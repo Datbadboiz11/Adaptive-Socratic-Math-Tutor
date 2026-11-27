@@ -239,7 +239,8 @@ class SocraticLLMBaseline:
         if attempt.message is None:
             return attempt
         violations = self.verifier.solution_checks(turn.problems_to_check, turn.sources, attempt.message,
-                                                   reviewed_sources=turn.reviewed_sources)
+                                                   reviewed_sources=turn.reviewed_sources,
+                                                   statements=[turn.problem_prompt] if turn.problem_prompt else [])
         return attempt.model_copy(update={"violations": violations, "accepted": not violations})
 
     def run(self, turn: BaselineTurn, regenerations: int = MAX_REGENERATIONS) -> BaselineOutcome:

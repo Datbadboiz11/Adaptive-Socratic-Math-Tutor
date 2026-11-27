@@ -168,9 +168,8 @@ def test_replay_matches_backend_prediction_and_keeps_assisted_results_separate(s
     assert state.state_version == 2 and state.readiness.ready_to_advance is False
 
 
-@pytest.mark.parametrize("relation", ["near_practice", "repeat"])
-def test_near_and_repeat_do_not_update_bkt(source, relation):
-    source["scenarios"][0]["history"][0]["task"]["relation"] = relation
+def test_returning_to_a_parent_problem_does_not_update_bkt(source):
+    source["scenarios"][0]["history"][0]["task"]["relation"] = "repeat"
     state, trace = replayed(source, 0)
     assert state.skill(N01).independent_observations == 0
     assert not trace[0].eligible and trace[0].prediction_before is None
@@ -267,20 +266,33 @@ def test_a_new_task_needs_a_new_opportunity_id(source):
         replayed(source, 4)
 
 
-@pytest.mark.parametrize("relation", ["initial", "near_practice"])
-def test_the_graph_decides_how_the_next_problem_relates_to_the_last(source, relation):
-    # E02-P002 cùng họ mẫu với E02-P001: graph gán "near_practice", nên lần làm này không là observation.
+def test_the_graph_decides_how_the_next_problem_relates_to_the_last(source):
     case = source["scenarios"][4]
     on = case["history"][0]["task"]
     case["history"] += [tutor(on, "next_problem", "switch_problem", problem_id="E02-P002", target_skill_id=E02),
-                        graded(task(source, "E02-P002", relation), ["x=3"], "verified_correct")]
-    if relation == "initial":
-        with pytest.raises(ValueError, match="task differs"):
-            replayed(source, 4)
-    else:
-        state, trace = replayed(source, 4)
+                        graded(task(source, "E02-P002", "initial"), ["x=3"], "verified_correct")]
+    with pytest.raises(ValueError, match="task differs"):
+        replayed(source, 4)
+
+
+@pytest.mark.parametrize("hinted", [False, True])
+def test_same_family_problem_counts_unless_the_family_was_assisted(source, hinted):
+    """Protocol của Member 1: bài cùng họ mẫu chỉ bị loại khi trong phiên đã có bài cùng họ nhận trợ
+    giúp. Graph gán "near_practice" chỉ vì cùng họ, nhãn đó không đủ để loại."""
+    case = source["scenarios"][4]
+    on = case["history"][0]["task"]
+    if hinted:
+        case["history"] += [tutor(on, "minimal_hint", "locate_error", 1, target_skill_id=E02),
+                            student(on, "message", message="Em nghĩ thêm ạ")]
+    case["history"] += [tutor(on, "next_problem", "switch_problem", problem_id="E02-P002", target_skill_id=E02),
+                        graded(task(source, "E02-P002", "near_practice"), ["x=3"], "verified_correct")]
+    state, trace = replayed(source, 4)
+    if hinted:
         assert trace[-1].reason == "near_practice" and state.skill(E02).independent_observations == 0
-        assert state.attempted_problem_ids == ["E02-P001"]
+    else:
+        assert trace[-1].reason == "first_independent_verified"
+        assert state.skill(E02).independent_observations == 1
+    assert state.attempted_problem_ids == ["E02-P001"]
 
 
 def test_prerequisite_and_return_follow_the_graph(source):

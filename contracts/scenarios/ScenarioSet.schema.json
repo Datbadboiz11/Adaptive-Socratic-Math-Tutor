@@ -85,6 +85,11 @@
           "default": false,
           "title": "Final Answer Only",
           "type": "boolean"
+        },
+        "unfinished": {
+          "default": false,
+          "title": "Unfinished",
+          "type": "boolean"
         }
       },
       "required": [
@@ -655,6 +660,11 @@
           "minLength": 1,
           "title": "Prompt",
           "type": "string"
+        },
+        "target_evidence": {
+          "default": true,
+          "title": "Target Evidence",
+          "type": "boolean"
         }
       },
       "required": [

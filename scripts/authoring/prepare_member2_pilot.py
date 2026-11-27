@@ -41,7 +41,8 @@ def make_case(seed, kind, case_id):
     }, display[0] if display else expression
 
 
-def make_pack(concept, specification, version, revision=REVISION):
+def make_pack(concept, specification, version, revision=REVISION, *, lineage=REVISION,
+              author="Codex assisted authoring"):
     if len(concept.skills) != 1:
         raise ValueError("Choose a primary skill for every pilot family")
     concept_id = concept.concept_id
@@ -50,7 +51,7 @@ def make_pack(concept, specification, version, revision=REVISION):
     for index, family in enumerate(specification["families"], 1):
         family_id = f"FAM-{concept_id}-{revision}-{index}"
         # The revised pack shares lineage with the corresponding v1 family.
-        source_group = f"GROUP-{concept_id}-{REVISION}-{index}"
+        source_group = f"GROUP-{concept_id}-{lineage}-{index}"
         families.append({"family_id": family_id, "source_group": source_group, "description": family["label"]})
         first_problem_id = f"{prefix}P-{2*index-1:02}"
         for difficulty, seed in zip(("introductory", "standard"), family["problems"], strict=True):
@@ -75,7 +76,7 @@ def make_pack(concept, specification, version, revision=REVISION):
              for level, (text, disclosure) in enumerate(zip(
                  specification["hints"], ("conceptual", "strategy", "scaffold"), strict=True,
              ), 1)]
-    request = DraftRequest(concept_id=concept_id, revision=revision, author="Codex assisted authoring",
+    request = DraftRequest(concept_id=concept_id, revision=revision, author=author,
                            content_version=version, source_ids=[concept.alignment.source_id], families=families,
                            model="offline-original-pilot")
     content = GeneratedContent(explanation=specification["explanation"], problems=problems,

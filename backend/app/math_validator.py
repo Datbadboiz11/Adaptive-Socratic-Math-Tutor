@@ -12,7 +12,7 @@ import subprocess
 import sys
 from uuid import uuid4
 
-from app.member2_runtime import ASSESSMENT_MODE, TASK_KINDS
+from app.assessment_modes import ASSESSMENT_MODE, TASK_KINDS
 
 VERSION = 'symbolic-bounded-2.2.0'
 MAX_TEXT = 160
@@ -669,7 +669,8 @@ def validate_expansion(problem, steps):
 def validate_member2_answer(problem, steps):
     from app.authoring_extended_math import check_expanded_quadratic
     from app.authoring_math import expected, response_value
-    from app.curriculum import AuthoringMathTask
+    from app.curriculum import DraftMathTask
+    from app.final_answer import is_final_form
 
     def finish(status, reason, **fields):
         checked = assessment(status, reason)
@@ -682,7 +683,7 @@ def validate_member2_answer(problem, steps):
         return finish('unverified', 'cannot_verify')
     if not steps or not steps[-1].strip():
         return finish('needs_clarification', 'ambiguous_input')
-    task = AuthoringMathTask.model_validate(problem['task'])
+    task = DraftMathTask.model_validate(problem['task'])
     if task.kind not in TASK_KINDS or problem['review']['status'] != 'human_approved':
         return finish('unverified', 'unsupported_scope')
     response = normalize(steps[-1])
@@ -690,7 +691,11 @@ def validate_member2_answer(problem, steps):
         response = re.sub(r'x\s*(?:\^\s*2|²)', 'x*x', response)
         response = re.sub(r'(?<=[0-9)])\s*(?=[x(])|(?<=x)\s*(?=\()', '*', response)
     normalization.append({'raw': steps[-1], 'normalized': response})
-    target = expected(task)
+    try:
+        target = expected(task)
+    except (ValueError, SyntaxError, ZeroDivisionError, OverflowError):
+        # Đề nằm ngoài phạm vi checker (ví dụ log cơ số 1): không chấm, không ném lỗi ra ngoài.
+        return finish('unverified', 'unsupported_scope')
     try:
         answer = response_value(task, response)
         if task.kind == 'polynomial':
@@ -698,6 +703,10 @@ def validate_member2_answer(problem, steps):
     except (ValueError, SyntaxError, ZeroDivisionError, OverflowError):
         return finish('needs_clarification', 'ambiguous_input')
     correct = answer == target
+    if correct and not is_final_form(task.kind, task.expression, response, problem.get('prompt', '')):
+        # Đúng giá trị nhưng chưa phải đáp án cuối: chép lại đề, mới làm một bước, chưa rút gọn.
+        return finish('unverified', 'valid_partial', verification_method='symbolic_and_rule',
+                      evidence=['task:not_final_form'])
     return finish('verified_correct' if correct else 'verified_incorrect',
                   'valid_solution' if correct else 'wrong_final_answer',
                   primary_skill_id=problem['primary_skill_id'], verification_method='symbolic_and_rule',

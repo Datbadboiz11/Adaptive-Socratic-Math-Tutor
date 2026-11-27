@@ -10,12 +10,14 @@ from __future__ import annotations
 from app.agent.decision import DecisionIntent, DecisionProposal
 from app.generation.contracts import ResponseInput
 
-TEMPLATE_VERSION = "templates-0.2.0"
+TEMPLATE_VERSION = "templates-0.4.0"
 
 I = DecisionIntent
 
 TEMPLATES = {
-    I.RESOLVE_INPUT: "Mình chưa đọc được bài làm này. Em viết mỗi bước trên một dòng, ví dụ: 2x + 1 = 7 nhé.",
+    # Không nói "chưa đọc được": bài chỉ chấm đáp án cuối có thể đọc được nhưng chưa đúng dạng đề yêu cầu.
+    I.RESOLVE_INPUT: "Mình chưa chấm được bài làm này. Em đọc lại đề xem cần nộp gì rồi viết lại cho rõ nhé; "
+                     "nếu ghi cách làm thì mỗi bước một dòng.",
     I.RESTATE_TASK: "Mình cùng đọc lại đề nhé: {prompt} Đề bài đang yêu cầu em tìm gì?",
     I.ELICIT_REASONING: "Em giải thích giúp mình vì sao em viết được bước{step} như vậy không?",
     I.DISTINGUISH_HYPOTHESIS: "Ở bước{step}, em đã biến đổi phần nào của biểu thức? "
@@ -58,6 +60,12 @@ TOPIC_CONTENT = {
 SYSTEM_MESSAGE = "Mình cần kiểm tra lại câu trả lời này. Em đợi một chút rồi gửi lại nhé."
 
 
+# Validator báo bài làm còn tương đương đề nhưng chưa xong (chép đề, mới một bước, chưa rút gọn). Không
+# nói kết quả đúng hay sai để khỏi xác nhận giá trị trước khi học sinh tự hoàn thành.
+UNFINISHED_MESSAGE = ("Bài làm của em chưa phải đáp án cuối. Em hãy tính tiếp, rút gọn và nộp kết quả "
+                      "theo đúng dạng đề yêu cầu nhé.")
+
+
 def _generic(intent: DecisionIntent, topic: str | None = None) -> str:
     if topic and intent in TOPIC_CONTENT:
         return TOPIC_CONTENT[intent].format(topic=topic)
@@ -73,6 +81,8 @@ class TemplateGenerator:
 
     def __call__(self, inp: ResponseInput) -> str:
         p, a = inp.decision, inp.assessment
+        if p.intent == I.RESOLVE_INPUT and a is not None and a.unfinished:
+            return UNFINISHED_MESSAGE
         content = " ".join(c.text for c in inp.content)
         return _fill(p.intent, content=content or _generic(p.intent, inp.target_skill_title),
                      step=f" {a.first_error_step}" if a and a.first_error_step else " vừa rồi",
