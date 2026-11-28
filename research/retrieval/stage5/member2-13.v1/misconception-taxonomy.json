@@ -1,0 +1,569 @@
+{
+  "categories": [
+    {
+      "category_id": "MC-BACK-SUBSTITUTION-SIGN",
+      "label": "Giữ dấu khi thế ngược vào hệ"
+    },
+    {
+      "category_id": "MC-COMMON-FACTOR-QUOTIENT",
+      "label": "Chia mọi hạng tử cho nhân tử chung"
+    },
+    {
+      "category_id": "MC-DECIMAL-PLACE",
+      "label": "Vị trí dấu thập phân của thương"
+    },
+    {
+      "category_id": "MC-DISCRIMINANT-CASE",
+      "label": "Phân loại số nghiệm thực theo biệt thức"
+    },
+    {
+      "category_id": "MC-DISTRIBUTE-ALL-TERMS",
+      "label": "Phân phối đủ các tích hạng tử"
+    },
+    {
+      "category_id": "MC-DOMAIN-EQUATION-SIGN",
+      "label": "Dấu khi giải giá trị làm mẫu bằng không"
+    },
+    {
+      "category_id": "MC-ELIMINATION-SUBTRACTION",
+      "label": "Trừ đủ và đúng các hệ số, vế phải"
+    },
+    {
+      "category_id": "MC-EQUIVALENT-FRACTIONS",
+      "label": "Nhận ra hai phân số tương đương"
+    },
+    {
+      "category_id": "MC-EXPONENT-PRODUCT",
+      "label": "Cộng số mũ khi nhân cùng cơ số"
+    },
+    {
+      "category_id": "MC-EXPONENT-QUOTIENT",
+      "label": "Thứ tự trừ số mũ khi chia cùng cơ số"
+    },
+    {
+      "category_id": "MC-FACTOR-QUOTIENT-SIGN",
+      "label": "Giữ dấu khi chia cho nhân tử chung"
+    },
+    {
+      "category_id": "MC-FACTOR-TWO-DENOMINATOR",
+      "label": "Hệ số hai trong mẫu công thức bậc hai"
+    },
+    {
+      "category_id": "MC-FRACTION-MULTIPLICATION",
+      "label": "Thế phân số và nhân đúng tử, mẫu"
+    },
+    {
+      "category_id": "MC-FRACTION-ORDER",
+      "label": "Đặt dấu so sánh sau quy đồng"
+    },
+    {
+      "category_id": "MC-INEQUALITY-DIRECTION",
+      "label": "Giữ hoặc đổi chiều theo dấu số chia"
+    },
+    {
+      "category_id": "MC-NEGATIVE-FRACTION-ORDER",
+      "label": "Thứ tự của hai phân số âm"
+    },
+    {
+      "category_id": "MC-NONZERO-DIVISOR",
+      "label": "Phân thức chia phải khác không"
+    },
+    {
+      "category_id": "MC-PERCENT-SCALE",
+      "label": "Hệ số chuyển số thập phân sang phần trăm"
+    },
+    {
+      "category_id": "MC-POWER-OF-POWER",
+      "label": "Nhân số mũ của lũy thừa của lũy thừa"
+    },
+    {
+      "category_id": "MC-PRESERVE-DOMAIN",
+      "label": "Giữ điều kiện gốc sau khử nhân tử"
+    },
+    {
+      "category_id": "MC-PRODUCT-SIGN",
+      "label": "Dấu của tích có hệ số âm"
+    },
+    {
+      "category_id": "MC-QUADRATIC-COEFFICIENT-SIGN",
+      "label": "Giữ dấu hệ số bậc hai"
+    },
+    {
+      "category_id": "MC-QUADRATIC-FORMULA-SIGN",
+      "label": "Dấu đối của hệ số b trong công thức nghiệm"
+    },
+    {
+      "category_id": "MC-REDUCTION-INVARIANCE",
+      "label": "Chia tử và mẫu cùng hệ số khi rút gọn"
+    },
+    {
+      "category_id": "MC-SCALE-WHOLE-EQUATION",
+      "label": "Nhân mọi hạng tử và hai vế với hệ số"
+    },
+    {
+      "category_id": "MC-SIGNED-OPERATION",
+      "label": "Xác định dấu trong phép nhân hoặc chia số có dấu"
+    },
+    {
+      "category_id": "MC-SQUARE-SIGN",
+      "label": "Bình phương một số âm"
+    },
+    {
+      "category_id": "MC-SUBSTITUTION-SIGN",
+      "label": "Giữ dấu của số được thay vào biến"
+    },
+    {
+      "category_id": "MC-SUBTRACT-PARENTHESES",
+      "label": "Dấu trừ tác động lên toàn bộ nhóm hạng tử"
+    },
+    {
+      "category_id": "MC-VERTEX-ORDINATE",
+      "label": "Tính tung độ đỉnh bằng giá trị hàm"
+    },
+    {
+      "category_id": "MC-WORD-QUANTITY-GROUP",
+      "label": "Tính đủ các nhóm đại lượng trong lời văn"
+    },
+    {
+      "category_id": "MC-WORD-RELATION-SIGN",
+      "label": "Dịch đúng dấu của quan hệ hơn kém hoặc lấy bớt"
+    }
+  ],
+  "fixture_count": 39,
+  "mappings": [
+    {
+      "category_id": "MC-SUBSTITUTION-SIGN",
+      "concept_id": "A01",
+      "error_id": "D-A01-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "ad8f537c1a6d8f261530cdcfbba006a978262916337b59106f0b490da7eb514d",
+      "hypothesis": "Có thể bỏ dấu âm của giá trị được thế.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A01-M2-ORIG02-P-01",
+      "source_family_label": "Thế số âm vào biểu thức bậc nhất"
+    },
+    {
+      "category_id": "MC-SQUARE-SIGN",
+      "concept_id": "A01",
+      "error_id": "D-A01-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "20871551257fe5dde6e537325d597b3f9ac517b86058d45b2c9dc29d84a8376e",
+      "hypothesis": "Có thể đã coi bình phương của số âm là số âm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A01-M2-ORIG02-P-03",
+      "source_family_label": "Thế vào cả x và x bình phương"
+    },
+    {
+      "category_id": "MC-FRACTION-MULTIPLICATION",
+      "concept_id": "A01",
+      "error_id": "D-A01-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "bf679bf2e1d5e7e6d1af68048a7ac6ac90c8585a5511be8373f779587209ed2a",
+      "hypothesis": "Có thể nhân vào mẫu hoặc nhầm tử với mẫu.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A01-M2-ORIG02-P-05",
+      "source_family_label": "Thế phân số và tính chính xác"
+    },
+    {
+      "category_id": "MC-DISTRIBUTE-ALL-TERMS",
+      "concept_id": "A04",
+      "error_id": "D-A04-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "a5cffa2e6d86d277530df4ac88bd9e3b335ea0c71dbe2942d9f67c0342aa6b7b",
+      "hypothesis": "Có thể mới phân phối cho hạng tử đầu.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A04-M2-ORIG02-P-01",
+      "source_family_label": "Đơn thức x nhân nhị thức"
+    },
+    {
+      "category_id": "MC-PRODUCT-SIGN",
+      "concept_id": "A04",
+      "error_id": "D-A04-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "356ff0cf436399e5719595e7933d14d5baade2258f222662cf7206c94f364c62",
+      "hypothesis": "Có thể đã bỏ qua hai dấu âm ở tích tạo hạng tử bậc nhất.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A04-M2-ORIG02-P-03",
+      "source_family_label": "Hệ số nhân tam thức"
+    },
+    {
+      "category_id": "MC-DISTRIBUTE-ALL-TERMS",
+      "concept_id": "A04",
+      "error_id": "D-A04-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "60f9ecec67ef46f94c9527f1a41870935d77156a4a0998042c183d87dbd9a22d",
+      "hypothesis": "Có thể đã bỏ một trong hai tích chéo.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A04-M2-ORIG02-P-05",
+      "source_family_label": "Tích hai nhị thức"
+    },
+    {
+      "category_id": "MC-COMMON-FACTOR-QUOTIENT",
+      "concept_id": "A07",
+      "error_id": "D-A07-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "ccb64ad0fb962e5f40c1f5595e73c4c9b099b5eedad3433d32cc678d61e53d77",
+      "hypothesis": "Có thể chưa chia hạng tử tự do cho nhân tử chung.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A07-M2-ORIG02-P-01",
+      "source_family_label": "Ước chung của hệ số"
+    },
+    {
+      "category_id": "MC-COMMON-FACTOR-QUOTIENT",
+      "concept_id": "A07",
+      "error_id": "D-A07-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "6d2ec40738d4ba858997967aa5e35b1c2fef8a7f42ba01def8c39d75a131a2c0",
+      "hypothesis": "Có thể còn giữ một thừa số x sau khi đưa x ra ngoài.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A07-M2-ORIG02-P-03",
+      "source_family_label": "Nhân tử chung x có hệ số 1"
+    },
+    {
+      "category_id": "MC-FACTOR-QUOTIENT-SIGN",
+      "concept_id": "A07",
+      "error_id": "D-A07-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "fcd64531b74b35ebe6c6d846e080239d06e756aa9a54194f41868210f4c1e1e6",
+      "hypothesis": "Có thể đã đổi dấu một hạng tử khi chia cho nhân tử chung dương.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A07-M2-ORIG02-P-05",
+      "source_family_label": "Nhân tử chung hệ số và biến"
+    },
+    {
+      "category_id": "MC-SUBTRACT-PARENTHESES",
+      "concept_id": "A10",
+      "error_id": "D-A10-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "bb1684f273414d3660712ebd4107334608cd3562154f7dd346c6a7c0e1bb36e5",
+      "hypothesis": "Có thể đã bỏ dấu trừ trong tử số thứ hai.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A10-M2-ORIG02-P-01",
+      "source_family_label": "Cộng cùng mẫu và trừ khác mẫu"
+    },
+    {
+      "category_id": "MC-PRESERVE-DOMAIN",
+      "concept_id": "A10",
+      "error_id": "D-A10-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "6b107f44a38cf2731a6d868d244a429b728c081ddeff4c7026a559669ab3c085",
+      "hypothesis": "Có thể đã mất điều kiện của nhân tử bị khử.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A10-M2-ORIG02-P-03",
+      "source_family_label": "Nhân và giữ điều kiện sau khi khử"
+    },
+    {
+      "category_id": "MC-NONZERO-DIVISOR",
+      "concept_id": "A10",
+      "error_id": "D-A10-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "e9a4ba5f00e08ee22c5c0cdd97ea047484b08b64d16faf7f65f9e16fc0376ad2",
+      "hypothesis": "Có thể nhớ điều kiện mẫu nhưng quên phân thức chia phải khác 0.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-A10-M2-ORIG02-P-05",
+      "source_family_label": "Chia và loại thêm tử của số chia"
+    },
+    {
+      "category_id": "MC-WORD-QUANTITY-GROUP",
+      "concept_id": "E03",
+      "error_id": "D-E03-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "1217911a84d3f583a2d66f56b670102c40bda6c2d492ef3faccf298af08ecc25",
+      "hypothesis": "Có thể mới tính một nhóm trong tổng.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E03-M2-ORIG02-P-01",
+      "source_family_label": "Số món trong mỗi nhóm"
+    },
+    {
+      "category_id": "MC-WORD-RELATION-SIGN",
+      "concept_id": "E03",
+      "error_id": "D-E03-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "f6ea29d4dccf67e3b3ec5599d40e9ef5f1cba79c1703349a4ddbf2c69ada8fa5",
+      "hypothesis": "Có thể đã dịch quan hệ hơn thành phép trừ.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E03-M2-ORIG02-P-03",
+      "source_family_label": "Hai đại lượng hơn kém"
+    },
+    {
+      "category_id": "MC-WORD-RELATION-SIGN",
+      "concept_id": "E03",
+      "error_id": "D-E03-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "801191bfc6663f9f007a7afec36b1094823912dbdb47e4d4083684a95fb9490b",
+      "hypothesis": "Có thể dùng phép cộng cho lượng được lấy ra.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E03-M2-ORIG02-P-05",
+      "source_family_label": "Ban đầu trừ đi số lượng giống nhau"
+    },
+    {
+      "category_id": "MC-QUADRATIC-FORMULA-SIGN",
+      "concept_id": "E06",
+      "error_id": "D-E06-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "e3effe07266e1edc6e76fd000393dc7392ac62e8f1f0b78ccc6c406952d2318a",
+      "hypothesis": "Có thể đã dùng b thay cho −b trong công thức nghiệm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E06-M2-ORIG02-P-01",
+      "source_family_label": "Biệt thức dương, căn hữu tỉ hoặc vô tỉ"
+    },
+    {
+      "category_id": "MC-FACTOR-TWO-DENOMINATOR",
+      "concept_id": "E06",
+      "error_id": "D-E06-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "2d5d2c651304b51ad6ce799313946f5b02199bb676ba19b8c923e95b63f964f7",
+      "hypothesis": "Có thể thiếu hệ số 2 ở mẫu nghiệm kép.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E06-M2-ORIG02-P-03",
+      "source_family_label": "Biệt thức bằng 0"
+    },
+    {
+      "category_id": "MC-DISCRIMINANT-CASE",
+      "concept_id": "E06",
+      "error_id": "D-E06-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "18e21be38e422ab64e1bed9108a19bb6555d1cbc2afafe2f2aa25555f51ce515",
+      "hypothesis": "Có thể dùng công thức nghiệm kép cho biệt thức âm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E06-M2-ORIG02-P-05",
+      "source_family_label": "Biệt thức âm"
+    },
+    {
+      "category_id": "MC-BACK-SUBSTITUTION-SIGN",
+      "concept_id": "E09",
+      "error_id": "D-E09-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "7d537374ac75688b11234834cba629aef6b14b30dd993082d81e0c621d1ac696",
+      "hypothesis": "Có thể đã đổi dấu y sai khi thế ngược.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E09-M2-ORIG02-P-01",
+      "source_family_label": "Cộng trực tiếp"
+    },
+    {
+      "category_id": "MC-ELIMINATION-SUBTRACTION",
+      "concept_id": "E09",
+      "error_id": "D-E09-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "3e02fccc0863c7fdd2c46b1e0dd2a5b7925a7db6cd74fc462ec527409312fdb0",
+      "hypothesis": "Có thể trừ sai phần hệ số y hoặc vế phải.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E09-M2-ORIG02-P-03",
+      "source_family_label": "Trừ khi hệ số bằng nhau"
+    },
+    {
+      "category_id": "MC-SCALE-WHOLE-EQUATION",
+      "concept_id": "E09",
+      "error_id": "D-E09-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "3bd125a92cc30eac09565da2a0602cabfdf399630818f4949a430c9b13735f67",
+      "hypothesis": "Có thể chỉ nhân hạng tử định khử mà quên nhân vế phải.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-E09-M2-ORIG02-P-05",
+      "source_family_label": "Nhân hệ số trước khi khử"
+    },
+    {
+      "category_id": "MC-DOMAIN-EQUATION-SIGN",
+      "concept_id": "F02",
+      "error_id": "D-F02-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "e9c7e7f35c83318a8a7f1b23609374182fd49411421dce9227e82364e77a6476",
+      "hypothesis": "Có thể đã đổi dấu sai khi giải điều kiện mẫu bằng 0.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F02-M2-ORIG02-P-01",
+      "source_family_label": "Mẫu bậc nhất"
+    },
+    {
+      "category_id": "MC-INEQUALITY-DIRECTION",
+      "concept_id": "F02",
+      "error_id": "D-F02-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "25df3425e890535b02f7c7f315b7013ebb90e14ad608be23fb6868f94da5c6ad",
+      "hypothesis": "Có thể đã đổi chiều khi chia cho hệ số dương.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F02-M2-ORIG02-P-03",
+      "source_family_label": "Căn bậc hai với hệ số x dương"
+    },
+    {
+      "category_id": "MC-INEQUALITY-DIRECTION",
+      "concept_id": "F02",
+      "error_id": "D-F02-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "25bde801a5fac817d0b132edae9617b1d7509718dbda8f3b13ec6b91d58f5ac5",
+      "hypothesis": "Có thể quên đổi chiều khi chia bất phương trình cho số âm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F02-M2-ORIG02-P-05",
+      "source_family_label": "Căn bậc hai với hệ số x âm"
+    },
+    {
+      "category_id": "MC-VERTEX-ORDINATE",
+      "concept_id": "F05",
+      "error_id": "D-F05-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "e633cf3b1cfe15b8707818359253bcdeb1706f7e82c071aad59e4b87761a1000",
+      "hypothesis": "Có thể dùng hằng số làm tung độ đỉnh mà chưa thế hoành độ đỉnh.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F05-M2-ORIG02-P-01",
+      "source_family_label": "Tọa độ đỉnh từ dạng khai triển và dạng hoàn thành bình phương"
+    },
+    {
+      "category_id": "MC-FACTOR-TWO-DENOMINATOR",
+      "concept_id": "F05",
+      "error_id": "D-F05-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "06badc1817ff09e80822bf5039577ef03902014a9ee0591c76ef9c73cd77e7dc",
+      "hypothesis": "Có thể thiếu hệ số 2 trong công thức hoành độ đỉnh.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F05-M2-ORIG02-P-03",
+      "source_family_label": "Đường thẳng đứng với a dương"
+    },
+    {
+      "category_id": "MC-QUADRATIC-COEFFICIENT-SIGN",
+      "concept_id": "F05",
+      "error_id": "D-F05-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "3055a1a377143304b6fb9dacf8e1e5227db150b1a39f2372f22b1e324cdc5424",
+      "hypothesis": "Có thể đã lấy giá trị tuyệt đối của hệ số bậc hai.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F05-M2-ORIG02-P-05",
+      "source_family_label": "Đường thẳng đứng với a âm"
+    },
+    {
+      "category_id": "MC-EXPONENT-PRODUCT",
+      "concept_id": "F08",
+      "error_id": "D-F08-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "f746ec8cc0b4085f78de1c23c6c124617481b5f40d4966517c1064f3879aff11",
+      "hypothesis": "Có thể đã trừ các số mũ trong phép nhân.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F08-M2-ORIG02-P-01",
+      "source_family_label": "Tích lũy thừa cùng cơ số"
+    },
+    {
+      "category_id": "MC-EXPONENT-QUOTIENT",
+      "concept_id": "F08",
+      "error_id": "D-F08-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "aabd2d0fbb2237206e85cafbc0c7232d62237bccff8efd305eeaeb52dad79ef5",
+      "hypothesis": "Có thể đã đảo thứ tự trừ số mũ của tử và mẫu.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F08-M2-ORIG02-P-03",
+      "source_family_label": "Thương lũy thừa cùng cơ số"
+    },
+    {
+      "category_id": "MC-POWER-OF-POWER",
+      "concept_id": "F08",
+      "error_id": "D-F08-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "adad946dfd0652fd19202323e944411b609a4af26f2fb83fcf858a750c9ac1bf",
+      "hypothesis": "Có thể cộng hai số mũ thay vì nhân.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-F08-M2-ORIG02-P-05",
+      "source_family_label": "Lũy thừa của lũy thừa và kiểm tra cơ số"
+    },
+    {
+      "category_id": "MC-SIGNED-OPERATION",
+      "concept_id": "N02",
+      "error_id": "D-N02-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "219263a4827fea84de50d291d3522c5bb014782be018fc6d6389e8bcdc25c769",
+      "hypothesis": "Có thể giữ dấu âm khi cả hai thừa số đều âm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N02-M2-ORIG02-P-01",
+      "source_family_label": "Tích hai số âm"
+    },
+    {
+      "category_id": "MC-SIGNED-OPERATION",
+      "concept_id": "N02",
+      "error_id": "D-N02-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "7546517f5f0022e2aaacb9fa713ddf1d6efa8d55470d63f994ea987e7cfc477d",
+      "hypothesis": "Có thể chỉ chia các giá trị tuyệt đối rồi quên dấu.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N02-M2-ORIG02-P-03",
+      "source_family_label": "Thương trái dấu"
+    },
+    {
+      "category_id": "MC-SIGNED-OPERATION",
+      "concept_id": "N02",
+      "error_id": "D-N02-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "722dd8c64642e581edefe1403743eaacec9d10d0b3640517881e1f773bafcfd1",
+      "hypothesis": "Có thể đã chọn sai dấu ở bước chia sau khi tính tích âm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N02-M2-ORIG02-P-05",
+      "source_family_label": "Phối hợp nhân và chia"
+    },
+    {
+      "category_id": "MC-FRACTION-ORDER",
+      "concept_id": "N05",
+      "error_id": "D-N05-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "fdd01f607fa916d8611ab9362c45fb924c2a144f8478f517bb1707b1d9fdbb71",
+      "hypothesis": "Có thể đã đảo dấu so sánh khi các tử gần nhau.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N05-M2-ORIG02-P-01",
+      "source_family_label": "Nhỏ hơn sau quy đồng"
+    },
+    {
+      "category_id": "MC-NEGATIVE-FRACTION-ORDER",
+      "concept_id": "N05",
+      "error_id": "D-N05-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "2147948216750270c30e22b605b2e6a1d11ca7e153fd666ee1e80ff5f776896e",
+      "hypothesis": "Có thể so sánh các giá trị tuyệt đối như đối với hai số dương.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N05-M2-ORIG02-P-03",
+      "source_family_label": "So sánh hai phân số âm"
+    },
+    {
+      "category_id": "MC-EQUIVALENT-FRACTIONS",
+      "concept_id": "N05",
+      "error_id": "D-N05-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "e049b022346b7f7217fea9d255fc9e9047cca3ea85341bbe1d229d70dca46b59",
+      "hypothesis": "Có thể vẫn so sánh các tử ban đầu dù hai phân số đã quy đồng.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N05-M2-ORIG02-P-05",
+      "source_family_label": "Hai biểu diễn tương đương"
+    },
+    {
+      "category_id": "MC-DECIMAL-PLACE",
+      "concept_id": "N08",
+      "error_id": "D-N08-M2-ORIG02-ERR-01",
+      "first_error_step": 1,
+      "fixture_sha256": "ee7ee39fdde422603f4ccf0361a8b49c4d093f764cb4e0d2249e827624d04b7d",
+      "hypothesis": "Có thể đặt lệch dấu chấm ở thương.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N08-M2-ORIG02-P-01",
+      "source_family_label": "Phân số thành số thập phân"
+    },
+    {
+      "category_id": "MC-PERCENT-SCALE",
+      "concept_id": "N08",
+      "error_id": "D-N08-M2-ORIG02-ERR-02",
+      "first_error_step": 1,
+      "fixture_sha256": "23e967ba7ef1a6d41775ce4234d7af7218291ed51e3ac70208c1f53c1919e993",
+      "hypothesis": "Có thể chỉ nhân 10 khi đổi sang phần trăm.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N08-M2-ORIG02-P-03",
+      "source_family_label": "Thập phân thành phần trăm"
+    },
+    {
+      "category_id": "MC-REDUCTION-INVARIANCE",
+      "concept_id": "N08",
+      "error_id": "D-N08-M2-ORIG02-ERR-03",
+      "first_error_step": 1,
+      "fixture_sha256": "677009cea09dfbed99a01b727d926bccbaaba817f9e4030dec23c5463e874703",
+      "hypothesis": "Có thể chia tử và mẫu cho hai số khác nhau khi rút gọn.",
+      "mapping_review_status": "proposed_pending_independent_review",
+      "problem_id": "D-N08-M2-ORIG02-P-05",
+      "source_family_label": "Phần trăm thành phân số"
+    }
+  ],
+  "owner": "Member 2",
+  "proposed_category_count": 32,
+  "runtime_publication": false,
+  "schema_version": "1.0.0",
+  "status": "proposed_pending_independent_review"
+}

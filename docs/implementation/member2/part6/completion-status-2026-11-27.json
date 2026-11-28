@@ -1,0 +1,23 @@
+{
+  "completed": [
+    "pinned_dev_protocol_and_inputs",
+    "metadata_vs_semantic_exact_metrics_and_cluster_intervals",
+    "cold_and_warm_cache_measurements",
+    "separate_direct_probes_and_fallback_controls",
+    "query_plan_and_ranking_error_analysis",
+    "104_paired_product_graph_outputs",
+    "blinded_rating_packet_and_hash_validated_review_tool",
+    "local_regressions_and_reproducible_handoff"
+  ],
+  "formal_rq3_complete": false,
+  "other_members_content_blocks_current_scope": false,
+  "pending_formal_evidence": [
+    "independent_relevance_labels",
+    "independent_paired_quality_ratings",
+    "independent_test_scenarios_and_frozen_inputs",
+    "remote_ci_and_load_evidence"
+  ],
+  "recorded_on": "2026-11-27",
+  "scope_owner": "Member 2",
+  "technical_status": "complete_for_current_thirteen_concept_dev_scope"
+}

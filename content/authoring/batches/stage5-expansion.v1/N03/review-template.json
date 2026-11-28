@@ -1,0 +1,16 @@
+{
+  "checklist": {
+    "curriculum_scope": "not_checked",
+    "disclosure": "not_checked",
+    "mathematics": "not_checked",
+    "pedagogy_language": "not_checked",
+    "source_rights": "not_checked"
+  },
+  "comments": "Điền người/thời điểm review thật, kết quả từng mục và nhận xét trước khi gửi.",
+  "decision": "changes_requested",
+  "pack_sha256": "14ec336b4e133d59500b3a8123815de18d95f31b96ff6124ca08cd650edc5f8d",
+  "protocol_version": "authoring-1.0.0",
+  "review_id": "FILL-UNIQUE-REVIEW-ID",
+  "reviewed_at": null,
+  "reviewer": null
+}

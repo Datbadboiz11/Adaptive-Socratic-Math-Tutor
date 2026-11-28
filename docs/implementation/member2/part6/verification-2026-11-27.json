@@ -1,0 +1,129 @@
+{
+  "checks_passed": [
+    "source_files_match_frozen_run_inputs",
+    "all_result_artifact_hashes_match",
+    "member2_stage5_assets_reproducible",
+    "stage6_protocol_and_dataset_audit",
+    "stage3_approved_publication_assets_unchanged",
+    "unsigned_paired_reviews_refused_without_output"
+  ],
+  "concept_count": 13,
+  "environment": {
+    "packages": {
+      "fastembed": "0.9.1",
+      "langgraph": "1.2.12",
+      "onnxruntime": "1.32.0",
+      "psycopg": "3.3.6"
+    },
+    "pgvector": "0.8.6",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "postgres": "PostgreSQL 16.15, compiled by Visual C++ build 1944, 64-bit",
+    "python": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]"
+  },
+  "formal_rq3_complete": false,
+  "isolation": {
+    "schema": "stage3_check_7a4abbed6b04",
+    "schema_removed": true,
+    "serving_after": {
+      "active_snapshot": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+      "counts": {
+        "kb_chunks": 138,
+        "kb_registry_versions": 3,
+        "kb_retrieval_traces": 2,
+        "kb_snapshot_members": 190,
+        "kb_sync_runs": 9,
+        "kb_withdrawals": 0
+      },
+      "migrated": true
+    },
+    "serving_before": {
+      "active_snapshot": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+      "counts": {
+        "kb_chunks": 138,
+        "kb_registry_versions": 3,
+        "kb_retrieval_traces": 2,
+        "kb_snapshot_members": 190,
+        "kb_sync_runs": 9,
+        "kb_withdrawals": 0
+      },
+      "migrated": true
+    }
+  },
+  "limits": [
+    "Retrieval relevance scores use deterministic dev labels, not human gold.",
+    "The 156-query relevance workset and all human paired ratings remain unjudged.",
+    "No independent final test is frozen; no formal RQ3 performance claim.",
+    "Latency is sequential retrieval wall time, not browser, full tutor-turn or concurrent-load p95.",
+    "Remote CI was prepared but not executed; runtime/frontend code was not changed."
+  ],
+  "measurement": {
+    "direct_lookup_probes": 26,
+    "paired_scenarios": 104,
+    "ranking_rows": 1560,
+    "retriever_requests": 1404,
+    "scope_violations": 0,
+    "sql_execution_ms_sample": {
+      "metadata": 0.38,
+      "semantic": 0.337
+    },
+    "unjudged_quality_scores": "N/A",
+    "warm_query_embeddings_recomputed": 0
+  },
+  "model_api_calls": 0,
+  "paired_output_summary": {
+    "assessment_comparison": "all_fields_except_assessment_id",
+    "concept_count": 13,
+    "different_messages": 26,
+    "generator": "current_product_reviewed_text_assembler_no_free_form_llm",
+    "identical_messages": 78,
+    "interpretation": "Identical hints are expected: the no_rag baseline already contains the approved hint ladder. Message differences do not establish improved teaching quality or learning outcomes.",
+    "model_api_calls": 0,
+    "pair_count": 104,
+    "quality_ratings": null,
+    "quality_status": "pending_independent_human_review",
+    "same_assessment_and_policy": true,
+    "session_writes": 0,
+    "wrong_submission_pairs": 39
+  },
+  "recorded_on": "2026-11-27",
+  "run_id": "7a4abbed6b04",
+  "source_sha256": {
+    ".gitattributes": "515535187b472e4e0a09b468383ba0633775f09f9cae18abf0be871a78abf064",
+    ".github/workflows/stage6-member2-checks.yml": "e46b377f2073ee00b266101b268f9b4766caa2a2f7f7a3b31e10da3d1ad4c184",
+    "docs/implementation/member2/part6/README.md": "76ab8d692cc1f469ec740799bde3782f6438254a3e1661e7202ac90b23e4959f",
+    "docs/implementation/member2/part6/completion-status-2026-11-27.json": "3cfcb649321f8939965f35824daf50618c5aa6f2083c1d5939c465c7cb5937dd",
+    "docs/implementation/member2/part6/dev-2026-11-27/manifest.json": "04b3b1d1562acf8b1671264a9709c150b32d9147c52be7598799c645622d53b8",
+    "docs/implementation/member2/part6/recommendation-2026-11-27.json": "7d23a0e55fa1cb54c7fb94e3657b4417619ba10186ef12658b2d3c2690c4f329",
+    "research/retrieval/stage6/README.md": "9515980c41f1ce71d1158ca185776b5e5ab2a421924661faa7ae1d5cbaad9337",
+    "research/retrieval/stage6/evaluation.py": "78fc7949c00888e2f5758b9eb6f12b1609ab12de8b49dda283953166dfdc931d",
+    "research/retrieval/stage6/member2-13.config.v1.json": "81d23b5f2774c9b136cfbe8ce96ac3833cb3b2e5b05479780476324704293700",
+    "research/retrieval/stage6/paired_outputs.py": "ce687fad047837b4e48c05aead1ae655286460e5e4a19cbdbf01cc836f4c535a",
+    "research/retrieval/stage6/ratings.py": "b6eebe86b1872940890298734afc25a3bea033d358f74c57ddf46265ae27d508",
+    "scripts/retrieval/review_member2_stage6.py": "7913e363ad156d0df0715ea256edeab395274f9612df50906b03004a9c71be66",
+    "scripts/retrieval/run_member2_stage6.py": "3641d8059b04ff4767e4b26e35e958e9080c066a8a32b7a4705651317fa59461",
+    "tests/test_member2_stage6.py": "85bd6e0a37f58c4401c5f27a2e7c9fed528750c8d7f7ae668cec08fc28a04346",
+    "tests/test_member2_stage6_db.py": "f2f7860463eb348e910117028d974b7eb01d5d791ef5fd87e8a557eb44276509",
+    "tests/test_stage6_ratings.py": "ab39b94840986d5c57cd1238a942d13315c0d3b9de9b2fb96603514bb5a315d2"
+  },
+  "technical_status": "complete_for_current_thirteen_concept_dev_scope",
+  "tests": {
+    "offline_and_related_regressions": {
+      "errors": 0,
+      "failures": 0,
+      "junit": "tests-offline-2026-11-27.xml",
+      "sha256": "23dcf5bd9c6f7173d606a8c02b037bc27c7fc0645c2e66b289995ece37560897",
+      "skipped": 0,
+      "tests": 92
+    },
+    "postgres_product_pairs": {
+      "errors": 0,
+      "failures": 0,
+      "junit": "tests-pairs-db-2026-11-27.xml",
+      "sha256": "106fefed1b570b91ea626e9548c75a4b8506855d445842815fd0666a758cccbc",
+      "skipped": 0,
+      "tests": 1
+    }
+  },
+  "total_tests": 93,
+  "verified_at": "2026-11-27T11:37:33.697238+07:00"
+}

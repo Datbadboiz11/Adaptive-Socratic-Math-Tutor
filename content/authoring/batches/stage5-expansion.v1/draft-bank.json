@@ -1,0 +1,459 @@
+{
+  "content_version": "0.5.0-stage5-draft",
+  "packs": [
+    {
+      "concept_id": "N03",
+      "content_version": "0.5.0-stage5-draft",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Trong biểu thức không có ngoặc, phép nhân và phép cộng được ưu tiên thế nào?",
+          "error_id": "D-N03-S5-R001-ERR-01",
+          "family": "ORDER-ADD-BEFORE-MULTIPLY",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã cộng trước khi nhân.",
+          "problem_id": "D-N03-S5-R001-P-01",
+          "response_steps": [
+            "11*4",
+            "44"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Hai phép chia và nhân cùng mức được thực hiện từ phía nào?",
+          "error_id": "D-N03-S5-R001-ERR-02",
+          "family": "ORDER-RIGHT-GROUPING",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã tự thêm ngoặc vào chuỗi chia rồi nhân.",
+          "problem_id": "D-N03-S5-R001-P-05",
+          "response_steps": [
+            "24/(3*2)",
+            "4"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-N03-S5-R001-X-01",
+          "reference_answer": "16",
+          "reference_steps": [
+            "6 + 10",
+            "16"
+          ],
+          "task": {
+            "expression": "6 + 2*5",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-X-02",
+          "reference_answer": "40",
+          "reference_steps": [
+            "8*5",
+            "40"
+          ],
+          "task": {
+            "expression": "(6 + 2)*5",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-X-03",
+          "reference_answer": "18",
+          "reference_steps": [
+            "6*3",
+            "18"
+          ],
+          "task": {
+            "expression": "36/6*3",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Tính biểu thức trong ngoặc trước. Ngoài ngoặc, thực hiện nhân và chia trước cộng và trừ. Các phép nhân/chia cùng mức, hoặc cộng/trừ cùng mức, thực hiện từ trái sang phải. Không đổi vị trí các phép trừ hay chia nếu chưa có phép biến đổi hợp lệ.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Em thấy dấu ngoặc hoặc những nhóm phép toán nào trong biểu thức?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Xác định phần trong ngoặc trước; sau đó phân biệt nhóm nhân/chia với nhóm cộng/trừ."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Mỗi dòng chỉ tính một phép được ưu tiên, chép nguyên phần còn lại. Với các phép cùng mức, bắt đầu từ bên trái."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-N03-S5-R001-P-01",
+          "concept_id": "N03",
+          "difficulty": "introductory",
+          "family_id": "FAM-N03-S5-R001-1",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 8 + 3*4. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "20",
+          "reference_steps": [
+            "8 + 12",
+            "20"
+          ],
+          "source_group": "GROUP-N03-S5-R001-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "8 + 3*4",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-P-02",
+          "concept_id": "N03",
+          "difficulty": "introductory",
+          "family_id": "FAM-N03-S5-R001-1",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 25 - 2*7. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "11",
+          "reference_steps": [
+            "25 - 14",
+            "11"
+          ],
+          "source_group": "GROUP-N03-S5-R001-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "25 - 2*7",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-P-03",
+          "concept_id": "N03",
+          "difficulty": "standard",
+          "family_id": "FAM-N03-S5-R001-2",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức (8 + 3)*4. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "44",
+          "reference_steps": [
+            "11*4",
+            "44"
+          ],
+          "source_group": "GROUP-N03-S5-R001-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "(8 + 3)*4",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-P-04",
+          "concept_id": "N03",
+          "difficulty": "standard",
+          "family_id": "FAM-N03-S5-R001-2",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 30/(7 - 2). Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "6",
+          "reference_steps": [
+            "30/5",
+            "6"
+          ],
+          "source_group": "GROUP-N03-S5-R001-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "30/(7 - 2)",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-P-05",
+          "concept_id": "N03",
+          "difficulty": "standard",
+          "family_id": "FAM-N03-S5-R001-3",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 24/3*2. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "16",
+          "reference_steps": [
+            "8*2",
+            "16"
+          ],
+          "source_group": "GROUP-N03-S5-R001-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "24/3*2",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N03-S5-R001-P-06",
+          "concept_id": "N03",
+          "difficulty": "standard",
+          "family_id": "FAM-N03-S5-R001-3",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N03-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 18 - 7 + 2. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "13",
+          "reference_steps": [
+            "11 + 2",
+            "13"
+          ],
+          "source_group": "GROUP-N03-S5-R001-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "18 - 7 + 2",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex",
+        "human_reviewer": null,
+        "reviewed_at": null,
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "draft"
+      }
+    },
+    {
+      "concept_id": "N06",
+      "content_version": "0.5.0-stage5-draft",
+      "errors": [
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Khi hai phân số đã cùng mẫu, mẫu số biểu thị đơn vị phần nào?",
+          "error_id": "D-N06-S5-R001-ERR-01",
+          "family": "FRACTION-ADD-DENOMINATORS",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã cộng cả hai mẫu khi cộng hai phân số.",
+          "problem_id": "D-N06-S5-R001-P-01",
+          "response_steps": [
+            "(2 + 3)/(7 + 7)",
+            "5/14"
+          ]
+        },
+        {
+          "diagnosis_status": "suspected",
+          "diagnostic_question": "Để đổi một phần tư sang mẫu tám mà giữ nguyên giá trị, tử số cần thay đổi thế nào?",
+          "error_id": "D-N06-S5-R001-ERR-02",
+          "family": "FRACTION-CHANGE-DENOMINATOR-ONLY",
+          "first_error_step": 1,
+          "hypothesis": "Có thể đã đổi mẫu nhưng không nhân tử với cùng hệ số.",
+          "problem_id": "D-N06-S5-R001-P-04",
+          "response_steps": [
+            "5/8 - 1/8",
+            "4/8"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "case_id": "D-N06-S5-R001-X-01",
+          "reference_answer": "2/3",
+          "reference_steps": [
+            "6/9",
+            "2/3"
+          ],
+          "task": {
+            "expression": "1/9 + 5/9",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-X-02",
+          "reference_answer": "1/10",
+          "reference_steps": [
+            "3/10 - 2/10",
+            "1/10"
+          ],
+          "task": {
+            "expression": "3/10 - 1/5",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-X-03",
+          "reference_answer": "11/14",
+          "reference_steps": [
+            "7/14 + 4/14",
+            "11/14"
+          ],
+          "task": {
+            "expression": "1/2 + 2/7",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "explanation": "Muốn cộng hoặc trừ hai phân số, đưa chúng về cùng một mẫu khác không bằng cách nhân cả tử và mẫu với cùng một số khác không. Khi đã cùng mẫu, cộng hoặc trừ các tử và giữ nguyên mẫu chung; sau đó rút gọn nếu có thể. Với phân số âm, giữ dấu của từng tử khi quy đồng và khi thực hiện phép trừ.",
+      "hints": [
+        {
+          "disclosure": "conceptual",
+          "level": 1,
+          "text": "Hai phân số đang có cùng mẫu chưa? Mẫu số của chúng có khác không?"
+        },
+        {
+          "disclosure": "strategy",
+          "level": 2,
+          "text": "Chọn một mẫu chung, rồi nhân cả tử lẫn mẫu của mỗi phân số với cùng hệ số phù hợp."
+        },
+        {
+          "disclosure": "scaffold",
+          "level": 3,
+          "text": "Viết lại hai phân số cùng mẫu trên một dòng. Cộng hoặc trừ các tử theo đúng dấu, giữ mẫu chung rồi kiểm tra rút gọn."
+        }
+      ],
+      "problems": [
+        {
+          "case_id": "D-N06-S5-R001-P-01",
+          "concept_id": "N06",
+          "difficulty": "introductory",
+          "family_id": "FAM-N06-S5-R001-1",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 2/7 + 3/7. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "5/7",
+          "reference_steps": [
+            "(2 + 3)/7",
+            "5/7"
+          ],
+          "source_group": "GROUP-N06-S5-R001-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2/7 + 3/7",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-P-02",
+          "concept_id": "N06",
+          "difficulty": "introductory",
+          "family_id": "FAM-N06-S5-R001-1",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 6/11 - 2/11. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "4/11",
+          "reference_steps": [
+            "(6 - 2)/11",
+            "4/11"
+          ],
+          "source_group": "GROUP-N06-S5-R001-1",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "6/11 - 2/11",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-P-03",
+          "concept_id": "N06",
+          "difficulty": "standard",
+          "family_id": "FAM-N06-S5-R001-2",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 1/3 + 1/6. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "1/2",
+          "reference_steps": [
+            "2/6 + 1/6",
+            "3/6",
+            "1/2"
+          ],
+          "source_group": "GROUP-N06-S5-R001-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "1/3 + 1/6",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-P-04",
+          "concept_id": "N06",
+          "difficulty": "standard",
+          "family_id": "FAM-N06-S5-R001-2",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 5/8 - 1/4. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "3/8",
+          "reference_steps": [
+            "5/8 - 2/8",
+            "3/8"
+          ],
+          "source_group": "GROUP-N06-S5-R001-2",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "5/8 - 1/4",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-P-05",
+          "concept_id": "N06",
+          "difficulty": "standard",
+          "family_id": "FAM-N06-S5-R001-3",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức 2/3 + 1/5. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "13/15",
+          "reference_steps": [
+            "10/15 + 3/15",
+            "13/15"
+          ],
+          "source_group": "GROUP-N06-S5-R001-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "2/3 + 1/5",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        },
+        {
+          "case_id": "D-N06-S5-R001-P-06",
+          "concept_id": "N06",
+          "difficulty": "standard",
+          "family_id": "FAM-N06-S5-R001-3",
+          "origin": "Original offline AI-assisted draft; no external problem copied",
+          "primary_skill_id": "SK-N06-PRIMARY",
+          "prompt": "Tính giá trị biểu thức -1/4 - 1/6. Viết các bước theo thứ tự rồi ghi kết quả.",
+          "reference_answer": "-5/12",
+          "reference_steps": [
+            "-3/12 - 2/12",
+            "-5/12"
+          ],
+          "source_group": "GROUP-N06-S5-R001-3",
+          "split": "authoring_dev",
+          "task": {
+            "expression": "-1/4 - 1/6",
+            "kind": "numeric",
+            "variable_value": null
+          }
+        }
+      ],
+      "review": {
+        "author": "Codex",
+        "human_reviewer": null,
+        "reviewed_at": null,
+        "source": "AI-assisted authoring draft; source IDs: SRC-MATH-2018",
+        "status": "draft"
+      }
+    }
+  ],
+  "schema_version": "1.0.0"
+}

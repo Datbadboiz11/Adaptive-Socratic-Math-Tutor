@@ -1,0 +1,101 @@
+{
+  "checks_passed": [
+    "member2_assets_reproducible",
+    "source_and_corpus_hashes_verified",
+    "exact_workboard_scope",
+    "zero_missing_content_queries",
+    "all_queries_dev_no_fake_holdout",
+    "full_review_templates_156_queries_195_judgments",
+    "unsigned_reviews_rejected_by_cli",
+    "stage3_approved_publication_unchanged",
+    "historical_worksets_preserved"
+  ],
+  "concept_ids": [
+    "A01",
+    "A04",
+    "A07",
+    "A10",
+    "E03",
+    "E06",
+    "E09",
+    "F02",
+    "F05",
+    "F08",
+    "N02",
+    "N05",
+    "N08"
+  ],
+  "dataset": {
+    "dataset_id": "stage5-member2-13-dev-1.0.0",
+    "embedding_profile_id": "b91dc530d438749338cd9f5817acd79d6878d2af805470459b12232673d9eae0",
+    "human_reviewed_judgments": 0,
+    "missing_content_queries": 0,
+    "pilot_judgments": 39,
+    "pilot_queries": 26,
+    "queries": 156,
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split_counts": {
+      "dev": 156
+    },
+    "unjudged_pairs": 195
+  },
+  "external_content": {
+    "Member 1": {
+      "concepts": 13,
+      "status": "awaiting_owner_delivery"
+    },
+    "Member 3": {
+      "concepts": 14,
+      "status": "awaiting_owner_delivery"
+    }
+  },
+  "formal_test_ready": false,
+  "historical_worksets": {
+    "coverage40_manifest_sha256": "5b7eddbb0c45ab91655812fad94f39b3bd0e695734a77097cccff11c44a7352a",
+    "stage5_expansion_manifest_sha256": "68cc6ccb9b36225fbd4adea70673fb39a52c3801cd71a6cc8a9058614a748d3b"
+  },
+  "inventory": {
+    "approved_concepts": 13,
+    "approved_examples": 39,
+    "approved_problems": 78,
+    "error_fixtures": 39,
+    "proposed_taxonomy_categories": 32,
+    "teaching_chunks": 91
+  },
+  "limits": [
+    "No human review identities or relevance labels fabricated.",
+    "Taxonomy mappings are proposed and need semantic review.",
+    "No independent final test frozen or formal RQ3 evaluation performed.",
+    "Remote CI not run; no runtime/frontend changes or repeated browser/DB run in this scope update."
+  ],
+  "model_api_calls": 0,
+  "other_members_block_current_scope": false,
+  "recorded_on": "2026-11-26",
+  "remaining_in_current_scope": [
+    "independent_query_and_label_reviews",
+    "taxonomy_mapping_review",
+    "resolve_label_disagreements",
+    "design_independent_final_test_then_freeze_inputs"
+  ],
+  "scope_owner": "Member 2",
+  "source_sha256": {
+    ".github/workflows/stage5-content-checks.yml": "852ae21b0c92cd6ac24b07af5abf17c60b58da9ad3c84282c84e697209fcfd49",
+    "docs/implementation/member2/part5/README.md": "5330379060b514d778ac90305c70599b6c8d7545d26f64ca5ce5adc0ecd57454",
+    "research/retrieval/dataset.py": "88773a977a9521a7d910c5e045139d1b7b604c52ce4b267c100fb8e82587fb10",
+    "research/retrieval/stage5/member2-13.v1/manifest.json": "a6be9b843f870df21f5a1fc2005b6e6158f1ea8b80d9a4fb2a462da4968febbe",
+    "scripts/retrieval/curate_stage5.py": "a003a0239fc53eb4fe5c78f25aceb6d4d64e78feb95558cac4a46492b2c552fb",
+    "scripts/retrieval/prepare_member2_stage5.py": "c0bd79efecc848f23cadb4916ca7369f09d97e975b26ea7ebe44e822db126888",
+    "tests/test_member2_stage5.py": "0faf210dc07b379c5282e05eb50de974b1ba0b8c2dfb2e2804280fc5ded061bd"
+  },
+  "status": "member2_thirteen_concept_technical_scope_verified",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "junit": "tests-member2-13-2026-11-26.xml",
+    "new_scoped_cases": 28,
+    "sha256": "dbbfec80472eec334c468ca794674c4579b9bc51d0fbbf9ee0d2c3492c0ba5f4",
+    "skipped": 0,
+    "tests": 136
+  },
+  "verified_at": "2026-11-26T23:23:11.916410+07:00"
+}
