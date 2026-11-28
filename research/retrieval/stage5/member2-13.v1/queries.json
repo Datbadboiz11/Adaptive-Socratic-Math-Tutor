@@ -1,0 +1,5422 @@
+[
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc thay giá trị vào biểu thức và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-A01-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về thay giá trị vào biểu thức, em phân vân: thay số âm có cần đặt ngoặc ở mọi vị trí x không?",
+    "query_class": "misconception",
+    "query_id": "M2S5-A01-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-2",
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em hay nhầm thế số âm và tính bình phương số âm.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-A01-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-HINT-1",
+    "purpose": "hint",
+    "query": "Tính giá trị 7*x-11 tại x = -4. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-A01-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-hint-1",
+      "A01-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-2",
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-HINT-2",
+    "purpose": "hint",
+    "query": "Tính giá trị 3*x*x-5*x-2 tại x = -2. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-A01-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A01-hint-1",
+      "A01-hint-2",
+      "A01-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-3",
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-HINT-3",
+    "purpose": "hint",
+    "query": "Tính giá trị 9*x-4 tại x = 2/3. Ghi kết quả chính xác. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-A01-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A01-M2-ORIG02-EX-01",
+      "D-A01-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-2",
+      "FAM-A01-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về thay giá trị vào biểu thức, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-A01-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A01-M2-ORIG02-EX-02",
+      "D-A01-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về thay giá trị vào biểu thức, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-A01-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A01-M2-ORIG02-EX-01",
+      "D-A01-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-3",
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với thay giá trị vào biểu thức, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-A01-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1",
+      "FAM-A01-M2-ORIG02-2",
+      "FAM-A01-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-A01-M2-ORIG02-1",
+      "FAM-A01-M2-ORIG02-2",
+      "FAM-A01-M2-ORIG02-3",
+      "GROUP-A01-M2-ORIG01-1",
+      "GROUP-A01-M2-ORIG01-2",
+      "GROUP-A01-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-A01-M2-ORIG02-1",
+      "EXAMPLE-A01-M2-ORIG02-2",
+      "EXAMPLE-A01-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về thay giá trị vào biểu thức, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-A01-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong thay giá trị vào biểu thức làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-A01-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A01-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A01",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A01-M2-ORIG01-1",
+      "FAM-A01-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A01-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      7
+    ],
+    "intent_group": "M2S5-A01-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục thay giá trị vào biểu thức nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-A01-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A01-EVALUATE",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc nhân đơn thức và đa thức và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-A04-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về nhân đơn thức và đa thức, em phân vân: mỗi hạng tử phải nhân với những hạng tử nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-A04-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-2",
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em muốn hỏi về nhân da thuc và các tích chéo.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-A04-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-HINT-1",
+    "purpose": "hint",
+    "query": "Khai triển rồi thu gọn 4*x*(3*x-7). Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-A04-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-hint-1",
+      "A04-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-2",
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-HINT-2",
+    "purpose": "hint",
+    "query": "Khai triển rồi thu gọn -6*(2*x*x-3*x+7). Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-A04-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A04-hint-1",
+      "A04-hint-2",
+      "A04-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-3",
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-HINT-3",
+    "purpose": "hint",
+    "query": "Khai triển rồi thu gọn (3*x-4)*(2*x+9). Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-A04-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A04-M2-ORIG02-EX-01",
+      "D-A04-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-2",
+      "FAM-A04-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về nhân đơn thức và đa thức, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-A04-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A04-M2-ORIG02-EX-02",
+      "D-A04-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về nhân đơn thức và đa thức, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-A04-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A04-M2-ORIG02-EX-01",
+      "D-A04-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-3",
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với nhân đơn thức và đa thức, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-A04-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1",
+      "FAM-A04-M2-ORIG02-2",
+      "FAM-A04-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-A04-M2-ORIG02-1",
+      "FAM-A04-M2-ORIG02-2",
+      "FAM-A04-M2-ORIG02-3",
+      "GROUP-A04-M2-ORIG01-1",
+      "GROUP-A04-M2-ORIG01-2",
+      "GROUP-A04-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-A04-M2-ORIG02-1",
+      "EXAMPLE-A04-M2-ORIG02-2",
+      "EXAMPLE-A04-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về nhân đơn thức và đa thức, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-A04-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong nhân đơn thức và đa thức làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-A04-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A04-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A04",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A04-M2-ORIG01-1",
+      "FAM-A04-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A04-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      7,
+      8
+    ],
+    "intent_group": "M2S5-A04-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục nhân đơn thức và đa thức nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-A04-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A04-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc đặt nhân tử chung và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-A07-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về đặt nhân tử chung, em phân vân: đưa nhân tử ra ngoài rồi phần trong ngoặc được tính thế nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-A07-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-2",
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Nhân tử chung có giống một hạng tử được mang nguyên ra ngoài không?",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-A07-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-HINT-1",
+    "purpose": "hint",
+    "query": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-A07-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-hint-1",
+      "A07-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-2",
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-HINT-2",
+    "purpose": "hint",
+    "query": "Đặt nhân tử chung lớn nhất của 7*x*x+11*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-A07-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A07-hint-1",
+      "A07-hint-2",
+      "A07-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-3",
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-HINT-3",
+    "purpose": "hint",
+    "query": "Đặt nhân tử chung lớn nhất của 24*x*x-36*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-A07-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A07-M2-ORIG02-EX-01",
+      "D-A07-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-2",
+      "FAM-A07-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về đặt nhân tử chung, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-A07-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A07-M2-ORIG02-EX-02",
+      "D-A07-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về đặt nhân tử chung, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-A07-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A07-M2-ORIG02-EX-01",
+      "D-A07-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-3",
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với đặt nhân tử chung, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-A07-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1",
+      "FAM-A07-M2-ORIG02-2",
+      "FAM-A07-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-A07-M2-ORIG02-1",
+      "FAM-A07-M2-ORIG02-2",
+      "FAM-A07-M2-ORIG02-3",
+      "GROUP-A07-M2-ORIG01-1",
+      "GROUP-A07-M2-ORIG01-2",
+      "GROUP-A07-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-A07-M2-ORIG02-1",
+      "EXAMPLE-A07-M2-ORIG02-2",
+      "EXAMPLE-A07-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về đặt nhân tử chung, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-A07-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong đặt nhân tử chung làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-A07-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A07-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A07",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A07-M2-ORIG01-1",
+      "FAM-A07-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A07-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A07-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục đặt nhân tử chung nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-A07-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A07-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc phép toán phân thức và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-A10-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về phép toán phân thức, em phân vân: khử nhân tử rồi có giữ điều kiện mẫu ban đầu không?",
+    "query_class": "misconception",
+    "query_id": "M2S5-A10-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-2",
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em nhầm điều kiện của phân thức chia với điều kiện mẫu của nó.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-A10-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-HINT-1",
+    "purpose": "hint",
+    "query": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-A10-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-hint-1",
+      "A10-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-2",
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-HINT-2",
+    "purpose": "hint",
+    "query": "Thực hiện phép nhân hai phân thức *; x-2|x+4; x+4|x-5. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-A10-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "A10-hint-1",
+      "A10-hint-2",
+      "A10-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-3",
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-HINT-3",
+    "purpose": "hint",
+    "query": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+1|x-7; x+1|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-A10-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A10-M2-ORIG02-EX-01",
+      "D-A10-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-2",
+      "FAM-A10-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về phép toán phân thức, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-A10-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A10-M2-ORIG02-EX-02",
+      "D-A10-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về phép toán phân thức, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-A10-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-A10-M2-ORIG02-EX-01",
+      "D-A10-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-3",
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với phép toán phân thức, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-A10-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1",
+      "FAM-A10-M2-ORIG02-2",
+      "FAM-A10-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-A10-M2-ORIG02-1",
+      "FAM-A10-M2-ORIG02-2",
+      "FAM-A10-M2-ORIG02-3",
+      "GROUP-A10-M2-ORIG01-1",
+      "GROUP-A10-M2-ORIG01-2",
+      "GROUP-A10-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-A10-M2-ORIG02-1",
+      "EXAMPLE-A10-M2-ORIG02-2",
+      "EXAMPLE-A10-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về phép toán phân thức, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-A10-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong phép toán phân thức làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-A10-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-A10-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "A10",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-A10-M2-ORIG01-1",
+      "FAM-A10-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-A10-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-A10-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục phép toán phân thức nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-A10-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-A10-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc lập phương trình từ lời văn và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-E03-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về lập phương trình từ lời văn, em phân vân: chọn ẩn, đơn vị và quan hệ hơn kém theo thứ tự nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-E03-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-2",
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em không biết chuyển chữ hơn thành biểu thức thế nào.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-E03-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-HINT-1",
+    "purpose": "hint",
+    "query": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-E03-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-hint-1",
+      "E03-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-2",
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-HINT-2",
+    "purpose": "hint",
+    "query": "Hai hàng có tổng 43 cây. Hàng thứ hai hơn hàng thứ nhất 7 cây. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-E03-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E03-hint-1",
+      "E03-hint-2",
+      "E03-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-3",
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-HINT-3",
+    "purpose": "hint",
+    "query": "Kho có 58 lọ, lấy đều trong 4 lượt thì còn 26 lọ. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-E03-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E03-M2-ORIG02-EX-01",
+      "D-E03-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-2",
+      "FAM-E03-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về lập phương trình từ lời văn, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-E03-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E03-M2-ORIG02-EX-02",
+      "D-E03-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về lập phương trình từ lời văn, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-E03-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E03-M2-ORIG02-EX-01",
+      "D-E03-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-3",
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với lập phương trình từ lời văn, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-E03-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1",
+      "FAM-E03-M2-ORIG02-2",
+      "FAM-E03-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-E03-M2-ORIG02-1",
+      "FAM-E03-M2-ORIG02-2",
+      "FAM-E03-M2-ORIG02-3",
+      "GROUP-E03-M2-ORIG01-1",
+      "GROUP-E03-M2-ORIG01-2",
+      "GROUP-E03-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-E03-M2-ORIG02-1",
+      "EXAMPLE-E03-M2-ORIG02-2",
+      "EXAMPLE-E03-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về lập phương trình từ lời văn, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-E03-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong lập phương trình từ lời văn làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-E03-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E03-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E03",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E03-M2-ORIG01-1",
+      "FAM-E03-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E03-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      8
+    ],
+    "intent_group": "M2S5-E03-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục lập phương trình từ lời văn nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-E03-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E03-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc biệt thức và nghiệm phương trình bậc hai và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-E06-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về biệt thức và nghiệm phương trình bậc hai, em phân vân: biệt thức bằng không và âm khác nhau thế nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-E06-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-2",
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em chưa phân biệt nghiệm kép với không có nghiệm thực.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-E06-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-HINT-1",
+    "purpose": "hint",
+    "query": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-E06-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-hint-1",
+      "E06-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-2",
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-HINT-2",
+    "purpose": "hint",
+    "query": "Tính biệt thức rồi giải 9*x*x+30*x+25 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-E06-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E06-hint-1",
+      "E06-hint-2",
+      "E06-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-3",
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-HINT-3",
+    "purpose": "hint",
+    "query": "Tính biệt thức rồi giải 3*x*x-2*x+5 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-E06-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E06-M2-ORIG02-EX-01",
+      "D-E06-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-2",
+      "FAM-E06-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về biệt thức và nghiệm phương trình bậc hai, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-E06-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E06-M2-ORIG02-EX-02",
+      "D-E06-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về biệt thức và nghiệm phương trình bậc hai, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-E06-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E06-M2-ORIG02-EX-01",
+      "D-E06-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-3",
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với biệt thức và nghiệm phương trình bậc hai, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-E06-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1",
+      "FAM-E06-M2-ORIG02-2",
+      "FAM-E06-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-E06-M2-ORIG02-1",
+      "FAM-E06-M2-ORIG02-2",
+      "FAM-E06-M2-ORIG02-3",
+      "GROUP-E06-M2-ORIG01-1",
+      "GROUP-E06-M2-ORIG01-2",
+      "GROUP-E06-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-E06-M2-ORIG02-1",
+      "EXAMPLE-E06-M2-ORIG02-2",
+      "EXAMPLE-E06-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về biệt thức và nghiệm phương trình bậc hai, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-E06-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong biệt thức và nghiệm phương trình bậc hai làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-E06-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E06-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E06",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E06-M2-ORIG01-1",
+      "FAM-E06-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E06-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E06-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục biệt thức và nghiệm phương trình bậc hai nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-E06-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E06-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc khử ẩn trong hệ phương trình và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-E09-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về khử ẩn trong hệ phương trình, em phân vân: có phải nhân cả hai vế trước khi cộng hoặc trừ hai hàng không?",
+    "query_class": "misconception",
+    "query_id": "M2S5-E09-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-2",
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em muốn hỏi phep cong dai so khi các hệ số chưa đối nhau.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-E09-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-HINT-1",
+    "purpose": "hint",
+    "query": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-E09-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-hint-1",
+      "E09-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-2",
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-HINT-2",
+    "purpose": "hint",
+    "query": "Giải hệ 3*x+2*y=14;3*x-1*y=2 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-E09-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "E09-hint-1",
+      "E09-hint-2",
+      "E09-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-3",
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-HINT-3",
+    "purpose": "hint",
+    "query": "Giải hệ 2*x+3*y=8;3*x+4*y=11 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-E09-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E09-M2-ORIG02-EX-01",
+      "D-E09-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-2",
+      "FAM-E09-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về khử ẩn trong hệ phương trình, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-E09-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E09-M2-ORIG02-EX-02",
+      "D-E09-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về khử ẩn trong hệ phương trình, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-E09-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-E09-M2-ORIG02-EX-01",
+      "D-E09-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-3",
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với khử ẩn trong hệ phương trình, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-E09-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1",
+      "FAM-E09-M2-ORIG02-2",
+      "FAM-E09-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-E09-M2-ORIG02-1",
+      "FAM-E09-M2-ORIG02-2",
+      "FAM-E09-M2-ORIG02-3",
+      "GROUP-E09-M2-ORIG01-1",
+      "GROUP-E09-M2-ORIG01-2",
+      "GROUP-E09-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-E09-M2-ORIG02-1",
+      "EXAMPLE-E09-M2-ORIG02-2",
+      "EXAMPLE-E09-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về khử ẩn trong hệ phương trình, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-E09-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong khử ẩn trong hệ phương trình làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-E09-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-E09-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "E09",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-E09-M2-ORIG01-1",
+      "FAM-E09-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-E09-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      9
+    ],
+    "intent_group": "M2S5-E09-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục khử ẩn trong hệ phương trình nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-E09-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-E09-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc tập xác định và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-F02-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về tập xác định, em phân vân: mẫu khác không và biểu thức dưới căn không âm khác nhau thế nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-F02-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-2",
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Miền xác định có phải chỉ loại các giá trị làm mẫu bằng không không?",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-F02-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-HINT-1",
+    "purpose": "hint",
+    "query": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-F02-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-hint-1",
+      "F02-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-2",
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-HINT-2",
+    "purpose": "hint",
+    "query": "Tìm tập xác định thực của f(x)=√(2x+14). Viết dưới dạng khoảng. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-F02-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F02-hint-1",
+      "F02-hint-2",
+      "F02-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-3",
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-HINT-3",
+    "purpose": "hint",
+    "query": "Tìm tập xác định thực của f(x)=√(31−4x). Viết dưới dạng khoảng. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-F02-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F02-M2-ORIG02-EX-01",
+      "D-F02-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-2",
+      "FAM-F02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về tập xác định, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-F02-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F02-M2-ORIG02-EX-02",
+      "D-F02-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về tập xác định, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-F02-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F02-M2-ORIG02-EX-01",
+      "D-F02-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-3",
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với tập xác định, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-F02-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1",
+      "FAM-F02-M2-ORIG02-2",
+      "FAM-F02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-F02-M2-ORIG02-1",
+      "FAM-F02-M2-ORIG02-2",
+      "FAM-F02-M2-ORIG02-3",
+      "GROUP-F02-M2-ORIG01-1",
+      "GROUP-F02-M2-ORIG01-2",
+      "GROUP-F02-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-F02-M2-ORIG02-1",
+      "EXAMPLE-F02-M2-ORIG02-2",
+      "EXAMPLE-F02-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về tập xác định, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-F02-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong tập xác định làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-F02-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F02-M2-ORIG01-1",
+      "FAM-F02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F02-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F02-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục tập xác định nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-F02-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F02-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc đỉnh và trục đối xứng parabol và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-F05-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về đỉnh và trục đối xứng parabol, em phân vân: tọa độ đỉnh khác phương trình trục đối xứng thế nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-F05-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-2",
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cứ nhầm hoành độ đỉnh với cả tọa độ đỉnh.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-F05-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-HINT-1",
+    "purpose": "hint",
+    "query": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ). Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-F05-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-hint-1",
+      "F05-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-2",
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-HINT-2",
+    "purpose": "hint",
+    "query": "Tìm phương trình trục đối xứng của y = 4*x*x-12*x+11. Nộp phương trình dạng x = số. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-F05-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F05-hint-1",
+      "F05-hint-2",
+      "F05-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-3",
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-HINT-3",
+    "purpose": "hint",
+    "query": "Tìm phương trình trục đối xứng của y = -3*x*x-15*x+8. Nộp phương trình dạng x = số. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-F05-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F05-M2-ORIG02-EX-01",
+      "D-F05-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-2",
+      "FAM-F05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về đỉnh và trục đối xứng parabol, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-F05-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F05-M2-ORIG02-EX-02",
+      "D-F05-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về đỉnh và trục đối xứng parabol, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-F05-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F05-M2-ORIG02-EX-01",
+      "D-F05-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-3",
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với đỉnh và trục đối xứng parabol, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-F05-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1",
+      "FAM-F05-M2-ORIG02-2",
+      "FAM-F05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-F05-M2-ORIG02-1",
+      "FAM-F05-M2-ORIG02-2",
+      "FAM-F05-M2-ORIG02-3",
+      "GROUP-F05-M2-ORIG01-1",
+      "GROUP-F05-M2-ORIG01-2",
+      "GROUP-F05-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-F05-M2-ORIG02-1",
+      "EXAMPLE-F05-M2-ORIG02-2",
+      "EXAMPLE-F05-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về đỉnh và trục đối xứng parabol, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-F05-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong đỉnh và trục đối xứng parabol làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-F05-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F05-M2-ORIG01-1",
+      "FAM-F05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F05-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      10
+    ],
+    "intent_group": "M2S5-F05-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục đỉnh và trục đối xứng parabol nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-F05-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F05-VERTEX",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc quy tắc hàm số mũ và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-F08-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về quy tắc hàm số mũ, em phân vân: khi nhân, chia hoặc lấy lũy thừa của lũy thừa thì xử lý số mũ thế nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-F08-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-2",
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em đang nhầm cộng số mũ với nhân số mũ và điều kiện cơ số.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-F08-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-HINT-1",
+    "purpose": "hint",
+    "query": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-F08-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-hint-1",
+      "F08-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-2",
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-HINT-2",
+    "purpose": "hint",
+    "query": "Rút gọn 5¹ / 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-F08-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "F08-hint-1",
+      "F08-hint-2",
+      "F08-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-3",
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-HINT-3",
+    "purpose": "hint",
+    "query": "Rút gọn (2⁻²)³ và ghi tập xác định của hàm y = 2^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-F08-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F08-M2-ORIG02-EX-01",
+      "D-F08-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-2",
+      "FAM-F08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về quy tắc hàm số mũ, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-F08-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F08-M2-ORIG02-EX-02",
+      "D-F08-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về quy tắc hàm số mũ, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-F08-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-F08-M2-ORIG02-EX-01",
+      "D-F08-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-3",
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với quy tắc hàm số mũ, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-F08-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1",
+      "FAM-F08-M2-ORIG02-2",
+      "FAM-F08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-F08-M2-ORIG02-1",
+      "FAM-F08-M2-ORIG02-2",
+      "FAM-F08-M2-ORIG02-3",
+      "GROUP-F08-M2-ORIG01-1",
+      "GROUP-F08-M2-ORIG01-2",
+      "GROUP-F08-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-F08-M2-ORIG02-1",
+      "EXAMPLE-F08-M2-ORIG02-2",
+      "EXAMPLE-F08-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về quy tắc hàm số mũ, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-F08-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong quy tắc hàm số mũ làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-F08-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-F08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "F08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-F08-M2-ORIG01-1",
+      "FAM-F08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-F08-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      11
+    ],
+    "intent_group": "M2S5-F08-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục quy tắc hàm số mũ nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-F08-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-F08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc nhân chia số nguyên có dấu và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-N02-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về nhân chia số nguyên có dấu, em phân vân: chia hai số âm thì kết quả mang dấu nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-N02-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-2",
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em biết chia giá trị tuyệt đối nhưng hay quên dau của kết quả.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-N02-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-HINT-1",
+    "purpose": "hint",
+    "query": "Tính (-13)*(-4) và giải thích dấu của tích. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-N02-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-hint-1",
+      "N02-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-2",
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-HINT-2",
+    "purpose": "hint",
+    "query": "Tính 104/(-8) và giải thích dấu của thương. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-N02-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N02-hint-1",
+      "N02-hint-2",
+      "N02-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-3",
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-HINT-3",
+    "purpose": "hint",
+    "query": "Tính ((-9)*6)/(-3), nêu kết quả trong ngoặc trước. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-N02-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N02-M2-ORIG02-EX-01",
+      "D-N02-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-2",
+      "FAM-N02-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về nhân chia số nguyên có dấu, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-N02-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N02-M2-ORIG02-EX-02",
+      "D-N02-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về nhân chia số nguyên có dấu, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-N02-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N02-M2-ORIG02-EX-01",
+      "D-N02-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-3",
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với nhân chia số nguyên có dấu, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-N02-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1",
+      "FAM-N02-M2-ORIG02-2",
+      "FAM-N02-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-N02-M2-ORIG02-1",
+      "FAM-N02-M2-ORIG02-2",
+      "FAM-N02-M2-ORIG02-3",
+      "GROUP-N02-M2-ORIG01-1",
+      "GROUP-N02-M2-ORIG01-2",
+      "GROUP-N02-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-N02-M2-ORIG02-1",
+      "EXAMPLE-N02-M2-ORIG02-2",
+      "EXAMPLE-N02-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về nhân chia số nguyên có dấu, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-N02-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong nhân chia số nguyên có dấu làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-N02-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N02-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N02",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N02-M2-ORIG01-1",
+      "FAM-N02-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N02-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N02-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục nhân chia số nguyên có dấu nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-N02-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N02-SIGNED-MUL",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc quy đồng và so sánh phân số và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-N05-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về quy đồng và so sánh phân số, em phân vân: so sánh hai phân số âm có giống so sánh giá trị tuyệt đối không?",
+    "query_class": "misconception",
+    "query_id": "M2S5-N05-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-2",
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Quy dong xong thì em so sánh tử hay mẫu?",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-N05-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-HINT-1",
+    "purpose": "hint",
+    "query": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-N05-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-hint-1",
+      "N05-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-2",
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-HINT-2",
+    "purpose": "hint",
+    "query": "Quy đồng rồi thay dấu hỏi trong -3/11 ? -5/16. Ghi cả hai phân số có cùng mẫu. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-N05-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N05-hint-1",
+      "N05-hint-2",
+      "N05-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-3",
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-HINT-3",
+    "purpose": "hint",
+    "query": "Quy đồng rồi thay dấu hỏi trong 9/21 ? 15/35. Ghi cả hai phân số có cùng mẫu. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-N05-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N05-M2-ORIG02-EX-01",
+      "D-N05-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-2",
+      "FAM-N05-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về quy đồng và so sánh phân số, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-N05-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N05-M2-ORIG02-EX-02",
+      "D-N05-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về quy đồng và so sánh phân số, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-N05-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N05-M2-ORIG02-EX-01",
+      "D-N05-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-3",
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với quy đồng và so sánh phân số, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-N05-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1",
+      "FAM-N05-M2-ORIG02-2",
+      "FAM-N05-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-N05-M2-ORIG02-1",
+      "FAM-N05-M2-ORIG02-2",
+      "FAM-N05-M2-ORIG02-3",
+      "GROUP-N05-M2-ORIG01-1",
+      "GROUP-N05-M2-ORIG01-2",
+      "GROUP-N05-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-N05-M2-ORIG02-1",
+      "EXAMPLE-N05-M2-ORIG02-2",
+      "EXAMPLE-N05-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về quy đồng và so sánh phân số, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-N05-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong quy đồng và so sánh phân số làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-N05-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N05-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N05",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N05-M2-ORIG01-1",
+      "FAM-N05-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N05-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N05-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục quy đồng và so sánh phân số nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-N05-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N05-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em cần hiểu nguyên tắc đổi phân số, thập phân và phần trăm và điều kiện áp dụng.",
+    "query_class": "explanation",
+    "query_id": "M2S5-N08-EXPLAIN",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Về đổi phân số, thập phân và phần trăm, em phân vân: đổi số thập phân sang phần trăm phải thay đổi theo hệ số nào?",
+    "query_class": "misconception",
+    "query_id": "M2S5-N08-MISCONCEPTION",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-03",
+    "allowed_hint_level": 0,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-explanation"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-2",
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXPLANATION",
+    "purpose": "explanation",
+    "query": "Em hay nhầm vị trí dấu phẩy khi đổi thap phan sang phần trăm.",
+    "query_class": "terminology_or_typo",
+    "query_id": "M2S5-N08-TERMINOLOGY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 1,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-hint-1"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-HINT-1",
+    "purpose": "hint",
+    "query": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân. Em nên tự hỏi câu nào trước khi bắt đầu? Chỉ gợi mở một ý.",
+    "query_class": "hint",
+    "query_id": "M2S5-N08-HINT-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-03",
+    "allowed_hint_level": 2,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-hint-1",
+      "N08-hint-2"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-2",
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-HINT-2",
+    "purpose": "hint",
+    "query": "Đổi theo yêu cầu 0,184 thành phần trăm. Ghi kèm ký hiệu %. Em cần chiến lược tiếp theo để tự làm, chưa cần giải ra đáp án.",
+    "query_class": "hint",
+    "query_id": "M2S5-N08-HINT-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "N08-hint-1",
+      "N08-hint-2",
+      "N08-hint-3"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-3",
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-HINT-3",
+    "purpose": "hint",
+    "query": "Đổi theo yêu cầu 6,25% thành phân số. Ghi phân số tối giản. Cho em khung các bước để tự kiểm tra, không điền kết quả của bài này.",
+    "query_class": "hint",
+    "query_id": "M2S5-N08-HINT-3",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-03",
+    "allowed_hint_level": 3,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N08-M2-ORIG02-EX-01",
+      "D-N08-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-2",
+      "FAM-N08-M2-ORIG02-2"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-2"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXAMPLE-1",
+    "purpose": "example",
+    "query": "Em muốn xem một ví dụ khác về đổi phân số, thập phân và phần trăm, tránh họ bài hiện tại, rồi tự đối chiếu cách làm.",
+    "query_class": "example",
+    "query_id": "M2S5-N08-EXAMPLE-1",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N08-M2-ORIG02-EX-02",
+      "D-N08-M2-ORIG02-EX-03"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXAMPLE-2",
+    "purpose": "example",
+    "query": "Cho em một ví dụ có giải thích từng bước về đổi phân số, thập phân và phần trăm, khác bài và nguồn đang được đo.",
+    "query_class": "example",
+    "query_id": "M2S5-N08-EXAMPLE-2",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-05",
+    "allowed_hint_level": 3,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [
+      "D-N08-M2-ORIG02-EX-01",
+      "D-N08-M2-ORIG02-EX-02"
+    ],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-3",
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-3"
+    ],
+    "expected_route": "retrieve",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EXAMPLE-PARAPHRASE",
+    "purpose": "example",
+    "query": "Với đổi phân số, thập phân và phần trăm, em học tốt hơn khi nhìn một bài tương tự đã làm. Đổi sang họ bài khác giúp em.",
+    "query_class": "paraphrase",
+    "query_id": "M2S5-N08-EXAMPLE-PARAPHRASE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 3,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1",
+      "FAM-N08-M2-ORIG02-2",
+      "FAM-N08-M2-ORIG02-3"
+    ],
+    "excluded_lineage_ids": [
+      "FAM-N08-M2-ORIG02-1",
+      "FAM-N08-M2-ORIG02-2",
+      "FAM-N08-M2-ORIG02-3",
+      "GROUP-N08-M2-ORIG01-1",
+      "GROUP-N08-M2-ORIG01-2",
+      "GROUP-N08-M2-ORIG01-3"
+    ],
+    "excluded_source_groups": [
+      "EXAMPLE-N08-M2-ORIG02-1",
+      "EXAMPLE-N08-M2-ORIG02-2",
+      "EXAMPLE-N08-M2-ORIG02-3"
+    ],
+    "expected_route": "empty",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-EMPTY",
+    "purpose": "example",
+    "query": "Cho em ví dụ về đổi phân số, thập phân và phần trăm, nhưng không dùng bất kỳ họ ví dụ nào trong danh sách loại trừ.",
+    "query_class": "no_eligible_content",
+    "query_id": "M2S5-N08-EMPTY",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "clarify",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-AMBIGUOUS",
+    "purpose": "explanation",
+    "query": "Cái đoạn đó trong đổi phân số, thập phân và phần trăm làm sao ấy, em chưa biết đang hỏi bước nào.",
+    "query_class": "ambiguous",
+    "query_id": "M2S5-N08-AMBIGUOUS",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  },
+  {
+    "active_problem_id": "D-N08-M2-ORIG02-P-01",
+    "allowed_hint_level": 0,
+    "concept_id": "N08",
+    "content_status": "ready",
+    "difficulty": "introductory",
+    "eligible_candidate_ids": [],
+    "excluded_family_ids": [
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_lineage_ids": [
+      "GROUP-N08-M2-ORIG01-1",
+      "FAM-N08-M2-ORIG02-1"
+    ],
+    "excluded_source_groups": [
+      "GROUP-N08-M2-ORIG01-1"
+    ],
+    "expected_route": "out_of_scope",
+    "grade_levels": [
+      6
+    ],
+    "intent_group": "M2S5-N08-OUT-OF-SCOPE",
+    "purpose": "explanation",
+    "query": "Em đang ở mục đổi phân số, thập phân và phần trăm nhưng muốn hướng dẫn dựng hình không gian từ ảnh chụp.",
+    "query_class": "out_of_scope",
+    "query_id": "M2S5-N08-OUT-OF-SCOPE",
+    "review_status": "pending",
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split": "dev",
+    "target_skill_id": "SK-N08-PRIMARY",
+    "top_k": 5
+  }
+]

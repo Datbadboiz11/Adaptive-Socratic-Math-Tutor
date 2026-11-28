@@ -22,7 +22,13 @@ Member3TaskKind = Literal[
     'linear_inequality', 'log_value', 'exp_log_equation', 'vieta', 'quadratic_monotonic', 'slope_intercept',
     'special_factoring', 'product_equation',
 ]
-DraftTaskKind = Literal[AuthoringTaskKind, Member3TaskKind]
+# Review-only checkers authored for Member 1. These kinds are deliberately kept
+# out of the public AuthoringMathTask contract until the group approves them.
+Member1TaskKind = Literal[
+    'square_root', 'rational_simplify', 'rational_equation', 'linear_substitution',
+    'linear_function_sign', 'quadratic_sign',
+]
+DraftTaskKind = Literal[AuthoringTaskKind, Member3TaskKind, Member1TaskKind]
 
 
 class Source(Contract):

@@ -118,7 +118,13 @@
             "quadratic_monotonic",
             "slope_intercept",
             "special_factoring",
-            "product_equation"
+            "product_equation",
+            "square_root",
+            "rational_simplify",
+            "rational_equation",
+            "linear_substitution",
+            "linear_function_sign",
+            "quadratic_sign"
           ],
           "title": "Kind",
           "type": "string"

@@ -1,0 +1,1042 @@
+[
+  {
+    "common_state_sha256": "9395b485201d24bebd74b6eb356cfc02a6e544e86a612b38e8e87d34629a446c",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0001",
+    "scenario_id": "M2S6-N05-wrong-D-N05-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "3decc21dfe5c22419c74745289a155f444e4ba5a6ee0e752c5d090e514db0bbf",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0002",
+    "scenario_id": "M2S6-A01-wrong-D-A01-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "4634549e2995ce45341d2f04344d376faef3be17530dd5d929fd9a1d6919350b",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0003",
+    "scenario_id": "M2S6-A01-wrong-D-A01-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "6396016a22ab41c1c5176a1cf456970f9db55b526c906b3a47dbdc5bff236dc6",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0004",
+    "scenario_id": "M2S6-A07-explanation"
+  },
+  {
+    "common_state_sha256": "3da78a5e6441c2ea3ac39284353d911890793332d4a17b36a64e0703ce6304c1",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0005",
+    "scenario_id": "M2S6-F02-hint-3"
+  },
+  {
+    "common_state_sha256": "959343471b2000b18b3aa14d29be4c99e7282277d200b8944f1777f7e799b6dc",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0006",
+    "scenario_id": "M2S6-F02-wrong-D-F02-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "8663851227af251e245957beb97294f799dc03ff33114c1ae8f87a078e08f161",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0007",
+    "scenario_id": "M2S6-A10-hint-1"
+  },
+  {
+    "common_state_sha256": "6c72bfe3e9a780057a692d9f5b7ecad3d5c4957353fb52df736186c520c0deb0",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0008",
+    "scenario_id": "M2S6-N02-example"
+  },
+  {
+    "common_state_sha256": "c0e9f5036333b96326e042791cb38b388163721d8db920093979b323ddfedf44",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0009",
+    "scenario_id": "M2S6-F08-hint-3"
+  },
+  {
+    "common_state_sha256": "a204a2734d95da10f13885485e81390b5accfdb6b94b66ad31dd58980e665d19",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0010",
+    "scenario_id": "M2S6-N08-explanation"
+  },
+  {
+    "common_state_sha256": "9cda69c3df80ce7e19ff53f484cdeb4871bf1485cd3d8a64a033cb2c337b5563",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0011",
+    "scenario_id": "M2S6-A04-wrong-D-A04-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "1a04eee8673e5fcbc8010f8a603b31a9ff6bd33d16fe2bc1f24295d7f02970d1",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0012",
+    "scenario_id": "M2S6-A07-example"
+  },
+  {
+    "common_state_sha256": "6c5c15568ce73c3d276efa2093c1237de4c1366d012ad2b8cdbc1f93202e274b",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0013",
+    "scenario_id": "M2S6-E06-hint-1"
+  },
+  {
+    "common_state_sha256": "935dd09249d5a39ef5a5b7a6d948bc34b9747a81a9cad59fa944e7d0a801577e",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0014",
+    "scenario_id": "M2S6-F05-wrong-D-F05-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "39c86feefe27a22e6f0fb762184784ad618274ad97ac2b9ae3d3855bbff910b3",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0015",
+    "scenario_id": "M2S6-F05-hint-2"
+  },
+  {
+    "common_state_sha256": "c6fefc06544cf1bac36d7d7a9ca6507702490490e80b4a55249058eae835b2d7",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0016",
+    "scenario_id": "M2S6-F08-explanation"
+  },
+  {
+    "common_state_sha256": "5889038c83313fd87baf140ef5f7e3447a812955418b1b69fdda0e2d633f74f4",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0017",
+    "scenario_id": "M2S6-F08-example"
+  },
+  {
+    "common_state_sha256": "86de34e09eebb93ea49a462cb84c49c089fcf2d640693be0f2e44cd44f327d88",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0018",
+    "scenario_id": "M2S6-F08-wrong-D-F08-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "5e8fde33d10eb40f02fe7ddb41747939d1b6e086df9d368dcca011dd4a98eb0b",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0019",
+    "scenario_id": "M2S6-N05-hint-1"
+  },
+  {
+    "common_state_sha256": "65b4c0afd686d03adc4a5ecca2e98fdf3b075ac8b22d05a59dd393d1a5a35bbe",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0020",
+    "scenario_id": "M2S6-E03-explanation"
+  },
+  {
+    "common_state_sha256": "523fb45e229fdb320bb59f20b18603a2a7c7c31a3b13c02c15348f5862d9bc54",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0021",
+    "scenario_id": "M2S6-N08-hint-3"
+  },
+  {
+    "common_state_sha256": "762a551683222ab06fbfacd776fb7d325c3c0f8099d93d10475def608efd28e3",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0022",
+    "scenario_id": "M2S6-N05-hint-2"
+  },
+  {
+    "common_state_sha256": "0ae1ef933999f0ce1f57eee7674f2c6ed35d826df8cba7f6baea9bb291e92684",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0023",
+    "scenario_id": "M2S6-E09-wrong-D-E09-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "9eb51412129fc49e9e6f1e65f13cb2c92a82982e2260ccf71f202c9dbfdfc0f4",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0024",
+    "scenario_id": "M2S6-E09-hint-1"
+  },
+  {
+    "common_state_sha256": "9db9e6e61e432d8d5599a6c87ad44b39245dd6b0b6f52dd63c632d8df05ae1b7",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0025",
+    "scenario_id": "M2S6-N08-hint-1"
+  },
+  {
+    "common_state_sha256": "41b163fffbf0ea98c92e3202fb7c611135167abff6defeb73a757641969783dd",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0026",
+    "scenario_id": "M2S6-A01-explanation"
+  },
+  {
+    "common_state_sha256": "7ac5917955adb290b0ef253e9b51ba1d8bf2983a53390fd53340734c9aa419da",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0027",
+    "scenario_id": "M2S6-A04-wrong-D-A04-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "732a2b4a3dabd65bb07b8728dd3ed9463828a0de37164f1618b2b5214fa66d4f",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0028",
+    "scenario_id": "M2S6-N02-wrong-D-N02-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "6d2602048f44c2ad0b025dd455da04287d658d6d17a546999254b6dd8be782e2",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0029",
+    "scenario_id": "M2S6-A07-wrong-D-A07-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "9ad71daa41bd697cf48ced268b24aa84da2f84beefde7ececf4ed96936658b83",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0030",
+    "scenario_id": "M2S6-A07-hint-3"
+  },
+  {
+    "common_state_sha256": "176153dd8ca729f10a3d775089fbf72bf0744e98c87a1ac67251162ce6fedfc7",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0031",
+    "scenario_id": "M2S6-A07-wrong-D-A07-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "a130f8a68cfd415496e2ca9494d600bdb6d5ce2e3b9aa5363bf98afaa3276f9a",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0032",
+    "scenario_id": "M2S6-A07-hint-2"
+  },
+  {
+    "common_state_sha256": "02fc836cbbea5e6f4725bb044eb2356b2f0387d51827cb6d62232c1e9e5b6fcc",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0033",
+    "scenario_id": "M2S6-F08-wrong-D-F08-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "42ac9de8a1e549167de5f3d0550a66d6fff1ea238794ed3ab0676086393c9662",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0034",
+    "scenario_id": "M2S6-E06-hint-3"
+  },
+  {
+    "common_state_sha256": "c368aab0ac3cd995ad4caff03d235bbd6e058c071d1cebe3b7c78cbd1f0aebc4",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0035",
+    "scenario_id": "M2S6-A04-example"
+  },
+  {
+    "common_state_sha256": "b18383b46efe0d978d3f8b34eb98d1566ed0c82b98d804071c13ebffc8739227",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0036",
+    "scenario_id": "M2S6-E03-hint-3"
+  },
+  {
+    "common_state_sha256": "6071c98ae0737ecdfebfdd7a3a91a9394b334cd80c955aa083b78227480174d9",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0037",
+    "scenario_id": "M2S6-A01-hint-3"
+  },
+  {
+    "common_state_sha256": "703a869e67aef65f876bc81a32c2bbac4f217f8852293d0426a27d0f4c2c3ec6",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0038",
+    "scenario_id": "M2S6-N08-wrong-D-N08-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "9db29e161c04fadb66f2c321d0aa661cdff8802c751d36e43020c5f581eeebbd",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0039",
+    "scenario_id": "M2S6-N02-wrong-D-N02-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "dfb8e41ebf1c862eeea7b99bb48212341bab228ec8d3de7be78f6e5a618d899f",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0040",
+    "scenario_id": "M2S6-A01-hint-1"
+  },
+  {
+    "common_state_sha256": "7db1f5439e19b6ad82d97dc85775166d62854f40d3274b55d4bccc1cdb6095cb",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0041",
+    "scenario_id": "M2S6-F05-hint-3"
+  },
+  {
+    "common_state_sha256": "9a1120ce6f3e07d99e2f26366f6f6b99073b34f910cf517d66e62e0b9f54429f",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0042",
+    "scenario_id": "M2S6-E06-explanation"
+  },
+  {
+    "common_state_sha256": "26b49a2f4150ec6892295fb69ede1ea64e65c0d1831158a89426ee767bbc8328",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0043",
+    "scenario_id": "M2S6-A01-wrong-D-A01-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "74938b7d8185111fd828e99353613abc3334285a25021f87cf9cb1dfb9104dad",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0044",
+    "scenario_id": "M2S6-A10-explanation"
+  },
+  {
+    "common_state_sha256": "383ccec68c2868fbfb2a27e0e6c5cf56a79cc0d174b3aba8ff42089d3957f913",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0045",
+    "scenario_id": "M2S6-N05-wrong-D-N05-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "511bdd36ea60e3b6ac17d7e9700a4b957f2d62d4cd0b40209986b9310ce41a71",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0046",
+    "scenario_id": "M2S6-E03-example"
+  },
+  {
+    "common_state_sha256": "a2883a7e3c186842a8608a814654af19f94078abec2eee8235206fd086e65042",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0047",
+    "scenario_id": "M2S6-E03-wrong-D-E03-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "86c9ef108e83841a44876e238457f260d62c038f1e07dfbbbe6ef4d79289c34f",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0048",
+    "scenario_id": "M2S6-A10-hint-2"
+  },
+  {
+    "common_state_sha256": "53e50ef3cd8393369c410dc1261ffa345db7933cf86bcbf863a9e60c5fc66ec4",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0049",
+    "scenario_id": "M2S6-F05-hint-1"
+  },
+  {
+    "common_state_sha256": "6a1c883c4620c76addc414709f351b3e75e4ee0a9bf3ef14bca2a80b45feebf3",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0050",
+    "scenario_id": "M2S6-E09-wrong-D-E09-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "860d7bd1d5eb4072762691c7abc70f07b8f902eaaaccb70d0ec1fc71d2fc47aa",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0051",
+    "scenario_id": "M2S6-N08-wrong-D-N08-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "e4ff136d0071663f5b791447a31c3d7f8dcf488bf6578d737536926cb311ac28",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0052",
+    "scenario_id": "M2S6-E09-hint-2"
+  },
+  {
+    "common_state_sha256": "9d4f8cccfbc7f5d24e3712defc06a9ec3746a3324ba77deaf8d59ae6bc740b0b",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0053",
+    "scenario_id": "M2S6-F05-wrong-D-F05-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "90bd647de19068366a9c944963f667701a1b963bb3f5ce452294c078e74aefc6",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0054",
+    "scenario_id": "M2S6-F02-explanation"
+  },
+  {
+    "common_state_sha256": "bb76032e81bf34122f12a33920964d3d8c6b108a66a65e6b371c13c6d25002df",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0055",
+    "scenario_id": "M2S6-E03-wrong-D-E03-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "aed2c32d01445da89412c6447a9b220f8c39929efcd880965e6056f05e37054a",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0056",
+    "scenario_id": "M2S6-N02-hint-3"
+  },
+  {
+    "common_state_sha256": "51d1351d5a90fa1e1bad2ec5f9095910b55a4790328914ce6cf967e4689681df",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0057",
+    "scenario_id": "M2S6-F02-hint-2"
+  },
+  {
+    "common_state_sha256": "635b50d537e06dd1bdb830ce7487aca065ef39716f3032e54f9b4c075a3cd006",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0058",
+    "scenario_id": "M2S6-A04-hint-1"
+  },
+  {
+    "common_state_sha256": "f0c3f17296e305953152ce7d4f25845f8860776043ee1988e9e1d81051f17775",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0059",
+    "scenario_id": "M2S6-F02-wrong-D-F02-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "6467dca4fd19d45841567c1efe401e5563003e702ea3c2756ca279b23a49d44a",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0060",
+    "scenario_id": "M2S6-A07-wrong-D-A07-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "fbc585e6cb512cea6399a39727c93368cd976a0961eae68c3eee00151ea16fb9",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0061",
+    "scenario_id": "M2S6-A10-wrong-D-A10-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "13f30776cbac8b70e497c80f7094cbcdd04137c1341967b8dd3c88a693803c25",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0062",
+    "scenario_id": "M2S6-A04-explanation"
+  },
+  {
+    "common_state_sha256": "f946df7d2f89a6ee626c8d0750e6954073389e6d8dec1e3c4f81be1257e6e9be",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0063",
+    "scenario_id": "M2S6-A01-hint-2"
+  },
+  {
+    "common_state_sha256": "0cd004e7e78ecfd86bd833ad617c9f792d9c9f4776529d77cd596d98e8d08ed3",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0064",
+    "scenario_id": "M2S6-N05-explanation"
+  },
+  {
+    "common_state_sha256": "0e380202e1919f177f7fbde5a08e57295a4a6cdc69efc2fd84cea4da9a3052c9",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0065",
+    "scenario_id": "M2S6-E09-wrong-D-E09-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "3d3ec23b9cbc649c7d2b3a600c80a7aec1187380ca77b65bb03d87d1fd7478b1",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0066",
+    "scenario_id": "M2S6-N08-wrong-D-N08-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "a201a7a46876e23878df338d8798c6b48f1cf63dd5ab4764b7b4fb80d0566836",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0067",
+    "scenario_id": "M2S6-E03-hint-2"
+  },
+  {
+    "common_state_sha256": "fed62d26dd77b0306084b4ed2a68f92cd79aa0ff4bf5b2fa12f24ba89cb0e8dd",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0068",
+    "scenario_id": "M2S6-E06-wrong-D-E06-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "84767a14e9f89bfa998a9e17b2aa71c9a70c05f70dfec560f2ce870c9b846f24",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0069",
+    "scenario_id": "M2S6-F05-explanation"
+  },
+  {
+    "common_state_sha256": "c7b522b79b231903ee6bd376a20844e23b61b2de79e1f0d64e9c45538732947d",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0070",
+    "scenario_id": "M2S6-E03-hint-1"
+  },
+  {
+    "common_state_sha256": "1a9b8d9386828d6f7942a04eb1d21eb057c863ab5b764f3b0dbf820004c8871b",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0071",
+    "scenario_id": "M2S6-N05-example"
+  },
+  {
+    "common_state_sha256": "5e9848788a0b111985332b7405ea51e096409ea5efca331d377405f3ae59fb29",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0072",
+    "scenario_id": "M2S6-E06-wrong-D-E06-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "8cbc4d897f09963bc2dfec4e93f92aa471653d0240040d66502e01ce288ac4be",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0073",
+    "scenario_id": "M2S6-N05-hint-3"
+  },
+  {
+    "common_state_sha256": "1c619cb35a6b8159234ed36f9a1f32e41d8957b18a888d41216e341f7ad4f02a",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0074",
+    "scenario_id": "M2S6-A10-wrong-D-A10-M2-ORIG02-ERR-02"
+  },
+  {
+    "common_state_sha256": "96f1520ebda08bc69fbb13fada37ff097b01a03fd62a35a5736f49c7d736b041",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0075",
+    "scenario_id": "M2S6-F08-hint-2"
+  },
+  {
+    "common_state_sha256": "0c03dc681f940574135bf09969e39a3ec8d659876615c043a7458c1aef1aa698",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0076",
+    "scenario_id": "M2S6-A04-hint-2"
+  },
+  {
+    "common_state_sha256": "2e853817c6a1ada7f47d2df286c11cf0d47615ba582429dba43af880bacae614",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0077",
+    "scenario_id": "M2S6-F02-wrong-D-F02-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "d86d17cf418c4cd5442a0cb917e6202f036e94d2098edaa8c0356dc69b6eb56d",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0078",
+    "scenario_id": "M2S6-A10-hint-3"
+  },
+  {
+    "common_state_sha256": "6a04a3d501221a2d71745eeb70a13847b179492cd50fec7a1849d8809af9ca25",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0079",
+    "scenario_id": "M2S6-N08-example"
+  },
+  {
+    "common_state_sha256": "7257ddbd0e822b3589c79996960de225f058895e0d9c321371b545c11cf86159",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0080",
+    "scenario_id": "M2S6-E06-wrong-D-E06-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "b399799b21d632ddb960760e82e128bb58e7798c6359d7c4f5a257bccfc635b7",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0081",
+    "scenario_id": "M2S6-E09-hint-3"
+  },
+  {
+    "common_state_sha256": "12f0ee88e017cb2f9477bb9a6693305b5774d6b79616792e3dc1b8f11f17c085",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0082",
+    "scenario_id": "M2S6-E09-explanation"
+  },
+  {
+    "common_state_sha256": "6c90428ebf39866539ec058a528194da5f87bab013512cf9f878a31764503fda",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0083",
+    "scenario_id": "M2S6-F08-hint-1"
+  },
+  {
+    "common_state_sha256": "2eea6200cae48f1cb9ae01d3166c3f81625b1c6ebfad71d7d60cdd8ca249e807",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0084",
+    "scenario_id": "M2S6-N02-explanation"
+  },
+  {
+    "common_state_sha256": "b502b358fc88ca68ea30d74de86f289b16e4ce440ccaf5b003b223857110d927",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0085",
+    "scenario_id": "M2S6-F05-example"
+  },
+  {
+    "common_state_sha256": "9e5c7b333451ef0abec8ce04ffbb7b0dcb88bbdef0a59c20c6fee7b31a4ae117",
+    "concept_id": "A07",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0086",
+    "scenario_id": "M2S6-A07-hint-1"
+  },
+  {
+    "common_state_sha256": "db582ba3d44f7a60b840ac0c341d360feb61f796a85ba3a8a95c641a4ab2fd7a",
+    "concept_id": "F05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0087",
+    "scenario_id": "M2S6-F05-wrong-D-F05-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "13aebf5469cc45684588fd25413900ff2af0e3348d0dd01380a450e420a9a903",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0088",
+    "scenario_id": "M2S6-A10-wrong-D-A10-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "db5b390fd3089f9b5f9e09a458c96ede6aae6794e68a5313dadd9acfda6c517f",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0089",
+    "scenario_id": "M2S6-E06-example"
+  },
+  {
+    "common_state_sha256": "e34925ffb1a03cc87af8ec0f7249441048eb71828f1a607e2e92d5e744020d47",
+    "concept_id": "E09",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0090",
+    "scenario_id": "M2S6-E09-example"
+  },
+  {
+    "common_state_sha256": "ccaacc35112731c1e55e0047e332ba136653213245697acbe30ae170a93f3e56",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0091",
+    "scenario_id": "M2S6-A04-wrong-D-A04-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "9755a1a73f3849af0bed0ad6f227f2a2b3aec23416c5412a3b87e8f135689555",
+    "concept_id": "N08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0092",
+    "scenario_id": "M2S6-N08-hint-2"
+  },
+  {
+    "common_state_sha256": "427a5f63b662ef4a25c4b06111af9d0910a20c884a3a0ff0375ff0e3d89ef6e4",
+    "concept_id": "N05",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0093",
+    "scenario_id": "M2S6-N05-wrong-D-N05-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "aba19a414a5f5106745abc06aca90903f93deb0d90528fe32126c2cd1bbcdd5b",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0094",
+    "scenario_id": "M2S6-N02-hint-1"
+  },
+  {
+    "common_state_sha256": "320c25006a17d0ee57505c81a47c9c7b931b99ff1780d8f593af4426f40c3773",
+    "concept_id": "A10",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0095",
+    "scenario_id": "M2S6-A10-example"
+  },
+  {
+    "common_state_sha256": "fe59b01c1a9edf4baff59a734142cf8729e41d2164f0b727ac263529f3baadf7",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0096",
+    "scenario_id": "M2S6-N02-hint-2"
+  },
+  {
+    "common_state_sha256": "556e5e5d3b9e6fa5ea183a106614630a56b4ad94f91f3e11e70f74cb65573c9b",
+    "concept_id": "E06",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0097",
+    "scenario_id": "M2S6-E06-hint-2"
+  },
+  {
+    "common_state_sha256": "9c31d381c575a7e94fcee8ee82d60f5d308f0815ab74a05b2fa9b6b9ee8765b4",
+    "concept_id": "E03",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0098",
+    "scenario_id": "M2S6-E03-wrong-D-E03-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "dcb8622be0465db9206657c6f7c06f833fdc1c7311b1ee6324fe1f6e1b2bbfd5",
+    "concept_id": "A04",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0099",
+    "scenario_id": "M2S6-A04-hint-3"
+  },
+  {
+    "common_state_sha256": "118b4df6f4550ec77fe3b9a82a467e9ff033c3cd82df9625dfd47046977aad32",
+    "concept_id": "N02",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0100",
+    "scenario_id": "M2S6-N02-wrong-D-N02-M2-ORIG02-ERR-01"
+  },
+  {
+    "common_state_sha256": "ffcf5328fb788523b6bcf59bf88dcf77e7594e4be9c6d5ced15168ddb753f24a",
+    "concept_id": "F08",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0101",
+    "scenario_id": "M2S6-F08-wrong-D-F08-M2-ORIG02-ERR-03"
+  },
+  {
+    "common_state_sha256": "0577bc2603b3a181339feb9d4750e6a342ac58c6090b7813f75e56cea911ebbc",
+    "concept_id": "A01",
+    "configuration_by_label": {
+      "A": "full",
+      "B": "no_rag"
+    },
+    "pair_id": "PAIR-0102",
+    "scenario_id": "M2S6-A01-example"
+  },
+  {
+    "common_state_sha256": "54e15b64fff17bd4280640fa73fc6bb79fd0813aaac62286411db8e1e4cfcdd7",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0103",
+    "scenario_id": "M2S6-F02-hint-1"
+  },
+  {
+    "common_state_sha256": "60876fc7eaefaa4b2ec506d602378a9f9b13d00ae041e83e7587ba6faa463104",
+    "concept_id": "F02",
+    "configuration_by_label": {
+      "A": "no_rag",
+      "B": "full"
+    },
+    "pair_id": "PAIR-0104",
+    "scenario_id": "M2S6-F02-example"
+  }
+]

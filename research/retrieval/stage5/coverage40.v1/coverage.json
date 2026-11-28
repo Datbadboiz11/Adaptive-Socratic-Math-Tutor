@@ -1,0 +1,2859 @@
+{
+  "concepts": [
+    {
+      "alignment": {
+        "grade_levels": [
+          7
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "evaluate"
+      ],
+      "blockers": [],
+      "concept_id": "A01",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "76541e7a5d638981533d2f23df1670e1e22628438c29ef19410f945de2c9522e",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "N03"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A01-EXPLAIN",
+        "S5-A01-HINT",
+        "S5-A01-EXAMPLE",
+        "S5-A01-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Thay một giá trị hữu tỉ vào đa thức một biến rồi tính chính xác.",
+          "skill_id": "SK-A01-EVALUATE"
+        }
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Giá trị hữu tỉ"
+      ],
+      "title": "Thay giá trị vào biểu thức"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A02",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến.",
+      "owner": "Member 3",
+      "pack_review_status": "draft",
+      "pack_sha256": "7fe215de463afcd0ba5a59c4c457bb1d3fee1b97552e6be957013cd52f45700c",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [
+        "N01",
+        "N02"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A02-EXPLAIN",
+        "S5-A02-HINT",
+        "S5-A02-EXAMPLE",
+        "S5-A02-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Khai triển một hằng số nhân với tổng hoặc hiệu một biến.",
+          "skill_id": "SK-A02-DISTRIBUTE"
+        }
+      ],
+      "supported_forms": [
+        "Hằng số nhân nhị thức",
+        "Hệ số âm",
+        "Đặt nhân tử chung tuyến tính"
+      ],
+      "title": "Tính phân phối"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A03",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Gom các hạng tử có cùng phần biến và tính hệ số mới.",
+      "owner": "Member 1",
+      "pack_review_status": "draft",
+      "pack_sha256": "973f48ff0bd422846cd66651a4018ebbc036b049c7a8ed1ae0cb66b23b4d4ad1",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [
+        "A01",
+        "N01"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A03-EXPLAIN",
+        "S5-A03-HINT",
+        "S5-A03-EXAMPLE",
+        "S5-A03-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Gom các hạng tử có cùng phần biến và tính hệ số mới.",
+          "skill_id": "SK-A03-COLLECT"
+        }
+      ],
+      "supported_forms": [
+        "Đa thức một biến bậc không quá hai",
+        "Dấu ngoặc có dấu âm"
+      ],
+      "title": "Thu gọn hạng tử đồng dạng"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          7,
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "polynomial"
+      ],
+      "blockers": [],
+      "concept_id": "A04",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Nhân các đa thức trong các dạng đã mô tả.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "c6ff5eb08d58d5b2f76732dec4f0e0aab01012fe661b05820ee134d89d92289f",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A02",
+        "A03"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A04-EXPLAIN",
+        "S5-A04-HINT",
+        "S5-A04-EXAMPLE",
+        "S5-A04-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Nhân các đa thức trong các dạng đã mô tả.",
+          "skill_id": "SK-A04-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Đơn thức nhân đa thức",
+        "Tích hai nhị thức"
+      ],
+      "title": "Nhân đơn thức và đa thức"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A05",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A04"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A05-EXPLAIN",
+        "S5-A05-HINT",
+        "S5-A05-EXAMPLE",
+        "S5-A05-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Khai triển hoặc nhận dạng bình phương một tổng và hiệu.",
+          "skill_id": "SK-A05-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Nhị thức một biến"
+      ],
+      "title": "Bình phương một tổng/hiệu"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A06",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Khai triển hoặc phân tích hiệu hai bình phương.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A04"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A06-EXPLAIN",
+        "S5-A06-HINT",
+        "S5-A06-EXAMPLE",
+        "S5-A06-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Khai triển hoặc phân tích hiệu hai bình phương.",
+          "skill_id": "SK-A06-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hai bình phương của biểu thức đơn giản"
+      ],
+      "title": "Hiệu hai bình phương"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "factored_polynomial"
+      ],
+      "blockers": [],
+      "concept_id": "A07",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Tìm nhân tử chung và viết đa thức thành tích.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "296f8277160425b35d023f63773707f18171e11fd8873bdf9f7fc90817ccc214",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A02",
+        "A03"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A07-EXPLAIN",
+        "S5-A07-HINT",
+        "S5-A07-EXAMPLE",
+        "S5-A07-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Tìm nhân tử chung và viết đa thức thành tích.",
+          "skill_id": "SK-A07-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Đa thức có nhân tử chung"
+      ],
+      "title": "Phân tích nhân tử bằng đặt nhân tử chung"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A08",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A05",
+        "A06",
+        "A07"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A08-EXPLAIN",
+        "S5-A08-HINT",
+        "S5-A08-EXAMPLE",
+        "S5-A08-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Chọn hằng đẳng thức hoặc nhóm phù hợp để phân tích.",
+          "skill_id": "SK-A08-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Dạng hằng đẳng thức",
+        "Nhóm bốn hạng tử"
+      ],
+      "title": "Phân tích nhân tử bằng hằng đẳng thức/nhóm"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "A09",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Giữ điều kiện ban đầu khi rút gọn phân thức.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A08"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A09-EXPLAIN",
+        "S5-A09-HINT",
+        "S5-A09-EXAMPLE",
+        "S5-A09-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Giữ điều kiện ban đầu khi rút gọn phân thức.",
+          "skill_id": "SK-A09-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Phân thức một biến có nhân tử chung"
+      ],
+      "title": "Rút gọn phân thức và điều kiện xác định"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 7–8, PDF trang 55–70",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "rational_operation"
+      ],
+      "blockers": [],
+      "concept_id": "A10",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Thực hiện phép toán phân thức kèm điều kiện.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "f8e81a02391728bef74dd8e969b64ab639640e4055213ba2861bcd93aaa0a602",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A09",
+        "N06",
+        "N07"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-A10-EXPLAIN",
+        "S5-A10-HINT",
+        "S5-A10-EXAMPLE",
+        "S5-A10-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Thực hiện phép toán phân thức kèm điều kiện.",
+          "skill_id": "SK-A10-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Phân thức một biến"
+      ],
+      "title": "Cộng trừ nhân chia phân thức"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "linear_equation"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E01",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất.",
+      "owner": "Member 3",
+      "pack_review_status": "draft",
+      "pack_sha256": "0117e73bd45a0519904c4f8069da13fabc894b2986c8d855a1ab2531f4ec89ae",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [
+        "N01",
+        "N02"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E01-EXPLAIN",
+        "S5-E01-HINT",
+        "S5-E01-EXAMPLE",
+        "S5-E01-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Kiểm tra chuyển bước giữa các phương trình bậc nhất có nghiệm duy nhất.",
+          "skill_id": "SK-E01-EQUIVALENCE"
+        }
+      ],
+      "supported_forms": [
+        "Cộng trừ cùng hằng số ở hai vế",
+        "Nhân chia cùng số khác không",
+        "Khai triển hai vế"
+      ],
+      "title": "Phép biến đổi tương đương và điều kiện"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "linear_equation"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E02",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ.",
+      "owner": "Member 1",
+      "pack_review_status": "draft",
+      "pack_sha256": "0f6a9bd594145a85480182575cd1f37710f32eb9b029f829eddabe9c7fccb264",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [
+        "A02",
+        "A03",
+        "E01"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E02-EXPLAIN",
+        "S5-E02-HINT",
+        "S5-E02-EXAMPLE",
+        "S5-E02-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Giải phương trình bậc nhất một ẩn trên số thực bằng biến đổi hợp lệ.",
+          "skill_id": "SK-E02-SOLVE"
+        }
+      ],
+      "supported_forms": [
+        "ax+b=c",
+        "a(x+b)=c",
+        "ax+b=cx+d"
+      ],
+      "title": "Phương trình bậc nhất một ẩn"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "word_equation"
+      ],
+      "blockers": [],
+      "concept_id": "E03",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Chọn ẩn và lập phương trình có đơn vị và điều kiện.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "1528fb62ba177a43957b3901293d964bea918842334c6f55525d50386eed76b2",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A01",
+        "E02"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E03-EXPLAIN",
+        "S5-E03-HINT",
+        "S5-E03-EXAMPLE",
+        "S5-E03-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Chọn ẩn và lập phương trình có đơn vị và điều kiện.",
+          "skill_id": "SK-E03-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Bài toán một đại lượng chưa biết"
+      ],
+      "title": "Lập phương trình từ bài toán bằng lời"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E04",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Giải phương trình tích bằng tính chất tích bằng không.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A08",
+        "E02"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E04-EXPLAIN",
+        "S5-E04-HINT",
+        "S5-E04-EXAMPLE",
+        "S5-E04-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Giải phương trình tích bằng tính chất tích bằng không.",
+          "skill_id": "SK-E04-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Tích hai nhân tử bậc nhất"
+      ],
+      "title": "Phương trình tích"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E05",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A09",
+        "E02"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E05-EXPLAIN",
+        "S5-E05-HINT",
+        "S5-E05-EXAMPLE",
+        "S5-E05-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Nêu điều kiện xác định và loại nghiệm không thỏa sau biến đổi.",
+          "skill_id": "SK-E05-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Phương trình quy về bậc nhất"
+      ],
+      "title": "Phương trình chứa ẩn ở mẫu"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "quadratic_roots"
+      ],
+      "blockers": [],
+      "concept_id": "E06",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Phân loại số nghiệm và giải phương trình bậc hai.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "d290eecb027e19c5c019d2a4387511fe9efb5b774f144f6a32fb7b02e363fb0c",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A05",
+        "E01",
+        "N10"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E06-EXPLAIN",
+        "S5-E06-HINT",
+        "S5-E06-EXAMPLE",
+        "S5-E06-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Phân loại số nghiệm và giải phương trình bậc hai.",
+          "skill_id": "SK-E06-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Phương trình bậc hai hệ số hữu tỉ"
+      ],
+      "title": "Phương trình bậc hai và biệt thức"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E07",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "E06"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E07-EXPLAIN",
+        "S5-E07-HINT",
+        "S5-E07-EXAMPLE",
+        "S5-E07-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Liên hệ tổng và tích nghiệm với hệ số khi có căn cứ về nghiệm.",
+          "skill_id": "SK-E07-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Tổng tích hai nghiệm"
+      ],
+      "title": "Hệ thức Viète cơ bản"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E08",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Thế một biểu thức để giải hệ hai phương trình.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "A01",
+        "E02"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E08-EXPLAIN",
+        "S5-E08-HINT",
+        "S5-E08-EXAMPLE",
+        "S5-E08-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Thế một biểu thức để giải hệ hai phương trình.",
+          "skill_id": "SK-E08-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "title": "Giải hệ bậc nhất bằng thế"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "linear_elimination"
+      ],
+      "blockers": [],
+      "concept_id": "E09",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Khử một ẩn bằng phép cộng hai phương trình tương đương.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "27bf15183d0270c20b81bdbaae7ff1c5108bd2738cacd65662b1ef4859d275c9",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A03",
+        "E02"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E09-EXPLAIN",
+        "S5-E09-HINT",
+        "S5-E09-EXAMPLE",
+        "S5-E09-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Khử một ẩn bằng phép cộng hai phương trình tương đương.",
+          "skill_id": "SK-E09-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hệ hai ẩn nghiệm duy nhất"
+      ],
+      "title": "Giải hệ bậc nhất bằng cộng đại số"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          9
+        ],
+        "locator": "Phần lớp 8–9, PDF trang 63–78",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "E10",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Giải bất phương trình, đổi chiều khi nhân chia số âm.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "E01",
+        "N01",
+        "N02"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-E10-EXPLAIN",
+        "S5-E10-HINT",
+        "S5-E10-EXAMPLE",
+        "S5-E10-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Giải bất phương trình, đổi chiều khi nhân chia số âm.",
+          "skill_id": "SK-E10-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Bất phương trình một ẩn"
+      ],
+      "title": "Bất phương trình bậc nhất và quy tắc đổi chiều"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8,
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "evaluate"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F01",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính giá trị hàm từ công thức một biến ở điểm đã cho.",
+      "owner": "Member 1",
+      "pack_review_status": "draft",
+      "pack_sha256": "763a6ab2d05713bcc8e2124f0c0d15e9872c27c494f66c9697d3ccc289ce67ed",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [
+        "A01"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F01-EXPLAIN",
+        "S5-F01-HINT",
+        "S5-F01-EXAMPLE",
+        "S5-F01-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính giá trị hàm từ công thức một biến ở điểm đã cho.",
+          "skill_id": "SK-F01-VALUE"
+        }
+      ],
+      "supported_forms": [
+        "Hàm đa thức bậc không quá hai",
+        "Bảng giá trị từ công thức"
+      ],
+      "title": "Khái niệm hàm số và giá trị hàm"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "function_domain"
+      ],
+      "blockers": [],
+      "concept_id": "F02",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Xác định các điều kiện của biểu thức hàm.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "05d032f53ad761d31b64e6dae6b9dc73084824ba22833c4cdd7dee40b83b7717",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A09",
+        "F01",
+        "N10"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F02-EXPLAIN",
+        "S5-F02-HINT",
+        "S5-F02-EXAMPLE",
+        "S5-F02-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Xác định các điều kiện của biểu thức hàm.",
+          "skill_id": "SK-F02-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hàm chứa mẫu",
+        "Hàm căn bậc hai"
+      ],
+      "title": "Tập xác định"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          8
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F03",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Xác định và diễn giải các hệ số của hàm bậc nhất.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "F01"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F03-EXPLAIN",
+        "S5-F03-HINT",
+        "S5-F03-EXAMPLE",
+        "S5-F03-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Xác định và diễn giải các hệ số của hàm bậc nhất.",
+          "skill_id": "SK-F03-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hàm y=ax+b"
+      ],
+      "title": "Hệ số góc và giá trị ban đầu của hàm bậc nhất"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F04",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tìm giao điểm trục hoành và xét dấu trên các khoảng.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "E02",
+        "F03"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F04-EXPLAIN",
+        "S5-F04-HINT",
+        "S5-F04-EXAMPLE",
+        "S5-F04-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tìm giao điểm trục hoành và xét dấu trên các khoảng.",
+          "skill_id": "SK-F04-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hàm bậc nhất có hệ số khác không"
+      ],
+      "title": "Nghiệm và dấu hàm bậc nhất"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "quadratic_axis",
+        "quadratic_vertex"
+      ],
+      "blockers": [],
+      "concept_id": "F05",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "164ecc17ec56f73420fe5604835e053480ee3e8f7a58be2d7e3c2273c0f2537b",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "A05",
+        "F01"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F05-EXPLAIN",
+        "S5-F05-HINT",
+        "S5-F05-EXAMPLE",
+        "S5-F05-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Tính tọa độ đỉnh từ đa thức bậc hai; suy ra trục đối xứng.",
+          "skill_id": "SK-F05-VERTEX"
+        }
+      ],
+      "supported_forms": [
+        "ax*x+b*x+c với a khác không",
+        "Dạng hoàn thành bình phương"
+      ],
+      "title": "Đỉnh và trục đối xứng của hàm bậc hai"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F06",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "F05"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F06-EXPLAIN",
+        "S5-F06-HINT",
+        "S5-F06-EXAMPLE",
+        "S5-F06-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Dùng đỉnh và dấu hệ số bậc hai để xác định khoảng biến thiên.",
+          "skill_id": "SK-F06-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hàm bậc hai"
+      ],
+      "title": "Khoảng đồng biến/nghịch biến của hàm bậc hai"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          10
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F07",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Xét dấu theo nghiệm và dấu hệ số bậc hai.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "E06",
+        "E10",
+        "F05"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F07-EXPLAIN",
+        "S5-F07-HINT",
+        "S5-F07-EXAMPLE",
+        "S5-F07-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Xét dấu theo nghiệm và dấu hệ số bậc hai.",
+          "skill_id": "SK-F07-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Tam thức và bất phương trình bậc hai"
+      ],
+      "title": "Dấu tam thức bậc hai và bất phương trình bậc hai"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "exponent_numeric"
+      ],
+      "blockers": [],
+      "concept_id": "F08",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "296adf9cf47bb8ed3e980a6061f22a9dfcc0606035d12894ef1f8c1ad3aaa05f",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "F01",
+        "N09"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F08-EXPLAIN",
+        "S5-F08-HINT",
+        "S5-F08-EXAMPLE",
+        "S5-F08-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Sử dụng quy tắc lũy thừa có kiểm tra cơ số và miền xác định.",
+          "skill_id": "SK-F08-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hàm mũ cơ số dương khác một"
+      ],
+      "title": "Hàm số mũ và quy tắc lũy thừa với điều kiện áp dụng"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F09",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Dùng định nghĩa và quy tắc logarit kèm điều kiện.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "F08"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-30",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F09-EXPLAIN",
+        "S5-F09-HINT",
+        "S5-F09-EXAMPLE",
+        "S5-F09-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Dùng định nghĩa và quy tắc logarit kèm điều kiện.",
+          "skill_id": "SK-F09-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Logarit cơ số dương khác một"
+      ],
+      "title": "Logarit và quy tắc logarit"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          11
+        ],
+        "locator": "Phần lớp 8, 10–11, PDF trang 63–70, 79–104",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "F10",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Giải phương trình cơ bản và đối chiếu điều kiện.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "E01",
+        "F09"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-F10-EXPLAIN",
+        "S5-F10-HINT",
+        "S5-F10-EXAMPLE",
+        "S5-F10-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Giải phương trình cơ bản và đối chiếu điều kiện.",
+          "skill_id": "SK-F10-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Dạng cùng cơ số",
+        "Dạng dùng định nghĩa logarit"
+      ],
+      "title": "Phương trình mũ/logarit cơ bản"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release"
+      ],
+      "concept_id": "N01",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả.",
+      "owner": "Member 1",
+      "pack_review_status": "draft",
+      "pack_sha256": "b4e91e09ba6c1708999fd011f36a7b467c899157e02493545d6b5b73030f1a09",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N01-EXPLAIN",
+        "S5-N01-HINT",
+        "S5-N01-EXAMPLE",
+        "S5-N01-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính tổng hoặc hiệu hai số nguyên, giải thích dấu của kết quả.",
+          "skill_id": "SK-N01-SIGNED-ADD"
+        }
+      ],
+      "supported_forms": [
+        "Cộng hai số nguyên",
+        "Trừ hai số nguyên",
+        "Trừ số âm"
+      ],
+      "title": "Cộng trừ số có dấu"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "blockers": [],
+      "concept_id": "N02",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "e88c8c417bf60a99cbd266f0cdda94da959e9ac0dce130db72625179150b0338",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "N01"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "ambiguous",
+        "misconception",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N02-EXPLAIN",
+        "S5-N02-HINT",
+        "S5-N02-EXAMPLE",
+        "S5-N02-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Tính tích hoặc thương hai số nguyên và áp dụng quy tắc dấu.",
+          "skill_id": "SK-N02-SIGNED-MUL"
+        }
+      ],
+      "supported_forms": [
+        "Tích hai số nguyên",
+        "Thương nguyên khác không",
+        "Tích với nhiều dấu"
+      ],
+      "title": "Nhân chia số có dấu"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release",
+        "proposed_checker_binding_needs_review"
+      ],
+      "concept_id": "N03",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán.",
+      "owner": "Member 3",
+      "pack_review_status": "draft",
+      "pack_sha256": "14ec336b4e133d59500b3a8123815de18d95f31b96ff6124ca08cd650edc5f8d",
+      "pack_source": "content/authoring/batches/stage5-expansion.v1/draft-bank.json",
+      "pack_version": "0.5.0-stage5-draft",
+      "prerequisite_concept_ids": [
+        "N01",
+        "N02"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N03-EXPLAIN",
+        "S5-N03-HINT",
+        "S5-N03-EXAMPLE",
+        "S5-N03-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Thực hiện biểu thức số theo dấu ngoặc và thứ tự phép toán.",
+          "skill_id": "SK-N03-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Biểu thức số có ngoặc",
+        "Phép nhân trước cộng trừ"
+      ],
+      "title": "Thứ tự phép tính"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release",
+        "reduced_fraction_form_not_measured_by_numeric_equivalence"
+      ],
+      "concept_id": "N04",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị.",
+      "owner": "Member 1",
+      "pack_review_status": "draft",
+      "pack_sha256": "b7d926c6cdd510eaec52f7b1e9a577bf43436850e86e5365e861e86824bfea1d",
+      "pack_source": "content/curriculum/pilot.v2.json",
+      "pack_version": "0.2.0",
+      "prerequisite_concept_ids": [],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N04-EXPLAIN",
+        "S5-N04-HINT",
+        "S5-N04-EXAMPLE",
+        "S5-N04-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Rút gọn phân số và kiểm tra hai phân số có cùng giá trị.",
+          "skill_id": "SK-N04-FRACTION-VALUE"
+        }
+      ],
+      "supported_forms": [
+        "Rút gọn phân số",
+        "Phân số âm",
+        "Kiểm tra giá trị phân số"
+      ],
+      "title": "Phân số tương đương và rút gọn"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "fraction_compare"
+      ],
+      "blockers": [],
+      "concept_id": "N05",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Quy đồng hai phân số rồi so sánh giá trị.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "964eb94e08d1b373c049ec885d8237d920ee3038dfbe6d4059c2a9743a1c3b01",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "N04"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N05-EXPLAIN",
+        "S5-N05-HINT",
+        "S5-N05-EXAMPLE",
+        "S5-N05-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Quy đồng hai phân số rồi so sánh giá trị.",
+          "skill_id": "SK-N05-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số mẫu khác nhau"
+      ],
+      "title": "Quy đồng và so sánh phân số"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "numeric"
+      ],
+      "blockers": [
+        "pack_review_pending",
+        "not_in_serving_release",
+        "proposed_checker_binding_needs_review"
+      ],
+      "concept_id": "N06",
+      "errors": 2,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính tổng hoặc hiệu các phân số với mẫu khác không.",
+      "owner": "Member 3",
+      "pack_review_status": "draft",
+      "pack_sha256": "0e16664462d963d5779d7f67585b6c0ea5a90a7a534193bea23bf605ee7b60ae",
+      "pack_source": "content/authoring/batches/stage5-expansion.v1/draft-bank.json",
+      "pack_version": "0.5.0-stage5-draft",
+      "prerequisite_concept_ids": [
+        "N05"
+      ],
+      "problems": 6,
+      "proposed_batch": "complete-22",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N06-EXPLAIN",
+        "S5-N06-HINT",
+        "S5-N06-EXAMPLE",
+        "S5-N06-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính tổng hoặc hiệu các phân số với mẫu khác không.",
+          "skill_id": "SK-N06-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số",
+        "Biểu thức phân số đơn giản"
+      ],
+      "title": "Cộng trừ phân số"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "N07",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính tích hoặc thương phân số và kiểm tra số chia khác không.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "N02",
+        "N04"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N07-EXPLAIN",
+        "S5-N07-HINT",
+        "S5-N07-EXAMPLE",
+        "S5-N07-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính tích hoặc thương phân số và kiểm tra số chia khác không.",
+          "skill_id": "SK-N07-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Hai phân số",
+        "Chia phân số khác không"
+      ],
+      "title": "Nhân chia phân số"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          6
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [
+        "number_conversion"
+      ],
+      "blockers": [],
+      "concept_id": "N08",
+      "errors": 3,
+      "examples": 3,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 3,
+      "has_pack": true,
+      "last_human_review_at": "2026-11-24T22:17:10+07:00",
+      "missing_approved_examples": 0,
+      "missing_approved_problems": 0,
+      "objective": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn.",
+      "owner": "Member 2",
+      "pack_review_status": "human_approved",
+      "pack_sha256": "4f34368b6ea07711f6b7aa491d4bf481e871a3706c5d20ed43cfffa6d4f652db",
+      "pack_source": "content/authoring/batches/member2-original.v2/approved-bank.json",
+      "pack_version": "0.4.0-member2-review",
+      "prerequisite_concept_ids": [
+        "N04"
+      ],
+      "problems": 6,
+      "proposed_batch": "serving-13",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N08-EXPLAIN",
+        "S5-N08-HINT",
+        "S5-N08-EXAMPLE",
+        "S5-N08-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "dev",
+      "reviewer": "Member 3",
+      "serving": true,
+      "skills": [
+        {
+          "observable_behavior": "Chuyển đổi các biểu diễn số trong các trường hợp hữu hạn.",
+          "skill_id": "SK-N08-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Phân số có thập phân hữu hạn",
+        "Phần trăm"
+      ],
+      "title": "Chuyển đổi phân số–thập phân–phần trăm"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          7,
+          11
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "N09",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính lũy thừa và áp dụng quy tắc trong miền xác định.",
+      "owner": "Member 3",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "N02"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "out_of_scope",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N09-EXPLAIN",
+        "S5-N09-HINT",
+        "S5-N09-EXAMPLE",
+        "S5-N09-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 1",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính lũy thừa và áp dụng quy tắc trong miền xác định.",
+          "skill_id": "SK-N09-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Lũy thừa số",
+        "Số mũ nguyên âm với cơ số khác không"
+      ],
+      "title": "Lũy thừa với số mũ nguyên"
+    },
+    {
+      "alignment": {
+        "grade_levels": [
+          7,
+          9
+        ],
+        "locator": "Phần lớp 6–7, PDF trang 46–62",
+        "reviewer": "Nhóm dự án (Member 1, Member 2 và Member 3)",
+        "source_id": "SRC-MATH-2018",
+        "status": "human_approved"
+      },
+      "authoring_task_kinds": [],
+      "blockers": [
+        "missing_pack",
+        "authoring_scope_undefined",
+        "not_in_serving_release"
+      ],
+      "concept_id": "N10",
+      "errors": 0,
+      "examples": 0,
+      "excluded_forms": [
+        "Dạng ngoài danh sách hỗ trợ",
+        "OCR, hình học hoặc lời giải tự do chưa có quy tắc kiểm chứng"
+      ],
+      "families": 0,
+      "has_pack": false,
+      "last_human_review_at": null,
+      "missing_approved_examples": 3,
+      "missing_approved_problems": 6,
+      "objective": "Tính căn bậc hai số học và nêu điều kiện không âm.",
+      "owner": "Member 1",
+      "pack_review_status": null,
+      "pack_sha256": null,
+      "pack_source": null,
+      "pack_version": null,
+      "prerequisite_concept_ids": [
+        "N09"
+      ],
+      "problems": 0,
+      "proposed_batch": "expand-40",
+      "query_classes": [
+        "misconception",
+        "no_eligible_content",
+        "paraphrase",
+        "typo"
+      ],
+      "query_ids": [
+        "S5-N10-EXPLAIN",
+        "S5-N10-HINT",
+        "S5-N10-EXAMPLE",
+        "S5-N10-CONTROL"
+      ],
+      "query_purposes": [
+        "example",
+        "explanation",
+        "hint"
+      ],
+      "query_split": "test_candidate",
+      "reviewer": "Member 2",
+      "serving": false,
+      "skills": [
+        {
+          "observable_behavior": "Tính căn bậc hai số học và nêu điều kiện không âm.",
+          "skill_id": "SK-N10-PRIMARY"
+        }
+      ],
+      "supported_forms": [
+        "Căn của số chính phương",
+        "Điều kiện căn số học"
+      ],
+      "title": "Căn bậc hai số học"
+    }
+  ],
+  "summary": {
+    "approved_serving_concepts": 13,
+    "concepts_with_pack": 22,
+    "examples_in_distinct_concept_packs": 66,
+    "missing_approved_examples": 81,
+    "missing_approved_problems": 162,
+    "new_draft_concepts": 2,
+    "problems_in_distinct_concept_packs": 132,
+    "registry_concepts": 40
+  }
+}

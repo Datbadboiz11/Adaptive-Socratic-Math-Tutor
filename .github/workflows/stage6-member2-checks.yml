@@ -1,0 +1,58 @@
+name: Stage 6 Member 2 evaluation tooling
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage6-offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_DB: stage6_test
+          POSTGRES_USER: stage6_test
+          POSTGRES_PASSWORD: ci-test-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U stage6_test -d stage6_test"
+          --health-interval 5s --health-timeout 3s --health-retries 15
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGDATABASE: stage6_test
+      PGUSER: stage6_test
+      PGPASSWORD: ci-test-only
+      RUN_DB_TESTS: '1'
+      PYTHONPATH: backend
+      LLM_ENABLED: 'false'
+      AUTHORING_LLM_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r backend/requirements-dev.txt
+      - name: Verify scoped inputs and dev protocol
+        run: |
+          python scripts/retrieval/prepare_member2_stage5.py --check
+          python scripts/retrieval/run_member2_stage6.py --audit-only
+      - name: Check metrics, cache controls, blind packets and scope
+        run: >-
+          python -m pytest tests/test_member2_stage6.py tests/test_stage6_ratings.py
+          tests/test_member2_stage6_db.py tests/test_member2_stage5.py
+          tests/test_kb_unit.py tests/test_stage3_completion.py
+          -q --junitxml=artifacts/stage6-offline-tests.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage6-member2-offline-evidence
+          path: artifacts/stage6-offline-tests.xml

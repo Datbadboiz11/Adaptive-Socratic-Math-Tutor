@@ -1,0 +1,482 @@
+{
+  "corpus_sha256": "69485f92d8d8b2906756303e69e0d337450ad286c9d9fa0f210af8a987488984",
+  "dataset_id": "stage5-member2-13-dev-1.0.0",
+  "judgments": [
+    {
+      "content_id": "A01-explanation",
+      "content_sha256": "6d78ba8c7af23b4aedb538f08eb8215d2e85d871e9ad32784b625ff0c20c1289",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-1",
+      "content_sha256": "8c8c90d2159b3f6691e0a6ed0bc12dc4c126b082c3c094810066d53c015af8b1",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A01-hint-2",
+      "content_sha256": "cca530d8398f3d74b68914e1f803524c7e3ba1bf74d1e5dde08e0b7e9c5f0003",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A01-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-explanation",
+      "content_sha256": "3e4bec18668a7d16138c7e793529dd6bcce615d627af61f91d933cf7f2eaaca9",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-1",
+      "content_sha256": "42a1b9ce1ae7387b0263f6f0ef6e22dc93383d714e7756995a3b24beca3fa0c2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A04-hint-2",
+      "content_sha256": "71acdde04b6e522fc71caa33923bbcba7ba377f4fa85606ea5336ac20377dcc2",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A04-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-explanation",
+      "content_sha256": "b1aad8f26e4d0be63a8a8a8acb048822ae44ac172e7cfbfa64402973299e5c56",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-1",
+      "content_sha256": "8095c1211db90c6df7c93d1b4c762e11ac7e3b5ef5c6cd7a771531e5b921a988",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A07-hint-2",
+      "content_sha256": "79141d676ff3952e87d959147b179be364b472cae0aa5d22313bb5d000fb1d07",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A07-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-explanation",
+      "content_sha256": "5602fb60838ad63b1e61b6824905298ea88b6a0e798b7d0c881e28614d71911a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-1",
+      "content_sha256": "c61ec379d1b02298e0801a9c0e623f3df24cb8ea03c822649f621810f2b8c9b3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "A10-hint-2",
+      "content_sha256": "2ccab7b64e998e04e45677027e3e5557550288b70976cb95faaa23af7277a41c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-A10-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-explanation",
+      "content_sha256": "93769bbec9965b1abbf9d544dbf652d8c12c264de8ee5f168848120c9441ab5a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-1",
+      "content_sha256": "d0ffb223c493740ca4d8e1d9f9f8134e8620396f876236ea7843f64670b43b66",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E03-hint-2",
+      "content_sha256": "bdc40d50ca0570fca14598e3781941dff0380ff025a708c51879dc1e6eb5b8b8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E03-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-explanation",
+      "content_sha256": "7afe5d65e84878147fa7524b58a945d359c73ece19d40b1b9c2f6ce8d4678602",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-1",
+      "content_sha256": "16538f9008d6ffe73527b62232675cb878ae5b8ae12eecca2e74c535e847635a",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E06-hint-2",
+      "content_sha256": "3b1721a72c2f907369f8d05d815c6d956bb71475f8caad8693a9113068da7dd6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E06-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-explanation",
+      "content_sha256": "4943504a40a913008f5b01403146ed3bbeb9c62e6f92a1ca60b94c15da689972",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-1",
+      "content_sha256": "83cabf219c7e199e018215fbbad5252e017220d368e7e32a1e736a5bf12e22d3",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "E09-hint-2",
+      "content_sha256": "33f8ba7b8ea5d7b1f15e815fbd9088c4306bce13c706e6479db1f4c2a0911580",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-E09-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-explanation",
+      "content_sha256": "c63019e8e248af038bda706fef7f548c229b1867dec85da84eb794ae657d109b",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-1",
+      "content_sha256": "2822d3f078c74eef72cf5cba6b5584b48a61c3f69af863652683c408d1cdba52",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F02-hint-2",
+      "content_sha256": "d2b030cbf0965f6d7fe8b2b95c559f5f6ea1cdaa437379c97b15994a7ce37831",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-explanation",
+      "content_sha256": "c33446a6007d014a3596ee8d8abd80442f6cd410b6662dd96a3f151e44f94974",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-1",
+      "content_sha256": "12f6bcf9127279122ece3e1be0e3a9410e136a197644e225bd24fac3bf5de59d",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F05-hint-2",
+      "content_sha256": "6a02f5940060989cfb6fec5e6971017fb2ab19d4643988b027ef8cc3628ea56e",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-explanation",
+      "content_sha256": "92f8167d83ee41f121f9f2aaf6c06213e57f1eb568bbdbf85064690a71616ef6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-1",
+      "content_sha256": "98f1ab9fe11c31232e785921ff013ce0e3a1dd706c358326a5ecbaa3258dd4d6",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "F08-hint-2",
+      "content_sha256": "2feb8a6a22e13849c0370425ad4b3a2e68592ddbc703799abae0841a89413f92",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-F08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-explanation",
+      "content_sha256": "54feb011d8cd7e2710d8e3cbeec035a578003c788383d27e7cfbbb46f6e809a0",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-1",
+      "content_sha256": "839b54fbff29e1cba5e8c776a3c19c9bb1b4777ebd6d17cab87560194823e79c",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N02-hint-2",
+      "content_sha256": "44aa4a8a92fcbff8e26a309fc3d6c28c88d3c31a877088e93fc4851818b12ea5",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N02-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-explanation",
+      "content_sha256": "2b6b926d86fdcd96bae3849897b60186029d0ac683323e877a614b52c40320d8",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-1",
+      "content_sha256": "4bb09b70bbb66c86f6c0734c116b057713dc5a9ca45a3737f6df5f697a01d8db",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N05-hint-2",
+      "content_sha256": "91079243e9f6612149199bee6f38aed7d409819bbb4a4e11499ec78ab73eb759",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N05-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-explanation",
+      "content_sha256": "12ee1d9a9b936fa3554605e97b110521c85454845d35e9879d8cafdeac1a5c53",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-MISCONCEPTION",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-1",
+      "content_sha256": "ebf465a581ae46c513619275fa5d49463dd756c1ee5a007971fc4ba4e3e4e700",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-2",
+      "relevance": null
+    },
+    {
+      "content_id": "N08-hint-2",
+      "content_sha256": "10cacc5ddad12fba9a09f464e7f79f28da619b0eb5b330b656102e90975adb64",
+      "content_version": "0.4.0-member2-review",
+      "label_status": "unjudged",
+      "query_id": "M2S5-N08-HINT-2",
+      "relevance": null
+    }
+  ],
+  "method": "independent_human",
+  "queries": [
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A01-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A04-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A07-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-A10-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E03-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E06-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-E09-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F02-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F05-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-F08-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N02-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N05-HINT-2"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-MISCONCEPTION"
+    },
+    {
+      "checked": false,
+      "notes": "",
+      "query_accepted": null,
+      "query_id": "M2S5-N08-HINT-2"
+    }
+  ],
+  "queries_sha256": "e71723084983b01e1380e936feaa32307321b5f9947d66aecbae99884aa47075",
+  "reviewed_at": null,
+  "reviewer": null,
+  "schema_version": "1.0.0",
+  "slot": "B"
+}

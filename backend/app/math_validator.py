@@ -41,6 +41,18 @@ def normalize(text):
     return text.translate(str.maketrans({'−': '-', '×': '*', '·': '*', '÷': '/'})).strip()
 
 
+def _normalize_detector_trace(text):
+    """Align explicit and implicit multiplication for source-form rules.
+
+    The parser accepts both ``(a+b)(c+d)`` and ``(a+b)*(c+d)``. Some
+    misconception rules inspect the source trace to identify the algebraic
+    form, so give them the same canonical adjacency for multiplied factors.
+    This only changes detector context; symbolic equivalence still comes
+    from the parsed expressions.
+    """
+    return re.sub(r'\)\s*\*\s*\(', ')(', normalize(text))
+
+
 class ParsedExpression:
     def __init__(self, expr, exclusions=(), variables=()):
         self.expr = expr
@@ -801,7 +813,7 @@ def validate(problem, steps):
             candidate = detect_misconception(
                 problem,
                 step_index=first_error,
-                before_text=first_error_before_text or '',
+                before_text=_normalize_detector_trace(first_error_before_text or ''),
                 after_text=first_error_text or '',
                 previous_steps=normalized[:first_error - 1],
                 before_state=first_error_before_state,

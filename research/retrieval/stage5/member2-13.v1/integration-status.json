@@ -1,0 +1,69 @@
+{
+  "active_concept_ids": [
+    "A01",
+    "A04",
+    "A07",
+    "A10",
+    "E03",
+    "E06",
+    "E09",
+    "F02",
+    "F05",
+    "F08",
+    "N02",
+    "N05",
+    "N08"
+  ],
+  "active_owner": "Member 2",
+  "blocks_current_scope": false,
+  "intake_requirements": [
+    "versioned_registry_and_pack",
+    "review_and_source_provenance",
+    "task_checker_and_public_projection",
+    "family_source_lineage",
+    "regression_evidence"
+  ],
+  "waiting_for": [
+    {
+      "concept_ids": [
+        "N01",
+        "N04",
+        "N07",
+        "N10",
+        "A03",
+        "A06",
+        "A09",
+        "E02",
+        "E05",
+        "E08",
+        "F01",
+        "F04",
+        "F07"
+      ],
+      "owner": "Member 1",
+      "source_manifest": null,
+      "status": "awaiting_owner_delivery"
+    },
+    {
+      "concept_ids": [
+        "N03",
+        "N06",
+        "N09",
+        "A02",
+        "A05",
+        "A08",
+        "E01",
+        "E04",
+        "E07",
+        "E10",
+        "F03",
+        "F06",
+        "F09",
+        "F10"
+      ],
+      "owner": "Member 3",
+      "source_manifest": null,
+      "status": "awaiting_owner_delivery"
+    }
+  ]
+}

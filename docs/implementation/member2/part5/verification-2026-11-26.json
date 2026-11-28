@@ -1,0 +1,87 @@
+{
+  "checks_passed": [
+    "stage5_assets_reproducible",
+    "stage5_source_hashes_and_split_isolation",
+    "stage3_approved_assets_unchanged",
+    "curriculum_schema_and_math",
+    "phase1_math_and_schema",
+    "15_public_contract_schemas",
+    "phase3_openapi_matches_runtime",
+    "cli_creates_new_review_templates",
+    "cli_rejects_unsigned_review_without_output"
+  ],
+  "database": {
+    "mode": "local_regression_in_isolated_test_schemas",
+    "pgvector": "0.8.6",
+    "postgres": "16.15",
+    "setup_note": "First regression attempt timed out because local PostgreSQL was stopped. Started with the existing database helper; final rerun passed."
+  },
+  "dataset": {
+    "dataset_id": "stage5-coverage40-candidate-1.0.0",
+    "document_count": 91,
+    "formal_test_ready": false,
+    "human_reviewed_judgments": 0,
+    "judgment_count": 64,
+    "pilot_judgment_count": 38,
+    "pilot_query_count": 26,
+    "queries_awaiting_reviewed_content": 108,
+    "query_count": 160,
+    "snapshot_id": "KB-228707710ea975db30f14555327b414c73437725afe965f1f5ab8c233340cb0c",
+    "split_counts": {
+      "dev": 88,
+      "test_candidate": 72
+    }
+  },
+  "inventory": {
+    "approved_serving_concepts": 13,
+    "concepts_with_pack": 22,
+    "new_draft_concepts": [
+      "N03",
+      "N06"
+    ],
+    "new_error_fixtures": 4,
+    "new_examples": 6,
+    "new_problems": 12,
+    "registry_concepts": 40
+  },
+  "limits": [
+    "Human content/label review remains pending; no signatures fabricated.",
+    "Test candidates lack reviewed corpus content and are not frozen.",
+    "CI workflow prepared but remote CI and Docker were not run.",
+    "No frontend changes; no new frontend build/browser run.",
+    "Workspace has no .git; Git-based repository checks unavailable."
+  ],
+  "model_api_calls": 0,
+  "recorded_on": "2026-11-26",
+  "source_sha256": {
+    ".github/workflows/stage5-content-checks.yml": "b8db7a9b3c430562136835cc53a4ae48b59910720817858a2c3a8d78065b8d15",
+    "backend/app/stage5_content.py": "83cdf9ab71adb17e052c1fa3b40025852af1860293c4b4d97a878eb978e453c1",
+    "content/authoring/batches/stage5-expansion.v1/manifest.json": "68cc6ccb9b36225fbd4adea70673fb39a52c3801cd71a6cc8a9058614a748d3b",
+    "research/retrieval/dataset.py": "88773a977a9521a7d910c5e045139d1b7b604c52ce4b267c100fb8e82587fb10",
+    "research/retrieval/stage5/coverage40.v1/manifest.json": "5b7eddbb0c45ab91655812fad94f39b3bd0e695734a77097cccff11c44a7352a",
+    "scripts/retrieval/curate_stage5.py": "3883b6501432cf3fa2e72e40e551cf7f9665214dce36655ef50b4ece3a6814f1",
+    "scripts/retrieval/prepare_stage5.py": "aa850a3e8ff4abbc6cf71b5b586119593ada36854bf01aa859fdfcb1c2be4264",
+    "tests/test_stage5_dataset.py": "9328801853584361153843fe165ec4ddfebee688efcbd9f0ce55f58dbd9f0e8b"
+  },
+  "stage5_complete": false,
+  "status": "initial_stage5_implementation_verified",
+  "tests": {
+    "stage4_db_regression": {
+      "errors": 0,
+      "failures": 0,
+      "junit": "tests-stage4-regression-2026-11-26.xml",
+      "sha256": "6af2a4e8b170cc9f65e753a07d0a1557e373a636a4db783f2bab5347b93d9e46",
+      "skipped": 0,
+      "tests": 151
+    },
+    "stage5_offline": {
+      "errors": 0,
+      "failures": 0,
+      "junit": "tests-stage5-2026-11-26.xml",
+      "sha256": "a878cfb9a03bff72cf3396a745b077f2a65d99772cbba553856a7f365353673a",
+      "skipped": 0,
+      "tests": 108
+    }
+  },
+  "verified_at": "2026-11-26T23:05:49.762516+07:00"
+}

@@ -1,0 +1,1331 @@
+{
+  "pairs": [
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "45/105 < 45/105"
+      ],
+      "pair_id": "PAIR-0001",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 9/21 ? 15/35. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai mẫu có thể cùng chia hết cho số nào?",
+        "B": "Hai mẫu có thể cùng chia hết cho số nào?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-4"
+      ],
+      "pair_id": "PAIR-0002",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 3*x*x-5*x-2 tại x = -2.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức có mấy vị trí cần thay x?",
+        "B": "Biểu thức có mấy vị trí cần thay x?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "50/3"
+      ],
+      "pair_id": "PAIR-0003",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 9*x-4 tại x = 2/3. Ghi kết quả chính xác.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức có mấy vị trí cần thay x?",
+        "B": "Biểu thức có mấy vị trí cần thay x?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0004",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Tìm ước chung lớn nhất của các hệ số và bậc nhỏ nhất của biến xuất hiện ở mọi hạng tử. Đưa nhân tử chung dương ra ngoài ngoặc, rồi nhân ngược để kiểm tra.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0005",
+      "prior_hint_level": 2,
+      "prompt": "Tìm tập xác định thực của f(x)=√(31−4x). Viết dưới dạng khoảng.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Kiểm tra đầu mút có được lấy hay loại sau khi giải điều kiện.",
+        "B": "Kiểm tra đầu mút có được lấy hay loại sau khi giải điều kiện."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "(-inf,-7]"
+      ],
+      "pair_id": "PAIR-0006",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=√(2x+14). Viết dưới dạng khoảng.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức nằm ở mẫu hay dưới dấu căn?",
+        "B": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0007",
+      "prior_hint_level": 0,
+      "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Mẫu gốc nào có thể bằng 0?",
+        "B": "Mẫu gốc nào có thể bằng 0?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0008",
+      "prior_hint_level": 0,
+      "prompt": "Tính (-13)*(-4) và giải thích dấu của tích.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Tính 126/(-9) và giải thích dấu của thương.\n\nSố bị chia và số chia trái dấu nên thương âm. Chia 126 cho 9 được 14, vậy thương là −14.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0009",
+      "prior_hint_level": 2,
+      "prompt": "Rút gọn (2⁻²)³ và ghi tập xác định của hàm y = 2^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Với cơ số hợp lệ, biểu thức a^x xác định với mọi x thực. Kiểm tra số mũ âm bằng quy tắc nghịch đảo.",
+        "B": "Với cơ số hợp lệ, biểu thức a^x xác định với mọi x thực. Kiểm tra số mũ âm bằng quy tắc nghịch đảo."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0010",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Mỗi cách viết chỉ thay đổi biểu diễn của cùng một giá trị. Chia tử cho mẫu để có số thập phân hữu hạn, và hiểu phần trăm là số phần trên một trăm."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-12*x*x-18*x-42"
+      ],
+      "pair_id": "PAIR-0011",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn -6*(2*x*x-3*x+7).",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?",
+        "B": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0012",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Đặt nhân tử chung lớn nhất của 17*x*x+6*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.\n\nHệ số 17 và 6 nguyên tố cùng nhau. Bậc nhỏ nhất của x là 1, nên đặt x ra ngoài để được x(17x + 6)."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0013",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Xác định a, b, c và giữ dấu của từng hệ số.",
+        "B": "Xác định a, b, c và giữ dấu của từng hệ số."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x=5/2"
+      ],
+      "pair_id": "PAIR-0014",
+      "prior_hint_level": 0,
+      "prompt": "Tìm phương trình trục đối xứng của y = -3*x*x-15*x+8. Nộp phương trình dạng x = số.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?",
+        "B": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0015",
+      "prior_hint_level": 1,
+      "prompt": "Tìm phương trình trục đối xứng của y = 4*x*x-12*x+11. Nộp phương trình dạng x = số.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Với dạng hoàn thành bình phương, tìm giá trị x làm phần bình phương bằng 0. Với dạng khai triển, dùng −b/(2a).",
+        "B": "Với dạng hoàn thành bình phương, tìm giá trị x làm phần bình phương bằng 0. Với dạng khai triển, dùng −b/(2a)."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0016",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Hàm số mũ y = a^x có cơ số a dương, khác 1 và tập xác định là tập số thực. Với một cơ số hợp lệ, cộng số mũ khi nhân, trừ số mũ khi chia và nhân các số mũ khi lấy lũy thừa của một lũy thừa."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0017",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Rút gọn 2⁰ / 2³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.\n\nLấy số mũ ở tử 0 trừ số mũ ở mẫu 3, được −3. Vậy thương là 2⁻³ = 1/8, và y = 2^x xác định trên R.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "5^2=25;R"
+      ],
+      "pair_id": "PAIR-0018",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn 5¹ / 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Cơ số có dương và khác 1 không?",
+        "B": "Cơ số có dương và khác 1 không?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0019",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Hai mẫu có thể cùng chia hết cho số nào?",
+        "B": "Hai mẫu có thể cùng chia hết cho số nào?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0020",
+      "prior_hint_level": 0,
+      "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Đặt x cho đúng đại lượng chưa biết, ghi đơn vị và điều kiện, rồi dịch từng quan hệ trong đề thành biểu thức. Hai vế của phương trình phải biểu diễn cùng một đại lượng."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0021",
+      "prior_hint_level": 2,
+      "prompt": "Đổi theo yêu cầu 6,25% thành phân số. Ghi phân số tối giản.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Sau khi đổi, kiểm tra lại giá trị bằng cách chuyển ngược về dạng ban đầu.",
+        "B": "Sau khi đổi, kiểm tra lại giá trị bằng cách chuyển ngược về dạng ban đầu."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0022",
+      "prior_hint_level": 1,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong -3/11 ? -5/16. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Nhân cả tử lẫn mẫu để mỗi phân số có mẫu chung.",
+        "B": "Nhân cả tử lẫn mẫu để mỗi phân số có mẫu chung."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "3,-2;(2,2)"
+      ],
+      "pair_id": "PAIR-0023",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 2*x+3*y=8;3*x+4*y=11 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?",
+        "B": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0024",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?",
+        "B": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0025",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Dạng đích là phân số, thập phân hay phần trăm?",
+        "B": "Dạng đích là phân số, thập phân hay phần trăm?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0026",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 7*x-11 tại x = -4.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Đặt giá trị được cho vào từng vị trí của biến. Dùng ngoặc khi thế số âm hoặc phân số, rồi thực hiện phép tính theo thứ tự.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "6*x*x+27*x-36"
+      ],
+      "pair_id": "PAIR-0027",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn (3*x-4)*(2*x+9).",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?",
+        "B": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "13"
+      ],
+      "pair_id": "PAIR-0028",
+      "prior_hint_level": 0,
+      "prompt": "Tính 104/(-8) và giải thích dấu của thương.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai số tham gia phép tính có cùng dấu hay trái dấu?",
+        "B": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "12*x*(2*x+3)"
+      ],
+      "pair_id": "PAIR-0029",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 24*x*x-36*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hạng tử nào có ít thừa số x nhất?",
+        "B": "Hạng tử nào có ít thừa số x nhất?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0030",
+      "prior_hint_level": 2,
+      "prompt": "Đặt nhân tử chung lớn nhất của 24*x*x-36*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Chia từng hạng tử cho nhân tử chung rồi viết kết quả dưới dạng một tích.",
+        "B": "Chia từng hạng tử cho nhân tử chung rồi viết kết quả dưới dạng một tích."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x*(7*x+11*x)"
+      ],
+      "pair_id": "PAIR-0031",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 7*x*x+11*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hạng tử nào có ít thừa số x nhất?",
+        "B": "Hạng tử nào có ít thừa số x nhất?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0032",
+      "prior_hint_level": 1,
+      "prompt": "Đặt nhân tử chung lớn nhất của 7*x*x+11*x, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Tìm ước dương chung lớn nhất của các hệ số trước.",
+        "B": "Tìm ước dương chung lớn nhất của các hệ số trước."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "3^-7=1/2187;R"
+      ],
+      "pair_id": "PAIR-0033",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Cơ số có dương và khác 1 không?",
+        "B": "Cơ số có dương và khác 1 không?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0034",
+      "prior_hint_level": 2,
+      "prompt": "Tính biệt thức rồi giải 3*x*x-2*x+5 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Nếu có nghiệm, kiểm tra mẫu 2a và thử thay lại phương trình.",
+        "B": "Nếu có nghiệm, kiểm tra mẫu 2a và thử thay lại phương trình."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0035",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn 4*x*(3*x-7).",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Khai triển rồi thu gọn -4*(3*x*x+7*x-13).\n\nNhân −4 lần lượt với 3x², 7x và −13. Ba tích là −12x², −28x và 52, nên đa thức là −12x² − 28x + 52.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0036",
+      "prior_hint_level": 2,
+      "prompt": "Kho có 58 lọ, lấy đều trong 4 lượt thì còn 26 lọ. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Đặt tổng các phần bằng tổng đã cho rồi kiểm tra điều kiện của x.",
+        "B": "Đặt tổng các phần bằng tổng đã cho rồi kiểm tra điều kiện của x."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0037",
+      "prior_hint_level": 2,
+      "prompt": "Tính giá trị 9*x-4 tại x = 2/3. Ghi kết quả chính xác.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Tính từng tích và lũy thừa trước khi cộng các hạng tử.",
+        "B": "Tính từng tích và lũy thừa trước khi cộng các hạng tử."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "1.84%"
+      ],
+      "pair_id": "PAIR-0038",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 0,184 thành phần trăm. Ghi kèm ký hiệu %.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Dạng đích là phân số, thập phân hay phần trăm?",
+        "B": "Dạng đích là phân số, thập phân hay phần trăm?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-18"
+      ],
+      "pair_id": "PAIR-0039",
+      "prior_hint_level": 0,
+      "prompt": "Tính ((-9)*6)/(-3), nêu kết quả trong ngoặc trước.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai số tham gia phép tính có cùng dấu hay trái dấu?",
+        "B": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0040",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 7*x-11 tại x = -4.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Biểu thức có mấy vị trí cần thay x?",
+        "B": "Biểu thức có mấy vị trí cần thay x?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0041",
+      "prior_hint_level": 2,
+      "prompt": "Tìm phương trình trục đối xứng của y = -3*x*x-15*x+8. Nộp phương trình dạng x = số.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Nếu cần tọa độ đỉnh, tính thêm giá trị hàm tại hoành độ đã tìm. Nếu cần trục, viết phương trình đường thẳng đứng đi qua hoành độ đó.",
+        "B": "Nếu cần tọa độ đỉnh, tính thêm giá trị hàm tại hoành độ đã tìm. Nếu cần trục, viết phương trình đường thẳng đứng đi qua hoành độ đó."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0042",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Với ax²+bx+c=0 và a khác 0, biệt thức b²−4ac quyết định số nghiệm thực. Khi có nghiệm, thay các hệ số đúng dấu vào công thức nghiệm.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "17"
+      ],
+      "pair_id": "PAIR-0043",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 7*x-11 tại x = -4.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức có mấy vị trí cần thay x?",
+        "B": "Biểu thức có mấy vị trí cần thay x?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0044",
+      "prior_hint_level": 0,
+      "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Ghi điều kiện xác định của từng phân thức từ đầu. Khi chia, loại thêm các giá trị làm phân thức chia bằng 0. Điều kiện đã ghi vẫn giữ sau khi rút gọn."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-48/176 < -55/176"
+      ],
+      "pair_id": "PAIR-0045",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong -3/11 ? -5/16. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai mẫu có thể cùng chia hết cho số nào?",
+        "B": "Hai mẫu có thể cùng chia hết cho số nào?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0046",
+      "prior_hint_level": 0,
+      "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Hai quầy có tổng 55 vé, quầy sau có nhiều hơn quầy trước 11 vé. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.\n\nGọi x là số vé ở quầy trước, đơn vị vé, x nguyên dương. Quầy sau có x + 11 vé. Tổng 55 cho phương trình x + (x + 11) = 55.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x; cây; positive_integer; x+(x-7)=43"
+      ],
+      "pair_id": "PAIR-0047",
+      "prior_hint_level": 0,
+      "prompt": "Hai hàng có tổng 43 cây. Hàng thứ hai hơn hàng thứ nhất 7 cây. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đại lượng nào chưa biết và có đơn vị gì?",
+        "B": "Đại lượng nào chưa biết và có đơn vị gì?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0048",
+      "prior_hint_level": 1,
+      "prompt": "Thực hiện phép nhân hai phân thức *; x-2|x+4; x+4|x-5. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Chọn quy tắc quy đồng, nhân trực tiếp hoặc nhân nghịch đảo theo phép toán.",
+        "B": "Chọn quy tắc quy đồng, nhân trực tiếp hoặc nhân nghịch đảo theo phép toán."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0049",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ).",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?",
+        "B": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "1,-1;(2,3)"
+      ],
+      "pair_id": "PAIR-0050",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 3*x+2*y=14;3*x-1*y=2 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?",
+        "B": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "1/8"
+      ],
+      "pair_id": "PAIR-0051",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 6,25% thành phân số. Ghi phân số tối giản.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Dạng đích là phân số, thập phân hay phần trăm?",
+        "B": "Dạng đích là phân số, thập phân hay phần trăm?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0052",
+      "prior_hint_level": 1,
+      "prompt": "Giải hệ 3*x+2*y=14;3*x-1*y=2 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Chọn hai hệ số nhân sao cho tổng hệ số của một ẩn bằng 0.",
+        "B": "Chọn hai hệ số nhân sao cho tổng hệ số của một ẩn bằng 0."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x=3"
+      ],
+      "pair_id": "PAIR-0053",
+      "prior_hint_level": 0,
+      "prompt": "Tìm phương trình trục đối xứng của y = 4*x*x-12*x+11. Nộp phương trình dạng x = số.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?",
+        "B": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0054",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Mẫu số khác 0 và biểu thức dưới căn bậc hai không âm. Tập xác định là tập giá trị thực đáp ứng mọi điều kiện tại vị trí tương ứng."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x; lọ; positive_integer; 58+4*x=26"
+      ],
+      "pair_id": "PAIR-0055",
+      "prior_hint_level": 0,
+      "prompt": "Kho có 58 lọ, lấy đều trong 4 lượt thì còn 26 lọ. Đặt x là số món lấy mỗi lượt rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đại lượng nào chưa biết và có đơn vị gì?",
+        "B": "Đại lượng nào chưa biết và có đơn vị gì?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0056",
+      "prior_hint_level": 2,
+      "prompt": "Tính ((-9)*6)/(-3), nêu kết quả trong ngoặc trước.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Nếu có nhiều phép tính, em có thể ra dấu và giá trị cho từng kết quả trong ngoặc trước.",
+        "B": "Nếu có nhiều phép tính, em có thể ra dấu và giá trị cho từng kết quả trong ngoặc trước."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0057",
+      "prior_hint_level": 1,
+      "prompt": "Tìm tập xác định thực của f(x)=√(2x+14). Viết dưới dạng khoảng.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Viết điều kiện mẫu khác 0 hoặc biểu thức dưới căn không âm.",
+        "B": "Viết điều kiện mẫu khác 0 hoặc biểu thức dưới căn không âm."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0058",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn 4*x*(3*x-7).",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?",
+        "B": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "R\\{-19}"
+      ],
+      "pair_id": "PAIR-0059",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức nằm ở mẫu hay dưới dấu căn?",
+        "B": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "6*(3*x+30)"
+      ],
+      "pair_id": "PAIR-0060",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hạng tử nào có ít thừa số x nhất?",
+        "B": "Hạng tử nào có ít thừa số x nhất?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "3*x+7|x-3;{3}"
+      ],
+      "pair_id": "PAIR-0061",
+      "prior_hint_level": 0,
+      "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mẫu gốc nào có thể bằng 0?",
+        "B": "Mẫu gốc nào có thể bằng 0?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0062",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn 4*x*(3*x-7).",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Nhân từng hạng tử của một thừa số với từng hạng tử của thừa số còn lại. Cuối cùng cộng các hệ số của những hạng tử có cùng phần biến.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0063",
+      "prior_hint_level": 1,
+      "prompt": "Tính giá trị 3*x*x-5*x-2 tại x = -2.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Khi thế số âm, đặt số đó vào ngoặc ở cả vị trí có bình phương.",
+        "B": "Khi thế số âm, đặt số đó vào ngoặc ở cả vị trí có bình phương."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0064",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Quy đồng bằng cách nhân cả tử và mẫu của mỗi phân số với cùng một số dương. Khi mẫu đã bằng nhau, dấu so sánh được quyết định bởi hai tử số.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "1,1;(3,-2)"
+      ],
+      "pair_id": "PAIR-0065",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?",
+        "B": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "0.0325"
+      ],
+      "pair_id": "PAIR-0066",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Dạng đích là phân số, thập phân hay phần trăm?",
+        "B": "Dạng đích là phân số, thập phân hay phần trăm?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0067",
+      "prior_hint_level": 1,
+      "prompt": "Hai hàng có tổng 43 cây. Hàng thứ hai hơn hàng thứ nhất 7 cây. Đặt x là số lượng ít hơn rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Viết biểu thức cho từng nhóm cùng đơn vị.",
+        "B": "Viết biểu thức cho từng nhóm cùng đơn vị."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "0;{-10/3}"
+      ],
+      "pair_id": "PAIR-0068",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 9*x*x+30*x+25 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Xác định a, b, c và giữ dấu của từng hệ số.",
+        "B": "Xác định a, b, c và giữ dấu của từng hệ số."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0069",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ).",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Parabol y = ax² + bx + c có hoành độ đỉnh −b/(2a). Từ dạng y = a(x − h)² + k có thể đọc ngay đỉnh (h,k). Trục đối xứng là đường thẳng đứng qua đỉnh.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0070",
+      "prior_hint_level": 0,
+      "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Đại lượng nào chưa biết và có đơn vị gì?",
+        "B": "Đại lượng nào chưa biết và có đơn vị gì?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0071",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Quy đồng rồi thay dấu hỏi trong -5/13 ? -7/17. Ghi cả hai phân số có cùng mẫu.\n\nMẫu chung 221. Hai tử mới lần lượt là −85 và −91. Vì −85 gần 0 hơn nên −85/221 > −91/221.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "25;{-1/2,-3}"
+      ],
+      "pair_id": "PAIR-0072",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Xác định a, b, c và giữ dấu của từng hệ số.",
+        "B": "Xác định a, b, c và giữ dấu của từng hệ số."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0073",
+      "prior_hint_level": 2,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 9/21 ? 15/35. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Sau khi có hai phân số cùng mẫu dương, hãy đặt dấu theo thứ tự các tử số.",
+        "B": "Sau khi có hai phân số cùng mẫu dương, hãy đặt dấu theo thứ tự các tử số."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x-2|x-5;{5}"
+      ],
+      "pair_id": "PAIR-0074",
+      "prior_hint_level": 0,
+      "prompt": "Thực hiện phép nhân hai phân thức *; x-2|x+4; x+4|x-5. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mẫu gốc nào có thể bằng 0?",
+        "B": "Mẫu gốc nào có thể bằng 0?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0075",
+      "prior_hint_level": 1,
+      "prompt": "Rút gọn 5¹ / 5³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Bài này thuộc tích, thương, lũy thừa của lũy thừa hay kiểm tra điều kiện cơ số?",
+        "B": "Bài này thuộc tích, thương, lũy thừa của lũy thừa hay kiểm tra điều kiện cơ số?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0076",
+      "prior_hint_level": 1,
+      "prompt": "Khai triển rồi thu gọn -6*(2*x*x-3*x+7).",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Viết riêng các tích trước khi thu gọn.",
+        "B": "Viết riêng các tích trước khi thu gọn."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "[31/4,+inf)"
+      ],
+      "pair_id": "PAIR-0077",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=√(31−4x). Viết dưới dạng khoảng.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Biểu thức nằm ở mẫu hay dưới dấu căn?",
+        "B": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0078",
+      "prior_hint_level": 2,
+      "prompt": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+1|x-7; x+1|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Sau khi khử nhân tử, hãy kiểm tra lại tập giá trị bị loại lúc đầu.",
+        "B": "Sau khi khử nhân tử, hãy kiểm tra lại tập giá trị bị loại lúc đầu."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0079",
+      "prior_hint_level": 0,
+      "prompt": "Đổi theo yêu cầu 13/40 thành số thập phân. Viết kết quả bằng dấu chấm thập phân.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Đổi theo yêu cầu 0.315 -> percent. Ghi kèm ký hiệu %.\n\nMột phần trăm là một phần của 100. Nhân 0,315 với 100 để được 31,5 rồi gắn ký hiệu %, được 31,5%."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-56;{1/3}"
+      ],
+      "pair_id": "PAIR-0080",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 3*x*x-2*x+5 = 0 trên số thực. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Xác định a, b, c và giữ dấu của từng hệ số.",
+        "B": "Xác định a, b, c và giữ dấu của từng hệ số."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0081",
+      "prior_hint_level": 2,
+      "prompt": "Giải hệ 2*x+3*y=8;3*x+4*y=11 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Giải hàng thu được, thế lại để tìm ẩn còn lại, rồi kiểm tra nghiệm trên cả hai hàng gốc.",
+        "B": "Giải hàng thu được, thế lại để tìm ẩn còn lại, rồi kiểm tra nghiệm trên cả hai hàng gốc."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0082",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Nhân từng phương trình với một số khác 0 để tạo hệ số đối nhau. Cộng hai hàng để khử một ẩn, rồi tìm ẩn còn lại và kiểm tra cả hai phương trình."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0083",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Cơ số có dương và khác 1 không?",
+        "B": "Cơ số có dương và khác 1 không?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0084",
+      "prior_hint_level": 0,
+      "prompt": "Tính (-13)*(-4) và giải thích dấu của tích.",
+      "request_action": "request_explanation",
+      "responses": {
+        "A": "Tách tính dấu khỏi tính giá trị tuyệt đối. Hai số cùng dấu cho tích hoặc thương dương, hai số trái dấu cho kết quả âm. Phép chia cần số chia khác 0.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0085",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ).",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Tìm phương trình trục đối xứng của y = 6*x*x-15*x-7. Nộp phương trình dạng x = số.\n\nHệ số a = 6, b = −15 nên hoành độ đỉnh là 15/12 = 5/4. Trục là đường thẳng đứng x = 5/4."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0086",
+      "prior_hint_level": 0,
+      "prompt": "Đặt nhân tử chung lớn nhất của 18*x+30, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Hạng tử nào có ít thừa số x nhất?",
+        "B": "Hạng tử nào có ít thừa số x nhất?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "(3,7)"
+      ],
+      "pair_id": "PAIR-0087",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tọa độ đỉnh của y = 3*x*x-18*x+7. Nộp cặp (hoành độ,tung độ).",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?",
+        "B": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x+3|x-7;{7,-3}"
+      ],
+      "pair_id": "PAIR-0088",
+      "prior_hint_level": 0,
+      "prompt": "Chia phân thức thứ nhất cho phân thức thứ hai trong /; x+1|x-7; x+1|x+3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mẫu gốc nào có thể bằng 0?",
+        "B": "Mẫu gốc nào có thể bằng 0?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0089",
+      "prior_hint_level": 0,
+      "prompt": "Tính biệt thức rồi giải 2*x*x-7*x+3 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy. Dùng sqrt(n) cho căn chính xác nếu cần.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Tính biệt thức rồi giải 25*x*x+20*x+4 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.\n\nBiệt thức 20² − 4 × 25 × 4 bằng 0. Phương trình có nghiệm kép −20/(2 × 25) = −2/5.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0090",
+      "prior_hint_level": 0,
+      "prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Giải hệ 2*x-3*y=-8;2*x+5*y=8 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.\n\nLấy hàng đầu trừ hàng sau, tương ứng hệ số 1 và −1. Kết quả −8y = −16 cho y = 2. Thế vào hàng đầu để có x = −1."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "12*x*x-7"
+      ],
+      "pair_id": "PAIR-0091",
+      "prior_hint_level": 0,
+      "prompt": "Khai triển rồi thu gọn 4*x*(3*x-7).",
+      "request_action": "submit",
+      "responses": {
+        "A": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?",
+        "B": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0092",
+      "prior_hint_level": 1,
+      "prompt": "Đổi theo yêu cầu 0,184 thành phần trăm. Ghi kèm ký hiệu %.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Viết giá trị dưới dạng phân số hoặc số trên một trăm trước.",
+        "B": "Viết giá trị dưới dạng phân số hoặc số trên một trăm trước."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "45/126 > 49/126"
+      ],
+      "pair_id": "PAIR-0093",
+      "prior_hint_level": 0,
+      "prompt": "Quy đồng rồi thay dấu hỏi trong 5/14 ? 7/18. Ghi cả hai phân số có cùng mẫu.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai mẫu có thể cùng chia hết cho số nào?",
+        "B": "Hai mẫu có thể cùng chia hết cho số nào?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0094",
+      "prior_hint_level": 0,
+      "prompt": "Tính (-13)*(-4) và giải thích dấu của tích.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Hai số tham gia phép tính có cùng dấu hay trái dấu?",
+        "B": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0095",
+      "prior_hint_level": 0,
+      "prompt": "Thực hiện phép cộng hoặc trừ đã cho trong +; 2*x+5|x-3; x-2|x-3. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Thực hiện phép nhân hai phân thức *; x-8|x+9; x+9|x-2. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.\n\nMẫu ban đầu loại x = −9 và x = 2. Nhân tử với tử, mẫu với mẫu rồi khử x + 9, được (x − 8)/(x − 2) với cả hai điều kiện ban đầu."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0096",
+      "prior_hint_level": 1,
+      "prompt": "Tính 104/(-8) và giải thích dấu của thương.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Tạm bỏ dấu, tính với các giá trị tuyệt đối rồi xác định dấu.",
+        "B": "Tạm bỏ dấu, tính với các giá trị tuyệt đối rồi xác định dấu."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0097",
+      "prior_hint_level": 1,
+      "prompt": "Tính biệt thức rồi giải 9*x*x+30*x+25 = 0. Nộp biệt thức và tập nghiệm, ngăn bằng dấu chấm phẩy.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Tính biệt thức trước rồi xác định có bao nhiêu nghiệm thực.",
+        "B": "Tính biệt thức trước rồi xác định có bao nhiêu nghiệm thực."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "x; quyển; positive_integer; x+7=39"
+      ],
+      "pair_id": "PAIR-0098",
+      "prior_hint_level": 0,
+      "prompt": "Bốn ngăn có cùng số quyển vở, thêm 7 quyển ở ngoài thì có tổng 39 quyển. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Đại lượng nào chưa biết và có đơn vị gì?",
+        "B": "Đại lượng nào chưa biết và có đơn vị gì?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0099",
+      "prior_hint_level": 2,
+      "prompt": "Khai triển rồi thu gọn (3*x-4)*(2*x+9).",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Nhóm các tích có cùng bậc, đặc biệt kiểm tra dấu của nhóm bậc nhất.",
+        "B": "Nhóm các tích có cùng bậc, đặc biệt kiểm tra dấu của nhóm bậc nhất."
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "-52"
+      ],
+      "pair_id": "PAIR-0100",
+      "prior_hint_level": 0,
+      "prompt": "Tính (-13)*(-4) và giải thích dấu của tích.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Hai số tham gia phép tính có cùng dấu hay trái dấu?",
+        "B": "Hai số tham gia phép tính có cùng dấu hay trái dấu?"
+      }
+    },
+    {
+      "error_alignment_applicable": true,
+      "learner_steps": [
+        "2^1=2;R"
+      ],
+      "pair_id": "PAIR-0101",
+      "prior_hint_level": 0,
+      "prompt": "Rút gọn (2⁻²)³ và ghi tập xác định của hàm y = 2^x. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+      "request_action": "submit",
+      "responses": {
+        "A": "Cơ số có dương và khác 1 không?",
+        "B": "Cơ số có dương và khác 1 không?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0102",
+      "prior_hint_level": 0,
+      "prompt": "Tính giá trị 7*x-11 tại x = -4.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Tính giá trị 4*x*x+9*x-11 tại x = -3.\n\nVới x = −3, bình phương của x là 9. Tính 4 × 9 + 9 × (−3) − 11 = 36 − 27 − 11 = −2.",
+        "B": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý."
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0103",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+      "request_action": "request_hint",
+      "responses": {
+        "A": "Biểu thức nằm ở mẫu hay dưới dấu căn?",
+        "B": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+      }
+    },
+    {
+      "error_alignment_applicable": false,
+      "learner_steps": [],
+      "pair_id": "PAIR-0104",
+      "prior_hint_level": 0,
+      "prompt": "Tìm tập xác định thực của f(x)=1/(x−19). Viết R∖{giá trị loại}.",
+      "request_action": "request_example",
+      "responses": {
+        "A": "Chưa có nội dung đã duyệt phù hợp cho yêu cầu này. Em có thể tiếp tục bài hiện tại hoặc xin gợi ý.",
+        "B": "Tìm tập xác định thực của f(x)=√(8x+17). Viết dưới dạng khoảng.\n\nBiểu thức dưới căn phải không âm. Giải 8x + 17 ≥ 0 được x ≥ −17/8. Lấy cả đầu mút, vì căn của 0 xác định."
+      }
+    }
+  ],
+  "status": "pending_independent_ratings"
+}

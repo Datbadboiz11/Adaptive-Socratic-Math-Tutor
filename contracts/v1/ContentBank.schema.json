@@ -118,6 +118,40 @@
           "title": "Reference Answer",
           "type": "string"
         },
+        "solution_steps": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 12,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Solution Steps"
+        },
+        "alternative_valid_steps": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 12,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alternative Valid Steps"
+        },
         "reference_methods": {
           "items": {
             "$ref": "#/$defs/ReferenceMethod"
@@ -304,6 +338,66 @@
     "title": {
       "title": "Title",
       "type": "string"
+    },
+    "concept_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Concept Id"
+    },
+    "primary_skill_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Primary Skill Id"
+    },
+    "strand": {
+      "anyOf": [
+        {
+          "enum": [
+            "numbers",
+            "algebra",
+            "equations",
+            "functions"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Strand"
+    },
+    "prerequisites": {
+      "anyOf": [
+        {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prerequisites"
     },
     "problems": {
       "items": {

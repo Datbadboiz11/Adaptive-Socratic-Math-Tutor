@@ -1,0 +1,30 @@
+{
+  "author": "Codex",
+  "concept_id": "N03",
+  "content_version": "0.5.0-stage5-draft",
+  "families": [
+    {
+      "description": "Nhân trước cộng hoặc trừ",
+      "family_id": "FAM-N03-S5-R001-1",
+      "source_group": "GROUP-N03-S5-R001-1"
+    },
+    {
+      "description": "Ưu tiên biểu thức trong ngoặc",
+      "family_id": "FAM-N03-S5-R001-2",
+      "source_group": "GROUP-N03-S5-R001-2"
+    },
+    {
+      "description": "Phép toán cùng mức từ trái sang phải",
+      "family_id": "FAM-N03-S5-R001-3",
+      "source_group": "GROUP-N03-S5-R001-3"
+    }
+  ],
+  "max_output_tokens": 8000,
+  "model": "offline-original-draft-no-api",
+  "protocol_version": "authoring-1.0.0",
+  "revision": "S5-R001",
+  "source_ids": [
+    "SRC-MATH-2018"
+  ],
+  "timeout_seconds": 45
+}

@@ -1,0 +1,13 @@
+{
+  "issues": [
+    {
+      "code": "human_review_required",
+      "message": "Curriculum, source rights, Vietnamese, pedagogical goal/form and hint math/disclosure require independent human review",
+      "path": "$",
+      "severity": "warning"
+    }
+  ],
+  "pack_sha256": "14ec336b4e133d59500b3a8123815de18d95f31b96ff6124ca08cd650edc5f8d",
+  "passed": true,
+  "protocol_version": "authoring-1.0.0"
+}

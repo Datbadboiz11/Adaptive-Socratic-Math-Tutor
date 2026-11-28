@@ -69,7 +69,9 @@ def make_pack(concept, specification, version, revision=REVISION, *, lineage=REV
         )
         examples.append((example, example_prompt))
         errors.append({"error_id": f"{prefix}ERR-{index:02}", "problem_id": first_problem_id,
-                       "response_steps": [family["wrong"]], "first_error_step": 1, "family": family["label"],
+                       "response_steps": family.get("wrong_steps", [family["wrong"]]),
+                       "first_error_step": family.get("first_error_step", 1),
+                       "family": (f"{family['catalog_error_id']} · " if family.get("catalog_error_id") else "") + family["label"],
                        "hypothesis": family["hypothesis"], "diagnostic_question": family["question"],
                        "diagnosis_status": "suspected"})
     hints = [{"level": level, "text": text, "disclosure": disclosure}

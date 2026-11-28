@@ -1,0 +1,1042 @@
+[
+  {
+    "concept_id": "A01",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về thay giá trị vào biểu thức, gần với dạng `6*x*x+5*x-1` khi x = 1/3, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A01-EXAMPLE-3",
+    "ranking": [
+      "D-A01-M2-ORIG02-EX-02",
+      "D-A01-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-A01-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "A07",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài đặt nhân tử chung; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A07-HINT-3",
+    "ranking": [
+      "A07-hint-1",
+      "A07-hint-2",
+      "A07-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A07-hint-3"
+    ]
+  },
+  {
+    "concept_id": "F02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài tìm tập xác định của hàm số, chưa cần lời giải.",
+    "query_id": "M2-F02-HINT-2",
+    "ranking": [
+      "F02-hint-1",
+      "F02-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F02-hint-2"
+    ]
+  },
+  {
+    "concept_id": "F02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về tìm tập xác định của hàm số, gần với dạng `sqrt; 23-6*x`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F02-EXAMPLE-3",
+    "ranking": [
+      "D-F02-M2-ORIG02-EX-02",
+      "D-F02-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-F02-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài vận dụng quy tắc của hàm số mũ, chưa cần lời giải.",
+    "query_id": "M2-F08-HINT-2",
+    "ranking": [
+      "F08-hint-1",
+      "F08-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F08-hint-2"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài vận dụng quy tắc của hàm số mũ, chưa cần lời giải.",
+    "query_id": "M2-F08-HINT-2",
+    "ranking": [
+      "F08-hint-1",
+      "F08-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F08-hint-2"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài đổi giữa phân số, số thập phân và phần trăm; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-N08-HINT-3",
+    "ranking": [
+      "N08-hint-1",
+      "N08-hint-2",
+      "N08-hint-3"
+    ],
+    "relevant_grade_2": [
+      "N08-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài đổi giữa phân số, số thập phân và phần trăm; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-N08-HINT-3",
+    "ranking": [
+      "N08-hint-1",
+      "N08-hint-2",
+      "N08-hint-3"
+    ],
+    "relevant_grade_2": [
+      "N08-hint-3"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về nhân và thu gọn đa thức, gần với dạng `(2*x+7)*(3*x-5)`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A04-EXAMPLE-3",
+    "ranking": [
+      "D-A04-M2-ORIG02-EX-02",
+      "D-A04-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-A04-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về nhân và thu gọn đa thức, gần với dạng `(2*x+7)*(3*x-5)`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A04-EXAMPLE-3",
+    "ranking": [
+      "D-A04-M2-ORIG02-EX-02",
+      "D-A04-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-A04-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài vận dụng quy tắc của hàm số mũ; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-F08-HINT-3",
+    "ranking": [
+      "F08-hint-1",
+      "F08-hint-2",
+      "F08-hint-3"
+    ],
+    "relevant_grade_2": [
+      "F08-hint-3"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về vận dụng quy tắc của hàm số mũ, gần với dạng `function;product;5;-1;3`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F08-EXAMPLE-1",
+    "ranking": [
+      "D-F08-M2-ORIG02-EX-03",
+      "D-F08-M2-ORIG02-EX-01"
+    ],
+    "relevant_grade_2": [
+      "D-F08-M2-ORIG02-EX-01"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về vận dụng quy tắc của hàm số mũ, gần với dạng `function;power;1/2;2;-2`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F08-EXAMPLE-3",
+    "ranking": [
+      "D-F08-M2-ORIG02-EX-02",
+      "D-F08-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-F08-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "E03",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài lập phương trình từ bài toán có lời văn; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-E03-HINT-3",
+    "ranking": [
+      "E03-hint-1",
+      "E03-hint-2",
+      "E03-hint-3"
+    ],
+    "relevant_grade_2": [
+      "E03-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài đổi giữa phân số, số thập phân và phần trăm, chưa cần lời giải.",
+    "query_id": "M2-N08-HINT-2",
+    "ranking": [
+      "N08-hint-1",
+      "N08-hint-2"
+    ],
+    "relevant_grade_2": [
+      "N08-hint-2"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài đổi giữa phân số, số thập phân và phần trăm, chưa cần lời giải.",
+    "query_id": "M2-N08-HINT-2",
+    "ranking": [
+      "N08-hint-1",
+      "N08-hint-2"
+    ],
+    "relevant_grade_2": [
+      "N08-hint-2"
+    ]
+  },
+  {
+    "concept_id": "A01",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài thay giá trị vào biểu thức; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A01-HINT-3",
+    "ranking": [
+      "A01-hint-1",
+      "A01-hint-2",
+      "A01-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A01-hint-3"
+    ]
+  },
+  {
+    "concept_id": "A01",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài thay giá trị vào biểu thức; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A01-HINT-3",
+    "ranking": [
+      "A01-hint-1",
+      "A01-hint-3",
+      "A01-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A01-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về nhân và chia số nguyên có dấu, gần với dạng `((-36)/9)*(-8)`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N02-EXAMPLE-3",
+    "ranking": [
+      "D-N02-M2-ORIG02-EX-02",
+      "D-N02-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-N02-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "A07",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài đặt nhân tử chung, chưa cần lời giải.",
+    "query_id": "M2-A07-HINT-2",
+    "ranking": [
+      "A07-hint-1",
+      "A07-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A07-hint-2"
+    ]
+  },
+  {
+    "concept_id": "A07",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về đặt nhân tử chung, gần với dạng `32*x*x+56*x`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A07-EXAMPLE-3",
+    "ranking": [
+      "D-A07-M2-ORIG02-EX-02",
+      "D-A07-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-A07-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về vận dụng quy tắc của hàm số mũ, gần với dạng `function;quotient;2;0;3`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F08-EXAMPLE-2",
+    "ranking": [
+      "D-F08-M2-ORIG02-EX-01",
+      "D-F08-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-F08-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "E06",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài giải phương trình bậc hai bằng biệt thức, chưa cần lời giải.",
+    "query_id": "M2-E06-HINT-2",
+    "ranking": [
+      "E06-hint-1",
+      "E06-hint-2"
+    ],
+    "relevant_grade_2": [
+      "E06-hint-2"
+    ]
+  },
+  {
+    "concept_id": "E03",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài lập phương trình từ bài toán có lời văn, chưa cần lời giải.",
+    "query_id": "M2-E03-HINT-2",
+    "ranking": [
+      "E03-hint-1",
+      "E03-hint-2"
+    ],
+    "relevant_grade_2": [
+      "E03-hint-2"
+    ]
+  },
+  {
+    "concept_id": "A01",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài thay giá trị vào biểu thức, chưa cần lời giải.",
+    "query_id": "M2-A01-HINT-2",
+    "ranking": [
+      "A01-hint-1",
+      "A01-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A01-hint-2"
+    ]
+  },
+  {
+    "concept_id": "A01",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài thay giá trị vào biểu thức, chưa cần lời giải.",
+    "query_id": "M2-A01-HINT-2",
+    "ranking": [
+      "A01-hint-1",
+      "A01-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A01-hint-2"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về đổi giữa phân số, số thập phân và phần trăm, gần với dạng `37.5% -> fraction`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N08-EXAMPLE-3",
+    "ranking": [
+      "D-N08-M2-ORIG02-EX-02",
+      "D-N08-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-N08-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài tìm đỉnh hoặc trục đối xứng của parabol, chưa cần lời giải.",
+    "query_id": "M2-F05-HINT-2",
+    "ranking": [
+      "F05-hint-1",
+      "F05-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F05-hint-2"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài tìm đỉnh hoặc trục đối xứng của parabol, chưa cần lời giải.",
+    "query_id": "M2-F05-HINT-2",
+    "ranking": [
+      "F05-hint-1",
+      "F05-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F05-hint-2"
+    ]
+  },
+  {
+    "concept_id": "E06",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài giải phương trình bậc hai bằng biệt thức; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-E06-HINT-3",
+    "ranking": [
+      "E06-hint-1",
+      "E06-hint-2",
+      "E06-hint-3"
+    ],
+    "relevant_grade_2": [
+      "E06-hint-3"
+    ]
+  },
+  {
+    "concept_id": "A01",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về thay giá trị vào biểu thức, gần với dạng `4*x*x+9*x-11` khi x = -3, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A01-EXAMPLE-2",
+    "ranking": [
+      "D-A01-M2-ORIG02-EX-01",
+      "D-A01-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-A01-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A10",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài thực hiện phép toán với phân thức đại số; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A10-HINT-3",
+    "ranking": [
+      "A10-hint-2",
+      "A10-hint-1",
+      "A10-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A10-hint-3"
+    ]
+  },
+  {
+    "concept_id": "A10",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài thực hiện phép toán với phân thức đại số; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A10-HINT-3",
+    "ranking": [
+      "A10-hint-1",
+      "A10-hint-2",
+      "A10-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A10-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về so sánh phân số bằng quy đồng, gần với dạng `16/28 ? 20/35`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N05-EXAMPLE-3",
+    "ranking": [
+      "D-N05-M2-ORIG02-EX-02",
+      "D-N05-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-N05-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "E03",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về lập phương trình từ bài toán có lời văn, gần với dạng `remaining;67;3;40;túi`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E03-EXAMPLE-3",
+    "ranking": [
+      "D-E03-M2-ORIG02-EX-02",
+      "D-E03-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-E03-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "E09",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về giải hệ phương trình bằng phương pháp khử, gần với dạng `3*x+2*y=11;4*x-5*y=7`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E09-EXAMPLE-3",
+    "ranking": [
+      "D-E09-M2-ORIG02-EX-02",
+      "D-E09-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-E09-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "E09",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về giải hệ phương trình bằng phương pháp khử, gần với dạng `3*x+2*y=11;4*x-5*y=7`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E09-EXAMPLE-3",
+    "ranking": [
+      "D-E09-M2-ORIG02-EX-02",
+      "D-E09-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-E09-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về tìm đỉnh hoặc trục đối xứng của parabol, gần với dạng `-4*x*x+24*x+13`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F05-EXAMPLE-3",
+    "ranking": [
+      "D-F05-M2-ORIG02-EX-02",
+      "D-F05-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-F05-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F02",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài tìm tập xác định của hàm số; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-F02-HINT-3",
+    "ranking": [
+      "F02-hint-2",
+      "F02-hint-3",
+      "F02-hint-1"
+    ],
+    "relevant_grade_2": [
+      "F02-hint-3"
+    ]
+  },
+  {
+    "concept_id": "F02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài tìm tập xác định của hàm số; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-F02-HINT-3",
+    "ranking": [
+      "F02-hint-1",
+      "F02-hint-2",
+      "F02-hint-3"
+    ],
+    "relevant_grade_2": [
+      "F02-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài nhân và chia số nguyên có dấu, chưa cần lời giải.",
+    "query_id": "M2-N02-HINT-2",
+    "ranking": [
+      "N02-hint-1",
+      "N02-hint-2"
+    ],
+    "relevant_grade_2": [
+      "N02-hint-2"
+    ]
+  },
+  {
+    "concept_id": "F02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về tìm tập xác định của hàm số, gần với dạng `sqrt; 8*x+17`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F02-EXAMPLE-2",
+    "ranking": [
+      "D-F02-M2-ORIG02-EX-01",
+      "D-F02-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-F02-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A07",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về đặt nhân tử chung, gần với dạng `17*x*x+6*x`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A07-EXAMPLE-2",
+    "ranking": [
+      "D-A07-M2-ORIG02-EX-01",
+      "D-A07-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-A07-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A10",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về thực hiện phép toán với phân thức đại số, gần với dạng `*; x-8|x+9; x+9|x-2`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A10-EXAMPLE-2",
+    "ranking": [
+      "D-A10-M2-ORIG02-EX-01",
+      "D-A10-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-A10-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài nhân và thu gọn đa thức; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A04-HINT-3",
+    "ranking": [
+      "A04-hint-1",
+      "A04-hint-2",
+      "A04-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A04-hint-3"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài nhân và thu gọn đa thức; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-A04-HINT-3",
+    "ranking": [
+      "A04-hint-2",
+      "A04-hint-1",
+      "A04-hint-3"
+    ],
+    "relevant_grade_2": [
+      "A04-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài so sánh phân số bằng quy đồng; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-N05-HINT-3",
+    "ranking": [
+      "N05-hint-1",
+      "N05-hint-2",
+      "N05-hint-3"
+    ],
+    "relevant_grade_2": [
+      "N05-hint-3"
+    ]
+  },
+  {
+    "concept_id": "E09",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về giải hệ phương trình bằng phương pháp khử, gần với dạng `2*x-3*y=-8;2*x+5*y=8`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E09-EXAMPLE-2",
+    "ranking": [
+      "D-E09-M2-ORIG02-EX-01",
+      "D-E09-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-E09-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "N08",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về đổi giữa phân số, số thập phân và phần trăm, gần với dạng `0.315 -> percent`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N08-EXAMPLE-2",
+    "ranking": [
+      "D-N08-M2-ORIG02-EX-01",
+      "D-N08-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-N08-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "E06",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về giải phương trình bậc hai bằng biệt thức, gần với dạng `5*x*x+4*x+3`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E06-EXAMPLE-3",
+    "ranking": [
+      "D-E06-M2-ORIG02-EX-02",
+      "D-E06-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-E06-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài tìm đỉnh hoặc trục đối xứng của parabol; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-F05-HINT-3",
+    "ranking": [
+      "F05-hint-1",
+      "F05-hint-2",
+      "F05-hint-3"
+    ],
+    "relevant_grade_2": [
+      "F05-hint-3"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài tìm đỉnh hoặc trục đối xứng của parabol; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-F05-HINT-3",
+    "ranking": [
+      "F05-hint-1",
+      "F05-hint-3",
+      "F05-hint-2"
+    ],
+    "relevant_grade_2": [
+      "F05-hint-3"
+    ]
+  },
+  {
+    "concept_id": "E06",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về giải phương trình bậc hai bằng biệt thức, gần với dạng `25*x*x+20*x+4`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E06-EXAMPLE-2",
+    "ranking": [
+      "D-E06-M2-ORIG02-EX-01",
+      "D-E06-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-E06-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "N05",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài so sánh phân số bằng quy đồng, chưa cần lời giải.",
+    "query_id": "M2-N05-HINT-2",
+    "ranking": [
+      "N05-hint-1",
+      "N05-hint-2"
+    ],
+    "relevant_grade_2": [
+      "N05-hint-2"
+    ]
+  },
+  {
+    "concept_id": "N05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài so sánh phân số bằng quy đồng, chưa cần lời giải.",
+    "query_id": "M2-N05-HINT-2",
+    "ranking": [
+      "N05-hint-1",
+      "N05-hint-2"
+    ],
+    "relevant_grade_2": [
+      "N05-hint-2"
+    ]
+  },
+  {
+    "concept_id": "A10",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về thực hiện phép toán với phân thức đại số, gần với dạng `/; x+4|x-8; x+4|x-11`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A10-EXAMPLE-3",
+    "ranking": [
+      "D-A10-M2-ORIG02-EX-02",
+      "D-A10-M2-ORIG02-EX-03"
+    ],
+    "relevant_grade_2": [
+      "D-A10-M2-ORIG02-EX-03"
+    ]
+  },
+  {
+    "concept_id": "A10",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài thực hiện phép toán với phân thức đại số, chưa cần lời giải.",
+    "query_id": "M2-A10-HINT-2",
+    "ranking": [
+      "A10-hint-1",
+      "A10-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A10-hint-2"
+    ]
+  },
+  {
+    "concept_id": "E09",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài giải hệ phương trình bằng phương pháp khử, chưa cần lời giải.",
+    "query_id": "M2-E09-HINT-2",
+    "ranking": [
+      "E09-hint-1",
+      "E09-hint-2"
+    ],
+    "relevant_grade_2": [
+      "E09-hint-2"
+    ]
+  },
+  {
+    "concept_id": "E09",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài giải hệ phương trình bằng phương pháp khử; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-E09-HINT-3",
+    "ranking": [
+      "E09-hint-1",
+      "E09-hint-2",
+      "E09-hint-3"
+    ],
+    "relevant_grade_2": [
+      "E09-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài nhân và chia số nguyên có dấu; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-N02-HINT-3",
+    "ranking": [
+      "N02-hint-1",
+      "N02-hint-2",
+      "N02-hint-3"
+    ],
+    "relevant_grade_2": [
+      "N02-hint-3"
+    ]
+  },
+  {
+    "concept_id": "N02",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em vẫn mắc kẹt với bài nhân và chia số nguyên có dấu; hãy nêu khung bước cụ thể nhưng không giải bài hiện tại.",
+    "query_id": "M2-N02-HINT-3",
+    "ranking": [
+      "N02-hint-2",
+      "N02-hint-1",
+      "N02-hint-3"
+    ],
+    "relevant_grade_2": [
+      "N02-hint-3"
+    ]
+  },
+  {
+    "concept_id": "F05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về tìm đỉnh hoặc trục đối xứng của parabol, gần với dạng `6*x*x-15*x-7`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-F05-EXAMPLE-2",
+    "ranking": [
+      "D-F05-M2-ORIG02-EX-01",
+      "D-F05-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-F05-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về nhân và thu gọn đa thức, gần với dạng `-4*(3*x*x+7*x-13)`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-A04-EXAMPLE-2",
+    "ranking": [
+      "D-A04-M2-ORIG02-EX-01",
+      "D-A04-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-A04-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "N05",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về so sánh phân số bằng quy đồng, gần với dạng `-5/13 ? -7/17`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N05-EXAMPLE-2",
+    "ranking": [
+      "D-N05-M2-ORIG02-EX-01",
+      "D-N05-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-N05-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "E03",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về lập phương trình từ bài toán có lời văn, gần với dạng `difference;11;55;vé`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E03-EXAMPLE-2",
+    "ranking": [
+      "D-E03-M2-ORIG02-EX-01",
+      "D-E03-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-E03-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "E03",
+    "method": "semantic",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về lập phương trình từ bài toán có lời văn, gần với dạng `difference;11;55;vé`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-E03-EXAMPLE-2",
+    "ranking": [
+      "D-E03-M2-ORIG02-EX-01",
+      "D-E03-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-E03-M2-ORIG02-EX-02"
+    ]
+  },
+  {
+    "concept_id": "A04",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "hint",
+    "query": "Em cần một chiến lược tiếp theo để tự làm bài nhân và thu gọn đa thức, chưa cần lời giải.",
+    "query_id": "M2-A04-HINT-2",
+    "ranking": [
+      "A04-hint-1",
+      "A04-hint-2"
+    ],
+    "relevant_grade_2": [
+      "A04-hint-2"
+    ]
+  },
+  {
+    "concept_id": "N02",
+    "method": "metadata",
+    "ndcg_at_1": 0.3333333333333333,
+    "purpose": "example",
+    "query": "Cho em một ví dụ khác về nhân và chia số nguyên có dấu, gần với dạng `126/(-9)`, có kết quả để tự đối chiếu.",
+    "query_id": "M2-N02-EXAMPLE-2",
+    "ranking": [
+      "D-N02-M2-ORIG02-EX-01",
+      "D-N02-M2-ORIG02-EX-02"
+    ],
+    "relevant_grade_2": [
+      "D-N02-M2-ORIG02-EX-02"
+    ]
+  }
+]
