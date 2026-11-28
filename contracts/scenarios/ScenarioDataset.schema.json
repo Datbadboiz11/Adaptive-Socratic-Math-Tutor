@@ -708,7 +708,7 @@
     },
     "ScenarioDraft": {
       "additionalProperties": false,
-      "description": "``context`` do người biên soạn cung cấp, trừ phần KG: ``build`` lấy cạnh prerequisite và\nconcept kế tiếp từ registry, nên ``edges`` và ``next_concepts`` để trống.",
+      "description": "``context`` do người biên soạn cung cấp, trừ phần KG: ``build`` lấy cạnh prerequisite và\nconcept kế tiếp từ registry, nên ``edges`` và ``next_concepts`` để trống.\n\n``labels`` chỉ được để trống ở ca test: nhãn test do hai người gán độc lập sau khi dựng xong tình\nhuống (plan §12), nên người dựng không viết nhãn. ``build`` từ chối ca chưa có nhãn.",
       "properties": {
         "scenario_id": {
           "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
@@ -787,7 +787,15 @@
           "$ref": "#/$defs/TurnContext"
         },
         "labels": {
-          "$ref": "#/$defs/StrategyLabels"
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StrategyLabels"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         }
       },
       "required": [
@@ -800,8 +808,7 @@
         "source_reference",
         "tags",
         "history",
-        "context",
-        "labels"
+        "context"
       ],
       "title": "ScenarioDraft",
       "type": "object"

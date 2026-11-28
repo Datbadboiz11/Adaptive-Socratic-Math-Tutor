@@ -1,6 +1,6 @@
 # Bộ tình huống thích ứng từ lịch sử
 
-**Trạng thái:** bản nháp của Member 3, công cụ và test xong, không gọi API. Có sáu ca ví dụ và **33 ca dev pilot** (N01, A02, A03, E02, E03, E05): nhãn do AI soạn, Member 3 đã duyệt; chưa có nhãn độc lập của người thứ hai. **Bộ 160–200 ca của plan §12 chưa đủ, và chưa có ca test nào.**
+**Trạng thái:** bản nháp của Member 3, công cụ và test xong, không gọi API. Có sáu ca ví dụ, **33 ca dev pilot** (N01, A02, A03, E02, E03, E05; nhãn Member 3 đã duyệt) và bộ trên 78 bài đã duyệt của Member 2: **53 ca dev** (nhãn nháp) và **39 ca test chưa có nhãn**, phủ 13 concept. **Bộ 160–200 ca của plan §12 chưa đủ; test chưa chạy được cho tới khi có nhãn của hai người.**
 **Căn cứ:** plan §8.3 (observation), §11.5, §12, §18.2. **Dùng ở:** [script ablation](ablation-runner.v1.md) qua `--scenario-set`.
 
 ## Các file
@@ -14,6 +14,10 @@
 | [`pilot_dev.py`](../../../research/scenarios/pilot_dev.py) | Nguồn của bộ dev pilot; in state từng ca và xuất phiếu rà soát |
 | [`examples.dev.v1.json`](../../../contracts/scenarios/examples.dev.v1.json) | Sáu ví dụ có nguồn và nhãn nháp, cố định dev |
 | [`pilot.dev.v1.json`](../../../contracts/scenarios/pilot.dev.v1.json) | 33 ca dev pilot, sinh từ `pilot_dev.py` (không sửa tay) |
+| [`approved_dev.py`](../../../research/scenarios/approved_dev.py) | Nguồn của 53 ca dev trên bài đã duyệt và bảng chia họ bài dev/test |
+| [`approved_test.py`](../../../research/scenarios/approved_test.py) | Nguồn của 39 ca test chưa có nhãn; kiểm không lộ bài sang dev |
+| [`approved.dev.v1.json`](../../../contracts/scenarios/approved.dev.v1.json) | 53 ca dev, sinh từ `approved_dev.py` (không sửa tay) |
+| [`approved.test.v1.json`](../../../contracts/scenarios/approved.test.v1.json) | 39 ca test, `labels = null`, sinh từ `approved_test.py` |
 | [`ScenarioDataset.schema.json`](../../../contracts/scenarios/ScenarioDataset.schema.json) | Schema đầu vào |
 | [`ScenarioSet.schema.json`](../../../contracts/scenarios/ScenarioSet.schema.json) | Schema một split đã replay |
 | [`test_scenarios.py`](../../../tests/test_scenarios.py) | Replay khớp graph, observation, chia nhóm và tích hợp CLI ablation |
@@ -152,6 +156,63 @@ python -m research.scenarios.pilot_dev --describe   # state đã replay của t�
 python -m research.scenarios.pilot_dev              # sinh lại pilot.dev.v1.json sau khi sửa nguồn
 ```
 
+## Bộ dev và test trên 78 bài đã duyệt
+
+Bài, đề và KB là bản Member 2 đã duyệt (`member2-v2`, 13 concept). Mọi lần nộp do validator của hệ
+thống chấm (`Session.work`): chấm ra khác kết quả người soạn ghi thì dừng ngay. 13 pack chỉ chấm đáp
+án cuối, nên replay không tạo observation BKT (`not_target_evidence`, như web).
+
+**Chia họ bài.** Mỗi concept có 3 họ, mỗi họ 2 bài. Dev giữ các họ bộ dev v0.1.0 đã dùng, test nhận
+phần còn lại (`approved_dev.TEST_FAMILIES`):
+
+| Test nhận 2 họ | Test nhận 1 họ |
+|---|---|
+| A01, A07, E09, F08, N02, N05 | A04, A10, E03, E06, F02, F05, N08 |
+
+Ca của bên nào chỉ dùng bài thuộc họ của bên đó, kể cả bài giao khi kiểm tra chuyển giao, nên ca test
+có `check_transfer` chỉ có ở concept test nhận 2 họ (AT-03, AT-08). Công cụ soạn context của mỗi bên
+cũng chỉ thấy phần của bên đó (`approved_dev.side_content`): bài ứng viên để giao tiếp và ví dụ mẫu của
+KB thuộc họ test không vào ca dev, nên hệ thống chạy trên dev không thể chọn hay chép lại đề test. Gợi ý
+và giải thích chung cho cả concept thì hai bên cùng dùng. No-KG lấy bài của concept đang học từ chính
+tình huống, không lấy lại từ cả ngân hàng. `approved_test.leaks()` kiểm lịch sử, bài ứng viên và nội
+dung KB ở cả hai phía, rồi gộp hai bộ qua `grouped_splits`: ca test nối với ca dev sẽ báo xung đột
+split. Bản dev v0.2.0 còn đưa bài họ test vào danh sách ứng viên; v0.3.0 sửa việc này nên context của
+mọi ca dev đổi, kết quả chạy trên v0.2.0 không so thẳng được với v0.3.0.
+
+**Nhãn.** 53 ca dev có nhãn AI soạn (`ai_draft`, `draft`), chờ Member 3 duyệt. 39 ca test để
+`labels = null`: hợp đồng chỉ cho ca test để trống. `build` từ chối ca chưa có nhãn, và mọi ca vào
+test (kể cả ca chưa gán split mà `grouped_splits` xếp vào test) phải có nhãn đã hòa giải của ít nhất hai
+người (`independent_labels`, `adjudicated`); bước chấm (`load_scenarios`) kiểm lại điều này trên file
+test. Một nhãn nháp chưa đủ để chấm. Nhãn test do hai người gán độc lập bằng phiếu không có nhãn rồi
+hòa giải. Phiếu đó chỉ hiện mã ca, concept, đề, lịch sử với đủ kết quả chấm của validator (kể cả "chưa
+hoàn tất: đúng giá trị nhưng chưa phải đáp án cuối") và state: không có tiêu đề hay loại ca, vì đó là
+cách người soạn diễn giải lỗi.
+
+Nhãn dev không được nhận action mà gate chắc chắn từ chối ở state đó (test kiểm G01, G02, G06, G10, G11,
+G14, và G12/G13 theo bài ứng viên trong context). Ở sáu concept mà dev chỉ còn một họ (A01, A07, E09, F08,
+N02, N05), không có bài khác họ để kiểm tra chuyển giao: `approved_dev.fit_transfer` chuyển
+`check_transfer` sang bị cấm và ghi lý do trong nhãn (9 ca: AP-01, 02, 06, 12, 14, 24, 32, 34, 51). Việc
+này dựa trên ngân hàng bài của phía dev, không dựa trên lựa chọn của hệ thống. AP-45 trước đây nhận `scaffold` ở mức gợi ý 1; scaffold là mức 3 mà G02 chỉ cho lên một nấc, nên
+đã bỏ. Hai ca AP-42 và AP-45 được chỉnh nhãn sau khi xem kết quả chạy thử bằng LLM giả: người duyệt nên
+đọc tình huống trước khi xem lựa chọn của hệ thống.
+
+Giới hạn cần ghi khi báo cáo:
+
+- Tình huống test do cùng quy trình AI dưới Member 3 dựng như bộ dev, chỉ khác bài. Nhãn test thì không
+  do người phát triển policy soạn.
+- Validator không chỉ ra bước sai đầu tiên trên các bài này, kể cả khi bài làm có nhiều bước. Ca lỗi kéo
+  theo (`error_propagation`) mô tả bài làm của học sinh; hệ thống chỉ thấy đáp án cuối sai.
+- Bảy concept chỉ còn một họ cho test, nên ca test ở đó ít đa dạng.
+- Một số cách viết đúng vẫn bị validator báo "chưa chấm được" (ví dụ `x≠-10/3` cho tập xác định, nhân tử
+  chung âm). Các ca dựa trên chúng đi qua G01 (chỉ `clarify`).
+
+```powershell
+python -m research.scenarios.approved_dev --check
+python -m research.scenarios.approved_test --check      # khớp nguồn và không lộ bài sang dev
+python -m research.scenarios.approved_dev --sheet data/scenarios/approved-dev-review.md
+python -m research.scenarios.approved_test --sheet data/scenarios/approved-test-blind.md   # phiếu cho hai người gán nhãn
+```
+
 ## Replay
 
 Replay không viết lại logic của graph. Lượt của học sinh đi qua `start_turn` →
@@ -248,6 +309,8 @@ fallback và ghi lý do theo thiết kế hiện có.
   của các bài `pilot-0.1.0`.
 - **Mở rộng dev** tới khoảng một nửa của 160–200 ca, tối thiểu 2 ca/concept ở mỗi bên. Hiện mới có
   6 trên 40 concept; concept nào chưa có đủ họ mẫu trong problem bank thì chưa soạn được.
+- **Bộ test trên bài đã duyệt:** 39 ca đã dựng, cần hai người gán nhãn độc lập rồi hòa giải, và một
+  công cụ nhập nhãn từ phiếu vào `independent_labels`.
 - **Bộ test (80–100 ca):** dùng bài gốc và họ mẫu không có trong dev. Nhãn do hai người gán độc lập
   rồi hòa giải (`adjudicated`); hợp đồng đã có chỗ lưu. Người phát triển policy (Member 3 và công cụ
   AI đã viết policy) không soạn nhãn test và không dùng test để chỉnh hệ thống (plan §12, bước 5).

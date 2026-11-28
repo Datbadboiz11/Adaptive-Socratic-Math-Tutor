@@ -110,14 +110,16 @@ def project_context(ctx: TurnContext, state: StudentState, configuration: E) -> 
 def candidate_problems(ctx: TurnContext, state: StudentState, kg: bool) -> list:
     """Bài ứng viên như tool thật trả về. Bộ trên bài đã duyệt (``approved_dev``): ``ApprovedTools`` lấy
     bài của concept đang học, prerequisite và concept kế tiếp theo KG, nên tắt KG chỉ còn bài của concept
-    đang học (``ApprovedContent.candidates``). Bộ bài mẫu: ``StubTools`` trả cả ngân hàng mẫu, không theo
-    KG, nên giữ nguyên."""
+    đang học. Lấy chúng từ chính danh sách của tình huống (bài của concept đang học xếp đầu, nên không bị
+    cắt), không lấy lại từ cả ngân hàng: ca dev chỉ được thấy bài thuộc họ của dev
+    (``approved_dev.side_content``). Bộ bài mẫu: ``StubTools`` trả cả ngân hàng mẫu, không theo KG, nên
+    giữ nguyên."""
     if kg:
         return ctx.problems
     content = load_approved_content()
     if state.current.problem_id not in content.problems:
         return ctx.problems
-    return content.candidates([state.current.concept_id])
+    return [p for p in ctx.problems if p.concept_id == state.current.concept_id]
 
 
 def max_calls(scenarios: int, configurations: list[str], repeat: int) -> int:

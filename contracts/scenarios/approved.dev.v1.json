@@ -1,6 +1,6 @@
 {
   "schema_version": "adaptive-scenarios-2.1.0",
-  "dataset_version": "adaptive-approved-dev-0.1.0",
+  "dataset_version": "adaptive-approved-dev-0.3.0",
   "parameters": {
     "SK-A01-EVALUATE": {
       "parameter_version": "scenario-demo-0.1.0",
@@ -1211,43 +1211,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N02-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N02",
             "target_skill_id": "SK-N02-SIGNED-MUL",
             "template_family_id": "FAM-N02-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -1261,14 +1229,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -1279,7 +1247,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -1359,43 +1327,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N02-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N02",
             "target_skill_id": "SK-N02-SIGNED-MUL",
             "template_family_id": "FAM-N02-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -1409,14 +1345,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -1427,7 +1363,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -1507,43 +1443,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N02-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N02",
             "target_skill_id": "SK-N02-SIGNED-MUL",
             "template_family_id": "FAM-N02-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -1653,43 +1557,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N02-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N02",
             "target_skill_id": "SK-N02-SIGNED-MUL",
             "template_family_id": "FAM-N02-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -1798,43 +1670,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N02-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N02",
             "target_skill_id": "SK-N02-SIGNED-MUL",
             "template_family_id": "FAM-N02-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N02",
-            "target_skill_id": "SK-N02-SIGNED-MUL",
-            "template_family_id": "FAM-N02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -1943,43 +1783,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           },
           {
@@ -1999,14 +1807,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -2021,14 +1821,6 @@
             "target_skill_id": "SK-E03-PRIMARY",
             "template_family_id": "FAM-E03-M2-ORIG02-2",
             "difficulty": 2
-          },
-          {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 2
           }
         ],
         "tool_calls_used": 0,
@@ -2041,14 +1833,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -2059,7 +1851,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -2137,43 +1929,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           },
           {
@@ -2193,14 +1953,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -2214,14 +1966,6 @@
             "concept_id": "E03",
             "target_skill_id": "SK-E03-PRIMARY",
             "template_family_id": "FAM-E03-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -2391,43 +2135,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           },
           {
@@ -2447,14 +2159,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -2468,14 +2172,6 @@
             "concept_id": "E03",
             "target_skill_id": "SK-E03-PRIMARY",
             "template_family_id": "FAM-E03-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -2584,14 +2280,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A04-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A04-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A04",
@@ -2605,14 +2293,6 @@
             "concept_id": "A04",
             "target_skill_id": "SK-A04-PRIMARY",
             "template_family_id": "FAM-A04-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A04-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -2732,14 +2412,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A04-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A04-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A04",
@@ -2753,14 +2425,6 @@
             "concept_id": "A04",
             "target_skill_id": "SK-A04-PRIMARY",
             "template_family_id": "FAM-A04-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A04-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -2867,14 +2531,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A04-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A04-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A04",
@@ -2888,14 +2544,6 @@
             "concept_id": "A04",
             "target_skill_id": "SK-A04-PRIMARY",
             "template_family_id": "FAM-A04-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A04-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A04",
-            "target_skill_id": "SK-A04-PRIMARY",
-            "template_family_id": "FAM-A04-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -3014,43 +2662,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A07-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A07-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A07",
             "target_skill_id": "SK-A07-PRIMARY",
             "template_family_id": "FAM-A07-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -3064,14 +2680,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -3082,7 +2698,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -3161,43 +2777,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A07-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A07-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A07",
             "target_skill_id": "SK-A07-PRIMARY",
             "template_family_id": "FAM-A07-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -3374,43 +2958,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A07-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A07-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A07",
             "target_skill_id": "SK-A07-PRIMARY",
             "template_family_id": "FAM-A07-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A07-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A07",
-            "target_skill_id": "SK-A07-PRIMARY",
-            "template_family_id": "FAM-A07-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -3423,14 +2975,14 @@
       },
       "labels": {
         "acceptable_actions": [
-          "check_transfer",
           "next_problem"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "end_session"
+          "end_session",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice"
@@ -3439,7 +2991,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đúng nhờ gợi ý chưa phải bằng chứng độc lập: giao bài khác họ mẫu không kèm gợi ý, hoặc luyện tiếp. Chưa tăng độ khó hay chuyển concept.",
+        "rationale": "Đúng nhờ gợi ý chưa phải bằng chứng độc lập: giao bài khác họ mẫu không kèm gợi ý, hoặc luyện tiếp. Chưa tăng độ khó hay chuyển concept. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -3526,14 +3078,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A10-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A10",
-            "target_skill_id": "SK-A10-PRIMARY",
-            "template_family_id": "FAM-A10-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A10-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A10",
@@ -3547,14 +3091,6 @@
             "concept_id": "A10",
             "target_skill_id": "SK-A10-PRIMARY",
             "template_family_id": "FAM-A10-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A10-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A10",
-            "target_skill_id": "SK-A10-PRIMARY",
-            "template_family_id": "FAM-A10-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -3660,14 +3196,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A10-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A10",
-            "target_skill_id": "SK-A10-PRIMARY",
-            "template_family_id": "FAM-A10-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A10-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A10",
@@ -3681,14 +3209,6 @@
             "concept_id": "A10",
             "target_skill_id": "SK-A10-PRIMARY",
             "template_family_id": "FAM-A10-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A10-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A10",
-            "target_skill_id": "SK-A10-PRIMARY",
-            "template_family_id": "FAM-A10-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -3814,14 +3334,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -3838,14 +3350,6 @@
             "difficulty": 2
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 2
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-01",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
@@ -3854,43 +3358,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -4016,14 +3488,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -4040,14 +3504,6 @@
             "difficulty": 2
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 2
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-01",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
@@ -4056,43 +3512,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -4205,14 +3629,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E03-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E03",
@@ -4229,14 +3645,6 @@
             "difficulty": 2
           },
           {
-            "problem_id": "D-E03-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E03",
-            "target_skill_id": "SK-E03-PRIMARY",
-            "template_family_id": "FAM-E03-M2-ORIG02-3",
-            "difficulty": 2
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-01",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
@@ -4245,43 +3653,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-A01-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-A01-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "A01",
             "target_skill_id": "SK-A01-EVALUATE",
             "template_family_id": "FAM-A01-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-A01-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "A01",
-            "target_skill_id": "SK-A01-EVALUATE",
-            "template_family_id": "FAM-A01-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -4392,14 +3768,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E06-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E06-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E06",
@@ -4413,14 +3781,6 @@
             "concept_id": "E06",
             "target_skill_id": "SK-E06-PRIMARY",
             "template_family_id": "FAM-E06-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E06-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -4538,14 +3898,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E06-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E06-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E06",
@@ -4559,14 +3911,6 @@
             "concept_id": "E06",
             "target_skill_id": "SK-E06-PRIMARY",
             "template_family_id": "FAM-E06-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E06-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -4684,14 +4028,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E06-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E06-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E06",
@@ -4705,14 +4041,6 @@
             "concept_id": "E06",
             "target_skill_id": "SK-E06-PRIMARY",
             "template_family_id": "FAM-E06-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E06-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -4878,14 +4206,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E06-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E06-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E06",
@@ -4899,14 +4219,6 @@
             "concept_id": "E06",
             "target_skill_id": "SK-E06-PRIMARY",
             "template_family_id": "FAM-E06-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E06-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E06",
-            "target_skill_id": "SK-E06-PRIMARY",
-            "template_family_id": "FAM-E06-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -5025,43 +4337,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E09-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E09-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E09",
             "target_skill_id": "SK-E09-PRIMARY",
             "template_family_id": "FAM-E09-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -5075,14 +4355,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -5093,7 +4373,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -5335,20 +4615,6 @@
             "text": "Chọn hai hệ số nhân sao cho tổng hệ số của một ẩn bằng 0."
           },
           {
-            "content_id": "D-E09-M2-ORIG02-EX-02",
-            "skill_id": "SK-E09-PRIMARY",
-            "content_type": "example",
-            "disclosure_level": 3,
-            "text": "Giải hệ 2*x-3*y=-8;2*x+5*y=8 bằng cộng đại số. Nộp hai hệ số nhân m,n và nghiệm (x,y). Dùng hệ số âm để biểu diễn phép trừ.\n\nLấy hàng đầu trừ hàng sau, tương ứng hệ số 1 và −1. Kết quả −8y = −16 cho y = 2. Thế vào hàng đầu để có x = −1."
-          },
-          {
-            "content_id": "D-E09-M2-ORIG02-EX-03",
-            "skill_id": "SK-E09-PRIMARY",
-            "content_type": "example",
-            "disclosure_level": 3,
-            "text": "Giải hệ 3*x+2*y=11;4*x-5*y=7 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.\n\nNhân hàng đầu với 5 và hàng sau với 2. Cộng để khử y và được 23x = 69. Thế x = 3 vào hàng đầu thì y = 1."
-          },
-          {
             "content_id": "E09-hint-3",
             "skill_id": "SK-E09-PRIMARY",
             "content_type": "hint",
@@ -5368,43 +4634,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-E09-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-E09-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "E09",
             "target_skill_id": "SK-E09-PRIMARY",
             "template_family_id": "FAM-E09-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-E09-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "E09",
-            "target_skill_id": "SK-E09-PRIMARY",
-            "template_family_id": "FAM-E09-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -5517,14 +4751,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F02",
@@ -5538,14 +4764,6 @@
             "concept_id": "F02",
             "target_skill_id": "SK-F02-PRIMARY",
             "template_family_id": "FAM-F02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -5665,14 +4883,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F02",
@@ -5686,14 +4896,6 @@
             "concept_id": "F02",
             "target_skill_id": "SK-F02-PRIMARY",
             "template_family_id": "FAM-F02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -5932,14 +5134,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F02-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F02-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F02",
@@ -5953,14 +5147,6 @@
             "concept_id": "F02",
             "target_skill_id": "SK-F02-PRIMARY",
             "template_family_id": "FAM-F02-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F02-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F02",
-            "target_skill_id": "SK-F02-PRIMARY",
-            "template_family_id": "FAM-F02-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6076,14 +5262,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F05",
@@ -6097,14 +5275,6 @@
             "concept_id": "F05",
             "target_skill_id": "SK-F05-VERTEX",
             "template_family_id": "FAM-F05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6223,14 +5393,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F05",
@@ -6244,14 +5406,6 @@
             "concept_id": "F05",
             "target_skill_id": "SK-F05-VERTEX",
             "template_family_id": "FAM-F05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6430,14 +5584,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F05",
@@ -6451,14 +5597,6 @@
             "concept_id": "F05",
             "target_skill_id": "SK-F05-VERTEX",
             "template_family_id": "FAM-F05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F05",
-            "target_skill_id": "SK-F05-VERTEX",
-            "template_family_id": "FAM-F05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6569,43 +5707,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F08-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F08",
             "target_skill_id": "SK-F08-PRIMARY",
             "template_family_id": "FAM-F08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6619,14 +5725,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -6637,7 +5743,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -6716,43 +5822,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-F08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-F08-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "F08",
             "target_skill_id": "SK-F08-PRIMARY",
             "template_family_id": "FAM-F08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-F08-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "F08",
-            "target_skill_id": "SK-F08-PRIMARY",
-            "template_family_id": "FAM-F08-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6862,43 +5936,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N05-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N05",
             "target_skill_id": "SK-N05-PRIMARY",
             "template_family_id": "FAM-N05-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -6912,14 +5954,14 @@
       "labels": {
         "acceptable_actions": [
           "next_problem",
-          "check_transfer",
           "diagnose"
         ],
         "forbidden_actions": [
           "minimal_hint",
           "scaffold",
           "backtrack",
-          "conceptual_question"
+          "conceptual_question",
+          "check_transfer"
         ],
         "acceptable_intents": [
           "continue_practice",
@@ -6930,7 +5972,7 @@
         "review_status": "draft",
         "author": "ai_draft",
         "reviewer": null,
-        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa.",
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
         "independent_labels": [],
         "adjudication_note": null
       }
@@ -7009,43 +6051,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N05-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N05",
             "target_skill_id": "SK-N05-PRIMARY",
             "template_family_id": "FAM-N05-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -7157,43 +6167,11 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N05-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-05",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N05-M2-ORIG02-P-02",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N05",
             "target_skill_id": "SK-N05-PRIMARY",
             "template_family_id": "FAM-N05-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-2",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N05-M2-ORIG02-P-06",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N05",
-            "target_skill_id": "SK-N05-PRIMARY",
-            "template_family_id": "FAM-N05-M2-ORIG02-3",
             "difficulty": 2
           }
         ],
@@ -7304,14 +6282,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N08-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N08",
@@ -7325,14 +6295,6 @@
             "concept_id": "N08",
             "target_skill_id": "SK-N08-PRIMARY",
             "template_family_id": "FAM-N08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -7505,14 +6467,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N08-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N08",
@@ -7526,14 +6480,6 @@
             "concept_id": "N08",
             "target_skill_id": "SK-N08-PRIMARY",
             "template_family_id": "FAM-N08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -7753,14 +6699,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N08-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N08",
@@ -7774,14 +6712,6 @@
             "concept_id": "N08",
             "target_skill_id": "SK-N08-PRIMARY",
             "template_family_id": "FAM-N08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -7896,14 +6826,6 @@
             "difficulty": 1
           },
           {
-            "problem_id": "D-N08-M2-ORIG02-P-03",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
-            "difficulty": 1
-          },
-          {
             "problem_id": "D-N08-M2-ORIG02-P-05",
             "problem_version": "0.4.0-member2-review",
             "concept_id": "N08",
@@ -7917,14 +6839,6 @@
             "concept_id": "N08",
             "target_skill_id": "SK-N08-PRIMARY",
             "template_family_id": "FAM-N08-M2-ORIG02-1",
-            "difficulty": 2
-          },
-          {
-            "problem_id": "D-N08-M2-ORIG02-P-04",
-            "problem_version": "0.4.0-member2-review",
-            "concept_id": "N08",
-            "target_skill_id": "SK-N08-PRIMARY",
-            "template_family_id": "FAM-N08-M2-ORIG02-2",
             "difficulty": 2
           },
           {
@@ -7965,6 +6879,1700 @@
         "author": "ai_draft",
         "reviewer": null,
         "rationale": "Em mới viết lại 6,25% thành phép chia cho 100, chưa phải phân số tối giản như đề yêu cầu: đề nghị em làm tiếp hoặc nhắc dạng đáp án. Theo G01, lời nhắc này đi qua clarify.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-41",
+      "title": "A01: sai dấu ở tích (-9)·(-6) rồi kéo theo đến đáp án",
+      "student_id": "AP-41-student",
+      "session_id": "59b69e1e-271a-516d-a68d-48425306f81f",
+      "history_group_id": "AP-41-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "error_propagation",
+        "sign_error",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "6d4a8537-5d3b-5f8d-9aeb-9d5998bf41ff",
+          "request_id": "a0f5f6b0-3cde-519e-98c3-e8360af1fef3",
+          "task": {
+            "problem_id": "D-A01-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "c67c505f-73b9-5b44-855d-24e324d0d7b0",
+            "concept_id": "A01",
+            "target_skill_id": "SK-A01-EVALUATE",
+            "template_family_id": "FAM-A01-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-9*(-6)+13",
+            "-54+13",
+            "-41"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "c55aa115-0e29-5c91-9348-41afd977b94f",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-A01-EVALUATE",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Tính giá trị -9*x+13 tại x = -6.",
+        "retrieved": [
+          {
+            "content_id": "A01-hint-1",
+            "skill_id": "SK-A01-EVALUATE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Biểu thức có mấy vị trí cần thay x?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-A01-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A01",
+            "target_skill_id": "SK-A01-EVALUATE",
+            "template_family_id": "FAM-A01-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A01-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A01",
+            "target_skill_id": "SK-A01-EVALUATE",
+            "template_family_id": "FAM-A01-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-2",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold"
+        ],
+        "acceptable_intents": [
+          "locate_error",
+          "recall_rule",
+          "elicit_reasoning"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Bài làm cho thấy bước đầu tính (-9)·(-6) thành -54, hai bước sau đúng theo số sai đó. Validator chỉ chấm đáp án cuối nên không chỉ ra bước sai; gia sư vẫn đọc được bài làm: chỉ vào phép nhân đầu tiên, nhắc quy tắc dấu, hoặc hỏi em tính tích đó thế nào. Không đổi bài khi chưa sửa.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-42",
+      "title": "A04: xin đáp án ngay khi chưa làm gì",
+      "student_id": "AP-42-student",
+      "session_id": "34f20251-fc2a-5aa1-b232-83e99e7cf14e",
+      "history_group_id": "AP-42-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "requests_answer",
+        "insufficient_evidence"
+      ],
+      "history": [
+        {
+          "turn_id": "5bca94c5-0efa-5b09-9e93-bc967539a9fb",
+          "request_id": "23c92935-c7b8-5b6a-bc03-ae76b875a7aa",
+          "task": {
+            "problem_id": "D-A04-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "323cd03f-5aef-5b3e-95e6-b5c662dbf095",
+            "concept_id": "A04",
+            "target_skill_id": "SK-A04-PRIMARY",
+            "template_family_id": "FAM-A04-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "message",
+          "submission": [],
+          "message": "Thầy cho em xin đáp án luôn được không ạ?",
+          "assessment": null,
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Khai triển rồi thu gọn -3*x*(5*x+2).",
+        "retrieved": [
+          {
+            "content_id": "A04-hint-1",
+            "skill_id": "SK-A04-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Mỗi hạng tử bên trái phải đi với mấy hạng tử bên phải?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-A04-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A04",
+            "target_skill_id": "SK-A04-PRIMARY",
+            "template_family_id": "FAM-A04-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A04-M2-ORIG02-P-05",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A04",
+            "target_skill_id": "SK-A04-PRIMARY",
+            "template_family_id": "FAM-A04-M2-ORIG02-3",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A04-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A04",
+            "target_skill_id": "SK-A04-PRIMARY",
+            "template_family_id": "FAM-A04-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-A04-M2-ORIG02-P-06",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A04",
+            "target_skill_id": "SK-A04-PRIMARY",
+            "template_family_id": "FAM-A04-M2-ORIG02-3",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint",
+          "clarify"
+        ],
+        "forbidden_actions": [
+          "next_problem",
+          "check_transfer",
+          "end_session",
+          "scaffold",
+          "backtrack"
+        ],
+        "acceptable_intents": [
+          "elicit_reasoning",
+          "recall_rule",
+          "restate_task"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Không đưa đáp án. Chưa có bài làm nên chưa biết em kẹt ở đâu: hỏi em đã thử gì, diễn đạt lại yêu cầu của đề, hoặc nhắc quy tắc nhân đơn thức với đa thức ở mức nhẹ (như AP-11). Chia nhỏ bước hay ví dụ mẫu là hỗ trợ quá mức khi em chưa thử.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-43",
+      "title": "A07: đặt nhân tử chung âm trong khi đề yêu cầu hệ số dương",
+      "student_id": "AP-43-student",
+      "session_id": "d5a5e9e0-7817-5087-b69a-3e655fd2f4ff",
+      "history_group_id": "AP-43-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "condition_error",
+        "ambiguous_input"
+      ],
+      "history": [
+        {
+          "turn_id": "7af1fda9-4e7c-5e19-afa3-9f51f94d33d4",
+          "request_id": "ea3b393e-e68d-5b31-848e-180ab8bfadff",
+          "task": {
+            "problem_id": "D-A07-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "1c0e3950-e7e0-5a2b-b975-92e26e105941",
+            "concept_id": "A07",
+            "target_skill_id": "SK-A07-PRIMARY",
+            "template_family_id": "FAM-A07-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "-4*(-7*x+11)"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "cd3f69b6-a525-5a6c-8b8e-540313c93915",
+            "assessment_status": "needs_clarification",
+            "first_error_step": null,
+            "primary_skill_id": null,
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Đặt nhân tử chung lớn nhất của 28*x-44, chọn hệ số của nhân tử chung dương. Nộp kết quả ở dạng tích.",
+        "retrieved": [
+          {
+            "content_id": "A07-hint-1",
+            "skill_id": "SK-A07-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Hạng tử nào có ít thừa số x nhất?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-A07-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A07",
+            "target_skill_id": "SK-A07-PRIMARY",
+            "template_family_id": "FAM-A07-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A07-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A07",
+            "target_skill_id": "SK-A07-PRIMARY",
+            "template_family_id": "FAM-A07-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "clarify"
+        ],
+        "forbidden_actions": [
+          "minimal_hint",
+          "diagnose",
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold",
+          "conceptual_question"
+        ],
+        "acceptable_intents": [
+          "resolve_input",
+          "restate_task"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Biểu thức bằng đề nhưng em chọn nhân tử chung -4, trái điều kiện hệ số dương của đề: nhắc lại điều kiện đó và đề nghị em viết lại. Không đổi bài. Theo G01, lời nhắc này đi qua clarify.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-44",
+      "title": "A10: phân thức kết quả đúng nhưng thiếu giá trị loại -2",
+      "student_id": "AP-44-student",
+      "session_id": "73078009-a43a-5d2d-b4a3-6c4859fa3407",
+      "history_group_id": "AP-44-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "condition_error",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "ea1ddf6a-4fac-5770-80b2-5d596f4faed1",
+          "request_id": "444ad784-3c22-52c1-b89e-4a4f3aeb738a",
+          "task": {
+            "problem_id": "D-A10-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "d20193a6-0810-5755-9ea4-b54e3b840d0f",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "x*x+9*x-1|(x+2)*(x-1);{1}"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "685c5448-142f-5842-a260-8e5cd11eba81",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-A10-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Thực hiện phép cộng hoặc trừ đã cho trong -; 2*x+9|x+2; x-4|x-1. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+        "retrieved": [
+          {
+            "content_id": "A10-hint-1",
+            "skill_id": "SK-A10-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Mẫu gốc nào có thể bằng 0?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold"
+        ],
+        "acceptable_intents": [
+          "recall_rule",
+          "prompt_self_check",
+          "locate_error",
+          "elicit_reasoning"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Phân thức đúng; tập giá trị loại thiếu -2, làm mẫu x+2 bằng 0: nhắc em xét mẫu của từng phân thức ban đầu, hoặc hỏi em tìm giá trị loại thế nào. Không đổi bài khi chưa sửa.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-45",
+      "title": "A10: nộp lại đúng bài thiếu giá trị loại sau một gợi ý tự kiểm tra",
+      "student_id": "AP-45-student",
+      "session_id": "6bea8b8a-19d9-52a1-b111-c895b9469729",
+      "history_group_id": "AP-45-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "repeated_error",
+        "condition_error"
+      ],
+      "history": [
+        {
+          "turn_id": "e1fc3359-ab57-5acd-965e-fb05f43d3440",
+          "request_id": "7d914184-4061-54ef-858a-6076a60ac2f8",
+          "task": {
+            "problem_id": "D-A10-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "ae523e8f-2cc4-598f-927e-62c68ca31bd1",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "x+6|x+8;{1}"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "d781f55b-9a1e-5c2e-af73-a4c5271c10de",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-A10-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        },
+        {
+          "turn_id": "5407e21f-c26d-51df-a936-1ab6e357813d",
+          "request_id": "822be270-45e5-5fe1-814b-90f2b35f1e69",
+          "task": {
+            "problem_id": "D-A10-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "ae523e8f-2cc4-598f-927e-62c68ca31bd1",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "tutor",
+          "kind": "decision",
+          "submission": [],
+          "message": null,
+          "assessment": null,
+          "action": "minimal_hint",
+          "intent": "prompt_self_check",
+          "hint_level": 1,
+          "problem_id": null,
+          "target_skill_id": null
+        },
+        {
+          "turn_id": "cbab4af4-547a-5915-adda-96482e26880b",
+          "request_id": "e7c9397c-2b13-58a0-afa5-6cad3abbc439",
+          "task": {
+            "problem_id": "D-A10-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "ae523e8f-2cc4-598f-927e-62c68ca31bd1",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "x+6|x+8;{1}"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "1a096b35-3708-554e-a27c-f67739383684",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-A10-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Thực hiện phép nhân hai phân thức *; x+6|x-1; x-1|x+8. Dấu | ngăn tử và mẫu. Nộp phân thức rút gọn và tập giá trị loại, ngăn bằng dấu chấm phẩy.",
+        "retrieved": [
+          {
+            "content_id": "A10-hint-1",
+            "skill_id": "SK-A10-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Mẫu gốc nào có thể bằng 0?"
+          },
+          {
+            "content_id": "A10-hint-2",
+            "skill_id": "SK-A10-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 2,
+            "text": "Chọn quy tắc quy đồng, nhân trực tiếp hoặc nhân nghịch đảo theo phép toán."
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-A10-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A10",
+            "target_skill_id": "SK-A10-PRIMARY",
+            "template_family_id": "FAM-A10-M2-ORIG02-2",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint"
+        ],
+        "forbidden_actions": [
+          "diagnose",
+          "scaffold",
+          "next_problem",
+          "check_transfer",
+          "end_session",
+          "backtrack"
+        ],
+        "acceptable_intents": [
+          "locate_error",
+          "recall_rule"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Gợi ý tự kiểm tra chưa đủ: em nộp lại y nguyên. Tăng một nấc lên mức 2 (như AP-08): chỉ ra phần cần xem lại (giá trị làm mẫu x+8 bằng 0) hoặc nhắc quy tắc tìm giá trị loại. Chia nhỏ bước là mức 3, gate không cho nhảy từ mức 1; hỏi lại cách làm là lặp; đổi bài là bỏ lỗi chưa sửa.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-46",
+      "title": "E03: lập phương trình trừ 5 bút rời thay vì cộng",
+      "student_id": "AP-46-student",
+      "session_id": "f1dcc237-9784-5de1-94d5-60ea70728eb4",
+      "history_group_id": "AP-46-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "sign_error",
+        "final_answer_only",
+        "insufficient_evidence"
+      ],
+      "history": [
+        {
+          "turn_id": "5353ca75-1f50-5363-b65f-ab17e9534abb",
+          "request_id": "c154f26a-9791-57eb-9481-18497f0d1171",
+          "task": {
+            "problem_id": "D-E03-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "236c4cfe-c34a-5892-a7c9-2b08715fa502",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "x; bút; positive_integer; 6*x-5=59"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "72c1a796-afc2-584c-99ea-9e29819fbbde",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-E03-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Sáu hộp có cùng số bút, thêm 5 bút rời thì có tổng 59 bút. Đặt x là số món trong mỗi nhóm rồi lập phương trình theo dữ kiện. Nộp theo mẫu x; đơn vị; nguyên dương; phương trình.",
+        "retrieved": [
+          {
+            "content_id": "E03-hint-1",
+            "skill_id": "SK-E03-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Đại lượng nào chưa biết và có đơn vị gì?"
+          },
+          {
+            "content_id": "A01-hint-1",
+            "skill_id": "SK-A01-EVALUATE",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Biểu thức có mấy vị trí cần thay x?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-E03-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E03",
+            "target_skill_id": "SK-E03-PRIMARY",
+            "template_family_id": "FAM-E03-M2-ORIG02-2",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-A01-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A01",
+            "target_skill_id": "SK-A01-EVALUATE",
+            "template_family_id": "FAM-A01-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-A01-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "A01",
+            "target_skill_id": "SK-A01-EVALUATE",
+            "template_family_id": "FAM-A01-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint"
+        ],
+        "forbidden_actions": [
+          "backtrack",
+          "scaffold",
+          "conceptual_question",
+          "next_problem",
+          "check_transfer"
+        ],
+        "acceptable_intents": [
+          "elicit_reasoning",
+          "prompt_self_check",
+          "recall_rule"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Một đáp án cuối sai, không có bước nào để định vị lỗi: hỏi em làm thế nào, nhắc em tự kiểm tra hoặc nhắc quy tắc ở mức nhẹ. Chưa có bằng chứng hiểu sai hay thiếu kiến thức nền; không đổi bài khi vừa sai.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-47",
+      "title": "E09: đúng hệ số nhân và x, sai dấu của y",
+      "student_id": "AP-47-student",
+      "session_id": "0c2feaa9-c706-5df0-aa56-628bb0f28e9a",
+      "history_group_id": "AP-47-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "sign_error",
+        "final_answer_only",
+        "insufficient_evidence"
+      ],
+      "history": [
+        {
+          "turn_id": "48d6ebb2-066d-5992-b207-b3c851c9047e",
+          "request_id": "9ee60422-5d4c-52a3-b478-0b400d4c09e1",
+          "task": {
+            "problem_id": "D-E09-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "116da74a-7607-53fb-961a-6493b8f28813",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "1,1;(2,-3)"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "ff807ace-2bd9-5906-992b-9ab53e9b40d8",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-E09-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Giải hệ 3*x-2*y=0;4*x+2*y=14 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+        "retrieved": [
+          {
+            "content_id": "E09-hint-1",
+            "skill_id": "SK-E09-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-E09-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E09-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint"
+        ],
+        "forbidden_actions": [
+          "backtrack",
+          "scaffold",
+          "conceptual_question",
+          "next_problem",
+          "check_transfer"
+        ],
+        "acceptable_intents": [
+          "elicit_reasoning",
+          "prompt_self_check",
+          "recall_rule"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Một đáp án cuối sai, không có bước nào để định vị lỗi: hỏi em làm thế nào, nhắc em tự kiểm tra hoặc nhắc quy tắc ở mức nhẹ. Chưa có bằng chứng hiểu sai hay thiếu kiến thức nền; không đổi bài khi vừa sai.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-48",
+      "title": "E09: chỉ ghi nghiệm, thiếu hai hệ số nhân đề yêu cầu",
+      "student_id": "AP-48-student",
+      "session_id": "1c44d87f-106b-5125-bb7a-16e05c80707c",
+      "history_group_id": "AP-48-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "ambiguous_input",
+        "misread_task"
+      ],
+      "history": [
+        {
+          "turn_id": "b90f1feb-c76d-5b1e-881c-5276865e5f7e",
+          "request_id": "c9b8fb4f-3999-55c6-b755-f20f8ddb63cd",
+          "task": {
+            "problem_id": "D-E09-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "7807492a-8932-58cf-bfad-c45c76a7c71a",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "x=3, y=2"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "c9acb6f0-cf3f-5ca6-8322-794c8e7233c5",
+            "assessment_status": "needs_clarification",
+            "first_error_step": null,
+            "primary_skill_id": null,
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Giải hệ 2*x+1*y=8;1*x-1*y=1 bằng cộng đại số. Nộp hai hệ số nhân m,n và cặp nghiệm (x,y), ngăn bằng dấu chấm phẩy.",
+        "retrieved": [
+          {
+            "content_id": "E09-hint-1",
+            "skill_id": "SK-E09-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Có cặp hệ số của cùng một ẩn đã đối nhau hoặc bằng nhau chưa?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-E09-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-E09-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "E09",
+            "target_skill_id": "SK-E09-PRIMARY",
+            "template_family_id": "FAM-E09-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "clarify"
+        ],
+        "forbidden_actions": [
+          "minimal_hint",
+          "diagnose",
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold",
+          "conceptual_question"
+        ],
+        "acceptable_intents": [
+          "resolve_input",
+          "restate_task"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Đề yêu cầu nộp hai hệ số nhân m,n và cặp nghiệm theo mẫu; em chỉ ghi x, y nên chưa chấm được cách cộng đại số: nhắc lại em cần nộp gì. Theo G01, lời nhắc này đi qua clarify.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-49",
+      "title": "F02: sai dấu của giá trị làm mẫu bằng 0",
+      "student_id": "AP-49-student",
+      "session_id": "71b5ec37-b6dc-5f0a-b545-a69f8e203f41",
+      "history_group_id": "AP-49-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "sign_error",
+        "final_answer_only",
+        "insufficient_evidence"
+      ],
+      "history": [
+        {
+          "turn_id": "61f38eba-bec3-59eb-9ba2-b5bf65480c49",
+          "request_id": "77be34aa-5eff-5d17-99eb-4668b003c1fc",
+          "task": {
+            "problem_id": "D-F02-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "873edd82-bc10-5ad4-85e6-2105a07cc077",
+            "concept_id": "F02",
+            "target_skill_id": "SK-F02-PRIMARY",
+            "template_family_id": "FAM-F02-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "R\\{10/3}"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "2b9767e8-0373-549e-b1e9-cbc21e14d215",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-F02-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Tìm tập xác định thực của f(x)=1/(3x+10). Viết R∖{giá trị loại}.",
+        "retrieved": [
+          {
+            "content_id": "F02-hint-1",
+            "skill_id": "SK-F02-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Biểu thức nằm ở mẫu hay dưới dấu căn?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-F02-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F02",
+            "target_skill_id": "SK-F02-PRIMARY",
+            "template_family_id": "FAM-F02-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F02-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F02",
+            "target_skill_id": "SK-F02-PRIMARY",
+            "template_family_id": "FAM-F02-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F02-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F02",
+            "target_skill_id": "SK-F02-PRIMARY",
+            "template_family_id": "FAM-F02-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-F02-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F02",
+            "target_skill_id": "SK-F02-PRIMARY",
+            "template_family_id": "FAM-F02-M2-ORIG02-2",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint"
+        ],
+        "forbidden_actions": [
+          "backtrack",
+          "scaffold",
+          "conceptual_question",
+          "next_problem",
+          "check_transfer"
+        ],
+        "acceptable_intents": [
+          "elicit_reasoning",
+          "prompt_self_check",
+          "recall_rule"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Một đáp án cuối sai, không có bước nào để định vị lỗi: hỏi em làm thế nào, nhắc em tự kiểm tra hoặc nhắc quy tắc ở mức nhẹ. Chưa có bằng chứng hiểu sai hay thiếu kiến thức nền; không đổi bài khi vừa sai.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-50",
+      "title": "F05: xin làm mẫu khi chưa thử gì",
+      "student_id": "AP-50-student",
+      "session_id": "c4b01aa6-f928-5b6b-8e55-24d75dda7b23",
+      "history_group_id": "AP-50-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "hint_request",
+        "requests_answer",
+        "insufficient_evidence"
+      ],
+      "history": [
+        {
+          "turn_id": "4b6f3175-19e4-5d32-aa4e-0ff419f4d548",
+          "request_id": "b7489804-9c8e-5c34-a305-8a6243be1532",
+          "task": {
+            "problem_id": "D-F05-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "adf169f5-e18b-57cf-9c1d-2f1f19892cc6",
+            "concept_id": "F05",
+            "target_skill_id": "SK-F05-VERTEX",
+            "template_family_id": "FAM-F05-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "request_hint",
+          "submission": [],
+          "message": "Em không biết bắt đầu từ đâu, thầy làm mẫu giúp em được không ạ?",
+          "assessment": null,
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Tìm tọa độ đỉnh của y = 2*(x+3)*(x+3)-27. Nộp cặp (hoành độ,tung độ).",
+        "retrieved": [
+          {
+            "content_id": "F05-hint-1",
+            "skill_id": "SK-F05-VERTEX",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Đề yêu cầu tọa độ đỉnh hay phương trình một đường thẳng?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-F05-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F05",
+            "target_skill_id": "SK-F05-VERTEX",
+            "template_family_id": "FAM-F05-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F05-M2-ORIG02-P-03",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F05",
+            "target_skill_id": "SK-F05-VERTEX",
+            "template_family_id": "FAM-F05-M2-ORIG02-2",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F05-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F05",
+            "target_skill_id": "SK-F05-VERTEX",
+            "template_family_id": "FAM-F05-M2-ORIG02-1",
+            "difficulty": 2
+          },
+          {
+            "problem_id": "D-F05-M2-ORIG02-P-04",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F05",
+            "target_skill_id": "SK-F05-VERTEX",
+            "template_family_id": "FAM-F05-M2-ORIG02-2",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "diagnose",
+          "minimal_hint",
+          "clarify"
+        ],
+        "forbidden_actions": [
+          "scaffold",
+          "backtrack",
+          "next_problem",
+          "conceptual_question",
+          "end_session"
+        ],
+        "acceptable_intents": [
+          "elicit_reasoning",
+          "recall_rule",
+          "restate_task"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Chưa có bài làm: hỏi em đọc được gì từ dạng a(x-h)² + k của hàm số, hoặc nhắc nhẹ cách đọc đỉnh. Làm mẫu hay chia nhỏ bước là hỗ trợ quá mức khi em chưa thử; không làm thay.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-51",
+      "title": "F08: đáp án cuối đúng ngay lần đầu",
+      "student_id": "AP-51-student",
+      "session_id": "f92392bb-a55b-541c-8101-f41c86a9c7ec",
+      "history_group_id": "AP-51-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "correct_independent",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "be0959b5-258a-5a46-8240-7dc1048404ac",
+          "request_id": "c32cd0a8-6189-52bb-b03b-9f36819f2625",
+          "task": {
+            "problem_id": "D-F08-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "29252c5d-f794-51b0-a44f-8af191bfb486",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "2^-2=1/4;R"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "3a5f1f54-0cad-5460-9cb5-c0a001248468",
+            "assessment_status": "verified_correct",
+            "first_error_step": null,
+            "primary_skill_id": "SK-F08-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": false,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Rút gọn 2⁻⁵ · 2³ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+        "retrieved": [
+          {
+            "content_id": "F08-hint-1",
+            "skill_id": "SK-F08-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Cơ số có dương và khác 1 không?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-F08-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F08-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "next_problem",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "minimal_hint",
+          "scaffold",
+          "backtrack",
+          "conceptual_question",
+          "check_transfer"
+        ],
+        "acceptable_intents": [
+          "continue_practice",
+          "advance_difficulty",
+          "elicit_reasoning"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Đáp án cuối đúng ngay lần đầu: giao bài khác (luyện tiếp, tăng độ khó hoặc khác họ mẫu), hoặc hỏi em đã làm thế nào. Bài chỉ chấm đáp án cuối nên chưa có bằng chứng để chuyển concept; gợi ý là thừa. Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-52",
+      "title": "F08: nhân hai số mũ thay vì cộng khi nhân hai lũy thừa cùng cơ số",
+      "student_id": "AP-52-student",
+      "session_id": "3f3d8216-81c3-524f-9f74-a92764767b37",
+      "history_group_id": "AP-52-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "concept_confusion",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "45c10a03-d163-565a-85d5-70d26d5c7bc9",
+          "request_id": "d9b12ab4-5925-5ca8-beff-a771ea4ecb06",
+          "task": {
+            "problem_id": "D-F08-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "01fd61da-739b-53dc-8732-80bb8d803a08",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 1
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "3^-10=1/59049;R"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "8c5dc8af-6ae1-5713-a2fb-8a16784d41f0",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-F08-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Rút gọn 3⁻² · 3⁵ thành một lũy thừa, tính chính xác và ghi tập xác định của hàm y = a^x với cùng cơ số. Nộp dạng cơ số^số mũ = giá trị; tập xác định.",
+        "retrieved": [
+          {
+            "content_id": "F08-hint-1",
+            "skill_id": "SK-F08-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Cơ số có dương và khác 1 không?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-F08-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-F08-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "F08",
+            "target_skill_id": "SK-F08-PRIMARY",
+            "template_family_id": "FAM-F08-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold"
+        ],
+        "acceptable_intents": [
+          "recall_rule",
+          "locate_error",
+          "elicit_reasoning"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Số mũ -10 cho thấy em nhân -2 với 5 thay vì cộng. Nhắc quy tắc nhân hai lũy thừa cùng cơ số, hoặc hỏi em tìm số mũ thế nào. Chưa cần giải thích dài khi mới sai một lần.",
+        "independent_labels": [],
+        "adjudication_note": null
+      }
+    },
+    {
+      "scenario_id": "AP-53",
+      "title": "N05: quy đồng sai tử của 11/24 nhưng dấu so sánh vẫn đúng",
+      "student_id": "AP-53-student",
+      "session_id": "9e82205e-8f64-51ad-ab30-089e6ab0d3af",
+      "history_group_id": "AP-53-history",
+      "source": "synthetic_authoring",
+      "source_reference": "AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.",
+      "split": "dev",
+      "tags": [
+        "careless_error",
+        "final_answer_only"
+      ],
+      "history": [
+        {
+          "turn_id": "1b6d473f-e718-566d-8c2c-d591aabfec20",
+          "request_id": "72ccdfc9-6e2b-5e2b-898f-27f336dcf6c6",
+          "task": {
+            "problem_id": "D-N05-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "opportunity_id": "03509094-d65d-5ef0-8dd2-d616464d1ea3",
+            "concept_id": "N05",
+            "target_skill_id": "SK-N05-PRIMARY",
+            "template_family_id": "FAM-N05-M2-ORIG02-1",
+            "relation": "initial",
+            "difficulty": 2
+          },
+          "actor": "student",
+          "kind": "submit",
+          "submission": [
+            "66/168 < 80/168"
+          ],
+          "message": null,
+          "assessment": {
+            "assessment_id": "4d6b679a-e01f-550f-ab00-89684f551ec1",
+            "assessment_status": "verified_incorrect",
+            "first_error_step": null,
+            "primary_skill_id": "SK-N05-PRIMARY",
+            "error_family": null,
+            "misconception_candidate": null,
+            "diagnosis_status": "unknown",
+            "final_answer_only": true,
+            "unfinished": false
+          },
+          "action": null,
+          "intent": null,
+          "hint_level": null,
+          "problem_id": null,
+          "target_skill_id": null
+        }
+      ],
+      "context": {
+        "current_problem_prompt": "Quy đồng rồi thay dấu hỏi trong 11/24 ? 10/21. Ghi cả hai phân số có cùng mẫu.",
+        "retrieved": [
+          {
+            "content_id": "N05-hint-1",
+            "skill_id": "SK-N05-PRIMARY",
+            "content_type": "hint",
+            "disclosure_level": 1,
+            "text": "Hai mẫu có thể cùng chia hết cho số nào?"
+          }
+        ],
+        "edges": [],
+        "next_concepts": [],
+        "problems": [
+          {
+            "problem_id": "D-N05-M2-ORIG02-P-01",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "N05",
+            "target_skill_id": "SK-N05-PRIMARY",
+            "template_family_id": "FAM-N05-M2-ORIG02-1",
+            "difficulty": 1
+          },
+          {
+            "problem_id": "D-N05-M2-ORIG02-P-02",
+            "problem_version": "0.4.0-member2-review",
+            "concept_id": "N05",
+            "target_skill_id": "SK-N05-PRIMARY",
+            "template_family_id": "FAM-N05-M2-ORIG02-1",
+            "difficulty": 2
+          }
+        ],
+        "tool_calls_used": 0,
+        "kg_enabled": true,
+        "rag_enabled": true,
+        "kg_source": null,
+        "graph_version": null,
+        "tool_errors": []
+      },
+      "labels": {
+        "acceptable_actions": [
+          "minimal_hint",
+          "diagnose"
+        ],
+        "forbidden_actions": [
+          "next_problem",
+          "check_transfer",
+          "backtrack",
+          "scaffold"
+        ],
+        "acceptable_intents": [
+          "prompt_self_check",
+          "locate_error",
+          "elicit_reasoning"
+        ],
+        "acceptable_target_skill_ids": [],
+        "review_status": "draft",
+        "author": "ai_draft",
+        "reviewer": null,
+        "rationale": "Dấu < đúng nhưng 11/24 quy đồng ra 77/168, không phải 66/168: nhắc em kiểm tra lại phép nhân tử, hoặc hỏi em quy đồng thế nào. Không coi là đúng vì đề yêu cầu ghi cả hai phân số cùng mẫu.",
         "independent_labels": [],
         "adjudication_note": null
       }

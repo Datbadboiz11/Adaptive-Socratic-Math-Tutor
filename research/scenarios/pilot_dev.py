@@ -425,7 +425,7 @@ STUDENT_TEXT = {"request_hint": "xin gợi ý", "message": "nhắn", "pause": "x
 
 def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: KGTool | None = None) -> str:
     """Phiếu rà soát bằng Markdown: mỗi ca có đề, lịch sử, state trước quyết định và nhãn.
-    ``blind`` bỏ nhãn và lý do, để người thứ hai gán nhãn độc lập (plan §12). ``data`` mặc định là bộ
+    ``blind`` bỏ nhãn, lý do, tiêu đề và loại ca, để người thứ hai gán nhãn độc lập (plan §12). ``data`` mặc định là bộ
     pilot này; bộ khác (``approved_dev``) truyền dataset của nó."""
     from research.scenarios.replay import replay
     data, kg = data or dataset(), kg or KG
@@ -436,8 +436,12 @@ def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: K
              "next_problem, end_session.", ""]
     for draft in data.scenarios:
         state, _ = replay(draft, data, kg)
-        lines += [f"## {draft.scenario_id}. {draft.title}", "",
-                  f"- Loại: {', '.join(draft.tags)}", f"- Bài đang làm: {prompts[state.current.problem_id]}", "- Lịch sử:"]
+        if blind:
+            # Tiêu đề và loại ca là cách người soạn diễn giải lỗi: người gán độc lập chỉ thấy dữ kiện.
+            lines += [f"## {draft.scenario_id}. Concept {state.current.concept_id}", ""]
+        else:
+            lines += [f"## {draft.scenario_id}. {draft.title}", "", f"- Loại: {', '.join(draft.tags)}"]
+        lines += [f"- Bài đang làm: {prompts[state.current.problem_id]}", "- Lịch sử:"]
         for event in draft.history:
             if event.actor == "tutor":
                 given = f"; giao bài: {prompts[event.problem_id]}" if event.problem_id else ""
@@ -453,6 +457,8 @@ def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: K
                                 ("nghi hiểu sai", a.misconception_candidate)):
                 if value is not None:
                     grade += f"; {name}: {value}"
+            if a.unfinished:
+                grade += "; chưa hoàn tất: đúng giá trị nhưng chưa phải đáp án cuối"
             lines.append(f"  - Học sinh nộp ({prompts[event.task.problem_id]}): {' → '.join(event.submission)}  "
                          f"[chấm: {grade}{'; chỉ có đáp án cuối' if a.final_answer_only else ''}]")
         seen = [f"{k.skill_id}: {''.join('Đ' if r else 'S' for r in k.recent_independent)} "
@@ -462,7 +468,7 @@ def review_sheet(blind: bool = False, data: ScenarioDataset | None = None, kg: K
                   f"- Hỗ trợ trên bài này: mức hint {state.support.hint_level}, {state.support.support_turns_on_node} lượt "
                   f"hỗ trợ, {state.support.no_progress_turns} lượt chưa tiến bộ"
                   + ("; đang trong nhánh ôn kiến thức nền" if state.return_stack else "")]
-        if blind:
+        if blind or draft.labels is None:
             lines += ["- Action chấp nhận được: ", "- Action bị cấm: ", "- Intent hoặc skill cần hướng tới (nếu cần): ",
                       "- Lý do: ", ""]
             continue
