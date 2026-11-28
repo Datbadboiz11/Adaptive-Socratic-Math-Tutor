@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mở — Logo mới</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: #182b30; font: 15px/1.6 "Segoe UI", sans-serif; }
+    main { max-width: 1120px; margin: auto; padding: 48px 56px 40px; }
+    header { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 24px; border-bottom: 1px solid #dfe7e5; }
+    h1 { font-size: 19px; font-weight: 600; margin: 0; }
+    header p { margin: 0; color: #56676d; font-size: 13px; }
+    .hero { min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 32px 0 24px; }
+    .hero img { width: min(430px, 100%); height: auto; }
+    .hero p { margin: 22px 0 0; color: #56676d; font-size: 17px; }
+    .variants { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .variant { min-height: 176px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border: 1px solid #dfe7e5; border-radius: 10px; }
+    .variant img { width: 172px; height: 64px; }
+    .variant p { font-size: 12px; color: #56676d; margin: 16px 0 0; }
+    .dark { background: #146554; border-color: #146554; }
+    .dark p { color: #e9f3ef; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #dfe7e5; }
+    .details h2 { font-size: 14px; margin: 0 0 8px; font-weight: 600; }
+    .details p { color: #56676d; font-size: 13px; max-width: 400px; margin: 0; }
+    .sizes { display: flex; gap: 28px; align-items: center; padding-top: 14px; }
+    .sizes span { display: grid; gap: 8px; justify-items: center; font-size: 11px; color: #56676d; }
+    img { display: block; }
+    footer { padding-top: 32px; font-size: 12px; color: #56676d; }
+    a { color: #146554; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #167568; outline-offset: 4px; }
+    @media (max-width: 600px) { main { padding: 24px; } header { display: block; } header p { margin-top: 8px; } .hero { min-height: 250px; } .variants, .details { grid-template-columns: 1fr; gap: 20px; } .hero p { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>Mở — Nhận diện mới</h1><p>Adaptive Socratic Math Tutor</p></header>
+    <section class="hero" aria-label="Logo chính"><img src="mo-logo.svg" width="172" height="64" alt="Logo Mở: hai trang sách mở và chữ mở vẽ riêng" /><p>Mở một trang. Mở một cách nghĩ.</p></section>
+    <div class="variants">
+      <section class="variant"><img src="mo-logo-mono.svg" width="172" height="64" alt="Logo Mở đơn sắc" /><p>Đơn sắc trên nền sáng</p></section>
+      <section class="variant dark"><img src="mo-logo-reverse.svg" width="172" height="64" alt="Logo Mở màu trắng trên nền xanh teal" /><p>Phiên bản trên nền tối</p></section>
+    </div>
+    <div class="details">
+      <section><h2>Một cuốn sách đang mở</h2><p>Hai trang sách lệch nhịp gợi chuyển động lật trang. Khoảng trống ở giữa giữ biểu tượng thoáng và rõ khi thu nhỏ.</p></section>
+      <section><h2>Nét chữ dành riêng cho “mở”</h2><p>Những nét tròn liền mạch, dấu hỏi và dấu móc được vẽ riêng. Logo giữ nguyên hình dáng trên mọi thiết bị, không phụ thuộc font.</p></section>
+    </div>
+    <div class="sizes" aria-label="Biểu tượng ở các kích thước"><span><img src="mo-mark.svg" width="24" height="24" alt="Biểu tượng 24 pixel" />24px</span><span><img src="mo-mark.svg" width="32" height="32" alt="Biểu tượng 32 pixel" />32px</span><span><img src="mo-mark.svg" width="48" height="48" alt="Biểu tượng 48 pixel" />48px</span><span><img src="mo-logo.svg" width="129" height="48" alt="Logo ở kích thước giao diện" />Trong giao diện</span></div>
+    <footer><a href="mo-logo.svg" download="mo-logo.svg">Tải logo SVG</a> &nbsp; / &nbsp; <a href="mo-mark.svg" download="mo-mark.svg">Tải biểu tượng</a> &nbsp; / &nbsp; <a href="/#overview">Về giao diện</a></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Biểu tượng Mở</title>
+  <path d="M7 15C7 13.5 8 12.5 9.5 12.5C17.5 12.5 24 16 30 23V51C24 45 17 41.5 9 42C7.8 42 7 41.2 7 40V15Z" fill="#146554"/>
+  <path d="M34 22C40 14.5 47.5 10 55 8.5C56.2 8.2 57 9 57 10.2V39C57 40.1 56.3 41 55.2 41.1C47.3 41.7 40.7 45 34 51V22Z" fill="#4F9B80"/>
+</svg>

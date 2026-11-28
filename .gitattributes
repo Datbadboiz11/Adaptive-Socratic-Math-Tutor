@@ -18,3 +18,6 @@
 docs/implementation/member2/part3/*.json -text whitespace=cr-at-eol
 docs/implementation/member2/part4/*.json -text whitespace=cr-at-eol
 docs/implementation/member2/part4/*.xml -text whitespace=cr-at-eol
+docs/implementation/member2/part6/*.json -text whitespace=cr-at-eol
+docs/implementation/member2/part6/*/*.json -text whitespace=cr-at-eol
+docs/implementation/member2/part6/*.xml -text whitespace=cr-at-eol

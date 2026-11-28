@@ -1,0 +1,32 @@
+{
+  "ann": "not_justified_by_current_candidate_counts_and_plan",
+  "cache": "reuse_query_vectors_without_caching_or_bypassing_authorization_filters",
+  "concept_count": 13,
+  "evidence": {
+    "metadata_ndcg_at_1": 0.6190476190476191,
+    "misses_by_purpose": {
+      "example": 4,
+      "hint": 12
+    },
+    "semantic_ndcg_at_1": 0.8827838827838828,
+    "semantic_ndcg_at_3": 0.9633626852420736,
+    "semantic_top1_misses": 16,
+    "warm_query_embeddings_recomputed": 0
+  },
+  "evidence_run_id": "7a4abbed6b04",
+  "hybrid": "deferred_pending_review_of_remaining_dev_errors",
+  "known_content_id": "direct_lookup_without_embedding",
+  "limits": [
+    "Deterministic dev relevance labels only.",
+    "Production already uses direct for hint/explanation and metadata for examples.",
+    "Human relevance and paired-quality reviews plus independent frozen test remain pending."
+  ],
+  "scope_owner": "Member 2",
+  "semantic_query": {
+    "generator_chunk_limit": 1,
+    "mandatory_filters": "unchanged_production_scope_review_disclosure_exclusions",
+    "ranking": "pgvector_exact",
+    "retrieval_top_k": 3
+  },
+  "status": "dev_recommendation_not_a_production_change"
+}

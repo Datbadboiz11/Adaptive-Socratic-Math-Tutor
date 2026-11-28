@@ -188,6 +188,8 @@ Member 1 tính toán/trả dữ liệu; bạn chốt nội dung và hiển thị
 
 ### Chặng 5 — Mở rộng độ phủ và chuẩn bị relevance dataset
 
+**Phạm vi triển khai hiện hành theo yêu cầu người dùng ngày 26/11/2026:** Member 2 làm tiếp trên đúng 13 concept được phân công. Nội dung của 27 concept Member 1/3 chờ chủ sở hữu hoàn thành rồi tiếp nhận sau. Các mục tiêu 40 concept bên dưới là mục tiêu toàn nhóm; không coi phần còn thiếu của hai thành viên khác là việc Member 2 phải tự biên soạn hoặc điều kiện chặn gói 13 concept hiện tại.
+
 Triển khai theo lô **10 → 20 → 30 → 40 concept**, kiểm tra end-to-end và chất lượng từng lô. Sau lô đầu, điều chỉnh giờ công bằng thời gian thực tế cho một concept và một ca gán nhãn. Cột mốc tham chiếu dưới đây ghi số liệu khi lập kế hoạch ngày 16/11/2026; tiến độ và các đầu ra đã có được tổng hợp riêng tại mục 7.
 
 | Hạng mục | Mốc tham chiếu khi lập kế hoạch | Mục tiêu theo plan tổng |
@@ -216,6 +218,8 @@ Cách làm relevance set:
 **Nghiệm thu:** có coverage matrix query/concept/purpose, split manifest và qrels trỏ đúng content version; người khác chạy lại được trên cùng KB. Không dùng 60 bài authoring làm bằng chứng test độc lập.
 
 ### Chặng 6 — Đánh giá RQ3, tối ưu và bàn giao
+
+**Phạm vi hiện hành:** thực hiện trên đúng 13 concept Member 2; phần của Member 1/3 tiếp nhận sau khi bàn giao. Ngày 27/11/2026 đã hoàn tất pipeline và lượt đo dev local theo [bàn giao Chặng 6](../implementation/member2/part6/README.md). Nhãn xác nhận/test độc lập và chấm cặp chất lượng vẫn là điều kiện riêng trước nghiệm thu RQ3 chính thức.
 
 So sánh tối thiểu:
 
@@ -333,8 +337,8 @@ Các tham chiếu có dấu **†** dẫn đến danh mục hồ sơ lịch sử
 | **Chặng 2 — pipeline nội dung và review** | 13 cấu hình Member 2, prompt 2.2.0, CLI theo snapshot version, checker và review gắn hash; 13 pack đã duyệt | **Hoàn thành phạm vi 13 concept ngày 25/11.** 188 test đạt. OpenAI thật sinh pack N02 qua checker sau khi chỉnh prompt; có model/usage/artifact. Bộ kiểm mặc định nghiệm thu 13 concept. [Bàn giao Chặng 2](../implementation/member2/part2/README.md) |
 | **Chặng 3 — KB và retrieval runtime** | Migration 003; projector có review/exclusion; sync dry-run/idempotent; cache CPU embedding ghim hash; snapshot nguyên tử, chống race và withdrawal; direct/metadata/exact semantic; tool bind quyền server; 7 schema và test DB thật | **Hoàn thiện phạm vi 13 concept ngày 26/11.** Runtime active có 40 concept/40 skill, 13 pack, 52 explanation/hint và 39 example, tổng 91 chunk. Benchmark mới chạy 104 query trên đủ 13 concept trong schema nghiệm thu cô lập. Retrieval đã nối vào Agent/response/UI trong Chặng 4 |
 | **Chặng 4 — Agent, UI và learning report** | LangGraph có retrieval node, assembler nguyên văn teaching text, guard, receipt/ref giao nội dung; Full/No-RAG và snapshot ghim theo session; UI source/explanation/example; report theo skill có snapshot | **Đã hoàn thiện các thiếu sót kỹ thuật được rà soát ngày 26/11.** Có hook phiên/request, report 2.1 với chẩn đoán/evidence và provenance BKT, MathML hệ/phân thức, bàn phím/focus và timeout/replay. Nghiệm thu 149 test backend/runtime, 4 test công thức, 10 nhóm Chromium. Chờ review độc lập Member 1/3 và bằng chứng Docker/remote CI. Sinh lời tự do, graph điều hướng, session trộn skill và RQ3 là phạm vi riêng. [Bàn giao Chặng 4](../implementation/member2/part4/README.md) |
-| **Chặng 5 — mở rộng nội dung và relevance dataset** | Hoàn thiện độ phủ 40 concept, review và bộ query/qrels có split | **Chưa hoàn thiện**; hiện mới có nội dung pilot và bộ dev nhỏ của các chặng trước |
-| **Chặng 6 — RQ3, tối ưu và bàn giao** | Test retrieval chính thức, Full/No-RAG, phân tích và đóng gói | **Chưa triển khai đánh giá chính thức**; benchmark dev hiện có chỉ phục vụ phát triển |
+| **Chặng 5 — mở rộng nội dung và relevance dataset** | Hoàn thiện gói 13 concept Member 2; tích hợp phần còn lại sau khi chủ sở hữu bàn giao | **Đã triển khai kỹ thuật theo phạm vi mới ngày 26/11/2026.** 13 pack đã duyệt, 78 bài/39 ví dụ/91 chunk; 156 query dev có đủ nội dung, 195 judgment chưa chấm, pilot 26 query và mapping 39 mẫu lỗi vào 32 nhóm đề xuất. CLI/CI mặc định dùng gói 13 concept; 27 concept khác chờ bàn giao, không chặn phạm vi này. Còn review nhãn/taxonomy và thiết kế/khóa test độc lập. [Bàn giao Chặng 5](../implementation/member2/part5/README.md) |
+| **Chặng 6 — RQ3, tối ưu và bàn giao** | Pipeline đánh giá, đo dev và bàn giao trong phạm vi 13 concept; nghiệm thu nghiên cứu sau khi đủ nhãn/test độc lập | **Hoàn tất kỹ thuật/dev local ngày 27/11/2026.** So metadata/semantic trên 104 query có nhãn dev, đo scope/cache/latency trên 156 query chưa chấm; có bootstrap theo concept, query plan và 104 cặp Full/No-RAG. Semantic nDCG@1/@3 đạt 0,8828/0,9634; không vi phạm scope, warm cache tính lại 0 embedding. Có công cụ review cặp, 92 test offline và 1 test DB bao phủ đủ 104 cặp. **Chưa nghiệm thu RQ3 chính thức**: còn nhãn/chấm độc lập, hòa giải và test được khóa. [Bàn giao Chặng 6](../implementation/member2/part6/README.md) |
 
 **Bằng chứng Chặng 3 hiện hành:** [bàn giao và tự review](../implementation/member2/part3/README.md), `acceptance-2026-11-26.json`, `retrieval-evaluation-2026-11-26.json` và `completion-2026-11-26.json` trong cùng thư mục. Direct lookup không tạo embedding; sync lặp tính lại 0 embedding; 13/13 fallback đúng ở metadata và semantic. Sau khi dùng nguyên văn lời giải đã duyệt cho 39 ví dụ, trên 91 query có target, semantic Recall@1 đạt 0,8242, nDCG@1 đạt 0,8828 và nDCG@3 đạt 0,9634. Đây là dev labels tất định, không phải human gold/RQ3 cuối. [Hồ sơ kỹ thuật để Member 1/3 review](../implementation/member2/part3/technical-review-2026-11-26.md) ghi rõ phần chờ nghiệm thu Docker/CI và chữ ký độc lập.
 
