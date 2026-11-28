@@ -115,6 +115,10 @@ def _load_replayed(path: Path, ids: list[str] | None) -> list[Scenario]:
     wanted = set(ids) if ids else {s.scenario_id for s in data.scenarios}
     if missing := wanted - {s.scenario_id for s in data.scenarios}:
         raise KeyError(f"unknown scenario ids: {sorted(missing)}")
+    # Plan §12: chỉ chấm test trên nhãn đã hòa giải của hai người, kể cả khi file được dựng ngoài ``build``.
+    if data.split == "test" and (draft := [s.scenario_id for s in data.scenarios
+                                           if s.labels.review_status != "adjudicated"]):
+        raise ValueError(f"Test scenarios need adjudicated labels from two independent raters: {draft}")
     return [Scenario(id=s.scenario_id, title=s.title, expected_rule_action=None, expected_rule_intent=None,
                      acceptable_actions=tuple(s.labels.acceptable_actions), forbidden_actions=tuple(s.labels.forbidden_actions),
                      state=s.state, context=s.context, split=data.split, dataset_version=data.dataset_version,

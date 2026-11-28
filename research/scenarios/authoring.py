@@ -147,7 +147,7 @@ class Session:
 
     # ------------------------------------------------------------------ tình huống
 
-    def scenario(self, title: str, tags: list[str], labels: StrategyLabels, *, split: str | None = "dev",
+    def scenario(self, title: str, tags: list[str], labels: StrategyLabels | None, *, split: str | None = "dev",
                  source: str = "synthetic_authoring") -> ScenarioDraft:
         """Tình huống kết thúc ở lượt học sinh vừa ghi. Context lấy như tool của hệ thống: nội dung của
         skill đang học, skill của lỗi vừa chấm và prerequisite trực tiếp; cạnh KG để ``build`` điền."""

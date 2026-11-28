@@ -49,7 +49,7 @@ def test_every_submission_is_graded_by_the_system_validator(data):
 
     analyzer = ValidatorAnalyzer(CONTENT.validator_task, validate=math_validator.validate)
     submissions = [e for s in data.scenarios for e in s.history if e.kind == "submit"]
-    assert len(submissions) == 44
+    assert len(submissions) == 56
     for event in submissions:
         view = analyzer(SimpleNamespace(current=event.task), list(event.submission))
         assert (view.assessment_status, view.unfinished, view.final_answer_only) == (
@@ -146,7 +146,7 @@ def test_runner_context_matches_what_approved_tools_return(dev_file, configurati
     from app.agent.decision import DecisionConfig, ExperimentConfiguration
     from research.evaluation.run_ablation import project_context
 
-    tools = ApprovedTools(CONTENT, approved_dev.KG)
+    tools = ApprovedTools(approved_dev.side_content("dev"), approved_dev.KG)
     config = DecisionConfig(configuration=configuration, policy_version="rule-policy-0.1.0")
     widened = 0
     for sc in load_scenarios(path=dev_file):

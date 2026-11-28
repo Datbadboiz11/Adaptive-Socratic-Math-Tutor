@@ -177,7 +177,10 @@ class StrategyLabels(Contract):
 
 class ScenarioDraft(Contract):
     """``context`` do người biên soạn cung cấp, trừ phần KG: ``build`` lấy cạnh prerequisite và
-    concept kế tiếp từ registry, nên ``edges`` và ``next_concepts`` để trống."""
+    concept kế tiếp từ registry, nên ``edges`` và ``next_concepts`` để trống.
+
+    ``labels`` chỉ được để trống ở ca test: nhãn test do hai người gán độc lập sau khi dựng xong tình
+    huống (plan §12), nên người dựng không viết nhãn. ``build`` từ chối ca chưa có nhãn."""
 
     scenario_id: Identifier
     title: str = Field(min_length=1)
@@ -190,12 +193,14 @@ class ScenarioDraft(Contract):
     tags: list[Identifier] = Field(min_length=1)
     history: list[HistoryEvent] = Field(min_length=1)
     context: TurnContext
-    labels: StrategyLabels
+    labels: StrategyLabels | None = None
 
     @model_validator(mode="after")
     def ends_at_student_turn(self):
         if self.history[-1].actor != "student":
             raise ValueError("Scenario must end before the tutor decision being evaluated")
+        if self.labels is None and self.split != "test":
+            raise ValueError("Only test scenarios may wait for labels")
         return self
 
 

@@ -128,7 +128,14 @@ def build(dataset: ScenarioDataset, *, seed: str = "adaptive-split-v1") -> tuple
         for candidate in draft.context.problems:
             if candidate.problem_id not in sources or candidate != sources[candidate.problem_id].problem:
                 raise ValueError("Context problem differs from source catalogue")
+    if unlabeled := [d.scenario_id for d in dataset.scenarios if d.labels is None]:
+        raise ValueError(f"Scenarios without labels cannot be built or scored; label them first: {unlabeled}")
     assignments = grouped_splits(dataset, seed)
+    # Plan §12: nhãn test là nhãn đã hòa giải của ít nhất hai người gán độc lập, không phải nhãn nháp,
+    # kể cả ca chưa gán split mà grouped_splits xếp vào test.
+    if unadjudicated := [d.scenario_id for d in dataset.scenarios if assignments[d.scenario_id][0] == "test"
+                         and d.labels.review_status != "adjudicated"]:
+        raise ValueError(f"Test scenarios need adjudicated labels from two independent raters: {unadjudicated}")
     kg = KGTool(graph, include_drafts=True)  # registry còn nháp: dùng cả cạnh nháp như chế độ dev của hệ thống
     sets = {split: ScenarioSet(dataset_version=dataset.dataset_version, split=split, replay_version=REPLAY_VERSION,
                               parameters=dataset.parameters, problems=dataset.problems,

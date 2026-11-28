@@ -5,7 +5,8 @@ Khác bộ pilot (``pilot_dev.py``) ở ba chỗ:
 - Bài, đề và nội dung KB là bản thật đã duyệt (``app.agent.approved_content``), không phải bài mẫu.
 - Mọi assessment do chính validator của hệ thống chấm (``Session.work``); người soạn chỉ viết bài làm
   và kết quả mong đợi, chấm ra khác thì dừng ngay.
-- Context lấy bằng ``ApprovedTools``, cùng luật chặn ví dụ cùng họ và cùng mức tiết lộ như lúc chạy.
+- Context lấy bằng ``ApprovedTools``, cùng luật chặn ví dụ cùng họ và cùng mức tiết lộ như lúc chạy, trên
+  phần nội dung của phía mình (``side_content``): bài và ví dụ mẫu thuộc họ của test không vào ca dev.
 
 13 pack này chỉ chấm đáp án cuối, nên hệ thống không tạo observation BKT từ chúng (``not_target_evidence``,
 giống web). Vì vậy bộ này đo hành vi của tutor trên từng lượt (hỏi lại, gợi ý, đổi bài, dừng), không đo
@@ -30,7 +31,7 @@ sys.path.insert(0, str(ROOT / "backend"))
 sys.path.insert(0, str(ROOT))
 
 from app import math_validator  # noqa: E402
-from app.agent.approved_content import ApprovedTools, load_approved_content  # noqa: E402
+from app.agent.approved_content import ApprovedContent, ApprovedTools, load_approved_content  # noqa: E402
 from app.agent.kg_tool import KGTool  # noqa: E402
 from app.agent.validator_analyzer import ValidatorAnalyzer  # noqa: E402
 from research.scenarios.authoring import Session  # noqa: E402
@@ -39,7 +40,7 @@ from research.scenarios.contracts import (  # noqa: E402
 )
 
 OUT = ROOT / "contracts" / "scenarios" / "approved.dev.v1.json"
-DATASET_VERSION = "adaptive-approved-dev-0.1.0"
+DATASET_VERSION = "adaptive-approved-dev-0.3.0"
 SOURCE = ("AI-drafted scenarios under Member 3 on the 78 human-approved Member 2 problems (member2-v2). "
           "Every submission graded by the system validator. Strategy labels are drafts awaiting Member 3 review.")
 AUTHOR = "ai_draft"
@@ -50,6 +51,44 @@ KG = KGTool(include_drafts=True)
 
 def P(concept: str, number: int) -> str:
     return f"D-{concept}-M2-ORIG02-P-{number:02d}"
+
+
+# Chia họ bài giữa dev và test (plan §11.5: tách theo bài gốc và họ mẫu). Mỗi concept có 3 họ, mỗi họ
+# 2 bài: họ k gồm bài 2k-1 và 2k. Dev giữ các họ bộ dev v0.1.0 đã dùng; test nhận các họ còn lại. Ca dev
+# hay ca test chỉ được dùng bài thuộc họ của mình, kể cả bài được giao khi kiểm tra chuyển giao.
+TEST_FAMILIES = {"A01": (2, 3), "A04": (2,), "A07": (2, 3), "A10": (3,), "E03": (3,), "E06": (2,),
+                 "E09": (2, 3), "F02": (3,), "F05": (3,), "F08": (2, 3), "N02": (2, 3), "N05": (2, 3),
+                 "N08": (2,)}
+
+
+def family_split(problem_id: str) -> str:
+    ref = CONTENT.problems[problem_id].ref
+    family = int(ref.template_family_id.rsplit("-", 1)[1])
+    return "test" if family in TEST_FAMILIES[ref.concept_id] else "dev"
+
+
+# Họ mẫu và nhóm bài gốc của mỗi phía; ví dụ mẫu trong KB mang các mã này.
+LINEAGE_SPLIT = {key: family_split(pid) for pid, p in CONTENT.problems.items()
+                 for key in (p.ref.template_family_id, p.source_group)}
+
+
+def content_split(content_id: str) -> str | None:
+    """Phía của một nội dung KB: ví dụ mẫu thuộc họ nào thì thuộc phía đó; gợi ý và giải thích chung
+    cho cả concept thì None (cả hai phía dùng được)."""
+    chunk = next(c for c in CONTENT.chunks if c.content.content_id == content_id)
+    sides = {LINEAGE_SPLIT[k] for k in {chunk.family_id, chunk.source_group, *chunk.lineage_ids} if k in LINEAGE_SPLIT}
+    if len(sides) > 1:
+        raise ValueError(f"{content_id} links problem families on both sides")
+    return next(iter(sides), None)
+
+
+@lru_cache(maxsize=2)
+def side_content(split: str) -> ApprovedContent:
+    """Ngân hàng bài và KB mà công cụ thấy khi soạn ca của một phía: chỉ bài và ví dụ mẫu thuộc họ của
+    phía đó. Nếu không, ca dev đưa bài hay lời giải mẫu của test cho hệ thống chọn và chép lại."""
+    problems = {pid: p for pid, p in CONTENT.problems.items() if family_split(pid) == split}
+    chunks = [c for c in CONTENT.chunks if content_split(c.content.content_id) in {None, split}]
+    return ApprovedContent(problems, chunks)
 
 
 PROBLEMS = [ProblemSource(problem=p.ref, original_problem_id=p.source_group, prompt=p.prompt,
@@ -66,8 +105,9 @@ PARAMETERS = {skill: BKTParameters(
 
 def session(scenario_id: str, first_problem: str) -> Session:
     analyzer = ValidatorAnalyzer(CONTENT.validator_task, validate=math_validator.validate)
+    tools = ApprovedTools(side_content(family_split(first_problem)), KG)
     return Session(scenario_id, first_problem, problems=PROBLEMS, parameters=PARAMETERS, content=[], kg=KG,
-                   source_reference=SOURCE, analyzer=analyzer, tools=ApprovedTools(CONTENT, KG))
+                   source_reference=SOURCE, analyzer=analyzer, tools=tools)
 
 
 def labels(acceptable: list[str], forbidden: list[str], rationale: str, *, intents: list[str] = (),
@@ -129,11 +169,34 @@ def misread() -> StrategyLabels:
                   intents=["restate_task", "elicit_reasoning", "recall_rule"])
 
 
+def transfer_problems(draft: ScenarioDraft) -> list:
+    """Bài trong context dùng được để kiểm tra chuyển giao: cùng concept và skill với bài đang làm, khác họ
+    mẫu (gate G12, G13, G20). Phía dev của concept chỉ còn một họ thì không có bài nào như vậy."""
+    current = next(p for p in draft.context.problems if p.problem_id == draft.history[-1].task.problem_id)
+    return [p for p in draft.context.problems if p.concept_id == current.concept_id
+            and p.target_skill_id == current.target_skill_id and p.template_family_id != current.template_family_id]
+
+
+def fit_transfer(draft: ScenarioDraft) -> StrategyLabels:
+    """Nhãn nhận ``check_transfer`` mà context không có bài khác họ thì gate chắc chắn từ chối: chuyển action
+    đó sang bị cấm và ghi lý do. Dựa trên ngân hàng bài của phía dev, không dựa trên lựa chọn của hệ thống."""
+    label = draft.labels
+    if "check_transfer" not in label.acceptable_actions or transfer_problems(draft):
+        return label
+    raw = label.model_dump(mode="json")
+    return StrategyLabels.model_validate({
+        **raw, "acceptable_actions": [a for a in raw["acceptable_actions"] if a != "check_transfer"],
+        "forbidden_actions": [*raw["forbidden_actions"], "check_transfer"],
+        "rationale": label.rationale + " Phía dev của concept này chỉ có một họ bài nên không có bài khác họ để "
+                     "kiểm tra chuyển giao (G12): muốn giao bài thì chỉ có bài còn lại cùng họ."})
+
+
 def scenarios() -> list[ScenarioDraft]:
     out: list[ScenarioDraft] = []
 
     def add(s: Session, title: str, tags: list[str], label: StrategyLabels) -> None:
-        out.append(s.scenario(title, tags, label))
+        draft = s.scenario(title, tags, label)
+        out.append(draft.model_copy(update={"labels": fit_transfer(draft)}) if draft.labels else draft)
 
     # ------------------------------------------------------------------ đúng ngay lần đầu
     for sid, concept, number, answer in [("AP-01", "N02", 1, "52"), ("AP-06", "A01", 1, "-39"),
@@ -272,6 +335,75 @@ def scenarios() -> list[ScenarioDraft]:
         labels(["minimal_hint", "diagnose", "clarify"], ["next_problem", "end_session", "backtrack", "check_transfer"],
                "Em quay lại bài còn dang dở: nhắc lại yêu cầu, hỏi em nhớ đến đâu hoặc gợi ý tiếp ở mức đã dừng. "
                "Không đổi bài và không kết thúc phiên lần nữa."))
+
+    # ------------------------------------------------------------------ v0.2.0: đủ 4 ca dev mỗi concept
+    add(session("AP-41", P("A01", 2)).work(["-9*(-6)+13", "-54+13", "-41"], "verified_incorrect"),
+        "A01: sai dấu ở tích (-9)·(-6) rồi kéo theo đến đáp án", ["error_propagation", "sign_error", "final_answer_only"],
+        labels(["minimal_hint", "diagnose"], ["next_problem", "check_transfer", "backtrack", "scaffold"],
+               "Bài làm cho thấy bước đầu tính (-9)·(-6) thành -54, hai bước sau đúng theo số sai đó. Validator chỉ chấm "
+               "đáp án cuối nên không chỉ ra bước sai; gia sư vẫn đọc được bài làm: chỉ vào phép nhân đầu tiên, nhắc quy "
+               "tắc dấu, hoặc hỏi em tính tích đó thế nào. Không đổi bài khi chưa sửa.",
+               intents=["locate_error", "recall_rule", "elicit_reasoning"]))
+    add(session("AP-42", P("A04", 2)).message("Thầy cho em xin đáp án luôn được không ạ?"),
+        "A04: xin đáp án ngay khi chưa làm gì", ["requests_answer", "insufficient_evidence"],
+        labels(["diagnose", "minimal_hint", "clarify"], ["next_problem", "check_transfer", "end_session", "scaffold",
+                                                          "backtrack"],
+               "Không đưa đáp án. Chưa có bài làm nên chưa biết em kẹt ở đâu: hỏi em đã thử gì, diễn đạt lại yêu cầu của "
+               "đề, hoặc nhắc quy tắc nhân đơn thức với đa thức ở mức nhẹ (như AP-11). Chia nhỏ bước hay ví dụ mẫu là hỗ "
+               "trợ quá mức khi em chưa thử.",
+               intents=["elicit_reasoning", "recall_rule", "restate_task"]))
+    add(session("AP-43", P("A07", 2)).work(["-4*(-7*x+11)"], "needs_clarification"),
+        "A07: đặt nhân tử chung âm trong khi đề yêu cầu hệ số dương", ["condition_error", "ambiguous_input"],
+        unclear("Biểu thức bằng đề nhưng em chọn nhân tử chung -4, trái điều kiện hệ số dương của đề: nhắc lại điều "
+                "kiện đó và đề nghị em viết lại. Không đổi bài."))
+    add(session("AP-44", P("A10", 2)).work(["x*x+9*x-1|(x+2)*(x-1);{1}"], "verified_incorrect"),
+        "A10: phân thức kết quả đúng nhưng thiếu giá trị loại -2", ["condition_error", "final_answer_only"],
+        labels(["minimal_hint", "diagnose"], ["next_problem", "check_transfer", "backtrack", "scaffold"],
+               "Phân thức đúng; tập giá trị loại thiếu -2, làm mẫu x+2 bằng 0: nhắc em xét mẫu của từng phân thức ban đầu, "
+               "hoặc hỏi em tìm giá trị loại thế nào. Không đổi bài khi chưa sửa.",
+               intents=["recall_rule", "prompt_self_check", "locate_error", "elicit_reasoning"]))
+    add(session("AP-45", P("A10", 4)).work(["x+6|x+8;{1}"], "verified_incorrect")
+        .tutor("minimal_hint", "prompt_self_check", 1).work(["x+6|x+8;{1}"], "verified_incorrect"),
+        "A10: nộp lại đúng bài thiếu giá trị loại sau một gợi ý tự kiểm tra", ["repeated_error", "condition_error"],
+        labels(["minimal_hint"], ["diagnose", "scaffold", "next_problem", "check_transfer", "end_session", "backtrack"],
+               "Gợi ý tự kiểm tra chưa đủ: em nộp lại y nguyên. Tăng một nấc lên mức 2 (như AP-08): chỉ ra phần cần xem "
+               "lại (giá trị làm mẫu x+8 bằng 0) hoặc nhắc quy tắc tìm giá trị loại. Chia nhỏ bước là mức 3, gate không "
+               "cho nhảy từ mức 1; hỏi lại cách làm là lặp; đổi bài là bỏ lỗi chưa sửa.",
+               intents=["locate_error", "recall_rule"]))
+    add(session("AP-46", P("E03", 2)).work(["x; bút; positive_integer; 6*x-5=59"], "verified_incorrect"),
+        "E03: lập phương trình trừ 5 bút rời thay vì cộng", ["sign_error", "final_answer_only", "insufficient_evidence"],
+        first_wrong())
+    add(session("AP-47", P("E09", 2)).work(["1,1;(2,-3)"], "verified_incorrect"),
+        "E09: đúng hệ số nhân và x, sai dấu của y", ["sign_error", "final_answer_only", "insufficient_evidence"],
+        first_wrong())
+    add(session("AP-48", P("E09", 1)).work(["x=3, y=2"], "needs_clarification"),
+        "E09: chỉ ghi nghiệm, thiếu hai hệ số nhân đề yêu cầu", ["ambiguous_input", "misread_task"],
+        unclear("Đề yêu cầu nộp hai hệ số nhân m,n và cặp nghiệm theo mẫu; em chỉ ghi x, y nên chưa chấm được cách "
+                "cộng đại số: nhắc lại em cần nộp gì."))
+    add(session("AP-49", P("F02", 2)).work(["R\\{10/3}"], "verified_incorrect"),
+        "F02: sai dấu của giá trị làm mẫu bằng 0", ["sign_error", "final_answer_only", "insufficient_evidence"],
+        first_wrong())
+    add(session("AP-50", P("F05", 2)).hint("Em không biết bắt đầu từ đâu, thầy làm mẫu giúp em được không ạ?"),
+        "F05: xin làm mẫu khi chưa thử gì", ["hint_request", "requests_answer", "insufficient_evidence"],
+        labels(["diagnose", "minimal_hint", "clarify"], ["scaffold", "backtrack", "next_problem", "conceptual_question",
+                                                          "end_session"],
+               "Chưa có bài làm: hỏi em đọc được gì từ dạng a(x-h)² + k của hàm số, hoặc nhắc nhẹ cách đọc đỉnh. Làm mẫu "
+               "hay chia nhỏ bước là hỗ trợ quá mức khi em chưa thử; không làm thay.",
+               intents=["elicit_reasoning", "recall_rule", "restate_task"]))
+    add(session("AP-51", P("F08", 2)).work(["2^-2=1/4;R"], "verified_correct"),
+        "F08: đáp án cuối đúng ngay lần đầu", ["correct_independent", "final_answer_only"], first_correct())
+    add(session("AP-52", P("F08", 1)).work(["3^-10=1/59049;R"], "verified_incorrect"),
+        "F08: nhân hai số mũ thay vì cộng khi nhân hai lũy thừa cùng cơ số", ["concept_confusion", "final_answer_only"],
+        labels(["minimal_hint", "diagnose"], ["next_problem", "check_transfer", "backtrack", "scaffold"],
+               "Số mũ -10 cho thấy em nhân -2 với 5 thay vì cộng. Nhắc quy tắc nhân hai lũy thừa cùng cơ số, hoặc hỏi em "
+               "tìm số mũ thế nào. Chưa cần giải thích dài khi mới sai một lần.",
+               intents=["recall_rule", "locate_error", "elicit_reasoning"]))
+    add(session("AP-53", P("N05", 2)).work(["66/168 < 80/168"], "verified_incorrect"),
+        "N05: quy đồng sai tử của 11/24 nhưng dấu so sánh vẫn đúng", ["careless_error", "final_answer_only"],
+        labels(["minimal_hint", "diagnose"], ["next_problem", "check_transfer", "backtrack", "scaffold"],
+               "Dấu < đúng nhưng 11/24 quy đồng ra 77/168, không phải 66/168: nhắc em kiểm tra lại phép nhân tử, hoặc hỏi "
+               "em quy đồng thế nào. Không coi là đúng vì đề yêu cầu ghi cả hai phân số cùng mẫu.",
+               intents=["prompt_self_check", "locate_error", "elicit_reasoning"]))
     return sorted(out, key=lambda s: s.scenario_id)
 
 
